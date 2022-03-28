@@ -1,0 +1,31 @@
+module au_top (
+    input clk,              // 100MHz clock
+    input rst_n,            // reset button (active low)
+    input usb_rx,           // USB->Serial input
+    output outled,           // to LED strip, Br pin C49 
+    output usb_tx          // USB->Serial output
+  ) {
+  
+  sig rst;                  // reset signal
+  
+  led_strip_writer led_strip(#PIXEL_COUNT(25), .clk(clk), .rst(rst)); //set for 3 pixels
+  .clk(clk) {
+    // The reset conditioner is used to synchronize the reset signal to the FPGA
+    // clock. This ensures the entire FPGA comes out of reset at the same time.
+    reset_conditioner reset_cond;
+  }
+  
+  letters letters_config;
+  
+  always {
+    reset_cond.in = ~rst_n; // input raw inverted reset signal
+    rst = reset_cond.out;   // conditioned reset
+    
+    usb_tx = usb_rx;        // loop serial port
+    
+    led_strip.update = 1;
+    letters_config.selector = 1;
+    led_strip.color=letters_config.out[led_strip.pixel]; 
+    outled=led_strip.led;
+  }
+}

@@ -1,0 +1,26 @@
+module letters ( // contains the inputs thare are to be fed into the alu via the fsm
+    input selector[5],   
+    output out[25][24] // output an array
+  ) {
+  
+  const INPUTS = {
+    { // A
+    h000000, h000000, h001100, h000000, h000000,
+    h000000, h001100, h000000, h001100, h000000,
+    h001100, h000000, h000000, h000000, h001100,
+    h001100, h001100, h001100, h001100, h001100,
+    h001100, h000000, h000000, h000000, h001100
+    },
+    { // B
+    h001100, h001100, h001100, h001100, h000000,
+    h001100, h000000, h000000, h000000, h001100,
+    h001100, h001100, h001100, h001100, h000000,
+    h001100, h000000, h000000, h000000, h001100,
+    h001100, h001100, h001100, h001100, h000000
+    }
+  };
+
+  always {
+    out = INPUTS[selector];
+  }
+}
