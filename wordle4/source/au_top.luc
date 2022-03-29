@@ -15,7 +15,7 @@ module au_top (
     reset_conditioner reset_cond;
   }
   
-  letters letters_config;
+  green_alphabets letters_config;
   
   always {
     reset_cond.in = ~rst_n; // input raw inverted reset signal

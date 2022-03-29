@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="wordle4" board="Alchitry Au" language="Lucid" version="3">
   <files>
-    <src>letters.luc</src>
     <src top="true">au_top.luc</src>
     <component>reset_conditioner.luc</component>
+    <src>green_alphabets.luc</src>
     <src>led_strip_writer.luc</src>
     <constraint lib="true">au.xdc</constraint>
     <constraint>alchitry.acf</constraint>

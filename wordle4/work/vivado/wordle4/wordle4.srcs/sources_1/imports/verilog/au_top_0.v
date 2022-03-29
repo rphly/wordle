@@ -38,8 +38,8 @@ module au_top_0 (
   );
   
   wire [600-1:0] M_letters_config_out;
-  reg [5-1:0] M_letters_config_selector;
-  letters_3 letters_config (
+  reg [2-1:0] M_letters_config_selector;
+  green_alphabets_3 letters_config (
     .selector(M_letters_config_selector),
     .out(M_letters_config_out)
   );
