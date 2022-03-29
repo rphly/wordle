@@ -3,7 +3,8 @@ clock clk 100MHz;
 
 pin rst_n RESET;
 
-pin outled B42;
+pin outled1 B42;
+pin outled2 C2;
 
 // flip the Tx/Rx lines
 pin usb_rx USB_TX;

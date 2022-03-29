@@ -2,30 +2,48 @@ module au_top (
     input clk,              // 100MHz clock
     input rst_n,            // reset button (active low)
     input usb_rx,           // USB->Serial input
-    output outled,           // to LED strip, Br pin C49 
+    output outled1,           // to LED strip, Br pin C49 
+    output outled2,
     output usb_tx          // USB->Serial output
   ) {
   
   sig rst;                  // reset signal
   
-  led_strip_writer led_strip(#PIXEL_COUNT(25), .clk(clk), .rst(rst)); //set for 3 pixels
+  led_strip_writer matrix1(#PIXEL_COUNT(25), .clk(clk), .rst(rst)); //set for 3 pixels
   .clk(clk) {
     // The reset conditioner is used to synchronize the reset signal to the FPGA
     // clock. This ensures the entire FPGA comes out of reset at the same time.
-    reset_conditioner reset_cond;
+    reset_conditioner reset_cond1;
   }
   
-  green_alphabets letters_config;
+  led_strip_writer matrix2(#PIXEL_COUNT(25), .clk(clk), .rst(rst)); //set for 3 pixels
+  .clk(clk) {
+    // The reset conditioner is used to synchronize the reset signal to the FPGA
+    // clock. This ensures the entire FPGA comes out of reset at the same time.
+    reset_conditioner reset_cond2;
+  }
+ 
+  
+  green_alphabets green_letters;
+  yellow_alphabets yellow_letters;
   
   always {
-    reset_cond.in = ~rst_n; // input raw inverted reset signal
-    rst = reset_cond.out;   // conditioned reset
+    reset_cond1.in = ~rst_n; // input raw inverted reset signal
+    rst = reset_cond1.out;   // conditioned reset
+    
+    reset_cond2.in = ~rst_n; // input raw inverted reset signal
+    rst = reset_cond2.out;   // conditioned reset
     
     usb_tx = usb_rx;        // loop serial port
     
-    led_strip.update = 1;
-    letters_config.selector = 1;
-    led_strip.color=letters_config.out[led_strip.pixel]; 
-    outled=led_strip.led;
+    matrix1.update = 1;
+    green_letters.selector = 1;
+    matrix1.color=green_letters.out[matrix1.pixel]; 
+    outled1=matrix1.led;
+    
+    matrix2.update = 1;
+    yellow_letters.selector = 20;
+    matrix2.color=yellow_letters.out[matrix2.pixel]; 
+    outled2=matrix2.led;
   }
 }

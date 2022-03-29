@@ -87,6 +87,7 @@ read_verilog -library xil_defaultlib {
   C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/green_alphabets_3.v
   C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/led_strip_writer_1.v
   C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/reset_conditioner_2.v
+  C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/yellow_alphabets_4.v
   C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/au_top_0.v
 }
 OPTRACE "Adding files" END { }

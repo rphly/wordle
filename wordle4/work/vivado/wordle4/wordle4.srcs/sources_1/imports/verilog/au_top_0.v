@@ -8,7 +8,8 @@ module au_top_0 (
     input clk,
     input rst_n,
     input usb_rx,
-    output reg outled,
+    output reg outled1,
+    output reg outled2,
     output reg usb_tx
   );
   
@@ -16,41 +17,75 @@ module au_top_0 (
   
   reg rst;
   
-  wire [5-1:0] M_led_strip_pixel;
-  wire [1-1:0] M_led_strip_led;
-  reg [1-1:0] M_led_strip_update;
-  reg [24-1:0] M_led_strip_color;
-  led_strip_writer_1 led_strip (
+  wire [5-1:0] M_matrix1_pixel;
+  wire [1-1:0] M_matrix1_led;
+  reg [1-1:0] M_matrix1_update;
+  reg [24-1:0] M_matrix1_color;
+  led_strip_writer_1 matrix1 (
     .clk(clk),
     .rst(rst),
-    .update(M_led_strip_update),
-    .color(M_led_strip_color),
-    .pixel(M_led_strip_pixel),
-    .led(M_led_strip_led)
+    .update(M_matrix1_update),
+    .color(M_matrix1_color),
+    .pixel(M_matrix1_pixel),
+    .led(M_matrix1_led)
   );
   
-  wire [1-1:0] M_reset_cond_out;
-  reg [1-1:0] M_reset_cond_in;
-  reset_conditioner_2 reset_cond (
+  wire [1-1:0] M_reset_cond1_out;
+  reg [1-1:0] M_reset_cond1_in;
+  reset_conditioner_2 reset_cond1 (
     .clk(clk),
-    .in(M_reset_cond_in),
-    .out(M_reset_cond_out)
+    .in(M_reset_cond1_in),
+    .out(M_reset_cond1_out)
   );
   
-  wire [600-1:0] M_letters_config_out;
-  reg [2-1:0] M_letters_config_selector;
-  green_alphabets_3 letters_config (
-    .selector(M_letters_config_selector),
-    .out(M_letters_config_out)
+  wire [5-1:0] M_matrix2_pixel;
+  wire [1-1:0] M_matrix2_led;
+  reg [1-1:0] M_matrix2_update;
+  reg [24-1:0] M_matrix2_color;
+  led_strip_writer_1 matrix2 (
+    .clk(clk),
+    .rst(rst),
+    .update(M_matrix2_update),
+    .color(M_matrix2_color),
+    .pixel(M_matrix2_pixel),
+    .led(M_matrix2_led)
+  );
+  
+  wire [1-1:0] M_reset_cond2_out;
+  reg [1-1:0] M_reset_cond2_in;
+  reset_conditioner_2 reset_cond2 (
+    .clk(clk),
+    .in(M_reset_cond2_in),
+    .out(M_reset_cond2_out)
+  );
+  
+  wire [600-1:0] M_green_letters_out;
+  reg [2-1:0] M_green_letters_selector;
+  green_alphabets_3 green_letters (
+    .selector(M_green_letters_selector),
+    .out(M_green_letters_out)
+  );
+  
+  wire [600-1:0] M_yellow_letters_out;
+  reg [2-1:0] M_yellow_letters_selector;
+  yellow_alphabets_4 yellow_letters (
+    .selector(M_yellow_letters_selector),
+    .out(M_yellow_letters_out)
   );
   
   always @* begin
-    M_reset_cond_in = ~rst_n;
-    rst = M_reset_cond_out;
+    M_reset_cond1_in = ~rst_n;
+    rst = M_reset_cond1_out;
+    M_reset_cond2_in = ~rst_n;
+    rst = M_reset_cond2_out;
     usb_tx = usb_rx;
-    M_led_strip_update = 1'h1;
-    M_letters_config_selector = 1'h1;
-    M_led_strip_color = M_letters_config_out[(M_led_strip_pixel)*24+23-:24];
-    outled = M_led_strip_led;
+    M_matrix1_update = 1'h1;
+    M_green_letters_selector = 1'h1;
+    M_matrix1_color = M_green_letters_out[(M_matrix1_pixel)*24+23-:24];
+    outled1 = M_matrix1_led;
+    M_matrix2_update = 1'h1;
+    M_yellow_letters_selector = 5'h14;
+    M_matrix2_color = M_yellow_letters_out[(M_matrix2_pixel)*24+23-:24];
+    outled2 = M_matrix2_led;
   end
 endmodule
