@@ -2,11 +2,15 @@
 <project name="wordle4" board="Alchitry Au" language="Lucid" version="3">
   <files>
     <src>yellow_alphabets.luc</src>
+    <src>button.luc</src>
+    <component>pipeline.luc</component>
     <src top="true">au_top.luc</src>
-    <component>reset_conditioner.luc</component>
     <src>green_alphabets.luc</src>
     <src>led_strip_writer.luc</src>
+    <component>reset_conditioner.luc</component>
+    <component>edge_detector.luc</component>
     <src>white_alphabets.luc</src>
+    <component>button_conditioner.luc</component>
     <constraint lib="true">au.xdc</constraint>
     <constraint>alchitry.acf</constraint>
   </files>
