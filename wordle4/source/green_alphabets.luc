@@ -179,7 +179,7 @@ module green_alphabets ( // contains the inputs thare are to be fed into the alu
     h000000, h000000, h000011, h000000, h000000,
     h000000, h000000, h000011, h000000, h000000
     },
-    { // Y
+    { // Z
     h000011, h000011, h000011, h000011, h000011,
     h000000, h000000, h000000, h000011, h000000,
     h000000, h000000, h000011, h000000, h000000,
