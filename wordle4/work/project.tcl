@@ -5,7 +5,7 @@ set device xc7a35tftg256-1
 if {[file exists "$projDir/$projName"]} { file delete -force "$projDir/$projName" }
 create_project $projName "$projDir/$projName" -part $device
 set_property design_mode RTL [get_filesets sources_1]
-set verilogSources [list "C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/verilog/au_top_0.v" "C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/verilog/led_strip_writer_1.v" "C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/verilog/reset_conditioner_2.v" "C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/verilog/green_alphabets_3.v" "C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/verilog/yellow_alphabets_4.v" ]
+set verilogSources [list "C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/verilog/au_top_0.v" "C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/verilog/led_strip_writer_1.v" "C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/verilog/reset_conditioner_2.v" "C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/verilog/green_alphabets_3.v" "C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/verilog/yellow_alphabets_4.v" "C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/verilog/button_5.v" "C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/verilog/button_conditioner_6.v" "C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/verilog/edge_detector_7.v" "C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/verilog/pipeline_8.v" ]
 import_files -fileset [get_filesets sources_1] -force -norecurse $verilogSources
 set xdcSources [list "C:/Program\ Files/Alchitry/Alchitry\ Labs/library/components/au.xdc" "C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/constraint/alchitry.xdc" ]
 read_xdc $xdcSources

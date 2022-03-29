@@ -2,6 +2,7 @@ module au_top (
     input clk,              // 100MHz clock
     input rst_n,            // reset button (active low)
     input usb_rx,           // USB->Serial input
+    input btnin,
     output outled1,           // to LED strip, Br pin C49 
     output outled2,
     output usb_tx          // USB->Serial output
@@ -26,6 +27,14 @@ module au_top (
   
   green_alphabets green_letters;
   yellow_alphabets yellow_letters;
+  button btn(.button_input(btnin), .clk(clk));
+  
+  .clk(clk) {
+    fsm colour_switcher={
+      STATE_1,
+      STATE_2
+    };
+  }
   
   always {
     reset_cond1.in = ~rst_n; // input raw inverted reset signal
@@ -36,14 +45,35 @@ module au_top (
     
     usb_tx = usb_rx;        // loop serial port
     
+    
+    
     matrix1.update = 1;
     green_letters.selector = 1;
-    matrix1.color=green_letters.out[matrix1.pixel]; 
-    outled1=matrix1.led;
+    matrix1.color = 0;
+    outled1 = matrix1.led;
     
     matrix2.update = 1;
     yellow_letters.selector = 20;
-    matrix2.color=yellow_letters.out[matrix2.pixel]; 
-    outled2=matrix2.led;
+    matrix2.color= 0;
+    outled2 = matrix2.led;
+    
+    case (colour_switcher.q) {
+      colour_switcher.STATE_1:
+        matrix1.color=green_letters.out[matrix1.pixel]; 
+        outled1=matrix1.led;
+        matrix2.color=yellow_letters.out[matrix2.pixel]; 
+        outled2=matrix2.led;
+        if (btn.is_pressed == b1) {
+          colour_switcher.d = colour_switcher.STATE_2;
+        }
+      colour_switcher.STATE_2:
+        matrix1.color=yellow_letters.out[matrix1.pixel]; 
+        outled1=matrix1.led;
+        matrix2.color=green_letters.out[matrix2.pixel]; 
+        outled2=matrix2.led;
+        if (btn.is_pressed == b1) {
+          colour_switcher.d = colour_switcher.STATE_1;
+        }
+    }
   }
 }

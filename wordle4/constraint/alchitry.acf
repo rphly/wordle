@@ -3,6 +3,7 @@ clock clk 100MHz;
 
 pin rst_n RESET;
 
+pin btnin B2 pulldown;
 pin outled1 B42;
 pin outled2 C2;
 
