@@ -18,8 +18,14 @@ module game (
     };
   }
   
+  alu alu; // import ALU; with inputs a (A), b (B), and alufn (ALUFN)
+  
   always {
     // standard settings
+    
+    alu.a = 0; // initialise input a first
+    alu.b = 0; // initialise input b first
+    alu.alufn = 0; // initialise input alufn first
     
     if (rst) {
       game_fsm.d = game_fsm.RESET_TOP_DISPLAY; 
