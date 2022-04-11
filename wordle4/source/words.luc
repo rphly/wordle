@@ -1,0 +1,13 @@
+module words (
+    input selector[11],   
+    output out[4][5]
+  ) {
+  
+  const INPUTS = $reverse({
+    { b00001, b00101, b00000, b10010 }
+  }); 
+  
+  always {  
+    out = INPUTS[selector];
+  }
+}

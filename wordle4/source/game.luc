@@ -1,14 +1,18 @@
 module game (
     input clk,  // clock
     input rst,  // reset
-    output out
+    input btn_is_pressed,
+    input btn_input,
+    output outmatrix0
   ) {
   
   .clk(clk) {
     fsm game_fsm = {
       RESET_TOP_DISPLAY,
       RESET_BOTTOM_DISPLAY,
-      INIT_VARIABLES,
+      SET_INPUT_CTR_TO_0,
+      SET_GUESS_CTR_TO_0,
+      SET_NUM_CORRECT_INPUTS_TO_0,
       IDLE,
       CLEAR_SET_INPUT_CTR_1,
       CLEAR_RESET_BOTTOM_DISPLAY,
@@ -16,10 +20,30 @@ module game (
       INCREMENT_INPUT_CTR,
       PRINT_LETTER_TO_MATRIX
     };
+    
+    
+    regfile rf(.rst(rst));
   }
+  
+  const INPUT_CTR = 11100;
+  const INPUT_LETTER_1 = b10000;
+  
+  led_strip_writer matrix0(#PIXEL_COUNT(25), .clk(clk), .rst(rst));
+  white_alphabets white_letters;
   
   always {
     // standard settings
+    rf.we = 0;
+    rf.read_address_a = 5b0;
+    rf.read_address_b = 5b0;
+    rf.data = 16b0;
+    rf.write_address = 5b0;
+    
+    white_letters.selector = 0;
+    matrix0.update = 0;
+    matrix0.color = 0;
+    
+    outmatrix0 = 0;
     
     if (rst) {
       game_fsm.d = game_fsm.RESET_TOP_DISPLAY; 
@@ -30,16 +54,21 @@ module game (
           game_fsm.d = game_fsm.RESET_BOTTOM_DISPLAY;
           
         game_fsm.RESET_BOTTOM_DISPLAY:
-          game_fsm.d = game_fsm.INIT_VARIABLES;
+          game_fsm.d = game_fsm.SET_INPUT_CTR_TO_0;
           
-        game_fsm.INIT_VARIABLES:
+        game_fsm.SET_INPUT_CTR_TO_0:
+          rf.write_address = INPUT_CTR; 
+          rf.data = 0;
+          rf.we = 1;
+          
           game_fsm.d = game_fsm.IDLE;
           
         game_fsm.IDLE:
           // if check button press
-          // if clear button
-          game_fsm.d = game_fsm.CLEAR_SET_INPUT_CTR_1;
-          
+          if (btn_is_pressed) {
+            game_fsm.d = game_fsm.STORE_INPUT;
+          }
+
         game_fsm.CLEAR_SET_INPUT_CTR_1:
           game_fsm.d = game_fsm.CLEAR_RESET_BOTTOM_DISPLAY;
         
@@ -48,15 +77,46 @@ module game (
         
         game_fsm.STORE_INPUT:
           // store buttons_controller.out
-          game_fsm.d = game_fsm.INCREMENT_INPUT_CTR;
+          // read value of i
+          rf.we = 0;
+          rf.read_address_a = INPUT_CTR;
+          
+          // write to reg
+          rf.write_address = INPUT_LETTER_1 + rf.out_a; 
+          rf.data = btn_input;
+          rf.we = 1;
+          game_fsm.d = game_fsm.PRINT_LETTER_TO_MATRIX;
          
         game_fsm.INCREMENT_INPUT_CTR:
-          game_fsm.d = game_fsm.PRINT_LETTER_TO_MATRIX;
-        
-        game_fsm.PRINT_LETTER_TO_MATRIX:
+          rf.read_address_a = INPUT_CTR;
+          // write to reg
+          rf.write_address = INPUT_CTR; 
+          rf.data = rf.out_a + 1;
+          rf.we = 1;
+          
           game_fsm.d = game_fsm.IDLE;
         
-        
+        game_fsm.PRINT_LETTER_TO_MATRIX:
+            // get current I
+            rf.we = 0;
+            rf.read_address_a = INPUT_CTR;
+          
+            // get letter from alphabets
+            rf.read_address_b = INPUT_LETTER_1 + rf.out_a;
+            white_letters.selector = rf.out_b;
+            // display on matrix with white_letters.out
+          
+            case (rf.out_a) {
+             0:
+              matrix0.update = 1;
+              matrix0.color = white_letters.out[matrix0.pixel];
+              outmatrix0 = matrix0.led;
+            }
+          
+            game_fsm.d = game_fsm.INCREMENT_INPUT_CTR;
+          
+        default:
+          game_fsm.d = game_fsm.IDLE;
       }
     }
   }

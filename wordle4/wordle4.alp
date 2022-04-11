@@ -9,6 +9,7 @@
     <src>regfile.luc</src>
     <src>buttons_controller.luc</src>
     <src>game.luc</src>
+    <src>words.luc</src>
     <src top="true">au_top.luc</src>
     <component>reset_conditioner.luc</component>
     <component>edge_detector.luc</component>

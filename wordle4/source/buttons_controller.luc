@@ -3,7 +3,7 @@ module buttons_controller (
     input rst,  // reset
     
     input aIn,
-    
+    output is_pressed,
     output out
   ) {
   .clk(clk) {
@@ -11,10 +11,13 @@ module buttons_controller (
    }
   
   always {
-    if (a.is_pressed == 1) {
-      out = 0;
-    }
-    
     out = 0;
+    is_pressed = 0;
+    
+    case (a.out) {
+      1:
+       out = 0;
+       is_pressed = 1;
+    }
   }
 }

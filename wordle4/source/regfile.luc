@@ -1,13 +1,13 @@
 module regfile (
     input clk,  // clock
     input rst,  // reset
-    input write_address[4], // write address
+    input write_address[5], // write address
     input we, // write enable
     input data[16], // data in
     
     
-    input read_address_a[4], //address port a 
-    input read_address_b[4], //address port b
+    input read_address_a[5], //address port a 
+    input read_address_b[5], //address port b
     output out_a[16], //read port a
     output out_b[16] //read port b
 
@@ -59,6 +59,7 @@ module regfile (
       dff i[3];
       dff j[3];
       dff k[3];
+      dff input_ctr[2];
       
       // 3 bits
       dff num_correct[3];
@@ -108,7 +109,7 @@ module regfile (
           11010 : correct_letter_4.d = data;
       
           11011 : num_correct.d = data;
-          // 11100 : ??
+          11100 : input_ctr.d = data;
           // 11101 : ??
           // 11110 : ??
           11111 : zero.d = 0;
@@ -153,7 +154,7 @@ module regfile (
         11010 : out_a = correct_letter_4.q;
     
         11011 : out_a = num_correct.q;
-        // 11100 : ??
+        11100 : out_a = input_ctr.q;
         // 11101 : ??
         // 11110 : ??
         11111 : out_a = zero.q;
@@ -197,7 +198,7 @@ module regfile (
         11010 : out_b = correct_letter_4.q;
     
         11011 : out_b = num_correct.q;
-        // 11100 : ??
+        11100 : out_b = input_ctr.q;
         // 11101 : ??
         // 11110 : ??
         11111 : out_b = zero.q;

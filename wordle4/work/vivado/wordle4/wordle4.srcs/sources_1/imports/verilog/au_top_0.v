@@ -9,120 +9,67 @@ module au_top_0 (
     input rst_n,
     input usb_rx,
     input btnin,
-    output reg outled1,
-    output reg outled2,
-    output reg usb_tx
+    output reg outmatrix0,
+    output reg usb_tx,
+    output reg [23:0] io_led
   );
   
   
   
   reg rst;
   
-  wire [5-1:0] M_matrix1_pixel;
-  wire [1-1:0] M_matrix1_led;
-  reg [1-1:0] M_matrix1_update;
-  reg [24-1:0] M_matrix1_color;
-  led_strip_writer_1 matrix1 (
-    .clk(clk),
-    .rst(rst),
-    .update(M_matrix1_update),
-    .color(M_matrix1_color),
-    .pixel(M_matrix1_pixel),
-    .led(M_matrix1_led)
-  );
-  
-  wire [1-1:0] M_reset_cond1_out;
-  reg [1-1:0] M_reset_cond1_in;
-  reset_conditioner_2 reset_cond1 (
-    .clk(clk),
-    .in(M_reset_cond1_in),
-    .out(M_reset_cond1_out)
-  );
-  
-  wire [5-1:0] M_matrix2_pixel;
-  wire [1-1:0] M_matrix2_led;
-  reg [1-1:0] M_matrix2_update;
-  reg [24-1:0] M_matrix2_color;
-  led_strip_writer_1 matrix2 (
-    .clk(clk),
-    .rst(rst),
-    .update(M_matrix2_update),
-    .color(M_matrix2_color),
-    .pixel(M_matrix2_pixel),
-    .led(M_matrix2_led)
-  );
-  
-  wire [1-1:0] M_reset_cond2_out;
-  reg [1-1:0] M_reset_cond2_in;
-  reset_conditioner_2 reset_cond2 (
-    .clk(clk),
-    .in(M_reset_cond2_in),
-    .out(M_reset_cond2_out)
-  );
-  
-  wire [600-1:0] M_green_letters_out;
-  reg [2-1:0] M_green_letters_selector;
-  green_alphabets_3 green_letters (
-    .selector(M_green_letters_selector),
-    .out(M_green_letters_out)
-  );
-  
-  wire [600-1:0] M_yellow_letters_out;
-  reg [2-1:0] M_yellow_letters_selector;
-  yellow_alphabets_4 yellow_letters (
-    .selector(M_yellow_letters_selector),
-    .out(M_yellow_letters_out)
-  );
-  
-  wire [1-1:0] M_btn_is_pressed;
-  button_5 btn (
+  wire [1-1:0] M_btn_out;
+  button_1 btn (
     .button_input(btnin),
     .clk(clk),
-    .is_pressed(M_btn_is_pressed)
+    .out(M_btn_out)
   );
   
+  wire [1-1:0] M_reset_cond_out;
+  reg [1-1:0] M_reset_cond_in;
+  reset_conditioner_2 reset_cond (
+    .clk(clk),
+    .in(M_reset_cond_in),
+    .out(M_reset_cond_out)
+  );
   localparam STATE_1_colour_switcher = 1'd0;
   localparam STATE_2_colour_switcher = 1'd1;
   
   reg M_colour_switcher_d, M_colour_switcher_q = STATE_1_colour_switcher;
+  wire [1-1:0] M_btn_controller_is_pressed;
+  wire [1-1:0] M_btn_controller_out;
+  buttons_controller_3 btn_controller (
+    .clk(clk),
+    .aIn(btnin),
+    .rst(rst),
+    .is_pressed(M_btn_controller_is_pressed),
+    .out(M_btn_controller_out)
+  );
+  wire [1-1:0] M_g_outmatrix0;
+  reg [1-1:0] M_g_btn_is_pressed;
+  reg [1-1:0] M_g_btn_input;
+  game_4 g (
+    .clk(clk),
+    .rst(rst),
+    .btn_is_pressed(M_g_btn_is_pressed),
+    .btn_input(M_g_btn_input),
+    .outmatrix0(M_g_outmatrix0)
+  );
   
   always @* begin
-    M_colour_switcher_d = M_colour_switcher_q;
-    
-    M_reset_cond1_in = ~rst_n;
-    rst = M_reset_cond1_out;
-    M_reset_cond2_in = ~rst_n;
-    rst = M_reset_cond2_out;
+    M_reset_cond_in = ~rst_n;
+    rst = M_reset_cond_out;
+    io_led = 24'h000000;
+    if (rst == 1'h1) begin
+      io_led[0+0+7-:8] = 8'hff;
+    end
+    if (M_btn_controller_is_pressed == 1'h1) begin
+      io_led[8+0+7-:8] = 8'hff;
+    end
     usb_tx = usb_rx;
-    M_matrix1_update = 1'h1;
-    M_green_letters_selector = 1'h1;
-    M_matrix1_color = 1'h0;
-    outled1 = M_matrix1_led;
-    M_matrix2_update = 1'h1;
-    M_yellow_letters_selector = 5'h14;
-    M_matrix2_color = 1'h0;
-    outled2 = M_matrix2_led;
-    
-    case (M_colour_switcher_q)
-      STATE_1_colour_switcher: begin
-        M_matrix1_color = M_green_letters_out[(M_matrix1_pixel)*24+23-:24];
-        outled1 = M_matrix1_led;
-        M_matrix2_color = M_yellow_letters_out[(M_matrix2_pixel)*24+23-:24];
-        outled2 = M_matrix2_led;
-        if (M_btn_is_pressed == 1'h1) begin
-          M_colour_switcher_d = STATE_2_colour_switcher;
-        end
-      end
-      STATE_2_colour_switcher: begin
-        M_matrix1_color = M_yellow_letters_out[(M_matrix1_pixel)*24+23-:24];
-        outled1 = M_matrix1_led;
-        M_matrix2_color = M_green_letters_out[(M_matrix2_pixel)*24+23-:24];
-        outled2 = M_matrix2_led;
-        if (M_btn_is_pressed == 1'h1) begin
-          M_colour_switcher_d = STATE_1_colour_switcher;
-        end
-      end
-    endcase
+    M_g_btn_is_pressed = M_btn_controller_is_pressed;
+    M_g_btn_input = M_btn_controller_out;
+    outmatrix0 = M_g_outmatrix0;
   end
   
   always @(posedge clk) begin
