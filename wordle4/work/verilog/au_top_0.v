@@ -9,7 +9,6 @@ module au_top_0 (
     input rst_n,
     input usb_rx,
     input btnin,
-    output reg outmatrix0,
     output reg usb_tx,
     output reg [23:0] io_led
   );
@@ -18,42 +17,29 @@ module au_top_0 (
   
   reg rst;
   
-  wire [1-1:0] M_btn_out;
-  button_1 btn (
-    .button_input(btnin),
-    .clk(clk),
-    .out(M_btn_out)
-  );
-  
   wire [1-1:0] M_reset_cond_out;
   reg [1-1:0] M_reset_cond_in;
-  reset_conditioner_2 reset_cond (
+  reset_conditioner_1 reset_cond (
     .clk(clk),
     .in(M_reset_cond_in),
     .out(M_reset_cond_out)
   );
-  localparam STATE_1_colour_switcher = 1'd0;
-  localparam STATE_2_colour_switcher = 1'd1;
-  
-  reg M_colour_switcher_d, M_colour_switcher_q = STATE_1_colour_switcher;
   wire [1-1:0] M_btn_controller_is_pressed;
   wire [1-1:0] M_btn_controller_out;
-  buttons_controller_3 btn_controller (
+  buttons_controller_2 btn_controller (
     .clk(clk),
     .aIn(btnin),
     .rst(rst),
     .is_pressed(M_btn_controller_is_pressed),
     .out(M_btn_controller_out)
   );
-  wire [1-1:0] M_g_outmatrix0;
   reg [1-1:0] M_g_btn_is_pressed;
   reg [1-1:0] M_g_btn_input;
-  game_4 g (
+  game_3 g (
     .clk(clk),
     .rst(rst),
     .btn_is_pressed(M_g_btn_is_pressed),
-    .btn_input(M_g_btn_input),
-    .outmatrix0(M_g_outmatrix0)
+    .btn_input(M_g_btn_input)
   );
   
   always @* begin
@@ -69,11 +55,5 @@ module au_top_0 (
     usb_tx = usb_rx;
     M_g_btn_is_pressed = M_btn_controller_is_pressed;
     M_g_btn_input = M_btn_controller_out;
-    outmatrix0 = M_g_outmatrix0;
   end
-  
-  always @(posedge clk) begin
-    M_colour_switcher_q <= M_colour_switcher_d;
-  end
-  
 endmodule

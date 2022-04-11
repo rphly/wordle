@@ -2,8 +2,8 @@
 # Vivado v2021.2 (64-bit)
 # SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
 # IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
-# Start of session at: Mon Apr 11 15:47:32 2022
-# Process ID: 10472
+# Start of session at: Mon Apr 11 17:55:57 2022
+# Process ID: 14664
 # Current directory: C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.runs/synth_1
 # Command line: vivado.exe -log au_top_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source au_top_0.tcl
 # Log file: C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.runs/synth_1/au_top_0.vds
@@ -11,7 +11,7 @@
 # Running On: ECCLT1702070, OS: Windows, CPU Frequency: 2400 MHz, CPU Physical cores: 2, Host memory: 7978 MB
 #-----------------------------------------------------------
 source au_top_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1236.215 ; gain = 0.000
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1234.539 ; gain = 0.000
 Command: synth_design -top au_top_0 -part xc7a35tftg256-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
@@ -19,162 +19,158 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tftg256-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 13076
+INFO: [Synth 8-7075] Helper process launched with PID 12464
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1236.215 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1234.539 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'au_top_0' [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/au_top_0.v:7]
-INFO: [Synth 8-6157] synthesizing module 'button_1' [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_1.v:7]
-INFO: [Synth 8-6157] synthesizing module 'button_conditioner_5' [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_conditioner_5.v:13]
-INFO: [Synth 8-6157] synthesizing module 'pipeline_10' [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/pipeline_10.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'pipeline_10' (1#1) [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/pipeline_10.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'button_conditioner_5' (2#1) [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_conditioner_5.v:13]
-INFO: [Synth 8-6157] synthesizing module 'edge_detector_6' [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/edge_detector_6.v:12]
-INFO: [Synth 8-6155] done synthesizing module 'edge_detector_6' (3#1) [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/edge_detector_6.v:12]
-INFO: [Synth 8-6155] done synthesizing module 'button_1' (4#1) [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_1.v:7]
-INFO: [Synth 8-6157] synthesizing module 'reset_conditioner_2' [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/reset_conditioner_2.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'reset_conditioner_2' (5#1) [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/reset_conditioner_2.v:11]
-INFO: [Synth 8-6157] synthesizing module 'buttons_controller_3' [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/buttons_controller_3.v:7]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/buttons_controller_3.v:28]
-INFO: [Synth 8-6155] done synthesizing module 'buttons_controller_3' (6#1) [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/buttons_controller_3.v:7]
-INFO: [Synth 8-6157] synthesizing module 'game_4' [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_4.v:7]
-INFO: [Synth 8-6157] synthesizing module 'regfile_7' [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:7]
-WARNING: [Synth 8-151] case item 14'b00000001100100 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:99]
-WARNING: [Synth 8-151] case item 14'b00000001100101 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:102]
-WARNING: [Synth 8-151] case item 14'b00000001101110 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:105]
-WARNING: [Synth 8-151] case item 14'b00000001101111 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:108]
-WARNING: [Synth 8-151] case item 14'b00001111101000 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:111]
-WARNING: [Synth 8-151] case item 14'b00001111101001 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:114]
-WARNING: [Synth 8-151] case item 14'b00001111110010 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:117]
-WARNING: [Synth 8-151] case item 14'b00001111110011 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:120]
-WARNING: [Synth 8-151] case item 14'b00010001001100 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:123]
-WARNING: [Synth 8-151] case item 14'b00010001001101 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:126]
-WARNING: [Synth 8-151] case item 14'b00010001010110 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:129]
-WARNING: [Synth 8-151] case item 14'b00010001010111 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:132]
-WARNING: [Synth 8-151] case item 14'b10011100010000 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:135]
-WARNING: [Synth 8-151] case item 14'b10011100010001 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:138]
-WARNING: [Synth 8-151] case item 14'b10011100011010 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:141]
-WARNING: [Synth 8-151] case item 14'b10011100011011 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:144]
-WARNING: [Synth 8-151] case item 14'b10011101110100 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:147]
-WARNING: [Synth 8-151] case item 14'b10011101110101 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:150]
-WARNING: [Synth 8-151] case item 14'b10011101111110 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:153]
-WARNING: [Synth 8-151] case item 14'b10011101111111 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:156]
-WARNING: [Synth 8-151] case item 14'b10101011111000 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:159]
-WARNING: [Synth 8-151] case item 14'b10101011111001 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:162]
-WARNING: [Synth 8-151] case item 14'b10101100000010 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:165]
-WARNING: [Synth 8-151] case item 14'b10101100000011 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:168]
-WARNING: [Synth 8-151] case item 14'b10101101011100 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:171]
-WARNING: [Synth 8-151] case item 14'b10101101100111 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:174]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:86]
-WARNING: [Synth 8-151] case item 14'b00000001100100 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:193]
-WARNING: [Synth 8-151] case item 14'b00000001100101 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:196]
-WARNING: [Synth 8-151] case item 14'b00000001101110 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:199]
-WARNING: [Synth 8-151] case item 14'b00000001101111 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:202]
-WARNING: [Synth 8-151] case item 14'b00001111101000 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:205]
-WARNING: [Synth 8-151] case item 14'b00001111101001 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:208]
-WARNING: [Synth 8-151] case item 14'b00001111110010 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:211]
-WARNING: [Synth 8-151] case item 14'b00001111110011 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:214]
-WARNING: [Synth 8-151] case item 14'b00010001001100 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:217]
-WARNING: [Synth 8-151] case item 14'b00010001001101 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:220]
-WARNING: [Synth 8-151] case item 14'b00010001010110 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:223]
-WARNING: [Synth 8-151] case item 14'b00010001010111 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:226]
-WARNING: [Synth 8-151] case item 14'b10011100010000 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:229]
-WARNING: [Synth 8-151] case item 14'b10011100010001 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:232]
-WARNING: [Synth 8-151] case item 14'b10011100011010 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:235]
-WARNING: [Synth 8-151] case item 14'b10011100011011 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:238]
-WARNING: [Synth 8-151] case item 14'b10011101110100 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:241]
-WARNING: [Synth 8-151] case item 14'b10011101110101 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:244]
-WARNING: [Synth 8-151] case item 14'b10011101111110 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:247]
-WARNING: [Synth 8-151] case item 14'b10011101111111 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:250]
-WARNING: [Synth 8-151] case item 14'b10101011111000 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:253]
-WARNING: [Synth 8-151] case item 14'b10101011111001 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:256]
-WARNING: [Synth 8-151] case item 14'b10101100000010 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:259]
-WARNING: [Synth 8-151] case item 14'b10101100000011 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:262]
-WARNING: [Synth 8-151] case item 14'b10101101011100 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:265]
-WARNING: [Synth 8-151] case item 14'b10101101100111 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:268]
-WARNING: [Synth 8-151] case item 14'b00000001100100 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:289]
-WARNING: [Synth 8-151] case item 14'b00000001100101 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:292]
-WARNING: [Synth 8-151] case item 14'b00000001101110 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:295]
-WARNING: [Synth 8-151] case item 14'b00000001101111 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:298]
-WARNING: [Synth 8-151] case item 14'b00001111101000 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:301]
-WARNING: [Synth 8-151] case item 14'b00001111101001 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:304]
-WARNING: [Synth 8-151] case item 14'b00001111110010 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:307]
-WARNING: [Synth 8-151] case item 14'b00001111110011 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:310]
-WARNING: [Synth 8-151] case item 14'b00010001001100 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:313]
-WARNING: [Synth 8-151] case item 14'b00010001001101 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:316]
-WARNING: [Synth 8-151] case item 14'b00010001010110 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:319]
-WARNING: [Synth 8-151] case item 14'b00010001010111 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:322]
-WARNING: [Synth 8-151] case item 14'b10011100010000 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:325]
-WARNING: [Synth 8-151] case item 14'b10011100010001 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:328]
-WARNING: [Synth 8-151] case item 14'b10011100011010 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:331]
-WARNING: [Synth 8-151] case item 14'b10011100011011 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:334]
-WARNING: [Synth 8-151] case item 14'b10011101110100 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:337]
-WARNING: [Synth 8-151] case item 14'b10011101110101 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:340]
-WARNING: [Synth 8-151] case item 14'b10011101111110 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:343]
-WARNING: [Synth 8-151] case item 14'b10011101111111 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:346]
-WARNING: [Synth 8-151] case item 14'b10101011111000 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:349]
-WARNING: [Synth 8-151] case item 14'b10101011111001 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:352]
-WARNING: [Synth 8-151] case item 14'b10101100000010 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:355]
-WARNING: [Synth 8-151] case item 14'b10101100000011 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:358]
-WARNING: [Synth 8-151] case item 14'b10101101011100 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:361]
-WARNING: [Synth 8-151] case item 14'b10101101100111 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:364]
-WARNING: [Synth 8-6014] Unused sequential element M_guess_2_letter_1_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:379]
-WARNING: [Synth 8-6014] Unused sequential element M_guess_2_letter_2_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:380]
-WARNING: [Synth 8-6014] Unused sequential element M_guess_2_letter_3_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:381]
-WARNING: [Synth 8-6014] Unused sequential element M_guess_2_letter_4_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:382]
-WARNING: [Synth 8-6014] Unused sequential element M_guess_3_letter_1_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:383]
-WARNING: [Synth 8-6014] Unused sequential element M_guess_3_letter_2_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:384]
-WARNING: [Synth 8-6014] Unused sequential element M_guess_3_letter_3_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:385]
-WARNING: [Synth 8-6014] Unused sequential element M_guess_3_letter_4_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:386]
-WARNING: [Synth 8-6014] Unused sequential element M_guess_4_letter_1_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:387]
-WARNING: [Synth 8-6014] Unused sequential element M_guess_4_letter_2_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:388]
-WARNING: [Synth 8-6014] Unused sequential element M_guess_4_letter_3_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:389]
-WARNING: [Synth 8-6014] Unused sequential element M_guess_4_letter_4_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:390]
-WARNING: [Synth 8-6014] Unused sequential element M_input_letter_1_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:391]
-WARNING: [Synth 8-6014] Unused sequential element M_input_letter_2_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:392]
-WARNING: [Synth 8-6014] Unused sequential element M_input_letter_3_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:393]
-WARNING: [Synth 8-6014] Unused sequential element M_input_letter_4_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:394]
-WARNING: [Synth 8-6014] Unused sequential element M_correct_letter_1_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:395]
-WARNING: [Synth 8-6014] Unused sequential element M_correct_letter_2_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:396]
-WARNING: [Synth 8-6014] Unused sequential element M_correct_letter_3_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:397]
-WARNING: [Synth 8-6014] Unused sequential element M_correct_letter_4_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:398]
-WARNING: [Synth 8-6014] Unused sequential element M_i_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:399]
-WARNING: [Synth 8-6014] Unused sequential element M_j_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:400]
-WARNING: [Synth 8-6014] Unused sequential element M_k_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:401]
-WARNING: [Synth 8-6014] Unused sequential element M_input_ctr_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:402]
-WARNING: [Synth 8-6014] Unused sequential element M_num_correct_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:403]
-INFO: [Synth 8-6155] done synthesizing module 'regfile_7' (7#1) [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:7]
-INFO: [Synth 8-6157] synthesizing module 'led_strip_writer_8' [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/led_strip_writer_8.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'led_strip_writer_8' (8#1) [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/led_strip_writer_8.v:11]
-INFO: [Synth 8-6157] synthesizing module 'white_alphabets_9' [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/white_alphabets_9.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'white_alphabets_9' (9#1) [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/white_alphabets_9.v:7]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_4.v:134]
-INFO: [Synth 8-6155] done synthesizing module 'game_4' (10#1) [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_4.v:7]
-WARNING: [Synth 8-6014] Unused sequential element M_colour_switcher_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/au_top_0.v:76]
-INFO: [Synth 8-6155] done synthesizing module 'au_top_0' (11#1) [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/au_top_0.v:7]
-WARNING: [Synth 8-7129] Port data[15] in module regfile_7 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data[14] in module regfile_7 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data[13] in module regfile_7 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data[12] in module regfile_7 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data[11] in module regfile_7 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data[10] in module regfile_7 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data[9] in module regfile_7 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data[8] in module regfile_7 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data[7] in module regfile_7 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port rst in module buttons_controller_3 is either unconnected or has no load
+INFO: [Synth 8-6157] synthesizing module 'reset_conditioner_1' [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/reset_conditioner_1.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'reset_conditioner_1' (1#1) [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/reset_conditioner_1.v:11]
+INFO: [Synth 8-6157] synthesizing module 'buttons_controller_2' [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/buttons_controller_2.v:7]
+INFO: [Synth 8-6157] synthesizing module 'button_4' [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_4.v:7]
+INFO: [Synth 8-6157] synthesizing module 'button_conditioner_7' [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_conditioner_7.v:13]
+INFO: [Synth 8-6157] synthesizing module 'pipeline_9' [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/pipeline_9.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'pipeline_9' (2#1) [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/pipeline_9.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'button_conditioner_7' (3#1) [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_conditioner_7.v:13]
+INFO: [Synth 8-6157] synthesizing module 'edge_detector_8' [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/edge_detector_8.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'edge_detector_8' (4#1) [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/edge_detector_8.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'button_4' (5#1) [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_4.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'buttons_controller_2' (6#1) [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/buttons_controller_2.v:7]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/au_top_0.v:38]
+INFO: [Synth 8-6157] synthesizing module 'game_3' [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_3.v:7]
+INFO: [Synth 8-6157] synthesizing module 'regfile_5' [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:7]
+WARNING: [Synth 8-151] case item 14'b00000001100100 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:99]
+WARNING: [Synth 8-151] case item 14'b00000001100101 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:102]
+WARNING: [Synth 8-151] case item 14'b00000001101110 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:105]
+WARNING: [Synth 8-151] case item 14'b00000001101111 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:108]
+WARNING: [Synth 8-151] case item 14'b00001111101000 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:111]
+WARNING: [Synth 8-151] case item 14'b00001111101001 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:114]
+WARNING: [Synth 8-151] case item 14'b00001111110010 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:117]
+WARNING: [Synth 8-151] case item 14'b00001111110011 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:120]
+WARNING: [Synth 8-151] case item 14'b00010001001100 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:123]
+WARNING: [Synth 8-151] case item 14'b00010001001101 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:126]
+WARNING: [Synth 8-151] case item 14'b00010001010110 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:129]
+WARNING: [Synth 8-151] case item 14'b00010001010111 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:132]
+WARNING: [Synth 8-151] case item 14'b10011100010000 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:135]
+WARNING: [Synth 8-151] case item 14'b10011100010001 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:138]
+WARNING: [Synth 8-151] case item 14'b10011100011010 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:141]
+WARNING: [Synth 8-151] case item 14'b10011100011011 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:144]
+WARNING: [Synth 8-151] case item 14'b10011101110100 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:147]
+WARNING: [Synth 8-151] case item 14'b10011101110101 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:150]
+WARNING: [Synth 8-151] case item 14'b10011101111110 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:153]
+WARNING: [Synth 8-151] case item 14'b10011101111111 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:156]
+WARNING: [Synth 8-151] case item 14'b10101011111000 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:159]
+WARNING: [Synth 8-151] case item 14'b10101011111001 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:162]
+WARNING: [Synth 8-151] case item 14'b10101100000010 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:165]
+WARNING: [Synth 8-151] case item 14'b10101100000011 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:168]
+WARNING: [Synth 8-151] case item 14'b10101101011100 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:171]
+WARNING: [Synth 8-151] case item 14'b10101101100111 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:174]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:86]
+WARNING: [Synth 8-151] case item 14'b00000001100100 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:193]
+WARNING: [Synth 8-151] case item 14'b00000001100101 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:196]
+WARNING: [Synth 8-151] case item 14'b00000001101110 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:199]
+WARNING: [Synth 8-151] case item 14'b00000001101111 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:202]
+WARNING: [Synth 8-151] case item 14'b00001111101000 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:205]
+WARNING: [Synth 8-151] case item 14'b00001111101001 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:208]
+WARNING: [Synth 8-151] case item 14'b00001111110010 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:211]
+WARNING: [Synth 8-151] case item 14'b00001111110011 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:214]
+WARNING: [Synth 8-151] case item 14'b00010001001100 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:217]
+WARNING: [Synth 8-151] case item 14'b00010001001101 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:220]
+WARNING: [Synth 8-151] case item 14'b00010001010110 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:223]
+WARNING: [Synth 8-151] case item 14'b00010001010111 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:226]
+WARNING: [Synth 8-151] case item 14'b10011100010000 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:229]
+WARNING: [Synth 8-151] case item 14'b10011100010001 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:232]
+WARNING: [Synth 8-151] case item 14'b10011100011010 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:235]
+WARNING: [Synth 8-151] case item 14'b10011100011011 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:238]
+WARNING: [Synth 8-151] case item 14'b10011101110100 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:241]
+WARNING: [Synth 8-151] case item 14'b10011101110101 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:244]
+WARNING: [Synth 8-151] case item 14'b10011101111110 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:247]
+WARNING: [Synth 8-151] case item 14'b10011101111111 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:250]
+WARNING: [Synth 8-151] case item 14'b10101011111000 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:253]
+WARNING: [Synth 8-151] case item 14'b10101011111001 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:256]
+WARNING: [Synth 8-151] case item 14'b10101100000010 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:259]
+WARNING: [Synth 8-151] case item 14'b10101100000011 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:262]
+WARNING: [Synth 8-151] case item 14'b10101101011100 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:265]
+WARNING: [Synth 8-151] case item 14'b10101101100111 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:268]
+WARNING: [Synth 8-151] case item 14'b00000001100100 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:289]
+WARNING: [Synth 8-151] case item 14'b00000001100101 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:292]
+WARNING: [Synth 8-151] case item 14'b00000001101110 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:295]
+WARNING: [Synth 8-151] case item 14'b00000001101111 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:298]
+WARNING: [Synth 8-151] case item 14'b00001111101000 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:301]
+WARNING: [Synth 8-151] case item 14'b00001111101001 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:304]
+WARNING: [Synth 8-151] case item 14'b00001111110010 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:307]
+WARNING: [Synth 8-151] case item 14'b00001111110011 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:310]
+WARNING: [Synth 8-151] case item 14'b00010001001100 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:313]
+WARNING: [Synth 8-151] case item 14'b00010001001101 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:316]
+WARNING: [Synth 8-151] case item 14'b00010001010110 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:319]
+WARNING: [Synth 8-151] case item 14'b00010001010111 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:322]
+WARNING: [Synth 8-151] case item 14'b10011100010000 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:325]
+WARNING: [Synth 8-151] case item 14'b10011100010001 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:328]
+WARNING: [Synth 8-151] case item 14'b10011100011010 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:331]
+WARNING: [Synth 8-151] case item 14'b10011100011011 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:334]
+WARNING: [Synth 8-151] case item 14'b10011101110100 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:337]
+WARNING: [Synth 8-151] case item 14'b10011101110101 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:340]
+WARNING: [Synth 8-151] case item 14'b10011101111110 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:343]
+WARNING: [Synth 8-151] case item 14'b10011101111111 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:346]
+WARNING: [Synth 8-151] case item 14'b10101011111000 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:349]
+WARNING: [Synth 8-151] case item 14'b10101011111001 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:352]
+WARNING: [Synth 8-151] case item 14'b10101100000010 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:355]
+WARNING: [Synth 8-151] case item 14'b10101100000011 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:358]
+WARNING: [Synth 8-151] case item 14'b10101101011100 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:361]
+WARNING: [Synth 8-151] case item 14'b10101101100111 is unreachable [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:364]
+WARNING: [Synth 8-6014] Unused sequential element M_guess_2_letter_1_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:379]
+WARNING: [Synth 8-6014] Unused sequential element M_guess_2_letter_2_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:380]
+WARNING: [Synth 8-6014] Unused sequential element M_guess_2_letter_3_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:381]
+WARNING: [Synth 8-6014] Unused sequential element M_guess_2_letter_4_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:382]
+WARNING: [Synth 8-6014] Unused sequential element M_guess_3_letter_1_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:383]
+WARNING: [Synth 8-6014] Unused sequential element M_guess_3_letter_2_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:384]
+WARNING: [Synth 8-6014] Unused sequential element M_guess_3_letter_3_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:385]
+WARNING: [Synth 8-6014] Unused sequential element M_guess_3_letter_4_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:386]
+WARNING: [Synth 8-6014] Unused sequential element M_guess_4_letter_1_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:387]
+WARNING: [Synth 8-6014] Unused sequential element M_guess_4_letter_2_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:388]
+WARNING: [Synth 8-6014] Unused sequential element M_guess_4_letter_3_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:389]
+WARNING: [Synth 8-6014] Unused sequential element M_guess_4_letter_4_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:390]
+WARNING: [Synth 8-6014] Unused sequential element M_input_letter_1_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:391]
+WARNING: [Synth 8-6014] Unused sequential element M_input_letter_2_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:392]
+WARNING: [Synth 8-6014] Unused sequential element M_input_letter_3_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:393]
+WARNING: [Synth 8-6014] Unused sequential element M_input_letter_4_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:394]
+WARNING: [Synth 8-6014] Unused sequential element M_correct_letter_1_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:395]
+WARNING: [Synth 8-6014] Unused sequential element M_correct_letter_2_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:396]
+WARNING: [Synth 8-6014] Unused sequential element M_correct_letter_3_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:397]
+WARNING: [Synth 8-6014] Unused sequential element M_correct_letter_4_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:398]
+WARNING: [Synth 8-6014] Unused sequential element M_i_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:399]
+WARNING: [Synth 8-6014] Unused sequential element M_j_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:400]
+WARNING: [Synth 8-6014] Unused sequential element M_k_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:401]
+WARNING: [Synth 8-6014] Unused sequential element M_input_ctr_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:402]
+WARNING: [Synth 8-6014] Unused sequential element M_num_correct_q_reg was removed.  [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:403]
+INFO: [Synth 8-6155] done synthesizing module 'regfile_5' (7#1) [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v:7]
+INFO: [Synth 8-6157] synthesizing module 'white_alphabets_6' [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/white_alphabets_6.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'white_alphabets_6' (8#1) [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/white_alphabets_6.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'game_3' (9#1) [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_3.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'au_top_0' (10#1) [C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/au_top_0.v:7]
+WARNING: [Synth 8-7129] Port data[15] in module regfile_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[14] in module regfile_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[13] in module regfile_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[12] in module regfile_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[11] in module regfile_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[10] in module regfile_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[9] in module regfile_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[8] in module regfile_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[7] in module regfile_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module buttons_controller_2 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1236.215 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1234.539 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1236.215 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1234.539 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1236.215 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1234.539 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.085 . Memory (MB): peak = 1236.215 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.064 . Memory (MB): peak = 1234.539 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -187,213 +183,24 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/au_top_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1236.215 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1234.539 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1236.215 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1234.539 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 1236.215 ; gain = 0.000
+Finished Constraint Validation : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 1234.539 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tftg256-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 1236.215 ; gain = 0.000
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 1234.539 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 1236.215 ; gain = 0.000
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 1234.539 ; gain = 0.000
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-802] inferred FSM for state register 'M_game_fsm_q_reg' in module 'game_4'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-RESET_TOP_DISPLAY_game_fsm |                              000 |                             0000
-RESET_BOTTOM_DISPLAY_game_fsm |                              001 |                             0001
-SET_INPUT_CTR_TO_0_game_fsm |                              010 |                             0010
-           IDLE_game_fsm |                              011 |                             0101
-    STORE_INPUT_game_fsm |                              100 |                             1000
-PRINT_LETTER_TO_MATRIX_game_fsm |                              101 |                             1010
-INCREMENT_INPUT_CTR_game_fsm |                              110 |                             1001
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'M_game_fsm_q_reg' using encoding 'sequential' in module 'game_4'
----------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:06:21 ; elapsed = 00:06:27 . Memory (MB): peak = 1236.215 ; gain = 0.000
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start RTL Component Statistics 
----------------------------------------------------------------------------------
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input   16 Bit       Adders := 1     
-	   2 Input    7 Bit       Adders := 1     
-	   2 Input    5 Bit       Adders := 3     
-+---Registers : 
-	                7 Bit    Registers := 5     
-	                5 Bit    Registers := 2     
-	                4 Bit    Registers := 1     
-	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 4     
-+---Muxes : 
-	   7 Input   24 Bit        Muxes := 1     
-	   2 Input   24 Bit        Muxes := 2     
-	   7 Input   16 Bit        Muxes := 1     
-	   2 Input   16 Bit        Muxes := 1     
-	   5 Input    7 Bit        Muxes := 2     
-	   2 Input    7 Bit        Muxes := 3     
-	   2 Input    5 Bit        Muxes := 5     
-	   7 Input    5 Bit        Muxes := 3     
-	   7 Input    3 Bit        Muxes := 1     
-	   7 Input    2 Bit        Muxes := 1     
-	   2 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 19    
-	   5 Input    1 Bit        Muxes := 4     
-	   7 Input    1 Bit        Muxes := 4     
----------------------------------------------------------------------------------
-Finished RTL Component Statistics 
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Part Resource Summary
----------------------------------------------------------------------------------
-Part Resources:
-DSPs: 90 (col length:60)
-BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
----------------------------------------------------------------------------------
-Finished Part Resource Summary
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Cross Boundary and Area Optimization
----------------------------------------------------------------------------------
-WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-3917] design au_top_0 has port io_led[23] driven by constant 0
-WARNING: [Synth 8-3917] design au_top_0 has port io_led[22] driven by constant 0
-WARNING: [Synth 8-3917] design au_top_0 has port io_led[21] driven by constant 0
-WARNING: [Synth 8-3917] design au_top_0 has port io_led[20] driven by constant 0
-WARNING: [Synth 8-3917] design au_top_0 has port io_led[19] driven by constant 0
-WARNING: [Synth 8-3917] design au_top_0 has port io_led[18] driven by constant 0
-WARNING: [Synth 8-3917] design au_top_0 has port io_led[17] driven by constant 0
-WARNING: [Synth 8-3917] design au_top_0 has port io_led[16] driven by constant 0
----------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:13:57 ; elapsed = 00:14:06 . Memory (MB): peak = 1398.727 ; gain = 162.512
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Applying XDC Timing Constraints
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:14:18 ; elapsed = 00:14:28 . Memory (MB): peak = 1398.727 ; gain = 162.512
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Timing Optimization
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:14:21 ; elapsed = 00:14:30 . Memory (MB): peak = 1398.727 ; gain = 162.512
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Technology Mapping
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:14:21 ; elapsed = 00:14:31 . Memory (MB): peak = 1398.727 ; gain = 162.512
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Flattening Before IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Flattening Before IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Final Netlist Cleanup
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Final Netlist Cleanup
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:14:38 ; elapsed = 00:14:48 . Memory (MB): peak = 1398.727 ; gain = 162.512
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Instances
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:14:38 ; elapsed = 00:14:48 . Memory (MB): peak = 1398.727 ; gain = 162.512
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Rebuilding User Hierarchy
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:14:38 ; elapsed = 00:14:48 . Memory (MB): peak = 1398.727 ; gain = 162.512
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Ports
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:14:38 ; elapsed = 00:14:48 . Memory (MB): peak = 1398.727 ; gain = 162.512
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Handling Custom Attributes
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:14:38 ; elapsed = 00:14:48 . Memory (MB): peak = 1398.727 ; gain = 162.512
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Nets
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:14:38 ; elapsed = 00:14:48 . Memory (MB): peak = 1398.727 ; gain = 162.512
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Writing Synthesis Report
----------------------------------------------------------------------------------
-
-Report BlackBoxes: 
-+-+--------------+----------+
-| |BlackBox name |Instances |
-+-+--------------+----------+
-+-+--------------+----------+
-
-Report Cell Usage: 
-+------+-------+------+
-|      |Cell   |Count |
-+------+-------+------+
-|1     |BUFG   |     1|
-|2     |CARRY4 |     9|
-|3     |LUT1   |     6|
-|4     |LUT2   |     5|
-|5     |LUT3   |     6|
-|6     |LUT4   |    10|
-|7     |LUT5   |    15|
-|8     |LUT6   |    10|
-|9     |FDRE   |    57|
-|10    |FDSE   |     4|
-|11    |IBUF   |     4|
-|12    |OBUF   |    26|
-+------+-------+------+
----------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:14:38 ; elapsed = 00:14:48 . Memory (MB): peak = 1398.727 ; gain = 162.512
----------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 9 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:14:19 ; elapsed = 00:14:42 . Memory (MB): peak = 1398.727 ; gain = 162.512
-Synthesis Optimization Complete : Time (s): cpu = 00:14:39 ; elapsed = 00:14:48 . Memory (MB): peak = 1398.727 ; gain = 162.512
-INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1398.727 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 9 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1398.727 ; gain = 0.000
-INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
-
-Synth Design complete, checksum: 1f87061e
-INFO: [Common 17-83] Releasing license: Synthesis
-42 Infos, 123 Warnings, 0 Critical Warnings and 0 Errors encountered.
-synth_design completed successfully
-synth_design: Time (s): cpu = 00:14:46 ; elapsed = 00:15:00 . Memory (MB): peak = 1398.727 ; gain = 162.512
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Loan/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.runs/synth_1/au_top_0.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file au_top_0_utilization_synth.rpt -pb au_top_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Apr 11 16:02:45 2022...

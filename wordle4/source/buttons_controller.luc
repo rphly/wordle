@@ -11,13 +11,14 @@ module buttons_controller (
    }
   
   always {
-    out = 0;
-    is_pressed = 0;
     
     case (a.out) {
-      1:
-       out = 0;
-       is_pressed = 1;
+      b1:
+       out = a.out;
+       is_pressed = b1;
+      default:
+        out = 0;
+        is_pressed = 0;
     }
   }
 }

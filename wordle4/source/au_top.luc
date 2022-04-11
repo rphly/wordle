@@ -3,24 +3,18 @@ module au_top (
     input rst_n,            // reset button (active low)
     input usb_rx,           // USB->Serial input
     input btnin,
-    output outmatrix0,
+    //output outmatrix0,
     output usb_tx,
     output io_led[3][8]
   ) {
   
   sig rst;                  // reset signal
- 
-  button btn(.button_input(btnin), .clk(clk));
   
   .clk(clk) {
     reset_conditioner reset_cond;
     
-    fsm colour_switcher={
-      STATE_1,
-      STATE_2
-    };
-    
     buttons_controller btn_controller(.aIn(btnin), .rst(rst));
+    //matrix_controller matrx_controller(.rst(rst));
     game g(.rst(rst));
   }
   
@@ -34,13 +28,13 @@ module au_top (
       io_led[0][7:0] = b11111111;
     }
     
-    if (btn_controller.is_pressed == 1) {
+    if (btn_controller.is_pressed == b1) {
       io_led[1][7:0] = b11111111;
     }
     
     usb_tx = usb_rx;        // loop serial port
     g.btn_is_pressed = btn_controller.is_pressed;
     g.btn_input = btn_controller.out;
-    outmatrix0 = g.outmatrix0;
+    //outmatrix0 = matrx_controller.outmatrix0;
   }
 }
