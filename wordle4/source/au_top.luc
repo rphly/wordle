@@ -45,8 +45,7 @@ module au_top (
     
     usb_tx = usb_rx;        // loop serial port
     
-    
-    
+   
     matrix1.update = 1;
     green_letters.selector = 1;
     matrix1.color = 0;

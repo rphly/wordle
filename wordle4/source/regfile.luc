@@ -1,0 +1,207 @@
+module regfile (
+    input clk,  // clock
+    input rst,  // reset
+    input write_address[4], // write address
+    input we, // write enable
+    input data[16], // data in
+    
+    
+    input read_address_a[4], //address port a 
+    input read_address_b[4], //address port b
+    output out_a[16], //read port a
+    output out_b[16] //read port b
+
+  ) 
+
+{
+  .clk(clk){
+    .rst(rst){
+    
+      // total 16 * 16 bits = 256 bits
+    
+      // 28 bits
+      dff guess_1_letter_1[7];
+      dff guess_1_letter_2[7];
+      dff guess_1_letter_3[7];
+      dff guess_1_letter_4[7];
+      
+      // 28 bits
+      dff guess_2_letter_1[7];
+      dff guess_2_letter_2[7];
+      dff guess_2_letter_3[7];
+      dff guess_2_letter_4[7];
+      
+      // 28 bits
+      dff guess_3_letter_1[7];
+      dff guess_3_letter_2[7];
+      dff guess_3_letter_3[7];
+      dff guess_3_letter_4[7];
+      
+      // 28 bits
+      dff guess_4_letter_1[7];
+      dff guess_4_letter_2[7];
+      dff guess_4_letter_3[7];
+      dff guess_4_letter_4[7];
+      
+      // 20 bits
+      dff input_letter_1[5];
+      dff input_letter_2[5];
+      dff input_letter_3[5];
+      dff input_letter_4[5];
+      
+      // 20 bits
+      dff correct_letter_1[5];
+      dff correct_letter_2[5];
+      dff correct_letter_3[5];
+      dff correct_letter_4[5];
+      
+      // 9 bits
+      dff i[3];
+      dff j[3];
+      dff k[3];
+      
+      // 3 bits
+      dff num_correct[3];
+      
+      // 1 bit
+      dff zero[1];
+    }
+  }
+
+  always {
+  
+    //write port
+    if (we){
+      case(write_address){
+          00000 : guess_1_letter_1.d = data;
+          00001 : guess_1_letter_2.d = data;
+          00010 : guess_1_letter_3.d = data;
+          00011 : guess_1_letter_4.d = data;
+      
+          00100 : guess_2_letter_1.d = data;
+          00101 : guess_2_letter_2.d = data;
+          00110 : guess_2_letter_3.d = data;
+          00111 : guess_2_letter_4.d = data;
+      
+          01000 : guess_3_letter_1.d = data;
+          01001 : guess_3_letter_2.d = data;
+          01010 : guess_3_letter_3.d = data;
+          01011 : guess_3_letter_4.d = data;
+      
+          01100 : guess_4_letter_1.d = data;
+          01101 : guess_4_letter_2.d = data;
+          01110 : guess_4_letter_3.d = data;
+          01111 : guess_4_letter_4.d = data;
+      
+          10000 : input_letter_1.d = data;
+          10001 : input_letter_2.d = data;
+          10010 : input_letter_3.d = data;
+          10011 : input_letter_4.d = data;
+          
+          10100 : i.d = data;
+          10101 : j.d = data;
+          10110 : k.d = data;
+      
+          10111 : correct_letter_1.d = data;
+          11000 : correct_letter_2.d = data;
+          11001 : correct_letter_3.d = data;
+          11010 : correct_letter_4.d = data;
+      
+          11011 : num_correct.d = data;
+          // 11100 : ??
+          // 11101 : ??
+          // 11110 : ??
+          11111 : zero.d = 0;
+      }
+    }
+    
+      
+    //read port a
+    case(read_address_a){
+        00000 : out_a = guess_1_letter_1.q;
+        00001 : out_a = guess_1_letter_2.q;
+        00010 : out_a = guess_1_letter_3.q;
+        00011 : out_a = guess_1_letter_4.q;
+    
+        00100 : out_a = guess_2_letter_1.q;
+        00101 : out_a = guess_2_letter_2.q;
+        00110 : out_a = guess_2_letter_3.q;
+        00111 : out_a = guess_2_letter_4.q;
+    
+        01000 : out_a = guess_3_letter_1.q;
+        01001 : out_a = guess_3_letter_2.q;
+        01010 : out_a = guess_3_letter_3.q;
+        01011 : out_a = guess_3_letter_4.q;
+    
+        01100 : out_a = guess_4_letter_1.q;
+        01101 : out_a = guess_4_letter_2.q;
+        01110 : out_a = guess_4_letter_3.q;
+        01111 : out_a = guess_4_letter_4.q;
+    
+        10000 : out_a = input_letter_1.q;
+        10001 : out_a = input_letter_2.q;
+        10010 : out_a = input_letter_3.q;
+        10011 : out_a = input_letter_4.q;
+        
+        10100 : out_a = i.q;
+        10101 : out_a = j.q;
+        10110 : out_a = k.q;
+    
+        10111 : out_a = correct_letter_1.q;
+        11000 : out_a = correct_letter_2.q;
+        11001 : out_a = correct_letter_3.q;
+        11010 : out_a = correct_letter_4.q;
+    
+        11011 : out_a = num_correct.q;
+        // 11100 : ??
+        // 11101 : ??
+        // 11110 : ??
+        11111 : out_a = zero.q;
+        default : out_a = zero.q;
+    }
+    
+    //read port b
+    case(read_address_b){
+        00000 : out_b = guess_1_letter_1.q;
+        00001 : out_b = guess_1_letter_2.q;
+        00010 : out_b = guess_1_letter_3.q;
+        00011 : out_b = guess_1_letter_4.q;
+    
+        00100 : out_b = guess_2_letter_1.q;
+        00101 : out_b = guess_2_letter_2.q;
+        00110 : out_b = guess_2_letter_3.q;
+        00111 : out_b = guess_2_letter_4.q;
+    
+        01000 : out_b = guess_3_letter_1.q;
+        01001 : out_b = guess_3_letter_2.q;
+        01010 : out_b = guess_3_letter_3.q;
+        01011 : out_b = guess_3_letter_4.q;
+    
+        01100 : out_b = guess_4_letter_1.q;
+        01101 : out_b = guess_4_letter_2.q;
+        01110 : out_b = guess_4_letter_3.q;
+        01111 : out_b = guess_4_letter_4.q;
+    
+        10000 : out_b = input_letter_1.q;
+        10001 : out_b = input_letter_2.q;
+        10010 : out_b = input_letter_3.q;
+        10011 : out_b = input_letter_4.q;
+        
+        10100 : out_b = i.q;
+        10101 : out_b = j.q;
+        10110 : out_b = k.q;
+    
+        10111 : out_b = correct_letter_1.q;
+        11000 : out_b = correct_letter_2.q;
+        11001 : out_b = correct_letter_3.q;
+        11010 : out_b = correct_letter_4.q;
+    
+        11011 : out_b = num_correct.q;
+        // 11100 : ??
+        // 11101 : ??
+        // 11110 : ??
+        11111 : out_b = zero.q;
+        default : out_b = zero.q;
+    }
+  }
+}

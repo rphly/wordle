@@ -1,0 +1,20 @@
+module buttons_controller (
+    input clk,  // clock
+    input rst,  // reset
+    
+    input aIn,
+    
+    output out
+  ) {
+  .clk(clk) {
+    button a(.button_input(aIn));
+   }
+  
+  always {
+    if (a.is_pressed == 1) {
+      out = 0;
+    }
+    
+    out = 0;
+  }
+}

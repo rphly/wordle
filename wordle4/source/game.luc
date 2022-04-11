@@ -1,0 +1,63 @@
+module game (
+    input clk,  // clock
+    input rst,  // reset
+    output out
+  ) {
+  
+  .clk(clk) {
+    fsm game_fsm = {
+      RESET_TOP_DISPLAY,
+      RESET_BOTTOM_DISPLAY,
+      INIT_VARIABLES,
+      IDLE,
+      CLEAR_SET_INPUT_CTR_1,
+      CLEAR_RESET_BOTTOM_DISPLAY,
+      STORE_INPUT,
+      INCREMENT_INPUT_CTR,
+      PRINT_LETTER_TO_MATRIX
+    };
+  }
+  
+  always {
+    // standard settings
+    
+    if (rst) {
+      game_fsm.d = game_fsm.RESET_TOP_DISPLAY; 
+    } else {
+      case(game_fsm.q) {
+      
+        game_fsm.RESET_TOP_DISPLAY:
+          game_fsm.d = game_fsm.RESET_BOTTOM_DISPLAY;
+          
+        game_fsm.RESET_BOTTOM_DISPLAY:
+          game_fsm.d = game_fsm.INIT_VARIABLES;
+          
+        game_fsm.INIT_VARIABLES:
+          game_fsm.d = game_fsm.IDLE;
+          
+        game_fsm.IDLE:
+          // if check button press
+          // if clear button
+          game_fsm.d = game_fsm.CLEAR_SET_INPUT_CTR_1;
+          
+        game_fsm.CLEAR_SET_INPUT_CTR_1:
+          game_fsm.d = game_fsm.CLEAR_RESET_BOTTOM_DISPLAY;
+        
+        game_fsm.CLEAR_RESET_BOTTOM_DISPLAY:
+          game_fsm.d = game_fsm.IDLE;
+        
+        game_fsm.STORE_INPUT:
+          // store buttons_controller.out
+          game_fsm.d = game_fsm.INCREMENT_INPUT_CTR;
+         
+        game_fsm.INCREMENT_INPUT_CTR:
+          game_fsm.d = game_fsm.PRINT_LETTER_TO_MATRIX;
+        
+        game_fsm.PRINT_LETTER_TO_MATRIX:
+          game_fsm.d = game_fsm.IDLE;
+        
+        
+      }
+    }
+  }
+}

@@ -3,11 +3,14 @@
   <files>
     <component>pipeline.luc</component>
     <src>yellow_alphabets.luc</src>
-    <src top="true">au_top.luc</src>
-    <component>reset_conditioner.luc</component>
     <src>green_alphabets.luc</src>
     <src>button.luc</src>
     <src>led_strip_writer.luc</src>
+    <src>regfile.luc</src>
+    <src>buttons_controller.luc</src>
+    <src>game.luc</src>
+    <src top="true">au_top.luc</src>
+    <component>reset_conditioner.luc</component>
     <component>edge_detector.luc</component>
     <src>white_alphabets.luc</src>
     <component>button_conditioner.luc</component>
