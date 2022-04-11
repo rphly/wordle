@@ -14,7 +14,25 @@ module game (
       CLEAR_RESET_BOTTOM_DISPLAY,
       STORE_INPUT,
       INCREMENT_INPUT_CTR,
-      PRINT_LETTER_TO_MATRIX
+      PRINT_LETTER_TO_MATRIX,
+      SET_I_EQUALS_1,
+      SET_K_EQUALS_1, 
+      CMPEQ_INPUT_I_EQUALS_CORRECT_WORD_I,
+      CMPEQ_K_EQUALS_I,
+      CMPEQC_K_EQUALS_4,
+      SET_COLOUR_I_EQUALS_01,
+      SET_COLOUR_I_EQUALS_10,
+      INCREMENT_NUM_CORRECT_INPUTS,
+      CMPEQC_I_EQUALS_4,
+      INCREMENT_I_PLUS_PLUS,
+      INCREMENT_K_PLUS_PLUS,
+      SET_K_EQUALS_0,
+      CMPEQC_NUM_CORRECT_INPUTS_EQUALS_4,
+      SET_NUM_CORRECT_INPUTS_EQUALS_0,
+      SHOW_TOP_DISPLAY,
+      CMPEQC_GUESS_CTR_EQUALS_4,
+      INCREMENT_GUESS_CTR_PLUS_PLUS,
+      SET_INPUT_CTR_EQUALS_1
     };
   }
   
@@ -62,7 +80,136 @@ module game (
         game_fsm.PRINT_LETTER_TO_MATRIX:
           game_fsm.d = game_fsm.IDLE;
         
-        
+        game_fsm.SET_I_EQUALS_1:
+          // i = b1; - I think need to declare a signal i at the start of this file first
+          game_fsm.d = game_fsm.SET_K_EQUALS_1;
+          
+        game_fsm.SET_K_EQUALS_1:
+          // k = b1; - I think need to declare a signal k at the start of this file first
+          game_fsm.d = game_fsm.CMPEQ_INPUT_I_EQUALS_CORRECT_WORD_I;
+          
+        game_fsm.CMPEQ_INPUT_I_EQUALS_CORRECT_WORD_I:
+          // alu.a = input_i;
+          // alu.b = correct_word_i;
+          // alu.alufn = b110011; // CMPEQ
+          // if (alu.alu == b1){ // if input_i == correct_word_i
+             game_fsm.d = game_fsm.CMPEQ_K_EQUALS_I; // branch to CMPEQ k == i? state if input_i == correct_word_i
+          // }
+          
+          // else{ // if input_i != correct_word_i
+             game_fsm.d = game_fsm.CMPEQC_K_EQUALS_4; // branch to CMPQEC k == 4? state if input_i != correct_word_i
+          // }
+          
+        game_fsm.CMPEQ_K_EQUALS_I:
+          // alu.a = k;
+          // alu.b = i;
+          // alu.alufn = b110011; // CMPEQ
+          // if (alu.alu == 1){ // if k == 1
+             game_fsm.d = game_fsm.SET_COLOUR_I_EQUALS_01; // branch to Set colour_i = 01 state if i == k
+          // }
+          
+          // else{ // if i != k
+             game_fsm.d = game_fsm.SET_COLOUR_I_EQUALS_10; // branch to Set colour_i = 10 state if i != k
+          // }
+          
+        game_fsm.SET_COLOUR_I_EQUALS_01:
+          // colour_i = b01; - I think need to declare a signal colour_i at the start of this file first
+          game_fsm.d = game_fsm.INCREMENT_NUM_CORRECT_INPUTS;
+          
+        game_fsm.SET_COLOUR_I_EQUALS_10:
+          // colour_i = b10; - I think need to declare a signal colour_i at the start of this file first
+          game_fsm.d = game_fsm.CMPEQC_I_EQUALS_4;
+          
+        game_fsm.INCREMENT_NUM_CORRECT_INPUTS:
+          // alu.a = numCorrectInputs;
+          // alu.b = b1; // constant 1
+          // alu.alufn = b000000; // ADD
+          // numCorrectInputs = alu.alu; // increment the numCorrectInputs
+          game_fsm.d = game_fsm.CMPEQC_NUM_CORRECT_INPUTS_EQUALS_4;
+          
+        game_fsm.CMPEQC_I_EQUALS_4:
+          // alu.a = i;
+          // alu.b = b100; // constant 4
+          // alu.alufn = b110011; // CMPEQ
+          // if (alu.alu == 1){ // if i == 4
+            game_fsm.d = game_fsm.CMPEQC_NUM_CORRECT_INPUTS_EQUALS_4; // branch to CMPEQC numCorrectInputs == 4? state if i == 4
+          // }
+          
+          // else{ // if i != 4
+            game_fsm.d = game_fsm.SET_K_EQUALS_0; // branch to Set k = 0 state if i != 4
+          // }
+          
+        game_fsm.CMPEQC_K_EQUALS_4:
+          // alu.a = k;
+          // alu.b = b100; // constant 4
+          // alu.alufn = b110011; // CMPEQ
+          // if (alu.alu == 1){ // if k == 4
+            game_fsm.d = game_fsm.CMPEQC_I_EQUALS_4; // branch to CMPEQC i == 4? state if k == 4
+          // }
+          
+          // else{ // if k != 4
+            game_fsm.d = game_fsm.INCREMENT_K_PLUS_PLUS;
+          
+        game_fsm.INCREMENT_K_PLUS_PLUS:
+          // alu.a = k;
+          // alu.b = b1; // constant 1
+          // alu.alufn = b000000; // ADD
+          // k = alu.alu; // increment the k
+          game_fsm.d = game_fsm.CMPEQ_INPUT_I_EQUALS_CORRECT_WORD_I;
+          
+        game_fsm.SET_K_EQUALS_0:
+          // k = b0;
+          game_fsm.d = game_fsm.INCREMENT_I_PLUS_PLUS;
+          
+        game_fsm.INCREMENT_I_PLUS_PLUS:
+          // alu.a = i;
+          // alu.b = b1; // constant 1
+          // alu.alufn = b000000; // ADD
+          // i = alu.alu; // increment the i
+          game_fsm.d = game_fsm.CMPEQ_INPUT_I_EQUALS_CORRECT_WORD_I; 
+          
+        game_fsm.CMPEQC_NUM_CORRECT_INPUTS_EQUALS_4:
+          // alu.a = numCorrectInputs;
+          // alu.b = b100; // constant 4
+          // alu.alufn = b110011; // CMPEQ
+          // if (alu.alu == 1){ // if numCorrectInputs == 4
+            game_fsm.d = game_fsm.WIN; // branch to WIN state if numCorrectInputs == 4
+          // }
+          
+          // else{ // if numCorrectInputs != 4
+            game_fsm.d = game_fsm.SET_NUM_CORRECT_INPUTS_EQUALS_0;// branch to SET numCorrectInputs = 0 state if numCorrectInputs != 4
+          // }
+          
+        game_fsm.SET_NUM_CORRECT_INPUTS_EQUALS_0:
+          // numCorrectInputs = 0;
+          game_fsm.d = game_fsm.SHOW_TOP_DISPLAY;
+          
+        game_fsm.CMPEQC_GUESS_CTR_EQUALS_4:
+          // alu.a = guessCtr;
+          // alu.b = b100; // constant 4
+          // alu.alufn = b110011; // CMPEQ
+          // if (alu.alu == 1){ // if guessCtr == 4
+            game_fsm.d = game_fsm.LOSE; // branch to LOSE state if guessCtr == 4
+          // }
+          
+          // else{ // if guessCtr != 4
+            game_fsm.d = game_fsm.INCREMENT_GUESS_CTR_PLUS_PLUS; // branch to Increment guess ctr ++ state if guessCtr != 4
+          // }
+          
+        game_fsm.INCREMENT_GUESS_CTR_PLUS_PLUS: 
+          // alu.a = guessCtr;
+          // alu.b = b1; // constant 1
+          // alu.alufn = b000000; // ADD
+          // guessCtr = alu.alu;
+          game_fsm.d = game_fsm.SET_INPUT_CTR_EQUALS_1;
+          
+        game_fsm.SET_INPUT_CTR_EQUALS_1:
+          // inputCtr = b1;
+          game_fsm.d = game_fsm.IDLE;
+          
+        game_fsm.SHOW_TOP_DISPLAY:
+          // logic
+          game_fsm.d = game_fsm.CMPEQC_GUESS_CTR_EQUALS_4;
       }
     }
   }
