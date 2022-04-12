@@ -7,15 +7,37 @@
 module beta_2 (
     input clk,
     input rst,
-    input write_one_button_in,
-    input write_zero_button_in,
-    input read_button_in,
-    output reg [4:0] which_matrix,
-    output reg [4:0] which_letter,
-    output reg [1:0] current_state
+    input has_keyboard_input,
+    input [4:0] keyboard_input,
+    output reg out_bottom_matrix1,
+    output reg out_bottom_matrix2,
+    output reg out_bottom_matrix3,
+    output reg out_bottom_matrix4,
+    output reg [15:0] debugger
   );
   
   
+  
+  wire [16-1:0] M_game_alu_alu;
+  wire [1-1:0] M_game_alu_z;
+  wire [1-1:0] M_game_alu_v;
+  wire [1-1:0] M_game_alu_n;
+  reg [6-1:0] M_game_alu_alufn;
+  reg [16-1:0] M_game_alu_a;
+  reg [16-1:0] M_game_alu_b;
+  alu_4 game_alu (
+    .alufn(M_game_alu_alufn),
+    .a(M_game_alu_a),
+    .b(M_game_alu_b),
+    .alu(M_game_alu_alu),
+    .z(M_game_alu_z),
+    .v(M_game_alu_v),
+    .n(M_game_alu_n)
+  );
+  
+  reg [15:0] inputAlu_a;
+  
+  reg [15:0] inputAlu_b;
   
   wire [5-1:0] M_control_unit_which_matrix;
   wire [5-1:0] M_control_unit_which_letter;
@@ -25,19 +47,28 @@ module beta_2 (
   wire [16-1:0] M_control_unit_regfile_rb;
   wire [16-1:0] M_control_unit_regfile_data;
   wire [2-1:0] M_control_unit_current_state;
+  wire [6-1:0] M_control_unit_alufn;
+  wire [3-1:0] M_control_unit_asel;
+  wire [3-1:0] M_control_unit_bsel;
+  wire [3-1:0] M_control_unit_matrix_controller_update;
+  wire [5-1:0] M_control_unit_bottom_matrix1_letter_address;
+  wire [5-1:0] M_control_unit_bottom_matrix2_letter_address;
+  wire [5-1:0] M_control_unit_bottom_matrix3_letter_address;
+  wire [5-1:0] M_control_unit_bottom_matrix4_letter_address;
+  wire [16-1:0] M_control_unit_debugger;
   reg [16-1:0] M_control_unit_regfile_out_a;
   reg [16-1:0] M_control_unit_regfile_out_b;
-  reg [1-1:0] M_control_unit_write_one_in;
-  reg [1-1:0] M_control_unit_write_zero_in;
-  reg [1-1:0] M_control_unit_read_button_in;
-  game_7 control_unit (
+  reg [5-1:0] M_control_unit_keyboard_input;
+  reg [1-1:0] M_control_unit_has_keyboard_input;
+  reg [16-1:0] M_control_unit_alu_out;
+  game_5 control_unit (
     .clk(clk),
     .rst(rst),
     .regfile_out_a(M_control_unit_regfile_out_a),
     .regfile_out_b(M_control_unit_regfile_out_b),
-    .write_one_in(M_control_unit_write_one_in),
-    .write_zero_in(M_control_unit_write_zero_in),
-    .read_button_in(M_control_unit_read_button_in),
+    .keyboard_input(M_control_unit_keyboard_input),
+    .has_keyboard_input(M_control_unit_has_keyboard_input),
+    .alu_out(M_control_unit_alu_out),
     .which_matrix(M_control_unit_which_matrix),
     .which_letter(M_control_unit_which_letter),
     .regfile_we(M_control_unit_regfile_we),
@@ -45,7 +76,16 @@ module beta_2 (
     .regfile_ra(M_control_unit_regfile_ra),
     .regfile_rb(M_control_unit_regfile_rb),
     .regfile_data(M_control_unit_regfile_data),
-    .current_state(M_control_unit_current_state)
+    .current_state(M_control_unit_current_state),
+    .alufn(M_control_unit_alufn),
+    .asel(M_control_unit_asel),
+    .bsel(M_control_unit_bsel),
+    .matrix_controller_update(M_control_unit_matrix_controller_update),
+    .bottom_matrix1_letter_address(M_control_unit_bottom_matrix1_letter_address),
+    .bottom_matrix2_letter_address(M_control_unit_bottom_matrix2_letter_address),
+    .bottom_matrix3_letter_address(M_control_unit_bottom_matrix3_letter_address),
+    .bottom_matrix4_letter_address(M_control_unit_bottom_matrix4_letter_address),
+    .debugger(M_control_unit_debugger)
   );
   wire [16-1:0] M_r_out_a;
   wire [16-1:0] M_r_out_b;
@@ -54,7 +94,7 @@ module beta_2 (
   reg [16-1:0] M_r_data;
   reg [5-1:0] M_r_read_address_a;
   reg [5-1:0] M_r_read_address_b;
-  regfile_8 r (
+  regfile_6 r (
     .clk(clk),
     .rst(rst),
     .write_address(M_r_write_address),
@@ -65,20 +105,100 @@ module beta_2 (
     .out_a(M_r_out_a),
     .out_b(M_r_out_b)
   );
+  wire [1-1:0] M_bottom_matrix_control_outmatrix1;
+  wire [1-1:0] M_bottom_matrix_control_outmatrix2;
+  wire [1-1:0] M_bottom_matrix_control_outmatrix3;
+  wire [1-1:0] M_bottom_matrix_control_outmatrix4;
+  reg [3-1:0] M_bottom_matrix_control_update;
+  reg [5-1:0] M_bottom_matrix_control_matrix1_letter_address;
+  reg [5-1:0] M_bottom_matrix_control_matrix2_letter_address;
+  reg [5-1:0] M_bottom_matrix_control_matrix3_letter_address;
+  reg [5-1:0] M_bottom_matrix_control_matrix4_letter_address;
+  matrix_controller_7 bottom_matrix_control (
+    .clk(clk),
+    .rst(rst),
+    .update(M_bottom_matrix_control_update),
+    .matrix1_letter_address(M_bottom_matrix_control_matrix1_letter_address),
+    .matrix2_letter_address(M_bottom_matrix_control_matrix2_letter_address),
+    .matrix3_letter_address(M_bottom_matrix_control_matrix3_letter_address),
+    .matrix4_letter_address(M_bottom_matrix_control_matrix4_letter_address),
+    .outmatrix1(M_bottom_matrix_control_outmatrix1),
+    .outmatrix2(M_bottom_matrix_control_outmatrix2),
+    .outmatrix3(M_bottom_matrix_control_outmatrix3),
+    .outmatrix4(M_bottom_matrix_control_outmatrix4)
+  );
   
   always @* begin
+    
+    case (M_control_unit_asel)
+      3'h0: begin
+        inputAlu_a = M_r_out_a;
+      end
+      3'h1: begin
+        inputAlu_a = 2'h0;
+      end
+      3'h2: begin
+        inputAlu_a = 2'h1;
+      end
+      3'h3: begin
+        inputAlu_a = 2'h2;
+      end
+      3'h4: begin
+        inputAlu_a = 5'h10;
+      end
+      default: begin
+        inputAlu_a = 1'h0;
+      end
+    endcase
+    
+    case (M_control_unit_bsel)
+      3'h0: begin
+        inputAlu_b = M_r_out_b;
+      end
+      3'h1: begin
+        inputAlu_b = 3'h0;
+      end
+      3'h2: begin
+        inputAlu_b = 3'h1;
+      end
+      3'h3: begin
+        inputAlu_b = 3'h2;
+      end
+      3'h4: begin
+        inputAlu_b = 3'h3;
+      end
+      3'h5: begin
+        inputAlu_b = 3'h4;
+      end
+      3'h6: begin
+        inputAlu_b = 5'h10;
+      end
+      default: begin
+        inputAlu_b = 1'h0;
+      end
+    endcase
+    M_game_alu_a = inputAlu_a;
+    M_game_alu_b = inputAlu_b;
+    M_game_alu_alufn = M_control_unit_alufn;
     M_r_we = M_control_unit_regfile_we;
     M_r_write_address = M_control_unit_regfile_write_address;
     M_r_read_address_a = M_control_unit_regfile_ra;
     M_r_read_address_b = M_control_unit_regfile_rb;
     M_r_data = M_control_unit_regfile_data;
-    M_control_unit_read_button_in = read_button_in;
-    M_control_unit_write_one_in = write_one_button_in;
-    M_control_unit_write_zero_in = write_zero_button_in;
+    M_control_unit_keyboard_input = keyboard_input;
+    M_control_unit_has_keyboard_input = has_keyboard_input;
     M_control_unit_regfile_out_a = M_r_out_a;
     M_control_unit_regfile_out_b = M_r_out_b;
-    current_state = M_control_unit_current_state;
-    which_matrix = M_control_unit_which_matrix;
-    which_letter = M_control_unit_which_letter;
+    M_control_unit_alu_out = M_game_alu_alu;
+    M_bottom_matrix_control_update = M_control_unit_matrix_controller_update;
+    M_bottom_matrix_control_matrix1_letter_address = M_control_unit_bottom_matrix1_letter_address;
+    M_bottom_matrix_control_matrix2_letter_address = M_control_unit_bottom_matrix2_letter_address;
+    M_bottom_matrix_control_matrix3_letter_address = M_control_unit_bottom_matrix3_letter_address;
+    M_bottom_matrix_control_matrix4_letter_address = M_control_unit_bottom_matrix4_letter_address;
+    out_bottom_matrix1 = M_bottom_matrix_control_outmatrix1;
+    out_bottom_matrix2 = M_bottom_matrix_control_outmatrix2;
+    out_bottom_matrix3 = M_bottom_matrix_control_outmatrix3;
+    out_bottom_matrix4 = M_bottom_matrix_control_outmatrix4;
+    debugger = M_control_unit_debugger;
   end
 endmodule

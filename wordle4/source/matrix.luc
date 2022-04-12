@@ -1,0 +1,26 @@
+module matrix (
+    input clk,  // clock
+    input rst,  // reset // how much to increment
+    input letter_address[5],
+    // base_offset + increment = actual regfile address to read frome
+    output data_out
+  ) {
+  
+  .clk(clk){
+    .rst(rst){
+      led_strip_writer matrix_writer(#PIXEL_COUNT(25));
+      
+    }
+  }
+  
+  white_alphabets white_letters;
+
+  always {
+    // get letter from alphabets
+    white_letters.selector = letter_address;
+    
+    // display on matrix with white_letters.out
+    matrix_writer.update = 1;
+    matrix_writer.color = white_letters.out[matrix_writer.pixel];
+    data_out = matrix_writer.led;  }
+}

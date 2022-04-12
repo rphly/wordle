@@ -8,10 +8,10 @@ module au_top_0 (
     input clk,
     input rst_n,
     input usb_rx,
-    input write_one_button_in,
-    input write_zero_button_in,
-    input read_button_in,
-    output reg outmatrix0,
+    input a_in,
+    input b_in,
+    input c_in,
+    output reg outmatrix1,
     output reg [23:0] io_led,
     output reg usb_tx
   );
@@ -27,161 +27,62 @@ module au_top_0 (
     .in(M_reset_cond_in),
     .out(M_reset_cond_out)
   );
-  wire [5-1:0] M_betaCPU_which_matrix;
-  wire [5-1:0] M_betaCPU_which_letter;
-  wire [2-1:0] M_betaCPU_current_state;
-  reg [1-1:0] M_betaCPU_write_one_button_in;
-  reg [1-1:0] M_betaCPU_write_zero_button_in;
-  reg [1-1:0] M_betaCPU_read_button_in;
+  wire [1-1:0] M_betaCPU_out_bottom_matrix1;
+  wire [1-1:0] M_betaCPU_out_bottom_matrix2;
+  wire [1-1:0] M_betaCPU_out_bottom_matrix3;
+  wire [1-1:0] M_betaCPU_out_bottom_matrix4;
+  wire [16-1:0] M_betaCPU_debugger;
+  reg [1-1:0] M_betaCPU_has_keyboard_input;
+  reg [5-1:0] M_betaCPU_keyboard_input;
   beta_2 betaCPU (
     .clk(clk),
     .rst(rst),
-    .write_one_button_in(M_betaCPU_write_one_button_in),
-    .write_zero_button_in(M_betaCPU_write_zero_button_in),
-    .read_button_in(M_betaCPU_read_button_in),
-    .which_matrix(M_betaCPU_which_matrix),
-    .which_letter(M_betaCPU_which_letter),
-    .current_state(M_betaCPU_current_state)
+    .has_keyboard_input(M_betaCPU_has_keyboard_input),
+    .keyboard_input(M_betaCPU_keyboard_input),
+    .out_bottom_matrix1(M_betaCPU_out_bottom_matrix1),
+    .out_bottom_matrix2(M_betaCPU_out_bottom_matrix2),
+    .out_bottom_matrix3(M_betaCPU_out_bottom_matrix3),
+    .out_bottom_matrix4(M_betaCPU_out_bottom_matrix4),
+    .debugger(M_betaCPU_debugger)
   );
-  wire [16-1:0] M_regfile_tester_out;
-  regfile_tester_3 regfile_tester (
+  wire [1-1:0] M_keyboard_controller_is_pressed;
+  wire [16-1:0] M_keyboard_controller_out;
+  buttons_controller_3 keyboard_controller (
     .clk(clk),
     .rst(rst),
-    .out(M_regfile_tester_out)
+    .a(a_in),
+    .is_pressed(M_keyboard_controller_is_pressed),
+    .out(M_keyboard_controller_out)
   );
-  wire [1-1:0] M_read_button_out;
-  button_4 read_button (
-    .clk(clk),
-    .button_input(read_button_in),
-    .out(M_read_button_out)
-  );
-  wire [1-1:0] M_write_zero_button_out;
-  button_4 write_zero_button (
-    .clk(clk),
-    .button_input(write_zero_button_in),
-    .out(M_write_zero_button_out)
-  );
-  wire [1-1:0] M_write_one_button_out;
-  button_4 write_one_button (
-    .clk(clk),
-    .button_input(write_one_button_in),
-    .out(M_write_one_button_out)
-  );
-  reg [0:0] M_read_button_dff_d, M_read_button_dff_q = 1'h0;
-  reg [0:0] M_write_one_button_dff_d, M_write_one_button_dff_q = 1'h0;
-  reg [0:0] M_write_zero_button_dff_d, M_write_zero_button_dff_q = 1'h0;
-  reg [1:0] M_state_tracker_dff_d, M_state_tracker_dff_q = 1'h0;
-  reg [4:0] M_which_letter_tracker_d, M_which_letter_tracker_q = 1'h0;
-  reg [4:0] M_which_matrix_tracker_d, M_which_matrix_tracker_q = 1'h0;
-  
-  wire [5-1:0] M_led_strip_pixel;
-  wire [1-1:0] M_led_strip_led;
-  reg [1-1:0] M_led_strip_update;
-  reg [24-1:0] M_led_strip_color;
-  led_strip_writer_5 led_strip (
-    .clk(clk),
-    .rst(rst),
-    .update(M_led_strip_update),
-    .color(M_led_strip_color),
-    .pixel(M_led_strip_pixel),
-    .led(M_led_strip_led)
-  );
-  
-  wire [600-1:0] M_letters_out;
-  reg [5-1:0] M_letters_selector;
-  white_alphabets_6 letters (
-    .selector(M_letters_selector),
-    .out(M_letters_out)
-  );
+  reg [4:0] M_button_debugger_d, M_button_debugger_q = 1'h0;
   
   always @* begin
-    M_write_one_button_dff_d = M_write_one_button_dff_q;
-    M_read_button_dff_d = M_read_button_dff_q;
-    M_state_tracker_dff_d = M_state_tracker_dff_q;
-    M_which_matrix_tracker_d = M_which_matrix_tracker_q;
-    M_which_letter_tracker_d = M_which_letter_tracker_q;
-    M_write_zero_button_dff_d = M_write_zero_button_dff_q;
+    M_button_debugger_d = M_button_debugger_q;
     
     M_reset_cond_in = ~rst_n;
     rst = M_reset_cond_out;
     io_led = 24'h000000;
-    M_betaCPU_write_zero_button_in = M_write_zero_button_out;
-    M_betaCPU_write_one_button_in = M_write_one_button_out;
-    M_betaCPU_read_button_in = M_read_button_out;
-    if (M_read_button_out) begin
-      if (M_read_button_dff_q == 1'h1) begin
-        M_read_button_dff_d = 1'h0;
-      end else begin
-        M_read_button_dff_d = 1'h1;
-      end
+    M_betaCPU_keyboard_input = M_keyboard_controller_out;
+    M_betaCPU_has_keyboard_input = M_keyboard_controller_is_pressed;
+    if (M_keyboard_controller_is_pressed) begin
+      M_button_debugger_d = M_button_debugger_q == 1'h1 ? 1'h0 : 1'h1;
     end
-    if (M_read_button_dff_q == 1'h1) begin
-      io_led[0+0+0-:1] = 1'h1;
-    end
-    if (M_write_one_button_out) begin
-      if (M_write_one_button_dff_q == 1'h1) begin
-        M_write_one_button_dff_d = 1'h0;
-      end else begin
-        M_write_one_button_dff_d = 1'h1;
-      end
-    end
-    if (M_write_one_button_dff_q == 1'h1) begin
-      io_led[0+2+0-:1] = 1'h1;
-    end
-    if (M_write_zero_button_out) begin
-      if (M_write_zero_button_dff_q == 1'h1) begin
-        M_write_zero_button_dff_d = 1'h0;
-      end else begin
-        M_write_zero_button_dff_d = 1'h1;
-      end
-    end
-    if (M_write_zero_button_dff_q == 1'h1) begin
-      io_led[0+4+0-:1] = 1'h1;
-    end
-    if (M_betaCPU_current_state != 2'h0) begin
-      M_state_tracker_dff_d = M_betaCPU_current_state;
-    end
-    if (M_state_tracker_dff_q == 2'h1) begin
+    if (M_button_debugger_q == 1'h1) begin
       io_led[8+0+0-:1] = 1'h1;
     end
-    if (M_state_tracker_dff_q == 2'h2) begin
-      io_led[8+1+0-:1] = 1'h1;
+    if (M_betaCPU_debugger == 16'h0000) begin
+      io_led[0+0+0-:1] = 1'h1;
     end
-    if (M_state_tracker_dff_q == 2'h3) begin
-      io_led[8+2+0-:1] = 1'h1;
+    if (M_betaCPU_debugger == 16'h0001) begin
+      io_led[0+7+0-:1] = 1'h1;
     end
-    if (M_betaCPU_which_letter != 5'h00) begin
-      M_which_letter_tracker_d = M_betaCPU_which_letter;
-    end
-    if (M_which_letter_tracker_q == 5'h01) begin
-      io_led[16+0+0-:1] = 1'h1;
-    end
-    if (M_which_letter_tracker_q == 5'h00) begin
-      io_led[16+1+0-:1] = 1'h1;
-    end
-    if (M_betaCPU_which_matrix != 5'h00) begin
-      M_which_matrix_tracker_d = M_betaCPU_which_matrix;
-    end
-    if (M_which_matrix_tracker_q == 5'h00) begin
-      io_led[16+6+0-:1] = 1'h1;
-    end
-    if (M_which_matrix_tracker_q == 5'h01) begin
-      io_led[16+7+0-:1] = 1'h1;
-    end
-    M_letters_selector = M_betaCPU_which_letter;
-    M_led_strip_update = 1'h1;
-    M_led_strip_color = M_letters_out[(M_led_strip_pixel)*24+23-:24];
-    outmatrix0 = M_led_strip_led;
+    io_led[16+0+7-:8] = M_betaCPU_debugger;
+    outmatrix1 = M_betaCPU_out_bottom_matrix1;
     usb_tx = usb_rx;
   end
   
   always @(posedge clk) begin
-    M_read_button_dff_q <= M_read_button_dff_d;
-    M_write_one_button_dff_q <= M_write_one_button_dff_d;
-    M_write_zero_button_dff_q <= M_write_zero_button_dff_d;
-    M_state_tracker_dff_q <= M_state_tracker_dff_d;
-    M_which_letter_tracker_q <= M_which_letter_tracker_d;
-    M_which_matrix_tracker_q <= M_which_matrix_tracker_d;
+    M_button_debugger_q <= M_button_debugger_d;
   end
   
 endmodule

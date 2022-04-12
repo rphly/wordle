@@ -6,10 +6,12 @@ module beta (
     input has_keyboard_input,
     input keyboard_input[5],
     
-    // set outputs
-    output which_matrix[5],
-    output which_letter[5],
-    output current_state[2]
+    
+    output out_bottom_matrix1,
+    output out_bottom_matrix2,
+    output out_bottom_matrix3,
+    output out_bottom_matrix4,
+    output debugger[16]
   ) {
   
   alu game_alu;
@@ -20,6 +22,7 @@ module beta (
     .rst(rst){
       game control_unit;
       regfile r;
+      matrix_controller bottom_matrix_control;
     }
   }
 
@@ -31,6 +34,7 @@ module beta (
       b001  : inputAlu_a = 2d0; 
       b010  : inputAlu_a = 2d1;
       b011  : inputAlu_a = 2d2;
+      b100  : inputAlu_a = 5b10000;
       default : inputAlu_a = 0;
     }
     
@@ -42,6 +46,7 @@ module beta (
       b011  : inputAlu_b = 3d2;
       b100  : inputAlu_b = 3d3;
       b101  : inputAlu_b = 3d4;
+      b110  : inputAlu_b = 5b10000;
       default : inputAlu_b = 0;
     }
     
@@ -64,10 +69,19 @@ module beta (
     control_unit.regfile_out_b = r.out_b;
     control_unit.alu_out = game_alu.alu;
     
-    current_state = control_unit.current_state;
     
-    // matrix controller
-    which_matrix = control_unit.which_matrix;
-    which_letter = control_unit.which_letter;
+    // BOTTOM MATRIX CONTROL
+    bottom_matrix_control.update = control_unit.matrix_controller_update;
+    bottom_matrix_control.matrix1_letter_address = control_unit.bottom_matrix1_letter_address;
+    bottom_matrix_control.matrix2_letter_address = control_unit.bottom_matrix2_letter_address;
+    bottom_matrix_control.matrix3_letter_address = control_unit.bottom_matrix3_letter_address;
+    bottom_matrix_control.matrix4_letter_address = control_unit.bottom_matrix4_letter_address;
+    
+    out_bottom_matrix1 = bottom_matrix_control.outmatrix1;
+    out_bottom_matrix2 = bottom_matrix_control.outmatrix2;
+    out_bottom_matrix3 = bottom_matrix_control.outmatrix3;
+    out_bottom_matrix4 = bottom_matrix_control.outmatrix4;
+    
+    debugger = control_unit.debugger;
   }
 }

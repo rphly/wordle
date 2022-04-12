@@ -7,11 +7,11 @@ module buttons_controller (
     output out[16]
   ) {
   .clk(clk) {
-    button a_(.button_input(a));
+    button a_button(.button_input(a));
    }
   
   always {
-    if(a_.out){
+    if(a_button.out){
       out = 16d1;
       is_pressed = 1;
     }else{

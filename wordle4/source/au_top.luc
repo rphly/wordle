@@ -8,7 +8,7 @@ module au_top (
     input b_in,
     input c_in,
     
-    output outmatrix0,
+    output outmatrix1,
     output io_led[3][8],
     output usb_tx
   ) {
@@ -23,10 +23,9 @@ module au_top (
         .a(a_in)
       );
     }
+    
+    dff button_debugger[5];
   }
-  
-  led_strip_writer led_strip(#PIXEL_COUNT(25), .clk(clk), .rst(rst));
-  white_alphabets letters;
   
   always {
     reset_cond.in = ~rst_n;
@@ -36,10 +35,24 @@ module au_top (
     betaCPU.keyboard_input = keyboard_controller.out;
     betaCPU.has_keyboard_input = keyboard_controller.is_pressed;
     
-    letters.selector = betaCPU.which_letter;
-    led_strip.update=1;
-    led_strip.color=letters.out[led_strip.pixel]; 
-    outmatrix0=led_strip.led;
+    if(keyboard_controller.is_pressed){
+      button_debugger.d = button_debugger.q == 1 ? 0 : 1;
+    }
+    if(button_debugger.q == 1){
+      io_led[1][0] = b1;
+    }
+    
+    if(betaCPU.debugger == 16b0){
+    io_led[0][0] = b1;
+    }
+    if(betaCPU.debugger == 16b1){
+    io_led[0][7] = b1;
+    }
+    
+    io_led[2][7:0] = betaCPU.debugger;
+    
+    
+    outmatrix1= betaCPU.out_bottom_matrix1;
     
     usb_tx = usb_rx;        // loop serial port
   }

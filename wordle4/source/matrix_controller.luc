@@ -1,37 +1,57 @@
 module matrix_controller (
     input clk,  // clock
     input rst,  // reset
-    output outmatrix0,
-    output out
+    input update[3],
+    
+    input matrix1_letter_address[5],
+    input matrix2_letter_address[5],
+    input matrix3_letter_address[5],
+    input matrix4_letter_address[5],
+    
+    output outmatrix1,
+    output outmatrix2,
+    output outmatrix3,
+    output outmatrix4
+    
+    
   ) {
   
-  led_strip_writer matrix0(#PIXEL_COUNT(25), .clk(clk), .rst(rst));
-  regfile rf(.rst(rst), .clk(clk));
-  white_alphabets white_letters;
+    
   
-  const INPUT_CTR = b11100;
-  const INPUT_LETTER_1 = b10000;
+  .clk(clk){
+
+    dff matrix1_letter_address_dff[5];
+    dff matrix2_letter_address_dff[5];
+    dff matrix3_letter_address_dff[5];
+    dff matrix4_letter_address_dff[5];
+    
+     .rst(rst){
+        matrix matrix1;
+        matrix matrix2;
+        matrix matrix3;
+        matrix matrix4;
+      }
+    
+  }
   
   always {
-    rf.we = 0;
-    rf.data = 16b0;
-    rf.write_address = 5b0;
+  
+    outmatrix1 = matrix1.data_out;
+    outmatrix2 = matrix2.data_out;
+    outmatrix3 = matrix3.data_out;
+    outmatrix4 = matrix4.data_out;
+       
+    matrix1.letter_address = matrix1_letter_address_dff.q;
+    matrix2.letter_address = matrix2_letter_address_dff.q;
+    matrix3.letter_address = matrix3_letter_address_dff.q;
+    matrix4.letter_address = matrix4_letter_address_dff.q;
     
-    // get current I
-    rf.read_address_a = INPUT_CTR;
-  
-    // get letter from alphabets
-    rf.read_address_b = INPUT_LETTER_1; //+ rf.out_a;
     
-    white_letters.selector = rf.out_b;
-    // display on matrix with white_letters.out
-  
-    //case (rf.out_a) {
-     //16b0:
-    matrix0.update = 1;
-    matrix0.color = white_letters.out[matrix0.pixel];
-    outmatrix0 = matrix0.led;
-    out = rf.out_b;
-  
-  
+    case(update){
+      3d1:matrix1_letter_address_dff.d = matrix1_letter_address;
+      3d2: matrix2_letter_address_dff.d = matrix2_letter_address;
+      3d3: matrix3_letter_address_dff.d = matrix3_letter_address;
+      3d4:matrix4_letter_address_dff.d = matrix4_letter_address;
+    }
+
 }
