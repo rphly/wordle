@@ -12,6 +12,13 @@ module beta (
     output out_bottom_matrix3,
     output out_bottom_matrix4,
     output debugger[16]
+    input panel_input[5],
+    input has_panel_input,
+    
+    // set outputs
+    output which_matrix[5],
+    output which_letter[5],
+    output current_state[2]
   ) {
   
   alu game_alu;
@@ -65,10 +72,14 @@ module beta (
     // setup control_unit
     control_unit.keyboard_input = keyboard_input;
     control_unit.has_keyboard_input = has_keyboard_input;
+    control_unit.panel_input = panel_input;
+    control_unit.has_panel_input = has_panel_input;
     control_unit.regfile_out_a = r.out_a;
     control_unit.regfile_out_b = r.out_b;
     control_unit.alu_out = game_alu.alu;
     
+    
+    current_state = control_unit.current_state;
     
     // BOTTOM MATRIX CONTROL
     bottom_matrix_control.update = control_unit.matrix_controller_update;

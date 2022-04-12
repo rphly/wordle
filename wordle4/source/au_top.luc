@@ -13,6 +13,9 @@ module au_top (
     output outmatrix2,
     output outmatrix3,
     output outmatrix4,
+    input clear_in,
+    
+
     output io_led[3][8],
     output usb_tx
   ) {
@@ -29,6 +32,10 @@ module au_top (
         .a(a_in),
         .r(r_in)
       );
+      
+      panel_controller button_panel_controller(
+        .clear(clear_in)
+      );
     }
     
     dff button_debugger[5];
@@ -41,6 +48,8 @@ module au_top (
     
     betaCPU.keyboard_input = keyboard_controller.out;
     betaCPU.has_keyboard_input = keyboard_controller.is_pressed;
+    betaCPU.panel_input = button_panel_controller.out;
+    betaCPU.has_panel_input = button_panel_controller.is_pressed;
     
     
     io_led[0][7:0] = betaCPU.debugger;

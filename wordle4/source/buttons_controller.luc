@@ -6,6 +6,7 @@ module buttons_controller (
     input e,
     input a,
     input r,
+    
     output is_pressed,
     output out[16]
   ) {
@@ -24,6 +25,9 @@ module buttons_controller (
     if (b_button.out){
       out = 16d1;
       is_pressed = 1;
+    } else {
+      out = 16b0;
+      is_pressed = 0;
     }
     if (e_button.out){
       out = 16d2;
