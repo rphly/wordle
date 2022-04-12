@@ -1,0 +1,60 @@
+module adder (
+    input a[16],
+    input b[16],
+    input alufn[6],
+    output add[16],
+    output z,
+    output v,
+    output n
+  ) {
+  
+  sig twoscomp_b[16];
+  sig addtemp[16];
+  sig multemp[16];
+
+  always {
+    z = 0;
+    v = 0;
+    n = 0;
+    add = a;
+  
+    if (alufn[1:0] == b10) { // MUL (multiplication)
+      add = a * b;
+      multemp = a * b;
+  
+      z = (multemp == 16x{0});
+      
+      if ((a == 16x{0}) | (b == 16x{0})){ // if either A[15:0] or B[15:0] is 0
+        v = 0; // then there is no overflow
+      }
+      
+      else if ((multemp / a == b) | (multemp / b == a)){ // the product of A[15:0] and B[15:0] divide by either one is equal the other, then no overflow
+        v = 0;
+      }
+      
+      else{ // in any other case, overflow will occur
+        v = 1;
+      }
+      
+      n = multemp[15];
+    } 
+      
+    else {
+      twoscomp_b = b^16x{alufn[0]};
+      
+      if (alufn[0]){ // SUB (subtraction)
+      addtemp = a - b;
+      }
+      
+      else { // ADD (addition)
+      addtemp = a + b;
+      }
+      
+      add = addtemp;
+      
+      z = (addtemp == 16x{0});
+      v = (a[15] & twoscomp_b[15] & !addtemp[15]) || (!a[15] & !twoscomp_b[15] & addtemp[15]);
+      n = addtemp[15];
+    }   
+  }
+}

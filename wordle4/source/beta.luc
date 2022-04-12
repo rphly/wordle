@@ -12,15 +12,44 @@ module beta (
     output current_state[2]
   ) {
   
+  alu game_alu;
+  sig inputAlu_a[16];
+  sig inputAlu_b[16];
+  
   .clk(clk) {
     .rst(rst){
       game control_unit;
-      
       regfile r;
     }
   }
 
   always {
+  
+    // asel mux
+    case (control_unit.asel) {
+      b000  : inputAlu_a = r.out_a;
+      b001  : inputAlu_a = 2d0; 
+      b010  : inputAlu_a = 2d1;
+      b011  : inputAlu_a = 2d2;
+      default : inputAlu_a = 0;
+    }
+    
+    // bsel mux
+    case (control_unit.bsel) {
+      b000  : inputAlu_b = r.out_b;
+      b001  : inputAlu_b = 3d0; 
+      b010  : inputAlu_b = 3d1;
+      b011  : inputAlu_b = 3d2;
+      b100  : inputAlu_b = 3d3;
+      b101  : inputAlu_b = 3d4;
+      default : inputAlu_b = 0;
+    }
+    
+    // game_alu
+    game_alu.a = inputAlu_a;
+    game_alu.b = inputAlu_b;
+    game_alu.alufn = control_unit.alufn;
+    
     // setup regfile
     r.we = control_unit.regfile_we;
     r.write_address = control_unit.regfile_write_address;
@@ -33,6 +62,7 @@ module beta (
     control_unit.has_keyboard_input = has_keyboard_input;
     control_unit.regfile_out_a = r.out_a;
     control_unit.regfile_out_b = r.out_b;
+    control_unit.alu_out = game_alu.alu;
     
     current_state = control_unit.current_state;
     

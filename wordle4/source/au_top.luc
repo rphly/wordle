@@ -31,7 +31,7 @@ module au_top (
   always {
     reset_cond.in = ~rst_n;
     rst = reset_cond.out;
-     io_led = 3x{{8h00}};
+    io_led = 3x{{8h00}};
     
     betaCPU.keyboard_input = keyboard_controller.out;
     betaCPU.has_keyboard_input = keyboard_controller.is_pressed;

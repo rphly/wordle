@@ -1,0 +1,27 @@
+module shifter (
+    input a[16], // 16 bits of input a
+    input b[16], // 16 bits of input b
+    input alufn[6], //ALUFN[5:0]
+    
+    output shift[16] // output shifted value
+  ) {
+
+  always {
+    case(alufn[3:0]){
+      
+      //SHL (shift left)
+      4b0000:
+        shift = a<<b[3:0]; 
+      
+      //SHR (shift right)
+      4b0001:
+        shift = a>>b[3:0];
+      
+      //SHA (shift right signed)
+      4b0011:
+        shift = $signed(a)>>>b[3:0]; 
+      default:
+        shift = 0;
+    }
+  }
+}

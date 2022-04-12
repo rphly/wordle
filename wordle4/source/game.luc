@@ -7,6 +7,8 @@ module game (
     input keyboard_input[5],
     input has_keyboard_input,
     
+    input alu_out[16],
+    
     output which_matrix[5],
     output which_letter[5],
 
@@ -15,7 +17,10 @@ module game (
     output regfile_ra[16],
     output regfile_rb[16], 
     output regfile_data[16],
-    output current_state[2]   
+    output current_state[2],
+    output alufn[6],
+    output asel[3],
+    output bsel[3]
   ) {
   
   .clk(clk) {
@@ -26,16 +31,23 @@ module game (
       SET_GUESS_CTR_TO_0,
       SET_NUM_CORRECT_INPUTS_TO_0,
       IDLE,
-      CLEAR_SET_INPUT_CTR_1,
+      CHECK_BUTTON_PRESSED,
+      COMPARE_INPUT_CTR_EQUALS_4,
+      COMPARE_INPUT_I_WITH_CORRECT_I,
+      CLEAR_SET_INPUT_CTR_0,
       CLEAR_RESET_BOTTOM_DISPLAY,
       STORE_INPUT,
       INCREMENT_INPUT_CTR,
-      PRINT_LETTER_TO_MATRIX
+      PRINT_LETTER_TO_MATRIX,
+      SET_I_TO_ZERO,
+      SET_K_TO_ZERO
     };
   }
   
   const INPUT_CTR = b11100;
   const INPUT_LETTER_1 = b10000;
+  const I = b10100;
+  const K = b10110;
   
   always {
     // standard setting 
@@ -47,6 +59,9 @@ module game (
     which_matrix = 5d0;
     which_letter = 5d0;
     current_state = 2d0;
+    alufn = 00000;
+    asel = 0;
+    bsel = 0;
     
     if (rst) {
       game_fsm.d = game_fsm.IDLE; 
@@ -55,9 +70,6 @@ module game (
         
         // reset inputs sequence
         game_fsm.RESET_TOP_DISPLAY:
-          game_fsm.d = game_fsm.RESET_BOTTOM_DISPLAY;
-          
-        game_fsm.RESET_BOTTOM_DISPLAY:
           game_fsm.d = game_fsm.SET_INPUT_CTR_TO_0;
           
         game_fsm.SET_INPUT_CTR_TO_0:
@@ -65,11 +77,12 @@ module game (
           regfile_write_address = INPUT_CTR;
           regfile_ra = 0;
           regfile_rb = 0;
-          regfile_data = 0;
-          
+          regfile_data = 0;  
+          game_fsm.d = game_fsm.CLEAR_RESET_BOTTOM_DISPLAY;
+        
+        game_fsm.RESET_BOTTOM_DISPLAY:
           game_fsm.d = game_fsm.IDLE;
         
-          
         // IDLE STATE
         game_fsm.IDLE:
           // if check button press
@@ -78,14 +91,73 @@ module game (
           } else {
             game_fsm.d = game_fsm.IDLE;
           }
-
-        game_fsm.CLEAR_SET_INPUT_CTR_1:
-          game_fsm.d = game_fsm.CLEAR_RESET_BOTTOM_DISPLAY;
         
-        game_fsm.CLEAR_RESET_BOTTOM_DISPLAY:
-          game_fsm.d = game_fsm.IDLE;
-
-        default: game_fsm.d = game_fsm.IDLE;
+        game_fsm.STORE_INPUT:
+          regfile_we = 1;
+          regfile_ra = INPUT_CTR;
+          regfile_write_address = INPUT_LETTER_1 + regfile_out_a; // input ctr is like an offset
+          game_fsm.d = game_fsm.PRINT_LETTER_TO_MATRIX;
+        
+        game_fsm.PRINT_LETTER_TO_MATRIX:
+          regfile_we = 0;
+          regfile_ra = INPUT_CTR;
+          regfile_rb = INPUT_LETTER_1 + regfile_out_a;
+          which_matrix = regfile_out_a;
+          which_letter = regfile_out_b;
+          game_fsm.d = game_fsm.INCREMENT_INPUT_CTR;
+        
+        game_fsm.INCREMENT_INPUT_CTR:
+          regfile_ra = INPUT_CTR;
+          asel = b000; 
+          bsel = b100; // constant 3, since zero-indexed
+          alufn = b110011; // cmpeq
+          
+          if (alu_out == 16b0) {
+            // increment if not reached 3
+            regfile_we = 1;
+            regfile_write_address = INPUT_CTR;
+            regfile_data = regfile_out_a + 1;
+            regfile_we = 1;
+            // go back to idle
+            game_fsm.d = game_fsm.IDLE;
+          } else {
+            // go back to idle to await check button
+            game_fsm.d = game_fsm.IDLE;
+          }
+          
+          game_fsm.CHECK_BUTTON_PRESSED:
+            regfile_ra = INPUT_CTR;
+            asel = b000; 
+            bsel = b100; // constant 3, since zero-indexed
+            alufn = b110011; // cmpeq
+            
+            if (alu_out == 16b1) {
+              // if successful, we branch to check sequence
+              game_fsm.d = game_fsm.SET_I_EQUALS_TO_ONE; 
+            } else {
+              // go back to idle to await check button
+              game_fsm.d = game_fsm.IDLE;
+            }
+           
+          game_fsm.SET_I_TO_ZERO:
+            regfile_we = 1;
+            regfile_write_address = I;
+            regfile_ra = 0;
+            regfile_rb = 0;
+            regfile_data = 0;
+            game_fsm.d = game_fsm.SET_K_EQUALS_TO_ZERO;
+          
+          game_fsm.SET_K_TO_ZERO:
+            regfile_we = 1;
+            regfile_write_address = K;
+            regfile_ra = 0;
+            regfile_rb = 0;
+            regfile_data = 0;
+            game_fsm.d = game_fsm.COMPARE_INPUT_I_WITH_CORRECT_I;
+          
+          game_fsm.COMPARE_INPUT_I_WITH_CORRECT_I:
+            
+          default: game_fsm.d = game_fsm.IDLE;
       }
     }
   }

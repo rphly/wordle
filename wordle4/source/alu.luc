@@ -1,0 +1,55 @@
+module alu (
+    input alufn[6], // input the ALUFN to alu.alufn; i.e. alu.alufn = b000000 [input b000000 as the ALUFN]
+    input a[16], // input the A to alu.a; i.e. alu.a = b0000000000000001 [input b0000000000000001 as the A]
+    input b[16], // input the B to alu.b; i.e. alu.b = b0000000000000010 [input b0000000000000010 as the B]
+    output alu[16], // get the ALU output (the result of A ALUFN B, i.e. A + B) from alu.alu [x = alu.alu; store the ALU output into variable x or whatever x]
+    output z, // get the Z output (whether the ALU output is 0 or not) from alu.z [x = alu.z; store the Z output into the variable x or whatever x]
+    output v, // get the V output (whether the ALU output is overflow or not) from alu.v [x = alu.v; store the V output into the variable x or whatever x]
+    output n // get the N output (whether the ALU output is negative or not/whether the MSB of ALU output is 1 or not) from alu.n [x = alu.n; store the N output into the variable x or whatever x]
+  ) {
+  adder adder;
+  compare comp;
+  boolean bool;
+  shifter shift;
+
+  always {
+    adder.a = a;
+    adder.b = b;
+    adder.alufn = alufn;
+    
+    z = adder.z;
+    v = adder.v;
+    n = adder.n;
+    
+    comp.z = adder.z;
+    comp.v = adder.v;
+    comp.n = adder.n;
+    comp.alufn = alufn;
+    
+    bool.a = a;
+    bool.b = b;
+    bool.alufn = alufn;
+    
+    shift.a = a;
+    shift.b = b[3:0];
+    shift.alufn = alufn;
+    
+    case (alufn[5:4]) {
+    
+      b00:   
+        alu = adder.add;
+   
+      b01:
+        alu = bool.bool;
+        
+      b10:
+        alu = shift.shift;
+        
+      b11:
+        alu = comp.comp;
+      
+      default:
+        alu = 16b0;
+    }
+  }
+}

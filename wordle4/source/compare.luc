@@ -1,0 +1,17 @@
+module compare (
+    input z,  
+    input v, 
+    input n, 
+    input alufn[6],   
+    output comp[16] 
+  ) { 
+ 
+  always { 
+    comp = 16b0;    
+     
+    case(alufn[2:1]){ //based on the 3rd and 2nd bit of the OPCODE, calculate COMP, 1 or 0
+    2b01: comp[0] = z;     // CMPEQ (equal to, a = b)
+    2b10: comp[0] = n^v;   // CMPLT (less than, a < b)
+    2b11: comp[0] = z | n^v;  // CMPLE (less than or equals to, a <= b)
+  }
+}
