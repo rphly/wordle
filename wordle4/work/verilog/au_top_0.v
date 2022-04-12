@@ -8,10 +8,14 @@ module au_top_0 (
     input clk,
     input rst_n,
     input usb_rx,
-    input a_in,
     input b_in,
-    input c_in,
+    input e_in,
+    input a_in,
+    input r_in,
     output reg outmatrix1,
+    output reg outmatrix2,
+    output reg outmatrix3,
+    output reg outmatrix4,
     output reg [23:0] io_led,
     output reg usb_tx
   );
@@ -50,34 +54,26 @@ module au_top_0 (
   buttons_controller_3 keyboard_controller (
     .clk(clk),
     .rst(rst),
+    .b(b_in),
+    .e(e_in),
     .a(a_in),
+    .r(r_in),
     .is_pressed(M_keyboard_controller_is_pressed),
     .out(M_keyboard_controller_out)
   );
   reg [4:0] M_button_debugger_d, M_button_debugger_q = 1'h0;
   
   always @* begin
-    M_button_debugger_d = M_button_debugger_q;
-    
     M_reset_cond_in = ~rst_n;
     rst = M_reset_cond_out;
     io_led = 24'h000000;
     M_betaCPU_keyboard_input = M_keyboard_controller_out;
     M_betaCPU_has_keyboard_input = M_keyboard_controller_is_pressed;
-    if (M_keyboard_controller_is_pressed) begin
-      M_button_debugger_d = M_button_debugger_q == 1'h1 ? 1'h0 : 1'h1;
-    end
-    if (M_button_debugger_q == 1'h1) begin
-      io_led[8+0+0-:1] = 1'h1;
-    end
-    if (M_betaCPU_debugger == 16'h0000) begin
-      io_led[0+0+0-:1] = 1'h1;
-    end
-    if (M_betaCPU_debugger == 16'h0001) begin
-      io_led[0+7+0-:1] = 1'h1;
-    end
-    io_led[16+0+7-:8] = M_betaCPU_debugger;
+    io_led[0+0+7-:8] = M_betaCPU_debugger;
     outmatrix1 = M_betaCPU_out_bottom_matrix1;
+    outmatrix2 = M_betaCPU_out_bottom_matrix2;
+    outmatrix3 = M_betaCPU_out_bottom_matrix3;
+    outmatrix4 = M_betaCPU_out_bottom_matrix4;
     usb_tx = usb_rx;
   end
   

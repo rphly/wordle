@@ -82,6 +82,6 @@ module beta (
     out_bottom_matrix3 = bottom_matrix_control.outmatrix3;
     out_bottom_matrix4 = bottom_matrix_control.outmatrix4;
     
-    debugger = control_unit.debugger;
+    debugger = bottom_matrix_control.debugger;
   }
 }

@@ -11,7 +11,9 @@ module matrix_controller (
     output outmatrix1,
     output outmatrix2,
     output outmatrix3,
-    output outmatrix4
+    output outmatrix4,
+    
+    output debugger[16]
     
     
   ) {
@@ -46,6 +48,7 @@ module matrix_controller (
     matrix3.letter_address = matrix3_letter_address_dff.q;
     matrix4.letter_address = matrix4_letter_address_dff.q;
     
+    debugger = matrix1.debugger;
     
     case(update){
       3d1:matrix1_letter_address_dff.d = matrix1_letter_address;

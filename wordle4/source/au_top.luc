@@ -4,11 +4,15 @@ module au_top (
     input usb_rx,           // USB->Serial input
     
     // keyboard inputs
-    input a_in,
     input b_in,
-    input c_in,
+    input e_in,
+    input a_in,
+    input r_in,
     
     output outmatrix1,
+    output outmatrix2,
+    output outmatrix3,
+    output outmatrix4,
     output io_led[3][8],
     output usb_tx
   ) {
@@ -20,7 +24,10 @@ module au_top (
     .rst(rst) {
       beta betaCPU;
       buttons_controller keyboard_controller(
-        .a(a_in)
+        .b(b_in),
+        .e(e_in),
+        .a(a_in),
+        .r(r_in)
       );
     }
     
@@ -35,24 +42,14 @@ module au_top (
     betaCPU.keyboard_input = keyboard_controller.out;
     betaCPU.has_keyboard_input = keyboard_controller.is_pressed;
     
-    if(keyboard_controller.is_pressed){
-      button_debugger.d = button_debugger.q == 1 ? 0 : 1;
-    }
-    if(button_debugger.q == 1){
-      io_led[1][0] = b1;
-    }
     
-    if(betaCPU.debugger == 16b0){
-    io_led[0][0] = b1;
-    }
-    if(betaCPU.debugger == 16b1){
-    io_led[0][7] = b1;
-    }
-    
-    io_led[2][7:0] = betaCPU.debugger;
+    io_led[0][7:0] = betaCPU.debugger;
     
     
     outmatrix1= betaCPU.out_bottom_matrix1;
+    outmatrix2 = betaCPU.out_bottom_matrix2;
+    outmatrix3 = betaCPU.out_bottom_matrix3;
+    outmatrix4 = betaCPU.out_bottom_matrix4;
     
     usb_tx = usb_rx;        // loop serial port
   }

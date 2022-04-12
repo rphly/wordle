@@ -15,7 +15,8 @@ module matrix_controller_7 (
     output reg outmatrix1,
     output reg outmatrix2,
     output reg outmatrix3,
-    output reg outmatrix4
+    output reg outmatrix4,
+    output reg [15:0] debugger
   );
   
   
@@ -25,36 +26,44 @@ module matrix_controller_7 (
   reg [4:0] M_matrix3_letter_address_dff_d, M_matrix3_letter_address_dff_q = 1'h0;
   reg [4:0] M_matrix4_letter_address_dff_d, M_matrix4_letter_address_dff_q = 1'h0;
   wire [1-1:0] M_matrix1_data_out;
+  wire [16-1:0] M_matrix1_debugger;
   reg [5-1:0] M_matrix1_letter_address;
   matrix_13 matrix1 (
     .clk(clk),
     .rst(rst),
     .letter_address(M_matrix1_letter_address),
-    .data_out(M_matrix1_data_out)
+    .data_out(M_matrix1_data_out),
+    .debugger(M_matrix1_debugger)
   );
   wire [1-1:0] M_matrix2_data_out;
+  wire [16-1:0] M_matrix2_debugger;
   reg [5-1:0] M_matrix2_letter_address;
   matrix_13 matrix2 (
     .clk(clk),
     .rst(rst),
     .letter_address(M_matrix2_letter_address),
-    .data_out(M_matrix2_data_out)
+    .data_out(M_matrix2_data_out),
+    .debugger(M_matrix2_debugger)
   );
   wire [1-1:0] M_matrix3_data_out;
+  wire [16-1:0] M_matrix3_debugger;
   reg [5-1:0] M_matrix3_letter_address;
   matrix_13 matrix3 (
     .clk(clk),
     .rst(rst),
     .letter_address(M_matrix3_letter_address),
-    .data_out(M_matrix3_data_out)
+    .data_out(M_matrix3_data_out),
+    .debugger(M_matrix3_debugger)
   );
   wire [1-1:0] M_matrix4_data_out;
+  wire [16-1:0] M_matrix4_debugger;
   reg [5-1:0] M_matrix4_letter_address;
   matrix_13 matrix4 (
     .clk(clk),
     .rst(rst),
     .letter_address(M_matrix4_letter_address),
-    .data_out(M_matrix4_data_out)
+    .data_out(M_matrix4_data_out),
+    .debugger(M_matrix4_debugger)
   );
   
   always @* begin
@@ -71,6 +80,7 @@ module matrix_controller_7 (
     M_matrix2_letter_address = M_matrix2_letter_address_dff_q;
     M_matrix3_letter_address = M_matrix3_letter_address_dff_q;
     M_matrix4_letter_address = M_matrix4_letter_address_dff_q;
+    debugger = M_matrix1_debugger;
     
     case (update)
       3'h1: begin

@@ -3,7 +3,8 @@ module matrix (
     input rst,  // reset // how much to increment
     input letter_address[5],
     // base_offset + increment = actual regfile address to read frome
-    output data_out
+    output data_out,
+    output debugger[16]
   ) {
   
   .clk(clk){
@@ -18,6 +19,7 @@ module matrix (
   always {
     // get letter from alphabets
     white_letters.selector = letter_address;
+    debugger = letter_address;
     
     // display on matrix with white_letters.out
     matrix_writer.update = 1;

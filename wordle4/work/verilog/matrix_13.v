@@ -8,7 +8,8 @@ module matrix_13 (
     input clk,
     input rst,
     input [4:0] letter_address,
-    output reg data_out
+    output reg data_out,
+    output reg [15:0] debugger
   );
   
   
@@ -35,6 +36,7 @@ module matrix_13 (
   
   always @* begin
     M_white_letters_selector = letter_address;
+    debugger = letter_address;
     M_matrix_writer_update = 1'h1;
     M_matrix_writer_color = M_white_letters_out[(M_matrix_writer_pixel)*24+23-:24];
     data_out = M_matrix_writer_led;

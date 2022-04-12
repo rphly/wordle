@@ -89,11 +89,11 @@ module beta_2 (
   );
   wire [16-1:0] M_r_out_a;
   wire [16-1:0] M_r_out_b;
-  reg [5-1:0] M_r_write_address;
+  reg [6-1:0] M_r_write_address;
   reg [1-1:0] M_r_we;
   reg [16-1:0] M_r_data;
-  reg [5-1:0] M_r_read_address_a;
-  reg [5-1:0] M_r_read_address_b;
+  reg [6-1:0] M_r_read_address_a;
+  reg [6-1:0] M_r_read_address_b;
   regfile_6 r (
     .clk(clk),
     .rst(rst),
@@ -109,6 +109,7 @@ module beta_2 (
   wire [1-1:0] M_bottom_matrix_control_outmatrix2;
   wire [1-1:0] M_bottom_matrix_control_outmatrix3;
   wire [1-1:0] M_bottom_matrix_control_outmatrix4;
+  wire [16-1:0] M_bottom_matrix_control_debugger;
   reg [3-1:0] M_bottom_matrix_control_update;
   reg [5-1:0] M_bottom_matrix_control_matrix1_letter_address;
   reg [5-1:0] M_bottom_matrix_control_matrix2_letter_address;
@@ -125,7 +126,8 @@ module beta_2 (
     .outmatrix1(M_bottom_matrix_control_outmatrix1),
     .outmatrix2(M_bottom_matrix_control_outmatrix2),
     .outmatrix3(M_bottom_matrix_control_outmatrix3),
-    .outmatrix4(M_bottom_matrix_control_outmatrix4)
+    .outmatrix4(M_bottom_matrix_control_outmatrix4),
+    .debugger(M_bottom_matrix_control_debugger)
   );
   
   always @* begin
@@ -199,6 +201,6 @@ module beta_2 (
     out_bottom_matrix2 = M_bottom_matrix_control_outmatrix2;
     out_bottom_matrix3 = M_bottom_matrix_control_outmatrix3;
     out_bottom_matrix4 = M_bottom_matrix_control_outmatrix4;
-    debugger = M_control_unit_debugger;
+    debugger = M_bottom_matrix_control_debugger;
   end
 endmodule

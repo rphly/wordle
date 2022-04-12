@@ -98,7 +98,7 @@ module game (
     asel = 0;
     bsel = 0;
     
-    matrix_controller_update = 0;
+    matrix_controller_update = 3d0;
     bottom_matrix1_letter_address = 5d0;
     bottom_matrix2_letter_address = 5d0;
     bottom_matrix3_letter_address = 5d0;
@@ -129,10 +129,10 @@ module game (
         game_fsm.IDLE:
           // if check button press
           if (has_keyboard_input) {
-            regfile_we = 1;
             regfile_ra = INPUT_CTR;
             regfile_write_address = INPUT_LETTER_1 + regfile_out_a; // input ctr is like an offset
             regfile_data = keyboard_input;
+            regfile_we = 1;
             debugger = keyboard_input;
             game_fsm.d = game_fsm.PRINT_LETTER_TO_MATRIX;
           } else {
@@ -180,7 +180,6 @@ module game (
           
           if (alu_out == 16b0) {
             // increment if not reached 3
-            regfile_we = 1;
             regfile_write_address = INPUT_CTR;
             regfile_data = regfile_out_a + 1;
             regfile_we = 1;

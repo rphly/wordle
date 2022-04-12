@@ -2,21 +2,41 @@ module buttons_controller (
     input clk,  // clock
     input rst,  // reset
     
+    input b,
+    input e,
     input a,
+    input r,
     output is_pressed,
     output out[16]
   ) {
   .clk(clk) {
+    button b_button(.button_input(b));
+    button e_button(.button_input(e));
     button a_button(.button_input(a));
+    button r_button(.button_input(r));
    }
   
   always {
-    if(a_button.out){
+  
+    out = 16b0;
+    is_pressed = 0;
+    
+    if (b_button.out){
       out = 16d1;
       is_pressed = 1;
-    }else{
-      out = 16b0;
-      is_pressed = 0;
     }
+    if (e_button.out){
+      out = 16d2;
+      is_pressed = 1;
+     }
+    if(a_button.out){
+      out = 16d3;
+      is_pressed = 1;
+    }
+    if (r_button.out){
+      out = 16d4;
+      is_pressed = 1;
+    }
+
   }
 }
