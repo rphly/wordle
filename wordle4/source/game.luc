@@ -7,6 +7,9 @@ module game (
     input keyboard_input[5],
     input has_keyboard_input,
     
+    input panel_input[5],
+    input has_panel_input,
+    
     input alu_out[16],
     
     output which_matrix[5],
@@ -85,6 +88,8 @@ module game (
   
   const NUM_CORRECT = b11011;
   
+  const CLEAR_SIGNAL = b11111;
+  
   
   always {
     // standard setting 
@@ -123,7 +128,11 @@ module game (
         // IDLE STATE
         game_fsm.IDLE:
           // if check button press
-          if (has_keyboard_input) {
+          if (has_panel_input) {
+            if (panel_input == CLEAR_SIGNAL) {
+              game_fsm.d = game_fsm.CLEAR_SET_INPUT_CTR_0;
+            }
+          } else if (has_keyboard_input) {
             game_fsm.d = game_fsm.STORE_INPUT;
           } else {
             game_fsm.d = game_fsm.IDLE;

@@ -1,22 +1,22 @@
-module buttons_controller (
+module panel_controller (
     input clk,  // clock
     input rst,  // reset
-    
-    input a,
+
+    input clear,
     
     output is_pressed,
-    output out[16]
+    output out[5]
   ) {
   .clk(clk) {
-    button a_(.button_input(a));
+    button clear_(.button_input(clear));
    }
   
   always {
-    if(a_.out){
-      out = 16d1;
+    if (clear_.out) {
+      out = b11111;
       is_pressed = 1;
     } else {
-      out = 16b0;
+      out = 5b0;
       is_pressed = 0;
     }
   }

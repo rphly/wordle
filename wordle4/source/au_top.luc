@@ -8,6 +8,8 @@ module au_top (
     input b_in,
     input c_in,
     
+    input clear_in,
+    
     output outmatrix0,
     output io_led[3][8],
     output usb_tx
@@ -22,6 +24,10 @@ module au_top (
       buttons_controller keyboard_controller(
         .a(a_in)
       );
+      
+      panel_controller button_panel_controller(
+        .clear(clear_in)
+      );
     }
   }
   
@@ -35,6 +41,8 @@ module au_top (
     
     betaCPU.keyboard_input = keyboard_controller.out;
     betaCPU.has_keyboard_input = keyboard_controller.is_pressed;
+    betaCPU.panel_input = button_panel_controller.out;
+    betaCPU.has_panel_input = button_panel_controller.is_pressed;
     
     letters.selector = betaCPU.which_letter;
     led_strip.update=1;
