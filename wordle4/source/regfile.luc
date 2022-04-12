@@ -1,13 +1,13 @@
 module regfile (
     input clk,  // clock
     input rst,  // reset
-    input write_address[5], // write address
+    input write_address[6], // write address
     input we, // write enable
     input data[16], // data in
     
     
-    input read_address_a[5], //address port a 
-    input read_address_b[5], //address port b
+    input read_address_a[6], //address port a 
+    input read_address_b[6], //address port b
     output out_a[16], //read port a
     output out_b[16] //read port b
 
@@ -55,6 +55,10 @@ module regfile (
       dff correct_letter_3[5];
       dff correct_letter_4[5];
       
+      // 10 bits
+      dff input_i[5];
+      dff correct_k[5];
+      
       // 9 bits
       dff i[3];
       dff j[3];
@@ -66,6 +70,15 @@ module regfile (
       
       // 1 bit
       dff zero[1];
+      
+      // 1 bit
+      dff g[1];
+      
+      // address so 6 bit MAX
+      dff temp_guess_g_letter_i[6];
+      
+      // 7 bits
+      dff temp_coloured_letter[7];
     }
   }
 
@@ -110,9 +123,12 @@ module regfile (
         
         b11011 : num_correct.d = data;
         b11100 : input_ctr.d = data;
-        // 11101 : ??
-        // 11110 : ??
+        b11101 : input_i.d = data;
+        b11110 : correct_k.d = data;
         b11111 : zero.d = 0;
+        b100000 : g.d = data;
+        b100001 : temp_guess_g_letter_i.d = data;
+        b100010 : temp_coloured_letter.d = data;
       }
     }
     
@@ -155,9 +171,13 @@ module regfile (
         
         b11011 : out_a = num_correct.q;
         b11100 : out_a = input_ctr.q;
-        // 11101 : ??
-        // 11110 : ??
+        b11101 : out_a = input_i.q;
+        b11110 : out_a = correct_k.q;
         b11111 : out_a = zero.q;
+      
+        b100000 : out_a = g.q;
+        b100001 : out_a = temp_guess_g_letter_i.q;
+        b100010 : out_a = temp_coloured_letter.q;
         default : out_a = zero.q;
     }
     
@@ -199,9 +219,13 @@ module regfile (
     
         b11011 : out_b = num_correct.q;
         b11100 : out_b = input_ctr.q;
-        // 11101 : ??
-        // 11110 : ??
+        b11101 : out_b = input_i.q;
+        b11110 : out_b = correct_k.q;
         b11111 : out_b = zero.q;
+       
+        b100000 : out_b = g.q;
+        b100001 : out_b = temp_guess_g_letter_i.q;
+        b100010 : out_b = temp_coloured_letter.q;
         default : out_b = zero.q;
     }
   }
