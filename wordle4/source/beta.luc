@@ -25,6 +25,8 @@ module beta (
       regfile r;
     }
   }
+  
+  words words;
 
   always {
   
@@ -60,6 +62,8 @@ module beta (
     r.read_address_b = control_unit.regfile_rb;
     r.data = control_unit.regfile_data;
     
+    words.selector = control_unit.words_selector;
+    
     // setup control_unit
     control_unit.keyboard_input = keyboard_input;
     control_unit.has_keyboard_input = has_keyboard_input;
@@ -68,6 +72,7 @@ module beta (
     control_unit.regfile_out_a = r.out_a;
     control_unit.regfile_out_b = r.out_b;
     control_unit.alu_out = game_alu.alu;
+    control_unit.selected_word = words.out;
     
     
     current_state = control_unit.current_state;

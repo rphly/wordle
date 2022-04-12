@@ -79,6 +79,9 @@ module regfile (
       
       // 7 bits
       dff temp_coloured_letter[7];
+      
+      // 11 bits
+      dff word_index[11];
     }
   }
 
@@ -129,6 +132,7 @@ module regfile (
         b100000 : g.d = data;
         b100001 : temp_guess_g_letter_i.d = data;
         b100010 : temp_coloured_letter.d = data;
+        b100011 : word_index.d = data;
       }
     }
     
@@ -178,6 +182,7 @@ module regfile (
         b100000 : out_a = g.q;
         b100001 : out_a = temp_guess_g_letter_i.q;
         b100010 : out_a = temp_coloured_letter.q;
+        b100011 : out_a = word_index.q;
         default : out_a = zero.q;
     }
     
@@ -226,6 +231,7 @@ module regfile (
         b100000 : out_b = g.q;
         b100001 : out_b = temp_guess_g_letter_i.q;
         b100010 : out_b = temp_coloured_letter.q;
+        b100011 : out_b = word_index.q;
         default : out_b = zero.q;
     }
   }

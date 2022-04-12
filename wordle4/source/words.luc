@@ -4,7 +4,7 @@ module words (
   ) {
   
   const INPUTS = $reverse({
-    { b00001, b00101, b00000, b10010 }
+    { b00010, b00110, b00001, b10011 }
   }); 
   
   always {  

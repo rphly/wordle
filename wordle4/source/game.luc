@@ -12,6 +12,8 @@ module game (
     
     input alu_out[16],
     
+    input selected_word[4][5],
+    
     output which_matrix[5],
     output which_letter[5],
 
@@ -23,7 +25,8 @@ module game (
     output current_state[2],
     output alufn[6],
     output asel[3],
-    output bsel[3]
+    output bsel[3],
+    output words_selector[5]
   ) {
   
   .clk(clk) {
@@ -64,6 +67,11 @@ module game (
       COMPARE_I_EQUALS_3_AND_INCREMENT,
       COMPARE_GUESS_CTR_EQUALS_3,
       SHOW_TOP_DISPLAY,
+      SET_CORRECT_WORD,
+      SET_CORRECT_LETTER_1,
+      SET_CORRECT_LETTER_2,
+      SET_CORRECT_LETTER_3,
+      SET_CORRECT_LETTER_4,
       LOSE,
       WIN
     };
@@ -104,12 +112,50 @@ module game (
     alufn = 00000;
     asel = 0;
     bsel = 0;
+    words_selector = 0;
     
     if (rst) {
-      game_fsm.d = game_fsm.IDLE; 
+      game_fsm.d = game_fsm.SET_CORRECT_WORD; 
     } else {
       case(game_fsm.q) {
+        // set correct word 
+        game_fsm.SET_CORRECT_WORD:
+          regfile_write_address = b100011;
+          regfile_data = 0;
+          regfile_we = 1;
+          game_fsm.d = game_fsm.SET_CORRECT_LETTER_1;
         
+        game_fsm.SET_CORRECT_LETTER_1:
+          regfile_ra = b10011;
+          regfile_write_address = CORRECT_LETTER_1;
+          words_selector = regfile_out_a;
+          regfile_data = selected_word[3]; // 5 bits
+          regfile_we = 1;
+          game_fsm.d = game_fsm.SET_CORRECT_LETTER_2;
+        game_fsm.SET_CORRECT_LETTER_2:
+          regfile_ra = b10011;
+          regfile_write_address = CORRECT_LETTER_1 + 1;
+          words_selector = regfile_out_a;
+          regfile_data = selected_word[2]; // 5 bits
+          regfile_we = 1;
+          game_fsm.d = game_fsm.SET_CORRECT_LETTER_3;
+          
+        game_fsm.SET_CORRECT_LETTER_3:
+          regfile_ra = b10011;
+          regfile_write_address = CORRECT_LETTER_1 + 2;
+          words_selector = regfile_out_a;
+          regfile_data = selected_word[1]; // 5 bits
+          regfile_we = 1;
+          game_fsm.d = game_fsm.SET_CORRECT_LETTER_3;
+          
+        game_fsm.SET_CORRECT_LETTER_4:
+          regfile_ra = b10011;
+          regfile_write_address = CORRECT_LETTER_1 + 3;
+          words_selector = regfile_out_a;
+          regfile_data = selected_word[0]; // 5 bits
+          regfile_we = 1;
+          game_fsm.d = game_fsm.RESET_TOP_DISPLAY;
+
         // reset inputs sequence
         game_fsm.RESET_TOP_DISPLAY:
           game_fsm.d = game_fsm.SET_INPUT_CTR_TO_0;
