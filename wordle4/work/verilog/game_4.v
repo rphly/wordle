@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module game_7 (
+module game_4 (
     input clk,
     input rst,
     input [15:0] regfile_out_a,
@@ -19,7 +19,12 @@ module game_7 (
     output reg [15:0] regfile_ra,
     output reg [15:0] regfile_rb,
     output reg [15:0] regfile_data,
-    output reg [1:0] current_state
+    output reg [1:0] current_state,
+    output reg [2:0] matrix_controller_update,
+    output reg [4:0] bottom_matrix1_letter_address,
+    output reg [4:0] bottom_matrix2_letter_address,
+    output reg [4:0] bottom_matrix3_letter_address,
+    output reg [4:0] bottom_matrix4_letter_address
   );
   
   
@@ -47,6 +52,11 @@ module game_7 (
     which_matrix = 5'h00;
     which_letter = 5'h00;
     current_state = 2'h0;
+    matrix_controller_update = 1'h0;
+    bottom_matrix1_letter_address = 5'h00;
+    bottom_matrix2_letter_address = 5'h00;
+    bottom_matrix3_letter_address = 5'h00;
+    bottom_matrix4_letter_address = 5'h00;
     if (rst) begin
       M_game_fsm_d = IDLE_game_fsm;
     end else begin
@@ -85,9 +95,25 @@ module game_7 (
           regfile_we = 1'h0;
           regfile_ra = 5'h10;
           regfile_rb = 5'h1c;
-          which_letter = regfile_out_a;
-          which_matrix = regfile_out_b;
-          current_state = 2'h3;
+          
+          case (regfile_out_b)
+            1'h0: begin
+              matrix_controller_update = 3'h1;
+              bottom_matrix1_letter_address = regfile_out_a;
+            end
+            1'h1: begin
+              matrix_controller_update = 3'h2;
+              bottom_matrix2_letter_address = regfile_out_a;
+            end
+            2'h2: begin
+              matrix_controller_update = 3'h3;
+              bottom_matrix2_letter_address = regfile_out_a;
+            end
+            2'h3: begin
+              matrix_controller_update = 3'h4;
+              bottom_matrix2_letter_address = regfile_out_a;
+            end
+          endcase
           M_game_fsm_d = IDLE_game_fsm;
         end
         default: begin

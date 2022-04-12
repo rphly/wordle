@@ -12,7 +12,11 @@ module beta_2 (
     input read_button_in,
     output reg [4:0] which_matrix,
     output reg [4:0] which_letter,
-    output reg [1:0] current_state
+    output reg [1:0] current_state,
+    output reg out_bottom_matrix1,
+    output reg out_bottom_matrix2,
+    output reg out_bottom_matrix3,
+    output reg out_bottom_matrix4
   );
   
   
@@ -25,12 +29,17 @@ module beta_2 (
   wire [16-1:0] M_control_unit_regfile_rb;
   wire [16-1:0] M_control_unit_regfile_data;
   wire [2-1:0] M_control_unit_current_state;
+  wire [3-1:0] M_control_unit_matrix_controller_update;
+  wire [5-1:0] M_control_unit_bottom_matrix1_letter_address;
+  wire [5-1:0] M_control_unit_bottom_matrix2_letter_address;
+  wire [5-1:0] M_control_unit_bottom_matrix3_letter_address;
+  wire [5-1:0] M_control_unit_bottom_matrix4_letter_address;
   reg [16-1:0] M_control_unit_regfile_out_a;
   reg [16-1:0] M_control_unit_regfile_out_b;
   reg [1-1:0] M_control_unit_write_one_in;
   reg [1-1:0] M_control_unit_write_zero_in;
   reg [1-1:0] M_control_unit_read_button_in;
-  game_7 control_unit (
+  game_4 control_unit (
     .clk(clk),
     .rst(rst),
     .regfile_out_a(M_control_unit_regfile_out_a),
@@ -45,7 +54,12 @@ module beta_2 (
     .regfile_ra(M_control_unit_regfile_ra),
     .regfile_rb(M_control_unit_regfile_rb),
     .regfile_data(M_control_unit_regfile_data),
-    .current_state(M_control_unit_current_state)
+    .current_state(M_control_unit_current_state),
+    .matrix_controller_update(M_control_unit_matrix_controller_update),
+    .bottom_matrix1_letter_address(M_control_unit_bottom_matrix1_letter_address),
+    .bottom_matrix2_letter_address(M_control_unit_bottom_matrix2_letter_address),
+    .bottom_matrix3_letter_address(M_control_unit_bottom_matrix3_letter_address),
+    .bottom_matrix4_letter_address(M_control_unit_bottom_matrix4_letter_address)
   );
   wire [16-1:0] M_r_out_a;
   wire [16-1:0] M_r_out_b;
@@ -54,7 +68,7 @@ module beta_2 (
   reg [16-1:0] M_r_data;
   reg [5-1:0] M_r_read_address_a;
   reg [5-1:0] M_r_read_address_b;
-  regfile_8 r (
+  regfile_5 r (
     .clk(clk),
     .rst(rst),
     .write_address(M_r_write_address),
@@ -65,6 +79,28 @@ module beta_2 (
     .out_a(M_r_out_a),
     .out_b(M_r_out_b)
   );
+  wire [1-1:0] M_bottom_matrix_control_outmatrix1;
+  wire [1-1:0] M_bottom_matrix_control_outmatrix2;
+  wire [1-1:0] M_bottom_matrix_control_outmatrix3;
+  wire [1-1:0] M_bottom_matrix_control_outmatrix4;
+  reg [3-1:0] M_bottom_matrix_control_update;
+  reg [5-1:0] M_bottom_matrix_control_matrix1_letter_address;
+  reg [5-1:0] M_bottom_matrix_control_matrix2_letter_address;
+  reg [5-1:0] M_bottom_matrix_control_matrix3_letter_address;
+  reg [5-1:0] M_bottom_matrix_control_matrix4_letter_address;
+  matrix_controller_6 bottom_matrix_control (
+    .clk(clk),
+    .rst(rst),
+    .update(M_bottom_matrix_control_update),
+    .matrix1_letter_address(M_bottom_matrix_control_matrix1_letter_address),
+    .matrix2_letter_address(M_bottom_matrix_control_matrix2_letter_address),
+    .matrix3_letter_address(M_bottom_matrix_control_matrix3_letter_address),
+    .matrix4_letter_address(M_bottom_matrix_control_matrix4_letter_address),
+    .outmatrix1(M_bottom_matrix_control_outmatrix1),
+    .outmatrix2(M_bottom_matrix_control_outmatrix2),
+    .outmatrix3(M_bottom_matrix_control_outmatrix3),
+    .outmatrix4(M_bottom_matrix_control_outmatrix4)
+  );
   
   always @* begin
     M_r_we = M_control_unit_regfile_we;
@@ -72,6 +108,15 @@ module beta_2 (
     M_r_read_address_a = M_control_unit_regfile_ra;
     M_r_read_address_b = M_control_unit_regfile_rb;
     M_r_data = M_control_unit_regfile_data;
+    M_bottom_matrix_control_update = M_control_unit_matrix_controller_update;
+    M_bottom_matrix_control_matrix1_letter_address = M_control_unit_bottom_matrix1_letter_address;
+    M_bottom_matrix_control_matrix2_letter_address = M_control_unit_bottom_matrix2_letter_address;
+    M_bottom_matrix_control_matrix3_letter_address = M_control_unit_bottom_matrix3_letter_address;
+    M_bottom_matrix_control_matrix4_letter_address = M_control_unit_bottom_matrix4_letter_address;
+    out_bottom_matrix1 = M_bottom_matrix_control_outmatrix1;
+    out_bottom_matrix2 = M_bottom_matrix_control_outmatrix2;
+    out_bottom_matrix3 = M_bottom_matrix_control_outmatrix3;
+    out_bottom_matrix4 = M_bottom_matrix_control_outmatrix4;
     M_control_unit_read_button_in = read_button_in;
     M_control_unit_write_one_in = write_one_button_in;
     M_control_unit_write_zero_in = write_zero_button_in;

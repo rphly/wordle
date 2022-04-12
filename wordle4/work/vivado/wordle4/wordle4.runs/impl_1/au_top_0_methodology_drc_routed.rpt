@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Tue Apr 12 15:10:44 2022
+| Date         : Tue Apr 12 21:02:12 2022
 | Host         : Bryan running 64-bit major release  (build 9200)
 | Command      : report_methodology -file au_top_0_methodology_drc_routed.rpt -pb au_top_0_methodology_drc_routed.pb -rpx au_top_0_methodology_drc_routed.rpx
 | Design       : au_top_0
@@ -174,7 +174,7 @@ Related violations: <none>
 
 TIMING-18#29 Warning
 Missing input or output delay  
-An output delay is missing on outmatrix0 relative to clock(s) clk_0
+An output delay is missing on outmatrix1 relative to clock(s) clk_0
 Related violations: <none>
 
 

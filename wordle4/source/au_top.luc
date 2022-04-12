@@ -5,9 +5,9 @@ module au_top (
     input write_one_button_in,
     input write_zero_button_in,
     input read_button_in,
-    output outmatrix0,
     output io_led[3][8],
-    output usb_tx
+    output usb_tx,
+    output outmatrix1
   ) {
   
   sig rst;                  // reset signal
@@ -16,8 +16,6 @@ module au_top (
     reset_conditioner reset_cond;
     .rst(rst) {
       beta betaCPU;
-      
-      regfile_tester regfile_tester;
     }
     
     button read_button(.button_input(read_button_in));
@@ -28,14 +26,10 @@ module au_top (
     dff write_one_button_dff[1];
     dff write_zero_button_dff[1];
     
-    dff state_tracker_dff[2];
     dff which_letter_tracker[5];
     dff which_matrix_tracker[5];
   }
-  
-  led_strip_writer led_strip(#PIXEL_COUNT(25), .clk(clk), .rst(rst));
-  white_alphabets letters;
-  
+
   always {
     reset_cond.in = ~rst_n;
     rst = reset_cond.out;
@@ -44,6 +38,8 @@ module au_top (
     betaCPU.write_zero_button_in = write_zero_button.out;
     betaCPU.write_one_button_in = write_one_button.out;
     betaCPU.read_button_in = read_button.out;
+    
+    outmatrix1 = betaCPU.out_bottom_matrix1;    
     
     if (read_button.out) {
       if(read_button_dff.q == 1){
@@ -83,21 +79,8 @@ module au_top (
       io_led[0][4] = b1;
     }
     
-    if(betaCPU.current_state != 2d0){
-      state_tracker_dff.d = betaCPU.current_state;
-     }
-    if(state_tracker_dff.q == 2d1){
-      io_led[1][0] = b1;
-    }
-    if(state_tracker_dff.q == 2d2){
-      io_led[1][1] = b1;
-    }
-    if(state_tracker_dff.q == 2d3){
-      io_led[1][2] = b1;
-    }
     
-    
-    
+    /*
     if(betaCPU.which_letter != 5d0){
       which_letter_tracker.d = betaCPU.which_letter;
     }
@@ -117,13 +100,7 @@ module au_top (
     if(which_matrix_tracker.q == 5d1){
       io_led[2][7] = b1;
     }
-    
-    
-    letters.selector = betaCPU.which_letter;
-    led_strip.update=1; //sample write 
-    led_strip.color=letters.out[led_strip.pixel]; 
-    outmatrix0=led_strip.led;
-    
+    */
     usb_tx = usb_rx;        // loop serial port
   }
 }

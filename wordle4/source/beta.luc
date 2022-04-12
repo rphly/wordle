@@ -7,13 +7,20 @@ module beta (
     
     output which_matrix[5],
     output which_letter[5],
-    output current_state[2]
+    output current_state[2],
+    
+    output out_bottom_matrix1,
+    output out_bottom_matrix2,
+    output out_bottom_matrix3,
+    output out_bottom_matrix4
+    
   ) {
   
   .clk(clk) {
     .rst(rst){
       game control_unit;
       regfile r;
+      matrix_controller bottom_matrix_control;
     }
   }
 
@@ -24,6 +31,20 @@ module beta (
     r.read_address_a = control_unit.regfile_ra;
     r.read_address_b = control_unit.regfile_rb;
     r.data = control_unit.regfile_data;
+    
+    
+    // BOTTOM MATRIX CONTROL
+    bottom_matrix_control.update = control_unit.matrix_controller_update;
+    bottom_matrix_control.matrix1_letter_address = control_unit.bottom_matrix1_letter_address;
+    bottom_matrix_control.matrix2_letter_address = control_unit.bottom_matrix2_letter_address;
+    bottom_matrix_control.matrix3_letter_address = control_unit.bottom_matrix3_letter_address;
+    bottom_matrix_control.matrix4_letter_address = control_unit.bottom_matrix4_letter_address;
+    
+    out_bottom_matrix1 = bottom_matrix_control.outmatrix1;
+    out_bottom_matrix2 = bottom_matrix_control.outmatrix2;
+    out_bottom_matrix3 = bottom_matrix_control.outmatrix3;
+    out_bottom_matrix4 = bottom_matrix_control.outmatrix4;
+    
     
     // setup control_unit
     control_unit.read_button_in = read_button_in;

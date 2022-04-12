@@ -85,16 +85,17 @@ OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
   C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/beta_2.v
-  C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_4.v
-  C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_conditioner_9.v
-  C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/edge_detector_10.v
-  C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_7.v
-  C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/led_strip_writer_5.v
-  C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/pipeline_11.v
-  C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_8.v
-  C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_tester_3.v
+  C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_3.v
+  C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_conditioner_7.v
+  C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/edge_detector_8.v
+  C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_4.v
+  C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/led_strip_writer_11.v
+  C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/matrix_9.v
+  C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/matrix_controller_6.v
+  C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/pipeline_10.v
+  C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_5.v
   C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/reset_conditioner_1.v
-  C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/white_alphabets_6.v
+  C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/white_alphabets_12.v
   C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/au_top_0.v
 }
 OPTRACE "Adding files" END { }

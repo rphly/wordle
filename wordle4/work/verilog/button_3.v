@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module button_4 (
+module button_3 (
     input clk,
     input button_input,
     output reg out
@@ -14,7 +14,7 @@ module button_4 (
   
   wire [1-1:0] M_button_cond_out;
   reg [1-1:0] M_button_cond_in;
-  button_conditioner_9 button_cond (
+  button_conditioner_7 button_cond (
     .clk(clk),
     .in(M_button_cond_in),
     .out(M_button_cond_out)
@@ -22,7 +22,7 @@ module button_4 (
   
   wire [1-1:0] M_edge_out;
   reg [1-1:0] M_edge_in;
-  edge_detector_10 L_edge (
+  edge_detector_8 L_edge (
     .clk(clk),
     .in(M_edge_in),
     .out(M_edge_out)

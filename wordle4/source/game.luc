@@ -15,7 +15,14 @@ module game (
     output regfile_ra[16],
     output regfile_rb[16], 
     output regfile_data[16],
-    output current_state[2]   
+    output current_state[2],
+    
+    // matrix controller inputs
+    output matrix_controller_update[3],
+    output bottom_matrix1_letter_address[5],
+    output bottom_matrix2_letter_address[5],
+    output bottom_matrix3_letter_address[5],
+    output bottom_matrix4_letter_address[5]
   ) {
   
   .clk(clk) {
@@ -41,6 +48,13 @@ module game (
     which_matrix = 5d0;
     which_letter = 5d0;
     current_state = 2d0;
+    
+    matrix_controller_update = 0;
+    bottom_matrix1_letter_address = 5d0;
+    bottom_matrix2_letter_address = 5d0;
+    bottom_matrix3_letter_address = 5d0;
+    bottom_matrix4_letter_address = 5d0;
+    
     
     if (rst) {
       game_fsm.d = game_fsm.IDLE; 
@@ -81,9 +95,22 @@ module game (
           regfile_ra = INPUT_LETTER_1;
           regfile_rb = INPUT_CTR;
           
-          which_letter = regfile_out_a;
-          which_matrix = regfile_out_b;
-          current_state = 2d3;
+          
+          case(regfile_out_b){
+            0:
+              matrix_controller_update = 3d1;
+              bottom_matrix1_letter_address = regfile_out_a;
+            1:
+              matrix_controller_update = 3d2;
+              bottom_matrix2_letter_address = regfile_out_a;
+            2:
+              matrix_controller_update = 3d3;
+              bottom_matrix2_letter_address = regfile_out_a;
+            3:
+              matrix_controller_update = 3d4;
+              bottom_matrix2_letter_address = regfile_out_a;
+          }
+          
           game_fsm.d = game_fsm.IDLE;
 
         default: game_fsm.d = game_fsm.IDLE;

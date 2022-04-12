@@ -8,6 +8,7 @@
     <src>yellow_alphabets.luc</src>
     <src>words.luc</src>
     <src>buttons_controller.luc</src>
+    <src>matrix.luc</src>
     <src>matrix_controller.luc</src>
     <src>game.luc</src>
     <src>regfile.luc</src>
