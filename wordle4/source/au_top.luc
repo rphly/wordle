@@ -16,6 +16,8 @@ module au_top (
     reset_conditioner reset_cond;
     .rst(rst) {
       beta betaCPU;
+      
+      regfile_tester regfile_tester;
     }
     
     button read_button(.button_input(read_button_in));
@@ -25,7 +27,10 @@ module au_top (
     dff read_button_dff[1];
     dff write_one_button_dff[1];
     dff write_zero_button_dff[1];
-    dff which_letter_dff[1];
+    
+    dff state_tracker_dff[2];
+    dff which_letter_tracker[5];
+    dff which_matrix_tracker[5];
   }
   
   led_strip_writer led_strip(#PIXEL_COUNT(25), .clk(clk), .rst(rst));
@@ -78,17 +83,41 @@ module au_top (
       io_led[0][4] = b1;
     }
     
-    if (betaCPU.which_letter == b0) {
+    if(betaCPU.current_state != 2d0){
+      state_tracker_dff.d = betaCPU.current_state;
+     }
+    if(state_tracker_dff.q == 2d1){
       io_led[1][0] = b1;
-    } else {
-      io_led[1][0] = b0;
+    }
+    if(state_tracker_dff.q == 2d2){
+      io_led[1][1] = b1;
+    }
+    if(state_tracker_dff.q == 2d3){
+      io_led[1][2] = b1;
     }
     
-    if (betaCPU.which_letter == b1) {
-      io_led[1][1] = b1;
-    } else {
-      io_led[1][1] = b0;
+    
+    
+    if(betaCPU.which_letter != 5d0){
+      which_letter_tracker.d = betaCPU.which_letter;
     }
+    if(which_letter_tracker.q == 5d1){
+      io_led[2][0] = b1;
+    }
+    if(which_letter_tracker.q == 5d0){
+      io_led[2][1] = b1;
+    }
+    
+    if(betaCPU.which_matrix != 5d0){
+      which_matrix_tracker.d = betaCPU.which_matrix;
+    }
+    if(which_matrix_tracker.q == 5d0){
+      io_led[2][6] = b1;
+    }
+    if(which_matrix_tracker.q == 5d1){
+      io_led[2][7] = b1;
+    }
+    
     
     letters.selector = betaCPU.which_letter;
     led_strip.update=1; //sample write 

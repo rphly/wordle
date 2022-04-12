@@ -7,15 +7,15 @@ module game (
     input write_zero_in,
     input read_button_in,
     
-    output which_matrix,
-    output which_letter,
+    output which_matrix[5],
+    output which_letter[5],
 
     output regfile_we,
     output regfile_write_address[16],
     output regfile_ra[16],
     output regfile_rb[16], 
     output regfile_data[16],
-    output current_state   
+    output current_state[2]   
   ) {
   
   .clk(clk) {
@@ -38,9 +38,9 @@ module game (
     regfile_ra = 0;
     regfile_rb = 0;
     regfile_data = 2;
-    which_matrix = 0;
-    which_letter = 0;
-    current_state = 2;
+    which_matrix = 5d0;
+    which_letter = 5d0;
+    current_state = 2d0;
     
     if (rst) {
       game_fsm.d = game_fsm.IDLE; 
@@ -58,13 +58,13 @@ module game (
           }
           
         game_fsm.STORE_ONE:
-          regfile_we = b1;
+          regfile_we = 1;
           regfile_write_address = INPUT_LETTER_1;
           regfile_ra = 16d0;
           regfile_rb = 16d0;
           regfile_data = 16d1;
-          current_state = 1;
-          game_fsm.d = game_fsm.UPDATE_MATRIX;
+          current_state = 2d1;
+          game_fsm.d = game_fsm.IDLE;
 
         game_fsm.STORE_ZERO:
           regfile_we = 1;
@@ -72,18 +72,19 @@ module game (
           regfile_ra = 0;
           regfile_rb = 0;
           regfile_data = 0;
-          game_fsm.d = game_fsm.STORE_ZERO;
+          current_state = 2d2;
+          game_fsm.d = game_fsm.IDLE;
           
           
         game_fsm.UPDATE_MATRIX:
-          regfile_we = b0;
+          regfile_we = 0;
           regfile_ra = INPUT_LETTER_1;
           regfile_rb = INPUT_CTR;
           
-          which_letter = regfile_out_a[0];
-          which_matrix = regfile_out_b[0];
-          game_fsm.d = game_fsm.STORE_ONE;
-          current_state = 0;
+          which_letter = regfile_out_a;
+          which_matrix = regfile_out_b;
+          current_state = 2d3;
+          game_fsm.d = game_fsm.IDLE;
 
         default: game_fsm.d = game_fsm.IDLE;
       }

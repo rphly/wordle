@@ -5,8 +5,9 @@ module beta (
     input write_zero_button_in,
     input read_button_in,
     
-    output which_matrix,
-    output which_letter
+    output which_matrix[5],
+    output which_letter[5],
+    output current_state[2]
   ) {
   
   .clk(clk) {
@@ -30,6 +31,8 @@ module beta (
     control_unit.write_zero_in = write_zero_button_in;
     control_unit.regfile_out_a = r.out_a;
     control_unit.regfile_out_b = r.out_b;
+    
+    current_state = control_unit.current_state;
     
     // matrix controller
     which_matrix = control_unit.which_matrix;

@@ -2,21 +2,22 @@
 <project name="wordle4" board="Alchitry Au" language="Lucid" version="3">
   <files>
     <src>button.luc</src>
-    <component>pipeline.luc</component>
-    <src top="true">au_top.luc</src>
-    <src>yellow_alphabets.luc</src>
-    <src>regfile.luc</src>
-    <src>words.luc</src>
     <src>beta.luc</src>
-    <src>buttons_controller.luc</src>
     <src>green_alphabets.luc</src>
+    <component>pipeline.luc</component>
+    <src>yellow_alphabets.luc</src>
+    <src>words.luc</src>
+    <src>buttons_controller.luc</src>
+    <src>matrix_controller.luc</src>
+    <src>game.luc</src>
+    <src>regfile.luc</src>
     <src>white_alphabets.luc</src>
+    <src>regfile_tester.luc</src>
     <src>led_strip_writer.luc</src>
     <component>reset_conditioner.luc</component>
-    <src>game.luc</src>
     <component>edge_detector.luc</component>
-    <src>matrix_controller.luc</src>
     <component>button_conditioner.luc</component>
+    <src top="true">au_top.luc</src>
     <constraint>alchitry.acf</constraint>
     <constraint lib="true">au.xdc</constraint>
   </files>

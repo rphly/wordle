@@ -1,0 +1,29 @@
+module regfile_tester (
+    input clk,  // clock
+    input rst,  // reset
+    output out[16]
+  ) {
+  
+  .clk(clk) {
+    .rst(rst){
+      regfile r;
+    }
+  }
+  
+  const INPUT_CTR = b11100;
+  const INPUT_LETTER_1 = b10000;
+  
+  always {
+    // setup regfile
+    r.we = 0;
+    r.write_address = 5b0;
+    r.read_address_a = INPUT_LETTER_1;
+    r.read_address_b = 5b0;
+    r.data = 16b0;
+    
+    out = r.out_a;
+    
+    
+    
+  }
+}

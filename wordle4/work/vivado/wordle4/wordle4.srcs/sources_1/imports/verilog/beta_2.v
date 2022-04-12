@@ -10,26 +10,27 @@ module beta_2 (
     input write_one_button_in,
     input write_zero_button_in,
     input read_button_in,
-    output reg which_matrix,
-    output reg which_letter
+    output reg [4:0] which_matrix,
+    output reg [4:0] which_letter,
+    output reg [1:0] current_state
   );
   
   
   
-  wire [1-1:0] M_control_unit_which_matrix;
-  wire [1-1:0] M_control_unit_which_letter;
+  wire [5-1:0] M_control_unit_which_matrix;
+  wire [5-1:0] M_control_unit_which_letter;
   wire [1-1:0] M_control_unit_regfile_we;
   wire [16-1:0] M_control_unit_regfile_write_address;
   wire [16-1:0] M_control_unit_regfile_ra;
   wire [16-1:0] M_control_unit_regfile_rb;
   wire [16-1:0] M_control_unit_regfile_data;
-  wire [1-1:0] M_control_unit_current_state;
+  wire [2-1:0] M_control_unit_current_state;
   reg [16-1:0] M_control_unit_regfile_out_a;
   reg [16-1:0] M_control_unit_regfile_out_b;
   reg [1-1:0] M_control_unit_write_one_in;
   reg [1-1:0] M_control_unit_write_zero_in;
   reg [1-1:0] M_control_unit_read_button_in;
-  game_6 control_unit (
+  game_7 control_unit (
     .clk(clk),
     .rst(rst),
     .regfile_out_a(M_control_unit_regfile_out_a),
@@ -53,7 +54,7 @@ module beta_2 (
   reg [16-1:0] M_r_data;
   reg [5-1:0] M_r_read_address_a;
   reg [5-1:0] M_r_read_address_b;
-  regfile_7 r (
+  regfile_8 r (
     .clk(clk),
     .rst(rst),
     .write_address(M_r_write_address),
@@ -76,6 +77,7 @@ module beta_2 (
     M_control_unit_write_zero_in = write_zero_button_in;
     M_control_unit_regfile_out_a = M_r_out_a;
     M_control_unit_regfile_out_b = M_r_out_b;
+    current_state = M_control_unit_current_state;
     which_matrix = M_control_unit_which_matrix;
     which_letter = M_control_unit_which_letter;
   end
