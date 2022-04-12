@@ -34,7 +34,7 @@ module game (
       RETRIEVE_INPUT_I,
       RETRIEVE_CORRECT_K,
       COMPARE_INPUT_I_WITH_CORRECT_K,
-      COMPARE_K_EQUALS_3,
+      COMPARE_K_EQUALS_3_AND_INCREMENT,
       CHECK_BUTTON_PRESSED,
       COMPARE_INPUT_CTR_EQUALS_4,
       COMPARE_INPUT_I_WITH_CORRECT_I,
@@ -55,7 +55,14 @@ module game (
       SET_TEMP_COLOURED_LETTER_GREEN,
       SET_TEMP_COLOURED_LETTER_YELLOW,
       SET_TEMP_COLOURED_LETTER_WHITE,
-      INCREMENT_K
+      INCREMENT_K,
+      INCREMENT_NUM_CORRECT,
+      COMPARE_NUM_CORRECT_EQUALS_4,
+      COMPARE_I_EQUALS_3_AND_INCREMENT,
+      COMPARE_GUESS_CTR_EQUALS_3,
+      SHOW_TOP_DISPLAY,
+      LOSE,
+      WIN
     };
   }
   
@@ -75,6 +82,8 @@ module game (
   const GUESS_4_LETTER_1 = b01100;
   const TEMP_GUESS_G_LETTER_I_ADDR = b100001;
   const TEMP_COLOURED_LETTER = b100010;
+  
+  const NUM_CORRECT = b11011;
   
   
   always {
@@ -156,7 +165,7 @@ module game (
         game_fsm.CHECK_BUTTON_PRESSED:
           regfile_ra = INPUT_CTR;
           asel = b000; 
-          bsel = b100; // constant 3, since zero-indexed
+          bsel = b011; // constant 3, since zero-indexed
           alufn = b110011; // cmpeq
           
           if (alu_out == 16b1) {
@@ -247,7 +256,7 @@ module game (
           regfile_write_address = regfile_out_a;
           regfile_data = regfile_out_b;
           regfile_we = 1;
-          game_fsm.d = game_fsm.COMPARE_K_EQUALS_3;
+          game_fsm.d = game_fsm.COMPARE_K_EQUALS_3_AND_INCREMENT;
           
            
         game_fsm.COMPARE_POSITIONS_K_AND_I:
@@ -298,7 +307,30 @@ module game (
           regfile_write_address = regfile_out_a;
           regfile_data = regfile_out_b;
           regfile_we = 1;
-          game_fsm.d = game_fsm.COMPARE_K_EQUALS_3;
+          game_fsm.d = game_fsm.INCREMENT_NUM_CORRECT;
+        
+        game_fsm.INCREMENT_NUM_CORRECT:
+          regfile_ra = NUM_CORRECT;
+          regfile_write_address = NUM_CORRECT;
+          regfile_data = regfile_out_a + 1;
+          regfile_we = 1;
+          game_fsm.d = game_fsm.COMPARE_NUM_CORRECT_EQUALS_4;
+          
+        
+        game_fsm.COMPARE_NUM_CORRECT_EQUALS_4:
+          regfile_ra = NUM_CORRECT;
+          asel = b000; 
+          bsel = b100; // constant 3, since zero-indexed
+          alufn = b110011; // cmpeq
+          
+          if (alu_out == 16b0) {
+            game_fsm.d = game_fsm.COMPARE_I_EQUALS_3_AND_INCREMENT;
+          } else {
+            // CONGRATS
+            game_fsm.d = game_fsm.WIN;
+          }
+          
+        
         
         // YELLOW SEQUENCE 
         game_fsm.SET_TEMP_GUESS_G_LETTER_I_ADDR_YELLOW:
@@ -332,9 +364,9 @@ module game (
           regfile_write_address = regfile_out_a;
           regfile_data = regfile_out_b;
           regfile_we = 1;
-          game_fsm.d = game_fsm.COMPARE_K_EQUALS_3;
+          game_fsm.d = game_fsm.COMPARE_I_EQUALS_3_AND_INCREMENT;
 
-        game_fsm.COMPARE_K_EQUALS_3:
+        game_fsm.COMPARE_K_EQUALS_3_AND_INCREMENT:
           regfile_ra = K;
           asel = b000; 
           bsel = b100; // constant 3, since zero-indexed
@@ -345,15 +377,60 @@ module game (
             regfile_write_address = K;
             regfile_data = regfile_out_a + 1;
             regfile_we = 1;
-            // go to next K
             game_fsm.d = game_fsm.RETRIEVE_CORRECT_K;
           } else {
-            // exit inner loop
-            game_fsm.d = game_fsm.INCREMENT_K;
+            // check if finished traversing input
+            game_fsm.d = game_fsm.COMPARE_I_EQUALS_3_AND_INCREMENT;
           }
-            
-            
-          default: game_fsm.d = game_fsm.IDLE;
+        
+        game_fsm.COMPARE_I_EQUALS_3_AND_INCREMENT:
+          regfile_ra = I;
+          asel = b000; 
+          bsel = b011; // constant 3, since zero-indexed
+          alufn = b110011; // cmpeq
+          
+          if (alu_out == 16b0) {
+            // increment if not reached 3
+            regfile_write_address = I;
+            regfile_data = regfile_out_a + 1;
+            regfile_we = 1;
+            // increment I first, then set to zero
+            game_fsm.d = game_fsm.SET_K_TO_ZERO;
+          } else {
+            // go to next guess, reset numcorrectinputs
+            game_fsm.d = game_fsm.SET_NUM_CORRECT_INPUTS_TO_0;
+          }
+
+        game_fsm.SET_NUM_CORRECT_INPUTS_TO_0:
+          regfile_write_address = NUM_CORRECT;
+          regfile_ra = 0;
+          regfile_rb = 0;
+          regfile_data = 0;
+          regfile_we = 1;
+          game_fsm.d = game_fsm.SHOW_TOP_DISPLAY;
+       
+        game_fsm.SHOW_TOP_DISPLAY:
+          game_fsm.d = game_fsm.COMPARE_GUESS_CTR_EQUALS_3;
+          
+        game_fsm.COMPARE_GUESS_CTR_EQUALS_3:
+          regfile_ra = G;
+          asel = b000; 
+          bsel = b011; // constant 3, since zero-indexed
+          alufn = b110011; // cmpeq
+          
+          if (alu_out == 16b0) {
+            // increment if not reached 3
+            regfile_write_address = G;
+            regfile_data = regfile_out_a + 1;
+            regfile_we = 1;
+            // increment I first, then set to zero
+            game_fsm.d = game_fsm.SET_INPUT_CTR_TO_0;
+          } else {
+            // oh no
+            game_fsm.d = game_fsm.LOSE;
+          }
+ 
+        default: game_fsm.d = game_fsm.IDLE;
       }
     }
   }

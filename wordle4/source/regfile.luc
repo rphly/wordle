@@ -116,10 +116,10 @@ module regfile (
         b10101 : j.d = data;
         b10110 : k.d = data;
         
-        b10111 : correct_letter_1.d = data;
-        b11000 : correct_letter_2.d = data;
-        b11001 : correct_letter_3.d = data;
-        b11010 : correct_letter_4.d = data;
+        b10111 : correct_letter_1.d = b00010;
+        b11000 : correct_letter_2.d = b00110;
+        b11001 : correct_letter_3.d = b00001;
+        b11010 : correct_letter_4.d = b10011;
         
         b11011 : num_correct.d = data;
         b11100 : input_ctr.d = data;
