@@ -2,8 +2,11 @@ module game (
     input clk,  // clock
     input rst,  // reset
     input btn_is_pressed,
-    input btn_input
+    input btn_input[5],
     //output outmatrix0
+    
+    output reset_check,
+    output on_press_check
   ) {
   
   .clk(clk) {
@@ -25,7 +28,7 @@ module game (
     regfile rf(.rst(rst));
   }
   
-  const INPUT_CTR = 11100;
+  const INPUT_CTR = b11100;
   const INPUT_LETTER_1 = b10000;
   
   //led_strip_writer matrix0(#PIXEL_COUNT(25), .clk(clk), .rst(rst));
@@ -33,6 +36,8 @@ module game (
   
   always {
     // standard settings
+    reset_check=0;
+    on_press_check=0;
     rf.we = 0;
     rf.read_address_a = 5b0;
     rf.read_address_b = 5b0;
@@ -40,10 +45,6 @@ module game (
     rf.write_address = 5b0;
     
     white_letters.selector = 0;
-    //matrix0.update = 0;
-    //matrix0.color = 0;
-    
-    //outmatrix0 = 0;
     
     if (rst) {
       game_fsm.d = game_fsm.RESET_TOP_DISPLAY; 
@@ -65,8 +66,12 @@ module game (
           
         game_fsm.IDLE:
           // if check button press
+          reset_check = 1;
           if (btn_is_pressed) {
+            on_press_check = 1;
             game_fsm.d = game_fsm.STORE_INPUT;
+          } else {
+            game_fsm.d = game_fsm.IDLE;
           }
 
         game_fsm.CLEAR_SET_INPUT_CTR_1:
@@ -78,13 +83,13 @@ module game (
         game_fsm.STORE_INPUT:
           // store buttons_controller.out
           // read value of i
-          rf.we = 0;
+          rf.we = 1;
           rf.read_address_a = INPUT_CTR;
+          rf.read_address_b = 0;
           
           // write to reg
           rf.write_address = INPUT_LETTER_1 + rf.out_a; 
           rf.data = btn_input;
-          rf.we = 1;
           game_fsm.d = game_fsm.PRINT_LETTER_TO_MATRIX;
          
         game_fsm.INCREMENT_INPUT_CTR:

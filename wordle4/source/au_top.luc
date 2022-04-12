@@ -3,38 +3,65 @@ module au_top (
     input rst_n,            // reset button (active low)
     input usb_rx,           // USB->Serial input
     input btnin,
-    //output outmatrix0,
+    output outmatrix0,
     output usb_tx,
     output io_led[3][8]
   ) {
   
   sig rst;                  // reset signal
-  
+  led_strip_writer led_strip(#PIXEL_COUNT(25), .clk(clk), .rst(rst));
   .clk(clk) {
+    regfile rf(.rst(rst));
     reset_conditioner reset_cond;
+    dff button_toggle[1];
     
-    buttons_controller btn_controller(.aIn(btnin), .rst(rst));
-    //matrix_controller matrx_controller(.rst(rst));
-    game g(.rst(rst));
+    dff debugger_button_pressed[8];
+    dff debugger_write_address_check[8];
+    dff btn_controller_out_check[8];
   }
   
+  button btn(.button_input(btnin), .clk(clk));
+  
+  
+  
+  white_alphabets letters;
+  
   always {
-  reset_cond.in = ~rst_n;
+    reset_cond.in = ~rst_n;
     rst = reset_cond.out;
     
     io_led = 3x{{8h00}};
-        
-    if (rst == 1) {
-      io_led[0][7:0] = b11111111;
+    
+    
+    if(btn.out){
+      if(button_toggle.q == 1){
+        rf.we = 1;
+        rf.write_address=b10000;
+        rf.data= 5d0;
+        button_toggle.d = 0;
+        debugger_button_pressed.d = b00000000;
+       }else{
+          rf.we = 1;
+        rf.write_address=b10000;
+        rf.data= 5d1;
+        button_toggle.d = 1;
+        debugger_button_pressed.d = b11111111;
+        }
     }
     
-    if (btn_controller.is_pressed == b1) {
-      io_led[1][7:0] = b11111111;
-    }
+   
+    rf.we=0;
+    rf.data=0;
+    rf.write_address=0;
+    rf.read_address_a = b10000;
+    rf.read_address_b = 5b0;
+    
+    //letters.selector = rf.out_a;
+    //io_led[1][7:0] = debugger_button_pressed.q;
+    //led_strip.update=1; //sample write 
+    //led_strip.color=letters.out[led_strip.pixel]; 
+    //outmatrix0=led_strip.led;
     
     usb_tx = usb_rx;        // loop serial port
-    g.btn_is_pressed = btn_controller.is_pressed;
-    g.btn_input = btn_controller.out;
-    //outmatrix0 = matrx_controller.outmatrix0;
   }
 }

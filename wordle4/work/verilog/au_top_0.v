@@ -9,6 +9,7 @@ module au_top_0 (
     input rst_n,
     input usb_rx,
     input btnin,
+    output reg outmatrix0,
     output reg usb_tx,
     output reg [23:0] io_led
   );
@@ -17,43 +18,103 @@ module au_top_0 (
   
   reg rst;
   
+  wire [5-1:0] M_led_strip_pixel;
+  wire [1-1:0] M_led_strip_led;
+  reg [1-1:0] M_led_strip_update;
+  reg [24-1:0] M_led_strip_color;
+  led_strip_writer_1 led_strip (
+    .clk(clk),
+    .rst(rst),
+    .update(M_led_strip_update),
+    .color(M_led_strip_color),
+    .pixel(M_led_strip_pixel),
+    .led(M_led_strip_led)
+  );
+  
+  wire [16-1:0] M_rf_out_a;
+  wire [16-1:0] M_rf_out_b;
+  reg [5-1:0] M_rf_write_address;
+  reg [1-1:0] M_rf_we;
+  reg [16-1:0] M_rf_data;
+  reg [5-1:0] M_rf_read_address_a;
+  reg [5-1:0] M_rf_read_address_b;
+  regfile_2 rf (
+    .clk(clk),
+    .rst(rst),
+    .write_address(M_rf_write_address),
+    .we(M_rf_we),
+    .data(M_rf_data),
+    .read_address_a(M_rf_read_address_a),
+    .read_address_b(M_rf_read_address_b),
+    .out_a(M_rf_out_a),
+    .out_b(M_rf_out_b)
+  );
   wire [1-1:0] M_reset_cond_out;
   reg [1-1:0] M_reset_cond_in;
-  reset_conditioner_1 reset_cond (
+  reset_conditioner_3 reset_cond (
     .clk(clk),
     .in(M_reset_cond_in),
     .out(M_reset_cond_out)
   );
-  wire [1-1:0] M_btn_controller_is_pressed;
-  wire [1-1:0] M_btn_controller_out;
-  buttons_controller_2 btn_controller (
+  reg [0:0] M_button_toggle_d, M_button_toggle_q = 1'h0;
+  reg [7:0] M_debugger_button_pressed_d, M_debugger_button_pressed_q = 1'h0;
+  reg [7:0] M_debugger_write_address_check_d, M_debugger_write_address_check_q = 1'h0;
+  reg [7:0] M_btn_controller_out_check_d, M_btn_controller_out_check_q = 1'h0;
+  
+  wire [1-1:0] M_btn_out;
+  button_4 btn (
+    .button_input(btnin),
     .clk(clk),
-    .aIn(btnin),
-    .rst(rst),
-    .is_pressed(M_btn_controller_is_pressed),
-    .out(M_btn_controller_out)
+    .out(M_btn_out)
   );
-  reg [1-1:0] M_g_btn_is_pressed;
-  reg [1-1:0] M_g_btn_input;
-  game_3 g (
-    .clk(clk),
-    .rst(rst),
-    .btn_is_pressed(M_g_btn_is_pressed),
-    .btn_input(M_g_btn_input)
+  
+  wire [600-1:0] M_letters_out;
+  reg [5-1:0] M_letters_selector;
+  white_alphabets_5 letters (
+    .selector(M_letters_selector),
+    .out(M_letters_out)
   );
   
   always @* begin
+    M_button_toggle_d = M_button_toggle_q;
+    M_debugger_button_pressed_d = M_debugger_button_pressed_q;
+    
     M_reset_cond_in = ~rst_n;
     rst = M_reset_cond_out;
     io_led = 24'h000000;
-    if (rst == 1'h1) begin
-      io_led[0+0+7-:8] = 8'hff;
+    if (M_btn_out) begin
+      if (M_button_toggle_q == 1'h1) begin
+        M_rf_we = 1'h1;
+        M_rf_write_address = 5'h10;
+        M_rf_data = 5'h00;
+        M_button_toggle_d = 1'h0;
+        M_debugger_button_pressed_d = 8'h00;
+      end else begin
+        M_rf_we = 1'h1;
+        M_rf_write_address = 5'h10;
+        M_rf_data = 5'h01;
+        M_button_toggle_d = 1'h1;
+        M_debugger_button_pressed_d = 8'hff;
+      end
     end
-    if (M_btn_controller_is_pressed == 1'h1) begin
-      io_led[8+0+7-:8] = 8'hff;
-    end
+    M_rf_we = 1'h0;
+    M_rf_data = 1'h0;
+    M_rf_write_address = 1'h0;
+    M_rf_read_address_a = 5'h10;
+    M_rf_read_address_b = 5'h00;
+    M_letters_selector = M_rf_out_a;
+    io_led[8+0+7-:8] = M_debugger_button_pressed_q;
+    M_led_strip_update = 1'h1;
+    M_led_strip_color = M_letters_out[(M_led_strip_pixel)*24+23-:24];
+    outmatrix0 = M_led_strip_led;
     usb_tx = usb_rx;
-    M_g_btn_is_pressed = M_btn_controller_is_pressed;
-    M_g_btn_input = M_btn_controller_out;
   end
+  
+  always @(posedge clk) begin
+    M_button_toggle_q <= M_button_toggle_d;
+    M_debugger_button_pressed_q <= M_debugger_button_pressed_d;
+    M_debugger_write_address_check_q <= M_debugger_write_address_check_d;
+    M_btn_controller_out_check_q <= M_btn_controller_out_check_d;
+  end
+  
 endmodule

@@ -3,8 +3,8 @@ clock clk 100MHz;
 
 pin rst_n RESET;
 
-pin btnin A33 pulldown;
-//pin outmatrix0 A27;
+pin btnin A8 pulldown;
+pin outmatrix0 A27;
 
 
 pin io_led[0][0] B21;

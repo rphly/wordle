@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tftg256-1" LaunchTime="1649670950">
+<GenRun Id="synth_1" LaunchPart="xc7a35tftg256-1" LaunchTime="1649697791">
   <File Type="PA-TCL" Name="au_top_0.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="au_top_0_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="au_top_0_reports.tcl"/>
@@ -14,79 +14,70 @@
     <File Path="$PSRCDIR/sources_1/imports/verilog/button_4.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/button_4.v"/>
-        <Attr Name="ImportTime" Val="1649670929"/>
+        <Attr Name="ImportTime" Val="1649697783"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/verilog/button_conditioner_7.v">
+    <File Path="$PSRCDIR/sources_1/imports/verilog/button_conditioner_6.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/button_conditioner_7.v"/>
-        <Attr Name="ImportTime" Val="1649670929"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/button_conditioner_6.v"/>
+        <Attr Name="ImportTime" Val="1649697783"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/verilog/buttons_controller_2.v">
+    <File Path="$PSRCDIR/sources_1/imports/verilog/edge_detector_7.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/buttons_controller_2.v"/>
-        <Attr Name="ImportTime" Val="1649670929"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/edge_detector_7.v"/>
+        <Attr Name="ImportTime" Val="1649697783"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/verilog/edge_detector_8.v">
+    <File Path="$PSRCDIR/sources_1/imports/verilog/led_strip_writer_1.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/edge_detector_8.v"/>
-        <Attr Name="ImportTime" Val="1649670929"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/led_strip_writer_1.v"/>
+        <Attr Name="ImportTime" Val="1649697783"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/verilog/game_3.v">
+    <File Path="$PSRCDIR/sources_1/imports/verilog/pipeline_8.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/game_3.v"/>
-        <Attr Name="ImportTime" Val="1649670929"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/pipeline_8.v"/>
+        <Attr Name="ImportTime" Val="1649697783"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/verilog/pipeline_9.v">
+    <File Path="$PSRCDIR/sources_1/imports/verilog/regfile_2.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/pipeline_9.v"/>
-        <Attr Name="ImportTime" Val="1649670929"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/regfile_2.v"/>
+        <Attr Name="ImportTime" Val="1649697783"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/verilog/regfile_5.v">
+    <File Path="$PSRCDIR/sources_1/imports/verilog/reset_conditioner_3.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/regfile_5.v"/>
-        <Attr Name="ImportTime" Val="1649670929"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/reset_conditioner_3.v"/>
+        <Attr Name="ImportTime" Val="1649697783"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/verilog/reset_conditioner_1.v">
+    <File Path="$PSRCDIR/sources_1/imports/verilog/white_alphabets_5.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/reset_conditioner_1.v"/>
-        <Attr Name="ImportTime" Val="1649670929"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/verilog/white_alphabets_6.v">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/white_alphabets_6.v"/>
-        <Attr Name="ImportTime" Val="1649670929"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/white_alphabets_5.v"/>
+        <Attr Name="ImportTime" Val="1649697783"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -95,7 +86,7 @@
     <File Path="$PSRCDIR/sources_1/imports/verilog/au_top_0.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/au_top_0.v"/>
-        <Attr Name="ImportTime" Val="1649670929"/>
+        <Attr Name="ImportTime" Val="1649697783"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -109,13 +100,13 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="$PPRDIR/../../../../../../../../../Program Files/Alchitry/Alchitry Labs/library/components/au.xdc">
+    <File Path="$PPRDIR/../../constraint/alchitry.xdc">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../constraint/alchitry.xdc">
+    <File Path="$PPRDIR/../../../../../../../../Program Files/Alchitry/Alchitry Labs/library/components/au.xdc">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

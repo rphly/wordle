@@ -1,0 +1,25 @@
+module beta (
+    input clk,  // clock
+    input rst,  // reset
+    output out
+  ) {
+  
+  .clk(clk) {
+    .rst(rst){
+      game control_unit;
+      regfile r;
+    }
+  }
+
+  always {
+    // setup regfile
+    r.we = control_unit.regfile_we;
+    r.write_address = control_unit.regfile_write_address;
+    r.read_address_a = control_unit.regfile_ra;
+    r.read_address_b = control_unit.regfile_rb;
+    control_unit.regfile_datain = r.out_b;
+    // alu is a
+    
+    // setup control_unit
+  }
+}

@@ -4,21 +4,19 @@ module buttons_controller (
     
     input aIn,
     output is_pressed,
-    output out
+    output out[16]
   ) {
   .clk(clk) {
     button a(.button_input(aIn));
    }
   
   always {
-    
-    case (a.out) {
-      b1:
-       out = a.out;
-       is_pressed = b1;
-      default:
-        out = 0;
-        is_pressed = 0;
+    if(a.out){
+      out = 16d1;
+      is_pressed = 1;
+    }else{
+      out = 16b0;
+      is_pressed = 0;
     }
   }
 }
