@@ -2,16 +2,16 @@ module buttons_controller (
     input clk,  // clock
     input rst,  // reset
     
-    input aIn,
+    input a,
     output is_pressed,
     output out[16]
   ) {
   .clk(clk) {
-    button a(.button_input(aIn));
+    button a_(.button_input(a));
    }
   
   always {
-    if(a.out){
+    if(a_.out){
       out = 16d1;
       is_pressed = 1;
     }else{

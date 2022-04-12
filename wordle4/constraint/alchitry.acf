@@ -3,9 +3,9 @@ clock clk 100MHz;
 
 pin rst_n RESET;
 
-pin write_one_button_in A8 pulldown;
-pin write_zero_button_in A9 pulldown;
-pin read_button_in A43 pulldown;
+pin a_in A8 pulldown;
+pin b_in A9 pulldown;
+pin c_in A43 pulldown;
 pin outmatrix0 A27;
 
 

@@ -1,10 +1,12 @@
 module beta (
     input clk,  // clock
     input rst,  // reset
-    input write_one_button_in,
-    input write_zero_button_in,
-    input read_button_in,
     
+    // set keyboard inputs
+    input has_keyboard_input,
+    input keyboard_input[5],
+    
+    // set outputs
     output which_matrix[5],
     output which_letter[5],
     output current_state[2]
@@ -13,6 +15,7 @@ module beta (
   .clk(clk) {
     .rst(rst){
       game control_unit;
+      
       regfile r;
     }
   }
@@ -26,9 +29,8 @@ module beta (
     r.data = control_unit.regfile_data;
     
     // setup control_unit
-    control_unit.read_button_in = read_button_in;
-    control_unit.write_one_in = write_one_button_in;
-    control_unit.write_zero_in = write_zero_button_in;
+    control_unit.keyboard_input = keyboard_input;
+    control_unit.has_keyboard_input = has_keyboard_input;
     control_unit.regfile_out_a = r.out_a;
     control_unit.regfile_out_b = r.out_b;
     
