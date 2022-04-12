@@ -58,7 +58,7 @@ module au_top (
           write_one_button_dff.d = 1;
       }
     }
-    if(read_button_dff.q == 1){
+    if(write_one_button_dff.q == 1){
       io_led[0][2] = b1;
     }
     

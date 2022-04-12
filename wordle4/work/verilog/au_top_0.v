@@ -111,7 +111,7 @@ module au_top_0 (
         M_write_one_button_dff_d = 1'h1;
       end
     end
-    if (M_read_button_dff_q == 1'h1) begin
+    if (M_write_one_button_dff_q == 1'h1) begin
       io_led[0+2+0-:1] = 1'h1;
     end
     if (M_write_zero_button_out) begin

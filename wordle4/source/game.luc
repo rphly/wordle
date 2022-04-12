@@ -54,7 +54,7 @@ module game (
           if (read_button_in) {
             game_fsm.d = game_fsm.UPDATE_MATRIX;
           }
-          game_fsm.d = game_fsm.IDLE;
+          
         game_fsm.STORE_ONE:
           regfile_we = 1;
           regfile_write_address = INPUT_LETTER_1;

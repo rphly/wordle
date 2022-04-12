@@ -60,7 +60,6 @@ module game_6 (
           if (read_button_in) begin
             M_game_fsm_d = UPDATE_MATRIX_game_fsm;
           end
-          M_game_fsm_d = IDLE_game_fsm;
         end
         STORE_ONE_game_fsm: begin
           regfile_we = 1'h1;
