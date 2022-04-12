@@ -1,7 +1,12 @@
 module beta (
     input clk,  // clock
     input rst,  // reset
-    output out
+    input write_one_button_in,
+    input write_zero_button_in,
+    input read_button_in,
+    
+    output which_matrix,
+    output which_letter
   ) {
   
   .clk(clk) {
@@ -17,9 +22,17 @@ module beta (
     r.write_address = control_unit.regfile_write_address;
     r.read_address_a = control_unit.regfile_ra;
     r.read_address_b = control_unit.regfile_rb;
-    control_unit.regfile_datain = r.out_b;
-    // alu is a
+    r.data = control_unit.regfile_data;
     
     // setup control_unit
+    control_unit.read_button_in = read_button_in;
+    control_unit.write_one_in = write_one_button_in;
+    control_unit.write_zero_in = write_zero_button_in;
+    control_unit.regfile_out_a = r.out_a;
+    control_unit.regfile_out_b = r.out_b;
+    
+    // matrix controller
+    which_matrix = control_unit.which_matrix;
+    which_letter = control_unit.which_letter;
   }
 }

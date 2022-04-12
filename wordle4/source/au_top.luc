@@ -2,65 +2,83 @@ module au_top (
     input clk,              // 100MHz clock
     input rst_n,            // reset button (active low)
     input usb_rx,           // USB->Serial input
-    input btnin,
+    input write_one_button_in,
+    input write_zero_button_in,
+    input read_button_in,
     output outmatrix0,
-    output usb_tx,
-    output io_led[3][8]
+    output io_led[3][8],
+    output usb_tx
   ) {
   
   sig rst;                  // reset signal
-  led_strip_writer led_strip(#PIXEL_COUNT(25), .clk(clk), .rst(rst));
+  
   .clk(clk) {
-    regfile rf(.rst(rst));
     reset_conditioner reset_cond;
-    dff button_toggle[1];
+    .rst(rst) {
+      beta betaCPU;
+    }
     
-    dff debugger_button_pressed[8];
-    dff debugger_write_address_check[8];
-    dff btn_controller_out_check[8];
+    button read_button(.button_input(read_button_in));
+    button write_zero_button(.button_input(write_zero_button_in));
+    button write_one_button(.button_input(write_one_button_in));
+    
+    dff read_button_dff[1];
+    dff write_one_button_dff[1];
+    dff write_zero_button_dff[1];
   }
   
-  button btn(.button_input(btnin), .clk(clk));
-  
-  
-  
+  led_strip_writer led_strip(#PIXEL_COUNT(25), .clk(clk), .rst(rst));
   white_alphabets letters;
   
   always {
     reset_cond.in = ~rst_n;
     rst = reset_cond.out;
+     io_led = 3x{{8h00}};
     
-    io_led = 3x{{8h00}};
+    betaCPU.write_zero_button_in = write_zero_button.out;
+    betaCPU.write_one_button_in = write_one_button.out;
+    betaCPU.read_button_in = read_button.out;
     
-    
-    if(btn.out){
-      if(button_toggle.q == 1){
-        rf.we = 1;
-        rf.write_address=b10000;
-        rf.data= 5d0;
-        button_toggle.d = 0;
-        debugger_button_pressed.d = b00000000;
-       }else{
-          rf.we = 1;
-        rf.write_address=b10000;
-        rf.data= 5d1;
-        button_toggle.d = 1;
-        debugger_button_pressed.d = b11111111;
-        }
+    if (read_button.out) {
+      if(read_button_dff.q == 1){
+        read_button_dff.d = 0;
+      }else{
+        read_button_dff.d = 1;
+      }
+    }
+    if(read_button_dff.q == 1){
+      io_led[0][0] = b1;
     }
     
-   
-    rf.we=0;
-    rf.data=0;
-    rf.write_address=0;
-    rf.read_address_a = b10000;
-    rf.read_address_b = 5b0;
     
-    //letters.selector = rf.out_a;
-    //io_led[1][7:0] = debugger_button_pressed.q;
-    //led_strip.update=1; //sample write 
-    //led_strip.color=letters.out[led_strip.pixel]; 
-    //outmatrix0=led_strip.led;
+    if (write_one_button.out) {
+      if(write_one_button_dff.q == 1){
+          write_one_button_dff.d = 0;
+      }else{
+          write_one_button_dff.d = 1;
+      }
+    }
+    if(read_button_dff.q == 1){
+      io_led[0][2] = b1;
+    }
+    
+    
+    if (write_zero_button.out) {
+      if(write_zero_button_dff.q == 1){
+          write_zero_button_dff.d = 0;
+      }else{
+          write_zero_button_dff.d = 1;
+      }
+    }
+    if (write_zero_button_dff.q == 1) {
+      io_led[0][4] = b1;
+    }
+    
+    letters.selector = betaCPU.which_letter;
+
+    led_strip.update=1; //sample write 
+    led_strip.color=letters.out[led_strip.pixel]; 
+    outmatrix0=led_strip.led;
     
     usb_tx = usb_rx;        // loop serial port
   }

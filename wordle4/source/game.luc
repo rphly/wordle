@@ -1,127 +1,85 @@
 module game (
     input clk,  // clock
     input rst,  // reset
-    input btn_is_pressed,
-    input btn_input[5],
-    //output outmatrix0
+    input regfile_out_a,
+    input regfile_out_b,
+    input write_one_in,
+    input write_zero_in,
+    input read_button_in,
     
-    output reset_check,
-    output on_press_check
+    output which_matrix,
+    output which_letter,
+
+    output regfile_we,
+    output regfile_write_address,
+    output regfile_ra,
+    output regfile_rb, 
+    output regfile_data   
   ) {
   
   .clk(clk) {
     fsm game_fsm = {
-      RESET_TOP_DISPLAY,
-      RESET_BOTTOM_DISPLAY,
-      SET_INPUT_CTR_TO_0,
-      SET_GUESS_CTR_TO_0,
-      SET_NUM_CORRECT_INPUTS_TO_0,
       IDLE,
-      CLEAR_SET_INPUT_CTR_1,
-      CLEAR_RESET_BOTTOM_DISPLAY,
       STORE_INPUT,
-      INCREMENT_INPUT_CTR,
-      PRINT_LETTER_TO_MATRIX
+      UPDATE_MATRIX,
+      STORE_ONE,
+      STORE_ZERO
     };
-    
-    
-    regfile rf(.rst(rst));
   }
   
   const INPUT_CTR = b11100;
   const INPUT_LETTER_1 = b10000;
   
-  //led_strip_writer matrix0(#PIXEL_COUNT(25), .clk(clk), .rst(rst));
-  white_alphabets white_letters;
-  
   always {
-    // standard settings
-    reset_check=0;
-    on_press_check=0;
-    rf.we = 0;
-    rf.read_address_a = 5b0;
-    rf.read_address_b = 5b0;
-    rf.data = 16b0;
-    rf.write_address = 5b0;
-    
-    white_letters.selector = 0;
+    // standard setting 
+    regfile_we = 0;
+    regfile_write_address = 0;
+    regfile_ra = 0;
+    regfile_rb = 0;
+    regfile_data = 2;
+    which_matrix = 0;
+    which_letter = 0;
     
     if (rst) {
-      game_fsm.d = game_fsm.RESET_TOP_DISPLAY; 
+      game_fsm.d = game_fsm.IDLE; 
     } else {
       case(game_fsm.q) {
-      
-        game_fsm.RESET_TOP_DISPLAY:
-          game_fsm.d = game_fsm.RESET_BOTTOM_DISPLAY;
-          
-        game_fsm.RESET_BOTTOM_DISPLAY:
-          game_fsm.d = game_fsm.SET_INPUT_CTR_TO_0;
-          
-        game_fsm.SET_INPUT_CTR_TO_0:
-          rf.write_address = INPUT_CTR; 
-          rf.data = 0;
-          rf.we = 1;
-          
-          game_fsm.d = game_fsm.IDLE;
-          
         game_fsm.IDLE:
-          // if check button press
-          reset_check = 1;
-          if (btn_is_pressed) {
-            on_press_check = 1;
-            game_fsm.d = game_fsm.STORE_INPUT;
-          } else {
-            game_fsm.d = game_fsm.IDLE;
+          if (write_zero_in) {
+            game_fsm.d = game_fsm.STORE_ZERO;
           }
+          if (write_one_in) {
+            game_fsm.d = game_fsm.STORE_ONE;
+          }
+          if (read_button_in) {
+            game_fsm.d = game_fsm.UPDATE_MATRIX;
+          }
+          game_fsm.d = game_fsm.IDLE;
+        game_fsm.STORE_ONE:
+          regfile_we = 1;
+          regfile_write_address = INPUT_LETTER_1;
+          regfile_ra = 0;
+          regfile_rb = 0;
+          regfile_data = 1;
+          game_fsm.d = game_fsm.IDLE;
 
-        game_fsm.CLEAR_SET_INPUT_CTR_1:
-          game_fsm.d = game_fsm.CLEAR_RESET_BOTTOM_DISPLAY;
-        
-        game_fsm.CLEAR_RESET_BOTTOM_DISPLAY:
+        game_fsm.STORE_ZERO:
+          regfile_we = 1;
+          regfile_write_address = INPUT_LETTER_1;
+          regfile_ra = 0;
+          regfile_rb = 0;
+          regfile_data = 0;
           game_fsm.d = game_fsm.IDLE;
-        
-        game_fsm.STORE_INPUT:
-          // store buttons_controller.out
-          // read value of i
-          rf.we = 1;
-          rf.read_address_a = INPUT_CTR;
-          rf.read_address_b = 0;
           
-          // write to reg
-          rf.write_address = INPUT_LETTER_1 + rf.out_a; 
-          rf.data = btn_input;
-          game_fsm.d = game_fsm.PRINT_LETTER_TO_MATRIX;
-         
-        game_fsm.INCREMENT_INPUT_CTR:
-          rf.read_address_a = INPUT_CTR;
-          // write to reg
-          rf.write_address = INPUT_CTR; 
-          rf.data = rf.out_a + 1;
-          rf.we = 1;
+        game_fsm.UPDATE_MATRIX:
+          regfile_we = 0;
+          regfile_ra = INPUT_LETTER_1;
+          regfile_rb = INPUT_CTR;
           
+          which_letter = regfile_out_a;
+          which_matrix = regfile_out_b;
           game_fsm.d = game_fsm.IDLE;
-        
-        game_fsm.PRINT_LETTER_TO_MATRIX:
-            // get current I
-            rf.we = 0;
-            rf.read_address_a = INPUT_CTR;
-          
-            // get letter from alphabets
-            rf.read_address_b = INPUT_LETTER_1 + rf.out_a;
-            white_letters.selector = rf.out_b;
-            // display on matrix with white_letters.out
-          
-            /*case (rf.out_a) {
-             0:
-              matrix0.update = 1;
-              matrix0.color = white_letters.out[matrix0.pixel];
-              outmatrix0 = matrix0.led;
-            }*/
-          
-            game_fsm.d = game_fsm.INCREMENT_INPUT_CTR;
-          
-        default:
-          game_fsm.d = game_fsm.IDLE;
+        default: game_fsm.d = game_fsm.IDLE;
       }
     }
   }

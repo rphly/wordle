@@ -8,64 +8,72 @@ module au_top_0 (
     input clk,
     input rst_n,
     input usb_rx,
-    input btnin,
+    input write_one_button_in,
+    input write_zero_button_in,
+    input read_button_in,
     output reg outmatrix0,
-    output reg usb_tx,
-    output reg [23:0] io_led
+    output reg [23:0] io_led,
+    output reg usb_tx
   );
   
   
   
   reg rst;
   
+  wire [1-1:0] M_reset_cond_out;
+  reg [1-1:0] M_reset_cond_in;
+  reset_conditioner_1 reset_cond (
+    .clk(clk),
+    .in(M_reset_cond_in),
+    .out(M_reset_cond_out)
+  );
+  wire [1-1:0] M_betaCPU_which_matrix;
+  wire [1-1:0] M_betaCPU_which_letter;
+  reg [1-1:0] M_betaCPU_write_one_button_in;
+  reg [1-1:0] M_betaCPU_write_zero_button_in;
+  reg [1-1:0] M_betaCPU_read_button_in;
+  beta_2 betaCPU (
+    .clk(clk),
+    .rst(rst),
+    .write_one_button_in(M_betaCPU_write_one_button_in),
+    .write_zero_button_in(M_betaCPU_write_zero_button_in),
+    .read_button_in(M_betaCPU_read_button_in),
+    .which_matrix(M_betaCPU_which_matrix),
+    .which_letter(M_betaCPU_which_letter)
+  );
+  wire [1-1:0] M_read_button_out;
+  button_3 read_button (
+    .clk(clk),
+    .button_input(read_button_in),
+    .out(M_read_button_out)
+  );
+  wire [1-1:0] M_write_zero_button_out;
+  button_3 write_zero_button (
+    .clk(clk),
+    .button_input(write_zero_button_in),
+    .out(M_write_zero_button_out)
+  );
+  wire [1-1:0] M_write_one_button_out;
+  button_3 write_one_button (
+    .clk(clk),
+    .button_input(write_one_button_in),
+    .out(M_write_one_button_out)
+  );
+  reg [0:0] M_read_button_dff_d, M_read_button_dff_q = 1'h0;
+  reg [0:0] M_write_one_button_dff_d, M_write_one_button_dff_q = 1'h0;
+  reg [0:0] M_write_zero_button_dff_d, M_write_zero_button_dff_q = 1'h0;
+  
   wire [5-1:0] M_led_strip_pixel;
   wire [1-1:0] M_led_strip_led;
   reg [1-1:0] M_led_strip_update;
   reg [24-1:0] M_led_strip_color;
-  led_strip_writer_1 led_strip (
+  led_strip_writer_4 led_strip (
     .clk(clk),
     .rst(rst),
     .update(M_led_strip_update),
     .color(M_led_strip_color),
     .pixel(M_led_strip_pixel),
     .led(M_led_strip_led)
-  );
-  
-  wire [16-1:0] M_rf_out_a;
-  wire [16-1:0] M_rf_out_b;
-  reg [5-1:0] M_rf_write_address;
-  reg [1-1:0] M_rf_we;
-  reg [16-1:0] M_rf_data;
-  reg [5-1:0] M_rf_read_address_a;
-  reg [5-1:0] M_rf_read_address_b;
-  regfile_2 rf (
-    .clk(clk),
-    .rst(rst),
-    .write_address(M_rf_write_address),
-    .we(M_rf_we),
-    .data(M_rf_data),
-    .read_address_a(M_rf_read_address_a),
-    .read_address_b(M_rf_read_address_b),
-    .out_a(M_rf_out_a),
-    .out_b(M_rf_out_b)
-  );
-  wire [1-1:0] M_reset_cond_out;
-  reg [1-1:0] M_reset_cond_in;
-  reset_conditioner_3 reset_cond (
-    .clk(clk),
-    .in(M_reset_cond_in),
-    .out(M_reset_cond_out)
-  );
-  reg [0:0] M_button_toggle_d, M_button_toggle_q = 1'h0;
-  reg [7:0] M_debugger_button_pressed_d, M_debugger_button_pressed_q = 1'h0;
-  reg [7:0] M_debugger_write_address_check_d, M_debugger_write_address_check_q = 1'h0;
-  reg [7:0] M_btn_controller_out_check_d, M_btn_controller_out_check_q = 1'h0;
-  
-  wire [1-1:0] M_btn_out;
-  button_4 btn (
-    .button_input(btnin),
-    .clk(clk),
-    .out(M_btn_out)
   );
   
   wire [600-1:0] M_letters_out;
@@ -76,34 +84,47 @@ module au_top_0 (
   );
   
   always @* begin
-    M_button_toggle_d = M_button_toggle_q;
-    M_debugger_button_pressed_d = M_debugger_button_pressed_q;
+    M_write_one_button_dff_d = M_write_one_button_dff_q;
+    M_read_button_dff_d = M_read_button_dff_q;
+    M_write_zero_button_dff_d = M_write_zero_button_dff_q;
     
     M_reset_cond_in = ~rst_n;
     rst = M_reset_cond_out;
     io_led = 24'h000000;
-    if (M_btn_out) begin
-      if (M_button_toggle_q == 1'h1) begin
-        M_rf_we = 1'h1;
-        M_rf_write_address = 5'h10;
-        M_rf_data = 5'h00;
-        M_button_toggle_d = 1'h0;
-        M_debugger_button_pressed_d = 8'h00;
+    M_betaCPU_write_zero_button_in = M_write_zero_button_out;
+    M_betaCPU_write_one_button_in = M_write_one_button_out;
+    M_betaCPU_read_button_in = M_read_button_out;
+    if (M_read_button_out) begin
+      if (M_read_button_dff_q == 1'h1) begin
+        M_read_button_dff_d = 1'h0;
       end else begin
-        M_rf_we = 1'h1;
-        M_rf_write_address = 5'h10;
-        M_rf_data = 5'h01;
-        M_button_toggle_d = 1'h1;
-        M_debugger_button_pressed_d = 8'hff;
+        M_read_button_dff_d = 1'h1;
       end
     end
-    M_rf_we = 1'h0;
-    M_rf_data = 1'h0;
-    M_rf_write_address = 1'h0;
-    M_rf_read_address_a = 5'h10;
-    M_rf_read_address_b = 5'h00;
-    M_letters_selector = M_rf_out_a;
-    io_led[8+0+7-:8] = M_debugger_button_pressed_q;
+    if (M_read_button_dff_q == 1'h1) begin
+      io_led[0+0+0-:1] = 1'h1;
+    end
+    if (M_write_one_button_out) begin
+      if (M_write_one_button_dff_q == 1'h1) begin
+        M_write_one_button_dff_d = 1'h0;
+      end else begin
+        M_write_one_button_dff_d = 1'h1;
+      end
+    end
+    if (M_read_button_dff_q == 1'h1) begin
+      io_led[0+2+0-:1] = 1'h1;
+    end
+    if (M_write_zero_button_out) begin
+      if (M_write_zero_button_dff_q == 1'h1) begin
+        M_write_zero_button_dff_d = 1'h0;
+      end else begin
+        M_write_zero_button_dff_d = 1'h1;
+      end
+    end
+    if (M_write_zero_button_dff_q == 1'h1) begin
+      io_led[0+4+0-:1] = 1'h1;
+    end
+    M_letters_selector = M_betaCPU_which_letter;
     M_led_strip_update = 1'h1;
     M_led_strip_color = M_letters_out[(M_led_strip_pixel)*24+23-:24];
     outmatrix0 = M_led_strip_led;
@@ -111,10 +132,9 @@ module au_top_0 (
   end
   
   always @(posedge clk) begin
-    M_button_toggle_q <= M_button_toggle_d;
-    M_debugger_button_pressed_q <= M_debugger_button_pressed_d;
-    M_debugger_write_address_check_q <= M_debugger_write_address_check_d;
-    M_btn_controller_out_check_q <= M_btn_controller_out_check_d;
+    M_read_button_dff_q <= M_read_button_dff_d;
+    M_write_one_button_dff_q <= M_write_one_button_dff_d;
+    M_write_zero_button_dff_q <= M_write_zero_button_dff_d;
   end
   
 endmodule
