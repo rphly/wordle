@@ -25,6 +25,7 @@ module au_top (
     dff read_button_dff[1];
     dff write_one_button_dff[1];
     dff write_zero_button_dff[1];
+    dff which_letter_dff[1];
   }
   
   led_strip_writer led_strip(#PIXEL_COUNT(25), .clk(clk), .rst(rst));
@@ -46,6 +47,7 @@ module au_top (
         read_button_dff.d = 1;
       }
     }
+
     if(read_button_dff.q == 1){
       io_led[0][0] = b1;
     }
@@ -58,6 +60,7 @@ module au_top (
           write_one_button_dff.d = 1;
       }
     }
+
     if(write_one_button_dff.q == 1){
       io_led[0][2] = b1;
     }
@@ -70,12 +73,24 @@ module au_top (
           write_zero_button_dff.d = 1;
       }
     }
+
     if (write_zero_button_dff.q == 1) {
       io_led[0][4] = b1;
     }
     
+    if (betaCPU.which_letter == b0) {
+      io_led[1][0] = b1;
+    } else {
+      io_led[1][0] = b0;
+    }
+    
+    if (betaCPU.which_letter == b1) {
+      io_led[1][1] = b1;
+    } else {
+      io_led[1][1] = b0;
+    }
+    
     letters.selector = betaCPU.which_letter;
-
     led_strip.update=1; //sample write 
     led_strip.color=letters.out[led_strip.pixel]; 
     outmatrix0=led_strip.led;

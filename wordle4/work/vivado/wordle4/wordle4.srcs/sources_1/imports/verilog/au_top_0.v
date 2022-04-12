@@ -62,6 +62,7 @@ module au_top_0 (
   reg [0:0] M_read_button_dff_d, M_read_button_dff_q = 1'h0;
   reg [0:0] M_write_one_button_dff_d, M_write_one_button_dff_q = 1'h0;
   reg [0:0] M_write_zero_button_dff_d, M_write_zero_button_dff_q = 1'h0;
+  reg [0:0] M_which_letter_dff_d, M_which_letter_dff_q = 1'h0;
   
   wire [5-1:0] M_led_strip_pixel;
   wire [1-1:0] M_led_strip_led;
@@ -124,6 +125,16 @@ module au_top_0 (
     if (M_write_zero_button_dff_q == 1'h1) begin
       io_led[0+4+0-:1] = 1'h1;
     end
+    if (M_betaCPU_which_letter == 1'h0) begin
+      io_led[8+0+0-:1] = 1'h1;
+    end else begin
+      io_led[8+0+0-:1] = 1'h0;
+    end
+    if (M_betaCPU_which_letter == 1'h1) begin
+      io_led[8+1+0-:1] = 1'h1;
+    end else begin
+      io_led[8+1+0-:1] = 1'h0;
+    end
     M_letters_selector = M_betaCPU_which_letter;
     M_led_strip_update = 1'h1;
     M_led_strip_color = M_letters_out[(M_led_strip_pixel)*24+23-:24];
@@ -135,6 +146,7 @@ module au_top_0 (
     M_read_button_dff_q <= M_read_button_dff_d;
     M_write_one_button_dff_q <= M_write_one_button_dff_d;
     M_write_zero_button_dff_q <= M_write_zero_button_dff_d;
+    M_which_letter_dff_q <= M_which_letter_dff_d;
   end
   
 endmodule

@@ -7,18 +7,19 @@
 module game_6 (
     input clk,
     input rst,
-    input regfile_out_a,
-    input regfile_out_b,
+    input [15:0] regfile_out_a,
+    input [15:0] regfile_out_b,
     input write_one_in,
     input write_zero_in,
     input read_button_in,
     output reg which_matrix,
     output reg which_letter,
     output reg regfile_we,
-    output reg regfile_write_address,
-    output reg regfile_ra,
-    output reg regfile_rb,
-    output reg regfile_data
+    output reg [15:0] regfile_write_address,
+    output reg [15:0] regfile_ra,
+    output reg [15:0] regfile_rb,
+    output reg [15:0] regfile_data,
+    output reg current_state
   );
   
   
@@ -45,6 +46,7 @@ module game_6 (
     regfile_data = 2'h2;
     which_matrix = 1'h0;
     which_letter = 1'h0;
+    current_state = 2'h2;
     if (rst) begin
       M_game_fsm_d = IDLE_game_fsm;
     end else begin
@@ -64,10 +66,11 @@ module game_6 (
         STORE_ONE_game_fsm: begin
           regfile_we = 1'h1;
           regfile_write_address = 5'h10;
-          regfile_ra = 1'h0;
-          regfile_rb = 1'h0;
-          regfile_data = 1'h1;
-          M_game_fsm_d = IDLE_game_fsm;
+          regfile_ra = 16'h0000;
+          regfile_rb = 16'h0000;
+          regfile_data = 16'h0001;
+          current_state = 1'h1;
+          M_game_fsm_d = UPDATE_MATRIX_game_fsm;
         end
         STORE_ZERO_game_fsm: begin
           regfile_we = 1'h1;
@@ -75,15 +78,16 @@ module game_6 (
           regfile_ra = 1'h0;
           regfile_rb = 1'h0;
           regfile_data = 1'h0;
-          M_game_fsm_d = IDLE_game_fsm;
+          M_game_fsm_d = STORE_ZERO_game_fsm;
         end
         UPDATE_MATRIX_game_fsm: begin
           regfile_we = 1'h0;
           regfile_ra = 5'h10;
           regfile_rb = 5'h1c;
-          which_letter = regfile_out_a;
-          which_matrix = regfile_out_b;
-          M_game_fsm_d = IDLE_game_fsm;
+          which_letter = regfile_out_a[0+0-:1];
+          which_matrix = regfile_out_b[0+0-:1];
+          M_game_fsm_d = STORE_ONE_game_fsm;
+          current_state = 1'h0;
         end
         default: begin
           M_game_fsm_d = IDLE_game_fsm;

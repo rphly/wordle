@@ -19,12 +19,13 @@ module beta_2 (
   wire [1-1:0] M_control_unit_which_matrix;
   wire [1-1:0] M_control_unit_which_letter;
   wire [1-1:0] M_control_unit_regfile_we;
-  wire [1-1:0] M_control_unit_regfile_write_address;
-  wire [1-1:0] M_control_unit_regfile_ra;
-  wire [1-1:0] M_control_unit_regfile_rb;
-  wire [1-1:0] M_control_unit_regfile_data;
-  reg [1-1:0] M_control_unit_regfile_out_a;
-  reg [1-1:0] M_control_unit_regfile_out_b;
+  wire [16-1:0] M_control_unit_regfile_write_address;
+  wire [16-1:0] M_control_unit_regfile_ra;
+  wire [16-1:0] M_control_unit_regfile_rb;
+  wire [16-1:0] M_control_unit_regfile_data;
+  wire [1-1:0] M_control_unit_current_state;
+  reg [16-1:0] M_control_unit_regfile_out_a;
+  reg [16-1:0] M_control_unit_regfile_out_b;
   reg [1-1:0] M_control_unit_write_one_in;
   reg [1-1:0] M_control_unit_write_zero_in;
   reg [1-1:0] M_control_unit_read_button_in;
@@ -42,7 +43,8 @@ module beta_2 (
     .regfile_write_address(M_control_unit_regfile_write_address),
     .regfile_ra(M_control_unit_regfile_ra),
     .regfile_rb(M_control_unit_regfile_rb),
-    .regfile_data(M_control_unit_regfile_data)
+    .regfile_data(M_control_unit_regfile_data),
+    .current_state(M_control_unit_current_state)
   );
   wire [16-1:0] M_r_out_a;
   wire [16-1:0] M_r_out_b;

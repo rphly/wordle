@@ -1,8 +1,8 @@
 module game (
     input clk,  // clock
     input rst,  // reset
-    input regfile_out_a,
-    input regfile_out_b,
+    input regfile_out_a[16],
+    input regfile_out_b[16],
     input write_one_in,
     input write_zero_in,
     input read_button_in,
@@ -11,10 +11,11 @@ module game (
     output which_letter,
 
     output regfile_we,
-    output regfile_write_address,
-    output regfile_ra,
-    output regfile_rb, 
-    output regfile_data   
+    output regfile_write_address[16],
+    output regfile_ra[16],
+    output regfile_rb[16], 
+    output regfile_data[16],
+    output current_state   
   ) {
   
   .clk(clk) {
@@ -39,6 +40,7 @@ module game (
     regfile_data = 2;
     which_matrix = 0;
     which_letter = 0;
+    current_state = 2;
     
     if (rst) {
       game_fsm.d = game_fsm.IDLE; 
@@ -56,12 +58,13 @@ module game (
           }
           
         game_fsm.STORE_ONE:
-          regfile_we = 1;
+          regfile_we = b1;
           regfile_write_address = INPUT_LETTER_1;
-          regfile_ra = 0;
-          regfile_rb = 0;
-          regfile_data = 1;
-          game_fsm.d = game_fsm.IDLE;
+          regfile_ra = 16d0;
+          regfile_rb = 16d0;
+          regfile_data = 16d1;
+          current_state = 1;
+          game_fsm.d = game_fsm.UPDATE_MATRIX;
 
         game_fsm.STORE_ZERO:
           regfile_we = 1;
@@ -69,16 +72,19 @@ module game (
           regfile_ra = 0;
           regfile_rb = 0;
           regfile_data = 0;
-          game_fsm.d = game_fsm.IDLE;
+          game_fsm.d = game_fsm.STORE_ZERO;
+          
           
         game_fsm.UPDATE_MATRIX:
-          regfile_we = 0;
+          regfile_we = b0;
           regfile_ra = INPUT_LETTER_1;
           regfile_rb = INPUT_CTR;
           
-          which_letter = regfile_out_a;
-          which_matrix = regfile_out_b;
-          game_fsm.d = game_fsm.IDLE;
+          which_letter = regfile_out_a[0];
+          which_matrix = regfile_out_b[0];
+          game_fsm.d = game_fsm.STORE_ONE;
+          current_state = 0;
+
         default: game_fsm.d = game_fsm.IDLE;
       }
     }
