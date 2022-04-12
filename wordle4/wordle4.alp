@@ -24,7 +24,6 @@
     <component>reset_conditioner.luc</component>
     <component>edge_detector.luc</component>
     <component>button_conditioner.luc</component>
-    <src top="true">au_top.luc</src>
     <constraint>alchitry.acf</constraint>
     <constraint lib="true">au.xdc</constraint>
   </files>

@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Wed Apr 13 03:05:31 2022
-# Process ID: 30756
+# Start of session at: Wed Apr 13 05:10:47 2022
+# Process ID: 17712
 # Current directory: C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1
 # Command line: vivado.exe -log au_top_0.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source au_top_0.tcl -notrace
 # Log file: C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/au_top_0.vdi

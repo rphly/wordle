@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date                      : Wed Apr 13 03:06:19 2022
+| Date                      : Wed Apr 13 05:11:34 2022
 | Host                      : Bryan running 64-bit major release  (build 9200)
 | Command                   : report_io -file au_top_0_io_placed.rpt
 | Design                    : au_top_0
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            36 |
+|            37 |
 +---------------+
 
 
@@ -282,7 +282,7 @@ Table of Contents
 | T5         | b_in        | High Range | IO_L23N_T3_A02_D18_14        | INPUT       | LVCMOS33    |      14 |            |      |                     |                 NONE |         | FIXED      | PULLDOWN  |          |      | NONE             |              |                   |              |
 | T6         |             |            | GND                          | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | T7         |             | High Range | IO_L21P_T3_DQS_14            | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| T8         |             | High Range | IO_L21N_T3_DQS_A06_D22_14    | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
+| T8         | clear_in    | High Range | IO_L21N_T3_DQS_A06_D22_14    | INPUT       | LVCMOS33    |      14 |            |      |                     |                 NONE |         | FIXED      | PULLDOWN  |          |      | NONE             |              |                   |              |
 | T9         |             | High Range | IO_L22P_T3_A05_D21_14        | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | T10        |             | High Range | IO_L22N_T3_A04_D20_14        | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | T11        |             | High Range | VCCO_14                      | VCCO        |             |      14 |            |      |                     |                      |    3.30 |            |           |          |      |                  |              |                   |              |

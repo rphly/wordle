@@ -53,6 +53,7 @@ module au_top (
     
     
     io_led[0][7:0] = betaCPU.debugger;
+    io_led[1][7:0] = betaCPU.debugger2;
     
     
     outmatrix1= betaCPU.out_bottom_matrix1;

@@ -11,13 +11,12 @@ module beta (
     output out_bottom_matrix2,
     output out_bottom_matrix3,
     output out_bottom_matrix4,
-    output debugger[16]
+    output debugger[16],
+    output debugger2[16],
     input panel_input[5],
     input has_panel_input,
     
     // set outputs
-    output which_matrix[5],
-    output which_letter[5],
     output current_state[2]
   ) {
   
@@ -94,5 +93,6 @@ module beta (
     out_bottom_matrix4 = bottom_matrix_control.outmatrix4;
     
     debugger = bottom_matrix_control.debugger;
+    debugger2 = bottom_matrix_control.debugger2;
   }
 }

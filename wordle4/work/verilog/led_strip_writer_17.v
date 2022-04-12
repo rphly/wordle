@@ -8,7 +8,7 @@
    Parameters:
      PIXEL_COUNT = 25
 */
-module led_strip_writer_16 (
+module led_strip_writer_17 (
     input clk,
     input rst,
     input update,

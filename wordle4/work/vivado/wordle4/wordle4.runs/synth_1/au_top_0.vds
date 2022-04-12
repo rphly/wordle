@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Wed Apr 13 03:02:20 2022
-# Process ID: 15760
+# Start of session at: Wed Apr 13 05:07:36 2022
+# Process ID: 4472
 # Current directory: C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/synth_1
 # Command line: vivado.exe -log au_top_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source au_top_0.tcl
 # Log file: C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/synth_1/au_top_0.vds
@@ -17,59 +17,66 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tftg256-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 26228
+INFO: [Synth 8-7075] Helper process launched with PID 9508
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1000.922 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 999.387 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'au_top_0' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/au_top_0.v:7]
 INFO: [Synth 8-6157] synthesizing module 'reset_conditioner_1' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/reset_conditioner_1.v:11]
 	Parameter STAGES bound to: 3'b100 
 INFO: [Synth 8-6155] done synthesizing module 'reset_conditioner_1' (1#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/reset_conditioner_1.v:11]
 INFO: [Synth 8-6157] synthesizing module 'beta_2' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/beta_2.v:7]
-INFO: [Synth 8-6157] synthesizing module 'alu_4' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/alu_4.v:7]
-INFO: [Synth 8-6157] synthesizing module 'adder_9' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/adder_9.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'adder_9' (2#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/adder_9.v:7]
-INFO: [Synth 8-6157] synthesizing module 'compare_10' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/compare_10.v:7]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/compare_10.v:20]
-INFO: [Synth 8-6155] done synthesizing module 'compare_10' (3#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/compare_10.v:7]
-INFO: [Synth 8-6157] synthesizing module 'boolean_11' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/boolean_11.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'boolean_11' (4#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/boolean_11.v:7]
-INFO: [Synth 8-6157] synthesizing module 'shifter_12' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/shifter_12.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'shifter_12' (5#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/shifter_12.v:7]
-INFO: [Synth 8-226] default block is never used [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/alu_4.v:89]
-INFO: [Synth 8-6155] done synthesizing module 'alu_4' (6#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/alu_4.v:7]
-INFO: [Synth 8-6157] synthesizing module 'game_5' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_5.v:7]
-	Parameter RESET_TOP_DISPLAY_game_fsm bound to: 5'b00000 
-	Parameter RESET_BOTTOM_DISPLAY_game_fsm bound to: 5'b00001 
-	Parameter SET_INPUT_CTR_TO_0_game_fsm bound to: 5'b00010 
-	Parameter SET_GUESS_CTR_TO_0_game_fsm bound to: 5'b00011 
-	Parameter SET_NUM_CORRECT_INPUTS_TO_0_game_fsm bound to: 5'b00100 
-	Parameter IDLE_game_fsm bound to: 5'b00101 
-	Parameter RETRIEVE_INPUT_I_game_fsm bound to: 5'b00110 
-	Parameter RETRIEVE_CORRECT_K_game_fsm bound to: 5'b00111 
-	Parameter COMPARE_INPUT_I_WITH_CORRECT_K_game_fsm bound to: 5'b01000 
-	Parameter COMPARE_K_EQUALS_3_game_fsm bound to: 5'b01001 
-	Parameter CHECK_BUTTON_PRESSED_game_fsm bound to: 5'b01010 
-	Parameter COMPARE_INPUT_CTR_EQUALS_4_game_fsm bound to: 5'b01011 
-	Parameter COMPARE_INPUT_I_WITH_CORRECT_I_game_fsm bound to: 5'b01100 
-	Parameter CLEAR_SET_INPUT_CTR_0_game_fsm bound to: 5'b01101 
-	Parameter CLEAR_RESET_BOTTOM_DISPLAY_game_fsm bound to: 5'b01110 
-	Parameter STORE_INPUT_game_fsm bound to: 5'b01111 
-	Parameter INCREMENT_INPUT_CTR_game_fsm bound to: 5'b10000 
-	Parameter PRINT_LETTER_TO_MATRIX_game_fsm bound to: 5'b10001 
-	Parameter SET_I_TO_ZERO_game_fsm bound to: 5'b10010 
-	Parameter SET_K_TO_ZERO_game_fsm bound to: 5'b10011 
-	Parameter COMPARE_POSITIONS_K_AND_I_game_fsm bound to: 5'b10100 
-	Parameter SET_TEMP_GUESS_G_LETTER_I_ADDR_WHITE_game_fsm bound to: 5'b10101 
-	Parameter SET_TEMP_GUESS_G_LETTER_I_ADDR_GREEN_game_fsm bound to: 5'b10110 
-	Parameter SET_TEMP_GUESS_G_LETTER_I_ADDR_YELLOW_game_fsm bound to: 5'b10111 
-	Parameter SET_WHITE_LETTER_game_fsm bound to: 5'b11000 
-	Parameter SET_GREEN_LETTER_game_fsm bound to: 5'b11001 
-	Parameter SET_YELLOW_LETTER_game_fsm bound to: 5'b11010 
-	Parameter SET_TEMP_COLOURED_LETTER_GREEN_game_fsm bound to: 5'b11011 
-	Parameter SET_TEMP_COLOURED_LETTER_YELLOW_game_fsm bound to: 5'b11100 
-	Parameter SET_TEMP_COLOURED_LETTER_WHITE_game_fsm bound to: 5'b11101 
-	Parameter INCREMENT_K_game_fsm bound to: 5'b11110 
+INFO: [Synth 8-6157] synthesizing module 'alu_5' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/alu_5.v:7]
+INFO: [Synth 8-6157] synthesizing module 'adder_10' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/adder_10.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'adder_10' (2#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/adder_10.v:7]
+INFO: [Synth 8-6157] synthesizing module 'compare_11' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/compare_11.v:7]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/compare_11.v:20]
+INFO: [Synth 8-6155] done synthesizing module 'compare_11' (3#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/compare_11.v:7]
+INFO: [Synth 8-6157] synthesizing module 'boolean_12' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/boolean_12.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'boolean_12' (4#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/boolean_12.v:7]
+INFO: [Synth 8-6157] synthesizing module 'shifter_13' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/shifter_13.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'shifter_13' (5#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/shifter_13.v:7]
+INFO: [Synth 8-226] default block is never used [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/alu_5.v:89]
+INFO: [Synth 8-6155] done synthesizing module 'alu_5' (6#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/alu_5.v:7]
+INFO: [Synth 8-6157] synthesizing module 'game_6' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_6.v:7]
+	Parameter RESET_TOP_DISPLAY_game_fsm bound to: 6'b000000 
+	Parameter RESET_BOTTOM_DISPLAY_game_fsm bound to: 6'b000001 
+	Parameter SET_INPUT_CTR_TO_0_game_fsm bound to: 6'b000010 
+	Parameter SET_GUESS_CTR_TO_0_game_fsm bound to: 6'b000011 
+	Parameter SET_NUM_CORRECT_INPUTS_TO_0_game_fsm bound to: 6'b000100 
+	Parameter IDLE_game_fsm bound to: 6'b000101 
+	Parameter RETRIEVE_INPUT_I_game_fsm bound to: 6'b000110 
+	Parameter RETRIEVE_CORRECT_K_game_fsm bound to: 6'b000111 
+	Parameter COMPARE_INPUT_I_WITH_CORRECT_K_game_fsm bound to: 6'b001000 
+	Parameter COMPARE_K_EQUALS_3_AND_INCREMENT_game_fsm bound to: 6'b001001 
+	Parameter CHECK_BUTTON_PRESSED_game_fsm bound to: 6'b001010 
+	Parameter COMPARE_INPUT_CTR_EQUALS_4_game_fsm bound to: 6'b001011 
+	Parameter COMPARE_INPUT_I_WITH_CORRECT_I_game_fsm bound to: 6'b001100 
+	Parameter CLEAR_SET_INPUT_CTR_0_game_fsm bound to: 6'b001101 
+	Parameter CLEAR_RESET_BOTTOM_DISPLAY_game_fsm bound to: 6'b001110 
+	Parameter STORE_INPUT_game_fsm bound to: 6'b001111 
+	Parameter INCREMENT_INPUT_CTR_game_fsm bound to: 6'b010000 
+	Parameter PRINT_LETTER_TO_MATRIX_game_fsm bound to: 6'b010001 
+	Parameter SET_I_TO_ZERO_game_fsm bound to: 6'b010010 
+	Parameter SET_K_TO_ZERO_game_fsm bound to: 6'b010011 
+	Parameter COMPARE_POSITIONS_K_AND_I_game_fsm bound to: 6'b010100 
+	Parameter SET_TEMP_GUESS_G_LETTER_I_ADDR_WHITE_game_fsm bound to: 6'b010101 
+	Parameter SET_TEMP_GUESS_G_LETTER_I_ADDR_GREEN_game_fsm bound to: 6'b010110 
+	Parameter SET_TEMP_GUESS_G_LETTER_I_ADDR_YELLOW_game_fsm bound to: 6'b010111 
+	Parameter SET_WHITE_LETTER_game_fsm bound to: 6'b011000 
+	Parameter SET_GREEN_LETTER_game_fsm bound to: 6'b011001 
+	Parameter SET_YELLOW_LETTER_game_fsm bound to: 6'b011010 
+	Parameter SET_TEMP_COLOURED_LETTER_GREEN_game_fsm bound to: 6'b011011 
+	Parameter SET_TEMP_COLOURED_LETTER_YELLOW_game_fsm bound to: 6'b011100 
+	Parameter SET_TEMP_COLOURED_LETTER_WHITE_game_fsm bound to: 6'b011101 
+	Parameter INCREMENT_K_game_fsm bound to: 6'b011110 
+	Parameter INCREMENT_NUM_CORRECT_game_fsm bound to: 6'b011111 
+	Parameter COMPARE_NUM_CORRECT_EQUALS_4_game_fsm bound to: 6'b100000 
+	Parameter COMPARE_I_EQUALS_3_AND_INCREMENT_game_fsm bound to: 6'b100001 
+	Parameter COMPARE_GUESS_CTR_EQUALS_3_game_fsm bound to: 6'b100010 
+	Parameter SHOW_TOP_DISPLAY_game_fsm bound to: 6'b100011 
+	Parameter LOSE_game_fsm bound to: 6'b100100 
+	Parameter WIN_game_fsm bound to: 6'b100101 
 	Parameter INPUT_CTR bound to: 5'b11100 
 	Parameter INPUT_LETTER_1 bound to: 5'b10000 
 	Parameter I bound to: 5'b10100 
@@ -84,55 +91,59 @@ INFO: [Synth 8-6157] synthesizing module 'game_5' [C:/Users/Bryce/Desktop/wordle
 	Parameter GUESS_4_LETTER_1 bound to: 5'b01100 
 	Parameter TEMP_GUESS_G_LETTER_I_ADDR bound to: 6'b100001 
 	Parameter TEMP_COLOURED_LETTER bound to: 6'b100010 
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_5.v:166]
-INFO: [Synth 8-6155] done synthesizing module 'game_5' (7#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_5.v:7]
-INFO: [Synth 8-6157] synthesizing module 'regfile_6' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_6.v:7]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_6.v:96]
-INFO: [Synth 8-6155] done synthesizing module 'regfile_6' (8#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_6.v:7]
-INFO: [Synth 8-6157] synthesizing module 'matrix_controller_7' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/matrix_controller_7.v:7]
-INFO: [Synth 8-6157] synthesizing module 'matrix_13' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/matrix_13.v:7]
-INFO: [Synth 8-6157] synthesizing module 'led_strip_writer_16' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/led_strip_writer_16.v:11]
+	Parameter NUM_CORRECT bound to: 5'b11011 
+	Parameter CLEAR_SIGNAL bound to: 5'b11111 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_6.v:182]
+INFO: [Synth 8-6155] done synthesizing module 'game_6' (7#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_6.v:7]
+INFO: [Synth 8-6157] synthesizing module 'regfile_7' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:7]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:96]
+INFO: [Synth 8-6155] done synthesizing module 'regfile_7' (8#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:7]
+INFO: [Synth 8-6157] synthesizing module 'matrix_controller_8' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/matrix_controller_8.v:7]
+INFO: [Synth 8-6157] synthesizing module 'matrix_14' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/matrix_14.v:7]
+INFO: [Synth 8-6157] synthesizing module 'led_strip_writer_17' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/led_strip_writer_17.v:11]
 	Parameter PIXEL_COUNT bound to: 5'b11001 
 	Parameter SEND_PIXEL_state bound to: 1'b0 
 	Parameter RESET_state bound to: 1'b1 
-INFO: [Synth 8-6155] done synthesizing module 'led_strip_writer_16' (9#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/led_strip_writer_16.v:11]
-INFO: [Synth 8-6157] synthesizing module 'white_alphabets_17' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/white_alphabets_17.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'led_strip_writer_17' (9#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/led_strip_writer_17.v:11]
+INFO: [Synth 8-6157] synthesizing module 'white_alphabets_18' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/white_alphabets_18.v:7]
 	Parameter INPUTS bound to: 3000'b000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000000000000000000000000000100010001000100010001000000000000000000000000000000000000000000000000000000000000000000000000000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000000000000000000000000000100010001000100010001000000000000000000000000000000000000000000000000000000000000000000000000000100010001000100010001000100010001000100010001000000000000000000000000000000000000000000000000000000000000000000000000000100010001000100010001000000000000000000000000000000000000000000000000000100010001000100010001000000000000000000000000000000000000000000000000000000000000000000000000000100010001000100010001000000000000000000000000000100010001000100010001000000000000000000000000000100010001000100010001000000000000000000000000000000000000000000000000000000000000000000000000000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000000000000000000000000000000000000000000000000000000000000000000000000000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100010001000100010001000100010001000100010001000100010001000100010001000000000000000000000000000000000000000000000000000100010001000100010001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000000000000000000000000000100010001000100010001000000000000000000000000000000000000000000000000000000000000000000000000000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000000000000000000000000000100010001000100010001000000000000000000000000000000000000000000000000000000000000000000000000000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
-INFO: [Synth 8-6155] done synthesizing module 'white_alphabets_17' (10#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/white_alphabets_17.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'matrix_13' (11#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/matrix_13.v:7]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/matrix_controller_7.v:85]
-INFO: [Synth 8-6155] done synthesizing module 'matrix_controller_7' (12#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/matrix_controller_7.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'white_alphabets_18' (10#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/white_alphabets_18.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'matrix_14' (11#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/matrix_14.v:7]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/matrix_controller_8.v:87]
+INFO: [Synth 8-6155] done synthesizing module 'matrix_controller_8' (12#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/matrix_controller_8.v:7]
 INFO: [Synth 8-6155] done synthesizing module 'beta_2' (13#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/beta_2.v:7]
 INFO: [Synth 8-6157] synthesizing module 'buttons_controller_3' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/buttons_controller_3.v:7]
-INFO: [Synth 8-6157] synthesizing module 'button_8' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_8.v:7]
-INFO: [Synth 8-6157] synthesizing module 'button_conditioner_14' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_conditioner_14.v:13]
+INFO: [Synth 8-6157] synthesizing module 'button_9' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_9.v:7]
+INFO: [Synth 8-6157] synthesizing module 'button_conditioner_15' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_conditioner_15.v:13]
 	Parameter CLK_FREQ bound to: 26'b10111110101111000010000000 
 	Parameter MIN_DELAY bound to: 5'b10100 
 	Parameter NUM_SYNC bound to: 2'b10 
-INFO: [Synth 8-6157] synthesizing module 'pipeline_18' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/pipeline_18.v:11]
+INFO: [Synth 8-6157] synthesizing module 'pipeline_19' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/pipeline_19.v:11]
 	Parameter DEPTH bound to: 2'b10 
-INFO: [Synth 8-6155] done synthesizing module 'pipeline_18' (14#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/pipeline_18.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'button_conditioner_14' (15#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_conditioner_14.v:13]
-INFO: [Synth 8-6157] synthesizing module 'edge_detector_15' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/edge_detector_15.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'pipeline_19' (14#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/pipeline_19.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'button_conditioner_15' (15#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_conditioner_15.v:13]
+INFO: [Synth 8-6157] synthesizing module 'edge_detector_16' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/edge_detector_16.v:12]
 	Parameter RISE bound to: 1'b1 
 	Parameter FALL bound to: 1'b0 
-INFO: [Synth 8-6155] done synthesizing module 'edge_detector_15' (16#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/edge_detector_15.v:12]
-INFO: [Synth 8-6155] done synthesizing module 'button_8' (17#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_8.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'edge_detector_16' (16#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/edge_detector_16.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'button_9' (17#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_9.v:7]
 INFO: [Synth 8-6155] done synthesizing module 'buttons_controller_3' (18#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/buttons_controller_3.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'au_top_0' (19#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/au_top_0.v:7]
+INFO: [Synth 8-6157] synthesizing module 'panel_controller_4' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/panel_controller_4.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'panel_controller_4' (19#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/panel_controller_4.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'au_top_0' (20#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/au_top_0.v:7]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1000.922 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 999.387 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1000.922 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 999.387 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1000.922 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 999.387 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.058 . Memory (MB): peak = 1000.922 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 999.387 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -145,42 +156,43 @@ Parsing XDC File [C:/Program Files/Alchitry/Alchitry Labs/library/components/au.
 Finished Parsing XDC File [C:/Program Files/Alchitry/Alchitry Labs/library/components/au.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1000.922 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 999.387 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1000.922 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 999.387 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1000.922 ; gain = 0.000
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 999.387 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tftg256-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1000.922 ; gain = 0.000
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 999.387 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1000.922 ; gain = 0.000
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 999.387 ; gain = 0.000
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-802] inferred FSM for state register 'M_game_fsm_q_reg' in module 'game_5'
+INFO: [Synth 8-802] inferred FSM for state register 'M_game_fsm_q_reg' in module 'game_6'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-RESET_TOP_DISPLAY_game_fsm |                           000001 |                            00000
-SET_INPUT_CTR_TO_0_game_fsm |                           000010 |                            00010
-                  iSTATE |                           000100 |                            01110
+RESET_TOP_DISPLAY_game_fsm |                          0000001 |                           000000
+SET_INPUT_CTR_TO_0_game_fsm |                          0000010 |                           000010
+                  iSTATE |                          0000100 |                           001110
 *
-           IDLE_game_fsm |                           001000 |                            00101
-PRINT_LETTER_TO_MATRIX_game_fsm |                           010000 |                            10001
-INCREMENT_INPUT_CTR_game_fsm |                           100000 |                            10000
+           IDLE_game_fsm |                          0001000 |                           000101
+                 iSTATE0 |                          0010000 |                           001101
+PRINT_LETTER_TO_MATRIX_game_fsm |                          0100000 |                           010001
+INCREMENT_INPUT_CTR_game_fsm |                          1000000 |                           010000
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'M_game_fsm_q_reg' using encoding 'one-hot' in module 'game_5'
+INFO: [Synth 8-3354] encoded FSM with state register 'M_game_fsm_q_reg' using encoding 'one-hot' in module 'game_6'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1000.922 ; gain = 0.000
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 999.387 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -200,26 +212,28 @@ Detailed RTL Component Info :
 	                5 Bit    Registers := 22    
 	                4 Bit    Registers := 1     
 	                3 Bit    Registers := 4     
-	                2 Bit    Registers := 5     
-	                1 Bit    Registers := 10    
+	                2 Bit    Registers := 6     
+	                1 Bit    Registers := 11    
 +---Muxes : 
-	   2 Input   16 Bit        Muxes := 8     
+	   2 Input   16 Bit        Muxes := 9     
 	   4 Input   16 Bit        Muxes := 3     
 	   6 Input   16 Bit        Muxes := 5     
 	   8 Input   16 Bit        Muxes := 1     
-	   2 Input    7 Bit        Muxes := 4     
-	   6 Input    6 Bit        Muxes := 2     
+	   2 Input    7 Bit        Muxes := 6     
+	   6 Input    7 Bit        Muxes := 1     
 	   2 Input    6 Bit        Muxes := 3     
-	   2 Input    5 Bit        Muxes := 18    
+	   6 Input    6 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 20    
 	   4 Input    5 Bit        Muxes := 4     
+	   3 Input    5 Bit        Muxes := 1     
 	   6 Input    5 Bit        Muxes := 4     
-	   2 Input    3 Bit        Muxes := 4     
+	   2 Input    3 Bit        Muxes := 3     
 	   4 Input    3 Bit        Muxes := 1     
 	   6 Input    3 Bit        Muxes := 2     
-	   2 Input    2 Bit        Muxes := 2     
+	   5 Input    3 Bit        Muxes := 1     
 	   2 Input    1 Bit        Muxes := 66    
-	   5 Input    1 Bit        Muxes := 4     
-	   6 Input    1 Bit        Muxes := 1     
+	   6 Input    1 Bit        Muxes := 6     
+	   3 Input    1 Bit        Muxes := 1     
 	  36 Input    1 Bit        Muxes := 35    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -251,7 +265,7 @@ DSP Report: Generating DSP betaCPU/bottom_matrix_control/matrix4/white_letters/o
 DSP Report: operator betaCPU/bottom_matrix_control/matrix4/white_letters/out1 is absorbed into DSP betaCPU/bottom_matrix_control/matrix4/white_letters/out1.
 DSP Report: operator betaCPU/bottom_matrix_control/matrix4/white_letters/out3 is absorbed into DSP betaCPU/bottom_matrix_control/matrix4/white_letters/out1.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:30 ; elapsed = 00:02:31 . Memory (MB): peak = 1400.305 ; gain = 399.383
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:32 ; elapsed = 00:02:33 . Memory (MB): peak = 1401.969 ; gain = 402.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -261,11 +275,11 @@ DSP: Preliminary Mapping	Report (see note below)
 +-------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 |Module Name        | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
 +-------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|adder_9            | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|white_alphabets_17 | (A:0x258)*B | 5      | 10     | -      | -      | 12     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|white_alphabets_17 | (A:0x258)*B | 5      | 10     | -      | -      | 12     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|white_alphabets_17 | (A:0x258)*B | 5      | 10     | -      | -      | 12     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|white_alphabets_17 | (A:0x258)*B | 5      | 10     | -      | -      | 12     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|adder_10           | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|white_alphabets_18 | (A:0x258)*B | 5      | 10     | -      | -      | 12     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|white_alphabets_18 | (A:0x258)*B | 5      | 10     | -      | -      | 12     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|white_alphabets_18 | (A:0x258)*B | 5      | 10     | -      | -      | 12     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|white_alphabets_18 | (A:0x258)*B | 5      | 10     | -      | -      | 12     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 +-------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
@@ -276,43 +290,48 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:39 ; elapsed = 00:02:40 . Memory (MB): peak = 1400.305 ; gain = 399.383
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:41 ; elapsed = 00:02:42 . Memory (MB): peak = 1401.969 ; gain = 402.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing betaCPUi_10/i_1/i_429 -from I1 -to O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing betaCPUi_10/i_1/i_433 -from I0 -to O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/i_2/i_242 -from I0 -to O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/i_2/i_263 -from I1 -to O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/i_2/i_272 -from I1 -to O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/i_2/i_242 -from I1 -to O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/i_2/i_263 -from I0 -to O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/i_2/i_277 -from I1 -to O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/i_2/i_267 -from I0 -to O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/i_2/i_277 -from I0 -to O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/i_2/i_260 -from I0 -to O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/i_2/i_160 -from I0 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing betaCPUi_10/i_1/i_338 -from I1 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing betaCPUi_10/i_1/i_319 -from I1 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing betaCPUi_10/i_1/i_319 -from I0 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing betaCPUi_10/i_1/i_261 -from I0 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing betaCPUi_10/i_1/i_261 -from I1 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/i_0/i_177 -from I0 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/i_0/i_284 -from I0 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/i_0/i_160 -from I0 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/i_0/i_338 -from I1 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/i_0/i_234 -from I1 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/i_0/i_215 -from I0 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/i_0/i_261 -from I0 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/i_0/i_177 -from I1 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/i_0/i_234 -from I0 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/i_0/i_338 -from I0 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/i_0/i_160 -from I1 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/i_0/i_215 -from I1 -to O'
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:43 ; elapsed = 00:02:44 . Memory (MB): peak = 1400.305 ; gain = 399.383
+Finished Timing Optimization : Time (s): cpu = 00:02:44 ; elapsed = 00:02:45 . Memory (MB): peak = 1401.969 ; gain = 402.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_4309/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_4447/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_4342/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_4309/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_4447/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_4452/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_4313/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_4313/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_4317/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_4506/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_4491/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_4317/O'
 WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_4314/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_4312/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_4318/O'
 WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_4314/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_4312/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_4316/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_4498/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_4498/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_4399/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_4399/O'
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:45 ; elapsed = 00:02:46 . Memory (MB): peak = 1400.305 ; gain = 399.383
+Finished Technology Mapping : Time (s): cpu = 00:02:46 ; elapsed = 00:02:48 . Memory (MB): peak = 1401.969 ; gain = 402.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -330,37 +349,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:49 ; elapsed = 00:02:50 . Memory (MB): peak = 1400.305 ; gain = 399.383
+Finished IO Insertion : Time (s): cpu = 00:02:49 ; elapsed = 00:02:51 . Memory (MB): peak = 1401.969 ; gain = 402.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:49 ; elapsed = 00:02:50 . Memory (MB): peak = 1400.305 ; gain = 399.383
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:49 ; elapsed = 00:02:51 . Memory (MB): peak = 1401.969 ; gain = 402.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:49 ; elapsed = 00:02:50 . Memory (MB): peak = 1400.305 ; gain = 399.383
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:50 ; elapsed = 00:02:51 . Memory (MB): peak = 1401.969 ; gain = 402.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:49 ; elapsed = 00:02:50 . Memory (MB): peak = 1400.305 ; gain = 399.383
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:50 ; elapsed = 00:02:51 . Memory (MB): peak = 1401.969 ; gain = 402.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:50 ; elapsed = 00:02:51 . Memory (MB): peak = 1400.305 ; gain = 399.383
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:50 ; elapsed = 00:02:52 . Memory (MB): peak = 1401.969 ; gain = 402.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:50 ; elapsed = 00:02:51 . Memory (MB): peak = 1400.305 ; gain = 399.383
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:50 ; elapsed = 00:02:52 . Memory (MB): peak = 1401.969 ; gain = 402.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -377,41 +396,41 @@ Report Cell Usage:
 |      |Cell    |Count |
 +------+--------+------+
 |1     |BUFG    |     1|
-|2     |CARRY4  |    43|
+|2     |CARRY4  |    48|
 |3     |DSP48E1 |     4|
-|4     |LUT1    |    22|
-|5     |LUT2    |    76|
-|6     |LUT3    |   178|
-|7     |LUT4    |   548|
-|8     |LUT5    |  1330|
-|9     |LUT6    |  1823|
+|4     |LUT1    |    24|
+|5     |LUT2    |    75|
+|6     |LUT3    |   166|
+|7     |LUT4    |   546|
+|8     |LUT5    |  1342|
+|9     |LUT6    |  1827|
 |10    |MUXF7   |   432|
 |11    |MUXF8   |   136|
-|12    |FDRE    |   336|
+|12    |FDRE    |   344|
 |13    |FDSE    |     9|
-|14    |IBUF    |     7|
+|14    |IBUF    |     8|
 |15    |OBUF    |    29|
 +------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:50 ; elapsed = 00:02:51 . Memory (MB): peak = 1400.305 ; gain = 399.383
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:50 ; elapsed = 00:02:52 . Memory (MB): peak = 1401.969 ; gain = 402.582
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 24 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:42 ; elapsed = 00:02:48 . Memory (MB): peak = 1400.305 ; gain = 399.383
-Synthesis Optimization Complete : Time (s): cpu = 00:02:50 ; elapsed = 00:02:51 . Memory (MB): peak = 1400.305 ; gain = 399.383
+Synthesis finished with 0 errors, 0 critical warnings and 29 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:43 ; elapsed = 00:02:50 . Memory (MB): peak = 1401.969 ; gain = 402.582
+Synthesis Optimization Complete : Time (s): cpu = 00:02:51 ; elapsed = 00:02:52 . Memory (MB): peak = 1401.969 ; gain = 402.582
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.058 . Memory (MB): peak = 1400.305 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 615 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.057 . Memory (MB): peak = 1401.969 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 620 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1400.305 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1401.969 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-60 Infos, 24 Warnings, 0 Critical Warnings and 0 Errors encountered.
+62 Infos, 29 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:56 ; elapsed = 00:02:58 . Memory (MB): peak = 1400.305 ; gain = 399.383
+synth_design: Time (s): cpu = 00:02:58 ; elapsed = 00:02:59 . Memory (MB): peak = 1401.969 ; gain = 402.582
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/synth_1/au_top_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file au_top_0_utilization_synth.rpt -pb au_top_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Apr 13 03:05:20 2022...
+INFO: [Common 17-206] Exiting Vivado at Wed Apr 13 05:10:38 2022...

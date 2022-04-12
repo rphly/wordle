@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module matrix_13 (
+module matrix_14 (
     input clk,
     input rst,
     input [4:0] letter_address,
@@ -18,7 +18,7 @@ module matrix_13 (
   wire [1-1:0] M_matrix_writer_led;
   reg [1-1:0] M_matrix_writer_update;
   reg [24-1:0] M_matrix_writer_color;
-  led_strip_writer_16 matrix_writer (
+  led_strip_writer_17 matrix_writer (
     .clk(clk),
     .rst(rst),
     .update(M_matrix_writer_update),
@@ -29,7 +29,7 @@ module matrix_13 (
   
   wire [600-1:0] M_white_letters_out;
   reg [5-1:0] M_white_letters_selector;
-  white_alphabets_17 white_letters (
+  white_alphabets_18 white_letters (
     .selector(M_white_letters_selector),
     .out(M_white_letters_out)
   );

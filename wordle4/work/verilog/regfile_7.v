@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module regfile_6 (
+module regfile_7 (
     input clk,
     input rst,
     input [5:0] write_address,
@@ -164,16 +164,16 @@ module regfile_6 (
           M_k_d = data;
         end
         5'h17: begin
-          M_correct_letter_1_d = data;
+          M_correct_letter_1_d = 5'h02;
         end
         5'h18: begin
-          M_correct_letter_2_d = data;
+          M_correct_letter_2_d = 5'h06;
         end
         5'h19: begin
-          M_correct_letter_3_d = data;
+          M_correct_letter_3_d = 5'h01;
         end
         5'h1a: begin
-          M_correct_letter_4_d = data;
+          M_correct_letter_4_d = 5'h13;
         end
         5'h1b: begin
           M_num_correct_d = data;

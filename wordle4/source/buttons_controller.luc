@@ -18,29 +18,26 @@ module buttons_controller (
    }
   
   always {
-  
-    out = 16b0;
-    is_pressed = 0;
     
     if (b_button.out){
       out = 16d1;
       is_pressed = 1;
-    } else {
+    } else if (e_button.out){
+      out = 16d2;
+      is_pressed = 1;
+     } else if(a_button.out){
+      out = 16d3;
+      is_pressed = 1;
+    } else if (r_button.out){
+      out = 16d4;
+      is_pressed = 1;
+    } else  {
       out = 16b0;
       is_pressed = 0;
     }
-    if (e_button.out){
-      out = 16d2;
-      is_pressed = 1;
-     }
-    if(a_button.out){
-      out = 16d3;
-      is_pressed = 1;
-    }
-    if (r_button.out){
-      out = 16d4;
-      is_pressed = 1;
-    }
+    
+    
+    
 
   }
 }

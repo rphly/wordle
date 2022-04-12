@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module matrix_controller_7 (
+module matrix_controller_8 (
     input clk,
     input rst,
     input [2:0] update,
@@ -16,7 +16,8 @@ module matrix_controller_7 (
     output reg outmatrix2,
     output reg outmatrix3,
     output reg outmatrix4,
-    output reg [15:0] debugger
+    output reg [15:0] debugger,
+    output reg [15:0] debugger2
   );
   
   
@@ -28,7 +29,7 @@ module matrix_controller_7 (
   wire [1-1:0] M_matrix1_data_out;
   wire [16-1:0] M_matrix1_debugger;
   reg [5-1:0] M_matrix1_letter_address;
-  matrix_13 matrix1 (
+  matrix_14 matrix1 (
     .clk(clk),
     .rst(rst),
     .letter_address(M_matrix1_letter_address),
@@ -38,7 +39,7 @@ module matrix_controller_7 (
   wire [1-1:0] M_matrix2_data_out;
   wire [16-1:0] M_matrix2_debugger;
   reg [5-1:0] M_matrix2_letter_address;
-  matrix_13 matrix2 (
+  matrix_14 matrix2 (
     .clk(clk),
     .rst(rst),
     .letter_address(M_matrix2_letter_address),
@@ -48,7 +49,7 @@ module matrix_controller_7 (
   wire [1-1:0] M_matrix3_data_out;
   wire [16-1:0] M_matrix3_debugger;
   reg [5-1:0] M_matrix3_letter_address;
-  matrix_13 matrix3 (
+  matrix_14 matrix3 (
     .clk(clk),
     .rst(rst),
     .letter_address(M_matrix3_letter_address),
@@ -58,7 +59,7 @@ module matrix_controller_7 (
   wire [1-1:0] M_matrix4_data_out;
   wire [16-1:0] M_matrix4_debugger;
   reg [5-1:0] M_matrix4_letter_address;
-  matrix_13 matrix4 (
+  matrix_14 matrix4 (
     .clk(clk),
     .rst(rst),
     .letter_address(M_matrix4_letter_address),
@@ -81,6 +82,7 @@ module matrix_controller_7 (
     M_matrix3_letter_address = M_matrix3_letter_address_dff_q;
     M_matrix4_letter_address = M_matrix4_letter_address_dff_q;
     debugger = M_matrix1_debugger;
+    debugger2 = M_matrix2_debugger;
     
     case (update)
       3'h1: begin
@@ -93,6 +95,12 @@ module matrix_controller_7 (
         M_matrix3_letter_address_dff_d = matrix3_letter_address;
       end
       3'h4: begin
+        M_matrix4_letter_address_dff_d = matrix4_letter_address;
+      end
+      3'h5: begin
+        M_matrix1_letter_address_dff_d = matrix1_letter_address;
+        M_matrix2_letter_address_dff_d = matrix2_letter_address;
+        M_matrix3_letter_address_dff_d = matrix3_letter_address;
         M_matrix4_letter_address_dff_d = matrix4_letter_address;
       end
     endcase

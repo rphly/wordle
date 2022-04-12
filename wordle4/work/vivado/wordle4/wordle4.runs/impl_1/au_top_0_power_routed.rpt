@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Wed Apr 13 03:07:26 2022
+| Date             : Wed Apr 13 05:12:31 2022
 | Host             : Bryan running 64-bit major release  (build 9200)
 | Command          : report_power -file au_top_0_power_routed.rpt -pb au_top_0_power_summary_routed.pb -rpx au_top_0_power_routed.rpx
 | Design           : au_top_0
@@ -53,15 +53,15 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.003 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |     5056 |       --- |             --- |
-|   LUT as Logic |    <0.001 |     3456 |     20800 |           16.62 |
-|   CARRY4       |    <0.001 |       43 |      8150 |            0.53 |
-|   Register     |    <0.001 |      369 |     41600 |            0.89 |
+| Slice Logic    |    <0.001 |     5097 |       --- |             --- |
+|   LUT as Logic |    <0.001 |     3478 |     20800 |           16.72 |
+|   CARRY4       |    <0.001 |       48 |      8150 |            0.59 |
+|   Register     |    <0.001 |      376 |     41600 |            0.90 |
 |   F7/F8 Muxes  |    <0.001 |      568 |     32600 |            1.74 |
-|   Others       |     0.000 |       57 |       --- |             --- |
-| Signals        |    <0.001 |     3851 |       --- |             --- |
+|   Others       |     0.000 |       63 |       --- |             --- |
+| Signals        |    <0.001 |     3876 |       --- |             --- |
 | DSPs           |    <0.001 |        4 |        90 |            4.44 |
-| I/O            |     0.002 |       36 |       170 |           21.18 |
+| I/O            |     0.002 |       37 |       170 |           21.76 |
 | Static Power   |     0.072 |          |           |                 |
 | Total          |     0.078 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+

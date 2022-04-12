@@ -16,6 +16,7 @@ module au_top_0 (
     output reg outmatrix2,
     output reg outmatrix3,
     output reg outmatrix4,
+    input clear_in,
     output reg [23:0] io_led,
     output reg usb_tx
   );
@@ -36,18 +37,26 @@ module au_top_0 (
   wire [1-1:0] M_betaCPU_out_bottom_matrix3;
   wire [1-1:0] M_betaCPU_out_bottom_matrix4;
   wire [16-1:0] M_betaCPU_debugger;
+  wire [16-1:0] M_betaCPU_debugger2;
+  wire [2-1:0] M_betaCPU_current_state;
   reg [1-1:0] M_betaCPU_has_keyboard_input;
   reg [5-1:0] M_betaCPU_keyboard_input;
+  reg [5-1:0] M_betaCPU_panel_input;
+  reg [1-1:0] M_betaCPU_has_panel_input;
   beta_2 betaCPU (
     .clk(clk),
     .rst(rst),
     .has_keyboard_input(M_betaCPU_has_keyboard_input),
     .keyboard_input(M_betaCPU_keyboard_input),
+    .panel_input(M_betaCPU_panel_input),
+    .has_panel_input(M_betaCPU_has_panel_input),
     .out_bottom_matrix1(M_betaCPU_out_bottom_matrix1),
     .out_bottom_matrix2(M_betaCPU_out_bottom_matrix2),
     .out_bottom_matrix3(M_betaCPU_out_bottom_matrix3),
     .out_bottom_matrix4(M_betaCPU_out_bottom_matrix4),
-    .debugger(M_betaCPU_debugger)
+    .debugger(M_betaCPU_debugger),
+    .debugger2(M_betaCPU_debugger2),
+    .current_state(M_betaCPU_current_state)
   );
   wire [1-1:0] M_keyboard_controller_is_pressed;
   wire [16-1:0] M_keyboard_controller_out;
@@ -61,6 +70,15 @@ module au_top_0 (
     .is_pressed(M_keyboard_controller_is_pressed),
     .out(M_keyboard_controller_out)
   );
+  wire [1-1:0] M_button_panel_controller_is_pressed;
+  wire [5-1:0] M_button_panel_controller_out;
+  panel_controller_4 button_panel_controller (
+    .clk(clk),
+    .rst(rst),
+    .clear(clear_in),
+    .is_pressed(M_button_panel_controller_is_pressed),
+    .out(M_button_panel_controller_out)
+  );
   reg [4:0] M_button_debugger_d, M_button_debugger_q = 1'h0;
   
   always @* begin
@@ -69,7 +87,10 @@ module au_top_0 (
     io_led = 24'h000000;
     M_betaCPU_keyboard_input = M_keyboard_controller_out;
     M_betaCPU_has_keyboard_input = M_keyboard_controller_is_pressed;
+    M_betaCPU_panel_input = M_button_panel_controller_out;
+    M_betaCPU_has_panel_input = M_button_panel_controller_is_pressed;
     io_led[0+0+7-:8] = M_betaCPU_debugger;
+    io_led[8+0+7-:8] = M_betaCPU_debugger2;
     outmatrix1 = M_betaCPU_out_bottom_matrix1;
     outmatrix2 = M_betaCPU_out_bottom_matrix2;
     outmatrix3 = M_betaCPU_out_bottom_matrix3;

@@ -97,7 +97,6 @@ module game (
   
   const CLEAR_SIGNAL = b11111;
   
-  
   always {
     // standard setting 
     regfile_we = 0;
@@ -112,15 +111,15 @@ module game (
     asel = 0;
     bsel = 0;
     
-    matrix_controller_update = 3d0;
-    bottom_matrix1_letter_address = 5d0;
-    bottom_matrix2_letter_address = 5d0;
-    bottom_matrix3_letter_address = 5d0;
-    bottom_matrix4_letter_address = 5d0;
+    matrix_controller_update = 0;
+    bottom_matrix1_letter_address = 0;
+    bottom_matrix2_letter_address = 0;
+    bottom_matrix3_letter_address = 0;
+    bottom_matrix4_letter_address = 0;
     debugger= 0;
     
     if (rst) {
-      game_fsm.d = game_fsm.IDLE; 
+      game_fsm.d = game_fsm.RESET_TOP_DISPLAY; 
     } else {
       case(game_fsm.q) {
         
@@ -137,6 +136,11 @@ module game (
           game_fsm.d = game_fsm.CLEAR_RESET_BOTTOM_DISPLAY;
         
         game_fsm.RESET_BOTTOM_DISPLAY:
+          matrix_controller_update = 3d5;
+          bottom_matrix1_letter_address = 5b0;
+          bottom_matrix2_letter_address = 5b0;
+          bottom_matrix3_letter_address = 5b0;
+          bottom_matrix4_letter_address = 5b0;
           game_fsm.d = game_fsm.IDLE;
         
         // IDLE STATE
@@ -146,19 +150,18 @@ module game (
             if (panel_input == CLEAR_SIGNAL) {
               game_fsm.d = game_fsm.CLEAR_SET_INPUT_CTR_0;
             }
-          } else if (has_keyboard_input) {
-            game_fsm.d = game_fsm.STORE_INPUT;
+          }
+          else if (has_keyboard_input) {
+            regfile_we = 1;
+            regfile_ra = INPUT_CTR;
+            regfile_write_address = INPUT_LETTER_1 + regfile_out_a; // input ctr is like an offset
+            regfile_data = keyboard_input;
+            debugger = keyboard_input;
+            game_fsm.d = game_fsm.PRINT_LETTER_TO_MATRIX;
           } else {
             game_fsm.d = game_fsm.IDLE;
           }
         
-        game_fsm.STORE_INPUT:
-          regfile_we = 1;
-          regfile_ra = INPUT_CTR;
-          regfile_write_address = INPUT_LETTER_1 + regfile_out_a; // input ctr is like an offset
-          regfile_data = keyboard_input;
-          debugger = keyboard_input;
-          game_fsm.d = game_fsm.STORE_INPUT;
         
         game_fsm.PRINT_LETTER_TO_MATRIX:
           regfile_we = 0;

@@ -4,13 +4,15 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module game_5 (
+module game_6 (
     input clk,
     input rst,
     input [15:0] regfile_out_a,
     input [15:0] regfile_out_b,
     input [4:0] keyboard_input,
     input has_keyboard_input,
+    input [4:0] panel_input,
+    input has_panel_input,
     input [15:0] alu_out,
     output reg [4:0] which_matrix,
     output reg [4:0] which_letter,
@@ -33,39 +35,46 @@ module game_5 (
   
   
   
-  localparam RESET_TOP_DISPLAY_game_fsm = 5'd0;
-  localparam RESET_BOTTOM_DISPLAY_game_fsm = 5'd1;
-  localparam SET_INPUT_CTR_TO_0_game_fsm = 5'd2;
-  localparam SET_GUESS_CTR_TO_0_game_fsm = 5'd3;
-  localparam SET_NUM_CORRECT_INPUTS_TO_0_game_fsm = 5'd4;
-  localparam IDLE_game_fsm = 5'd5;
-  localparam RETRIEVE_INPUT_I_game_fsm = 5'd6;
-  localparam RETRIEVE_CORRECT_K_game_fsm = 5'd7;
-  localparam COMPARE_INPUT_I_WITH_CORRECT_K_game_fsm = 5'd8;
-  localparam COMPARE_K_EQUALS_3_game_fsm = 5'd9;
-  localparam CHECK_BUTTON_PRESSED_game_fsm = 5'd10;
-  localparam COMPARE_INPUT_CTR_EQUALS_4_game_fsm = 5'd11;
-  localparam COMPARE_INPUT_I_WITH_CORRECT_I_game_fsm = 5'd12;
-  localparam CLEAR_SET_INPUT_CTR_0_game_fsm = 5'd13;
-  localparam CLEAR_RESET_BOTTOM_DISPLAY_game_fsm = 5'd14;
-  localparam STORE_INPUT_game_fsm = 5'd15;
-  localparam INCREMENT_INPUT_CTR_game_fsm = 5'd16;
-  localparam PRINT_LETTER_TO_MATRIX_game_fsm = 5'd17;
-  localparam SET_I_TO_ZERO_game_fsm = 5'd18;
-  localparam SET_K_TO_ZERO_game_fsm = 5'd19;
-  localparam COMPARE_POSITIONS_K_AND_I_game_fsm = 5'd20;
-  localparam SET_TEMP_GUESS_G_LETTER_I_ADDR_WHITE_game_fsm = 5'd21;
-  localparam SET_TEMP_GUESS_G_LETTER_I_ADDR_GREEN_game_fsm = 5'd22;
-  localparam SET_TEMP_GUESS_G_LETTER_I_ADDR_YELLOW_game_fsm = 5'd23;
-  localparam SET_WHITE_LETTER_game_fsm = 5'd24;
-  localparam SET_GREEN_LETTER_game_fsm = 5'd25;
-  localparam SET_YELLOW_LETTER_game_fsm = 5'd26;
-  localparam SET_TEMP_COLOURED_LETTER_GREEN_game_fsm = 5'd27;
-  localparam SET_TEMP_COLOURED_LETTER_YELLOW_game_fsm = 5'd28;
-  localparam SET_TEMP_COLOURED_LETTER_WHITE_game_fsm = 5'd29;
-  localparam INCREMENT_K_game_fsm = 5'd30;
+  localparam RESET_TOP_DISPLAY_game_fsm = 6'd0;
+  localparam RESET_BOTTOM_DISPLAY_game_fsm = 6'd1;
+  localparam SET_INPUT_CTR_TO_0_game_fsm = 6'd2;
+  localparam SET_GUESS_CTR_TO_0_game_fsm = 6'd3;
+  localparam SET_NUM_CORRECT_INPUTS_TO_0_game_fsm = 6'd4;
+  localparam IDLE_game_fsm = 6'd5;
+  localparam RETRIEVE_INPUT_I_game_fsm = 6'd6;
+  localparam RETRIEVE_CORRECT_K_game_fsm = 6'd7;
+  localparam COMPARE_INPUT_I_WITH_CORRECT_K_game_fsm = 6'd8;
+  localparam COMPARE_K_EQUALS_3_AND_INCREMENT_game_fsm = 6'd9;
+  localparam CHECK_BUTTON_PRESSED_game_fsm = 6'd10;
+  localparam COMPARE_INPUT_CTR_EQUALS_4_game_fsm = 6'd11;
+  localparam COMPARE_INPUT_I_WITH_CORRECT_I_game_fsm = 6'd12;
+  localparam CLEAR_SET_INPUT_CTR_0_game_fsm = 6'd13;
+  localparam CLEAR_RESET_BOTTOM_DISPLAY_game_fsm = 6'd14;
+  localparam STORE_INPUT_game_fsm = 6'd15;
+  localparam INCREMENT_INPUT_CTR_game_fsm = 6'd16;
+  localparam PRINT_LETTER_TO_MATRIX_game_fsm = 6'd17;
+  localparam SET_I_TO_ZERO_game_fsm = 6'd18;
+  localparam SET_K_TO_ZERO_game_fsm = 6'd19;
+  localparam COMPARE_POSITIONS_K_AND_I_game_fsm = 6'd20;
+  localparam SET_TEMP_GUESS_G_LETTER_I_ADDR_WHITE_game_fsm = 6'd21;
+  localparam SET_TEMP_GUESS_G_LETTER_I_ADDR_GREEN_game_fsm = 6'd22;
+  localparam SET_TEMP_GUESS_G_LETTER_I_ADDR_YELLOW_game_fsm = 6'd23;
+  localparam SET_WHITE_LETTER_game_fsm = 6'd24;
+  localparam SET_GREEN_LETTER_game_fsm = 6'd25;
+  localparam SET_YELLOW_LETTER_game_fsm = 6'd26;
+  localparam SET_TEMP_COLOURED_LETTER_GREEN_game_fsm = 6'd27;
+  localparam SET_TEMP_COLOURED_LETTER_YELLOW_game_fsm = 6'd28;
+  localparam SET_TEMP_COLOURED_LETTER_WHITE_game_fsm = 6'd29;
+  localparam INCREMENT_K_game_fsm = 6'd30;
+  localparam INCREMENT_NUM_CORRECT_game_fsm = 6'd31;
+  localparam COMPARE_NUM_CORRECT_EQUALS_4_game_fsm = 6'd32;
+  localparam COMPARE_I_EQUALS_3_AND_INCREMENT_game_fsm = 6'd33;
+  localparam COMPARE_GUESS_CTR_EQUALS_3_game_fsm = 6'd34;
+  localparam SHOW_TOP_DISPLAY_game_fsm = 6'd35;
+  localparam LOSE_game_fsm = 6'd36;
+  localparam WIN_game_fsm = 6'd37;
   
-  reg [4:0] M_game_fsm_d, M_game_fsm_q = RESET_TOP_DISPLAY_game_fsm;
+  reg [5:0] M_game_fsm_d, M_game_fsm_q = RESET_TOP_DISPLAY_game_fsm;
   
   localparam INPUT_CTR = 5'h1c;
   
@@ -95,6 +104,10 @@ module game_5 (
   
   localparam TEMP_COLOURED_LETTER = 6'h22;
   
+  localparam NUM_CORRECT = 5'h1b;
+  
+  localparam CLEAR_SIGNAL = 5'h1f;
+  
   always @* begin
     M_game_fsm_d = M_game_fsm_q;
     
@@ -109,14 +122,14 @@ module game_5 (
     alufn = 1'h0;
     asel = 1'h0;
     bsel = 1'h0;
-    matrix_controller_update = 3'h0;
-    bottom_matrix1_letter_address = 5'h00;
-    bottom_matrix2_letter_address = 5'h00;
-    bottom_matrix3_letter_address = 5'h00;
-    bottom_matrix4_letter_address = 5'h00;
+    matrix_controller_update = 1'h0;
+    bottom_matrix1_letter_address = 1'h0;
+    bottom_matrix2_letter_address = 1'h0;
+    bottom_matrix3_letter_address = 1'h0;
+    bottom_matrix4_letter_address = 1'h0;
     debugger = 1'h0;
     if (rst) begin
-      M_game_fsm_d = IDLE_game_fsm;
+      M_game_fsm_d = RESET_TOP_DISPLAY_game_fsm;
     end else begin
       
       case (M_game_fsm_q)
@@ -132,27 +145,30 @@ module game_5 (
           M_game_fsm_d = CLEAR_RESET_BOTTOM_DISPLAY_game_fsm;
         end
         RESET_BOTTOM_DISPLAY_game_fsm: begin
+          matrix_controller_update = 3'h5;
+          bottom_matrix1_letter_address = 5'h00;
+          bottom_matrix2_letter_address = 5'h00;
+          bottom_matrix3_letter_address = 5'h00;
+          bottom_matrix4_letter_address = 5'h00;
           M_game_fsm_d = IDLE_game_fsm;
         end
         IDLE_game_fsm: begin
-          if (has_keyboard_input) begin
-            regfile_ra = 5'h1c;
-            regfile_write_address = 5'h10 + regfile_out_a;
-            regfile_data = keyboard_input;
-            regfile_we = 1'h1;
-            debugger = keyboard_input;
-            M_game_fsm_d = PRINT_LETTER_TO_MATRIX_game_fsm;
+          if (has_panel_input) begin
+            if (panel_input == 5'h1f) begin
+              M_game_fsm_d = CLEAR_SET_INPUT_CTR_0_game_fsm;
+            end
           end else begin
-            M_game_fsm_d = IDLE_game_fsm;
+            if (has_keyboard_input) begin
+              regfile_we = 1'h1;
+              regfile_ra = 5'h1c;
+              regfile_write_address = 5'h10 + regfile_out_a;
+              regfile_data = keyboard_input;
+              debugger = keyboard_input;
+              M_game_fsm_d = PRINT_LETTER_TO_MATRIX_game_fsm;
+            end else begin
+              M_game_fsm_d = IDLE_game_fsm;
+            end
           end
-        end
-        STORE_INPUT_game_fsm: begin
-          regfile_we = 1'h1;
-          regfile_ra = 5'h1c;
-          regfile_write_address = 5'h10 + regfile_out_a;
-          regfile_data = keyboard_input;
-          debugger = keyboard_input;
-          M_game_fsm_d = STORE_INPUT_game_fsm;
         end
         PRINT_LETTER_TO_MATRIX_game_fsm: begin
           regfile_we = 1'h0;
@@ -200,7 +216,7 @@ module game_5 (
         CHECK_BUTTON_PRESSED_game_fsm: begin
           regfile_ra = 5'h1c;
           asel = 3'h0;
-          bsel = 3'h4;
+          bsel = 3'h3;
           alufn = 6'h33;
           if (alu_out == 16'h0001) begin
             M_game_fsm_d = SET_I_TO_ZERO_game_fsm;
@@ -288,7 +304,7 @@ module game_5 (
           regfile_write_address = regfile_out_a;
           regfile_data = regfile_out_b;
           regfile_we = 1'h1;
-          M_game_fsm_d = COMPARE_K_EQUALS_3_game_fsm;
+          M_game_fsm_d = COMPARE_K_EQUALS_3_AND_INCREMENT_game_fsm;
         end
         COMPARE_POSITIONS_K_AND_I_game_fsm: begin
           regfile_we = 1'h0;
@@ -338,7 +354,25 @@ module game_5 (
           regfile_write_address = regfile_out_a;
           regfile_data = regfile_out_b;
           regfile_we = 1'h1;
-          M_game_fsm_d = COMPARE_K_EQUALS_3_game_fsm;
+          M_game_fsm_d = INCREMENT_NUM_CORRECT_game_fsm;
+        end
+        INCREMENT_NUM_CORRECT_game_fsm: begin
+          regfile_ra = 5'h1b;
+          regfile_write_address = 5'h1b;
+          regfile_data = regfile_out_a + 1'h1;
+          regfile_we = 1'h1;
+          M_game_fsm_d = COMPARE_NUM_CORRECT_EQUALS_4_game_fsm;
+        end
+        COMPARE_NUM_CORRECT_EQUALS_4_game_fsm: begin
+          regfile_ra = 5'h1b;
+          asel = 3'h0;
+          bsel = 3'h4;
+          alufn = 6'h33;
+          if (alu_out == 16'h0000) begin
+            M_game_fsm_d = COMPARE_I_EQUALS_3_AND_INCREMENT_game_fsm;
+          end else begin
+            M_game_fsm_d = WIN_game_fsm;
+          end
         end
         SET_TEMP_GUESS_G_LETTER_I_ADDR_YELLOW_game_fsm: begin
           regfile_ra = 6'h20;
@@ -375,9 +409,9 @@ module game_5 (
           regfile_write_address = regfile_out_a;
           regfile_data = regfile_out_b;
           regfile_we = 1'h1;
-          M_game_fsm_d = COMPARE_K_EQUALS_3_game_fsm;
+          M_game_fsm_d = COMPARE_I_EQUALS_3_AND_INCREMENT_game_fsm;
         end
-        COMPARE_K_EQUALS_3_game_fsm: begin
+        COMPARE_K_EQUALS_3_AND_INCREMENT_game_fsm: begin
           regfile_ra = 5'h16;
           asel = 3'h0;
           bsel = 3'h4;
@@ -388,7 +422,46 @@ module game_5 (
             regfile_we = 1'h1;
             M_game_fsm_d = RETRIEVE_CORRECT_K_game_fsm;
           end else begin
-            M_game_fsm_d = INCREMENT_K_game_fsm;
+            M_game_fsm_d = COMPARE_I_EQUALS_3_AND_INCREMENT_game_fsm;
+          end
+        end
+        COMPARE_I_EQUALS_3_AND_INCREMENT_game_fsm: begin
+          regfile_ra = 5'h14;
+          asel = 3'h0;
+          bsel = 3'h3;
+          alufn = 6'h33;
+          if (alu_out == 16'h0000) begin
+            regfile_write_address = 5'h14;
+            regfile_data = regfile_out_a + 1'h1;
+            regfile_we = 1'h1;
+            M_game_fsm_d = SET_K_TO_ZERO_game_fsm;
+          end else begin
+            M_game_fsm_d = SET_NUM_CORRECT_INPUTS_TO_0_game_fsm;
+          end
+        end
+        SET_NUM_CORRECT_INPUTS_TO_0_game_fsm: begin
+          regfile_write_address = 5'h1b;
+          regfile_ra = 1'h0;
+          regfile_rb = 1'h0;
+          regfile_data = 1'h0;
+          regfile_we = 1'h1;
+          M_game_fsm_d = SHOW_TOP_DISPLAY_game_fsm;
+        end
+        SHOW_TOP_DISPLAY_game_fsm: begin
+          M_game_fsm_d = COMPARE_GUESS_CTR_EQUALS_3_game_fsm;
+        end
+        COMPARE_GUESS_CTR_EQUALS_3_game_fsm: begin
+          regfile_ra = 6'h20;
+          asel = 3'h0;
+          bsel = 3'h3;
+          alufn = 6'h33;
+          if (alu_out == 16'h0000) begin
+            regfile_write_address = 6'h20;
+            regfile_data = regfile_out_a + 1'h1;
+            regfile_we = 1'h1;
+            M_game_fsm_d = SET_INPUT_CTR_TO_0_game_fsm;
+          end else begin
+            M_game_fsm_d = LOSE_game_fsm;
           end
         end
         default: begin
