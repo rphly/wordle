@@ -133,6 +133,7 @@ module game (
           regfile_data = selected_word[3]; // 5 bits
           regfile_we = 1;
           game_fsm.d = game_fsm.SET_CORRECT_LETTER_2;
+
         game_fsm.SET_CORRECT_LETTER_2:
           regfile_ra = b10011;
           regfile_write_address = CORRECT_LETTER_1 + 1;
@@ -147,7 +148,7 @@ module game (
           words_selector = regfile_out_a;
           regfile_data = selected_word[1]; // 5 bits
           regfile_we = 1;
-          game_fsm.d = game_fsm.SET_CORRECT_LETTER_3;
+          game_fsm.d = game_fsm.SET_CORRECT_LETTER_4;
           
         game_fsm.SET_CORRECT_LETTER_4:
           regfile_ra = b10011;
@@ -182,16 +183,13 @@ module game (
               game_fsm.d = game_fsm.CHECK_BUTTON_PRESSED;
             }
           } else if (has_keyboard_input) {
-            game_fsm.d = game_fsm.STORE_INPUT;
+            regfile_we = 1;
+            regfile_ra = INPUT_CTR;
+            regfile_write_address = INPUT_LETTER_1 + regfile_out_a; // input ctr is like an offset
+            game_fsm.d = game_fsm.PRINT_LETTER_TO_MATRIX;
           } else {
             game_fsm.d = game_fsm.IDLE;
           }
-        
-        game_fsm.STORE_INPUT:
-          regfile_we = 1;
-          regfile_ra = INPUT_CTR;
-          regfile_write_address = INPUT_LETTER_1 + regfile_out_a; // input ctr is like an offset
-          game_fsm.d = game_fsm.PRINT_LETTER_TO_MATRIX;
         
         game_fsm.PRINT_LETTER_TO_MATRIX:
           regfile_we = 0;
