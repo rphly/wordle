@@ -5,7 +5,6 @@
     <src>beta.luc</src>
     <src>green_alphabets.luc</src>
     <component>pipeline.luc</component>
-    <src top="true">au_top.luc</src>
     <src>panel_controller.luc</src>
     <src>yellow_alphabets.luc</src>
     <src>words.luc</src>
@@ -24,6 +23,7 @@
     <component>reset_conditioner.luc</component>
     <component>edge_detector.luc</component>
     <component>button_conditioner.luc</component>
+    <src top="true">au_top.luc</src>
     <constraint>alchitry.acf</constraint>
     <constraint lib="true">au.xdc</constraint>
   </files>
