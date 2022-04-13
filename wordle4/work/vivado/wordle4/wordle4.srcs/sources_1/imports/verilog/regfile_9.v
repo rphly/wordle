@@ -4,14 +4,14 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module regfile_8 (
+module regfile_9 (
     input clk,
     input rst,
-    input [4:0] write_address,
+    input [5:0] write_address,
     input we,
     input [15:0] data,
-    input [4:0] read_address_a,
-    input [4:0] read_address_b,
+    input [5:0] read_address_a,
+    input [5:0] read_address_b,
     output reg [15:0] out_a,
     output reg [15:0] out_b
   );
@@ -42,14 +42,22 @@ module regfile_8 (
   reg [4:0] M_correct_letter_2_d, M_correct_letter_2_q = 1'h0;
   reg [4:0] M_correct_letter_3_d, M_correct_letter_3_q = 1'h0;
   reg [4:0] M_correct_letter_4_d, M_correct_letter_4_q = 1'h0;
+  reg [4:0] M_input_i_d, M_input_i_q = 1'h0;
+  reg [4:0] M_correct_k_d, M_correct_k_q = 1'h0;
   reg [2:0] M_i_d, M_i_q = 1'h0;
   reg [2:0] M_j_d, M_j_q = 1'h0;
   reg [2:0] M_k_d, M_k_q = 1'h0;
   reg [1:0] M_input_ctr_d, M_input_ctr_q = 1'h0;
   reg [2:0] M_num_correct_d, M_num_correct_q = 1'h0;
   reg [0:0] M_zero_d, M_zero_q = 1'h0;
+  reg [0:0] M_g_d, M_g_q = 1'h0;
+  reg [5:0] M_temp_guess_g_letter_i_d, M_temp_guess_g_letter_i_q = 1'h0;
+  reg [6:0] M_temp_coloured_letter_d, M_temp_coloured_letter_q = 1'h0;
+  reg [10:0] M_word_index_d, M_word_index_q = 1'h0;
   
   always @* begin
+    M_temp_guess_g_letter_i_d = M_temp_guess_g_letter_i_q;
+    M_word_index_d = M_word_index_q;
     M_guess_1_letter_1_d = M_guess_1_letter_1_q;
     M_guess_1_letter_2_d = M_guess_1_letter_2_q;
     M_guess_4_letter_1_d = M_guess_4_letter_1_q;
@@ -59,6 +67,7 @@ module regfile_8 (
     M_num_correct_d = M_num_correct_q;
     M_guess_3_letter_4_d = M_guess_3_letter_4_q;
     M_zero_d = M_zero_q;
+    M_temp_coloured_letter_d = M_temp_coloured_letter_q;
     M_guess_3_letter_3_d = M_guess_3_letter_3_q;
     M_guess_3_letter_2_d = M_guess_3_letter_2_q;
     M_guess_3_letter_1_d = M_guess_3_letter_1_q;
@@ -66,6 +75,7 @@ module regfile_8 (
     M_guess_1_letter_4_d = M_guess_1_letter_4_q;
     M_guess_2_letter_4_d = M_guess_2_letter_4_q;
     M_correct_letter_4_d = M_correct_letter_4_q;
+    M_g_d = M_g_q;
     M_input_letter_3_d = M_input_letter_3_q;
     M_input_letter_2_d = M_input_letter_2_q;
     M_i_d = M_i_q;
@@ -73,6 +83,8 @@ module regfile_8 (
     M_j_d = M_j_q;
     M_k_d = M_k_q;
     M_input_ctr_d = M_input_ctr_q;
+    M_input_i_d = M_input_i_q;
+    M_correct_k_d = M_correct_k_q;
     M_input_letter_4_d = M_input_letter_4_q;
     M_guess_2_letter_1_d = M_guess_2_letter_1_q;
     M_correct_letter_1_d = M_correct_letter_1_q;
@@ -154,16 +166,16 @@ module regfile_8 (
           M_k_d = data;
         end
         5'h17: begin
-          M_correct_letter_1_d = data;
+          M_correct_letter_1_d = 5'h02;
         end
         5'h18: begin
-          M_correct_letter_2_d = data;
+          M_correct_letter_2_d = 5'h06;
         end
         5'h19: begin
-          M_correct_letter_3_d = data;
+          M_correct_letter_3_d = 5'h01;
         end
         5'h1a: begin
-          M_correct_letter_4_d = data;
+          M_correct_letter_4_d = 5'h13;
         end
         5'h1b: begin
           M_num_correct_d = data;
@@ -171,8 +183,26 @@ module regfile_8 (
         5'h1c: begin
           M_input_ctr_d = data;
         end
+        5'h1d: begin
+          M_input_i_d = data;
+        end
+        5'h1e: begin
+          M_correct_k_d = data;
+        end
         5'h1f: begin
           M_zero_d = 1'h0;
+        end
+        6'h20: begin
+          M_g_d = data;
+        end
+        6'h21: begin
+          M_temp_guess_g_letter_i_d = data;
+        end
+        6'h22: begin
+          M_temp_coloured_letter_d = data;
+        end
+        6'h23: begin
+          M_word_index_d = data;
         end
       endcase
     end
@@ -265,8 +295,26 @@ module regfile_8 (
       5'h1c: begin
         out_a = M_input_ctr_q;
       end
+      5'h1d: begin
+        out_a = M_input_i_q;
+      end
+      5'h1e: begin
+        out_a = M_correct_k_q;
+      end
       5'h1f: begin
         out_a = M_zero_q;
+      end
+      6'h20: begin
+        out_a = M_g_q;
+      end
+      6'h21: begin
+        out_a = M_temp_guess_g_letter_i_q;
+      end
+      6'h22: begin
+        out_a = M_temp_coloured_letter_q;
+      end
+      6'h23: begin
+        out_a = M_word_index_q;
       end
       default: begin
         out_a = M_zero_q;
@@ -361,8 +409,26 @@ module regfile_8 (
       5'h1c: begin
         out_b = M_input_ctr_q;
       end
+      5'h1d: begin
+        out_b = M_input_i_q;
+      end
+      5'h1e: begin
+        out_b = M_correct_k_q;
+      end
       5'h1f: begin
         out_b = M_zero_q;
+      end
+      6'h20: begin
+        out_b = M_g_q;
+      end
+      6'h21: begin
+        out_b = M_temp_guess_g_letter_i_q;
+      end
+      6'h22: begin
+        out_b = M_temp_coloured_letter_q;
+      end
+      6'h23: begin
+        out_b = M_word_index_q;
       end
       default: begin
         out_b = M_zero_q;
@@ -396,12 +462,18 @@ module regfile_8 (
       M_correct_letter_2_q <= 1'h0;
       M_correct_letter_3_q <= 1'h0;
       M_correct_letter_4_q <= 1'h0;
+      M_input_i_q <= 1'h0;
+      M_correct_k_q <= 1'h0;
       M_i_q <= 1'h0;
       M_j_q <= 1'h0;
       M_k_q <= 1'h0;
       M_input_ctr_q <= 1'h0;
       M_num_correct_q <= 1'h0;
       M_zero_q <= 1'h0;
+      M_g_q <= 1'h0;
+      M_temp_guess_g_letter_i_q <= 1'h0;
+      M_temp_coloured_letter_q <= 1'h0;
+      M_word_index_q <= 1'h0;
     end else begin
       M_guess_1_letter_1_q <= M_guess_1_letter_1_d;
       M_guess_1_letter_2_q <= M_guess_1_letter_2_d;
@@ -427,12 +499,18 @@ module regfile_8 (
       M_correct_letter_2_q <= M_correct_letter_2_d;
       M_correct_letter_3_q <= M_correct_letter_3_d;
       M_correct_letter_4_q <= M_correct_letter_4_d;
+      M_input_i_q <= M_input_i_d;
+      M_correct_k_q <= M_correct_k_d;
       M_i_q <= M_i_d;
       M_j_q <= M_j_d;
       M_k_q <= M_k_d;
       M_input_ctr_q <= M_input_ctr_d;
       M_num_correct_q <= M_num_correct_d;
       M_zero_q <= M_zero_d;
+      M_g_q <= M_g_d;
+      M_temp_guess_g_letter_i_q <= M_temp_guess_g_letter_i_d;
+      M_temp_coloured_letter_q <= M_temp_coloured_letter_d;
+      M_word_index_q <= M_word_index_d;
     end
   end
   

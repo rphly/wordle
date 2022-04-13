@@ -9,6 +9,7 @@ module au_top (
     input c_in,
     
     input clear_in,
+    input check_in,
     
     output outmatrix0,
     output io_led[3][8],
@@ -26,7 +27,8 @@ module au_top (
       );
       
       panel_controller button_panel_controller(
-        .clear(clear_in)
+        .clear(clear_in),
+        .check(check_in)
       );
     }
   }

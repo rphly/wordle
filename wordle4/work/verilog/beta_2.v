@@ -7,15 +7,37 @@
 module beta_2 (
     input clk,
     input rst,
-    input write_one_button_in,
-    input write_zero_button_in,
-    input read_button_in,
+    input has_keyboard_input,
+    input [4:0] keyboard_input,
+    input [4:0] panel_input,
+    input has_panel_input,
     output reg [4:0] which_matrix,
     output reg [4:0] which_letter,
     output reg [1:0] current_state
   );
   
   
+  
+  wire [16-1:0] M_game_alu_alu;
+  wire [1-1:0] M_game_alu_z;
+  wire [1-1:0] M_game_alu_v;
+  wire [1-1:0] M_game_alu_n;
+  reg [6-1:0] M_game_alu_alufn;
+  reg [16-1:0] M_game_alu_a;
+  reg [16-1:0] M_game_alu_b;
+  alu_7 game_alu (
+    .alufn(M_game_alu_alufn),
+    .a(M_game_alu_a),
+    .b(M_game_alu_b),
+    .alu(M_game_alu_alu),
+    .z(M_game_alu_z),
+    .v(M_game_alu_v),
+    .n(M_game_alu_n)
+  );
+  
+  reg [15:0] inputAlu_a;
+  
+  reg [15:0] inputAlu_b;
   
   wire [5-1:0] M_control_unit_which_matrix;
   wire [5-1:0] M_control_unit_which_letter;
@@ -25,19 +47,29 @@ module beta_2 (
   wire [16-1:0] M_control_unit_regfile_rb;
   wire [16-1:0] M_control_unit_regfile_data;
   wire [2-1:0] M_control_unit_current_state;
+  wire [6-1:0] M_control_unit_alufn;
+  wire [3-1:0] M_control_unit_asel;
+  wire [3-1:0] M_control_unit_bsel;
+  wire [5-1:0] M_control_unit_words_selector;
   reg [16-1:0] M_control_unit_regfile_out_a;
   reg [16-1:0] M_control_unit_regfile_out_b;
-  reg [1-1:0] M_control_unit_write_one_in;
-  reg [1-1:0] M_control_unit_write_zero_in;
-  reg [1-1:0] M_control_unit_read_button_in;
-  game_7 control_unit (
+  reg [5-1:0] M_control_unit_keyboard_input;
+  reg [1-1:0] M_control_unit_has_keyboard_input;
+  reg [5-1:0] M_control_unit_panel_input;
+  reg [1-1:0] M_control_unit_has_panel_input;
+  reg [16-1:0] M_control_unit_alu_out;
+  reg [20-1:0] M_control_unit_selected_word;
+  game_8 control_unit (
     .clk(clk),
     .rst(rst),
     .regfile_out_a(M_control_unit_regfile_out_a),
     .regfile_out_b(M_control_unit_regfile_out_b),
-    .write_one_in(M_control_unit_write_one_in),
-    .write_zero_in(M_control_unit_write_zero_in),
-    .read_button_in(M_control_unit_read_button_in),
+    .keyboard_input(M_control_unit_keyboard_input),
+    .has_keyboard_input(M_control_unit_has_keyboard_input),
+    .panel_input(M_control_unit_panel_input),
+    .has_panel_input(M_control_unit_has_panel_input),
+    .alu_out(M_control_unit_alu_out),
+    .selected_word(M_control_unit_selected_word),
     .which_matrix(M_control_unit_which_matrix),
     .which_letter(M_control_unit_which_letter),
     .regfile_we(M_control_unit_regfile_we),
@@ -45,16 +77,20 @@ module beta_2 (
     .regfile_ra(M_control_unit_regfile_ra),
     .regfile_rb(M_control_unit_regfile_rb),
     .regfile_data(M_control_unit_regfile_data),
-    .current_state(M_control_unit_current_state)
+    .current_state(M_control_unit_current_state),
+    .alufn(M_control_unit_alufn),
+    .asel(M_control_unit_asel),
+    .bsel(M_control_unit_bsel),
+    .words_selector(M_control_unit_words_selector)
   );
   wire [16-1:0] M_r_out_a;
   wire [16-1:0] M_r_out_b;
-  reg [5-1:0] M_r_write_address;
+  reg [6-1:0] M_r_write_address;
   reg [1-1:0] M_r_we;
   reg [16-1:0] M_r_data;
-  reg [5-1:0] M_r_read_address_a;
-  reg [5-1:0] M_r_read_address_b;
-  regfile_8 r (
+  reg [6-1:0] M_r_read_address_a;
+  reg [6-1:0] M_r_read_address_b;
+  regfile_9 r (
     .clk(clk),
     .rst(rst),
     .write_address(M_r_write_address),
@@ -66,17 +102,73 @@ module beta_2 (
     .out_b(M_r_out_b)
   );
   
+  wire [20-1:0] M_words_out;
+  reg [11-1:0] M_words_selector;
+  words_10 words (
+    .selector(M_words_selector),
+    .out(M_words_out)
+  );
+  
   always @* begin
+    
+    case (M_control_unit_asel)
+      3'h0: begin
+        inputAlu_a = M_r_out_a;
+      end
+      3'h1: begin
+        inputAlu_a = 2'h0;
+      end
+      3'h2: begin
+        inputAlu_a = 2'h1;
+      end
+      3'h3: begin
+        inputAlu_a = 2'h2;
+      end
+      default: begin
+        inputAlu_a = 1'h0;
+      end
+    endcase
+    
+    case (M_control_unit_bsel)
+      3'h0: begin
+        inputAlu_b = M_r_out_b;
+      end
+      3'h1: begin
+        inputAlu_b = 3'h0;
+      end
+      3'h2: begin
+        inputAlu_b = 3'h1;
+      end
+      3'h3: begin
+        inputAlu_b = 3'h2;
+      end
+      3'h4: begin
+        inputAlu_b = 3'h3;
+      end
+      3'h5: begin
+        inputAlu_b = 3'h4;
+      end
+      default: begin
+        inputAlu_b = 1'h0;
+      end
+    endcase
+    M_game_alu_a = inputAlu_a;
+    M_game_alu_b = inputAlu_b;
+    M_game_alu_alufn = M_control_unit_alufn;
     M_r_we = M_control_unit_regfile_we;
     M_r_write_address = M_control_unit_regfile_write_address;
     M_r_read_address_a = M_control_unit_regfile_ra;
     M_r_read_address_b = M_control_unit_regfile_rb;
     M_r_data = M_control_unit_regfile_data;
-    M_control_unit_read_button_in = read_button_in;
-    M_control_unit_write_one_in = write_one_button_in;
-    M_control_unit_write_zero_in = write_zero_button_in;
+    M_words_selector = M_control_unit_words_selector;
+    M_control_unit_keyboard_input = keyboard_input;
+    M_control_unit_has_keyboard_input = has_keyboard_input;
+    M_control_unit_panel_input = panel_input;
+    M_control_unit_has_panel_input = has_panel_input;
     M_control_unit_regfile_out_a = M_r_out_a;
     M_control_unit_regfile_out_b = M_r_out_b;
+    M_control_unit_alu_out = M_game_alu_alu;
+    M_control_unit_selected_word = M_words_out;
     current_state = M_control_unit_current_state;
     which_matrix = M_control_unit_which_matrix;
     which_letter = M_control_unit_which_letter;

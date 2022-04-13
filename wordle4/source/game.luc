@@ -97,6 +97,7 @@ module game (
   const NUM_CORRECT = b11011;
   
   const CLEAR_SIGNAL = b11111;
+  const CHECK_SIGNAL = b11110;
   
   
   always {
@@ -177,6 +178,8 @@ module game (
           if (has_panel_input) {
             if (panel_input == CLEAR_SIGNAL) {
               game_fsm.d = game_fsm.CLEAR_SET_INPUT_CTR_0;
+            } else if (panel_input == CHECK_SIGNAL) {
+              game_fsm.d = game_fsm.CHECK_BUTTON_PRESSED;
             }
           } else if (has_keyboard_input) {
             game_fsm.d = game_fsm.STORE_INPUT;

@@ -6,6 +6,7 @@ pin rst_n RESET;
 pin a_in A8 pulldown;
 pin b_in A9 pulldown;
 pin c_in A43 pulldown;
+pin clear_in A2 pulldown;
 pin outmatrix0 A27;
 
 
