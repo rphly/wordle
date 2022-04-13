@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module game_8 (
+module game_6 (
     input clk,
     input rst,
     input [15:0] regfile_out_a,
@@ -26,7 +26,12 @@ module game_8 (
     output reg [5:0] alufn,
     output reg [2:0] asel,
     output reg [2:0] bsel,
-    output reg [4:0] words_selector
+    output reg [4:0] words_selector,
+    output reg [2:0] matrix_controller_update,
+    output reg [4:0] bottom_matrix1_letter_address,
+    output reg [4:0] bottom_matrix2_letter_address,
+    output reg [4:0] bottom_matrix3_letter_address,
+    output reg [4:0] bottom_matrix4_letter_address
   );
   
   
@@ -109,6 +114,8 @@ module game_8 (
   
   localparam CLEAR_SIGNAL = 5'h1f;
   
+  localparam CHECK_SIGNAL = 5'h1e;
+  
   always @* begin
     M_game_fsm_d = M_game_fsm_q;
     
@@ -124,6 +131,11 @@ module game_8 (
     asel = 1'h0;
     bsel = 1'h0;
     words_selector = 1'h0;
+    matrix_controller_update = 3'h0;
+    bottom_matrix1_letter_address = 5'h00;
+    bottom_matrix2_letter_address = 5'h00;
+    bottom_matrix3_letter_address = 5'h00;
+    bottom_matrix4_letter_address = 5'h00;
     if (rst) begin
       M_game_fsm_d = SET_CORRECT_WORD_game_fsm;
     end else begin
@@ -157,7 +169,7 @@ module game_8 (
           words_selector = regfile_out_a;
           regfile_data = selected_word[5+4-:5];
           regfile_we = 1'h1;
-          M_game_fsm_d = SET_CORRECT_LETTER_3_game_fsm;
+          M_game_fsm_d = SET_CORRECT_LETTER_4_game_fsm;
         end
         SET_CORRECT_LETTER_4_game_fsm: begin
           regfile_ra = 5'h13;
@@ -176,36 +188,63 @@ module game_8 (
           regfile_ra = 1'h0;
           regfile_rb = 1'h0;
           regfile_data = 1'h0;
-          M_game_fsm_d = CLEAR_RESET_BOTTOM_DISPLAY_game_fsm;
+          M_game_fsm_d = RESET_BOTTOM_DISPLAY_game_fsm;
         end
         RESET_BOTTOM_DISPLAY_game_fsm: begin
+          matrix_controller_update = 3'h5;
+          bottom_matrix1_letter_address = 5'h00;
+          bottom_matrix2_letter_address = 5'h00;
+          bottom_matrix3_letter_address = 5'h00;
+          bottom_matrix4_letter_address = 5'h00;
           M_game_fsm_d = IDLE_game_fsm;
         end
         IDLE_game_fsm: begin
           if (has_panel_input) begin
             if (panel_input == 5'h1f) begin
               M_game_fsm_d = CLEAR_SET_INPUT_CTR_0_game_fsm;
+            end else begin
+              if (panel_input == 5'h1e) begin
+                M_game_fsm_d = CHECK_BUTTON_PRESSED_game_fsm;
+              end
             end
           end else begin
             if (has_keyboard_input) begin
-              M_game_fsm_d = STORE_INPUT_game_fsm;
+              regfile_we = 1'h1;
+              regfile_ra = 5'h1c;
+              regfile_write_address = 5'h10 + regfile_out_a;
+              regfile_data = keyboard_input;
+              M_game_fsm_d = PRINT_LETTER_TO_MATRIX_game_fsm;
             end else begin
               M_game_fsm_d = IDLE_game_fsm;
             end
           end
         end
-        STORE_INPUT_game_fsm: begin
-          regfile_we = 1'h1;
-          regfile_ra = 5'h1c;
-          regfile_write_address = 5'h10 + regfile_out_a;
-          M_game_fsm_d = PRINT_LETTER_TO_MATRIX_game_fsm;
-        end
         PRINT_LETTER_TO_MATRIX_game_fsm: begin
           regfile_we = 1'h0;
           regfile_ra = 5'h1c;
-          regfile_rb = 5'h10 + regfile_out_a;
-          which_matrix = regfile_out_a;
-          which_letter = regfile_out_b;
+          alufn = 6'h00;
+          asel = 3'h0;
+          bsel = 3'h6;
+          regfile_rb = alu_out;
+          
+          case (regfile_out_a)
+            16'h0000: begin
+              matrix_controller_update = 3'h1;
+              bottom_matrix1_letter_address = regfile_out_b;
+            end
+            16'h0001: begin
+              matrix_controller_update = 3'h2;
+              bottom_matrix2_letter_address = regfile_out_b;
+            end
+            16'h0002: begin
+              matrix_controller_update = 3'h3;
+              bottom_matrix3_letter_address = regfile_out_b;
+            end
+            16'h0003: begin
+              matrix_controller_update = 3'h4;
+              bottom_matrix4_letter_address = regfile_out_b;
+            end
+          endcase
           M_game_fsm_d = INCREMENT_INPUT_CTR_game_fsm;
         end
         INCREMENT_INPUT_CTR_game_fsm: begin
@@ -214,7 +253,6 @@ module game_8 (
           bsel = 3'h4;
           alufn = 6'h33;
           if (alu_out == 16'h0000) begin
-            regfile_we = 1'h1;
             regfile_write_address = 5'h1c;
             regfile_data = regfile_out_a + 1'h1;
             regfile_we = 1'h1;

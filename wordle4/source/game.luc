@@ -26,7 +26,13 @@ module game (
     output alufn[6],
     output asel[3],
     output bsel[3],
-    output words_selector[5]
+    output words_selector[5],
+    
+    output matrix_controller_update[3],
+    output bottom_matrix1_letter_address[5],
+    output bottom_matrix2_letter_address[5],
+    output bottom_matrix3_letter_address[5],
+    output bottom_matrix4_letter_address[5]
   ) {
   
   .clk(clk) {
@@ -115,6 +121,12 @@ module game (
     bsel = 0;
     words_selector = 0;
     
+    matrix_controller_update = 3b0;
+    bottom_matrix1_letter_address = 5d0;
+    bottom_matrix2_letter_address = 5d0;
+    bottom_matrix3_letter_address = 5d0;
+    bottom_matrix4_letter_address = 5d0;
+    
     if (rst) {
       game_fsm.d = game_fsm.SET_CORRECT_WORD; 
     } else {
@@ -168,9 +180,16 @@ module game (
           regfile_ra = 0;
           regfile_rb = 0;
           regfile_data = 0;  
-          game_fsm.d = game_fsm.CLEAR_RESET_BOTTOM_DISPLAY;
+          //game_fsm.d = game_fsm.CLEAR_RESET_BOTTOM_DISPLAY;
+          game_fsm.d = game_fsm.RESET_BOTTOM_DISPLAY;
         
         game_fsm.RESET_BOTTOM_DISPLAY:
+          matrix_controller_update = 3b101;
+          bottom_matrix1_letter_address = 5d0;
+          bottom_matrix2_letter_address = 5d0;
+          bottom_matrix3_letter_address = 5d0;
+          bottom_matrix4_letter_address = 5d0;
+          //bottom_matrix2_letter_address = regfile_out_b;
           game_fsm.d = game_fsm.IDLE;
         
         // IDLE STATE
@@ -186,6 +205,7 @@ module game (
             regfile_we = 1;
             regfile_ra = INPUT_CTR;
             regfile_write_address = INPUT_LETTER_1 + regfile_out_a; // input ctr is like an offset
+            regfile_data = keyboard_input;
             game_fsm.d = game_fsm.PRINT_LETTER_TO_MATRIX;
           } else {
             game_fsm.d = game_fsm.IDLE;
@@ -194,9 +214,26 @@ module game (
         game_fsm.PRINT_LETTER_TO_MATRIX:
           regfile_we = 0;
           regfile_ra = INPUT_CTR;
-          regfile_rb = INPUT_LETTER_1 + regfile_out_a;
-          which_matrix = regfile_out_a;
-          which_letter = regfile_out_b;
+          
+          alufn = 6b000000; // ADD
+          asel = b000; // Take from regfile_ra
+          bsel = b110; // INPUT_LETTER_1 = b10000;
+          regfile_rb = alu_out;
+          
+          case(regfile_out_a){
+            16b0:
+              matrix_controller_update = 3b1;
+              bottom_matrix1_letter_address = regfile_out_b;
+            16b1:
+              matrix_controller_update = 3b10;
+              bottom_matrix2_letter_address = regfile_out_b;
+            16b10:
+              matrix_controller_update = 3b11;
+              bottom_matrix3_letter_address = regfile_out_b;
+            16b11:
+              matrix_controller_update = 3b100;
+              bottom_matrix4_letter_address = regfile_out_b;
+          }
           game_fsm.d = game_fsm.INCREMENT_INPUT_CTR;
         
         game_fsm.INCREMENT_INPUT_CTR:
@@ -207,7 +244,6 @@ module game (
           
           if (alu_out == 16b0) {
             // increment if not reached 3
-            regfile_we = 1;
             regfile_write_address = INPUT_CTR;
             regfile_data = regfile_out_a + 1;
             regfile_we = 1;

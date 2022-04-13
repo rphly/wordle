@@ -11,9 +11,14 @@ module beta_2 (
     input [4:0] keyboard_input,
     input [4:0] panel_input,
     input has_panel_input,
-    output reg [4:0] which_matrix,
-    output reg [4:0] which_letter,
-    output reg [1:0] current_state
+    output reg [1:0] current_state,
+    output reg out_bottom_matrix1,
+    output reg out_bottom_matrix2,
+    output reg out_bottom_matrix3,
+    output reg out_bottom_matrix4,
+    output reg [4:0] debugger1,
+    output reg [4:0] debugger2,
+    output reg [4:0] debugger3
   );
   
   
@@ -25,7 +30,7 @@ module beta_2 (
   reg [6-1:0] M_game_alu_alufn;
   reg [16-1:0] M_game_alu_a;
   reg [16-1:0] M_game_alu_b;
-  alu_7 game_alu (
+  alu_5 game_alu (
     .alufn(M_game_alu_alufn),
     .a(M_game_alu_a),
     .b(M_game_alu_b),
@@ -51,6 +56,11 @@ module beta_2 (
   wire [3-1:0] M_control_unit_asel;
   wire [3-1:0] M_control_unit_bsel;
   wire [5-1:0] M_control_unit_words_selector;
+  wire [3-1:0] M_control_unit_matrix_controller_update;
+  wire [5-1:0] M_control_unit_bottom_matrix1_letter_address;
+  wire [5-1:0] M_control_unit_bottom_matrix2_letter_address;
+  wire [5-1:0] M_control_unit_bottom_matrix3_letter_address;
+  wire [5-1:0] M_control_unit_bottom_matrix4_letter_address;
   reg [16-1:0] M_control_unit_regfile_out_a;
   reg [16-1:0] M_control_unit_regfile_out_b;
   reg [5-1:0] M_control_unit_keyboard_input;
@@ -59,7 +69,7 @@ module beta_2 (
   reg [1-1:0] M_control_unit_has_panel_input;
   reg [16-1:0] M_control_unit_alu_out;
   reg [20-1:0] M_control_unit_selected_word;
-  game_8 control_unit (
+  game_6 control_unit (
     .clk(clk),
     .rst(rst),
     .regfile_out_a(M_control_unit_regfile_out_a),
@@ -81,7 +91,12 @@ module beta_2 (
     .alufn(M_control_unit_alufn),
     .asel(M_control_unit_asel),
     .bsel(M_control_unit_bsel),
-    .words_selector(M_control_unit_words_selector)
+    .words_selector(M_control_unit_words_selector),
+    .matrix_controller_update(M_control_unit_matrix_controller_update),
+    .bottom_matrix1_letter_address(M_control_unit_bottom_matrix1_letter_address),
+    .bottom_matrix2_letter_address(M_control_unit_bottom_matrix2_letter_address),
+    .bottom_matrix3_letter_address(M_control_unit_bottom_matrix3_letter_address),
+    .bottom_matrix4_letter_address(M_control_unit_bottom_matrix4_letter_address)
   );
   wire [16-1:0] M_r_out_a;
   wire [16-1:0] M_r_out_b;
@@ -90,7 +105,7 @@ module beta_2 (
   reg [16-1:0] M_r_data;
   reg [6-1:0] M_r_read_address_a;
   reg [6-1:0] M_r_read_address_b;
-  regfile_9 r (
+  regfile_7 r (
     .clk(clk),
     .rst(rst),
     .write_address(M_r_write_address),
@@ -101,10 +116,38 @@ module beta_2 (
     .out_a(M_r_out_a),
     .out_b(M_r_out_b)
   );
+  wire [1-1:0] M_bottom_matrix_control_outmatrix1;
+  wire [1-1:0] M_bottom_matrix_control_outmatrix2;
+  wire [1-1:0] M_bottom_matrix_control_outmatrix3;
+  wire [1-1:0] M_bottom_matrix_control_outmatrix4;
+  wire [5-1:0] M_bottom_matrix_control_debugger1;
+  wire [5-1:0] M_bottom_matrix_control_debugger2;
+  wire [5-1:0] M_bottom_matrix_control_debugger3;
+  reg [3-1:0] M_bottom_matrix_control_update;
+  reg [5-1:0] M_bottom_matrix_control_matrix1_letter_address;
+  reg [5-1:0] M_bottom_matrix_control_matrix2_letter_address;
+  reg [5-1:0] M_bottom_matrix_control_matrix3_letter_address;
+  reg [5-1:0] M_bottom_matrix_control_matrix4_letter_address;
+  matrix_controller_8 bottom_matrix_control (
+    .clk(clk),
+    .rst(rst),
+    .update(M_bottom_matrix_control_update),
+    .matrix1_letter_address(M_bottom_matrix_control_matrix1_letter_address),
+    .matrix2_letter_address(M_bottom_matrix_control_matrix2_letter_address),
+    .matrix3_letter_address(M_bottom_matrix_control_matrix3_letter_address),
+    .matrix4_letter_address(M_bottom_matrix_control_matrix4_letter_address),
+    .outmatrix1(M_bottom_matrix_control_outmatrix1),
+    .outmatrix2(M_bottom_matrix_control_outmatrix2),
+    .outmatrix3(M_bottom_matrix_control_outmatrix3),
+    .outmatrix4(M_bottom_matrix_control_outmatrix4),
+    .debugger1(M_bottom_matrix_control_debugger1),
+    .debugger2(M_bottom_matrix_control_debugger2),
+    .debugger3(M_bottom_matrix_control_debugger3)
+  );
   
   wire [20-1:0] M_words_out;
   reg [11-1:0] M_words_selector;
-  words_10 words (
+  words_9 words (
     .selector(M_words_selector),
     .out(M_words_out)
   );
@@ -123,6 +166,9 @@ module beta_2 (
       end
       3'h3: begin
         inputAlu_a = 2'h2;
+      end
+      3'h4: begin
+        inputAlu_a = 5'h10;
       end
       default: begin
         inputAlu_a = 1'h0;
@@ -148,6 +194,9 @@ module beta_2 (
       3'h5: begin
         inputAlu_b = 3'h4;
       end
+      3'h6: begin
+        inputAlu_b = 5'h10;
+      end
       default: begin
         inputAlu_b = 1'h0;
       end
@@ -170,7 +219,17 @@ module beta_2 (
     M_control_unit_alu_out = M_game_alu_alu;
     M_control_unit_selected_word = M_words_out;
     current_state = M_control_unit_current_state;
-    which_matrix = M_control_unit_which_matrix;
-    which_letter = M_control_unit_which_letter;
+    M_bottom_matrix_control_update = M_control_unit_matrix_controller_update;
+    M_bottom_matrix_control_matrix1_letter_address = M_control_unit_bottom_matrix1_letter_address;
+    M_bottom_matrix_control_matrix2_letter_address = M_control_unit_bottom_matrix2_letter_address;
+    M_bottom_matrix_control_matrix3_letter_address = M_control_unit_bottom_matrix3_letter_address;
+    M_bottom_matrix_control_matrix4_letter_address = M_control_unit_bottom_matrix4_letter_address;
+    out_bottom_matrix1 = M_bottom_matrix_control_outmatrix1;
+    out_bottom_matrix2 = M_bottom_matrix_control_outmatrix2;
+    out_bottom_matrix3 = M_bottom_matrix_control_outmatrix3;
+    out_bottom_matrix4 = M_bottom_matrix_control_outmatrix4;
+    debugger1 = M_bottom_matrix_control_debugger1;
+    debugger2 = M_bottom_matrix_control_debugger2;
+    debugger3 = M_control_unit_regfile_write_address;
   end
 endmodule

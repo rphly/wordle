@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module words_10 (
+module words_9 (
     input [10:0] selector,
     output reg [19:0] out
   );

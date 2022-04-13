@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module regfile_9 (
+module regfile_7 (
     input clk,
     input rst,
     input [5:0] write_address,

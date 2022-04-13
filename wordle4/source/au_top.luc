@@ -10,8 +10,10 @@ module au_top (
     
     input clear_in,
     input check_in,
-    
-    output outmatrix0,
+    output outmatrix1,
+    output outmatrix2,
+    output outmatrix3,
+    output outmatrix4,
     output io_led[3][8],
     output usb_tx
   ) {
@@ -23,7 +25,9 @@ module au_top (
     .rst(rst) {
       beta betaCPU;
       buttons_controller keyboard_controller(
-        .a(a_in)
+        .a(a_in),
+        .b(b_in),
+        .c(c_in)
       );
       
       panel_controller button_panel_controller(
@@ -31,10 +35,10 @@ module au_top (
         .check(check_in)
       );
     }
+    
+    dff panel_debugger[5];
   }
   
-  led_strip_writer led_strip(#PIXEL_COUNT(25), .clk(clk), .rst(rst));
-  white_alphabets letters;
   
   always {
     reset_cond.in = ~rst_n;
@@ -46,10 +50,20 @@ module au_top (
     betaCPU.panel_input = button_panel_controller.out;
     betaCPU.has_panel_input = button_panel_controller.is_pressed;
     
-    letters.selector = betaCPU.which_letter;
-    led_strip.update=1;
-    led_strip.color=letters.out[led_strip.pixel]; 
-    outmatrix0=led_strip.led;
+    if(button_panel_controller.out != 5b0){
+    panel_debugger.d = button_panel_controller.out;
+     }
+    
+    io_led[2][5:0] = panel_debugger.q;
+    
+    outmatrix1 = betaCPU.out_bottom_matrix1;
+    outmatrix2 = betaCPU.out_bottom_matrix2;
+    outmatrix3 = betaCPU.out_bottom_matrix3;
+    outmatrix4 = betaCPU.out_bottom_matrix4;
+    
+    //io_led[0][5:0] = betaCPU.debugger1;
+    //io_led[1][5:0] = betaCPU.debugger2;
+    //io_led[2][5:0] = betaCPU.debugger3;
     
     usb_tx = usb_rx;        // loop serial port
   }

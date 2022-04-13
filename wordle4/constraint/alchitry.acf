@@ -3,11 +3,18 @@ clock clk 100MHz;
 
 pin rst_n RESET;
 
-pin a_in A8 pulldown;
-pin b_in A9 pulldown;
-pin c_in A43 pulldown;
-pin clear_in A2 pulldown;
-pin outmatrix0 A27;
+// A8 A9 same port
+// A43 A_ same port
+pin a_in A14 pulldown; //
+pin b_in A30 pulldown; //
+pin c_in A49 pulldown;
+pin clear_in A48 pulldown;
+pin check_in A5 pulldown;
+
+pin outmatrix1 B33;
+pin outmatrix2 B34;
+pin outmatrix3 B30;
+pin outmatrix4 B31;
 
 
 pin io_led[0][0] B21;
@@ -31,7 +38,7 @@ pin io_led[2][1] A20;
 pin io_led[2][2] A18;
 pin io_led[2][3] A17;
 pin io_led[2][4] A15;
-pin io_led[2][5] A14;
+pin io_led[2][5] C14;
 pin io_led[2][6] A12;
 pin io_led[2][7] A11;
 

@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module button_11 (
+module button_10 (
     input clk,
     input button_input,
     output reg out

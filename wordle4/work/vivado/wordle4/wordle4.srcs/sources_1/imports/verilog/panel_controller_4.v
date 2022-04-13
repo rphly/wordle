@@ -8,6 +8,7 @@ module panel_controller_4 (
     input clk,
     input rst,
     input clear,
+    input check,
     output reg is_pressed,
     output reg [4:0] out
   );
@@ -15,10 +16,16 @@ module panel_controller_4 (
   
   
   wire [1-1:0] M_clear__out;
-  button_11 clear_ (
+  button_10 clear_ (
     .clk(clk),
     .button_input(clear),
     .out(M_clear__out)
+  );
+  wire [1-1:0] M_check__out;
+  button_10 check_ (
+    .clk(clk),
+    .button_input(check),
+    .out(M_check__out)
   );
   
   always @* begin
@@ -26,8 +33,13 @@ module panel_controller_4 (
       out = 5'h1f;
       is_pressed = 1'h1;
     end else begin
-      out = 5'h00;
-      is_pressed = 1'h0;
+      if (M_check__out) begin
+        out = 5'h1e;
+        is_pressed = 1'h1;
+      end else begin
+        out = 5'h00;
+        is_pressed = 1'h0;
+      end
     end
   end
 endmodule
