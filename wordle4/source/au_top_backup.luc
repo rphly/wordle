@@ -1,0 +1,66 @@
+module au_top_backup (
+    input clk,  // clock
+    input rst_n,  // reset
+    
+    input usb_rx,
+    input a_button, // alphabet button a
+    input b,
+    input c,
+    input io_dip [3][8],     // DIP switches on IO Shield
+    
+    input recall1, // recall previous tries button 1
+    input recall2,
+    input recall3,
+    input recall4,
+    
+    input clear,
+    input check_button,
+    
+    output bot_display1,
+    output top_display1,
+    output usb_tx
+
+  ) {
+  
+    sig rst; // reset signal
+  
+    .clk(clk) {
+  
+    reset_conditioner reset_cond;
+    
+    .rst(rst) {
+      game_beta_backup betaCPU;
+ 
+      //buttons_controller keyboard_controller(
+        //.a(a_in)
+      //);
+      
+      //panel_controller button_panel_controller(
+        //.clear(clear_in)
+      //);
+    }
+  }
+  
+
+  always {
+    reset_cond.in = ~rst_n;
+    rst = reset_cond.out;    // conditioned reset 
+    
+    usb_tx = usb_rx;        // loop serial port
+    
+    bot_display1 = 8h00;
+    top_display1 = 8h00;
+    
+    
+    // init betaCPU
+    betaCPU.recall1 = recall1;
+    betaCPU.recall2 = recall2;
+    betaCPU.recall3 = recall3;
+    betaCPU.recall4 = recall4;
+    betaCPU.clear = clear;
+    betaCPU.alphabet_button = a_button;
+    betaCPU.check_button = check_button;
+  }
+  
+  
+}

@@ -1,0 +1,270 @@
+module game (
+    input clk,  // clock
+    input rst,  // reset
+    
+    input clear,
+    input alphabet_pressed[16], // data of the alphabet that is pressed
+    input check_ans_pressed, // boolean of whether check answer is pressed
+    
+    input ra_read[16], // data from regfile for comparison; alu.alu (output)
+    input rb_read[16], // data from regfile for comparison;l alu.alu
+    
+    input recall1, // recall stored tries buttons 1 to 5
+    input recall2,
+    input recall3,
+    input recall4,
+    input recall5,
+    
+    output we, // write enable for regfile
+    output asel[4], // output what to choose for asel
+    output bsel[4], // output what to choose for bsel
+    output alufn[6], // output 
+    output ra_write[16], // write content to alu.a
+    output rb_write[16], // write content to alu.b
+    output ra_address[5],   // address to read
+    output rb_address[5],   // address to read
+    output write_address[5] // address to write
+    
+  ) {
+  
+  .clk(clk) {
+    fsm game_fsm = {
+      IDLE,
+      SET_CORRECT_WORD,
+
+      G1L1,
+      G1L2,
+      G1L3,
+      G1L4,
+      
+      STORE1,
+      CHECK1,
+
+      G2L1,
+      G2L2,
+      G2L3,
+      G2L4,
+      
+      STORE2,
+      CHECK2,
+
+      G3L1,
+      G3L2,
+      G3L3,
+      G3L4,
+      
+      STORE3,
+      CHECK3,
+
+      G4L1,
+      G4L2,
+      G4L3,
+      G4L4,
+      
+      STORE4,
+      CHECK4,
+      
+      WIN,
+      LOSE
+    };
+  }
+
+  
+  // variables for easy reference
+  
+  // opcodes for alufn
+  var addc, cmpeqc, store, win_cond, i, j, k,
+  guess1L1, guess1L2, guess1L3, guess1L4,
+  guess2L1, guess2L2, guess2L3, guess2L4,
+  guess3L1, guess3L2, guess3L3, guess3L4,
+  guess4L1, guess4L2, guess4L3, guess4L4,
+  correctL1, correctL2, correctL3, correctL4,
+  inputL1, inputL2, inputL3, inputL4, zero;
+
+
+  always {
+    
+    we = 0; // when not in any state, write is not enabled
+    asel = 4b0000; // default choose ra_write
+    bsel = 4b0000; // default choose rb_write
+    ra_write = 0; // default ra_write
+    rb_write = 0; // default rb_write
+    alufn = 6b00000; // initialise input alufn 
+    write_address = b11111; //intialise write_address default address
+    ra_address = 0; // init 
+    rb_address = 0;
+    write_address = 0;
+    
+    
+    //initialise opcodes
+    addc = 110000;
+    cmpeqc = 100110;
+    store = 011001;
+    
+    // initialise variables
+    win_cond = 0;  //win condition initially false
+    i = 0;
+    j = 0;
+    k = 0;
+    
+    
+    //initialise addresses to write to 
+  guess1L1=b00000; guess1L2=b00001; guess1L3=b00010; guess1L4=b00011;
+  guess2L1=b00100; guess2L2=b00101; guess2L3=b00110; guess2L4=b00111;
+  guess3L1=b01000; guess3L2=b01001; guess3L3=b01010; guess3L4=b01011;
+  guess4L1=b01100; guess4L2=b01101; guess4L3=b01110; guess4L4=b01111;
+  correctL1=b10111; correctL2=b11000; correctL3=b11001; correctL4=b11010;
+  inputL1=b10000; inputL2=b10001; inputL3=b10010; inputL4=b10011; zero = b11111;
+
+
+    
+    
+//----------RESET GAME-----------
+  if (rst){
+    game_fsm.d = game_fsm.SET_CORRECT_WORD;
+  }
+      
+  else{
+    case(game_fsm.q){
+
+//----------GUESS 1------------
+
+      game_fsm.G1L1: // first letter of first guess
+          
+          alufn = addc;    // add constant opcode
+          asel = 4b0000;    // choose default content of ra
+          bsel = zero;    // choose rb to select register holding zero value always
+          rb_write = 0;    // rb_write always zero
+          write_address = inputL1; // choose respective register to write to for input#
+  
+          if(alphabet_pressed){    // if alphabet button is pressed
+            
+              we = 1;      //enable write
+              ra_write = alphabet_pressed; // add the 16bit encoding of alphabet_pressed with 0
+              game_fsm.d = game_fsm.G1L2;  // move to next state
+          }
+  
+          if(clear){      // if clear button is pressed, return to first letter guess
+            
+              game_fsm.d = game_fsm.G1L1;
+          
+          }
+
+      game_fsm.G1L2:
+        
+          alufn = addc;   
+          asel = 4b0000;   
+          bsel = zero;   
+          rb_write = 0;   
+          write_address = inputL2; 
+  
+          if(alphabet_pressed){   
+          
+              we = 1;     
+              ra_write = alphabet_pressed; 
+              game_fsm.d = game_fsm.G1L3;  
+            
+          }
+
+          if(clear){    
+            
+              game_fsm.d = game_fsm.G1L1;
+            
+          }
+
+      game_fsm.G1L3: 
+            alufn = addc;   
+            asel = 4b0000;   
+            bsel = zero;   
+            rb_write = 0;   
+            write_address = inputL3; 
+    
+            if(alphabet_pressed){   
+              we = 1;     
+              ra_write = alphabet_pressed; 
+              game_fsm.d = game_fsm.G1L4;  
+            }
+    
+            if(clear){     
+              game_fsm.d = game_fsm.G1L1;
+            }  
+
+      game_fsm.G1L4: 
+          alufn = addc;   
+          asel = 4b0000;   
+          bsel = 4b0000;   
+          rb_write = 0;   
+          write_address = inputL4; 
+    
+          if(alphabet_pressed){   
+              we = 1;     
+              ra_write = alphabet_pressed; 
+                
+          }
+    
+          if(clear){     
+              game_fsm.d = game_fsm.G1L1;
+          }
+          
+          if(check_ans_pressed){     // if check answer pressed, check answer
+              game_fsm.d = game_fsm.CHECK1;
+          }
+          
+         
+
+      game_fsm.CHECK1:
+          for (i = inputL1; i < inputL4; i++){    // loop through inputs
+            for (j = correctL1; j<correctL4; j++){  // loop through correct letters
+
+                alufn = cmpeqc;
+                asel = 4b0000;
+                bsel = 4b0000;
+                ra_address = i; //read contents of address ra_address; guess letter
+                rb_address = j; // read contents of correct letter 
+              
+              if (ra_read==rb_read){    // if correct content
+              
+                ra_write = c{b10, ra_read};  // set colour to yellow, store
+                we = 1;
+                write_address = i - b10000 ; // offset to get b00000 guess1L1 address
+              
+                if (i == j -b10111){    // if correct position
+                
+                  ra_write = c{b01, ra_read}; // set colour to green
+                  we = 1;
+                  write_address = i - b10000;
+                }
+                  
+                  else{    // letter does not exist
+                
+                  we = 1;
+                  ra_write= c{b00, ra_read};  // set colour to white
+                  write_address = i - b10000;
+                
+              }
+              
+              }
+              
+              game_fsm.d = game_fsm.G2L2;
+            }
+          
+      
+
+//---------GUESS 2------------
+
+
+
+//-------------GUESS 3------------------
+
+
+//----------GUESS4--------------
+
+
+
+
+
+    }
+  }
+
+
+  }

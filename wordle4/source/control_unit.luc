@@ -1,0 +1,83 @@
+module control_unit (
+    input clk,  // clock
+    input rst,  // reset
+    
+    
+    input ra_out[16],
+    input rb_out[16],
+    input asel[4],
+    input bsel[4],
+    input wdsel[4],
+    input alufn[6],
+    output aluout[16]
+    
+  ) {
+  
+  alu alu;
+
+  always {
+  
+    alu.alufn = alufn;
+    alu.a = ra_out; 
+    alu.b =rb_out;
+    aluout = alu.alu;
+    
+    
+    //asel mux
+    case(asel){
+      b0000  : alu.a = ra_out;
+      b0001  : alu.a = 16d0; //Easy mode time(no time)
+      b0010  : alu.a = 16d8; //Intermediate mode time 8 seconds
+      b0011  : alu.a = 16d5; //Advanced mode time 5 seconds
+      b0100  : alu.a = 16b000000111; //Possible 1(0,1,2)
+      b0101  : alu.a = 16b100010001; //Possible 2(0,4,8)
+      b0110  : alu.a = 16b000111000; //Possible 3(3,4,5)
+      b0111  : alu.a = 16b111000000; //Possible 4(6,7,8)
+      b1000  : alu.a = 16b001010100; //Possible 5(2,4,6)
+      b1001  : alu.a = 16b001001001; //Possible 6(0,3,6)
+      b1010  : alu.a = 16b010010010; //Possible 7(1,4,7)
+      b1011  : alu.a = 16b100100100; //Possible 8(2,5,8)
+      default : alu.a = ra_out;
+    }
+    
+    //bsel mux
+    case(bsel){
+      b0000  : alu.b = rb_out;
+      // one-hot representation of tile positions
+      b0001  : alu.b = 16b000000001; //ZERO
+      b0010  : alu.b = 16b000000010; //ONE
+      b0011  : alu.b = 16b000000100; //TWO
+      b0100  : alu.b = 16b000001000; //THREE
+      b0101  : alu.b = 16b000010000; //FOUR
+      b0110  : alu.b = 16b000100000; //FIVE
+      b0111  : alu.b = 16b001000000; //SIX
+      b1000  : alu.b = 16b010000000; //SEVEN
+      b1001  : alu.b = 16b100000000; //EIGHT
+      b1010  : alu.b = 16b0; //Constant 0
+      default: alu.b = rb_out;
+      
+    }
+    
+   
+    //wdsel mux
+    case (wdsel){
+      b0000: aluout = alu.alu;
+      b0001: aluout = 16b0000;
+      b0010: aluout = 16b0001;
+      b0011: aluout = 16b0010;
+      b0100: aluout = 16b0011;
+      b0101: aluout = 16b0100;
+      b0110: aluout = 16b000011010; //Stage 2 vacancy 0(possible: 1,3,4)
+      b0111: aluout = 16b000010101; //Stage 2 vacancy 1(possible: 0,2,4)
+      b1000: aluout = 16b000110010; //Stage 2 vacancy 2(possible: 1,4,5)
+      b1001: aluout = 16b001010001; //Stage 2 vacancy 3(possible: 0,4,6)
+      b1010: aluout = 16b111101111; //Stage 2 vacancy 4(possible: 0,1,2,3,5,6,7,8)
+      b1011: aluout = 16b100010100; //Stage 2 vacancy 5(possible: 2,4,8)
+      b1100: aluout = 16b010011000; //Stage 2 vacancy 6(possible: 3,4,7)
+      b1101: aluout = 16b101010000; //Stage 2 vacancy 7(possible: 6,4,8)
+      b1110: aluout = 16b010110000; //Stage 2 vacancy 8(possible: 4,5,7)
+      b1111: aluout = 16b000001111; //tiles reset
+      default : aluout = alu.alu;
+  
+  }
+}
