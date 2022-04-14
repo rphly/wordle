@@ -39,7 +39,27 @@ module fsm_backup (
       G1L4,
       
       CHECK1,
-
+      CHECKONEL1C1,
+      CHECKONEL1C2,
+      CHECKONEL1C3,
+      CHECKONEL1C4,
+      
+      CHECKONEL2C1,
+      CHECKONEL2C2,
+      CHECKONEL2C3,
+      CHECKONEL2C4,
+      
+      CHECKONEL3C1,
+      CHECKONEL3C2,
+      CHECKONEL3C3,
+      CHECKONEL3C4,
+      
+      CHECKONEL4C1,
+      CHECKONEL4C2,
+      CHECKONEL4C3,
+      CHECKONEL4C4,
+      
+      
       G2L1,
       G2L2,
       G2L3,
@@ -206,45 +226,355 @@ module fsm_backup (
               game_fsm.d = game_fsm.CHECK1;
           }
           
-         
 
-      game_fsm.CHECK1:
-          for (i = inputL1; i < inputL4; i++){    // loop through inputs
-            for (j = correctL1; j<correctL4; j++){  // loop through correct letters
+        game_fsm.CHECKONEL1C1:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL1;
+        rb_address = correctL1;
+        
+        if(ra_read == rb_read){
+          //set green
+          // move to check input 2 correct 1
+          we = 1;
+          write_address = guess1L1;
+          ra_write = c{01,alphabet_pressed};
+          game_fsm.d = game_fsm.CHECKONEL2C1;
+          
+        }
+        else{
+          // if not match, go to check against correct letter 2
+          game_fsm.d = game_fsm.CHECKONEL1C2;
+          }     
+      
+      
+      game_fsm.CHECKONEL1C2:
+        alufn = cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL1;
+        rb_address = correctL2;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess1L1;
+          ra_write = c{11,alphabet_pressed};
+          //move to check input 2
+          game_fsm.d = game_fsm.CHECKONEL2C1;
+        }
+        else{
+          // if not match, go to check against correct letter 3
+          game_fsm.d = game_fsm.CHECKONEL1C3;
+        }
 
-                alufn = cmpeqc;
-                asel = 4b0000;
-                bsel = 4b0000;
-                ra_address = i; //read contents of address ra_address; guess letter
-                rb_address = j; // read contents of correct letter 
-              
-              if (ra_read==rb_read){    // if correct content
-              
-                ra_write = c{b10, ra_read};  // set colour to yellow, store
-                we = 1;
-                write_address = i - b10000 ; // offset to get b00000 guess1L1 address
-              
-                if (i == j -b10111){    // if correct position
-                
-                  ra_write = c{b01, ra_read}; // set colour to green
-                  we = 1;
-                  write_address = i - b10000;
-                }
-                  
-                  else{    // letter does not exist
-                
-                  we = 1;
-                  ra_write= c{b00, ra_read};  // set colour to white
-                  write_address = i - b10000;
-                
-              }
-              
-              }
-              we = 1;
-              write_address = b11100; // hard code input counter to 1
-              ra_write = b01;    // we use input counter to keep track of guess
-              game_fsm.d = game_fsm.G2L1;
+        game_fsm.CHECKONEL1C3:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL1;
+        rb_address = correctL3;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess1L1;
+          ra_write = c{11,alphabet_pressed};
+          //move to check input 2
+          game_fsm.d = game_fsm.CHECKONEL2C1;
+        }
+        else{
+          // if not match, go to check against correct letter 3
+          game_fsm.d = game_fsm.CHECKONEL1C4;
+        }
+
+        game_fsm.CHECKONEL1C4:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL1;
+        rb_address = correctL4;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess1L1;
+          ra_write = c{11,alphabet_pressed};
+          //move to check input 2
+          game_fsm.d = game_fsm.CHECKONEL2C1;
+        }
+        else{
+          // if not match, set white and go to check next input
+          we = 1;
+          write_address = guess1L1;
+          ra_write = c{00,alphabet_pressed};
+          game_fsm.d = game_fsm.CHECKONEL2C1;
+        }
+
+
+//---------CHECK INPUT2 LETTER 1-----------
+
+      game_fsm.CHECKONEL2C1:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL2;
+        rb_address = correctL1;
+        
+        if(ra_read == rb_read){
+          //set YELLOW
+          // move to check next correct letter
+          we = 1;
+          write_address = guess1L2;
+          ra_write = c{01,alphabet_pressed};
+          game_fsm.d = game_fsm.CHECKONEL2C2;
+          
+        }
+        else{
+          // if not match, go to check against correct letter 2
+          game_fsm.d = game_fsm.CHECKONEL2C2;
+        }
+
+      
+      game_fsm.CHECKONEL2C2:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL2;
+        rb_address = correctL2;
+        
+        if(ra_read == rb_read){
+          // set GREEN, move to check next input
+          we = 1;
+          write_address = guess1L2;
+          ra_write = c{01,alphabet_pressed};
+          //move to check next input 
+          game_fsm.d = game_fsm.CHECKONEL3C1;
+        }
+        else{
+          // if not match, go to check against next correct letter
+          game_fsm.d = game_fsm.CHECKONEL2C3;
+        }
+
+        game_fsm.CHECKONEL2C3:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL2; 
+        rb_address = correctL3;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess1L2;
+          ra_write = c{11,alphabet_pressed};
+          //move to check input 2
+          game_fsm.d = game_fsm.CHECKONEL3C1;
+        }
+        else{
+          // if not match, go to check against correct letter 3
+          game_fsm.d = game_fsm.CHECKONEL2C4;
+        }
+
+        game_fsm.CHECKONEL2C4:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL2;
+        rb_address = correctL4;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess1L2;
+          ra_write = c{11,alphabet_pressed};
+          //move to check input 2
+          game_fsm.d = game_fsm.CHECKONEL3C1;
+        }
+        else{
+          // if not match, set white and go to check next input
+          we = 1;
+          write_address = guess1L2;
+          ra_write = c{00,alphabet_pressed};
+          game_fsm.d = game_fsm.CHECKONEL3C1;
+        }
+
+//----------CHECK INPUT 3 --------------
+
+      game_fsm.CHECKONEL3C1:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL3;
+        rb_address = correctL1;
+        
+        if(ra_read == rb_read){
+          //set yellow
+          // move to check input against next correct
+          we = 1;
+          write_address = guess1L3;
+          ra_write = c{01,alphabet_pressed};
+          game_fsm.d = game_fsm.CHECKONEL3C2;
+          
+        }
+        else{
+          // if not match, go to check against correct letter 2
+          game_fsm.d = game_fsm.CHECKONEL3C2;}
+      
+
+      
+      game_fsm.CHECKONEL3C2:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL3;
+        rb_address = correctL2;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess1L3;
+          ra_write = c{11,alphabet_pressed};
+          //move to check next input 
+          game_fsm.d = game_fsm.CHECKONEL3C3;
+        }
+        else{
+          // if not match, go to check against next correct letter
+          game_fsm.d = game_fsm.CHECKONEL3C3;
+        }
+
+        game_fsm.CHECKONEL3C3:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL3; 
+        rb_address = correctL3;
+        
+        if(ra_read == rb_read){
+          // set GREEN, move to check next input
+          we = 1;
+          write_address = guess1L3;
+          ra_write = c{01,alphabet_pressed};
+          //move to check next input letter
+          game_fsm.d = game_fsm.CHECKONEL3C4;
+        }
+        else{
+          // if not match, go to check against correct letter 3
+          game_fsm.d = game_fsm.CHECKONEL2C4;
+        }
+
+        game_fsm.CHECKONEL3C4:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL3;
+        rb_address = correctL4;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess1L2;
+          ra_write = c{11,alphabet_pressed};
+          //move to check next input letter anyways
+          game_fsm.d = game_fsm.CHECKONEL4C1;
+        }
+        else{
+          // if not match, set white and go to check next input
+          we = 1;
+          write_address = guess1L2;
+          ra_write = c{00,alphabet_pressed};
+          game_fsm.d = game_fsm.CHECKONEL4C1;
+        }
+
+        //----------CHECK INPUT 4-------------
+
+      game_fsm.CHECKONEL4C1:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL4;
+        rb_address = correctL1;
+        
+        if(ra_read == rb_read){
+          //set yellow
+          // move to next guess
+          we = 1;
+          write_address = guess1L4;
+          ra_write = c{01,alphabet_pressed};
+          game_fsm.d = game_fsm.CHECKONEL4C2;
+          
+        }
+        else{
+          // if not match, go to check against correct letter 2
+          game_fsm.d = game_fsm.CHECKONEL4C2;
             }
+      
+
+      
+      game_fsm.CHECKONEL4C2:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL4;
+        rb_address = correctL2;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess1L4;
+          ra_write = c{11,alphabet_pressed};
+          //move to check next guess
+          game_fsm.d = game_fsm.CHECKONEL4C3;
+        }
+        else{
+          // if not match, go to check against next correct letter
+          game_fsm.d = game_fsm.CHECKONEL4C3;
+          }
+
+        game_fsm.CHECKONEL4C3:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL4; 
+        rb_address = correctL3;
+        
+        if(ra_read == rb_read){
+          // set YELLOW
+          we = 1;
+          write_address = guess1L4;
+          ra_write = c{11,alphabet_pressed};
+          //move to check next guess
+          game_fsm.d = game_fsm.CHECKONEL3C4;
+        }
+        else{
+          // if not match, go to check against correct letter 3
+          game_fsm.d = game_fsm.CHECKONEL3C4;
+        }
+
+        game_fsm.CHECKONEL3C4:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL4;
+        rb_address = correctL4;
+        
+        if(ra_read == rb_read){
+          // set GREEN
+          we = 1;
+          write_address = guess1L4;
+          ra_write = c{01,alphabet_pressed};
+          //move to check next input letter anyways
+          game_fsm.d = game_fsm.G2L1;
+        }
+        else{
+          // if not match, set white and move to next guess
+          we = 1;
+          write_address = guess1L4;
+          ra_write = c{00,alphabet_pressed};
+          game_fsm.d = game_fsm.G2L1;
+        }
+
           
       
 
