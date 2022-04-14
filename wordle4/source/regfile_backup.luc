@@ -4,6 +4,7 @@ module regfile_backup (
     input write_address[6], // write address
     input we, // write enable
     input data[16], // data in
+    input recall[4], //recall buttons 1 to 4
     
     
     input read_address_a[6], //address port a 
@@ -11,8 +12,8 @@ module regfile_backup (
     output out_a[16], //read port a
     output out_b[16], //read port b
     
-    output display_top[4][16], //direct output to displays
-    output display_bot[4][16] //direct output to displays
+    output display_top[4][7], //direct output to displays 7 bit
+    output display_bot[4][7] //direct output to displays 7 bit
   ) 
 
 {
@@ -65,7 +66,7 @@ module regfile_backup (
       dff i[3];
       dff j[3];
       dff k[3];
-      dff input_ctr[2];
+      dff guess_ctr[2];
       
       // 3 bits
       dff num_correct[3];
@@ -100,33 +101,72 @@ module regfile_backup (
     display_bot[2] = input_letter_3.q;
     display_bot[3] = input_letter_4.q;
     
-    
-    case(input_ctr.q){  // display which regs acording to current guess
-    
-        b00:display_top[0] = guess_1_letter_1.q;
-        b00:display_top[1] = guess_1_letter_2.q;
-        b00:display_top[2] = guess_1_letter_3.q;
-        b00:display_top[3] = guess_1_letter_4.q;
+      
+    case(guess_ctr.q){  // display which regs acording to current guess
         
-        b01:display_top[0] = guess_2_letter_1.q;
-        b01:display_top[1] = guess_2_letter_2.q;
-        b01:display_top[2] = guess_2_letter_3.q;
-        b01:display_top[3] = guess_2_letter_4.q;
+        // if guess counter at 1, display previous guess
+        d0:display_top[0] = guess_1_letter_1.q;
+           display_top[1] = guess_1_letter_2.q;
+           display_top[2] = guess_1_letter_3.q;
+           display_top[3] = guess_1_letter_4.q;
+        
+        // if guess counter at 2
+        d1:display_top[0] = guess_2_letter_1.q;
+           display_top[1] = guess_2_letter_2.q;
+           display_top[2] = guess_2_letter_3.q;
+           display_top[3] = guess_2_letter_4.q;
       
-        b10:display_top[0] = guess_3_letter_1.q;
-        b10:display_top[1] = guess_3_letter_2.q;
-        b10:display_top[2] = guess_3_letter_3.q;
-        b10:display_top[3] = guess_3_letter_4.q;
+        // if guess counter at 3
+        d2:display_top[0] = guess_3_letter_1.q;
+           display_top[1] = guess_3_letter_2.q;
+           display_top[2] = guess_3_letter_3.q;
+           display_top[3] = guess_3_letter_4.q;
+        
+        // if guess counter at 4
+        d3:display_top[0] = guess_4_letter_1.q;
+           display_top[1] = guess_4_letter_2.q;
+           display_top[2] = guess_4_letter_3.q;
+           display_top[3] = guess_4_letter_4.q;
           
-        b11:display_top[0] = guess_4_letter_1.q;
-        b11:display_top[1] = guess_4_letter_2.q;
-        b11:display_top[2] = guess_4_letter_3.q;
-        b11:display_top[3] = guess_4_letter_4.q;
-      
+       
         default:display_top[0] = 0;
         default:display_top[1] = 0;
         default:display_top[2] = 0;
         default:display_top[3] = 0;
+      
+        
+        // if recall button is pressed
+      
+        if (recall){
+        
+          case(recall){
+          
+            // recall guess 1
+              d0:display_top[0] = guess_1_letter_1.q;
+                 display_top[1] = guess_1_letter_2.q;
+                 display_top[2] = guess_1_letter_3.q;
+                 display_top[3] = guess_1_letter_4.q;
+              
+              // if recall guess 2
+              d1:display_top[0] = guess_2_letter_1.q;
+                 display_top[1] = guess_2_letter_2.q;
+                 display_top[2] = guess_2_letter_3.q;
+                 display_top[3] = guess_2_letter_4.q;
+            
+              // recall guess 3
+              d2:display_top[0] = guess_3_letter_1.q;
+                 display_top[1] = guess_3_letter_2.q;
+                 display_top[2] = guess_3_letter_3.q;
+                 display_top[3] = guess_3_letter_4.q;
+              
+              // recall last guess
+              d3:display_top[0] = guess_4_letter_1.q;
+                 display_top[1] = guess_4_letter_2.q;
+                 display_top[2] = guess_4_letter_3.q;
+                 display_top[3] = guess_4_letter_4.q;
+              
+           
+        }
       
       
     }
@@ -171,7 +211,7 @@ module regfile_backup (
         b11010 : correct_letter_4.d = b10011;
         
         b11011 : num_correct.d = data;
-        b11100 : input_ctr.d = data;
+        b11100 : guess_ctr.d = data;
         b11101 : input_i.d = data;
         b11110 : correct_k.d = data;
         b11111 : zero.d = 0;
@@ -220,7 +260,7 @@ module regfile_backup (
         b11010 : out_a = correct_letter_4.q;
         
         b11011 : out_a = num_correct.q;
-        b11100 : out_a = input_ctr.q;
+        b11100 : out_a = guess_ctr.q;
         b11101 : out_a = input_i.q;
         b11110 : out_a = correct_k.q;
         b11111 : out_a = zero.q;
@@ -269,7 +309,7 @@ module regfile_backup (
         b11010 : out_b = correct_letter_4.q;
     
         b11011 : out_b = num_correct.q;
-        b11100 : out_b = input_ctr.q;
+        b11100 : out_b = guess_ctr.q;
         b11101 : out_b = input_i.q;
         b11110 : out_b = correct_k.q;
         b11111 : out_b = zero.q;

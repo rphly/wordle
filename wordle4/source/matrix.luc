@@ -1,0 +1,23 @@
+module matrix (
+    input clk,  // clock
+    input rst,  // reset
+    input letter_address[7],//input index of alphabets
+    output data_out
+  ) {
+  
+  .clk(clk){
+    .rst(rst){
+      led_strip_writer matrix_writer(#PIXEL_COUNT(25));
+    }
+  }
+  
+  white_alphabets white_letters;
+
+  always {
+    white_letters.selector = letter_address;
+    
+    matrix_writer.update = 1;
+    matrix_writer.color = white_letters.out[matrix_writer.pixel];
+    data_out = matrix_writer.led; // output 1 bit of data into led, feed this back into the display
+  }
+}

@@ -11,7 +11,7 @@ module white_alphabets ( // contains the inputs thare are to be fed into the alu
     h111111, h111111, h111111, h111111, h111111,
     h111111, h000000, h000000, h000000, h111111
     },
-      { // A
+      { // all turned off
     h000000, h000000, h000000, h000000, h000000,
     h000000, h000000, h000000, h000000, h000000,
     h000000, h000000, h000000, h000000, h000000,

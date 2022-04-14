@@ -3,10 +3,17 @@ clock clk 100MHz;
 
 pin rst_n RESET;
 
-pin a_in A8 pulldown;
-pin b_in A9 pulldown;
-pin c_in A43 pulldown;
-pin outmatrix0 A27;
+//pin a_button A8 pulldown;
+//pin b_button A9 pulldown;
+//pin c_button A43 pulldown;
+
+// all alphabet buttons
+pin alphabet[0] A8 pulldown;
+pin alphabet[1] A9 pulldown;
+
+pin top_display1 A27; // top display 
+pin bot_display1 A28; // bot display
+
 
 
 pin io_led[0][0] B21;

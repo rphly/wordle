@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="wordle4" board="Alchitry Au" language="Lucid" version="3">
   <files>
-    <src>yellow_alphabets.luc</src>
-    <src>matrix_controller.luc</src>
-    <src>adder.luc</src>
-    <src>led_strip_writer.luc</src>
-    <src>white_alphabets.luc</src>
-    <src>au_top_backup.luc</src>
-    <src top="true">au_top.luc</src>
-    <src>game.luc</src>
-    <src>panel_controller.luc</src>
-    <src>control_unit.luc</src>
-    <src>shifter.luc</src>
+    <src>matrix.luc</src>
     <src>button.luc</src>
-    <src>game_beta_backup.luc</src>
-    <src>regfile_backup.luc</src>
     <component>pipeline.luc</component>
-    <src>beta.luc</src>
-    <component>reset_conditioner.luc</component>
     <src>regfile.luc</src>
-    <src>words.luc</src>
+    <src top="true">au_top.luc</src>
     <src>alu.luc</src>
-    <component>edge_detector.luc</component>
     <src>boolean.luc</src>
     <src>buttons_controller.luc</src>
-    <src>game_backup.luc</src>
-    <src>green_alphabets.luc</src>
-    <src>fsm_backup.luc</src>
+    <src>matrix_controller.luc</src>
+    <src>panel_controller.luc</src>
+    <src>game.luc</src>
+    <src>adder.luc</src>
+    <src>control_unit.luc</src>
+    <component>reset_conditioner.luc</component>
     <component>button_conditioner.luc</component>
+    <src>beta.luc</src>
+    <src>led_strip_writer.luc</src>
+    <src>green_alphabets.luc</src>
+    <src>shifter.luc</src>
+    <src>white_alphabets.luc</src>
+    <src>regfile_backup.luc</src>
+    <src>fsm_backup.luc</src>
+    <src>au_top_backup.luc</src>
     <src>compare.luc</src>
+    <src>yellow_alphabets.luc</src>
+    <src>game_beta_backup.luc</src>
+    <src>words.luc</src>
+    <component>edge_detector.luc</component>
     <constraint lib="true">au.xdc</constraint>
     <constraint>alchitry.acf</constraint>
   </files>

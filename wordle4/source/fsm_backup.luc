@@ -3,16 +3,13 @@ module fsm_backup (
     input rst,  // reset
     
     input clear,
-    input alphabet_pressed[16], // data of the alphabet that is pressed
+    input alphabet_pressed[5], // encoding of the alphabet that is pressed
     input check_ans_pressed, // boolean of whether check answer is pressed
     
-    input ra_read[16], // data from regfile for comparison; alu.alu (output)
-    input rb_read[16], // data from regfile for comparison;l alu.alu
+    input ra_read[16], // data from regfile for comparison; 
+    input rb_read[16], // data from regfile for comparison; 
+    input alu_output[16], // data from alu computation
     
-    input recall1, // recall stored tries buttons 1 to 5
-    input recall2,
-    input recall3,
-    input recall4,
  
     
     output we, // write enable for regfile
@@ -23,7 +20,8 @@ module fsm_backup (
     output rb_write[16], // write content to alu.b
     output ra_address[5],   // address to read
     output rb_address[5],   // address to read
-    output write_address[5] // address to write
+    output write_address[5], // address to write
+    output wdsel[5]
 
     
   ) {
@@ -33,54 +31,114 @@ module fsm_backup (
       IDLE,
       SET_CORRECT_WORD,
 
+      // FIRST GUESS 
       G1L1,
       G1L2,
       G1L3,
       G1L4,
+
+      // CHECK FIRST GUESS
+      CHECKONE_L1C1,
+      CHECKONE_L1C2,
+      CHECKONE_L1C3,
+      CHECKONE_L1C4,
       
-      CHECK1,
-      CHECKONEL1C1,
-      CHECKONEL1C2,
-      CHECKONEL1C3,
-      CHECKONEL1C4,
+      CHECKONE_L2C1,
+      CHECKONE_L2C2,
+      CHECKONE_L2C3,
+      CHECKONE_L2C4,
       
-      CHECKONEL2C1,
-      CHECKONEL2C2,
-      CHECKONEL2C3,
-      CHECKONEL2C4,
+      CHECKONE_L3C1,
+      CHECKONE_L3C2,
+      CHECKONE_L3C3,
+      CHECKONE_L3C4,
       
-      CHECKONEL3C1,
-      CHECKONEL3C2,
-      CHECKONEL3C3,
-      CHECKONEL3C4,
+      CHECKONE_L4C1,
+      CHECKONE_L4C2,
+      CHECKONE_L4C3,
+      CHECKONE_L4C4,
       
-      CHECKONEL4C1,
-      CHECKONEL4C2,
-      CHECKONEL4C3,
-      CHECKONEL4C4,
-      
-      
+      // SECOND GUESS
       G2L1,
       G2L2,
       G2L3,
       G2L4,
       
-      CHECK2,
+      CHECKTWO_L1C1,
+      CHECKTWO_L1C2,
+      CHECKTWO_L1C3,
+      CHECKTWO_L1C4,
+      
+      CHECKTWO_L2C1,
+      CHECKTWO_L2C2,
+      CHECKTWO_L2C3,
+      CHECKTWO_L2C4,
+      
+      CHECKTWO_L3C1,
+      CHECKTWO_L3C2,
+      CHECKTWO_L3C3,
+      CHECKTWO_L3C4,
+      
+      CHECKTWO_L4C1,
+      CHECKTWO_L4C2,
+      CHECKTWO_L4C3,
+      CHECKTWO_L4C4,
+      
+      // GUESS 3
 
       G3L1,
       G3L2,
       G3L3,
       G3L4,
       
-      CHECK3,
+      CHECKTHREE_L1C1,
+      CHECKTHREE_L1C2,
+      CHECKTHREE_L1C3,
+      CHECKTHREE_L1C4,
+      
+      CHECKTHREE_L2C1,
+      CHECKTHREE_L2C2,
+      CHECKTHREE_L2C3,
+      CHECKTHREE_L2C4,
+      
+      CHECKTHREE_L3C1,
+      CHECKTHREE_L3C2,
+      CHECKTHREE_L3C3,
+      CHECKTHREE_L3C4,
+      
+      CHECKTHREE_L4C1,
+      CHECKTHREE_L4C2,
+      CHECKTHREE_L4C3,
+      CHECKTHREE_L4C4,
+      
+      // GUESS 4
 
       G4L1,
       G4L2,
       G4L3,
       G4L4,
       
-      CHECK4,
+      CHECKFOUR_L1C1,
+      CHECKFOUR_L1C2,
+      CHECKFOUR_L1C3,
+      CHECKFOUR_L1C4,
       
+      CHECKFOUR_L2C1,
+      CHECKFOUR_L2C2,
+      CHECKFOUR_L2C3,
+      CHECKFOUR_L2C4,
+      
+      CHECKFOUR_L3C1,
+      CHECKFOUR_L3C2,
+      CHECKFOUR_L3C3,
+      CHECKFOUR_L3C4,
+      
+      CHECKFOUR_L4C1,
+      CHECKFOUR_L4C2,
+      CHECKFOUR_L4C3,
+      CHECKFOUR_L4C4,
+      
+      WIN_CONDITION,
       WIN
     };
   }
@@ -110,6 +168,7 @@ module fsm_backup (
     ra_address = 0; // init 
     rb_address = 0;
     write_address = 0;
+    wdsel = 0;
     
     
     //initialise opcodes
@@ -223,11 +282,11 @@ module fsm_backup (
           }
           
           if(check_ans_pressed){     // if check answer pressed, check answer
-              game_fsm.d = game_fsm.CHECK1;
+              game_fsm.d = game_fsm.CHECKONE_L1C1;
           }
           
 
-        game_fsm.CHECKONEL1C1:
+        game_fsm.CHECKONE_L1C1:
         alufn= cmpeqc;
         asel= 4b0000;
         bsel=4b0000;
@@ -240,16 +299,16 @@ module fsm_backup (
           we = 1;
           write_address = guess1L1;
           ra_write = c{01,alphabet_pressed};
-          game_fsm.d = game_fsm.CHECKONEL2C1;
+          game_fsm.d = game_fsm.CHECKONE_L2C1;
           
         }
         else{
           // if not match, go to check against correct letter 2
-          game_fsm.d = game_fsm.CHECKONEL1C2;
+          game_fsm.d = game_fsm.CHECKONE_L1C2;
           }     
       
       
-      game_fsm.CHECKONEL1C2:
+      game_fsm.CHECKONE_L1C2:
         alufn = cmpeqc;
         asel= 4b0000;
         bsel=4b0000;
@@ -262,14 +321,14 @@ module fsm_backup (
           write_address = guess1L1;
           ra_write = c{11,alphabet_pressed};
           //move to check input 2
-          game_fsm.d = game_fsm.CHECKONEL2C1;
+          game_fsm.d = game_fsm.CHECKONE_L2C1;
         }
         else{
           // if not match, go to check against correct letter 3
-          game_fsm.d = game_fsm.CHECKONEL1C3;
+          game_fsm.d = game_fsm.CHECKONE_L1C3;
         }
 
-        game_fsm.CHECKONEL1C3:
+        game_fsm.CHECKONE_L1C3:
         alufn= cmpeqc;
         asel= 4b0000;
         bsel=4b0000;
@@ -282,14 +341,14 @@ module fsm_backup (
           write_address = guess1L1;
           ra_write = c{11,alphabet_pressed};
           //move to check input 2
-          game_fsm.d = game_fsm.CHECKONEL2C1;
+          game_fsm.d = game_fsm.CHECKONE_L2C1;
         }
         else{
           // if not match, go to check against correct letter 3
-          game_fsm.d = game_fsm.CHECKONEL1C4;
+          game_fsm.d = game_fsm.CHECKONE_L1C4;
         }
 
-        game_fsm.CHECKONEL1C4:
+        game_fsm.CHECKONE_L1C4:
         alufn= cmpeqc;
         asel= 4b0000;
         bsel=4b0000;
@@ -302,20 +361,20 @@ module fsm_backup (
           write_address = guess1L1;
           ra_write = c{11,alphabet_pressed};
           //move to check input 2
-          game_fsm.d = game_fsm.CHECKONEL2C1;
+          game_fsm.d = game_fsm.CHECKONE_L2C1;
         }
         else{
           // if not match, set white and go to check next input
           we = 1;
           write_address = guess1L1;
           ra_write = c{00,alphabet_pressed};
-          game_fsm.d = game_fsm.CHECKONEL2C1;
+          game_fsm.d = game_fsm.CHECKONE_L2C1;
         }
 
 
 //---------CHECK INPUT2 LETTER 1-----------
 
-      game_fsm.CHECKONEL2C1:
+      game_fsm.CHECKONE_L2C1:
         alufn= cmpeqc;
         asel= 4b0000;
         bsel=4b0000;
@@ -328,16 +387,16 @@ module fsm_backup (
           we = 1;
           write_address = guess1L2;
           ra_write = c{01,alphabet_pressed};
-          game_fsm.d = game_fsm.CHECKONEL2C2;
+          game_fsm.d = game_fsm.CHECKONE_L2C2;
           
         }
         else{
           // if not match, go to check against correct letter 2
-          game_fsm.d = game_fsm.CHECKONEL2C2;
+          game_fsm.d = game_fsm.CHECKONE_L2C2;
         }
 
       
-      game_fsm.CHECKONEL2C2:
+      game_fsm.CHECKONE_L2C2:
         alufn= cmpeqc;
         asel= 4b0000;
         bsel=4b0000;
@@ -350,14 +409,14 @@ module fsm_backup (
           write_address = guess1L2;
           ra_write = c{01,alphabet_pressed};
           //move to check next input 
-          game_fsm.d = game_fsm.CHECKONEL3C1;
+          game_fsm.d = game_fsm.CHECKONE_L3C1;
         }
         else{
           // if not match, go to check against next correct letter
-          game_fsm.d = game_fsm.CHECKONEL2C3;
+          game_fsm.d = game_fsm.CHECKONE_L2C3;
         }
 
-        game_fsm.CHECKONEL2C3:
+        game_fsm.CHECKONE_L2C3:
         alufn= cmpeqc;
         asel= 4b0000;
         bsel=4b0000;
@@ -370,14 +429,14 @@ module fsm_backup (
           write_address = guess1L2;
           ra_write = c{11,alphabet_pressed};
           //move to check input 2
-          game_fsm.d = game_fsm.CHECKONEL3C1;
+          game_fsm.d = game_fsm.CHECKONE_L3C1;
         }
         else{
           // if not match, go to check against correct letter 3
-          game_fsm.d = game_fsm.CHECKONEL2C4;
+          game_fsm.d = game_fsm.CHECKONE_L2C4;
         }
 
-        game_fsm.CHECKONEL2C4:
+        game_fsm.CHECKONE_L2C4:
         alufn= cmpeqc;
         asel= 4b0000;
         bsel=4b0000;
@@ -390,19 +449,19 @@ module fsm_backup (
           write_address = guess1L2;
           ra_write = c{11,alphabet_pressed};
           //move to check input 2
-          game_fsm.d = game_fsm.CHECKONEL3C1;
+          game_fsm.d = game_fsm.CHECKONE_L3C1;
         }
         else{
           // if not match, set white and go to check next input
           we = 1;
           write_address = guess1L2;
           ra_write = c{00,alphabet_pressed};
-          game_fsm.d = game_fsm.CHECKONEL3C1;
+          game_fsm.d = game_fsm.CHECKONE_L3C1;
         }
 
 //----------CHECK INPUT 3 --------------
 
-      game_fsm.CHECKONEL3C1:
+      game_fsm.CHECKONE_L3C1:
         alufn= cmpeqc;
         asel= 4b0000;
         bsel=4b0000;
@@ -415,16 +474,16 @@ module fsm_backup (
           we = 1;
           write_address = guess1L3;
           ra_write = c{01,alphabet_pressed};
-          game_fsm.d = game_fsm.CHECKONEL3C2;
+          game_fsm.d = game_fsm.CHECKONE_L3C2;
           
         }
         else{
           // if not match, go to check against correct letter 2
-          game_fsm.d = game_fsm.CHECKONEL3C2;}
+          game_fsm.d = game_fsm.CHECKONE_L3C2;}
       
 
       
-      game_fsm.CHECKONEL3C2:
+      game_fsm.CHECKONE_L3C2:
         alufn= cmpeqc;
         asel= 4b0000;
         bsel=4b0000;
@@ -437,14 +496,14 @@ module fsm_backup (
           write_address = guess1L3;
           ra_write = c{11,alphabet_pressed};
           //move to check next input 
-          game_fsm.d = game_fsm.CHECKONEL3C3;
+          game_fsm.d = game_fsm.CHECKONE_L3C3;
         }
         else{
           // if not match, go to check against next correct letter
-          game_fsm.d = game_fsm.CHECKONEL3C3;
+          game_fsm.d = game_fsm.CHECKONE_L3C3;
         }
 
-        game_fsm.CHECKONEL3C3:
+        game_fsm.CHECKONE_L3C3:
         alufn= cmpeqc;
         asel= 4b0000;
         bsel=4b0000;
@@ -457,14 +516,14 @@ module fsm_backup (
           write_address = guess1L3;
           ra_write = c{01,alphabet_pressed};
           //move to check next input letter
-          game_fsm.d = game_fsm.CHECKONEL3C4;
+          game_fsm.d = game_fsm.CHECKONE_L3C4;
         }
         else{
           // if not match, go to check against correct letter 3
-          game_fsm.d = game_fsm.CHECKONEL2C4;
+          game_fsm.d = game_fsm.CHECKONE_L2C4;
         }
 
-        game_fsm.CHECKONEL3C4:
+        game_fsm.CHECKONE_L3C4:
         alufn= cmpeqc;
         asel= 4b0000;
         bsel=4b0000;
@@ -477,19 +536,19 @@ module fsm_backup (
           write_address = guess1L2;
           ra_write = c{11,alphabet_pressed};
           //move to check next input letter anyways
-          game_fsm.d = game_fsm.CHECKONEL4C1;
+          game_fsm.d = game_fsm.CHECKONE_L4C1;
         }
         else{
           // if not match, set white and go to check next input
           we = 1;
           write_address = guess1L2;
           ra_write = c{00,alphabet_pressed};
-          game_fsm.d = game_fsm.CHECKONEL4C1;
+          game_fsm.d = game_fsm.CHECKONE_L4C1;
         }
 
         //----------CHECK INPUT 4-------------
 
-      game_fsm.CHECKONEL4C1:
+      game_fsm.CHECKONE_L4C1:
         alufn= cmpeqc;
         asel= 4b0000;
         bsel=4b0000;
@@ -502,17 +561,17 @@ module fsm_backup (
           we = 1;
           write_address = guess1L4;
           ra_write = c{01,alphabet_pressed};
-          game_fsm.d = game_fsm.CHECKONEL4C2;
+          game_fsm.d = game_fsm.CHECKONE_L4C2;
           
         }
         else{
           // if not match, go to check against correct letter 2
-          game_fsm.d = game_fsm.CHECKONEL4C2;
+          game_fsm.d = game_fsm.CHECKONE_L4C2;
             }
       
 
       
-      game_fsm.CHECKONEL4C2:
+      game_fsm.CHECKONE_L4C2:
         alufn= cmpeqc;
         asel= 4b0000;
         bsel=4b0000;
@@ -525,14 +584,14 @@ module fsm_backup (
           write_address = guess1L4;
           ra_write = c{11,alphabet_pressed};
           //move to check next guess
-          game_fsm.d = game_fsm.CHECKONEL4C3;
+          game_fsm.d = game_fsm.CHECKONE_L4C3;
         }
         else{
           // if not match, go to check against next correct letter
-          game_fsm.d = game_fsm.CHECKONEL4C3;
+          game_fsm.d = game_fsm.CHECKONE_L4C3;
           }
 
-        game_fsm.CHECKONEL4C3:
+        game_fsm.CHECKONE_L4C3:
         alufn= cmpeqc;
         asel= 4b0000;
         bsel=4b0000;
@@ -545,14 +604,14 @@ module fsm_backup (
           write_address = guess1L4;
           ra_write = c{11,alphabet_pressed};
           //move to check next guess
-          game_fsm.d = game_fsm.CHECKONEL3C4;
+          game_fsm.d = game_fsm.CHECKONE_L3C4;
         }
         else{
           // if not match, go to check against correct letter 3
-          game_fsm.d = game_fsm.CHECKONEL3C4;
+          game_fsm.d = game_fsm.CHECKONE_L3C4;
         }
 
-        game_fsm.CHECKONEL3C4:
+        game_fsm.CHECKONE_L4C4:
         alufn= cmpeqc;
         asel= 4b0000;
         bsel=4b0000;
@@ -577,18 +636,1317 @@ module fsm_backup (
 
           
       
-
+//----------------------------
 //---------GUESS 2------------
+//----------------------------
+          
+      game_fsm.G2L1: // first letter of first guess
+          
+          alufn = addc;    // add constant opcode
+          asel = 4b0000;    // choose default content of ra
+          bsel = zero;    // choose rb to select register holding zero value always
+          rb_write = 0;    // rb_write always zero
+          write_address = inputL1; // choose respective register to write to for input#
+  
+          if(alphabet_pressed){    // if alphabet button is pressed
+            
+              we = 1;      //enable write
+              ra_write = alphabet_pressed; // add the 16bit encoding of alphabet_pressed with 0
+              game_fsm.d = game_fsm.G2L2;  // move to next state
+          }
+  
+          if(clear){      // if clear button is pressed, return to first letter guess
+            
+              game_fsm.d = game_fsm.G2L1;
+          
+          }
+
+      game_fsm.G2L2:
+        
+          alufn = addc;   
+          asel = 4b0000;   
+          bsel = zero;   
+          rb_write = 0;   
+          write_address = inputL2; 
+  
+          if(alphabet_pressed){   
+          
+              we = 1;     
+              ra_write = alphabet_pressed; 
+              game_fsm.d = game_fsm.G2L3;  
+            
+          }
+
+          if(clear){    
+            
+              game_fsm.d = game_fsm.G2L1;
+            
+          }
+
+      game_fsm.G2L3: 
+            alufn = addc;   
+            asel = 4b0000;   
+            bsel = zero;   
+            rb_write = 0;   
+            write_address = inputL3; 
+    
+            if(alphabet_pressed){   
+              we = 1;     
+              ra_write = alphabet_pressed; 
+              game_fsm.d = game_fsm.G2L4;  
+            }
+    
+            if(clear){     
+              game_fsm.d = game_fsm.G2L1;
+            }  
+
+      game_fsm.G2L4: 
+          alufn = addc;   
+          asel = 4b0000;   
+          bsel = 4b0000;   
+          rb_write = 0;   
+          write_address = inputL4; 
+    
+          if(alphabet_pressed){   
+              we = 1;     
+              ra_write = alphabet_pressed; 
+                
+          }
+    
+          if(clear){     
+              game_fsm.d = game_fsm.G2L1;
+          }
+          
+          if(check_ans_pressed){     // if check answer pressed, check answer
+              game_fsm.d = game_fsm.CHECKTWO_L1C1;
+          }
+          
+          
+          // CHECK GUESS 2
+          
+        game_fsm.CHECKTWO_L1C1:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL1;
+        rb_address = correctL1;
+        
+        if(ra_read == rb_read){
+          //set green
+          // move to check input 2 correct 1
+          we = 1;
+          write_address = guess2L1;
+          ra_write = c{01,alphabet_pressed};
+          game_fsm.d = game_fsm.CHECKTWO_L2C1;
+          
+        }
+        else{
+          // if not match, go to check against correct letter 2
+          game_fsm.d = game_fsm.CHECKTWO_L1C2;
+          }     
+      
+      
+      game_fsm.CHECKTWO_L1C2:
+        alufn = cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL1;
+        rb_address = correctL2;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess2L1;
+          ra_write = c{11,alphabet_pressed};
+          //move to check input 2
+          game_fsm.d = game_fsm.CHECKTWO_L2C1;
+        }
+        else{
+          // if not match, go to check against correct letter 3
+          game_fsm.d = game_fsm.CHECKTWO_L1C3;
+        }
+
+        game_fsm.CHECKTWO_L1C3:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL1;
+        rb_address = correctL3;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess2L1;
+          ra_write = c{11,alphabet_pressed};
+          //move to check input 2
+          game_fsm.d = game_fsm.CHECKTWO_L2C1;
+        }
+        else{
+          // if not match, go to check against correct letter 3
+          game_fsm.d = game_fsm.CHECKTWO_L1C4;
+        }
+
+        game_fsm.CHECKTWO_L1C4:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL1;
+        rb_address = correctL4;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess2L1;
+          ra_write = c{11,alphabet_pressed};
+          //move to check input 2
+          game_fsm.d = game_fsm.CHECKTWO_L2C1;
+        }
+        else{
+          // if not match, set white and go to check next input
+          we = 1;
+          write_address = guess2L1;
+          ra_write = c{00,alphabet_pressed};
+          game_fsm.d = game_fsm.CHECKTWO_L2C1;
+        }
 
 
+//---------CHECK INPUT2 LETTER 1-----------
 
+      game_fsm.CHECKTWO_L2C1:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL2;
+        rb_address = correctL1;
+        
+        if(ra_read == rb_read){
+          //set YELLOW
+          // move to check next correct letter
+          we = 1;
+          write_address = guess2L2;
+          ra_write = c{01,alphabet_pressed};
+          game_fsm.d = game_fsm.CHECKTWO_L2C2;
+          
+        }
+        else{
+          // if not match, go to check against correct letter 2
+          game_fsm.d = game_fsm.CHECKTWO_L2C2;
+        }
+
+      
+      game_fsm.CHECKTWO_L2C2:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL2;
+        rb_address = correctL2;
+        
+        if(ra_read == rb_read){
+          // set GREEN, move to check next input
+          we = 1;
+          write_address = guess2L2;
+          ra_write = c{01,alphabet_pressed};
+          //move to check next input 
+          game_fsm.d = game_fsm.CHECKTWO_L3C1;
+        }
+        else{
+          // if not match, go to check against next correct letter
+          game_fsm.d = game_fsm.CHECKTWO_L2C3;
+        }
+
+        game_fsm.CHECKTWO_L2C3:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL2; 
+        rb_address = correctL3;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess2L2;
+          ra_write = c{11,alphabet_pressed};
+          //move to check input 2
+          game_fsm.d = game_fsm.CHECKTWO_L3C1;
+        }
+        else{
+          // if not match, go to check against correct letter 3
+          game_fsm.d = game_fsm.CHECKTWO_L2C4;
+        }
+
+        game_fsm.CHECKTWO_L2C4:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL2;
+        rb_address = correctL4;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess2L2;
+          ra_write = c{11,alphabet_pressed};
+          //move to check input 2
+          game_fsm.d = game_fsm.CHECKTWO_L3C1;
+        }
+        else{
+          // if not match, set white and go to check next input
+          we = 1;
+          write_address = guess2L2;
+          ra_write = c{00,alphabet_pressed};
+          game_fsm.d = game_fsm.CHECKTWO_L3C1;
+        }
+
+//----------CHECK INPUT 3 --------------
+
+      game_fsm.CHECKTWO_L3C1:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL3;
+        rb_address = correctL1;
+        
+        if(ra_read == rb_read){
+          //set yellow
+          // move to check input against next correct
+          we = 1;
+          write_address = guess2L3;
+          ra_write = c{01,alphabet_pressed};
+          game_fsm.d = game_fsm.CHECKTWO_L3C2;
+          
+        }
+        else{
+          // if not match, go to check against correct letter 2
+          game_fsm.d = game_fsm.CHECKTWO_L3C2;}
+      
+
+      
+      game_fsm.CHECKTWO_L3C2:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL3;
+        rb_address = correctL2;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess2L3;
+          ra_write = c{11,alphabet_pressed};
+          //move to check next input 
+          game_fsm.d = game_fsm.CHECKTWO_L3C3;
+        }
+        else{
+          // if not match, go to check against next correct letter
+          game_fsm.d = game_fsm.CHECKTWO_L3C3;
+        }
+
+        game_fsm.CHECKTWO_L3C3:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL3; 
+        rb_address = correctL3;
+        
+        if(ra_read == rb_read){
+          // set GREEN, move to check next input
+          we = 1;
+          write_address = guess2L3;
+          ra_write = c{01,alphabet_pressed};
+          //move to check next input letter
+          game_fsm.d = game_fsm.CHECKTWO_L3C4;
+        }
+        else{
+          // if not match, go to check against correct letter 3
+          game_fsm.d = game_fsm.CHECKTWO_L2C4;
+        }
+
+        game_fsm.CHECKTWO_L3C4:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL3;
+        rb_address = correctL4;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess2L2;
+          ra_write = c{11,alphabet_pressed};
+          //move to check next input letter anyways
+          game_fsm.d = game_fsm.CHECKTWO_L4C1;
+        }
+        else{
+          // if not match, set white and go to check next input
+          we = 1;
+          write_address = guess2L2;
+          ra_write = c{00,alphabet_pressed};
+          game_fsm.d = game_fsm.CHECKTWO_L4C1;
+        }
+
+        //----------CHECK INPUT 4-------------
+
+      game_fsm.CHECKTWO_L4C1:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL4;
+        rb_address = correctL1;
+        
+        if(ra_read == rb_read){
+          //set yellow
+          // move to next guess
+          we = 1;
+          write_address = guess2L4;
+          ra_write = c{01,alphabet_pressed};
+          game_fsm.d = game_fsm.CHECKTWO_L4C2;
+          
+        }
+        else{
+          // if not match, go to check against correct letter 2
+          game_fsm.d = game_fsm.CHECKTWO_L4C2;
+            }
+      
+
+      
+      game_fsm.CHECKTWO_L4C2:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL4;
+        rb_address = correctL2;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess2L4;
+          ra_write = c{11,alphabet_pressed};
+          //move to check next guess
+          game_fsm.d = game_fsm.CHECKTWO_L4C3;
+        }
+        else{
+          // if not match, go to check against next correct letter
+          game_fsm.d = game_fsm.CHECKTWO_L4C3;
+          }
+
+        game_fsm.CHECKTWO_L4C3:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL4; 
+        rb_address = correctL3;
+        
+        if(ra_read == rb_read){
+          // set YELLOW
+          we = 1;
+          write_address = guess2L4;
+          ra_write = c{11,alphabet_pressed};
+          //move to check next guess
+          game_fsm.d = game_fsm.CHECKTWO_L3C4;
+        }
+        else{
+          // if not match, go to check against correct letter 3
+          game_fsm.d = game_fsm.CHECKTWO_L3C4;
+        }
+
+        game_fsm.CHECKTWO_L4C4:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL4;
+        rb_address = correctL4;
+        
+        if(ra_read == rb_read){
+          // set GREEN
+          we = 1;
+          write_address = guess2L4;
+          ra_write = c{01,alphabet_pressed};
+          //move to check next input letter anyways
+          game_fsm.d = game_fsm.G3L1;
+        }
+        else{
+          // if not match, set white and move to next guess
+          we = 1;
+          write_address = guess2L4;
+          ra_write = c{00,alphabet_pressed};
+          game_fsm.d = game_fsm.G3L1;
+        }
+
+          
+
+
+//-------------------------------------
 //-------------GUESS 3------------------
+//------------------------------------
+          
+          
+          game_fsm.G3L1: // first letter of first guess
+          
+          alufn = addc;    // add constant opcode
+          asel = 4b0000;    // choose default content of ra
+          bsel = zero;    // choose rb to select register holding zero value always
+          rb_write = 0;    // rb_write always zero
+          write_address = inputL1; // choose respective register to write to for input#
+  
+          if(alphabet_pressed){    // if alphabet button is pressed
+            
+              we = 1;      //enable write
+              ra_write = alphabet_pressed; // add the 16bit encoding of alphabet_pressed with 0
+              game_fsm.d = game_fsm.G3L2;  // move to next state
+          }
+  
+          if(clear){      // if clear button is pressed, return to first letter guess
+            
+              game_fsm.d = game_fsm.G3L1;
+          
+          }
+
+      game_fsm.G3L2:
+        
+          alufn = addc;   
+          asel = 4b0000;   
+          bsel = zero;   
+          rb_write = 0;   
+          write_address = inputL2; 
+  
+          if(alphabet_pressed){   
+          
+              we = 1;     
+              ra_write = alphabet_pressed; 
+              game_fsm.d = game_fsm.G3L3;  
+            
+          }
+
+          if(clear){    
+            
+              game_fsm.d = game_fsm.G3L1;
+            
+          }
+
+      game_fsm.G3L3: 
+            alufn = addc;   
+            asel = 4b0000;   
+            bsel = zero;   
+            rb_write = 0;   
+            write_address = inputL3; 
+    
+            if(alphabet_pressed){   
+              we = 1;     
+              ra_write = alphabet_pressed; 
+              game_fsm.d = game_fsm.G3L4;  
+            }
+    
+            if(clear){     
+              game_fsm.d = game_fsm.G3L1;
+            }  
+
+      game_fsm.G3L4: 
+          alufn = addc;   
+          asel = 4b0000;   
+          bsel = 4b0000;   
+          rb_write = 0;   
+          write_address = inputL4; 
+    
+          if(alphabet_pressed){   
+              we = 1;     
+              ra_write = alphabet_pressed; 
+                
+          }
+    
+          if(clear){     
+              game_fsm.d = game_fsm.G3L1;
+          }
+          
+          if(check_ans_pressed){     // if check answer pressed, check answer
+              game_fsm.d = game_fsm.CHECKTHREE_L1C1;
+          }
+          
+          // CHECK GUESS 3
+                  game_fsm.CHECKTHREE_L1C1:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL1;
+        rb_address = correctL1;
+        
+        if(ra_read == rb_read){
+          //set green
+          // move to check input 2 correct 1
+          we = 1;
+          write_address = guess3L1;
+          ra_write = c{01,alphabet_pressed};
+          game_fsm.d = game_fsm.CHECKTHREE_L2C1;
+          
+        }
+        else{
+          // if not match, go to check against correct letter 2
+          game_fsm.d = game_fsm.CHECKTHREE_L1C2;
+          }     
+      
+      
+      game_fsm.CHECKTHREE_L1C2:
+        alufn = cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL1;
+        rb_address = correctL2;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess3L1;
+          ra_write = c{11,alphabet_pressed};
+          //move to check input 2
+          game_fsm.d = game_fsm.CHECKTHREE_L2C1;
+        }
+        else{
+          // if not match, go to check against correct letter 3
+          game_fsm.d = game_fsm.CHECKTHREE_L1C3;
+        }
+
+        game_fsm.CHECKTHREE_L1C3:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL1;
+        rb_address = correctL3;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess3L1;
+          ra_write = c{11,alphabet_pressed};
+          //move to check input 2
+          game_fsm.d = game_fsm.CHECKTHREE_L2C1;
+        }
+        else{
+          // if not match, go to check against correct letter 3
+          game_fsm.d = game_fsm.CHECKTHREE_L1C4;
+        }
+
+        game_fsm.CHECKTHREE_L1C4:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL1;
+        rb_address = correctL4;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess3L1;
+          ra_write = c{11,alphabet_pressed};
+          //move to check input 2
+          game_fsm.d = game_fsm.CHECKTHREE_L2C1;
+        }
+        else{
+          // if not match, set white and go to check next input
+          we = 1;
+          write_address = guess3L1;
+          ra_write = c{00,alphabet_pressed};
+          game_fsm.d = game_fsm.CHECKTHREE_L2C1;
+        }
 
 
+//---------CHECK INPUT2 LETTER 1-----------
+
+      game_fsm.CHECKTHREE_L2C1:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL2;
+        rb_address = correctL1;
+        
+        if(ra_read == rb_read){
+          //set YELLOW
+          // move to check next correct letter
+          we = 1;
+          write_address = guess3L2;
+          ra_write = c{01,alphabet_pressed};
+          game_fsm.d = game_fsm.CHECKTHREE_L2C2;
+          
+        }
+        else{
+          // if not match, go to check against correct letter 2
+          game_fsm.d = game_fsm.CHECKTHREE_L2C2;
+        }
+
+      
+      game_fsm.CHECKTHREE_L2C2:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL2;
+        rb_address = correctL2;
+        
+        if(ra_read == rb_read){
+          // set GREEN, move to check next input
+          we = 1;
+          write_address = guess3L2;
+          ra_write = c{01,alphabet_pressed};
+          //move to check next input 
+          game_fsm.d = game_fsm.CHECKTHREE_L3C1;
+        }
+        else{
+          // if not match, go to check against next correct letter
+          game_fsm.d = game_fsm.CHECKTHREE_L2C3;
+        }
+
+        game_fsm.CHECKTHREE_L2C3:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL2; 
+        rb_address = correctL3;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess3L2;
+          ra_write = c{11,alphabet_pressed};
+          //move to check input 2
+          game_fsm.d = game_fsm.CHECKTHREE_L3C1;
+        }
+        else{
+          // if not match, go to check against correct letter 3
+          game_fsm.d = game_fsm.CHECKTHREE_L2C4;
+        }
+
+        game_fsm.CHECKTHREE_L2C4:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL2;
+        rb_address = correctL4;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess3L2;
+          ra_write = c{11,alphabet_pressed};
+          //move to check input 2
+          game_fsm.d = game_fsm.CHECKTHREE_L3C1;
+        }
+        else{
+          // if not match, set white and go to check next input
+          we = 1;
+          write_address = guess3L2;
+          ra_write = c{00,alphabet_pressed};
+          game_fsm.d = game_fsm.CHECKTHREE_L3C1;
+        }
+
+//----------CHECK INPUT 3 --------------
+
+      game_fsm.CHECKTHREE_L3C1:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL3;
+        rb_address = correctL1;
+        
+        if(ra_read == rb_read){
+          //set yellow
+          // move to check input against next correct
+          we = 1;
+          write_address = guess3L3;
+          ra_write = c{01,alphabet_pressed};
+          game_fsm.d = game_fsm.CHECKTHREE_L3C2;
+          
+        }
+        else{
+          // if not match, go to check against correct letter 2
+          game_fsm.d = game_fsm.CHECKTHREE_L3C2;}
+      
+
+      
+      game_fsm.CHECKTHREE_L3C2:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL3;
+        rb_address = correctL2;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess3L3;
+          ra_write = c{11,alphabet_pressed};
+          //move to check next input 
+          game_fsm.d = game_fsm.CHECKTHREE_L3C3;
+        }
+        else{
+          // if not match, go to check against next correct letter
+          game_fsm.d = game_fsm.CHECKTHREE_L3C3;
+        }
+
+        game_fsm.CHECKTHREE_L3C3:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL3; 
+        rb_address = correctL3;
+        
+        if(ra_read == rb_read){
+          // set GREEN, move to check next input
+          we = 1;
+          write_address = guess3L3;
+          ra_write = c{01,alphabet_pressed};
+          //move to check next input letter
+          game_fsm.d = game_fsm.CHECKTHREE_L3C4;
+        }
+        else{
+          // if not match, go to check against correct letter 3
+          game_fsm.d = game_fsm.CHECKTHREE_L2C4;
+        }
+
+        game_fsm.CHECKTHREE_L3C4:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL3;
+        rb_address = correctL4;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess3L2;
+          ra_write = c{11,alphabet_pressed};
+          //move to check next input letter anyways
+          game_fsm.d = game_fsm.CHECKTHREE_L4C1;
+        }
+        else{
+          // if not match, set white and go to check next input
+          we = 1;
+          write_address = guess3L2;
+          ra_write = c{00,alphabet_pressed};
+          game_fsm.d = game_fsm.CHECKTHREE_L4C1;
+        }
+
+        //----------CHECK INPUT 4-------------
+
+      game_fsm.CHECKTHREE_L4C1:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL4;
+        rb_address = correctL1;
+        
+        if(ra_read == rb_read){
+          //set yellow
+          // move to next guess
+          we = 1;
+          write_address = guess3L4;
+          ra_write = c{01,alphabet_pressed};
+          game_fsm.d = game_fsm.CHECKTHREE_L4C2;
+          
+        }
+        else{
+          // if not match, go to check against correct letter 2
+          game_fsm.d = game_fsm.CHECKTHREE_L4C2;
+            }
+      
+
+      
+      game_fsm.CHECKTHREE_L4C2:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL4;
+        rb_address = correctL2;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess3L4;
+          ra_write = c{11,alphabet_pressed};
+          //move to check next guess
+          game_fsm.d = game_fsm.CHECKTHREE_L4C3;
+        }
+        else{
+          // if not match, go to check against next correct letter
+          game_fsm.d = game_fsm.CHECKTHREE_L4C3;
+          }
+
+        game_fsm.CHECKTHREE_L4C3:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL4; 
+        rb_address = correctL3;
+        
+        if(ra_read == rb_read){
+          // set YELLOW
+          we = 1;
+          write_address = guess3L4;
+          ra_write = c{11,alphabet_pressed};
+          //move to check next guess
+          game_fsm.d = game_fsm.CHECKTHREE_L3C4;
+        }
+        else{
+          // if not match, go to check against correct letter 3
+          game_fsm.d = game_fsm.CHECKTHREE_L3C4;
+        }
+
+        game_fsm.CHECKTHREE_L4C4:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL4;
+        rb_address = correctL4;
+        
+        if(ra_read == rb_read){
+          // set GREEN
+          we = 1;
+          write_address = guess3L4;
+          ra_write = c{01,alphabet_pressed};
+          //move to check next input letter anyways
+          game_fsm.d = game_fsm.G4L1;
+        }
+        else{
+          // if not match, set white and move to next guess
+          we = 1;
+          write_address = guess3L4;
+          ra_write = c{00,alphabet_pressed};
+          game_fsm.d = game_fsm.G4L1;
+        }
+          
+          
+          
+//-----------------------------         
 //----------GUESS4--------------
+//------------------------------
+          
+                    game_fsm.G4L1: // first letter of first guess
+          
+          alufn = addc;    // add constant opcode
+          asel = 4b0000;    // choose default content of ra
+          bsel = zero;    // choose rb to select register holding zero value always
+          rb_write = 0;    // rb_write always zero
+          write_address = inputL1; // choose respective register to write to for input#
+  
+          if(alphabet_pressed){    // if alphabet button is pressed
+            
+              we = 1;      //enable write
+              ra_write = alphabet_pressed; // add the 16bit encoding of alphabet_pressed with 0
+              game_fsm.d = game_fsm.G4L2;  // move to next state
+          }
+  
+          if(clear){      // if clear button is pressed, return to first letter guess
+            
+              game_fsm.d = game_fsm.G4L1;
+          
+          }
+
+      game_fsm.G4L2:
+        
+          alufn = addc;   
+          asel = 4b0000;   
+          bsel = zero;   
+          rb_write = 0;   
+          write_address = inputL2; 
+  
+          if(alphabet_pressed){   
+          
+              we = 1;     
+              ra_write = alphabet_pressed; 
+              game_fsm.d = game_fsm.G4L3;  
+            
+          }
+
+          if(clear){    
+            
+              game_fsm.d = game_fsm.G4L1;
+            
+          }
+
+      game_fsm.G4L3: 
+            alufn = addc;   
+            asel = 4b0000;   
+            bsel = zero;   
+            rb_write = 0;   
+            write_address = inputL3; 
+    
+            if(alphabet_pressed){   
+              we = 1;     
+              ra_write = alphabet_pressed; 
+              game_fsm.d = game_fsm.G4L4;  
+            }
+    
+            if(clear){     
+              game_fsm.d = game_fsm.G4L1;
+            }  
+
+      game_fsm.G4L4: 
+          alufn = addc;   
+          asel = 4b0000;   
+          bsel = 4b0000;   
+          rb_write = 0;   
+          write_address = inputL4; 
+    
+          if(alphabet_pressed){   
+              we = 1;     
+              ra_write = alphabet_pressed; 
+                
+          }
+    
+          if(clear){     
+              game_fsm.d = game_fsm.G4L1;
+          }
+          
+          if(check_ans_pressed){     // if check answer pressed, check answer
+              game_fsm.d = game_fsm.CHECKFOUR_L1C1;
+          }
+
+// CHECK 4 
+          
+          
+                  game_fsm.CHECKFOUR_L1C1:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL1;
+        rb_address = correctL1;
+        
+        if(ra_read == rb_read){
+          //set green
+          // move to check input 2 correct 1
+          we = 1;
+          write_address = guess4L1;
+          ra_write = c{01,alphabet_pressed};
+          game_fsm.d = game_fsm.CHECKFOUR_L2C1;
+          
+        }
+        else{
+          // if not match, go to check against correct letter 2
+          game_fsm.d = game_fsm.CHECKFOUR_L1C2;
+          }     
+      
+      
+      game_fsm.CHECKFOUR_L1C2:
+        alufn = cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL1;
+        rb_address = correctL2;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess4L1;
+          ra_write = c{11,alphabet_pressed};
+          //move to check input 2
+          game_fsm.d = game_fsm.CHECKFOUR_L2C1;
+        }
+        else{
+          // if not match, go to check against correct letter 3
+          game_fsm.d = game_fsm.CHECKFOUR_L1C3;
+        }
+
+        game_fsm.CHECKFOUR_L1C3:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL1;
+        rb_address = correctL3;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess4L1;
+          ra_write = c{11,alphabet_pressed};
+          //move to check input 2
+          game_fsm.d = game_fsm.CHECKFOUR_L2C1;
+        }
+        else{
+          // if not match, go to check against correct letter 3
+          game_fsm.d = game_fsm.CHECKFOUR_L1C4;
+        }
+
+        game_fsm.CHECKFOUR_L1C4:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL1;
+        rb_address = correctL4;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess4L1;
+          ra_write = c{11,alphabet_pressed};
+          //move to check input 2
+          game_fsm.d = game_fsm.CHECKFOUR_L2C1;
+        }
+        else{
+          // if not match, set white and go to check next input
+          we = 1;
+          write_address = guess4L1;
+          ra_write = c{00,alphabet_pressed};
+          game_fsm.d = game_fsm.CHECKFOUR_L2C1;
+        }
 
 
+//---------CHECK INPUT2 LETTER 1-----------
 
+      game_fsm.CHECKFOUR_L2C1:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL2;
+        rb_address = correctL1;
+        
+        if(ra_read == rb_read){
+          //set YELLOW
+          // move to check next correct letter
+          we = 1;
+          write_address = guess4L2;
+          ra_write = c{01,alphabet_pressed};
+          game_fsm.d = game_fsm.CHECKFOUR_L2C2;
+          
+        }
+        else{
+          // if not match, go to check against correct letter 2
+          game_fsm.d = game_fsm.CHECKFOUR_L2C2;
+        }
+
+      
+      game_fsm.CHECKFOUR_L2C2:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL2;
+        rb_address = correctL2;
+        
+        if(ra_read == rb_read){
+          // set GREEN, move to check next input
+          we = 1;
+          write_address = guess4L2;
+          ra_write = c{01,alphabet_pressed};
+          //move to check next input 
+          game_fsm.d = game_fsm.CHECKFOUR_L3C1;
+        }
+        else{
+          // if not match, go to check against next correct letter
+          game_fsm.d = game_fsm.CHECKFOUR_L2C3;
+        }
+
+        game_fsm.CHECKFOUR_L2C3:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL2; 
+        rb_address = correctL3;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess4L2;
+          ra_write = c{11,alphabet_pressed};
+          //move to check input 2
+          game_fsm.d = game_fsm.CHECKFOUR_L3C1;
+        }
+        else{
+          // if not match, go to check against correct letter 3
+          game_fsm.d = game_fsm.CHECKFOUR_L2C4;
+        }
+
+        game_fsm.CHECKFOUR_L2C4:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL2;
+        rb_address = correctL4;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess4L2;
+          ra_write = c{11,alphabet_pressed};
+          //move to check input 2
+          game_fsm.d = game_fsm.CHECKFOUR_L3C1;
+        }
+        else{
+          // if not match, set white and go to check next input
+          we = 1;
+          write_address = guess4L2;
+          ra_write = c{00,alphabet_pressed};
+          game_fsm.d = game_fsm.CHECKFOUR_L3C1;
+        }
+
+//----------CHECK INPUT 3 --------------
+
+      game_fsm.CHECKFOUR_L3C1:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL3;
+        rb_address = correctL1;
+        
+        if(ra_read == rb_read){
+          //set yellow
+          // move to check input against next correct
+          we = 1;
+          write_address = guess4L3;
+          ra_write = c{01,alphabet_pressed};
+          game_fsm.d = game_fsm.CHECKFOUR_L3C2;
+          
+        }
+        else{
+          // if not match, go to check against correct letter 2
+          game_fsm.d = game_fsm.CHECKFOUR_L3C2;}
+      
+
+      
+      game_fsm.CHECKFOUR_L3C2:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL3;
+        rb_address = correctL2;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess4L3;
+          ra_write = c{11,alphabet_pressed};
+          //move to check next input 
+          game_fsm.d = game_fsm.CHECKFOUR_L3C3;
+        }
+        else{
+          // if not match, go to check against next correct letter
+          game_fsm.d = game_fsm.CHECKFOUR_L3C3;
+        }
+
+        game_fsm.CHECKFOUR_L3C3:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL3; 
+        rb_address = correctL3;
+        
+        if(ra_read == rb_read){
+          // set GREEN, move to check next input
+          we = 1;
+          write_address = guess4L3;
+          ra_write = c{01,alphabet_pressed};
+          //move to check next input letter
+          game_fsm.d = game_fsm.CHECKFOUR_L3C4;
+        }
+        else{
+          // if not match, go to check against correct letter 3
+          game_fsm.d = game_fsm.CHECKFOUR_L2C4;
+        }
+
+        game_fsm.CHECKFOUR_L3C4:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL3;
+        rb_address = correctL4;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess4L2;
+          ra_write = c{11,alphabet_pressed};
+          //move to check next input letter anyways
+          game_fsm.d = game_fsm.CHECKFOUR_L4C1;
+        }
+        else{
+          // if not match, set white and go to check next input
+          we = 1;
+          write_address = guess4L2;
+          ra_write = c{00,alphabet_pressed};
+          game_fsm.d = game_fsm.CHECKFOUR_L4C1;
+        }
+
+        //----------CHECK INPUT 4-------------
+
+      game_fsm.CHECKFOUR_L4C1:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL4;
+        rb_address = correctL1;
+        
+        if(ra_read == rb_read){
+          //set yellow
+          // move to next guess
+          we = 1;
+          write_address = guess4L4;
+          ra_write = c{01,alphabet_pressed};
+          game_fsm.d = game_fsm.CHECKFOUR_L4C2;
+          
+        }
+        else{
+          // if not match, go to check against correct letter 2
+          game_fsm.d = game_fsm.CHECKFOUR_L4C2;
+            }
+      
+
+      
+      game_fsm.CHECKFOUR_L4C2:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL4;
+        rb_address = correctL2;
+        
+        if(ra_read == rb_read){
+          // set yellow
+          we = 1;
+          write_address = guess4L4;
+          ra_write = c{11,alphabet_pressed};
+          //move to check next guess
+          game_fsm.d = game_fsm.CHECKFOUR_L4C3;
+        }
+        else{
+          // if not match, go to check against next correct letter
+          game_fsm.d = game_fsm.CHECKFOUR_L4C3;
+          }
+
+        game_fsm.CHECKFOUR_L4C3:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL4; 
+        rb_address = correctL3;
+        
+        if(ra_read == rb_read){
+          // set YELLOW
+          we = 1;
+          write_address = guess4L4;
+          ra_write = c{11,alphabet_pressed};
+          //move to check next guess
+          game_fsm.d = game_fsm.CHECKFOUR_L3C4;
+        }
+        else{
+          // if not match, go to check against correct letter 3
+          game_fsm.d = game_fsm.CHECKFOUR_L3C4;
+        }
+
+        game_fsm.CHECKFOUR_L4C4:
+        alufn= cmpeqc;
+        asel= 4b0000;
+        bsel=4b0000;
+        ra_address = inputL4;
+        rb_address = correctL4;
+        
+        if(ra_read == rb_read){
+          // set GREEN
+          we = 1;
+          write_address = guess4L4;
+          ra_write = c{01,alphabet_pressed};
+          //move to check next input letter anyways
+          game_fsm.d = game_fsm.WIN_CONDITION;
+        }
+        else{
+          // if not match, set white and move to next guess
+          we = 1;
+          write_address = guess4L4;
+          ra_write = c{00,alphabet_pressed};
+          game_fsm.d = game_fsm.WIN_CONDITION;
+        }
 
 
     }

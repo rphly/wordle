@@ -1,23 +1,46 @@
 module buttons_controller (
     input clk,  // clock
     input rst,  // reset
+    //input alphabet_button[26], // try and do all in one shot
     
-    input a,
+    input alphabet_input[2],
     
-    output is_pressed,
-    output out[16]
+    input is_pressed,
+    output out[5]
+    
   ) {
   .clk(clk) {
-    button a_(.button_input(a));
+    button alphabet_pressed(.button_input(is_pressed));    // instantiate button module which is a button conditioner 
    }
   
   always {
-    if(a_.out){
-      out = 16d1;
-      is_pressed = 1;
-    } else {
-      out = 16b0;
-      is_pressed = 0;
+
+    if(alphabet_pressed.out){
+    
+    
+      case(alphabet_input){
+      
+        2b0: out = b00001;
+        2b1: out = b00010;
+        
+        default: out = 0;
+        
+          
+      
+      }
+      
+      
+      
+      //out = 5d1;    // address of letter A 
+      //is_pressed = 1;
+      
+      
+    //} else {
+      //out = 5b0;    // address of empty input 
+      //is_pressed = 0;
+      
+      
+      
     }
   }
 }

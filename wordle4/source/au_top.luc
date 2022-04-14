@@ -1,54 +1,79 @@
 module au_top (
-    input clk,              // 100MHz clock
-    input rst_n,            // reset button (active low)
-    input usb_rx,           // USB->Serial input
+    input clk,  // clock
+    input rst_n,  // reset
     
-    // keyboard inputs
-    input a_in,
-    input b_in,
-    input c_in,
+    input usb_rx,
     
-    input clear_in,
+    input alphabet[2],
+   
     
-    output outmatrix0,
+    input recall_button[4],
+    
+    input clear,
+    input check_button,
+    
+    output top_display1,
+    output bot_display1,
+
     output io_led[3][8],
+    output alphabet_is_pressed,
     output usb_tx
+    
+    
+    
+
   ) {
   
-  sig rst; // reset signal
+    sig rst; // reset signal
   
-  .clk(clk) {
+    .clk(clk) {
+  
     reset_conditioner reset_cond;
+    
     .rst(rst) {
-      beta betaCPU;
-      buttons_controller keyboard_controller(
-        .a(a_in)
-      );
+      game_beta_backup betaCPU;
       
-      panel_controller button_panel_controller(
-        .clear(clear_in)
-      );
+      //buttons_controller button_control(.alphabet_input(alphabet))
+      
+      //panel_controller button_panel_controller(
+        //.clear(clear_in)
+      //);
     }
   }
   
-  led_strip_writer led_strip(#PIXEL_COUNT(25), .clk(clk), .rst(rst));
-  white_alphabets letters;
-  
+
   always {
+  
+    alphabet_is_pressed = 0;
     reset_cond.in = ~rst_n;
-    rst = reset_cond.out;
-    io_led = 3x{{8h00}};
-    
-    betaCPU.keyboard_input = keyboard_controller.out;
-    betaCPU.has_keyboard_input = keyboard_controller.is_pressed;
-    betaCPU.panel_input = button_panel_controller.out;
-    betaCPU.has_panel_input = button_panel_controller.is_pressed;
-    
-    letters.selector = betaCPU.which_letter;
-    led_strip.update=1;
-    led_strip.color=letters.out[led_strip.pixel]; 
-    outmatrix0=led_strip.led;
+    rst = reset_cond.out;    // conditioned reset 
     
     usb_tx = usb_rx;        // loop serial port
+    
+    io_led = 3x{{8h0}};
+
+    
+    // init betaCPU
+    betaCPU.recall = recall_button;
+    betaCPU.clear = clear;
+    betaCPU.alphabet_button = alphabet;    // pass button pressed into 
+    betaCPU.check_button = check_button;
+    
+    if(alphabet){
+      betaCPU.is_pressed = 1;
+    }else{
+    betaCPU.is_pressed=0;
+    }
+    
+    
+    // connect led display outputs
+    top_display1 = betaCPU.display_top[0];  // pass the 5 bit encoding to the first top display 
+    bot_display1 = betaCPU.display_bot[0]; 
+    
+
+    
+    
   }
+  
+  
 }

@@ -3,24 +3,20 @@ module game_beta_backup (
     input rst,  // reset
     
 
-    input recall1,
-    input recall2,
-    input recall3,
-    input recall4,
-    
     input check_button,
-    input alphabet_button,
+    input alphabet_button[2], // alphabet inputs 
     input clear, 
+    input recall[4],
+    input is_pressed,
     
-    
-    output display_top[4][16],
-    output display_bot[4][16]
+    output display_top[4], // output 1 bit LED encoding to top display
+    output display_bot[4]
     
     
   ) {
   
   
-  // instantiate alu (not that we're gonna use it anyways lol)
+  // instantiate alu 
   
   alu alu;
   
@@ -31,6 +27,19 @@ module game_beta_backup (
       regfile_backup regfile;    // instantiate regfile
       
       fsm_backup state;    // instantiate fsm
+      
+      buttons_controller alphabet_encoding(.alphabet_input(alphabet_button),.is_pressed(is_pressed));  // get alphabet encoding
+      
+      // decode alphabet encoding from regfile into LED encoding
+      matrix matrix_decoder1;
+      matrix matrix_decoder2;
+      matrix matrix_decoder3;
+      matrix matrix_decoder4;
+      
+      matrix matrix_decoder5;
+      matrix matrix_decoder6;
+      matrix matrix_decoder7;
+      matrix matrix_decoder8;
 
     }
   }
@@ -38,13 +47,11 @@ module game_beta_backup (
   
 
   always {
-  
     
     // init alu
-    alu.alufn = state.alufn;
-    alu.a = state.ra_write;
-    alu.b = state.rb_write;
-  
+    alu.alufn = state.alufn; // feed alufn from fsm into alu
+    alu.a = state.ra_write; // feed write data from fsm into alu
+    alu.b = state.rb_write; // feed write data from fsm into alu
     
     // init regfile
   
@@ -54,29 +61,39 @@ module game_beta_backup (
     regfile.read_address_a = state.ra_address; // fetch read address from fsm
     regfile.read_address_b = state.rb_address;
     
+    regfile.recall = recall;    // recall prev guesses button
     state.ra_read = regfile.out_a;  // feed data back to fsm
     state.rb_read = regfile.out_b;  // feed data back to fsm
-    
-    // hardcode regfile to update recall counter
-    
-    
-    
+    state.alu_output = alu.alu;
     
     // init fsm
-    state.recall1 = recall1;
-    state.recall2 = recall2;
-    state.recall3 = recall3;
-    state.recall4 = recall4;
     state.check_ans_pressed = check_button;
-    state.alphabet_pressed = alphabet_button;
+    state.alphabet_pressed = alphabet_encoding.out; // encoding of alphabet fed into fsm
     state.clear = clear;
+    state.alu_output = alu.alu;
         
     // init displays
-    display_top = regfile.display_top;
-    display_bot = regfile.display_bot;
+    matrix_decoder1.letter_address = regfile.display_top[0]; // 2 bit colour + 5 bit alphabet encoding wired into matrix decoder
+    matrix_decoder2.letter_address  = regfile.display_top[1];
+    matrix_decoder3.letter_address = regfile.display_top[2];
+    matrix_decoder4.letter_address  = regfile.display_top[3];
     
+    matrix_decoder5.letter_address  = regfile.display_bot[0]; // 2 bit colour + 5 bit alphabet encoding wired into matrix control
+    matrix_decoder6.letter_address  = regfile.display_bot[1];
+    matrix_decoder7.letter_address  = regfile.display_bot[2];
+    matrix_decoder8.letter_address  = regfile.display_bot[3];
     
-    // this is where asel and bsel comes in if we need them
+    // feed LED encoding to top and bottom displays
+    display_top[0] = matrix_decoder1.data_out;
+    display_top[1] = matrix_decoder2.data_out;
+    display_top[2] = matrix_decoder3.data_out;
+    display_top[3] = matrix_decoder4.data_out;
+    
+    display_bot[0] = matrix_decoder5.data_out;
+    display_bot[1] = matrix_decoder6.data_out;
+    display_bot[2] = matrix_decoder7.data_out;
+    display_bot[3] = matrix_decoder8.data_out;
+
     
 
     
