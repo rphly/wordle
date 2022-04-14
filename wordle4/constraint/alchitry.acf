@@ -8,9 +8,9 @@ pin rst_n RESET;
 //pin c_button A43 pulldown;
 
 // all alphabet buttons
-pin alphabet[0] B23 pulldown; // letter A
-pin alphabet[1] B28 pulldown; // letter B
-
+pin alphabet[0] B23 pulldown; // clear button
+pin alphabet[1] B28 pulldown; // letter A
+pin alphabet[2] b27 pulldown; // letter B
 
 //pin alphabet  27
 //pin alphabet R 24

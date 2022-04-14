@@ -59,8 +59,6 @@ module regfile_backup_4 (
   reg [6:0] M_temp_coloured_letter_d, M_temp_coloured_letter_q = 1'h0;
   reg [10:0] M_word_index_d, M_word_index_q = 1'h0;
   
-  integer cheat;
-  
   always @* begin
     M_temp_guess_g_letter_i_d = M_temp_guess_g_letter_i_q;
     M_word_index_d = M_word_index_q;
@@ -99,12 +97,11 @@ module regfile_backup_4 (
     M_correct_letter_2_d = M_correct_letter_2_q;
     M_guess_ctr_d = M_guess_ctr_q;
     
-    cheat = 1'h0;
     debugger = M_input_letter_1_q;
-    display_bot[0+6-:7] = M_input_letter_1_q;
-    display_bot[7+6-:7] = M_input_letter_2_q;
-    display_bot[14+6-:7] = M_input_letter_3_q;
-    display_bot[21+6-:7] = M_input_letter_4_q;
+    display_bot[0+6-:7] = 1'h0;
+    display_bot[7+6-:7] = 1'h0;
+    display_bot[14+6-:7] = 1'h0;
+    display_bot[21+6-:7] = 1'h0;
     
     case (M_guess_ctr_q)
       1'h0: begin

@@ -17,9 +17,9 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tftg256-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 4160
+INFO: [Synth 8-7075] Helper process launched with PID 5980
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1247.664 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1247.254 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'au_top_0' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/au_top_0.v:7]
 INFO: [Synth 8-6157] synthesizing module 'reset_conditioner_1' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/reset_conditioner_1.v:11]
@@ -38,22 +38,25 @@ INFO: [Synth 8-6155] done synthesizing module 'shifter_11' (5#1) [C:/Users/james
 INFO: [Synth 8-226] default block is never used [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/alu_3.v:89]
 INFO: [Synth 8-6155] done synthesizing module 'alu_3' (6#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/alu_3.v:7]
 INFO: [Synth 8-6157] synthesizing module 'regfile_backup_4' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:7]
-INFO: [Synth 8-226] default block is never used [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:109]
-WARNING: [Synth 8-6014] Unused sequential element M_correct_letter_1_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:535]
-WARNING: [Synth 8-6014] Unused sequential element M_correct_letter_2_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:536]
-WARNING: [Synth 8-6014] Unused sequential element M_correct_letter_3_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:537]
-WARNING: [Synth 8-6014] Unused sequential element M_correct_letter_4_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:538]
-WARNING: [Synth 8-6014] Unused sequential element M_input_i_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:539]
-WARNING: [Synth 8-6014] Unused sequential element M_correct_k_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:540]
-WARNING: [Synth 8-6014] Unused sequential element M_i_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:541]
-WARNING: [Synth 8-6014] Unused sequential element M_j_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:542]
-WARNING: [Synth 8-6014] Unused sequential element M_k_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:543]
-WARNING: [Synth 8-6014] Unused sequential element M_num_correct_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:545]
-WARNING: [Synth 8-6014] Unused sequential element M_zero_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:546]
-WARNING: [Synth 8-6014] Unused sequential element M_g_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:547]
-WARNING: [Synth 8-6014] Unused sequential element M_temp_guess_g_letter_i_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:548]
-WARNING: [Synth 8-6014] Unused sequential element M_temp_coloured_letter_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:549]
-WARNING: [Synth 8-6014] Unused sequential element M_word_index_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:550]
+INFO: [Synth 8-226] default block is never used [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:106]
+WARNING: [Synth 8-6014] Unused sequential element M_input_letter_2_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:529]
+WARNING: [Synth 8-6014] Unused sequential element M_input_letter_3_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:530]
+WARNING: [Synth 8-6014] Unused sequential element M_input_letter_4_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:531]
+WARNING: [Synth 8-6014] Unused sequential element M_correct_letter_1_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:532]
+WARNING: [Synth 8-6014] Unused sequential element M_correct_letter_2_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:533]
+WARNING: [Synth 8-6014] Unused sequential element M_correct_letter_3_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:534]
+WARNING: [Synth 8-6014] Unused sequential element M_correct_letter_4_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:535]
+WARNING: [Synth 8-6014] Unused sequential element M_input_i_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:536]
+WARNING: [Synth 8-6014] Unused sequential element M_correct_k_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:537]
+WARNING: [Synth 8-6014] Unused sequential element M_i_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:538]
+WARNING: [Synth 8-6014] Unused sequential element M_j_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:539]
+WARNING: [Synth 8-6014] Unused sequential element M_k_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:540]
+WARNING: [Synth 8-6014] Unused sequential element M_num_correct_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:542]
+WARNING: [Synth 8-6014] Unused sequential element M_zero_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:543]
+WARNING: [Synth 8-6014] Unused sequential element M_g_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:544]
+WARNING: [Synth 8-6014] Unused sequential element M_temp_guess_g_letter_i_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:545]
+WARNING: [Synth 8-6014] Unused sequential element M_temp_coloured_letter_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:546]
+WARNING: [Synth 8-6014] Unused sequential element M_word_index_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:547]
 WARNING: [Synth 8-3848] Net out_a in module/entity regfile_backup_4 does not have driver. [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:16]
 WARNING: [Synth 8-3848] Net out_b in module/entity regfile_backup_4 does not have driver. [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:17]
 INFO: [Synth 8-6155] done synthesizing module 'regfile_backup_4' (7#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:7]
@@ -196,18 +199,18 @@ WARNING: [Synth 8-7129] Port b[7] in module shifter_11 is either unconnected or 
 WARNING: [Synth 8-7129] Port b[6] in module shifter_11 is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1247.664 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1247.254 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1247.664 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1247.254 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1247.664 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1247.254 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.111 . Memory (MB): peak = 1247.664 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.111 . Memory (MB): peak = 1247.254 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -220,26 +223,26 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/au_top_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1247.664 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1247.254 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1247.664 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1247.254 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1247.664 ; gain = 0.000
+Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1247.254 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tftg256-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1247.664 ; gain = 0.000
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1247.254 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1247.664 ; gain = 0.000
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1247.254 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'M_game_fsm_q_reg' in module 'fsm_backup_5'
 ---------------------------------------------------------------------------------------------------
@@ -271,7 +274,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'M_game_fsm_q_reg' in module
 INFO: [Synth 8-3354] encoded FSM with state register 'M_game_fsm_q_reg' using encoding 'sequential' in module 'fsm_backup_5'
 WARNING: [Synth 8-327] inferring latch for variable 'out_reg' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/buttons_controller_6.v:29]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1247.664 ; gain = 0.000
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1247.254 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -302,7 +305,8 @@ Detailed RTL Component Info :
 	  20 Input    5 Bit        Muxes := 4     
 	  20 Input    4 Bit        Muxes := 1     
 	   2 Input    4 Bit        Muxes := 1     
-	   2 Input    2 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 1     
 	   2 Input    1 Bit        Muxes := 125   
 	  20 Input    1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
@@ -365,7 +369,7 @@ WARNING: [Synth 8-3917] design au_top_0 has port io_led[9] driven by constant 0
 WARNING: [Synth 8-3917] design au_top_0 has port io_led[8] driven by constant 0
 WARNING: [Synth 8-3917] design au_top_0 has port io_led[7] driven by constant 0
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:41 ; elapsed = 00:02:43 . Memory (MB): peak = 1263.082 ; gain = 15.418
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:02 ; elapsed = 00:03:05 . Memory (MB): peak = 1331.480 ; gain = 84.227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -394,19 +398,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:54 ; elapsed = 00:02:56 . Memory (MB): peak = 1263.082 ; gain = 15.418
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:15 ; elapsed = 00:03:18 . Memory (MB): peak = 1331.480 ; gain = 84.227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:57 ; elapsed = 00:02:59 . Memory (MB): peak = 1283.195 ; gain = 35.531
+Finished Timing Optimization : Time (s): cpu = 00:03:19 ; elapsed = 00:03:22 . Memory (MB): peak = 1331.480 ; gain = 84.227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:58 ; elapsed = 00:03:01 . Memory (MB): peak = 1290.285 ; gain = 42.621
+Finished Technology Mapping : Time (s): cpu = 00:03:21 ; elapsed = 00:03:24 . Memory (MB): peak = 1331.480 ; gain = 84.227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -424,37 +428,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:03:06 ; elapsed = 00:03:09 . Memory (MB): peak = 1304.094 ; gain = 56.430
+Finished IO Insertion : Time (s): cpu = 00:03:28 ; elapsed = 00:03:31 . Memory (MB): peak = 1331.480 ; gain = 84.227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:03:06 ; elapsed = 00:03:09 . Memory (MB): peak = 1304.094 ; gain = 56.430
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:28 ; elapsed = 00:03:31 . Memory (MB): peak = 1331.480 ; gain = 84.227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:06 ; elapsed = 00:03:09 . Memory (MB): peak = 1304.094 ; gain = 56.430
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:28 ; elapsed = 00:03:31 . Memory (MB): peak = 1331.480 ; gain = 84.227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:03:06 ; elapsed = 00:03:09 . Memory (MB): peak = 1304.094 ; gain = 56.430
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:28 ; elapsed = 00:03:31 . Memory (MB): peak = 1331.480 ; gain = 84.227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:03:06 ; elapsed = 00:03:09 . Memory (MB): peak = 1304.094 ; gain = 56.430
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:28 ; elapsed = 00:03:31 . Memory (MB): peak = 1331.480 ; gain = 84.227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:03:06 ; elapsed = 00:03:09 . Memory (MB): peak = 1304.094 ; gain = 56.430
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:28 ; elapsed = 00:03:31 . Memory (MB): peak = 1331.480 ; gain = 84.227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -474,39 +478,39 @@ Report Cell Usage:
 |2     |CARRY4  |    16|
 |3     |DSP48E1 |     4|
 |4     |LUT1    |     9|
-|5     |LUT2    |    32|
-|6     |LUT3    |    68|
-|7     |LUT4    |   700|
-|8     |LUT5    |   836|
-|9     |LUT6    |   868|
-|10    |MUXF7   |   608|
-|11    |MUXF8   |   228|
-|12    |FDRE    |   132|
+|5     |LUT2    |    28|
+|6     |LUT3    |    36|
+|7     |LUT4    |   768|
+|8     |LUT5    |  1000|
+|9     |LUT6    |   952|
+|10    |MUXF7   |   820|
+|11    |MUXF8   |   368|
+|12    |FDRE    |   128|
 |13    |FDSE    |     8|
 |14    |IBUF    |     3|
 |15    |OBUF    |    29|
 +------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:03:06 ; elapsed = 00:03:09 . Memory (MB): peak = 1304.094 ; gain = 56.430
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:28 ; elapsed = 00:03:31 . Memory (MB): peak = 1331.480 ; gain = 84.227
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 19 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:53 ; elapsed = 00:03:06 . Memory (MB): peak = 1304.094 ; gain = 56.430
-Synthesis Optimization Complete : Time (s): cpu = 00:03:07 ; elapsed = 00:03:09 . Memory (MB): peak = 1304.094 ; gain = 56.430
+Synthesis Optimization Runtime : Time (s): cpu = 00:03:15 ; elapsed = 00:03:28 . Memory (MB): peak = 1331.480 ; gain = 84.227
+Synthesis Optimization Complete : Time (s): cpu = 00:03:29 ; elapsed = 00:03:32 . Memory (MB): peak = 1331.480 ; gain = 84.227
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.105 . Memory (MB): peak = 1314.168 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 856 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.072 . Memory (MB): peak = 1331.480 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1208 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1317.902 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1331.480 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete, checksum: fe24f5f8
+Synth Design complete, checksum: 2912332c
 INFO: [Common 17-83] Releasing license: Synthesis
-57 Infos, 153 Warnings, 0 Critical Warnings and 0 Errors encountered.
+57 Infos, 156 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:03:13 ; elapsed = 00:03:17 . Memory (MB): peak = 1317.902 ; gain = 70.238
+synth_design: Time (s): cpu = 00:03:35 ; elapsed = 00:03:39 . Memory (MB): peak = 1331.480 ; gain = 84.227
 INFO: [Common 17-1381] The checkpoint 'C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.runs/synth_1/au_top_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file au_top_0_utilization_synth.rpt -pb au_top_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Apr 15 02:13:22 2022...
+INFO: [Common 17-206] Exiting Vivado at Fri Apr 15 02:53:23 2022...

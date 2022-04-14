@@ -4,7 +4,7 @@ module game_beta_backup (
     
 
     input check_button,
-    input alphabet_button[2], // alphabet inputs 
+    input alphabet_button[3], // alphabet inputs 
     input clear, 
     input recall[4],
     input is_pressed,

@@ -3,7 +3,7 @@ module buttons_controller (
     input rst,  // reset
     //input alphabet_button[26], // try and do all in one shot
     
-    input alphabet_input[2],
+    input alphabet_input[3],
     
     input is_pressed,
     output out[5]
@@ -20,8 +20,9 @@ module buttons_controller (
     
       case(alphabet_input){
       
-        2b0: out = b00001;
-        2b1: out = b00010;
+        3b0: out = b000;
+        3b1: out = b001;
+        b011: out = b010;
         
         default: out = 0;
         

@@ -7,7 +7,7 @@
 module buttons_controller_6 (
     input clk,
     input rst,
-    input [1:0] alphabet_input,
+    input [2:0] alphabet_input,
     input is_pressed,
     output reg [4:0] out
   );
@@ -25,11 +25,14 @@ module buttons_controller_6 (
     if (M_alphabet_pressed_out) begin
       
       case (alphabet_input)
-        2'h0: begin
-          out = 5'h01;
+        3'h0: begin
+          out = 3'h0;
         end
-        2'h1: begin
-          out = 5'h02;
+        3'h1: begin
+          out = 3'h1;
+        end
+        3'h3: begin
+          out = 3'h2;
         end
         default: begin
           out = 1'h0;

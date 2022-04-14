@@ -8,9 +8,8 @@ module au_top_0 (
     input clk,
     input rst_n,
     input usb_rx,
-    input [1:0] alphabet,
+    input [2:0] alphabet,
     input [3:0] recall_button,
-    input clear,
     input check_button,
     output reg [3:0] bot_display,
     output reg [23:0] io_led,
@@ -32,7 +31,7 @@ module au_top_0 (
   wire [4-1:0] M_betaCPU_display_bot;
   wire [7-1:0] M_betaCPU_debugger;
   reg [1-1:0] M_betaCPU_check_button;
-  reg [2-1:0] M_betaCPU_alphabet_button;
+  reg [3-1:0] M_betaCPU_alphabet_button;
   reg [1-1:0] M_betaCPU_clear;
   reg [4-1:0] M_betaCPU_recall;
   reg [1-1:0] M_betaCPU_is_pressed;
@@ -55,7 +54,7 @@ module au_top_0 (
     usb_tx = usb_rx;
     io_led = 24'h000000;
     M_betaCPU_recall = recall_button;
-    M_betaCPU_clear = clear;
+    M_betaCPU_clear = alphabet[0+0-:1];
     M_betaCPU_alphabet_button = alphabet;
     M_betaCPU_check_button = check_button;
     if (alphabet) begin

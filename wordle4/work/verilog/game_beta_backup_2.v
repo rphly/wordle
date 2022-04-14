@@ -8,7 +8,7 @@ module game_beta_backup_2 (
     input clk,
     input rst,
     input check_button,
-    input [1:0] alphabet_button,
+    input [2:0] alphabet_button,
     input clear,
     input [3:0] recall,
     input is_pressed,

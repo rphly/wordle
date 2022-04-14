@@ -89,20 +89,20 @@ module regfile_backup (
     }
   }
   
-  var cheat;
+
 
   always {
   
-    cheat = 0;
+
     
     debugger = input_letter_1.q;    // debugger to show input 1 at all times
     
   
       // hardcode the positions for the top and bottom display
-    display_bot[0] = input_letter_1.q;
-    display_bot[1] = input_letter_2.q;
-    display_bot[2] = input_letter_3.q;
-    display_bot[3] = input_letter_4.q;
+    display_bot[0] = 0;
+    display_bot[1] = 0;
+    display_bot[2] = 0;
+    display_bot[3] = 0;
     
       
     case(guess_ctr.q){  // display which regs acording to current guess
