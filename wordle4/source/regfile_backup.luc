@@ -11,7 +11,8 @@ module regfile_backup (
     input read_address_b[6], //address port b
     output out_a[16], //read port a
     output out_b[16], //read port b
-    
+   
+    output debugger[7],
     output display_top[4][7], //direct output to displays 7 bit
     output display_bot[4][7] //direct output to displays 7 bit
   ) 
@@ -93,7 +94,9 @@ module regfile_backup (
   always {
   
     cheat = 0;
-
+    
+    debugger = input_letter_1.q;    // debugger to show input 1 at all times
+    
   
       // hardcode the positions for the top and bottom display
     display_bot[0] = input_letter_1.q;
@@ -130,9 +133,9 @@ module regfile_backup (
           
        
         default:display_top[0] = 0;
-        default:display_top[1] = 0;
-        default:display_top[2] = 0;
-        default:display_top[3] = 0;
+                display_top[1] = 0;
+                display_top[2] = 0;
+                display_top[3] = 0;
       
         
         // if recall button is pressed

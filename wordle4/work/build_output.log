@@ -1,86 +1,120 @@
-Warnings in file C:\Users\Bryce\Desktop\wordle\wordle4\source\beta.luc:
-    Line 25, Column 23 : The signal "control_unit.regfile_rb" is wider than "r.read_address_b" and the most significant bits will be dropped
-    Line 23, Column 22 : The signal "control_unit.regfile_write_address" is wider than "r.write_address" and the most significant bits will be dropped
-    Line 24, Column 23 : The signal "control_unit.regfile_ra" is wider than "r.read_address_a" and the most significant bits will be dropped
-Warnings in file C:\Users\Bryce\Desktop\wordle\wordle4\source\buttons_controller.luc:
+Warnings in file C:\Users\james\Documents\GitHub\wordle\wordle4\source\matrix.luc:
+    Line 17, Column 29 : The signal "letter_address" is wider than "white_letters.selector" and the most significant bits will be dropped
+Warnings in file C:\Users\james\Documents\GitHub\wordle\wordle4\source\regfile.luc:
+    Line 135, Column 33 : The signal "data" is wider than "word_index.d" and the most significant bits will be dropped
+    Line 93, Column 38 : The signal "data" is wider than "guess_1_letter_1.d" and the most significant bits will be dropped
+    Line 94, Column 38 : The signal "data" is wider than "guess_1_letter_2.d" and the most significant bits will be dropped
+    Line 95, Column 38 : The signal "data" is wider than "guess_1_letter_3.d" and the most significant bits will be dropped
+    Line 96, Column 38 : The signal "data" is wider than "guess_1_letter_4.d" and the most significant bits will be dropped
+    Line 98, Column 38 : The signal "data" is wider than "guess_2_letter_1.d" and the most significant bits will be dropped
+    Line 99, Column 38 : The signal "data" is wider than "guess_2_letter_2.d" and the most significant bits will be dropped
+    Line 100, Column 38 : The signal "data" is wider than "guess_2_letter_3.d" and the most significant bits will be dropped
+    Line 101, Column 38 : The signal "data" is wider than "guess_2_letter_4.d" and the most significant bits will be dropped
+    Line 103, Column 38 : The signal "data" is wider than "guess_3_letter_1.d" and the most significant bits will be dropped
+    Line 104, Column 38 : The signal "data" is wider than "guess_3_letter_2.d" and the most significant bits will be dropped
+    Line 105, Column 38 : The signal "data" is wider than "guess_3_letter_3.d" and the most significant bits will be dropped
+    Line 106, Column 38 : The signal "data" is wider than "guess_3_letter_4.d" and the most significant bits will be dropped
+    Line 108, Column 38 : The signal "data" is wider than "guess_4_letter_1.d" and the most significant bits will be dropped
+    Line 109, Column 38 : The signal "data" is wider than "guess_4_letter_2.d" and the most significant bits will be dropped
+    Line 110, Column 38 : The signal "data" is wider than "guess_4_letter_3.d" and the most significant bits will be dropped
+    Line 111, Column 38 : The signal "data" is wider than "guess_4_letter_4.d" and the most significant bits will be dropped
+    Line 113, Column 36 : The signal "data" is wider than "input_letter_1.d" and the most significant bits will be dropped
+    Line 114, Column 36 : The signal "data" is wider than "input_letter_2.d" and the most significant bits will be dropped
+    Line 115, Column 36 : The signal "data" is wider than "input_letter_3.d" and the most significant bits will be dropped
+    Line 116, Column 36 : The signal "data" is wider than "input_letter_4.d" and the most significant bits will be dropped
+    Line 118, Column 23 : The signal "data" is wider than "i.d" and the most significant bits will be dropped
+    Line 119, Column 23 : The signal "data" is wider than "j.d" and the most significant bits will be dropped
+    Line 120, Column 23 : The signal "data" is wider than "k.d" and the most significant bits will be dropped
+    Line 127, Column 33 : The signal "data" is wider than "num_correct.d" and the most significant bits will be dropped
+    Line 128, Column 31 : The signal "data" is wider than "input_ctr.d" and the most significant bits will be dropped
+    Line 129, Column 29 : The signal "data" is wider than "input_i.d" and the most significant bits will be dropped
+    Line 130, Column 31 : The signal "data" is wider than "correct_k.d" and the most significant bits will be dropped
+    Line 132, Column 24 : The signal "data" is wider than "g.d" and the most significant bits will be dropped
+    Line 133, Column 44 : The signal "data" is wider than "temp_guess_g_letter_i.d" and the most significant bits will be dropped
+    Line 134, Column 43 : The signal "data" is wider than "temp_coloured_letter.d" and the most significant bits will be dropped
+Warnings in file C:\Users\james\Documents\GitHub\wordle\wordle4\source\buttons_controller.luc:
     Line 3, Column 4 : "rst" was never used
-Warnings in file C:\Users\Bryce\Desktop\wordle\wordle4\source\matrix_controller.luc:
+Warnings in file C:\Users\james\Documents\GitHub\wordle\wordle4\source\matrix_controller.luc:
     Line 34, Column 10 : The signal "rf.out_b" is wider than "out" and the most significant bits will be dropped
     Line 26, Column 29 : The signal "rf.out_b" is wider than "white_letters.selector" and the most significant bits will be dropped
-Warnings in file C:\Users\Bryce\Desktop\wordle\wordle4\source\game.luc:
-    Line 85, Column 25 : The signal "regfile_out_b" is wider than "which_matrix" and the most significant bits will be dropped
-    Line 84, Column 25 : The signal "regfile_out_a" is wider than "which_letter" and the most significant bits will be dropped
-Warnings in file C:\Users\Bryce\Desktop\wordle\wordle4\source\regfile.luc:
-    Line 112, Column 31 : The signal "data" is wider than "input_ctr.d" and the most significant bits will be dropped
-    Line 77, Column 38 : The signal "data" is wider than "guess_1_letter_1.d" and the most significant bits will be dropped
-    Line 78, Column 38 : The signal "data" is wider than "guess_1_letter_2.d" and the most significant bits will be dropped
-    Line 79, Column 38 : The signal "data" is wider than "guess_1_letter_3.d" and the most significant bits will be dropped
-    Line 80, Column 38 : The signal "data" is wider than "guess_1_letter_4.d" and the most significant bits will be dropped
-    Line 82, Column 38 : The signal "data" is wider than "guess_2_letter_1.d" and the most significant bits will be dropped
-    Line 83, Column 38 : The signal "data" is wider than "guess_2_letter_2.d" and the most significant bits will be dropped
-    Line 84, Column 38 : The signal "data" is wider than "guess_2_letter_3.d" and the most significant bits will be dropped
-    Line 85, Column 38 : The signal "data" is wider than "guess_2_letter_4.d" and the most significant bits will be dropped
-    Line 87, Column 38 : The signal "data" is wider than "guess_3_letter_1.d" and the most significant bits will be dropped
-    Line 88, Column 38 : The signal "data" is wider than "guess_3_letter_2.d" and the most significant bits will be dropped
-    Line 89, Column 38 : The signal "data" is wider than "guess_3_letter_3.d" and the most significant bits will be dropped
-    Line 90, Column 38 : The signal "data" is wider than "guess_3_letter_4.d" and the most significant bits will be dropped
-    Line 92, Column 38 : The signal "data" is wider than "guess_4_letter_1.d" and the most significant bits will be dropped
-    Line 93, Column 38 : The signal "data" is wider than "guess_4_letter_2.d" and the most significant bits will be dropped
-    Line 94, Column 38 : The signal "data" is wider than "guess_4_letter_3.d" and the most significant bits will be dropped
-    Line 95, Column 38 : The signal "data" is wider than "guess_4_letter_4.d" and the most significant bits will be dropped
-    Line 97, Column 36 : The signal "data" is wider than "input_letter_1.d" and the most significant bits will be dropped
-    Line 98, Column 36 : The signal "data" is wider than "input_letter_2.d" and the most significant bits will be dropped
-    Line 99, Column 36 : The signal "data" is wider than "input_letter_3.d" and the most significant bits will be dropped
-    Line 100, Column 36 : The signal "data" is wider than "input_letter_4.d" and the most significant bits will be dropped
-    Line 102, Column 23 : The signal "data" is wider than "i.d" and the most significant bits will be dropped
-    Line 103, Column 23 : The signal "data" is wider than "j.d" and the most significant bits will be dropped
-    Line 104, Column 23 : The signal "data" is wider than "k.d" and the most significant bits will be dropped
-    Line 106, Column 38 : The signal "data" is wider than "correct_letter_1.d" and the most significant bits will be dropped
-    Line 107, Column 38 : The signal "data" is wider than "correct_letter_2.d" and the most significant bits will be dropped
-    Line 108, Column 38 : The signal "data" is wider than "correct_letter_3.d" and the most significant bits will be dropped
-    Line 109, Column 38 : The signal "data" is wider than "correct_letter_4.d" and the most significant bits will be dropped
-    Line 111, Column 33 : The signal "data" is wider than "num_correct.d" and the most significant bits will be dropped
-Warnings in file C:\Users\Bryce\Desktop\wordle\wordle4\source\regfile_tester.luc:
-    Line 13, Column 2 : "INPUT_CTR" was never used
-Warnings in file C:\Users\Bryce\Desktop\wordle\wordle4\source\au_top.luc:
-    Line 20, Column 6 : "regfile_tester" was never used
+Warnings in file C:\Users\james\Documents\GitHub\wordle\wordle4\source\panel_controller.luc:
+    Line 3, Column 4 : "rst" was never used
+Warnings in file C:\Users\james\Documents\GitHub\wordle\wordle4\source\control_unit.luc:
+    Line 3, Column 4 : "rst" was never used
+    Line 2, Column 4 : "clk" was never used
+Warnings in file C:\Users\james\Documents\GitHub\wordle\wordle4\source\regfile_backup.luc:
+    Line 221, Column 33 : The signal "data" is wider than "word_index.d" and the most significant bits will be dropped
+    Line 179, Column 38 : The signal "data" is wider than "guess_1_letter_1.d" and the most significant bits will be dropped
+    Line 180, Column 38 : The signal "data" is wider than "guess_1_letter_2.d" and the most significant bits will be dropped
+    Line 181, Column 38 : The signal "data" is wider than "guess_1_letter_3.d" and the most significant bits will be dropped
+    Line 182, Column 38 : The signal "data" is wider than "guess_1_letter_4.d" and the most significant bits will be dropped
+    Line 184, Column 38 : The signal "data" is wider than "guess_2_letter_1.d" and the most significant bits will be dropped
+    Line 185, Column 38 : The signal "data" is wider than "guess_2_letter_2.d" and the most significant bits will be dropped
+    Line 186, Column 38 : The signal "data" is wider than "guess_2_letter_3.d" and the most significant bits will be dropped
+    Line 187, Column 38 : The signal "data" is wider than "guess_2_letter_4.d" and the most significant bits will be dropped
+    Line 189, Column 38 : The signal "data" is wider than "guess_3_letter_1.d" and the most significant bits will be dropped
+    Line 190, Column 38 : The signal "data" is wider than "guess_3_letter_2.d" and the most significant bits will be dropped
+    Line 191, Column 38 : The signal "data" is wider than "guess_3_letter_3.d" and the most significant bits will be dropped
+    Line 192, Column 38 : The signal "data" is wider than "guess_3_letter_4.d" and the most significant bits will be dropped
+    Line 194, Column 38 : The signal "data" is wider than "guess_4_letter_1.d" and the most significant bits will be dropped
+    Line 195, Column 38 : The signal "data" is wider than "guess_4_letter_2.d" and the most significant bits will be dropped
+    Line 196, Column 38 : The signal "data" is wider than "guess_4_letter_3.d" and the most significant bits will be dropped
+    Line 197, Column 38 : The signal "data" is wider than "guess_4_letter_4.d" and the most significant bits will be dropped
+    Line 199, Column 36 : The signal "data" is wider than "input_letter_1.d" and the most significant bits will be dropped
+    Line 200, Column 36 : The signal "data" is wider than "input_letter_2.d" and the most significant bits will be dropped
+    Line 201, Column 36 : The signal "data" is wider than "input_letter_3.d" and the most significant bits will be dropped
+    Line 202, Column 36 : The signal "data" is wider than "input_letter_4.d" and the most significant bits will be dropped
+    Line 204, Column 23 : The signal "data" is wider than "i.d" and the most significant bits will be dropped
+    Line 205, Column 23 : The signal "data" is wider than "j.d" and the most significant bits will be dropped
+    Line 206, Column 23 : The signal "data" is wider than "k.d" and the most significant bits will be dropped
+    Line 213, Column 33 : The signal "data" is wider than "num_correct.d" and the most significant bits will be dropped
+    Line 214, Column 31 : The signal "data" is wider than "guess_ctr.d" and the most significant bits will be dropped
+    Line 215, Column 29 : The signal "data" is wider than "input_i.d" and the most significant bits will be dropped
+    Line 216, Column 31 : The signal "data" is wider than "correct_k.d" and the most significant bits will be dropped
+    Line 218, Column 24 : The signal "data" is wider than "g.d" and the most significant bits will be dropped
+    Line 219, Column 44 : The signal "data" is wider than "temp_guess_g_letter_i.d" and the most significant bits will be dropped
+    Line 220, Column 43 : The signal "data" is wider than "temp_coloured_letter.d" and the most significant bits will be dropped
+Warnings in file C:\Users\james\Documents\GitHub\wordle\wordle4\source\fsm_backup.luc:
+    Line 11, Column 4 : "alu_output" was never used
 Starting Vivado...
 
-****** Vivado v2020.2 (64-bit)
-  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
-  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+****** Vivado v2021.2 (64-bit)
+  **** SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+  **** IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 
-source {C:\Users\Bryce\Desktop\wordle\wordle4\work\project.tcl}
-# set projDir "C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado"
+source {C:\Users\james\Documents\GitHub\wordle\wordle4\work\project.tcl}
+# set projDir "C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado"
 # set projName "wordle4"
 # set topName top
 # set device xc7a35tftg256-1
 # if {[file exists "$projDir/$projName"]} { file delete -force "$projDir/$projName" }
 # create_project $projName "$projDir/$projName" -part $device
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1247.738 ; gain = 9.953
 # set_property design_mode RTL [get_filesets sources_1]
-# set verilogSources [list "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/au_top_0.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/reset_conditioner_1.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/beta_2.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/regfile_tester_3.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/button_4.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/led_strip_writer_5.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/white_alphabets_6.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/game_7.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/regfile_8.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/button_conditioner_9.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/edge_detector_10.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/pipeline_11.v" ]
+# set verilogSources [list "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/au_top_0.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/reset_conditioner_1.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/game_beta_backup_2.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/alu_3.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/regfile_backup_4.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/fsm_backup_5.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/buttons_controller_6.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/matrix_7.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/adder_8.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/compare_9.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/boolean_10.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/shifter_11.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/button_12.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/led_strip_writer_13.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/white_alphabets_14.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/button_conditioner_15.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/edge_detector_16.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/pipeline_17.v" ]
 # import_files -fileset [get_filesets sources_1] -force -norecurse $verilogSources
-# set xdcSources [list "C:/Users/Bryce/Desktop/wordle/wordle4/work/constraint/alchitry.xdc" "C:/Program\ Files/Alchitry/Alchitry\ Labs/library/components/au.xdc" ]
+# set xdcSources [list "C:/Program\ Files/Alchitry/Alchitry\ Labs/library/components/au.xdc" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/constraint/alchitry.xdc" ]
 # read_xdc $xdcSources
 # set_property STEPS.WRITE_BITSTREAM.ARGS.BIN_FILE true [get_runs impl_1]
 # update_compile_order -fileset sources_1
-# launch_runs -runs synth_1 -jobs 12
-
-[Tue Apr 12 15:07:41 2022] Launched synth_1...
-Run output will be captured here: C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/synth_1/runme.log
+# launch_runs -runs synth_1 -jobs 4
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Fri Apr 15 01:09:37 2022] Launched synth_1...
+Run output will be captured here: C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.runs/synth_1/runme.log
 # wait_on_run synth_1
-[Tue Apr 12 15:07:41 2022] Waiting for synth_1 to finish...
+[Fri Apr 15 01:09:37 2022] Waiting for synth_1 to finish...
+
 
 *** Running vivado
     with args -log au_top_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source au_top_0.tcl
 
 
 
-****** Vivado v2020.2 (64-bit)
-  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
-  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+****** Vivado v2021.2 (64-bit)
+  **** SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+  **** IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 
 source au_top_0.tcl -notrace
 Command: synth_design -top au_top_0 -part xc7a35tftg256-1
@@ -90,138 +124,301 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tftg256-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 6852
+INFO: [Synth 8-7075] Helper process launched with PID 5820
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1000.664 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1247.996 ; gain = 0.000
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'au_top_0' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/au_top_0.v:7]
-INFO: [Synth 8-6157] synthesizing module 'reset_conditioner_1' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/reset_conditioner_1.v:11]
-	Parameter STAGES bound to: 3'b100 
-INFO: [Synth 8-6155] done synthesizing module 'reset_conditioner_1' (1#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/reset_conditioner_1.v:11]
-INFO: [Synth 8-6157] synthesizing module 'beta_2' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/beta_2.v:7]
-INFO: [Synth 8-6157] synthesizing module 'game_7' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_7.v:7]
-	Parameter IDLE_game_fsm bound to: 3'b000 
-	Parameter STORE_INPUT_game_fsm bound to: 3'b001 
-	Parameter UPDATE_MATRIX_game_fsm bound to: 3'b010 
-	Parameter STORE_ONE_game_fsm bound to: 3'b011 
-	Parameter STORE_ZERO_game_fsm bound to: 3'b100 
-	Parameter INPUT_CTR bound to: 5'b11100 
-	Parameter INPUT_LETTER_1 bound to: 5'b10000 
-INFO: [Synth 8-6155] done synthesizing module 'game_7' (2#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_7.v:7]
-INFO: [Synth 8-6157] synthesizing module 'regfile_8' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_8.v:7]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_8.v:86]
-INFO: [Synth 8-6155] done synthesizing module 'regfile_8' (3#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_8.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'beta_2' (4#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/beta_2.v:7]
-INFO: [Synth 8-6157] synthesizing module 'regfile_tester_3' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_tester_3.v:7]
-	Parameter INPUT_CTR bound to: 5'b11100 
-	Parameter INPUT_LETTER_1 bound to: 5'b10000 
-INFO: [Synth 8-6155] done synthesizing module 'regfile_tester_3' (5#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_tester_3.v:7]
-INFO: [Synth 8-6157] synthesizing module 'button_4' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_4.v:7]
-INFO: [Synth 8-6157] synthesizing module 'button_conditioner_9' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_conditioner_9.v:13]
-	Parameter CLK_FREQ bound to: 26'b10111110101111000010000000 
-	Parameter MIN_DELAY bound to: 5'b10100 
-	Parameter NUM_SYNC bound to: 2'b10 
-INFO: [Synth 8-6157] synthesizing module 'pipeline_11' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/pipeline_11.v:11]
-	Parameter DEPTH bound to: 2'b10 
-INFO: [Synth 8-6155] done synthesizing module 'pipeline_11' (6#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/pipeline_11.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'button_conditioner_9' (7#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_conditioner_9.v:13]
-INFO: [Synth 8-6157] synthesizing module 'edge_detector_10' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/edge_detector_10.v:12]
-	Parameter RISE bound to: 1'b1 
-	Parameter FALL bound to: 1'b0 
-INFO: [Synth 8-6155] done synthesizing module 'edge_detector_10' (8#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/edge_detector_10.v:12]
-INFO: [Synth 8-6155] done synthesizing module 'button_4' (9#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_4.v:7]
-INFO: [Synth 8-6157] synthesizing module 'led_strip_writer_5' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/led_strip_writer_5.v:11]
-	Parameter PIXEL_COUNT bound to: 5'b11001 
-	Parameter SEND_PIXEL_state bound to: 1'b0 
-	Parameter RESET_state bound to: 1'b1 
-INFO: [Synth 8-6155] done synthesizing module 'led_strip_writer_5' (10#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/led_strip_writer_5.v:11]
-INFO: [Synth 8-6157] synthesizing module 'white_alphabets_6' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/white_alphabets_6.v:7]
-	Parameter INPUTS bound to: 1200'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100010001000100010001000000000000000000000000000000000000000000000000000000000000000000000000000100010001000100010001000000000000000000000000000100010001000100010001000000000000000000000000000100010001000100010001000000000000000000000000000000000000000000000000000000000000000000000000000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000000000000000000000000000000000000000000000000000000000000000000000000000100010001000100010001 
-INFO: [Synth 8-6155] done synthesizing module 'white_alphabets_6' (11#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/white_alphabets_6.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'au_top_0' (12#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/au_top_0.v:7]
+INFO: [Synth 8-6157] synthesizing module 'au_top_0' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/au_top_0.v:7]
+INFO: [Synth 8-6157] synthesizing module 'reset_conditioner_1' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/reset_conditioner_1.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'reset_conditioner_1' (1#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/reset_conditioner_1.v:11]
+INFO: [Synth 8-6157] synthesizing module 'game_beta_backup_2' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_beta_backup_2.v:7]
+INFO: [Synth 8-6157] synthesizing module 'alu_3' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/alu_3.v:7]
+INFO: [Synth 8-6157] synthesizing module 'adder_8' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/adder_8.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'adder_8' (2#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/adder_8.v:7]
+INFO: [Synth 8-6157] synthesizing module 'compare_9' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/compare_9.v:7]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/compare_9.v:20]
+INFO: [Synth 8-6155] done synthesizing module 'compare_9' (3#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/compare_9.v:7]
+INFO: [Synth 8-6157] synthesizing module 'boolean_10' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/boolean_10.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'boolean_10' (4#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/boolean_10.v:7]
+INFO: [Synth 8-6157] synthesizing module 'shifter_11' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/shifter_11.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'shifter_11' (5#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/shifter_11.v:7]
+INFO: [Synth 8-226] default block is never used [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/alu_3.v:89]
+INFO: [Synth 8-6155] done synthesizing module 'alu_3' (6#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/alu_3.v:7]
+INFO: [Synth 8-6157] synthesizing module 'regfile_backup_4' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:7]
+INFO: [Synth 8-226] default block is never used [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:107]
+WARNING: [Synth 8-6014] Unused sequential element M_correct_letter_1_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:533]
+WARNING: [Synth 8-6014] Unused sequential element M_correct_letter_2_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:534]
+WARNING: [Synth 8-6014] Unused sequential element M_correct_letter_3_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:535]
+WARNING: [Synth 8-6014] Unused sequential element M_correct_letter_4_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:536]
+WARNING: [Synth 8-6014] Unused sequential element M_input_i_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:537]
+WARNING: [Synth 8-6014] Unused sequential element M_correct_k_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:538]
+WARNING: [Synth 8-6014] Unused sequential element M_i_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:539]
+WARNING: [Synth 8-6014] Unused sequential element M_j_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:540]
+WARNING: [Synth 8-6014] Unused sequential element M_k_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:541]
+WARNING: [Synth 8-6014] Unused sequential element M_num_correct_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:543]
+WARNING: [Synth 8-6014] Unused sequential element M_zero_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:544]
+WARNING: [Synth 8-6014] Unused sequential element M_g_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:545]
+WARNING: [Synth 8-6014] Unused sequential element M_temp_guess_g_letter_i_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:546]
+WARNING: [Synth 8-6014] Unused sequential element M_temp_coloured_letter_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:547]
+WARNING: [Synth 8-6014] Unused sequential element M_word_index_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:548]
+WARNING: [Synth 8-3848] Net out_a in module/entity regfile_backup_4 does not have driver. [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:16]
+WARNING: [Synth 8-3848] Net out_b in module/entity regfile_backup_4 does not have driver. [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:17]
+INFO: [Synth 8-6155] done synthesizing module 'regfile_backup_4' (7#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:7]
+INFO: [Synth 8-6157] synthesizing module 'fsm_backup_5' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/fsm_backup_5.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'fsm_backup_5' (8#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/fsm_backup_5.v:7]
+INFO: [Synth 8-6157] synthesizing module 'buttons_controller_6' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/buttons_controller_6.v:7]
+INFO: [Synth 8-6157] synthesizing module 'button_12' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_12.v:7]
+INFO: [Synth 8-6157] synthesizing module 'button_conditioner_15' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_conditioner_15.v:13]
+INFO: [Synth 8-6157] synthesizing module 'pipeline_17' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/pipeline_17.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'pipeline_17' (9#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/pipeline_17.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'button_conditioner_15' (10#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_conditioner_15.v:13]
+INFO: [Synth 8-6157] synthesizing module 'edge_detector_16' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/edge_detector_16.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'edge_detector_16' (11#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/edge_detector_16.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'button_12' (12#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_12.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'buttons_controller_6' (13#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/buttons_controller_6.v:7]
+INFO: [Synth 8-6157] synthesizing module 'matrix_7' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/matrix_7.v:7]
+INFO: [Synth 8-6157] synthesizing module 'led_strip_writer_13' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/led_strip_writer_13.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'led_strip_writer_13' (14#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/led_strip_writer_13.v:11]
+INFO: [Synth 8-6157] synthesizing module 'white_alphabets_14' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/white_alphabets_14.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'white_alphabets_14' (15#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/white_alphabets_14.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'matrix_7' (16#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/matrix_7.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'game_beta_backup_2' (17#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_beta_backup_2.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'au_top_0' (18#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/au_top_0.v:7]
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[23] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[22] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[21] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[20] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[19] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[18] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[17] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[16] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[15] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[14] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[13] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[12] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[11] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[10] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[9] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[8] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[7] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[6] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[5] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[4] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[3] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[2] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[1] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[0] driven by constant 0
+WARNING: [Synth 8-7129] Port letter_address[6] in module matrix_7 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port letter_address[5] in module matrix_7 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module buttons_controller_6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[15] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[14] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[13] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[12] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[11] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[10] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[9] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[8] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[7] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[6] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[5] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[4] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[3] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[2] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[1] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[0] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[15] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[14] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[13] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[12] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[11] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[10] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[9] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[8] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[7] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[6] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[5] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[4] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[3] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[2] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[1] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[0] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[15] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[14] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[13] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[12] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[11] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[10] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[9] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[8] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[7] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[6] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[5] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[4] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[3] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[2] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[1] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[0] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port write_address[5] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port write_address[4] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port write_address[3] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port write_address[2] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port write_address[1] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port write_address[0] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port we in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[15] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[14] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[13] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[12] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[11] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[10] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[9] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[8] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[7] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[6] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[5] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[4] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[3] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[2] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[1] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[0] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port recall[3] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port recall[2] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port recall[1] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port recall[0] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_address_a[5] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_address_a[4] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_address_a[3] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_address_a[2] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_address_a[1] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_address_a[0] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_address_b[5] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_address_b[4] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_address_b[3] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_address_b[2] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_address_b[1] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_address_b[0] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b[15] in module shifter_11 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b[14] in module shifter_11 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b[13] in module shifter_11 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b[12] in module shifter_11 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b[11] in module shifter_11 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b[10] in module shifter_11 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b[9] in module shifter_11 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b[8] in module shifter_11 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b[7] in module shifter_11 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b[6] in module shifter_11 is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1000.664 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1247.996 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1000.664 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1247.996 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1000.664 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1247.996 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1000.664 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.109 . Memory (MB): peak = 1247.996 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/Bryce/Desktop/wordle/wordle4/work/constraint/alchitry.xdc]
-Finished Parsing XDC File [C:/Users/Bryce/Desktop/wordle/wordle4/work/constraint/alchitry.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Bryce/Desktop/wordle/wordle4/work/constraint/alchitry.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/au_top_0_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [.Xil/au_top_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [C:/Program Files/Alchitry/Alchitry Labs/library/components/au.xdc]
 Finished Parsing XDC File [C:/Program Files/Alchitry/Alchitry Labs/library/components/au.xdc]
+Parsing XDC File [C:/Users/james/Documents/GitHub/wordle/wordle4/work/constraint/alchitry.xdc]
+Finished Parsing XDC File [C:/Users/james/Documents/GitHub/wordle/wordle4/work/constraint/alchitry.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/james/Documents/GitHub/wordle/wordle4/work/constraint/alchitry.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/au_top_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/au_top_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1000.664 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1247.996 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1000.664 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1247.996 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1000.664 ; gain = 0.000
+Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1247.996 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tftg256-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1000.664 ; gain = 0.000
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1247.996 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1000.664 ; gain = 0.000
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1247.996 ; gain = 0.000
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-802] inferred FSM for state register 'M_game_fsm_q_reg' in module 'game_7'
+INFO: [Synth 8-802] inferred FSM for state register 'M_game_fsm_q_reg' in module 'fsm_backup_5'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-           IDLE_game_fsm |                               00 |                              000
-  UPDATE_MATRIX_game_fsm |                               01 |                              010
-      STORE_ONE_game_fsm |                               10 |                              011
-     STORE_ZERO_game_fsm |                               11 |                              100
+                 iSTATE2 |                            00000 |                          0000000
+                 iSTATE1 |                            00001 |                          0000001
+*
+           G1L1_game_fsm |                            00010 |                          0000010
+           G1L2_game_fsm |                            00011 |                          0000011
+           G1L3_game_fsm |                            00100 |                          0000100
+           G1L4_game_fsm |                            00101 |                          0000101
+  CHECKONE_L1C1_game_fsm |                            00110 |                          0000110
+  CHECKONE_L1C2_game_fsm |                            00111 |                          0000111
+  CHECKONE_L1C3_game_fsm |                            01000 |                          0001000
+  CHECKONE_L1C4_game_fsm |                            01001 |                          0001001
+  CHECKONE_L2C1_game_fsm |                            01010 |                          0001010
+  CHECKONE_L2C2_game_fsm |                            01011 |                          0001011
+  CHECKONE_L2C3_game_fsm |                            01100 |                          0001100
+  CHECKONE_L2C4_game_fsm |                            01101 |                          0001101
+  CHECKONE_L3C1_game_fsm |                            01110 |                          0001110
+  CHECKONE_L3C2_game_fsm |                            01111 |                          0001111
+  CHECKONE_L3C3_game_fsm |                            10000 |                          0010000
+  CHECKONE_L3C4_game_fsm |                            10001 |                          0010001
+  CHECKONE_L4C1_game_fsm |                            10010 |                          0010010
+  CHECKONE_L4C2_game_fsm |                            10011 |                          0010011
+  CHECKONE_L4C3_game_fsm |                            10100 |                          0010100
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'M_game_fsm_q_reg' using encoding 'sequential' in module 'game_7'
+INFO: [Synth 8-3354] encoded FSM with state register 'M_game_fsm_q_reg' using encoding 'sequential' in module 'fsm_backup_5'
+WARNING: [Synth 8-327] inferring latch for variable 'out_reg' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/buttons_controller_6.v:29]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1000.664 ; gain = 0.000
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 1247.996 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input    7 Bit       Adders := 1     
-	   2 Input    5 Bit       Adders := 2     
+	   3 Input   16 Bit       Adders := 1     
+	   2 Input    7 Bit       Adders := 8     
+	   2 Input    5 Bit       Adders := 16    
++---XORs : 
+	   2 Input     16 Bit         XORs := 2     
+	   2 Input      1 Bit         XORs := 1     
 +---Registers : 
-	                7 Bit    Registers := 33    
-	                5 Bit    Registers := 20    
+	                7 Bit    Registers := 9     
+	                5 Bit    Registers := 17    
 	                4 Bit    Registers := 1     
-	                3 Bit    Registers := 8     
-	                2 Bit    Registers := 6     
+	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 9     
 +---Muxes : 
-	   2 Input   24 Bit        Muxes := 1     
-	   2 Input    7 Bit        Muxes := 1     
-	   4 Input    5 Bit        Muxes := 4     
-	   2 Input    5 Bit        Muxes := 7     
-	   4 Input    2 Bit        Muxes := 3     
-	   2 Input    2 Bit        Muxes := 4     
-	   2 Input    1 Bit        Muxes := 25    
-	   4 Input    1 Bit        Muxes := 1     
-	  31 Input    1 Bit        Muxes := 60    
+	   2 Input   16 Bit        Muxes := 3     
+	   4 Input   16 Bit        Muxes := 3     
+	  20 Input    9 Bit        Muxes := 1     
+	   2 Input    9 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 8     
+	  20 Input    6 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 29    
+	  20 Input    5 Bit        Muxes := 4     
+	  20 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 125   
+	  20 Input    1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -237,22 +434,78 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-DSP Report: Generating DSP letters/out1, operation Mode is: (A:0x258)*B.
-DSP Report: operator letters/out1 is absorbed into DSP letters/out1.
-DSP Report: operator letters/out3 is absorbed into DSP letters/out1.
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP adder/add0, operation Mode is: A*B.
+DSP Report: operator adder/add0 is absorbed into DSP adder/add0.
+DSP Report: Generating DSP betaCPU/matrix_decoder1/white_letters/out1, operation Mode is: (A:0x258)*B.
+DSP Report: operator betaCPU/matrix_decoder1/white_letters/out1 is absorbed into DSP betaCPU/matrix_decoder1/white_letters/out1.
+DSP Report: operator betaCPU/matrix_decoder1/white_letters/out3 is absorbed into DSP betaCPU/matrix_decoder1/white_letters/out1.
+DSP Report: Generating DSP betaCPU/matrix_decoder2/white_letters/out1, operation Mode is: (A:0x258)*B.
+DSP Report: operator betaCPU/matrix_decoder2/white_letters/out1 is absorbed into DSP betaCPU/matrix_decoder2/white_letters/out1.
+DSP Report: operator betaCPU/matrix_decoder2/white_letters/out3 is absorbed into DSP betaCPU/matrix_decoder2/white_letters/out1.
+DSP Report: Generating DSP betaCPU/matrix_decoder3/white_letters/out1, operation Mode is: (A:0x258)*B.
+DSP Report: operator betaCPU/matrix_decoder3/white_letters/out1 is absorbed into DSP betaCPU/matrix_decoder3/white_letters/out1.
+DSP Report: operator betaCPU/matrix_decoder3/white_letters/out3 is absorbed into DSP betaCPU/matrix_decoder3/white_letters/out1.
+DSP Report: Generating DSP betaCPU/matrix_decoder4/white_letters/out1, operation Mode is: (A:0x258)*B.
+DSP Report: operator betaCPU/matrix_decoder4/white_letters/out1 is absorbed into DSP betaCPU/matrix_decoder4/white_letters/out1.
+DSP Report: operator betaCPU/matrix_decoder4/white_letters/out3 is absorbed into DSP betaCPU/matrix_decoder4/white_letters/out1.
+DSP Report: Generating DSP betaCPU/matrix_decoder5/white_letters/out1, operation Mode is: (A:0x258)*B.
+DSP Report: operator betaCPU/matrix_decoder5/white_letters/out1 is absorbed into DSP betaCPU/matrix_decoder5/white_letters/out1.
+DSP Report: operator betaCPU/matrix_decoder5/white_letters/out3 is absorbed into DSP betaCPU/matrix_decoder5/white_letters/out1.
+DSP Report: Generating DSP betaCPU/matrix_decoder6/white_letters/out1, operation Mode is: (A:0x258)*B.
+DSP Report: operator betaCPU/matrix_decoder6/white_letters/out1 is absorbed into DSP betaCPU/matrix_decoder6/white_letters/out1.
+DSP Report: operator betaCPU/matrix_decoder6/white_letters/out3 is absorbed into DSP betaCPU/matrix_decoder6/white_letters/out1.
+DSP Report: Generating DSP betaCPU/matrix_decoder7/white_letters/out1, operation Mode is: (A:0x258)*B.
+DSP Report: operator betaCPU/matrix_decoder7/white_letters/out1 is absorbed into DSP betaCPU/matrix_decoder7/white_letters/out1.
+DSP Report: operator betaCPU/matrix_decoder7/white_letters/out3 is absorbed into DSP betaCPU/matrix_decoder7/white_letters/out1.
+DSP Report: Generating DSP betaCPU/matrix_decoder8/white_letters/out1, operation Mode is: (A:0x258)*B.
+DSP Report: operator betaCPU/matrix_decoder8/white_letters/out1 is absorbed into DSP betaCPU/matrix_decoder8/white_letters/out1.
+DSP Report: operator betaCPU/matrix_decoder8/white_letters/out3 is absorbed into DSP betaCPU/matrix_decoder8/white_letters/out1.
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[23] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[22] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[21] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[20] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[19] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[18] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[17] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[16] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[15] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[14] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[13] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[12] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[11] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[10] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[9] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[8] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[7] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[6] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[5] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[4] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[3] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[2] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[1] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[0] driven by constant 0
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:40 ; elapsed = 00:01:41 . Memory (MB): peak = 1000.664 ; gain = 0.000
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:38 ; elapsed = 00:02:38 . Memory (MB): peak = 1252.508 ; gain = 4.512
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 
-DSP: Preliminary Mapping	Report (see note below)
-+------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name       | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|white_alphabets_6 | (A:0x258)*B | 5      | 10     | -      | -      | 11     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-+------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++-------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name        | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|adder_8            | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|white_alphabets_14 | (A:0x258)*B | 5      | 10     | -      | -      | 11     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|white_alphabets_14 | (A:0x258)*B | 5      | 10     | -      | -      | 11     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|white_alphabets_14 | (A:0x258)*B | 5      | 10     | -      | -      | 11     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|white_alphabets_14 | (A:0x258)*B | 5      | 10     | -      | -      | 11     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|white_alphabets_14 | (A:0x258)*B | 5      | 10     | -      | -      | 11     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|white_alphabets_14 | (A:0x258)*B | 5      | 10     | -      | -      | 11     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|white_alphabets_14 | (A:0x258)*B | 5      | 10     | -      | -      | 11     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|white_alphabets_14 | (A:0x258)*B | 5      | 10     | -      | -      | 11     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++-------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
 ---------------------------------------------------------------------------------
@@ -262,19 +515,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:49 ; elapsed = 00:01:50 . Memory (MB): peak = 1001.586 ; gain = 0.922
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:50 ; elapsed = 00:02:51 . Memory (MB): peak = 1252.508 ; gain = 4.512
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:51 ; elapsed = 00:01:51 . Memory (MB): peak = 1050.754 ; gain = 50.090
+Finished Timing Optimization : Time (s): cpu = 00:02:53 ; elapsed = 00:02:54 . Memory (MB): peak = 1277.184 ; gain = 29.188
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:51 ; elapsed = 00:01:52 . Memory (MB): peak = 1060.055 ; gain = 59.391
+Finished Technology Mapping : Time (s): cpu = 00:02:54 ; elapsed = 00:02:54 . Memory (MB): peak = 1282.145 ; gain = 34.148
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -292,37 +545,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:54 ; elapsed = 00:01:55 . Memory (MB): peak = 1060.055 ; gain = 59.391
+Finished IO Insertion : Time (s): cpu = 00:03:00 ; elapsed = 00:03:01 . Memory (MB): peak = 1284.969 ; gain = 36.973
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:54 ; elapsed = 00:01:55 . Memory (MB): peak = 1060.055 ; gain = 59.391
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:00 ; elapsed = 00:03:01 . Memory (MB): peak = 1284.969 ; gain = 36.973
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:54 ; elapsed = 00:01:55 . Memory (MB): peak = 1060.055 ; gain = 59.391
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:01 ; elapsed = 00:03:01 . Memory (MB): peak = 1284.969 ; gain = 36.973
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:54 ; elapsed = 00:01:55 . Memory (MB): peak = 1060.055 ; gain = 59.391
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:01 ; elapsed = 00:03:01 . Memory (MB): peak = 1284.969 ; gain = 36.973
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:54 ; elapsed = 00:01:55 . Memory (MB): peak = 1060.055 ; gain = 59.391
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:01 ; elapsed = 00:03:01 . Memory (MB): peak = 1284.969 ; gain = 36.973
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:54 ; elapsed = 00:01:55 . Memory (MB): peak = 1060.055 ; gain = 59.391
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:01 ; elapsed = 00:03:01 . Memory (MB): peak = 1284.969 ; gain = 36.973
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -339,51 +592,52 @@ Report Cell Usage:
 |      |Cell    |Count |
 +------+--------+------+
 |1     |BUFG    |     1|
-|2     |CARRY4  |    19|
-|3     |DSP48E1 |     1|
-|4     |LUT1    |    12|
-|5     |LUT2    |    17|
-|6     |LUT3    |    19|
-|7     |LUT4    |   184|
-|8     |LUT5    |   216|
-|9     |LUT6    |   223|
-|10    |MUXF7   |   152|
-|11    |MUXF8   |    57|
-|12    |FDRE    |   113|
+|2     |CARRY4  |     8|
+|3     |DSP48E1 |     2|
+|4     |LUT1    |     5|
+|5     |LUT2    |    16|
+|6     |LUT3    |    34|
+|7     |LUT4    |   350|
+|8     |LUT5    |   416|
+|9     |LUT6    |   436|
+|10    |MUXF7   |   304|
+|11    |MUXF8   |   114|
+|12    |FDRE    |    68|
 |13    |FDSE    |     4|
-|14    |IBUF    |     6|
-|15    |OBUF    |    26|
+|14    |IBUF    |     3|
+|15    |OBUF    |    27|
 +------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:54 ; elapsed = 00:01:55 . Memory (MB): peak = 1060.055 ; gain = 59.391
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:01 ; elapsed = 00:03:01 . Memory (MB): peak = 1284.969 ; gain = 36.973
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:47 ; elapsed = 00:01:53 . Memory (MB): peak = 1060.055 ; gain = 59.391
-Synthesis Optimization Complete : Time (s): cpu = 00:01:54 ; elapsed = 00:01:55 . Memory (MB): peak = 1060.055 ; gain = 59.391
+Synthesis finished with 0 errors, 0 critical warnings and 26 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:47 ; elapsed = 00:02:58 . Memory (MB): peak = 1284.969 ; gain = 36.973
+Synthesis Optimization Complete : Time (s): cpu = 00:03:01 ; elapsed = 00:03:02 . Memory (MB): peak = 1284.969 ; gain = 36.973
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1071.922 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 229 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1288.492 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 428 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1071.922 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1292.172 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
+Synth Design complete, checksum: 8983ca1d
 INFO: [Common 17-83] Releasing license: Synthesis
-42 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+57 Infos, 167 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:59 ; elapsed = 00:02:01 . Memory (MB): peak = 1071.922 ; gain = 71.258
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/synth_1/au_top_0.dcp' has been generated.
+synth_design: Time (s): cpu = 00:03:06 ; elapsed = 00:03:08 . Memory (MB): peak = 1292.172 ; gain = 44.176
+INFO: [Common 17-1381] The checkpoint 'C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.runs/synth_1/au_top_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file au_top_0_utilization_synth.rpt -pb au_top_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Apr 12 15:09:47 2022...
-[Tue Apr 12 15:09:52 2022] synth_1 finished
-wait_on_run: Time (s): cpu = 00:00:00 ; elapsed = 00:02:11 . Memory (MB): peak = 1000.551 ; gain = 0.000
-# launch_runs impl_1 -to_step write_bitstream -jobs 12
-[Tue Apr 12 15:09:52 2022] Launched impl_1...
-Run output will be captured here: C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/runme.log
+INFO: [Common 17-206] Exiting Vivado at Fri Apr 15 01:12:56 2022...
+[Fri Apr 15 01:12:57 2022] synth_1 finished
+wait_on_runs: Time (s): cpu = 00:00:00 ; elapsed = 00:03:21 . Memory (MB): peak = 1247.738 ; gain = 0.000
+# launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Fri Apr 15 01:12:58 2022] Launched impl_1...
+Run output will be captured here: C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/runme.log
 # wait_on_run impl_1
-[Tue Apr 12 15:09:52 2022] Waiting for impl_1 to finish...
+[Fri Apr 15 01:12:58 2022] Waiting for impl_1 to finish...
 
 
 *** Running vivado
@@ -391,33 +645,33 @@ Run output will be captured here: C:/Users/Bryce/Desktop/wordle/wordle4/work/viv
 
 
 
-****** Vivado v2020.2 (64-bit)
-  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
-  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+****** Vivado v2021.2 (64-bit)
+  **** SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+  **** IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 
 source au_top_0.tcl -notrace
 Command: link_design -top au_top_0 -part xc7a35tftg256-1
 Design is defaulting to srcset: sources_1
 Design is defaulting to constrset: constrs_1
 INFO: [Device 21-403] Loading part xc7a35tftg256-1
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1000.250 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 229 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1247.379 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 428 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-INFO: [Project 1-479] Netlist was created with Vivado 2020.2
+INFO: [Project 1-479] Netlist was created with Vivado 2021.2
 INFO: [Project 1-570] Preparing netlist for logic optimization
-Parsing XDC File [C:/Users/Bryce/Desktop/wordle/wordle4/work/constraint/alchitry.xdc]
-Finished Parsing XDC File [C:/Users/Bryce/Desktop/wordle/wordle4/work/constraint/alchitry.xdc]
 Parsing XDC File [C:/Program Files/Alchitry/Alchitry Labs/library/components/au.xdc]
 Finished Parsing XDC File [C:/Program Files/Alchitry/Alchitry Labs/library/components/au.xdc]
+Parsing XDC File [C:/Users/james/Documents/GitHub/wordle/wordle4/work/constraint/alchitry.xdc]
+Finished Parsing XDC File [C:/Users/james/Documents/GitHub/wordle/wordle4/work/constraint/alchitry.xdc]
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1000.250 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1247.379 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 7 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 link_design completed successfully
-link_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1000.250 ; gain = 0.000
+link_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1247.379 ; gain = 0.000
 Command: opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
@@ -428,54 +682,54 @@ INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Project 1-461] DRC finished with 0 Errors
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.919 . Memory (MB): peak = 1000.250 ; gain = 0.000
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1247.379 ; gain = 0.000
 
 Starting Cache Timing Information Task
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-Ending Cache Timing Information Task | Checksum: 23c2dc7f6
+Ending Cache Timing Information Task | Checksum: 1671af36a
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1164.922 ; gain = 164.672
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1335.508 ; gain = 88.129
 
 Starting Logic Optimization Task
 
 Phase 1 Retarget
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Opt 31-49] Retargeted 0 cell(s).
-Phase 1 Retarget | Checksum: 23c2dc7f6
+Phase 1 Retarget | Checksum: 1671af36a
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 1373.805 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.060 . Memory (MB): peak = 1613.797 ; gain = 0.000
 INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
 
 Phase 2 Constant propagation
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Phase 2 Constant propagation | Checksum: 23c2dc7f6
+Phase 2 Constant propagation | Checksum: 1671af36a
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.038 . Memory (MB): peak = 1373.805 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.075 . Memory (MB): peak = 1613.797 ; gain = 0.000
 INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
 
 Phase 3 Sweep
-Phase 3 Sweep | Checksum: 1a9ea5c9d
+Phase 3 Sweep | Checksum: 145d40fb0
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.045 . Memory (MB): peak = 1373.805 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.089 . Memory (MB): peak = 1613.797 ; gain = 0.000
 INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
 
 Phase 4 BUFG optimization
-Phase 4 BUFG optimization | Checksum: 1a9ea5c9d
+Phase 4 BUFG optimization | Checksum: 145d40fb0
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.062 . Memory (MB): peak = 1373.805 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.132 . Memory (MB): peak = 1613.797 ; gain = 0.000
 INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
 
 Phase 5 Shift Register Optimization
 INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
-Phase 5 Shift Register Optimization | Checksum: 1a9ea5c9d
+Phase 5 Shift Register Optimization | Checksum: 145d40fb0
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.064 . Memory (MB): peak = 1373.805 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.136 . Memory (MB): peak = 1613.797 ; gain = 0.000
 INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
 
 Phase 6 Post Processing Netlist
-Phase 6 Post Processing Netlist | Checksum: 1a9ea5c9d
+Phase 6 Post Processing Netlist | Checksum: 145d40fb0
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.066 . Memory (MB): peak = 1373.805 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.141 . Memory (MB): peak = 1613.797 ; gain = 0.000
 INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
 Opt_design Change Summary
 =========================
@@ -496,46 +750,46 @@ Opt_design Change Summary
 
 Starting Connectivity Check Task
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1373.805 ; gain = 0.000
-Ending Logic Optimization Task | Checksum: 26e3ed8d8
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1613.797 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 1ee48d891
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.078 . Memory (MB): peak = 1373.805 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.154 . Memory (MB): peak = 1613.797 ; gain = 0.000
 
 Starting Power Optimization Task
 INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
-Ending Power Optimization Task | Checksum: 26e3ed8d8
+Ending Power Optimization Task | Checksum: 1ee48d891
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1377.508 ; gain = 3.703
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1613.797 ; gain = 0.000
 
 Starting Final Cleanup Task
-Ending Final Cleanup Task | Checksum: 26e3ed8d8
+Ending Final Cleanup Task | Checksum: 1ee48d891
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1377.508 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1613.797 ; gain = 0.000
 
 Starting Netlist Obfuscation Task
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1377.508 ; gain = 0.000
-Ending Netlist Obfuscation Task | Checksum: 26e3ed8d8
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1613.797 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 1ee48d891
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1377.508 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1613.797 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
 24 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 opt_design completed successfully
-opt_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1377.508 ; gain = 377.258
+opt_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1613.797 ; gain = 366.418
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 1377.676 ; gain = 0.168
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/au_top_0_opt.dcp' has been generated.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.065 . Memory (MB): peak = 1613.797 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/au_top_0_opt.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_drc -file au_top_0_drc_opted.rpt -pb au_top_0_drc_opted.pb -rpx au_top_0_drc_opted.rpx
 Command: report_drc -file au_top_0_drc_opted.rpt -pb au_top_0_drc_opted.pb -rpx au_top_0_drc_opted.rpx
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2021.2/data/ip'.
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [DRC 23-27] Running DRC with 2 threads
-INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/au_top_0_drc_opted.rpt.
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/au_top_0_drc_opted.rpt.
 report_drc completed successfully
 Command: place_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
@@ -554,48 +808,53 @@ INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 
 Phase 1 Placer Initialization
 
 Phase 1.1 Placer Initialization Netlist Sorting
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1417.910 ; gain = 0.000
-Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 18d26ed99
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1653.863 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 18a9f2a91
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1417.910 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1417.910 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1653.863 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1653.863 ; gain = 0.000
 
 Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
-Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: cbe4233e
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 10e4cdff1
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.246 . Memory (MB): peak = 1417.910 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.334 . Memory (MB): peak = 1653.863 ; gain = 0.000
 
 Phase 1.3 Build Placer Netlist Model
-Phase 1.3 Build Placer Netlist Model | Checksum: f2c5757a
+Phase 1.3 Build Placer Netlist Model | Checksum: 1b0cf1d28
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.404 . Memory (MB): peak = 1417.910 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.597 . Memory (MB): peak = 1653.863 ; gain = 0.000
 
 Phase 1.4 Constrain Clocks/Macros
-Phase 1.4 Constrain Clocks/Macros | Checksum: f2c5757a
+Phase 1.4 Constrain Clocks/Macros | Checksum: 1b0cf1d28
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.406 . Memory (MB): peak = 1417.910 ; gain = 0.000
-Phase 1 Placer Initialization | Checksum: f2c5757a
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.603 . Memory (MB): peak = 1653.863 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 1b0cf1d28
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.409 . Memory (MB): peak = 1417.910 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.610 . Memory (MB): peak = 1653.863 ; gain = 0.000
 
 Phase 2 Global Placement
 
 Phase 2.1 Floorplanning
-Phase 2.1 Floorplanning | Checksum: 123c259bf
+Phase 2.1 Floorplanning | Checksum: 13792799c
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.490 . Memory (MB): peak = 1417.910 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.747 . Memory (MB): peak = 1653.863 ; gain = 0.000
 
 Phase 2.2 Update Timing before SLR Path Opt
-Phase 2.2 Update Timing before SLR Path Opt | Checksum: d800cb51
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 16287525a
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.535 . Memory (MB): peak = 1417.910 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.816 . Memory (MB): peak = 1653.863 ; gain = 0.000
 
-Phase 2.3 Global Placement Core
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 16287525a
 
-Phase 2.3.1 Physical Synthesis In Placer
-INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 17 LUT instances to create LUTNM shape
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.823 . Memory (MB): peak = 1653.863 ; gain = 0.000
+
+Phase 2.4 Global Placement Core
+
+Phase 2.4.1 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 25 LUT instances to create LUTNM shape
 INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 0, total 0, new lutff created 0
-INFO: [Physopt 32-775] End 1 Pass. Optimized 6 nets or cells. Created 0 new cell, deleted 6 existing cells and moved 0 existing cell
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 8 nets or LUTs. Breaked 0 LUT, combined 8 existing LUTs and moved 0 existing LUT
 INFO: [Physopt 32-65] No nets found for high-fanout optimization.
 INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
@@ -606,7 +865,7 @@ INFO: [Physopt 32-670] No setup violation found.  BRAM Register Optimization was
 INFO: [Physopt 32-670] No setup violation found.  URAM Register Optimization was not performed.
 INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1417.910 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1653.863 ; gain = 0.000
 
 Summary of Physical Synthesis Optimizations
 ============================================
@@ -615,7 +874,8 @@ Summary of Physical Synthesis Optimizations
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 |  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
-|  LUT Combining                                    |            0  |              6  |                     6  |           0  |           1  |  00:00:00  |
+|  LUT Combining                                    |            0  |              8  |                     8  |           0  |           1  |  00:00:00  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  DSP Register                                     |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
 |  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
@@ -623,59 +883,59 @@ Summary of Physical Synthesis Optimizations
 |  BRAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
 |  URAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
 |  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
-|  Total                                            |            0  |              6  |                     6  |           0  |           3  |  00:00:00  |
+|  Total                                            |            0  |              8  |                     8  |           0  |           4  |  00:00:00  |
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-Phase 2.3.1 Physical Synthesis In Placer | Checksum: bec3ff73
+Phase 2.4.1 Physical Synthesis In Placer | Checksum: 1c8a8c14f
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 1417.910 ; gain = 0.000
-Phase 2.3 Global Placement Core | Checksum: 10b80b451
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 1653.863 ; gain = 0.000
+Phase 2.4 Global Placement Core | Checksum: 1c0c25475
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 1417.910 ; gain = 0.000
-Phase 2 Global Placement | Checksum: 10b80b451
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 1653.863 ; gain = 0.000
+Phase 2 Global Placement | Checksum: 1c0c25475
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 1417.910 ; gain = 0.000
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 1653.863 ; gain = 0.000
 
 Phase 3 Detail Placement
 
 Phase 3.1 Commit Multi Column Macros
-Phase 3.1 Commit Multi Column Macros | Checksum: 11df0f046
+Phase 3.1 Commit Multi Column Macros | Checksum: 158c1b6dd
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 1417.910 ; gain = 0.000
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 1653.863 ; gain = 0.000
 
 Phase 3.2 Commit Most Macros & LUTRAMs
-Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 5797c3f8
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 1fb7adfdf
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 1417.910 ; gain = 0.000
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 1653.863 ; gain = 0.000
 
 Phase 3.3 Area Swap Optimization
-Phase 3.3 Area Swap Optimization | Checksum: 5f5c661e
+Phase 3.3 Area Swap Optimization | Checksum: 17862bcb0
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 1417.910 ; gain = 0.000
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 1653.863 ; gain = 0.000
 
 Phase 3.4 Pipeline Register Optimization
-Phase 3.4 Pipeline Register Optimization | Checksum: 4c9c2cdf
+Phase 3.4 Pipeline Register Optimization | Checksum: 19430ca29
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 1417.910 ; gain = 0.000
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 1653.863 ; gain = 0.000
 
 Phase 3.5 Small Shape Detail Placement
-Phase 3.5 Small Shape Detail Placement | Checksum: 163440a09
+Phase 3.5 Small Shape Detail Placement | Checksum: 83ab5b28
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1417.910 ; gain = 0.000
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 1653.863 ; gain = 0.000
 
 Phase 3.6 Re-assign LUT pins
-Phase 3.6 Re-assign LUT pins | Checksum: 1ae6c7a1e
+Phase 3.6 Re-assign LUT pins | Checksum: b6e1c3a2
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1417.910 ; gain = 0.000
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 1653.863 ; gain = 0.000
 
 Phase 3.7 Pipeline Register Optimization
-Phase 3.7 Pipeline Register Optimization | Checksum: 18c809261
+Phase 3.7 Pipeline Register Optimization | Checksum: 1fa532bca
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1417.910 ; gain = 0.000
-Phase 3 Detail Placement | Checksum: 18c809261
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 1653.863 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 1fa532bca
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1417.910 ; gain = 0.000
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 1653.863 ; gain = 0.000
 
 Phase 4 Post Placement Optimization and Clean-Up
 
@@ -683,7 +943,7 @@ Phase 4.1 Post Commit Optimization
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 
 Phase 4.1.1 Post Placement Optimization
-Post Placement Optimization Initialization | Checksum: 11443fbb6
+Post Placement Optimization Initialization | Checksum: 158fce717
 
 Phase 4.1.1.1 BUFG Insertion
 
@@ -691,28 +951,33 @@ Starting Physical Synthesis Task
 
 Phase 1 Physical Synthesis Initialization
 INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=5.128 | TNS=0.000 |
-Phase 1 Physical Synthesis Initialization | Checksum: 148657480
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=5.158 | TNS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: 1256512f9
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 1417.910 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1653.863 ; gain = 0.000
 INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
-Ending Physical Synthesis Task | Checksum: 1c1b9eb8d
+Ending Physical Synthesis Task | Checksum: 13f055e6c
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1417.910 ; gain = 0.000
-Phase 4.1.1.1 BUFG Insertion | Checksum: 11443fbb6
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.031 . Memory (MB): peak = 1653.863 ; gain = 0.000
+Phase 4.1.1.1 BUFG Insertion | Checksum: 158fce717
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 1417.910 ; gain = 0.000
-INFO: [Place 30-746] Post Placement Timing Summary WNS=5.128. For the most accurate timing information please run report_timing.
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 1653.863 ; gain = 0.000
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 1417.910 ; gain = 0.000
-Phase 4.1 Post Commit Optimization | Checksum: 12dc9957d
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=5.158. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 1412af21e
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 1417.910 ; gain = 0.000
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 1653.863 ; gain = 0.000
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 1653.863 ; gain = 0.000
+Phase 4.1 Post Commit Optimization | Checksum: 1412af21e
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 1653.863 ; gain = 0.000
 
 Phase 4.2 Post Placement Cleanup
-Phase 4.2 Post Placement Cleanup | Checksum: 12dc9957d
+Phase 4.2 Post Placement Cleanup | Checksum: 1412af21e
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 1417.910 ; gain = 0.000
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 1653.863 ; gain = 0.000
 
 Phase 4.3 Placer Reporting
 
@@ -731,38 +996,39 @@ INFO: [Place 30-612] Post-Placement Estimated Congestion
 |       West|                1x1|                1x1|
 |___________|___________________|___________________|
 
-Phase 4.3.1 Print Estimated Congestion | Checksum: 12dc9957d
+Phase 4.3.1 Print Estimated Congestion | Checksum: 1412af21e
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 1417.910 ; gain = 0.000
-Phase 4.3 Placer Reporting | Checksum: 12dc9957d
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 1653.863 ; gain = 0.000
+Phase 4.3 Placer Reporting | Checksum: 1412af21e
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 1417.910 ; gain = 0.000
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 1653.863 ; gain = 0.000
 
 Phase 4.4 Final Placement Cleanup
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1417.910 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1653.863 ; gain = 0.000
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 1417.910 ; gain = 0.000
-Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1f4e55bd7
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 1653.863 ; gain = 0.000
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 17edb2a66
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 1417.910 ; gain = 0.000
-Ending Placer Task | Checksum: 1a7bdc6a8
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 1653.863 ; gain = 0.000
+Ending Placer Task | Checksum: 1190be8b4
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 1417.910 ; gain = 0.000
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 1653.863 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
 61 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 place_design completed successfully
+place_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 1653.863 ; gain = 2.969
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.097 . Memory (MB): peak = 1417.910 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/au_top_0_placed.dcp' has been generated.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.254 . Memory (MB): peak = 1653.863 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/au_top_0_placed.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_io -file au_top_0_io_placed.rpt
-report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1417.910 ; gain = 0.000
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.057 . Memory (MB): peak = 1653.863 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_utilization -file au_top_0_utilization_placed.rpt -pb au_top_0_utilization_placed.pb
 INFO: [runtcl-4] Executing : report_control_sets -verbose -file au_top_0_control_sets_placed.rpt
-report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1417.910 ; gain = 0.000
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1653.863 ; gain = 0.000
 Command: phys_opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
@@ -776,8 +1042,8 @@ Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.103 . Memory (MB): peak = 1417.910 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/au_top_0_physopt.dcp' has been generated.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.514 . Memory (MB): peak = 1655.059 ; gain = 1.195
+INFO: [Common 17-1381] The checkpoint 'C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/au_top_0_physopt.dcp' has been generated.
 Command: route_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
@@ -789,41 +1055,38 @@ INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more in
 
 Starting Routing Task
 INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
-Checksum: PlaceDB: acf67275 ConstDB: 0 ShapeSum: fac75433 RouteDB: 0
 
 Phase 1 Build RT Design
-Phase 1 Build RT Design | Checksum: 12310e1e8
+Checksum: PlaceDB: 9741821e ConstDB: 0 ShapeSum: 81ca6696 RouteDB: 0
+Post Restoration Checksum: NetGraph: 2b33257 NumContArr: e2839a1a Constraints: 0 Timing: 0
+Phase 1 Build RT Design | Checksum: e536cc71
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 1517.273 ; gain = 88.141
-Post Restoration Checksum: NetGraph: 3a995b37 NumContArr: e87786b1 Constraints: 0 Timing: 0
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:23 . Memory (MB): peak = 1747.793 ; gain = 80.711
 
 Phase 2 Router Initialization
 
 Phase 2.1 Create Timer
-Phase 2.1 Create Timer | Checksum: 12310e1e8
+Phase 2.1 Create Timer | Checksum: e536cc71
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 1517.273 ; gain = 88.141
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:23 . Memory (MB): peak = 1747.805 ; gain = 80.723
 
 Phase 2.2 Fix Topology Constraints
-Phase 2.2 Fix Topology Constraints | Checksum: 12310e1e8
+Phase 2.2 Fix Topology Constraints | Checksum: e536cc71
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 1523.297 ; gain = 94.164
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:23 . Memory (MB): peak = 1753.820 ; gain = 86.738
 
 Phase 2.3 Pre Route Cleanup
-Phase 2.3 Pre Route Cleanup | Checksum: 12310e1e8
+Phase 2.3 Pre Route Cleanup | Checksum: e536cc71
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 1523.297 ; gain = 94.164
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:23 . Memory (MB): peak = 1753.820 ; gain = 86.738
  Number of Nodes with overlaps = 0
 
 Phase 2.4 Update Timing
-Phase 2.4 Update Timing | Checksum: 19f6511a0
+Phase 2.4 Update Timing | Checksum: 12a224bd8
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 1528.977 ; gain = 99.844
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.159  | TNS=0.000  | WHS=-0.075 | THS=-1.515 |
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:23 . Memory (MB): peak = 1759.473 ; gain = 92.391
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.165  | TNS=0.000  | WHS=-0.086 | THS=-1.246 |
 
-Phase 2 Router Initialization | Checksum: 1b3313c68
-
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 1530.711 ; gain = 101.578
 
 Router Utilization Summary
   Global Vertical Routing Utilization    = 0 %
@@ -831,83 +1094,86 @@ Router Utilization Summary
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
-  Number of Failed Nets               = 578
+  Number of Failed Nets               = 903
     (Failed Nets is the sum of unrouted and partially routed nets)
-  Number of Unrouted Nets             = 578
+  Number of Unrouted Nets             = 903
   Number of Partially Routed Nets     = 0
   Number of Node Overlaps             = 0
 
+Phase 2 Router Initialization | Checksum: 13a880ed6
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:24 . Memory (MB): peak = 1770.711 ; gain = 103.629
 
 Phase 3 Initial Routing
 
 Phase 3.1 Global Routing
-Phase 3.1 Global Routing | Checksum: 1b3313c68
+Phase 3.1 Global Routing | Checksum: 13a880ed6
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 1534.738 ; gain = 105.605
-Phase 3 Initial Routing | Checksum: 25c0d2515
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:24 . Memory (MB): peak = 1770.711 ; gain = 103.629
+Phase 3 Initial Routing | Checksum: 153124dc3
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 1534.738 ; gain = 105.605
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:24 . Memory (MB): peak = 1770.711 ; gain = 103.629
 
 Phase 4 Rip-up And Reroute
 
 Phase 4.1 Global Iteration 0
- Number of Nodes with overlaps = 52
+ Number of Nodes with overlaps = 95
  Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.029  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.535  | TNS=0.000  | WHS=N/A    | THS=N/A    |
 
-Phase 4.1 Global Iteration 0 | Checksum: 210ab7ad9
+Phase 4.1 Global Iteration 0 | Checksum: 1a63a585d
 
-Time (s): cpu = 00:00:18 ; elapsed = 00:00:15 . Memory (MB): peak = 1534.738 ; gain = 105.605
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:24 . Memory (MB): peak = 1770.711 ; gain = 103.629
 
 Phase 4.2 Global Iteration 1
- Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 1
  Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.029  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.535  | TNS=0.000  | WHS=N/A    | THS=N/A    |
 
-Phase 4.2 Global Iteration 1 | Checksum: 1ed09559c
+Phase 4.2 Global Iteration 1 | Checksum: 218bfcb6a
 
-Time (s): cpu = 00:00:18 ; elapsed = 00:00:15 . Memory (MB): peak = 1534.738 ; gain = 105.605
-Phase 4 Rip-up And Reroute | Checksum: 1ed09559c
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:24 . Memory (MB): peak = 1770.711 ; gain = 103.629
+Phase 4 Rip-up And Reroute | Checksum: 218bfcb6a
 
-Time (s): cpu = 00:00:18 ; elapsed = 00:00:15 . Memory (MB): peak = 1534.738 ; gain = 105.605
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:25 . Memory (MB): peak = 1770.711 ; gain = 103.629
 
 Phase 5 Delay and Skew Optimization
 
 Phase 5.1 Delay CleanUp
-Phase 5.1 Delay CleanUp | Checksum: 1ed09559c
+Phase 5.1 Delay CleanUp | Checksum: 218bfcb6a
 
-Time (s): cpu = 00:00:18 ; elapsed = 00:00:15 . Memory (MB): peak = 1534.738 ; gain = 105.605
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:25 . Memory (MB): peak = 1770.711 ; gain = 103.629
 
 Phase 5.2 Clock Skew Optimization
-Phase 5.2 Clock Skew Optimization | Checksum: 1ed09559c
+Phase 5.2 Clock Skew Optimization | Checksum: 218bfcb6a
 
-Time (s): cpu = 00:00:18 ; elapsed = 00:00:15 . Memory (MB): peak = 1534.738 ; gain = 105.605
-Phase 5 Delay and Skew Optimization | Checksum: 1ed09559c
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:25 . Memory (MB): peak = 1770.711 ; gain = 103.629
+Phase 5 Delay and Skew Optimization | Checksum: 218bfcb6a
 
-Time (s): cpu = 00:00:18 ; elapsed = 00:00:15 . Memory (MB): peak = 1534.738 ; gain = 105.605
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:25 . Memory (MB): peak = 1770.711 ; gain = 103.629
 
 Phase 6 Post Hold Fix
 
 Phase 6.1 Hold Fix Iter
 
 Phase 6.1.1 Update Timing
-Phase 6.1.1 Update Timing | Checksum: 133908acc
+Phase 6.1.1 Update Timing | Checksum: 24592e839
 
-Time (s): cpu = 00:00:18 ; elapsed = 00:00:16 . Memory (MB): peak = 1534.738 ; gain = 105.605
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.109  | TNS=0.000  | WHS=0.212  | THS=0.000  |
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:25 . Memory (MB): peak = 1770.711 ; gain = 103.629
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.629  | TNS=0.000  | WHS=0.211  | THS=0.000  |
 
-Phase 6.1 Hold Fix Iter | Checksum: 1944f09d5
+Phase 6.1 Hold Fix Iter | Checksum: 20017642f
 
-Time (s): cpu = 00:00:18 ; elapsed = 00:00:16 . Memory (MB): peak = 1534.738 ; gain = 105.605
-Phase 6 Post Hold Fix | Checksum: 1944f09d5
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:25 . Memory (MB): peak = 1770.711 ; gain = 103.629
+Phase 6 Post Hold Fix | Checksum: 20017642f
 
-Time (s): cpu = 00:00:18 ; elapsed = 00:00:16 . Memory (MB): peak = 1534.738 ; gain = 105.605
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:25 . Memory (MB): peak = 1770.711 ; gain = 103.629
 
 Phase 7 Route finalize
 
 Router Utilization Summary
-  Global Vertical Routing Utilization    = 0.207287 %
-  Global Horizontal Routing Utilization  = 0.220718 %
+  Global Vertical Routing Utilization    = 0.311488 %
+  Global Horizontal Routing Utilization  = 0.387168 %
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
@@ -917,56 +1183,56 @@ Router Utilization Summary
   Number of Partially Routed Nets     = 0
   Number of Node Overlaps             = 0
 
-Phase 7 Route finalize | Checksum: 1508c0295
+Phase 7 Route finalize | Checksum: 2700f0e09
 
-Time (s): cpu = 00:00:18 ; elapsed = 00:00:16 . Memory (MB): peak = 1534.738 ; gain = 105.605
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:25 . Memory (MB): peak = 1770.711 ; gain = 103.629
 
 Phase 8 Verifying routed nets
 
  Verification completed successfully
-Phase 8 Verifying routed nets | Checksum: 1508c0295
+Phase 8 Verifying routed nets | Checksum: 2700f0e09
 
-Time (s): cpu = 00:00:18 ; elapsed = 00:00:16 . Memory (MB): peak = 1535.395 ; gain = 106.262
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:25 . Memory (MB): peak = 1771.414 ; gain = 104.332
 
 Phase 9 Depositing Routes
-Phase 9 Depositing Routes | Checksum: 130c7736b
+Phase 9 Depositing Routes | Checksum: 237c08ee3
 
-Time (s): cpu = 00:00:18 ; elapsed = 00:00:16 . Memory (MB): peak = 1535.395 ; gain = 106.262
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:25 . Memory (MB): peak = 1771.414 ; gain = 104.332
 
 Phase 10 Post Router Timing
-INFO: [Route 35-57] Estimated Timing Summary | WNS=5.109  | TNS=0.000  | WHS=0.212  | THS=0.000  |
+INFO: [Route 35-57] Estimated Timing Summary | WNS=5.629  | TNS=0.000  | WHS=0.211  | THS=0.000  |
 
 INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
-Phase 10 Post Router Timing | Checksum: 130c7736b
+Phase 10 Post Router Timing | Checksum: 237c08ee3
 
-Time (s): cpu = 00:00:18 ; elapsed = 00:00:16 . Memory (MB): peak = 1535.395 ; gain = 106.262
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:25 . Memory (MB): peak = 1771.414 ; gain = 104.332
 INFO: [Route 35-16] Router Completed Successfully
 
-Time (s): cpu = 00:00:18 ; elapsed = 00:00:16 . Memory (MB): peak = 1535.395 ; gain = 106.262
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:25 . Memory (MB): peak = 1771.414 ; gain = 104.332
 
 Routing Is Done.
 INFO: [Common 17-83] Releasing license: Implementation
 85 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 route_design completed successfully
-route_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:17 . Memory (MB): peak = 1535.395 ; gain = 117.484
+route_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:27 . Memory (MB): peak = 1771.414 ; gain = 116.355
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.117 . Memory (MB): peak = 1545.285 ; gain = 9.891
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/au_top_0_routed.dcp' has been generated.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.311 . Memory (MB): peak = 1781.277 ; gain = 9.863
+INFO: [Common 17-1381] The checkpoint 'C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/au_top_0_routed.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_drc -file au_top_0_drc_routed.rpt -pb au_top_0_drc_routed.pb -rpx au_top_0_drc_routed.rpx
 Command: report_drc -file au_top_0_drc_routed.rpt -pb au_top_0_drc_routed.pb -rpx au_top_0_drc_routed.rpx
 INFO: [IP_Flow 19-1839] IP Catalog is up to date.
 INFO: [DRC 23-27] Running DRC with 2 threads
-INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/au_top_0_drc_routed.rpt.
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/au_top_0_drc_routed.rpt.
 report_drc completed successfully
 INFO: [runtcl-4] Executing : report_methodology -file au_top_0_methodology_drc_routed.rpt -pb au_top_0_methodology_drc_routed.pb -rpx au_top_0_methodology_drc_routed.rpx
 Command: report_methodology -file au_top_0_methodology_drc_routed.rpt -pb au_top_0_methodology_drc_routed.pb -rpx au_top_0_methodology_drc_routed.rpx
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [DRC 23-133] Running Methodology with 2 threads
-INFO: [Coretcl 2-1520] The results of Report Methodology are in file C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/au_top_0_methodology_drc_routed.rpt.
+INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/au_top_0_methodology_drc_routed.rpt.
 report_methodology completed successfully
 INFO: [runtcl-4] Executing : report_power -file au_top_0_power_routed.rpt -pb au_top_0_power_summary_routed.pb -rpx au_top_0_power_routed.rpx
 Command: report_power -file au_top_0_power_routed.rpt -pb au_top_0_power_summary_routed.pb -rpx au_top_0_power_routed.rpx
@@ -977,7 +1243,7 @@ Finished Running Vector-less Activity Propagation
 97 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 report_power completed successfully
 INFO: [runtcl-4] Executing : report_route_status -file au_top_0_route_status.rpt -pb au_top_0_route_status.pb
-INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file au_top_0_timing_summary_routed.rpt -pb au_top_0_timing_summary_routed.pb -rpx au_top_0_timing_summary_routed.rpx -warn_on_violation 
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -report_unconstrained -file au_top_0_timing_summary_routed.rpt -pb au_top_0_timing_summary_routed.pb -rpx au_top_0_timing_summary_routed.rpx -warn_on_violation 
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
 INFO: [runtcl-4] Executing : report_incremental_reuse -file au_top_0_incremental_reuse_routed.rpt
@@ -992,10 +1258,11 @@ INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc
 Running DRC as a precondition to command write_bitstream
 INFO: [IP_Flow 19-1839] IP Catalog is up to date.
 INFO: [DRC 23-27] Running DRC with 2 threads
-WARNING: [DRC DPIP-1] Input pipelining: DSP letters/out1 input letters/out1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
-WARNING: [DRC DPOP-1] PREG Output pipelining: DSP letters/out1 output letters/out1/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
-WARNING: [DRC DPOP-2] MREG Output pipelining: DSP letters/out1 multiplier stage letters/out1/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-INFO: [Vivado 12-3199] DRC finished with 0 Errors, 3 Warnings
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP betaCPU/matrix_decoder1/white_letters/out1 output betaCPU/matrix_decoder1/white_letters/out1/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP betaCPU/matrix_decoder5/white_letters/out1 output betaCPU/matrix_decoder5/white_letters/out1/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP betaCPU/matrix_decoder1/white_letters/out1 multiplier stage betaCPU/matrix_decoder1/white_letters/out1/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP betaCPU/matrix_decoder5/white_letters/out1 multiplier stage betaCPU/matrix_decoder5/white_letters/out1/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 4 Warnings
 INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
 INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
 Loading data files...
@@ -1004,20 +1271,19 @@ Loading route data...
 Processing options...
 Creating bitmap...
 Creating bitstream...
-Bitstream compression saved 14396384 bits.
+Bitstream compression saved 12900928 bits.
 Writing bitstream ./au_top_0.bit...
 Writing bitstream ./au_top_0.bin...
 INFO: [Vivado 12-1842] Bitgen Completed Successfully.
-INFO: [Project 1-120] WebTalk data collection is mandatory when using a WebPACK part without a full Vivado license. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
-INFO: [Common 17-186] 'C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/usage_statistics_webtalk.xml' has been successfully sent to Xilinx on Tue Apr 12 15:10:57 2022. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2020.2/doc/webtalk_introduction.html.
+INFO: [Project 1-1876] WebTalk data collection is mandatory when using a ULT device. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
 INFO: [Common 17-83] Releasing license: Implementation
-13 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
+12 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
 write_bitstream completed successfully
-write_bitstream: Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2009.422 ; gain = 431.117
-INFO: [Common 17-206] Exiting Vivado at Tue Apr 12 15:10:57 2022...
-[Tue Apr 12 15:11:02 2022] impl_1 finished
-wait_on_run: Time (s): cpu = 00:00:00 ; elapsed = 00:01:11 . Memory (MB): peak = 1000.551 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Tue Apr 12 15:11:02 2022...
+write_bitstream: Time (s): cpu = 00:00:15 ; elapsed = 00:00:14 . Memory (MB): peak = 2210.844 ; gain = 404.520
+INFO: [Common 17-206] Exiting Vivado at Fri Apr 15 01:14:35 2022...
+[Fri Apr 15 01:14:38 2022] impl_1 finished
+wait_on_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:01:41 . Memory (MB): peak = 1247.738 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri Apr 15 01:14:39 2022...
 Vivado exited.
 
 Finished building project.

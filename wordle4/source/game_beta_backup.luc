@@ -10,7 +10,8 @@ module game_beta_backup (
     input is_pressed,
     
     output display_top[4], // output 1 bit LED encoding to top display
-    output display_bot[4]
+    output display_bot[4],
+    output debugger[7]
     
     
   ) {
@@ -47,6 +48,9 @@ module game_beta_backup (
   
 
   always {
+  
+    //debugger
+    debugger = regfile.debugger;
     
     // init alu
     alu.alufn = state.alufn; // feed alufn from fsm into alu
@@ -72,7 +76,7 @@ module game_beta_backup (
     state.clear = clear;
     state.alu_output = alu.alu;
         
-    // init displays
+    // init displays to read straight from regfile
     matrix_decoder1.letter_address = regfile.display_top[0]; // 2 bit colour + 5 bit alphabet encoding wired into matrix decoder
     matrix_decoder2.letter_address  = regfile.display_top[1];
     matrix_decoder3.letter_address = regfile.display_top[2];
@@ -101,4 +105,3 @@ module game_beta_backup (
   
 
   
-

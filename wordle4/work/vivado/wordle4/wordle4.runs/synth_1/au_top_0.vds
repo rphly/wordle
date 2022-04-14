@@ -1,13 +1,14 @@
 #-----------------------------------------------------------
-# Vivado v2020.2 (64-bit)
-# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
-# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Tue Apr 12 15:07:44 2022
-# Process ID: 10636
-# Current directory: C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/synth_1
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Fri Apr 15 01:09:40 2022
+# Process ID: 6608
+# Current directory: C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.runs/synth_1
 # Command line: vivado.exe -log au_top_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source au_top_0.tcl
-# Log file: C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/synth_1/au_top_0.vds
-# Journal file: C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/synth_1\vivado.jou
+# Log file: C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.runs/synth_1/au_top_0.vds
+# Journal file: C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.runs/synth_1\vivado.jou
+# Running On: DESKTOP-DRQ6LGH, OS: Windows, CPU Frequency: 2592 MHz, CPU Physical cores: 2, Host memory: 8471 MB
 #-----------------------------------------------------------
 source au_top_0.tcl -notrace
 Command: synth_design -top au_top_0 -part xc7a35tftg256-1
@@ -17,138 +18,301 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tftg256-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 6852
+INFO: [Synth 8-7075] Helper process launched with PID 5820
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1000.664 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1247.996 ; gain = 0.000
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'au_top_0' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/au_top_0.v:7]
-INFO: [Synth 8-6157] synthesizing module 'reset_conditioner_1' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/reset_conditioner_1.v:11]
-	Parameter STAGES bound to: 3'b100 
-INFO: [Synth 8-6155] done synthesizing module 'reset_conditioner_1' (1#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/reset_conditioner_1.v:11]
-INFO: [Synth 8-6157] synthesizing module 'beta_2' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/beta_2.v:7]
-INFO: [Synth 8-6157] synthesizing module 'game_7' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_7.v:7]
-	Parameter IDLE_game_fsm bound to: 3'b000 
-	Parameter STORE_INPUT_game_fsm bound to: 3'b001 
-	Parameter UPDATE_MATRIX_game_fsm bound to: 3'b010 
-	Parameter STORE_ONE_game_fsm bound to: 3'b011 
-	Parameter STORE_ZERO_game_fsm bound to: 3'b100 
-	Parameter INPUT_CTR bound to: 5'b11100 
-	Parameter INPUT_LETTER_1 bound to: 5'b10000 
-INFO: [Synth 8-6155] done synthesizing module 'game_7' (2#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_7.v:7]
-INFO: [Synth 8-6157] synthesizing module 'regfile_8' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_8.v:7]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_8.v:86]
-INFO: [Synth 8-6155] done synthesizing module 'regfile_8' (3#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_8.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'beta_2' (4#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/beta_2.v:7]
-INFO: [Synth 8-6157] synthesizing module 'regfile_tester_3' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_tester_3.v:7]
-	Parameter INPUT_CTR bound to: 5'b11100 
-	Parameter INPUT_LETTER_1 bound to: 5'b10000 
-INFO: [Synth 8-6155] done synthesizing module 'regfile_tester_3' (5#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_tester_3.v:7]
-INFO: [Synth 8-6157] synthesizing module 'button_4' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_4.v:7]
-INFO: [Synth 8-6157] synthesizing module 'button_conditioner_9' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_conditioner_9.v:13]
-	Parameter CLK_FREQ bound to: 26'b10111110101111000010000000 
-	Parameter MIN_DELAY bound to: 5'b10100 
-	Parameter NUM_SYNC bound to: 2'b10 
-INFO: [Synth 8-6157] synthesizing module 'pipeline_11' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/pipeline_11.v:11]
-	Parameter DEPTH bound to: 2'b10 
-INFO: [Synth 8-6155] done synthesizing module 'pipeline_11' (6#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/pipeline_11.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'button_conditioner_9' (7#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_conditioner_9.v:13]
-INFO: [Synth 8-6157] synthesizing module 'edge_detector_10' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/edge_detector_10.v:12]
-	Parameter RISE bound to: 1'b1 
-	Parameter FALL bound to: 1'b0 
-INFO: [Synth 8-6155] done synthesizing module 'edge_detector_10' (8#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/edge_detector_10.v:12]
-INFO: [Synth 8-6155] done synthesizing module 'button_4' (9#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_4.v:7]
-INFO: [Synth 8-6157] synthesizing module 'led_strip_writer_5' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/led_strip_writer_5.v:11]
-	Parameter PIXEL_COUNT bound to: 5'b11001 
-	Parameter SEND_PIXEL_state bound to: 1'b0 
-	Parameter RESET_state bound to: 1'b1 
-INFO: [Synth 8-6155] done synthesizing module 'led_strip_writer_5' (10#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/led_strip_writer_5.v:11]
-INFO: [Synth 8-6157] synthesizing module 'white_alphabets_6' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/white_alphabets_6.v:7]
-	Parameter INPUTS bound to: 1200'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100010001000100010001000000000000000000000000000000000000000000000000000000000000000000000000000100010001000100010001000000000000000000000000000100010001000100010001000000000000000000000000000100010001000100010001000000000000000000000000000000000000000000000000000000000000000000000000000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000100010001000000000000000000000000000000000000000000000000000000000000000000000000000100010001000100010001 
-INFO: [Synth 8-6155] done synthesizing module 'white_alphabets_6' (11#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/white_alphabets_6.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'au_top_0' (12#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/au_top_0.v:7]
+INFO: [Synth 8-6157] synthesizing module 'au_top_0' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/au_top_0.v:7]
+INFO: [Synth 8-6157] synthesizing module 'reset_conditioner_1' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/reset_conditioner_1.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'reset_conditioner_1' (1#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/reset_conditioner_1.v:11]
+INFO: [Synth 8-6157] synthesizing module 'game_beta_backup_2' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_beta_backup_2.v:7]
+INFO: [Synth 8-6157] synthesizing module 'alu_3' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/alu_3.v:7]
+INFO: [Synth 8-6157] synthesizing module 'adder_8' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/adder_8.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'adder_8' (2#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/adder_8.v:7]
+INFO: [Synth 8-6157] synthesizing module 'compare_9' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/compare_9.v:7]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/compare_9.v:20]
+INFO: [Synth 8-6155] done synthesizing module 'compare_9' (3#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/compare_9.v:7]
+INFO: [Synth 8-6157] synthesizing module 'boolean_10' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/boolean_10.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'boolean_10' (4#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/boolean_10.v:7]
+INFO: [Synth 8-6157] synthesizing module 'shifter_11' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/shifter_11.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'shifter_11' (5#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/shifter_11.v:7]
+INFO: [Synth 8-226] default block is never used [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/alu_3.v:89]
+INFO: [Synth 8-6155] done synthesizing module 'alu_3' (6#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/alu_3.v:7]
+INFO: [Synth 8-6157] synthesizing module 'regfile_backup_4' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:7]
+INFO: [Synth 8-226] default block is never used [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:107]
+WARNING: [Synth 8-6014] Unused sequential element M_correct_letter_1_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:533]
+WARNING: [Synth 8-6014] Unused sequential element M_correct_letter_2_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:534]
+WARNING: [Synth 8-6014] Unused sequential element M_correct_letter_3_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:535]
+WARNING: [Synth 8-6014] Unused sequential element M_correct_letter_4_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:536]
+WARNING: [Synth 8-6014] Unused sequential element M_input_i_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:537]
+WARNING: [Synth 8-6014] Unused sequential element M_correct_k_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:538]
+WARNING: [Synth 8-6014] Unused sequential element M_i_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:539]
+WARNING: [Synth 8-6014] Unused sequential element M_j_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:540]
+WARNING: [Synth 8-6014] Unused sequential element M_k_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:541]
+WARNING: [Synth 8-6014] Unused sequential element M_num_correct_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:543]
+WARNING: [Synth 8-6014] Unused sequential element M_zero_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:544]
+WARNING: [Synth 8-6014] Unused sequential element M_g_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:545]
+WARNING: [Synth 8-6014] Unused sequential element M_temp_guess_g_letter_i_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:546]
+WARNING: [Synth 8-6014] Unused sequential element M_temp_coloured_letter_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:547]
+WARNING: [Synth 8-6014] Unused sequential element M_word_index_q_reg was removed.  [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:548]
+WARNING: [Synth 8-3848] Net out_a in module/entity regfile_backup_4 does not have driver. [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:16]
+WARNING: [Synth 8-3848] Net out_b in module/entity regfile_backup_4 does not have driver. [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:17]
+INFO: [Synth 8-6155] done synthesizing module 'regfile_backup_4' (7#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_backup_4.v:7]
+INFO: [Synth 8-6157] synthesizing module 'fsm_backup_5' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/fsm_backup_5.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'fsm_backup_5' (8#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/fsm_backup_5.v:7]
+INFO: [Synth 8-6157] synthesizing module 'buttons_controller_6' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/buttons_controller_6.v:7]
+INFO: [Synth 8-6157] synthesizing module 'button_12' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_12.v:7]
+INFO: [Synth 8-6157] synthesizing module 'button_conditioner_15' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_conditioner_15.v:13]
+INFO: [Synth 8-6157] synthesizing module 'pipeline_17' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/pipeline_17.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'pipeline_17' (9#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/pipeline_17.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'button_conditioner_15' (10#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_conditioner_15.v:13]
+INFO: [Synth 8-6157] synthesizing module 'edge_detector_16' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/edge_detector_16.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'edge_detector_16' (11#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/edge_detector_16.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'button_12' (12#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_12.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'buttons_controller_6' (13#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/buttons_controller_6.v:7]
+INFO: [Synth 8-6157] synthesizing module 'matrix_7' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/matrix_7.v:7]
+INFO: [Synth 8-6157] synthesizing module 'led_strip_writer_13' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/led_strip_writer_13.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'led_strip_writer_13' (14#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/led_strip_writer_13.v:11]
+INFO: [Synth 8-6157] synthesizing module 'white_alphabets_14' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/white_alphabets_14.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'white_alphabets_14' (15#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/white_alphabets_14.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'matrix_7' (16#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/matrix_7.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'game_beta_backup_2' (17#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_beta_backup_2.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'au_top_0' (18#1) [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/au_top_0.v:7]
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[23] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[22] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[21] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[20] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[19] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[18] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[17] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[16] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[15] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[14] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[13] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[12] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[11] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[10] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[9] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[8] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[7] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[6] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[5] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[4] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[3] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[2] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[1] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[0] driven by constant 0
+WARNING: [Synth 8-7129] Port letter_address[6] in module matrix_7 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port letter_address[5] in module matrix_7 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module buttons_controller_6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[15] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[14] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[13] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[12] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[11] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[10] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[9] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[8] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[7] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[6] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[5] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[4] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[3] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[2] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[1] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_output[0] in module fsm_backup_5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[15] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[14] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[13] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[12] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[11] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[10] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[9] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[8] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[7] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[6] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[5] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[4] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[3] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[2] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[1] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_a[0] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[15] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[14] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[13] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[12] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[11] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[10] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[9] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[8] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[7] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[6] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[5] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[4] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[3] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[2] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[1] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_b[0] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port write_address[5] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port write_address[4] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port write_address[3] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port write_address[2] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port write_address[1] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port write_address[0] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port we in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[15] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[14] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[13] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[12] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[11] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[10] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[9] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[8] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[7] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[6] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[5] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[4] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[3] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[2] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[1] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[0] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port recall[3] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port recall[2] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port recall[1] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port recall[0] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_address_a[5] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_address_a[4] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_address_a[3] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_address_a[2] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_address_a[1] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_address_a[0] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_address_b[5] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_address_b[4] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_address_b[3] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_address_b[2] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_address_b[1] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_address_b[0] in module regfile_backup_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b[15] in module shifter_11 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b[14] in module shifter_11 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b[13] in module shifter_11 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b[12] in module shifter_11 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b[11] in module shifter_11 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b[10] in module shifter_11 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b[9] in module shifter_11 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b[8] in module shifter_11 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b[7] in module shifter_11 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b[6] in module shifter_11 is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1000.664 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1247.996 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1000.664 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1247.996 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1000.664 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1247.996 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1000.664 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.109 . Memory (MB): peak = 1247.996 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/Bryce/Desktop/wordle/wordle4/work/constraint/alchitry.xdc]
-Finished Parsing XDC File [C:/Users/Bryce/Desktop/wordle/wordle4/work/constraint/alchitry.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Bryce/Desktop/wordle/wordle4/work/constraint/alchitry.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/au_top_0_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [.Xil/au_top_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [C:/Program Files/Alchitry/Alchitry Labs/library/components/au.xdc]
 Finished Parsing XDC File [C:/Program Files/Alchitry/Alchitry Labs/library/components/au.xdc]
+Parsing XDC File [C:/Users/james/Documents/GitHub/wordle/wordle4/work/constraint/alchitry.xdc]
+Finished Parsing XDC File [C:/Users/james/Documents/GitHub/wordle/wordle4/work/constraint/alchitry.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/james/Documents/GitHub/wordle/wordle4/work/constraint/alchitry.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/au_top_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/au_top_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1000.664 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1247.996 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1000.664 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1247.996 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1000.664 ; gain = 0.000
+Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1247.996 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tftg256-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1000.664 ; gain = 0.000
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1247.996 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1000.664 ; gain = 0.000
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1247.996 ; gain = 0.000
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-802] inferred FSM for state register 'M_game_fsm_q_reg' in module 'game_7'
+INFO: [Synth 8-802] inferred FSM for state register 'M_game_fsm_q_reg' in module 'fsm_backup_5'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-           IDLE_game_fsm |                               00 |                              000
-  UPDATE_MATRIX_game_fsm |                               01 |                              010
-      STORE_ONE_game_fsm |                               10 |                              011
-     STORE_ZERO_game_fsm |                               11 |                              100
+                 iSTATE2 |                            00000 |                          0000000
+                 iSTATE1 |                            00001 |                          0000001
+*
+           G1L1_game_fsm |                            00010 |                          0000010
+           G1L2_game_fsm |                            00011 |                          0000011
+           G1L3_game_fsm |                            00100 |                          0000100
+           G1L4_game_fsm |                            00101 |                          0000101
+  CHECKONE_L1C1_game_fsm |                            00110 |                          0000110
+  CHECKONE_L1C2_game_fsm |                            00111 |                          0000111
+  CHECKONE_L1C3_game_fsm |                            01000 |                          0001000
+  CHECKONE_L1C4_game_fsm |                            01001 |                          0001001
+  CHECKONE_L2C1_game_fsm |                            01010 |                          0001010
+  CHECKONE_L2C2_game_fsm |                            01011 |                          0001011
+  CHECKONE_L2C3_game_fsm |                            01100 |                          0001100
+  CHECKONE_L2C4_game_fsm |                            01101 |                          0001101
+  CHECKONE_L3C1_game_fsm |                            01110 |                          0001110
+  CHECKONE_L3C2_game_fsm |                            01111 |                          0001111
+  CHECKONE_L3C3_game_fsm |                            10000 |                          0010000
+  CHECKONE_L3C4_game_fsm |                            10001 |                          0010001
+  CHECKONE_L4C1_game_fsm |                            10010 |                          0010010
+  CHECKONE_L4C2_game_fsm |                            10011 |                          0010011
+  CHECKONE_L4C3_game_fsm |                            10100 |                          0010100
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'M_game_fsm_q_reg' using encoding 'sequential' in module 'game_7'
+INFO: [Synth 8-3354] encoded FSM with state register 'M_game_fsm_q_reg' using encoding 'sequential' in module 'fsm_backup_5'
+WARNING: [Synth 8-327] inferring latch for variable 'out_reg' [C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/buttons_controller_6.v:29]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1000.664 ; gain = 0.000
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 1247.996 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input    7 Bit       Adders := 1     
-	   2 Input    5 Bit       Adders := 2     
+	   3 Input   16 Bit       Adders := 1     
+	   2 Input    7 Bit       Adders := 8     
+	   2 Input    5 Bit       Adders := 16    
++---XORs : 
+	   2 Input     16 Bit         XORs := 2     
+	   2 Input      1 Bit         XORs := 1     
 +---Registers : 
-	                7 Bit    Registers := 33    
-	                5 Bit    Registers := 20    
+	                7 Bit    Registers := 9     
+	                5 Bit    Registers := 17    
 	                4 Bit    Registers := 1     
-	                3 Bit    Registers := 8     
-	                2 Bit    Registers := 6     
+	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 9     
 +---Muxes : 
-	   2 Input   24 Bit        Muxes := 1     
-	   2 Input    7 Bit        Muxes := 1     
-	   4 Input    5 Bit        Muxes := 4     
-	   2 Input    5 Bit        Muxes := 7     
-	   4 Input    2 Bit        Muxes := 3     
-	   2 Input    2 Bit        Muxes := 4     
-	   2 Input    1 Bit        Muxes := 25    
-	   4 Input    1 Bit        Muxes := 1     
-	  31 Input    1 Bit        Muxes := 60    
+	   2 Input   16 Bit        Muxes := 3     
+	   4 Input   16 Bit        Muxes := 3     
+	  20 Input    9 Bit        Muxes := 1     
+	   2 Input    9 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 8     
+	  20 Input    6 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 29    
+	  20 Input    5 Bit        Muxes := 4     
+	  20 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 125   
+	  20 Input    1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -164,22 +328,78 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-DSP Report: Generating DSP letters/out1, operation Mode is: (A:0x258)*B.
-DSP Report: operator letters/out1 is absorbed into DSP letters/out1.
-DSP Report: operator letters/out3 is absorbed into DSP letters/out1.
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP adder/add0, operation Mode is: A*B.
+DSP Report: operator adder/add0 is absorbed into DSP adder/add0.
+DSP Report: Generating DSP betaCPU/matrix_decoder1/white_letters/out1, operation Mode is: (A:0x258)*B.
+DSP Report: operator betaCPU/matrix_decoder1/white_letters/out1 is absorbed into DSP betaCPU/matrix_decoder1/white_letters/out1.
+DSP Report: operator betaCPU/matrix_decoder1/white_letters/out3 is absorbed into DSP betaCPU/matrix_decoder1/white_letters/out1.
+DSP Report: Generating DSP betaCPU/matrix_decoder2/white_letters/out1, operation Mode is: (A:0x258)*B.
+DSP Report: operator betaCPU/matrix_decoder2/white_letters/out1 is absorbed into DSP betaCPU/matrix_decoder2/white_letters/out1.
+DSP Report: operator betaCPU/matrix_decoder2/white_letters/out3 is absorbed into DSP betaCPU/matrix_decoder2/white_letters/out1.
+DSP Report: Generating DSP betaCPU/matrix_decoder3/white_letters/out1, operation Mode is: (A:0x258)*B.
+DSP Report: operator betaCPU/matrix_decoder3/white_letters/out1 is absorbed into DSP betaCPU/matrix_decoder3/white_letters/out1.
+DSP Report: operator betaCPU/matrix_decoder3/white_letters/out3 is absorbed into DSP betaCPU/matrix_decoder3/white_letters/out1.
+DSP Report: Generating DSP betaCPU/matrix_decoder4/white_letters/out1, operation Mode is: (A:0x258)*B.
+DSP Report: operator betaCPU/matrix_decoder4/white_letters/out1 is absorbed into DSP betaCPU/matrix_decoder4/white_letters/out1.
+DSP Report: operator betaCPU/matrix_decoder4/white_letters/out3 is absorbed into DSP betaCPU/matrix_decoder4/white_letters/out1.
+DSP Report: Generating DSP betaCPU/matrix_decoder5/white_letters/out1, operation Mode is: (A:0x258)*B.
+DSP Report: operator betaCPU/matrix_decoder5/white_letters/out1 is absorbed into DSP betaCPU/matrix_decoder5/white_letters/out1.
+DSP Report: operator betaCPU/matrix_decoder5/white_letters/out3 is absorbed into DSP betaCPU/matrix_decoder5/white_letters/out1.
+DSP Report: Generating DSP betaCPU/matrix_decoder6/white_letters/out1, operation Mode is: (A:0x258)*B.
+DSP Report: operator betaCPU/matrix_decoder6/white_letters/out1 is absorbed into DSP betaCPU/matrix_decoder6/white_letters/out1.
+DSP Report: operator betaCPU/matrix_decoder6/white_letters/out3 is absorbed into DSP betaCPU/matrix_decoder6/white_letters/out1.
+DSP Report: Generating DSP betaCPU/matrix_decoder7/white_letters/out1, operation Mode is: (A:0x258)*B.
+DSP Report: operator betaCPU/matrix_decoder7/white_letters/out1 is absorbed into DSP betaCPU/matrix_decoder7/white_letters/out1.
+DSP Report: operator betaCPU/matrix_decoder7/white_letters/out3 is absorbed into DSP betaCPU/matrix_decoder7/white_letters/out1.
+DSP Report: Generating DSP betaCPU/matrix_decoder8/white_letters/out1, operation Mode is: (A:0x258)*B.
+DSP Report: operator betaCPU/matrix_decoder8/white_letters/out1 is absorbed into DSP betaCPU/matrix_decoder8/white_letters/out1.
+DSP Report: operator betaCPU/matrix_decoder8/white_letters/out3 is absorbed into DSP betaCPU/matrix_decoder8/white_letters/out1.
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[23] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[22] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[21] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[20] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[19] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[18] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[17] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[16] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[15] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[14] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[13] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[12] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[11] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[10] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[9] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[8] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[7] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[6] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[5] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[4] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[3] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[2] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[1] driven by constant 0
+WARNING: [Synth 8-3917] design au_top_0 has port io_led[0] driven by constant 0
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:40 ; elapsed = 00:01:41 . Memory (MB): peak = 1000.664 ; gain = 0.000
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:38 ; elapsed = 00:02:38 . Memory (MB): peak = 1252.508 ; gain = 4.512
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 
-DSP: Preliminary Mapping	Report (see note below)
-+------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name       | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|white_alphabets_6 | (A:0x258)*B | 5      | 10     | -      | -      | 11     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-+------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++-------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name        | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|adder_8            | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|white_alphabets_14 | (A:0x258)*B | 5      | 10     | -      | -      | 11     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|white_alphabets_14 | (A:0x258)*B | 5      | 10     | -      | -      | 11     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|white_alphabets_14 | (A:0x258)*B | 5      | 10     | -      | -      | 11     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|white_alphabets_14 | (A:0x258)*B | 5      | 10     | -      | -      | 11     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|white_alphabets_14 | (A:0x258)*B | 5      | 10     | -      | -      | 11     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|white_alphabets_14 | (A:0x258)*B | 5      | 10     | -      | -      | 11     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|white_alphabets_14 | (A:0x258)*B | 5      | 10     | -      | -      | 11     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|white_alphabets_14 | (A:0x258)*B | 5      | 10     | -      | -      | 11     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++-------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
 ---------------------------------------------------------------------------------
@@ -189,19 +409,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:49 ; elapsed = 00:01:50 . Memory (MB): peak = 1001.586 ; gain = 0.922
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:50 ; elapsed = 00:02:51 . Memory (MB): peak = 1252.508 ; gain = 4.512
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:51 ; elapsed = 00:01:51 . Memory (MB): peak = 1050.754 ; gain = 50.090
+Finished Timing Optimization : Time (s): cpu = 00:02:53 ; elapsed = 00:02:54 . Memory (MB): peak = 1277.184 ; gain = 29.188
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:51 ; elapsed = 00:01:52 . Memory (MB): peak = 1060.055 ; gain = 59.391
+Finished Technology Mapping : Time (s): cpu = 00:02:54 ; elapsed = 00:02:54 . Memory (MB): peak = 1282.145 ; gain = 34.148
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -219,37 +439,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:54 ; elapsed = 00:01:55 . Memory (MB): peak = 1060.055 ; gain = 59.391
+Finished IO Insertion : Time (s): cpu = 00:03:00 ; elapsed = 00:03:01 . Memory (MB): peak = 1284.969 ; gain = 36.973
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:54 ; elapsed = 00:01:55 . Memory (MB): peak = 1060.055 ; gain = 59.391
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:00 ; elapsed = 00:03:01 . Memory (MB): peak = 1284.969 ; gain = 36.973
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:54 ; elapsed = 00:01:55 . Memory (MB): peak = 1060.055 ; gain = 59.391
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:01 ; elapsed = 00:03:01 . Memory (MB): peak = 1284.969 ; gain = 36.973
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:54 ; elapsed = 00:01:55 . Memory (MB): peak = 1060.055 ; gain = 59.391
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:01 ; elapsed = 00:03:01 . Memory (MB): peak = 1284.969 ; gain = 36.973
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:54 ; elapsed = 00:01:55 . Memory (MB): peak = 1060.055 ; gain = 59.391
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:01 ; elapsed = 00:03:01 . Memory (MB): peak = 1284.969 ; gain = 36.973
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:54 ; elapsed = 00:01:55 . Memory (MB): peak = 1060.055 ; gain = 59.391
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:01 ; elapsed = 00:03:01 . Memory (MB): peak = 1284.969 ; gain = 36.973
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -266,41 +486,42 @@ Report Cell Usage:
 |      |Cell    |Count |
 +------+--------+------+
 |1     |BUFG    |     1|
-|2     |CARRY4  |    19|
-|3     |DSP48E1 |     1|
-|4     |LUT1    |    12|
-|5     |LUT2    |    17|
-|6     |LUT3    |    19|
-|7     |LUT4    |   184|
-|8     |LUT5    |   216|
-|9     |LUT6    |   223|
-|10    |MUXF7   |   152|
-|11    |MUXF8   |    57|
-|12    |FDRE    |   113|
+|2     |CARRY4  |     8|
+|3     |DSP48E1 |     2|
+|4     |LUT1    |     5|
+|5     |LUT2    |    16|
+|6     |LUT3    |    34|
+|7     |LUT4    |   350|
+|8     |LUT5    |   416|
+|9     |LUT6    |   436|
+|10    |MUXF7   |   304|
+|11    |MUXF8   |   114|
+|12    |FDRE    |    68|
 |13    |FDSE    |     4|
-|14    |IBUF    |     6|
-|15    |OBUF    |    26|
+|14    |IBUF    |     3|
+|15    |OBUF    |    27|
 +------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:54 ; elapsed = 00:01:55 . Memory (MB): peak = 1060.055 ; gain = 59.391
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:01 ; elapsed = 00:03:01 . Memory (MB): peak = 1284.969 ; gain = 36.973
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:47 ; elapsed = 00:01:53 . Memory (MB): peak = 1060.055 ; gain = 59.391
-Synthesis Optimization Complete : Time (s): cpu = 00:01:54 ; elapsed = 00:01:55 . Memory (MB): peak = 1060.055 ; gain = 59.391
+Synthesis finished with 0 errors, 0 critical warnings and 26 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:47 ; elapsed = 00:02:58 . Memory (MB): peak = 1284.969 ; gain = 36.973
+Synthesis Optimization Complete : Time (s): cpu = 00:03:01 ; elapsed = 00:03:02 . Memory (MB): peak = 1284.969 ; gain = 36.973
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1071.922 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 229 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1288.492 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 428 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1071.922 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1292.172 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
+Synth Design complete, checksum: 8983ca1d
 INFO: [Common 17-83] Releasing license: Synthesis
-42 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+57 Infos, 167 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:59 ; elapsed = 00:02:01 . Memory (MB): peak = 1071.922 ; gain = 71.258
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/synth_1/au_top_0.dcp' has been generated.
+synth_design: Time (s): cpu = 00:03:06 ; elapsed = 00:03:08 . Memory (MB): peak = 1292.172 ; gain = 44.176
+INFO: [Common 17-1381] The checkpoint 'C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado/wordle4/wordle4.runs/synth_1/au_top_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file au_top_0_utilization_synth.rpt -pb au_top_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Apr 12 15:09:47 2022...
+INFO: [Common 17-206] Exiting Vivado at Fri Apr 15 01:12:56 2022...

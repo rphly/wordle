@@ -1,17 +1,17 @@
-set projDir "C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado"
+set projDir "C:/Users/james/Documents/GitHub/wordle/wordle4/work/vivado"
 set projName "wordle4"
 set topName top
 set device xc7a35tftg256-1
 if {[file exists "$projDir/$projName"]} { file delete -force "$projDir/$projName" }
 create_project $projName "$projDir/$projName" -part $device
 set_property design_mode RTL [get_filesets sources_1]
-set verilogSources [list "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/au_top_0.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/reset_conditioner_1.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/beta_2.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/regfile_tester_3.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/button_4.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/led_strip_writer_5.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/white_alphabets_6.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/game_7.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/regfile_8.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/button_conditioner_9.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/edge_detector_10.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/pipeline_11.v" ]
+set verilogSources [list "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/au_top_0.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/reset_conditioner_1.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/game_beta_backup_2.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/alu_3.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/regfile_backup_4.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/fsm_backup_5.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/buttons_controller_6.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/matrix_7.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/adder_8.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/compare_9.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/boolean_10.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/shifter_11.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/button_12.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/led_strip_writer_13.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/white_alphabets_14.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/button_conditioner_15.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/edge_detector_16.v" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/verilog/pipeline_17.v" ]
 import_files -fileset [get_filesets sources_1] -force -norecurse $verilogSources
-set xdcSources [list "C:/Users/Bryce/Desktop/wordle/wordle4/work/constraint/alchitry.xdc" "C:/Program\ Files/Alchitry/Alchitry\ Labs/library/components/au.xdc" ]
+set xdcSources [list "C:/Program\ Files/Alchitry/Alchitry\ Labs/library/components/au.xdc" "C:/Users/james/Documents/GitHub/wordle/wordle4/work/constraint/alchitry.xdc" ]
 read_xdc $xdcSources
 set_property STEPS.WRITE_BITSTREAM.ARGS.BIN_FILE true [get_runs impl_1]
 update_compile_order -fileset sources_1
-launch_runs -runs synth_1 -jobs 12
+launch_runs -runs synth_1 -jobs 4
 wait_on_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 12
+launch_runs impl_1 -to_step write_bitstream -jobs 4
 wait_on_run impl_1

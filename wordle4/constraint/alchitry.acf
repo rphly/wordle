@@ -8,11 +8,19 @@ pin rst_n RESET;
 //pin c_button A43 pulldown;
 
 // all alphabet buttons
-pin alphabet[0] A8 pulldown;
-pin alphabet[1] A9 pulldown;
+pin alphabet[0] B23 pulldown; // letter A
+pin alphabet[1] B28 pulldown; // letter B
 
-pin top_display1 A27; // top display 
-pin bot_display1 A28; // bot display
+
+//pin alphabet  27
+//pin alphabet R 24
+
+//pin 
+
+//30
+//31
+pin bot_display1 B33; // top display 
+pin bot_display1 B34; // bot display
 
 
 

@@ -16,7 +16,7 @@ module au_top (
     output bot_display1,
 
     output io_led[3][8],
-    output alphabet_is_pressed,
+
     output usb_tx
     
     
@@ -43,8 +43,7 @@ module au_top (
   
 
   always {
-  
-    alphabet_is_pressed = 0;
+
     reset_cond.in = ~rst_n;
     rst = reset_cond.out;    // conditioned reset 
     
