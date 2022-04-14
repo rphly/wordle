@@ -52,7 +52,7 @@ module game (
       COMPARE_INPUT_I_WITH_CORRECT_K,
       COMPARE_K_EQUALS_3_AND_INCREMENT,
       CHECK_BUTTON_PRESSED,
-      COMPARE_INPUT_CTR_EQUALS_4,
+      COMPARE_INPUT_CTR_EQUALS_3,
       COMPARE_INPUT_I_WITH_CORRECT_I,
       CLEAR_SET_INPUT_CTR_0,
       CLEAR_RESET_BOTTOM_DISPLAY,
@@ -71,10 +71,12 @@ module game (
       SET_TEMP_COLOURED_LETTER_GREEN,
       SET_TEMP_COLOURED_LETTER_YELLOW,
       SET_TEMP_COLOURED_LETTER_WHITE,
+      RESET_NUM_CORRECT_INPUTS_TO_0,
       INCREMENT_K,
       INCREMENT_NUM_CORRECT,
-      COMPARE_NUM_CORRECT_EQUALS_4,
+      COMPARE_NUM_CORRECT_EQUALS_3,
       COMPARE_I_EQUALS_3_AND_INCREMENT,
+      INCREMENT_GUESS_CTR,
       COMPARE_GUESS_CTR_EQUALS_3,
       SHOW_TOP_DISPLAY,
       SET_CORRECT_WORD,
@@ -175,11 +177,20 @@ module game (
           words_selector = regfile_out_a;
           regfile_data = selected_word[0]; // 5 bits
           regfile_we = 1;
-          game_fsm.d = game_fsm.SET_NUM_CORRECT_INPUTS_TO_0;
+          game_fsm.d = game_fsm.RESET_NUM_CORRECT_INPUTS_TO_0;
         
-        game_fsm.SET_NUM_CORRECT_INPUTS_TO_0:
+        game_fsm.RESET_NUM_CORRECT_INPUTS_TO_0:
           
           regfile_write_address = NUM_CORRECT;
+          regfile_ra = 0;
+          regfile_rb = 0;
+          regfile_data = 0;
+          regfile_we = 1;  
+          game_fsm.d = game_fsm.SET_GUESS_CTR_TO_0;
+        
+        game_fsm.SET_GUESS_CTR_TO_0:
+          
+          regfile_write_address = G;
           regfile_ra = 0;
           regfile_rb = 0;
           regfile_data = 0;
@@ -436,9 +447,9 @@ module game (
           regfile_write_address = NUM_CORRECT;
           regfile_data = alu_out;
           regfile_we = 1;
-          game_fsm.d = game_fsm.COMPARE_NUM_CORRECT_EQUALS_4;
+          game_fsm.d = game_fsm.COMPARE_NUM_CORRECT_EQUALS_3;
         
-        game_fsm.COMPARE_NUM_CORRECT_EQUALS_4:
+        game_fsm.COMPARE_NUM_CORRECT_EQUALS_3:
           regfile_ra = NUM_CORRECT;
           asel = b000; 
           bsel = b100; // constant 4, since zero-indexed
@@ -446,12 +457,12 @@ module game (
                    
           if (alu_out == 16b0) {
             debugger3 = b000111;
-            //game_fsm.d = game_fsm.COMPARE_NUM_CORRECT_EQUALS_4;
+            //game_fsm.d = game_fsm.COMPARE_NUM_CORRECT_EQUALS_3;
             game_fsm.d = game_fsm.COMPARE_I_EQUALS_3_AND_INCREMENT;
           } else {
             // CONGRATS
             debugger3 = b101010;
-            game_fsm.d = game_fsm.COMPARE_NUM_CORRECT_EQUALS_4;
+            game_fsm.d = game_fsm.COMPARE_NUM_CORRECT_EQUALS_3;
             //game_fsm.d = game_fsm.WIN;
           }
           
@@ -544,20 +555,34 @@ module game (
           game_fsm.d = game_fsm.SHOW_TOP_DISPLAY;
        
         game_fsm.SHOW_TOP_DISPLAY:
-          game_fsm.d = game_fsm.COMPARE_GUESS_CTR_EQUALS_3;
           
+          game_fsm.d = game_fsm.INCREMENT_GUESS_CTR;
+         
+          
+        game_fsm.INCREMENT_GUESS_CTR:
+          regfile_ra = G;
+          alufn = 6b000000; // ADD
+          asel = b000; // Take from regfile_ra
+          bsel = b010; // inputAlu_b = 3d1;
+          regfile_write_address = G;
+          regfile_data = alu_out;
+          regfile_we = 1;
+          game_fsm.d = game_fsm.COMPARE_GUESS_CTR_EQUALS_3;
+        
         game_fsm.COMPARE_GUESS_CTR_EQUALS_3:
           regfile_ra = G;
           asel = b000; 
-          bsel = b100; // constant 3, since zero-indexed
+          bsel = b101; // constant 3, since zero-indexed
           alufn = b110011; // cmpeq
           
+          if (regfile_out_a == d3) {
+            debugger3 = b11111;
+            game_fsm.d = game_fsm.COMPARE_GUESS_CTR_EQUALS_3;
+          }
+                   
           if (alu_out == 16b0) {
-            // increment if not reached 3
-            regfile_write_address = G;
-            regfile_data = regfile_out_a + 1;
-            regfile_we = 1;
-            // increment I first, then set to zero
+            debugger3 = b000111;
+            
             game_fsm.d = game_fsm.SET_INPUT_CTR_TO_0;
           } else {
             // oh no
