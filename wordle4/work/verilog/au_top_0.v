@@ -10,7 +10,8 @@ module au_top_0 (
     input usb_rx,
     input a_in,
     input b_in,
-    input c_in,
+    input r_in,
+    input e_in,
     input clear_in,
     input check_in,
     output reg outmatrix1,
@@ -32,14 +33,14 @@ module au_top_0 (
     .in(M_reset_cond_in),
     .out(M_reset_cond_out)
   );
-  wire [2-1:0] M_betaCPU_current_state;
+  wire [16-1:0] M_betaCPU_current_state;
   wire [1-1:0] M_betaCPU_out_bottom_matrix1;
   wire [1-1:0] M_betaCPU_out_bottom_matrix2;
   wire [1-1:0] M_betaCPU_out_bottom_matrix3;
   wire [1-1:0] M_betaCPU_out_bottom_matrix4;
-  wire [5-1:0] M_betaCPU_debugger1;
-  wire [5-1:0] M_betaCPU_debugger2;
-  wire [5-1:0] M_betaCPU_debugger3;
+  wire [7-1:0] M_betaCPU_debugger1;
+  wire [7-1:0] M_betaCPU_debugger2;
+  wire [7-1:0] M_betaCPU_debugger3;
   reg [1-1:0] M_betaCPU_has_keyboard_input;
   reg [5-1:0] M_betaCPU_keyboard_input;
   reg [5-1:0] M_betaCPU_panel_input;
@@ -67,7 +68,8 @@ module au_top_0 (
     .rst(rst),
     .a(a_in),
     .b(b_in),
-    .c(c_in),
+    .e(e_in),
+    .r(r_in),
     .is_pressed(M_keyboard_controller_is_pressed),
     .out(M_keyboard_controller_out)
   );
@@ -101,6 +103,9 @@ module au_top_0 (
     outmatrix2 = M_betaCPU_out_bottom_matrix2;
     outmatrix3 = M_betaCPU_out_bottom_matrix3;
     outmatrix4 = M_betaCPU_out_bottom_matrix4;
+    io_led[0+0+7-:8] = M_betaCPU_debugger1;
+    io_led[8+0+7-:8] = M_betaCPU_debugger2;
+    io_led[16+0+7-:8] = M_betaCPU_debugger3;
     usb_tx = usb_rx;
   end
   

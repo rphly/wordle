@@ -6,8 +6,9 @@ module au_top (
     // keyboard inputs
     input a_in,
     input b_in,
-    input c_in,
-    
+    input r_in,
+    input e_in,
+   
     input clear_in,
     input check_in,
     output outmatrix1,
@@ -27,7 +28,8 @@ module au_top (
       buttons_controller keyboard_controller(
         .a(a_in),
         .b(b_in),
-        .c(c_in)
+        .e(e_in),
+        .r(r_in)
       );
       
       panel_controller button_panel_controller(
@@ -61,9 +63,9 @@ module au_top (
     outmatrix3 = betaCPU.out_bottom_matrix3;
     outmatrix4 = betaCPU.out_bottom_matrix4;
     
-    //io_led[0][5:0] = betaCPU.debugger1;
-    //io_led[1][5:0] = betaCPU.debugger2;
-    //io_led[2][5:0] = betaCPU.debugger3;
+    io_led[0][7:0] = betaCPU.debugger1;
+    io_led[1][7:0] = betaCPU.debugger2;
+    io_led[2][7:0] = betaCPU.debugger3;
     
     usb_tx = usb_rx;        // loop serial port
   }

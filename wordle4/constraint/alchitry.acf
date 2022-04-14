@@ -5,11 +5,15 @@ pin rst_n RESET;
 
 // A8 A9 same port
 // A43 A_ same port
-pin a_in A14 pulldown; //
-pin b_in A30 pulldown; //
-pin c_in A49 pulldown;
-pin clear_in A48 pulldown;
-pin check_in A5 pulldown;
+pin b_in B28 pulldown; // up 
+pin e_in B27 pulldown; // center
+pin a_in B23 pulldown; // down
+pin r_in B24 pulldown; // left
+
+// . io_button[0] is up, io_button[1] is center, io_button[2] is down, io_button[3] is left, and io_button[4] 
+
+pin clear_in A5 pulldown; // right
+pin check_in C49 pulldown;
 
 pin outmatrix1 B33;
 pin outmatrix2 B34;

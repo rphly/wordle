@@ -22,7 +22,7 @@ module game (
     output regfile_ra[16],
     output regfile_rb[16], 
     output regfile_data[16],
-    output current_state[2],
+    output current_state[16],
     output alufn[6],
     output asel[3],
     output bsel[3],
@@ -32,7 +32,11 @@ module game (
     output bottom_matrix1_letter_address[5],
     output bottom_matrix2_letter_address[5],
     output bottom_matrix3_letter_address[5],
-    output bottom_matrix4_letter_address[5]
+    output bottom_matrix4_letter_address[5],
+    
+    output debugger1[7],
+    output debugger2[7],
+    output debugger3[7]
   ) {
   
   .clk(clk) {
@@ -96,7 +100,7 @@ module game (
   const GUESS_1_LETTER_1 = b00000;
   const GUESS_2_LETTER_1 = b00100;
   const GUESS_3_LETTER_1 = b01000;
-  const GUESS_4_LETTER_1 = b01100;
+  const GUESS_4_LETTER_1 = b10000;
   const TEMP_GUESS_G_LETTER_I_ADDR = b100001;
   const TEMP_COLOURED_LETTER = b100010;
   
@@ -107,6 +111,9 @@ module game (
   
   
   always {
+    debugger1 = 0;
+    debugger2 = 0;
+    debugger3 = 0;
     // standard setting 
     regfile_we = 0;
     regfile_write_address = 0;
@@ -168,11 +175,21 @@ module game (
           words_selector = regfile_out_a;
           regfile_data = selected_word[0]; // 5 bits
           regfile_we = 1;
+          game_fsm.d = game_fsm.SET_NUM_CORRECT_INPUTS_TO_0;
+        
+        game_fsm.SET_NUM_CORRECT_INPUTS_TO_0:
+          
+          regfile_write_address = NUM_CORRECT;
+          regfile_ra = 0;
+          regfile_rb = 0;
+          regfile_data = 0;
+          regfile_we = 1;  
           game_fsm.d = game_fsm.RESET_TOP_DISPLAY;
 
         // reset inputs sequence
         game_fsm.RESET_TOP_DISPLAY:
           game_fsm.d = game_fsm.SET_INPUT_CTR_TO_0;
+        
           
         game_fsm.SET_INPUT_CTR_TO_0:
           regfile_we = 1;
@@ -194,6 +211,7 @@ module game (
         
         // IDLE STATE
         game_fsm.IDLE:
+          current_state = 0;
           // if check button press
           if (has_panel_input) {
             if (panel_input == CLEAR_SIGNAL) {
@@ -212,6 +230,7 @@ module game (
           }
         
         game_fsm.PRINT_LETTER_TO_MATRIX:
+          current_state = 1;
           regfile_we = 0;
           regfile_ra = INPUT_CTR;
           
@@ -237,6 +256,7 @@ module game (
           game_fsm.d = game_fsm.INCREMENT_INPUT_CTR;
         
         game_fsm.INCREMENT_INPUT_CTR:
+          current_state = 2;
           regfile_ra = INPUT_CTR;
           asel = b000; 
           bsel = b100; // constant 3, since zero-indexed
@@ -255,11 +275,11 @@ module game (
           }
           
         game_fsm.CHECK_BUTTON_PRESSED:
+          current_state = 3;
           regfile_ra = INPUT_CTR;
           asel = b000; 
-          bsel = b011; // constant 3, since zero-indexed
+          bsel = b100; // constant 4, since zero-indexed
           alufn = b110011; // cmpeq
-          
           if (alu_out == 16b1) {
             // if successful, we branch to check sequence
             game_fsm.d = game_fsm.SET_I_TO_ZERO; 
@@ -269,47 +289,47 @@ module game (
           }
          
         game_fsm.SET_I_TO_ZERO:
-          regfile_we = 1;
           regfile_write_address = I;
           regfile_ra = 0;
           regfile_rb = 0;
           regfile_data = 0;
+          regfile_we = 1;
           game_fsm.d = game_fsm.SET_K_TO_ZERO;
         
         game_fsm.SET_K_TO_ZERO:
-          regfile_we = 1;
           regfile_write_address = K;
           regfile_ra = 0;
           regfile_rb = 0;
           regfile_data = 0;
+          regfile_we = 1;
           game_fsm.d = game_fsm.RETRIEVE_INPUT_I;
         
         game_fsm.RETRIEVE_INPUT_I:
-          regfile_we = 1;
+          regfile_ra = I; // offset
+          regfile_rb = INPUT_LETTER_1 + regfile_out_a; // addr
+          regfile_data = regfile_out_b;
           regfile_write_address = INPUT_I;
-          regfile_ra = I;
-          regfile_rb = INPUT_LETTER_1;
-          regfile_data = regfile_out_b + regfile_out_a;
+          regfile_we = 1;
           game_fsm.d = game_fsm.RETRIEVE_CORRECT_K;
         
         game_fsm.RETRIEVE_CORRECT_K:
+          regfile_write_address = CORRECT_K; // addr
+          regfile_ra = K; // offset
+          regfile_rb = CORRECT_LETTER_1 + regfile_out_a; // addr
+          regfile_data = regfile_out_b;
           regfile_we = 1;
-          regfile_write_address = CORRECT_K;
-          regfile_ra = K;
-          regfile_rb = CORRECT_LETTER_1;
-          regfile_data = regfile_out_b + regfile_out_a;
           game_fsm.d = game_fsm.COMPARE_INPUT_I_WITH_CORRECT_K;
         
         game_fsm.COMPARE_INPUT_I_WITH_CORRECT_K:
+          current_state = 4;
           regfile_we = 0;
           regfile_ra = INPUT_I;
-          regfile_rb = CORRECT_LETTER_1;
+          regfile_rb = CORRECT_K;
           asel = b000; 
           bsel = b000;
           alufn = b110011; // cmpeq
           
           if (alu_out == b1) {
-            // check position
             game_fsm.d = game_fsm.COMPARE_POSITIONS_K_AND_I;
           } else {
             // wrong letter, wrong position
@@ -322,12 +342,14 @@ module game (
           regfile_rb = I; // 2 bits
           
           // I will serve as an "offset" since our addresses are consecutive
-          case (G) {
-            0: regfile_data = GUESS_1_LETTER_1 + regfile_out_b;
-            1: regfile_data = GUESS_2_LETTER_1 + regfile_out_b;
-            2: regfile_data = GUESS_3_LETTER_1 + regfile_out_b;
-            3: regfile_data = GUESS_4_LETTER_1 + regfile_out_b;
+          case (regfile_out_a) { 
+            d0: regfile_data = GUESS_1_LETTER_1 + regfile_out_b;
+            d1: regfile_data = GUESS_2_LETTER_1 + regfile_out_b;
+            d2: regfile_data = GUESS_3_LETTER_1 + regfile_out_b;
+            d3: regfile_data = GUESS_4_LETTER_1 + regfile_out_b;
           }
+          
+          regfile_write_address = TEMP_GUESS_G_LETTER_I_ADDR;
           
           regfile_we = 1;
           
@@ -337,12 +359,13 @@ module game (
           regfile_ra = I;
           regfile_rb = INPUT_LETTER_1 + regfile_out_a;
           regfile_write_address = TEMP_COLOURED_LETTER;
-          regfile_data = c{00, regfile_out_b};
+          regfile_data = 7b0000000 +  regfile_out_b[6:0]; // regfile_out_b is 5 bits
           regfile_we = 1;
           game_fsm.d = game_fsm.SET_WHITE_LETTER;
           
 
         game_fsm.SET_WHITE_LETTER:
+          current_state = 5;
           regfile_ra = TEMP_GUESS_G_LETTER_I_ADDR;
           regfile_rb = TEMP_COLOURED_LETTER;
           regfile_write_address = regfile_out_a;
@@ -352,19 +375,21 @@ module game (
           
            
         game_fsm.COMPARE_POSITIONS_K_AND_I:
+          current_state = 6;
           regfile_we = 0;
           regfile_ra = K;
           regfile_rb = I;
           asel = b000; 
           bsel = b000;
           alufn = b110011; // cmpeq
-          
           if (alu_out == b1) {
             // COMPLETELY CORRECT
-            game_fsm.d = game_fsm.SET_GREEN_LETTER;
+            //game_fsm.d = game_fsm.COMPARE_POSITIONS_K_AND_I;
+            game_fsm.d = game_fsm.SET_TEMP_GUESS_G_LETTER_I_ADDR_GREEN;
+            
           } else {
             // CORRECT LETTER, WRONG POSITION
-            game_fsm.d = game_fsm.SET_YELLOW_LETTER;
+            game_fsm.d = game_fsm.SET_TEMP_GUESS_G_LETTER_I_ADDR_YELLOW;
           }
         
         // GREEN SEQUENCE 
@@ -373,53 +398,65 @@ module game (
           regfile_rb = I; // 2 bits
           
           // I will serve as an "offset" since our addresses are consecutive
-          case (G) {
-            0: regfile_data = GUESS_1_LETTER_1 + regfile_out_b;
-            1: regfile_data = GUESS_2_LETTER_1 + regfile_out_b;
-            2: regfile_data = GUESS_3_LETTER_1 + regfile_out_b;
-            3: regfile_data = GUESS_4_LETTER_1 + regfile_out_b;
+          case (regfile_out_a) {
+            d0: regfile_data = GUESS_1_LETTER_1 + regfile_out_b;
+            d1: regfile_data = GUESS_2_LETTER_1 + regfile_out_b;
+            d2: regfile_data = GUESS_3_LETTER_1 + regfile_out_b;
+            d3: regfile_data = GUESS_4_LETTER_1 + regfile_out_b;
           }
           
+          regfile_write_address = TEMP_GUESS_G_LETTER_I_ADDR;
           regfile_we = 1;
-          
           game_fsm.d = game_fsm.SET_TEMP_COLOURED_LETTER_GREEN;
         
         game_fsm.SET_TEMP_COLOURED_LETTER_GREEN:
           regfile_ra = I;
           regfile_rb = INPUT_LETTER_1 + regfile_out_a;
           regfile_write_address = TEMP_COLOURED_LETTER;
-          regfile_data = c{01, regfile_out_b};
+          regfile_data = 7b0100000 + regfile_out_b[6:0];
           regfile_we = 1;
           game_fsm.d = game_fsm.SET_GREEN_LETTER;
           
 
         game_fsm.SET_GREEN_LETTER:
+          current_state = 7;
           regfile_ra = TEMP_GUESS_G_LETTER_I_ADDR;
           regfile_rb = TEMP_COLOURED_LETTER;
           regfile_write_address = regfile_out_a;
           regfile_data = regfile_out_b;
           regfile_we = 1;
+          //game_fsm.d = game_fsm.SET_GREEN_LETTER;
           game_fsm.d = game_fsm.INCREMENT_NUM_CORRECT;
         
         game_fsm.INCREMENT_NUM_CORRECT:
           regfile_ra = NUM_CORRECT;
+          alufn = 6b000000; // ADD
+          asel = b000; // Take from regfile_ra
+          bsel = b010; // inputAlu_b = 3d1;
           regfile_write_address = NUM_CORRECT;
-          regfile_data = regfile_out_a + 1;
+          regfile_data = alu_out;
           regfile_we = 1;
           game_fsm.d = game_fsm.COMPARE_NUM_CORRECT_EQUALS_4;
-          
         
         game_fsm.COMPARE_NUM_CORRECT_EQUALS_4:
           regfile_ra = NUM_CORRECT;
           asel = b000; 
-          bsel = b100; // constant 3, since zero-indexed
+          bsel = b101; // constant 4, since zero-indexed
           alufn = b110011; // cmpeq
-          
+                   
           if (alu_out == 16b0) {
-            game_fsm.d = game_fsm.COMPARE_I_EQUALS_3_AND_INCREMENT;
+            debugger1 = regfile_out_a;
+            debugger2 = regfile_out_b;
+            debugger3 = b000111;
+            game_fsm.d = game_fsm.COMPARE_NUM_CORRECT_EQUALS_4;
+            //game_fsm.d = game_fsm.COMPARE_I_EQUALS_3_AND_INCREMENT;
           } else {
             // CONGRATS
-            game_fsm.d = game_fsm.WIN;
+            debugger1 = regfile_out_a;
+            debugger2 = regfile_out_b;
+            debugger3 = b101010;
+            game_fsm.d = game_fsm.COMPARE_NUM_CORRECT_EQUALS_4;
+            //game_fsm.d = game_fsm.WIN;
           }
           
         
@@ -430,23 +467,30 @@ module game (
           regfile_rb = I; // 2 bits
           
           // I will serve as an "offset" since our addresses are consecutive
-          case (G) {
-            0: regfile_data = GUESS_1_LETTER_1 + regfile_out_b;
-            1: regfile_data = GUESS_2_LETTER_1 + regfile_out_b;
-            2: regfile_data = GUESS_3_LETTER_1 + regfile_out_b;
-            3: regfile_data = GUESS_4_LETTER_1 + regfile_out_b;
+          case (regfile_out_a) {
+            d0: 
+              regfile_data = GUESS_1_LETTER_1 + regfile_out_b;
+            d1: 
+              regfile_data = GUESS_2_LETTER_1 + regfile_out_b;
+            d2: 
+              regfile_data = GUESS_3_LETTER_1 + regfile_out_b;
+            d3: 
+              regfile_data = GUESS_4_LETTER_1 + regfile_out_b;
           }
           
+          regfile_write_address = TEMP_GUESS_G_LETTER_I_ADDR;
           regfile_we = 1;
           
+          //game_fsm.d = game_fsm.SET_TEMP_GUESS_G_LETTER_I_ADDR_YELLOW;
           game_fsm.d = game_fsm.SET_TEMP_COLOURED_LETTER_YELLOW;
         
         game_fsm.SET_TEMP_COLOURED_LETTER_YELLOW:
           regfile_ra = I;
           regfile_rb = INPUT_LETTER_1 + regfile_out_a;
           regfile_write_address = TEMP_COLOURED_LETTER;
-          regfile_data = c{10, regfile_out_b};
+          regfile_data = 7b1000000 + regfile_out_b[6:0]; // regfile_out_b is 5 bits
           regfile_we = 1;
+          
           game_fsm.d = game_fsm.SET_YELLOW_LETTER;
           
 
@@ -478,7 +522,7 @@ module game (
         game_fsm.COMPARE_I_EQUALS_3_AND_INCREMENT:
           regfile_ra = I;
           asel = b000; 
-          bsel = b011; // constant 3, since zero-indexed
+          bsel = b100; // constant 3, since zero-indexed
           alufn = b110011; // cmpeq
           
           if (alu_out == 16b0) {
@@ -486,7 +530,9 @@ module game (
             regfile_write_address = I;
             regfile_data = regfile_out_a + 1;
             regfile_we = 1;
-            // increment I first, then set to zero
+ 
+            // increment I first, then set K to zero
+            //game_fsm.d = game_fsm.COMPARE_I_EQUALS_3_AND_INCREMENT;
             game_fsm.d = game_fsm.SET_K_TO_ZERO;
           } else {
             // go to next guess, reset numcorrectinputs
@@ -507,7 +553,7 @@ module game (
         game_fsm.COMPARE_GUESS_CTR_EQUALS_3:
           regfile_ra = G;
           asel = b000; 
-          bsel = b011; // constant 3, since zero-indexed
+          bsel = b100; // constant 3, since zero-indexed
           alufn = b110011; // cmpeq
           
           if (alu_out == 16b0) {

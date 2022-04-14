@@ -10,16 +10,16 @@ module beta (
     input has_panel_input,
     
     // set outputs
-    output current_state[2],
+    output current_state[16],
     
     output out_bottom_matrix1,
     output out_bottom_matrix2,
     output out_bottom_matrix3,
     output out_bottom_matrix4,
     
-    output debugger1[5],
-    output debugger2[5],
-    output debugger3[5]
+    output debugger1[7],
+    output debugger2[7],
+    output debugger3[7]
   ) {
   
   alu game_alu;
@@ -99,8 +99,8 @@ module beta (
     out_bottom_matrix3 = bottom_matrix_control.outmatrix3;
     out_bottom_matrix4 = bottom_matrix_control.outmatrix4;
     
-    debugger1 = bottom_matrix_control.debugger1;
-    debugger2 = bottom_matrix_control.debugger2;
-    debugger3 = control_unit.regfile_write_address;
+    debugger1 = control_unit.debugger1;//game_alu.alu;//control_unit.debugger1;
+    debugger2 = control_unit.debugger2;
+    debugger3 = control_unit.debugger3;
   }
 }

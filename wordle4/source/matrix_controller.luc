@@ -11,11 +11,7 @@ module matrix_controller (
     output outmatrix1,
     output outmatrix2,
     output outmatrix3,
-    output outmatrix4,
-    
-    output debugger1[5],
-    output debugger2[5],
-    output debugger3[5]
+    output outmatrix4
   ) {
   
   .clk(clk){
@@ -42,10 +38,6 @@ module matrix_controller (
     matrix2.letter_address = matrix2_letter_address_dff.q;
     matrix3.letter_address = matrix3_letter_address_dff.q;
     matrix4.letter_address = matrix4_letter_address_dff.q;
-    
-    debugger1 = matrix1_letter_address_dff.q;
-    debugger2 = matrix2_letter_address_dff.q;
-    debugger3 = matrix3_letter_address_dff.q;
     
     case(update){
       3b1:

@@ -15,10 +15,7 @@ module matrix_controller_8 (
     output reg outmatrix1,
     output reg outmatrix2,
     output reg outmatrix3,
-    output reg outmatrix4,
-    output reg [4:0] debugger1,
-    output reg [4:0] debugger2,
-    output reg [4:0] debugger3
+    output reg outmatrix4
   );
   
   
@@ -74,9 +71,6 @@ module matrix_controller_8 (
     M_matrix2_letter_address = M_matrix2_letter_address_dff_q;
     M_matrix3_letter_address = M_matrix3_letter_address_dff_q;
     M_matrix4_letter_address = M_matrix4_letter_address_dff_q;
-    debugger1 = M_matrix1_letter_address_dff_q;
-    debugger2 = M_matrix2_letter_address_dff_q;
-    debugger3 = M_matrix3_letter_address_dff_q;
     
     case (update)
       3'h1: begin

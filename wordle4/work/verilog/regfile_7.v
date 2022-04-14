@@ -175,7 +175,7 @@ module regfile_7 (
           M_correct_letter_3_d = 5'h01;
         end
         5'h1a: begin
-          M_correct_letter_4_d = 5'h13;
+          M_correct_letter_4_d = 5'h12;
         end
         5'h1b: begin
           M_num_correct_d = data;

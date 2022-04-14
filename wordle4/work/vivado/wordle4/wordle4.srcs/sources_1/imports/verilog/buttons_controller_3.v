@@ -9,7 +9,8 @@ module buttons_controller_3 (
     input rst,
     input a,
     input b,
-    input c,
+    input e,
+    input r,
     output reg is_pressed,
     output reg [15:0] out
   );
@@ -28,11 +29,17 @@ module buttons_controller_3 (
     .button_input(b),
     .out(M_b__out)
   );
-  wire [1-1:0] M_c__out;
-  button_10 c_ (
+  wire [1-1:0] M_e__out;
+  button_10 e_ (
     .clk(clk),
-    .button_input(c),
-    .out(M_c__out)
+    .button_input(e),
+    .out(M_e__out)
+  );
+  wire [1-1:0] M_r__out;
+  button_10 r_ (
+    .clk(clk),
+    .button_input(r),
+    .out(M_r__out)
   );
   
   always @* begin
@@ -40,16 +47,21 @@ module buttons_controller_3 (
       out = 5'h01;
       is_pressed = 1'h1;
     end else begin
-      if (M_c__out) begin
-        out = 16'h0003;
+      if (M_e__out) begin
+        out = 3'h5;
         is_pressed = 1'h1;
       end else begin
         if (M_b__out) begin
           out = 5'h02;
           is_pressed = 1'h1;
         end else begin
-          out = 16'h0000;
-          is_pressed = 1'h0;
+          if (M_r__out) begin
+            out = 5'h12;
+            is_pressed = 1'h1;
+          end else begin
+            out = 16'h0000;
+            is_pressed = 1'h0;
+          end
         end
       end
     end

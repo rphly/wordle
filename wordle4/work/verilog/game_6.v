@@ -22,7 +22,7 @@ module game_6 (
     output reg [15:0] regfile_ra,
     output reg [15:0] regfile_rb,
     output reg [15:0] regfile_data,
-    output reg [1:0] current_state,
+    output reg [15:0] current_state,
     output reg [5:0] alufn,
     output reg [2:0] asel,
     output reg [2:0] bsel,
@@ -31,7 +31,10 @@ module game_6 (
     output reg [4:0] bottom_matrix1_letter_address,
     output reg [4:0] bottom_matrix2_letter_address,
     output reg [4:0] bottom_matrix3_letter_address,
-    output reg [4:0] bottom_matrix4_letter_address
+    output reg [4:0] bottom_matrix4_letter_address,
+    output reg [6:0] debugger1,
+    output reg [6:0] debugger2,
+    output reg [6:0] debugger3
   );
   
   
@@ -104,7 +107,7 @@ module game_6 (
   
   localparam GUESS_3_LETTER_1 = 5'h08;
   
-  localparam GUESS_4_LETTER_1 = 5'h0c;
+  localparam GUESS_4_LETTER_1 = 5'h10;
   
   localparam TEMP_GUESS_G_LETTER_I_ADDR = 6'h21;
   
@@ -119,6 +122,9 @@ module game_6 (
   always @* begin
     M_game_fsm_d = M_game_fsm_q;
     
+    debugger1 = 1'h0;
+    debugger2 = 1'h0;
+    debugger3 = 1'h0;
     regfile_we = 1'h0;
     regfile_write_address = 1'h0;
     regfile_ra = 1'h0;
@@ -177,6 +183,14 @@ module game_6 (
           words_selector = regfile_out_a;
           regfile_data = selected_word[0+4-:5];
           regfile_we = 1'h1;
+          M_game_fsm_d = SET_NUM_CORRECT_INPUTS_TO_0_game_fsm;
+        end
+        SET_NUM_CORRECT_INPUTS_TO_0_game_fsm: begin
+          regfile_write_address = 5'h1b;
+          regfile_ra = 1'h0;
+          regfile_rb = 1'h0;
+          regfile_data = 1'h0;
+          regfile_we = 1'h1;
           M_game_fsm_d = RESET_TOP_DISPLAY_game_fsm;
         end
         RESET_TOP_DISPLAY_game_fsm: begin
@@ -199,6 +213,7 @@ module game_6 (
           M_game_fsm_d = IDLE_game_fsm;
         end
         IDLE_game_fsm: begin
+          current_state = 1'h0;
           if (has_panel_input) begin
             if (panel_input == 5'h1f) begin
               M_game_fsm_d = CLEAR_SET_INPUT_CTR_0_game_fsm;
@@ -220,6 +235,7 @@ module game_6 (
           end
         end
         PRINT_LETTER_TO_MATRIX_game_fsm: begin
+          current_state = 1'h1;
           regfile_we = 1'h0;
           regfile_ra = 5'h1c;
           alufn = 6'h00;
@@ -248,6 +264,7 @@ module game_6 (
           M_game_fsm_d = INCREMENT_INPUT_CTR_game_fsm;
         end
         INCREMENT_INPUT_CTR_game_fsm: begin
+          current_state = 2'h2;
           regfile_ra = 5'h1c;
           asel = 3'h0;
           bsel = 3'h4;
@@ -262,9 +279,10 @@ module game_6 (
           end
         end
         CHECK_BUTTON_PRESSED_game_fsm: begin
+          current_state = 2'h3;
           regfile_ra = 5'h1c;
           asel = 3'h0;
-          bsel = 3'h3;
+          bsel = 3'h4;
           alufn = 6'h33;
           if (alu_out == 16'h0001) begin
             M_game_fsm_d = SET_I_TO_ZERO_game_fsm;
@@ -273,41 +291,42 @@ module game_6 (
           end
         end
         SET_I_TO_ZERO_game_fsm: begin
-          regfile_we = 1'h1;
           regfile_write_address = 5'h14;
           regfile_ra = 1'h0;
           regfile_rb = 1'h0;
           regfile_data = 1'h0;
+          regfile_we = 1'h1;
           M_game_fsm_d = SET_K_TO_ZERO_game_fsm;
         end
         SET_K_TO_ZERO_game_fsm: begin
-          regfile_we = 1'h1;
           regfile_write_address = 5'h16;
           regfile_ra = 1'h0;
           regfile_rb = 1'h0;
           regfile_data = 1'h0;
+          regfile_we = 1'h1;
           M_game_fsm_d = RETRIEVE_INPUT_I_game_fsm;
         end
         RETRIEVE_INPUT_I_game_fsm: begin
-          regfile_we = 1'h1;
-          regfile_write_address = 5'h1d;
           regfile_ra = 5'h14;
-          regfile_rb = 5'h10;
-          regfile_data = regfile_out_b + regfile_out_a;
+          regfile_rb = 5'h10 + regfile_out_a;
+          regfile_data = regfile_out_b;
+          regfile_write_address = 5'h1d;
+          regfile_we = 1'h1;
           M_game_fsm_d = RETRIEVE_CORRECT_K_game_fsm;
         end
         RETRIEVE_CORRECT_K_game_fsm: begin
-          regfile_we = 1'h1;
           regfile_write_address = 5'h1e;
           regfile_ra = 5'h16;
-          regfile_rb = 5'h17;
-          regfile_data = regfile_out_b + regfile_out_a;
+          regfile_rb = 5'h17 + regfile_out_a;
+          regfile_data = regfile_out_b;
+          regfile_we = 1'h1;
           M_game_fsm_d = COMPARE_INPUT_I_WITH_CORRECT_K_game_fsm;
         end
         COMPARE_INPUT_I_WITH_CORRECT_K_game_fsm: begin
+          current_state = 3'h4;
           regfile_we = 1'h0;
           regfile_ra = 5'h1d;
-          regfile_rb = 5'h17;
+          regfile_rb = 5'h1e;
           asel = 3'h0;
           bsel = 3'h0;
           alufn = 6'h33;
@@ -321,7 +340,7 @@ module game_6 (
           regfile_ra = 6'h20;
           regfile_rb = 5'h14;
           
-          case (6'h20)
+          case (regfile_out_a)
             1'h0: begin
               regfile_data = 5'h00 + regfile_out_b;
             end
@@ -332,9 +351,10 @@ module game_6 (
               regfile_data = 5'h08 + regfile_out_b;
             end
             2'h3: begin
-              regfile_data = 5'h0c + regfile_out_b;
+              regfile_data = 5'h10 + regfile_out_b;
             end
           endcase
+          regfile_write_address = 6'h21;
           regfile_we = 1'h1;
           M_game_fsm_d = SET_TEMP_COLOURED_LETTER_WHITE_game_fsm;
         end
@@ -342,11 +362,12 @@ module game_6 (
           regfile_ra = 5'h14;
           regfile_rb = 5'h10 + regfile_out_a;
           regfile_write_address = 6'h22;
-          regfile_data = {1'h0, regfile_out_b};
+          regfile_data = 7'h00 + regfile_out_b[0+6-:7];
           regfile_we = 1'h1;
           M_game_fsm_d = SET_WHITE_LETTER_game_fsm;
         end
         SET_WHITE_LETTER_game_fsm: begin
+          current_state = 3'h5;
           regfile_ra = 6'h21;
           regfile_rb = 6'h22;
           regfile_write_address = regfile_out_a;
@@ -355,6 +376,7 @@ module game_6 (
           M_game_fsm_d = COMPARE_K_EQUALS_3_AND_INCREMENT_game_fsm;
         end
         COMPARE_POSITIONS_K_AND_I_game_fsm: begin
+          current_state = 3'h6;
           regfile_we = 1'h0;
           regfile_ra = 5'h16;
           regfile_rb = 5'h14;
@@ -362,16 +384,16 @@ module game_6 (
           bsel = 3'h0;
           alufn = 6'h33;
           if (alu_out == 1'h1) begin
-            M_game_fsm_d = SET_GREEN_LETTER_game_fsm;
+            M_game_fsm_d = SET_TEMP_GUESS_G_LETTER_I_ADDR_GREEN_game_fsm;
           end else begin
-            M_game_fsm_d = SET_YELLOW_LETTER_game_fsm;
+            M_game_fsm_d = SET_TEMP_GUESS_G_LETTER_I_ADDR_YELLOW_game_fsm;
           end
         end
         SET_TEMP_GUESS_G_LETTER_I_ADDR_GREEN_game_fsm: begin
           regfile_ra = 6'h20;
           regfile_rb = 5'h14;
           
-          case (6'h20)
+          case (regfile_out_a)
             1'h0: begin
               regfile_data = 5'h00 + regfile_out_b;
             end
@@ -382,9 +404,10 @@ module game_6 (
               regfile_data = 5'h08 + regfile_out_b;
             end
             2'h3: begin
-              regfile_data = 5'h0c + regfile_out_b;
+              regfile_data = 5'h10 + regfile_out_b;
             end
           endcase
+          regfile_write_address = 6'h21;
           regfile_we = 1'h1;
           M_game_fsm_d = SET_TEMP_COLOURED_LETTER_GREEN_game_fsm;
         end
@@ -392,11 +415,12 @@ module game_6 (
           regfile_ra = 5'h14;
           regfile_rb = 5'h10 + regfile_out_a;
           regfile_write_address = 6'h22;
-          regfile_data = {1'h1, regfile_out_b};
+          regfile_data = 7'h20 + regfile_out_b[0+6-:7];
           regfile_we = 1'h1;
           M_game_fsm_d = SET_GREEN_LETTER_game_fsm;
         end
         SET_GREEN_LETTER_game_fsm: begin
+          current_state = 3'h7;
           regfile_ra = 6'h21;
           regfile_rb = 6'h22;
           regfile_write_address = regfile_out_a;
@@ -406,27 +430,36 @@ module game_6 (
         end
         INCREMENT_NUM_CORRECT_game_fsm: begin
           regfile_ra = 5'h1b;
+          alufn = 6'h00;
+          asel = 3'h0;
+          bsel = 3'h2;
           regfile_write_address = 5'h1b;
-          regfile_data = regfile_out_a + 1'h1;
+          regfile_data = alu_out;
           regfile_we = 1'h1;
           M_game_fsm_d = COMPARE_NUM_CORRECT_EQUALS_4_game_fsm;
         end
         COMPARE_NUM_CORRECT_EQUALS_4_game_fsm: begin
           regfile_ra = 5'h1b;
           asel = 3'h0;
-          bsel = 3'h4;
+          bsel = 3'h5;
           alufn = 6'h33;
           if (alu_out == 16'h0000) begin
-            M_game_fsm_d = COMPARE_I_EQUALS_3_AND_INCREMENT_game_fsm;
+            debugger1 = regfile_out_a;
+            debugger2 = regfile_out_b;
+            debugger3 = 6'h07;
+            M_game_fsm_d = COMPARE_NUM_CORRECT_EQUALS_4_game_fsm;
           end else begin
-            M_game_fsm_d = WIN_game_fsm;
+            debugger1 = regfile_out_a;
+            debugger2 = regfile_out_b;
+            debugger3 = 6'h2a;
+            M_game_fsm_d = COMPARE_NUM_CORRECT_EQUALS_4_game_fsm;
           end
         end
         SET_TEMP_GUESS_G_LETTER_I_ADDR_YELLOW_game_fsm: begin
           regfile_ra = 6'h20;
           regfile_rb = 5'h14;
           
-          case (6'h20)
+          case (regfile_out_a)
             1'h0: begin
               regfile_data = 5'h00 + regfile_out_b;
             end
@@ -437,9 +470,10 @@ module game_6 (
               regfile_data = 5'h08 + regfile_out_b;
             end
             2'h3: begin
-              regfile_data = 5'h0c + regfile_out_b;
+              regfile_data = 5'h10 + regfile_out_b;
             end
           endcase
+          regfile_write_address = 6'h21;
           regfile_we = 1'h1;
           M_game_fsm_d = SET_TEMP_COLOURED_LETTER_YELLOW_game_fsm;
         end
@@ -447,7 +481,7 @@ module game_6 (
           regfile_ra = 5'h14;
           regfile_rb = 5'h10 + regfile_out_a;
           regfile_write_address = 6'h22;
-          regfile_data = {4'ha, regfile_out_b};
+          regfile_data = 7'h40 + regfile_out_b[0+6-:7];
           regfile_we = 1'h1;
           M_game_fsm_d = SET_YELLOW_LETTER_game_fsm;
         end
@@ -476,7 +510,7 @@ module game_6 (
         COMPARE_I_EQUALS_3_AND_INCREMENT_game_fsm: begin
           regfile_ra = 5'h14;
           asel = 3'h0;
-          bsel = 3'h3;
+          bsel = 3'h4;
           alufn = 6'h33;
           if (alu_out == 16'h0000) begin
             regfile_write_address = 5'h14;
@@ -501,7 +535,7 @@ module game_6 (
         COMPARE_GUESS_CTR_EQUALS_3_game_fsm: begin
           regfile_ra = 6'h20;
           asel = 3'h0;
-          bsel = 3'h3;
+          bsel = 3'h4;
           alufn = 6'h33;
           if (alu_out == 16'h0000) begin
             regfile_write_address = 6'h20;
