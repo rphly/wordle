@@ -385,8 +385,8 @@ module game (
           if (alu_out == b1) {
             // COMPLETELY CORRECT
             //game_fsm.d = game_fsm.COMPARE_POSITIONS_K_AND_I;
-            game_fsm.d = game_fsm.SET_TEMP_GUESS_G_LETTER_I_ADDR_GREEN;
-            
+          
+             game_fsm.d = game_fsm.SET_TEMP_GUESS_G_LETTER_I_ADDR_GREEN;
           } else {
             // CORRECT LETTER, WRONG POSITION
             game_fsm.d = game_fsm.SET_TEMP_GUESS_G_LETTER_I_ADDR_YELLOW;
@@ -441,19 +441,15 @@ module game (
         game_fsm.COMPARE_NUM_CORRECT_EQUALS_4:
           regfile_ra = NUM_CORRECT;
           asel = b000; 
-          bsel = b101; // constant 4, since zero-indexed
+          bsel = b100; // constant 4, since zero-indexed
           alufn = b110011; // cmpeq
                    
           if (alu_out == 16b0) {
-            debugger1 = regfile_out_a;
-            debugger2 = regfile_out_b;
             debugger3 = b000111;
-            game_fsm.d = game_fsm.COMPARE_NUM_CORRECT_EQUALS_4;
-            //game_fsm.d = game_fsm.COMPARE_I_EQUALS_3_AND_INCREMENT;
+            //game_fsm.d = game_fsm.COMPARE_NUM_CORRECT_EQUALS_4;
+            game_fsm.d = game_fsm.COMPARE_I_EQUALS_3_AND_INCREMENT;
           } else {
             // CONGRATS
-            debugger1 = regfile_out_a;
-            debugger2 = regfile_out_b;
             debugger3 = b101010;
             game_fsm.d = game_fsm.COMPARE_NUM_CORRECT_EQUALS_4;
             //game_fsm.d = game_fsm.WIN;
@@ -565,7 +561,9 @@ module game (
             game_fsm.d = game_fsm.SET_INPUT_CTR_TO_0;
           } else {
             // oh no
-            game_fsm.d = game_fsm.LOSE;
+            debugger3 = b101011;
+            game_fsm.d = game_fsm.COMPARE_GUESS_CTR_EQUALS_3;
+            //game_fsm.d = game_fsm.LOSE;
           }
  
         default: game_fsm.d = game_fsm.IDLE;

@@ -441,16 +441,12 @@ module game_6 (
         COMPARE_NUM_CORRECT_EQUALS_4_game_fsm: begin
           regfile_ra = 5'h1b;
           asel = 3'h0;
-          bsel = 3'h5;
+          bsel = 3'h4;
           alufn = 6'h33;
           if (alu_out == 16'h0000) begin
-            debugger1 = regfile_out_a;
-            debugger2 = regfile_out_b;
             debugger3 = 6'h07;
-            M_game_fsm_d = COMPARE_NUM_CORRECT_EQUALS_4_game_fsm;
+            M_game_fsm_d = COMPARE_I_EQUALS_3_AND_INCREMENT_game_fsm;
           end else begin
-            debugger1 = regfile_out_a;
-            debugger2 = regfile_out_b;
             debugger3 = 6'h2a;
             M_game_fsm_d = COMPARE_NUM_CORRECT_EQUALS_4_game_fsm;
           end
@@ -543,7 +539,8 @@ module game_6 (
             regfile_we = 1'h1;
             M_game_fsm_d = SET_INPUT_CTR_TO_0_game_fsm;
           end else begin
-            M_game_fsm_d = LOSE_game_fsm;
+            debugger3 = 6'h2b;
+            M_game_fsm_d = COMPARE_GUESS_CTR_EQUALS_3_game_fsm;
           end
         end
         default: begin
