@@ -13,7 +13,8 @@ module game_beta_backup_2 (
     input [3:0] recall,
     input is_pressed,
     output reg [3:0] display_top,
-    output reg [3:0] display_bot
+    output reg [3:0] display_bot,
+    output reg [6:0] debugger
   );
   
   
@@ -37,6 +38,7 @@ module game_beta_backup_2 (
   
   wire [16-1:0] M_regfile_out_a;
   wire [16-1:0] M_regfile_out_b;
+  wire [7-1:0] M_regfile_debugger;
   wire [28-1:0] M_regfile_display_top;
   wire [28-1:0] M_regfile_display_bot;
   reg [6-1:0] M_regfile_write_address;
@@ -56,6 +58,7 @@ module game_beta_backup_2 (
     .read_address_b(M_regfile_read_address_b),
     .out_a(M_regfile_out_a),
     .out_b(M_regfile_out_b),
+    .debugger(M_regfile_debugger),
     .display_top(M_regfile_display_top),
     .display_bot(M_regfile_display_bot)
   );
@@ -169,6 +172,7 @@ module game_beta_backup_2 (
   );
   
   always @* begin
+    debugger = M_regfile_debugger;
     M_alu_alufn = M_state_alufn;
     M_alu_a = M_state_ra_write;
     M_alu_b = M_state_rb_write;

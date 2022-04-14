@@ -12,16 +12,13 @@ module au_top (
     input clear,
     input check_button,
     
-    output top_display1,
-    output bot_display1,
+    //output top_display[4],
+    output bot_display[4],
 
     output io_led[3][8],
 
     output usb_tx
-    
-    
-    
-
+   
   ) {
   
     sig rst; // reset signal
@@ -51,7 +48,6 @@ module au_top (
     
     io_led = 3x{{8h0}};
 
-    
     // init betaCPU
     betaCPU.recall = recall_button;
     betaCPU.clear = clear;
@@ -66,11 +62,11 @@ module au_top (
     
     
     // connect led display outputs
-    top_display1 = betaCPU.display_top[0];  // pass the 5 bit encoding to the first top display 
-    bot_display1 = betaCPU.display_bot[0]; 
+    //top_display = betaCPU.display_top[0];  // pass the 5 bit encoding to the first top display 
+    bot_display = betaCPU.display_bot; 
     
+    io_led[0] = betaCPU.debugger;
 
-    
     
   }
   

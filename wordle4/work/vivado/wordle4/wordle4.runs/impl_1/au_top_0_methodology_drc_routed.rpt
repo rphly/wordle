@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date         : Fri Apr 15 01:14:20 2022
+| Date         : Fri Apr 15 02:14:58 2022
 | Host         : DESKTOP-DRQ6LGH running 64-bit major release  (build 9200)
 | Command      : report_methodology -file au_top_0_methodology_drc_routed.rpt -pb au_top_0_methodology_drc_routed.pb -rpx au_top_0_methodology_drc_routed.rpx
 | Design       : au_top_0
@@ -23,11 +23,11 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 3
+             Violations found: 5
 +-----------+----------+-------------------------------+------------+
 | Rule      | Severity | Description                   | Violations |
 +-----------+----------+-------------------------------+------------+
-| TIMING-18 | Warning  | Missing input or output delay | 3          |
+| TIMING-18 | Warning  | Missing input or output delay | 5          |
 +-----------+----------+-------------------------------+------------+
 
 2. REPORT DETAILS
@@ -39,12 +39,22 @@ Related violations: <none>
 
 TIMING-18#2 Warning
 Missing input or output delay  
-An output delay is missing on bot_display1 relative to clock(s) clk_0
+An output delay is missing on bot_display[0] relative to clock(s) clk_0
 Related violations: <none>
 
 TIMING-18#3 Warning
 Missing input or output delay  
-An output delay is missing on top_display1 relative to clock(s) clk_0
+An output delay is missing on bot_display[1] relative to clock(s) clk_0
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An output delay is missing on bot_display[2] relative to clock(s) clk_0
+Related violations: <none>
+
+TIMING-18#5 Warning
+Missing input or output delay  
+An output delay is missing on bot_display[3] relative to clock(s) clk_0
 Related violations: <none>
 
 

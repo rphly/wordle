@@ -15,6 +15,7 @@ module regfile_backup_4 (
     input [5:0] read_address_b,
     output reg [15:0] out_a,
     output reg [15:0] out_b,
+    output reg [6:0] debugger,
     output reg [27:0] display_top,
     output reg [27:0] display_bot
   );
@@ -99,6 +100,7 @@ module regfile_backup_4 (
     M_guess_ctr_d = M_guess_ctr_q;
     
     cheat = 1'h0;
+    debugger = M_input_letter_1_q;
     display_bot[0+6-:7] = M_input_letter_1_q;
     display_bot[7+6-:7] = M_input_letter_2_q;
     display_bot[14+6-:7] = M_input_letter_3_q;

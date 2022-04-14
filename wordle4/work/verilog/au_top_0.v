@@ -12,8 +12,7 @@ module au_top_0 (
     input [3:0] recall_button,
     input clear,
     input check_button,
-    output reg top_display1,
-    output reg bot_display1,
+    output reg [3:0] bot_display,
     output reg [23:0] io_led,
     output reg usb_tx
   );
@@ -31,6 +30,7 @@ module au_top_0 (
   );
   wire [4-1:0] M_betaCPU_display_top;
   wire [4-1:0] M_betaCPU_display_bot;
+  wire [7-1:0] M_betaCPU_debugger;
   reg [1-1:0] M_betaCPU_check_button;
   reg [2-1:0] M_betaCPU_alphabet_button;
   reg [1-1:0] M_betaCPU_clear;
@@ -45,7 +45,8 @@ module au_top_0 (
     .recall(M_betaCPU_recall),
     .is_pressed(M_betaCPU_is_pressed),
     .display_top(M_betaCPU_display_top),
-    .display_bot(M_betaCPU_display_bot)
+    .display_bot(M_betaCPU_display_bot),
+    .debugger(M_betaCPU_debugger)
   );
   
   always @* begin
@@ -62,7 +63,7 @@ module au_top_0 (
     end else begin
       M_betaCPU_is_pressed = 1'h0;
     end
-    top_display1 = M_betaCPU_display_top[0+0-:1];
-    bot_display1 = M_betaCPU_display_bot[0+0-:1];
+    bot_display = M_betaCPU_display_bot;
+    io_led[0+7-:8] = M_betaCPU_debugger;
   end
 endmodule

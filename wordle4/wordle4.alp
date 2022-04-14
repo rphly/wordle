@@ -8,7 +8,6 @@
     <src>alu.luc</src>
     <src>boolean.luc</src>
     <src>buttons_controller.luc</src>
-    <src>matrix_controller.luc</src>
     <src>panel_controller.luc</src>
     <src>adder.luc</src>
     <src>control_unit.luc</src>

@@ -15,13 +15,13 @@ pin alphabet[1] B28 pulldown; // letter B
 //pin alphabet  27
 //pin alphabet R 24
 
-//pin 
+pin check_button C49 pulldown;
 
-//30
-//31
-pin bot_display1 B33; // top display 
-pin bot_display1 B34; // bot display
 
+pin bot_display[0] B33; // input displays
+pin bot_display[1]B34;
+pin bot_display[2] B30;
+pin bot_display[3] B31;
 
 
 pin io_led[0][0] B21;
