@@ -61,6 +61,7 @@ module beta_2 (
   wire [5-1:0] M_control_unit_bottom_matrix2_letter_address;
   wire [5-1:0] M_control_unit_bottom_matrix3_letter_address;
   wire [5-1:0] M_control_unit_bottom_matrix4_letter_address;
+  wire [5-1:0] M_control_unit_g_out;
   wire [7-1:0] M_control_unit_debugger1;
   wire [7-1:0] M_control_unit_debugger2;
   wire [7-1:0] M_control_unit_debugger3;
@@ -100,6 +101,7 @@ module beta_2 (
     .bottom_matrix2_letter_address(M_control_unit_bottom_matrix2_letter_address),
     .bottom_matrix3_letter_address(M_control_unit_bottom_matrix3_letter_address),
     .bottom_matrix4_letter_address(M_control_unit_bottom_matrix4_letter_address),
+    .g_out(M_control_unit_g_out),
     .debugger1(M_control_unit_debugger1),
     .debugger2(M_control_unit_debugger2),
     .debugger3(M_control_unit_debugger3)
@@ -228,7 +230,7 @@ module beta_2 (
     out_bottom_matrix2 = M_bottom_matrix_control_outmatrix2;
     out_bottom_matrix3 = M_bottom_matrix_control_outmatrix3;
     out_bottom_matrix4 = M_bottom_matrix_control_outmatrix4;
-    debugger1 = M_control_unit_debugger1;
+    debugger1 = M_control_unit_g_out;
     debugger2 = M_control_unit_debugger2;
     debugger3 = M_control_unit_debugger3;
   end

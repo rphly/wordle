@@ -50,7 +50,7 @@ module regfile_7 (
   reg [1:0] M_input_ctr_d, M_input_ctr_q = 1'h0;
   reg [2:0] M_num_correct_d, M_num_correct_q = 1'h0;
   reg [0:0] M_zero_d, M_zero_q = 1'h0;
-  reg [0:0] M_g_d, M_g_q = 1'h0;
+  reg [2:0] M_g_d, M_g_q = 1'h0;
   reg [5:0] M_temp_guess_g_letter_i_d, M_temp_guess_g_letter_i_q = 1'h0;
   reg [6:0] M_temp_coloured_letter_d, M_temp_coloured_letter_q = 1'h0;
   reg [10:0] M_word_index_d, M_word_index_q = 1'h0;

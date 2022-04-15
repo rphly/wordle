@@ -72,7 +72,7 @@ module regfile (
       dff zero[1];
       
       // 1 bit
-      dff g[1];
+      dff g[3];
       
       // address so 6 bit MAX
       dff temp_guess_g_letter_i[6];

@@ -32,6 +32,7 @@ module game_6 (
     output reg [4:0] bottom_matrix2_letter_address,
     output reg [4:0] bottom_matrix3_letter_address,
     output reg [4:0] bottom_matrix4_letter_address,
+    output reg [4:0] g_out,
     output reg [6:0] debugger1,
     output reg [6:0] debugger2,
     output reg [6:0] debugger3
@@ -139,6 +140,7 @@ module game_6 (
     asel = 1'h0;
     bsel = 1'h0;
     words_selector = 1'h0;
+    g_out = 1'h0;
     matrix_controller_update = 3'h0;
     bottom_matrix1_letter_address = 5'h00;
     bottom_matrix2_letter_address = 5'h00;
@@ -185,18 +187,18 @@ module game_6 (
           words_selector = regfile_out_a;
           regfile_data = selected_word[0+4-:5];
           regfile_we = 1'h1;
-          M_game_fsm_d = RESET_NUM_CORRECT_INPUTS_TO_0_game_fsm;
-        end
-        RESET_NUM_CORRECT_INPUTS_TO_0_game_fsm: begin
-          regfile_write_address = 5'h1b;
-          regfile_ra = 1'h0;
-          regfile_rb = 1'h0;
-          regfile_data = 1'h0;
-          regfile_we = 1'h1;
           M_game_fsm_d = SET_GUESS_CTR_TO_0_game_fsm;
         end
         SET_GUESS_CTR_TO_0_game_fsm: begin
           regfile_write_address = 6'h20;
+          regfile_ra = 1'h0;
+          regfile_rb = 1'h0;
+          regfile_data = 1'h0;
+          regfile_we = 1'h1;
+          M_game_fsm_d = RESET_NUM_CORRECT_INPUTS_TO_0_game_fsm;
+        end
+        RESET_NUM_CORRECT_INPUTS_TO_0_game_fsm: begin
+          regfile_write_address = 5'h1b;
           regfile_ra = 1'h0;
           regfile_rb = 1'h0;
           regfile_data = 1'h0;
@@ -224,6 +226,8 @@ module game_6 (
         end
         IDLE_game_fsm: begin
           current_state = 1'h0;
+          regfile_rb = 6'h20;
+          g_out = regfile_out_b;
           if (has_panel_input) begin
             if (panel_input == 5'h1f) begin
               M_game_fsm_d = CLEAR_SET_INPUT_CTR_0_game_fsm;
@@ -549,11 +553,12 @@ module game_6 (
           M_game_fsm_d = COMPARE_GUESS_CTR_EQUALS_3_game_fsm;
         end
         COMPARE_GUESS_CTR_EQUALS_3_game_fsm: begin
+          regfile_we = 1'h0;
           regfile_ra = 6'h20;
           asel = 3'h0;
           bsel = 3'h5;
           alufn = 6'h33;
-          if (regfile_out_a == 2'h3) begin
+          if (regfile_out_a == 1'h1) begin
             debugger3 = 5'h1f;
             M_game_fsm_d = COMPARE_GUESS_CTR_EQUALS_3_game_fsm;
           end

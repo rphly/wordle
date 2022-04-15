@@ -34,6 +34,8 @@ module game (
     output bottom_matrix3_letter_address[5],
     output bottom_matrix4_letter_address[5],
     
+    output g_out[5],
+    
     output debugger1[7],
     output debugger2[7],
     output debugger3[7]
@@ -129,6 +131,7 @@ module game (
     asel = 0;
     bsel = 0;
     words_selector = 0;
+    g_out = 0;
     
     matrix_controller_update = 3b0;
     bottom_matrix1_letter_address = 5d0;
@@ -177,15 +180,6 @@ module game (
           words_selector = regfile_out_a;
           regfile_data = selected_word[0]; // 5 bits
           regfile_we = 1;
-          game_fsm.d = game_fsm.RESET_NUM_CORRECT_INPUTS_TO_0;
-        
-        game_fsm.RESET_NUM_CORRECT_INPUTS_TO_0:
-          
-          regfile_write_address = NUM_CORRECT;
-          regfile_ra = 0;
-          regfile_rb = 0;
-          regfile_data = 0;
-          regfile_we = 1;  
           game_fsm.d = game_fsm.SET_GUESS_CTR_TO_0;
         
         game_fsm.SET_GUESS_CTR_TO_0:
@@ -195,7 +189,18 @@ module game (
           regfile_rb = 0;
           regfile_data = 0;
           regfile_we = 1;  
+          game_fsm.d = game_fsm.RESET_NUM_CORRECT_INPUTS_TO_0;
+        
+        game_fsm.RESET_NUM_CORRECT_INPUTS_TO_0:
+          
+          regfile_write_address = NUM_CORRECT;
+          regfile_ra = 0;
+          regfile_rb = 0;
+          regfile_data = 0;
+          regfile_we = 1;  
           game_fsm.d = game_fsm.RESET_TOP_DISPLAY;
+        
+        
 
         // reset inputs sequence
         game_fsm.RESET_TOP_DISPLAY:
@@ -223,6 +228,8 @@ module game (
         // IDLE STATE
         game_fsm.IDLE:
           current_state = 0;
+          regfile_rb = G;
+          g_out = regfile_out_b;
           // if check button press
           if (has_panel_input) {
             if (panel_input == CLEAR_SIGNAL) {
@@ -570,12 +577,13 @@ module game (
           game_fsm.d = game_fsm.COMPARE_GUESS_CTR_EQUALS_3;
         
         game_fsm.COMPARE_GUESS_CTR_EQUALS_3:
+          regfile_we = 0;
           regfile_ra = G;
           asel = b000; 
           bsel = b101; // constant 3, since zero-indexed
           alufn = b110011; // cmpeq
           
-          if (regfile_out_a == d3) {
+          if (regfile_out_a == d1) {
             debugger3 = b11111;
             game_fsm.d = game_fsm.COMPARE_GUESS_CTR_EQUALS_3;
           }
