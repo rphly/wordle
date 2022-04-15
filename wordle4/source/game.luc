@@ -28,11 +28,17 @@ module game (
     output bsel[3],
     output words_selector[5],
     
-    output matrix_controller_update[3],
-    output bottom_matrix1_letter_address[5],
-    output bottom_matrix2_letter_address[5],
-    output bottom_matrix3_letter_address[5],
-    output bottom_matrix4_letter_address[5],
+    output bottom_matrix_controller_update[3],
+    output bottom_matrix1_letter_address[7],
+    output bottom_matrix2_letter_address[7],
+    output bottom_matrix3_letter_address[7],
+    output bottom_matrix4_letter_address[7],
+    
+    output top_matrix_controller_update[3],
+    output top_matrix1_letter_address[7],
+    output top_matrix2_letter_address[7],
+    output top_matrix3_letter_address[7],
+    output top_matrix4_letter_address[7],
     
     output debugger1[7],
     output debugger2[7],
@@ -79,6 +85,9 @@ module game (
       INCREMENT_GUESS_CTR,
       COMPARE_GUESS_CTR_EQUALS_3,
       SHOW_TOP_DISPLAY,
+      SHOW_TOP_DISPLAY_2,
+      SHOW_TOP_DISPLAY_3,
+      SHOW_TOP_DISPLAY_4,
       SET_CORRECT_WORD,
       SET_CORRECT_LETTER_1,
       SET_CORRECT_LETTER_2,
@@ -130,11 +139,17 @@ module game (
     bsel = 0;
     words_selector = 0;
     
-    matrix_controller_update = 3b0;
+    bottom_matrix_controller_update = 3b0;
     bottom_matrix1_letter_address = 5d0;
     bottom_matrix2_letter_address = 5d0;
     bottom_matrix3_letter_address = 5d0;
     bottom_matrix4_letter_address = 5d0;
+    
+    top_matrix_controller_update = 3b0;
+    top_matrix1_letter_address = 5d0;
+    top_matrix2_letter_address = 5d0;
+    top_matrix3_letter_address = 5d0;
+    top_matrix4_letter_address = 5d0;
     
     if (rst) {
       game_fsm.d = game_fsm.SET_CORRECT_WORD; 
@@ -212,7 +227,7 @@ module game (
           game_fsm.d = game_fsm.RESET_BOTTOM_DISPLAY;
         
         game_fsm.RESET_BOTTOM_DISPLAY:
-          matrix_controller_update = 3b101;
+          bottom_matrix_controller_update = 3b101;
           bottom_matrix1_letter_address = 5d0;
           bottom_matrix2_letter_address = 5d0;
           bottom_matrix3_letter_address = 5d0;
@@ -252,16 +267,16 @@ module game (
           
           case(regfile_out_a){
             16b0:
-              matrix_controller_update = 3b1;
+              bottom_matrix_controller_update = 3b1;
               bottom_matrix1_letter_address = regfile_out_b;
             16b1:
-              matrix_controller_update = 3b10;
+              bottom_matrix_controller_update = 3b10;
               bottom_matrix2_letter_address = regfile_out_b;
             16b10:
-              matrix_controller_update = 3b11;
+              bottom_matrix_controller_update = 3b11;
               bottom_matrix3_letter_address = regfile_out_b;
             16b11:
-              matrix_controller_update = 3b100;
+              bottom_matrix_controller_update = 3b100;
               bottom_matrix4_letter_address = regfile_out_b;
           }
           game_fsm.d = game_fsm.INCREMENT_INPUT_CTR;
@@ -456,14 +471,10 @@ module game (
           alufn = b110011; // cmpeq
                    
           if (alu_out == 16b0) {
-            debugger3 = b000111;
-            //game_fsm.d = game_fsm.COMPARE_NUM_CORRECT_EQUALS_3;
-            game_fsm.d = game_fsm.COMPARE_I_EQUALS_3_AND_INCREMENT;
+            game_fsm.d = game_fsm.COMPARE_NUM_CORRECT_EQUALS_3;
           } else {
             // CONGRATS
-            debugger3 = b101010;
-            game_fsm.d = game_fsm.COMPARE_NUM_CORRECT_EQUALS_3;
-            //game_fsm.d = game_fsm.WIN;
+            game_fsm.d = game_fsm.WIN;
           }
           
         
@@ -555,7 +566,95 @@ module game (
           game_fsm.d = game_fsm.SHOW_TOP_DISPLAY;
        
         game_fsm.SHOW_TOP_DISPLAY:
+          regfile_we = 0;
+          regfile_ra = G;
+          case(regfile_out_a){
+            d0:
+              regfile_rb = GUESS_1_LETTER_1;
+              top_matrix_controller_update = 3b1;
+              top_matrix1_letter_address = regfile_out_b;
+            d1:
+              regfile_rb = GUESS_2_LETTER_1;
+              top_matrix_controller_update = 3b1;
+              top_matrix1_letter_address = regfile_out_b;
+            d2:
+              regfile_rb = GUESS_3_LETTER_1;
+              top_matrix_controller_update = 3b1;
+              top_matrix1_letter_address = regfile_out_b;
+            d3:
+              regfile_rb = GUESS_4_LETTER_1;
+              top_matrix_controller_update = 3b1;
+              top_matrix1_letter_address = regfile_out_b;
+          }
+          game_fsm.d = game_fsm.SHOW_TOP_DISPLAY_2;
           
+        game_fsm.SHOW_TOP_DISPLAY_2:
+          regfile_we = 0;
+          regfile_ra = G;
+          case(regfile_out_a){
+            d0:
+              regfile_rb = GUESS_1_LETTER_1 + d1;
+              top_matrix_controller_update = 3b10;
+              top_matrix2_letter_address = regfile_out_b;
+            d1:
+              regfile_rb = GUESS_2_LETTER_1 + d1;
+              top_matrix_controller_update = 3b10;
+              top_matrix2_letter_address = regfile_out_b;
+            d2:
+              regfile_rb = GUESS_3_LETTER_1 + d1;
+              top_matrix_controller_update = 3b10;
+              top_matrix2_letter_address = regfile_out_b;
+            d3:
+              regfile_rb = GUESS_4_LETTER_1 + d1;
+              top_matrix_controller_update = 3b10;
+              top_matrix2_letter_address = regfile_out_b;
+          }
+          game_fsm.d = game_fsm.SHOW_TOP_DISPLAY_3;
+          
+        game_fsm.SHOW_TOP_DISPLAY_3:
+          regfile_we = 0;
+          regfile_ra = G;
+          case(regfile_out_a){
+            d0:
+              regfile_rb = GUESS_1_LETTER_1 + d2;
+              top_matrix_controller_update = 3b11;
+              top_matrix3_letter_address = regfile_out_b;
+            d1:
+              regfile_rb = GUESS_2_LETTER_1 + d2;
+              top_matrix_controller_update = 3b11;
+              top_matrix3_letter_address = regfile_out_b;
+            d2:
+              regfile_rb = GUESS_3_LETTER_1 + d2;
+              top_matrix_controller_update = 3b11;
+              top_matrix3_letter_address = regfile_out_b;
+            d3:
+              regfile_rb = GUESS_4_LETTER_1 + d2;
+              top_matrix_controller_update = 3b11;
+              top_matrix3_letter_address = regfile_out_b;
+          }
+          game_fsm.d = game_fsm.SHOW_TOP_DISPLAY_4;
+       
+       game_fsm.SHOW_TOP_DISPLAY_4:
+          regfile_we = 0;
+          regfile_ra = G;
+          case(regfile_out_a){
+            d0:
+              regfile_rb = GUESS_1_LETTER_1 + d3;
+              top_matrix_controller_update = 3b100;
+              top_matrix4_letter_address = regfile_out_b;
+            d1:
+              regfile_rb = GUESS_2_LETTER_1 + d3;
+              top_matrix_controller_update = 3b100;
+              top_matrix4_letter_address = regfile_out_b;
+            d2:
+              regfile_rb = GUESS_3_LETTER_1 + d3;
+              top_matrix_controller_update = 3b100;
+              top_matrix4_letter_address = regfile_out_b;
+            d3:
+              regfile_rb = GUESS_4_LETTER_1 + d3;
+              top_matrix_controller_update = 3b100;
+              top_matrix4_letter_address = regfile_out_b;
+          }
           game_fsm.d = game_fsm.INCREMENT_GUESS_CTR;
          
           
@@ -574,21 +673,12 @@ module game (
           asel = b000; 
           bsel = b101; // constant 3, since zero-indexed
           alufn = b110011; // cmpeq
-          
-          if (regfile_out_a == d3) {
-            debugger3 = b11111;
-            game_fsm.d = game_fsm.COMPARE_GUESS_CTR_EQUALS_3;
-          }
                    
           if (alu_out == 16b0) {
-            debugger3 = b000111;
-            
             game_fsm.d = game_fsm.SET_INPUT_CTR_TO_0;
           } else {
-            // oh no
-            debugger3 = b101011;
-            game_fsm.d = game_fsm.COMPARE_GUESS_CTR_EQUALS_3;
-            //game_fsm.d = game_fsm.LOSE;
+            // oh no            
+            game_fsm.d = game_fsm.LOSE;
           }
  
         default: game_fsm.d = game_fsm.IDLE;

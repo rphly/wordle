@@ -8,10 +8,10 @@ module matrix_controller_8 (
     input clk,
     input rst,
     input [2:0] update,
-    input [4:0] matrix1_letter_address,
-    input [4:0] matrix2_letter_address,
-    input [4:0] matrix3_letter_address,
-    input [4:0] matrix4_letter_address,
+    input [6:0] matrix1_letter_index,
+    input [6:0] matrix2_letter_index,
+    input [6:0] matrix3_letter_index,
+    input [6:0] matrix4_letter_index,
     output reg outmatrix1,
     output reg outmatrix2,
     output reg outmatrix3,
@@ -20,85 +20,85 @@ module matrix_controller_8 (
   
   
   
-  reg [4:0] M_matrix1_letter_address_dff_d, M_matrix1_letter_address_dff_q = 1'h0;
-  reg [4:0] M_matrix2_letter_address_dff_d, M_matrix2_letter_address_dff_q = 1'h0;
-  reg [4:0] M_matrix3_letter_address_dff_d, M_matrix3_letter_address_dff_q = 1'h0;
-  reg [4:0] M_matrix4_letter_address_dff_d, M_matrix4_letter_address_dff_q = 1'h0;
+  reg [6:0] M_matrix1_letter_index_dff_d, M_matrix1_letter_index_dff_q = 1'h0;
+  reg [6:0] M_matrix2_letter_index_dff_d, M_matrix2_letter_index_dff_q = 1'h0;
+  reg [6:0] M_matrix3_letter_index_dff_d, M_matrix3_letter_index_dff_q = 1'h0;
+  reg [6:0] M_matrix4_letter_index_dff_d, M_matrix4_letter_index_dff_q = 1'h0;
   wire [1-1:0] M_matrix1_data_out;
-  reg [5-1:0] M_matrix1_letter_address;
+  reg [7-1:0] M_matrix1_letter_index;
   matrix_15 matrix1 (
     .clk(clk),
     .rst(rst),
-    .letter_address(M_matrix1_letter_address),
+    .letter_index(M_matrix1_letter_index),
     .data_out(M_matrix1_data_out)
   );
   wire [1-1:0] M_matrix2_data_out;
-  reg [5-1:0] M_matrix2_letter_address;
+  reg [7-1:0] M_matrix2_letter_index;
   matrix_15 matrix2 (
     .clk(clk),
     .rst(rst),
-    .letter_address(M_matrix2_letter_address),
+    .letter_index(M_matrix2_letter_index),
     .data_out(M_matrix2_data_out)
   );
   wire [1-1:0] M_matrix3_data_out;
-  reg [5-1:0] M_matrix3_letter_address;
+  reg [7-1:0] M_matrix3_letter_index;
   matrix_15 matrix3 (
     .clk(clk),
     .rst(rst),
-    .letter_address(M_matrix3_letter_address),
+    .letter_index(M_matrix3_letter_index),
     .data_out(M_matrix3_data_out)
   );
   wire [1-1:0] M_matrix4_data_out;
-  reg [5-1:0] M_matrix4_letter_address;
+  reg [7-1:0] M_matrix4_letter_index;
   matrix_15 matrix4 (
     .clk(clk),
     .rst(rst),
-    .letter_address(M_matrix4_letter_address),
+    .letter_index(M_matrix4_letter_index),
     .data_out(M_matrix4_data_out)
   );
   
   always @* begin
-    M_matrix3_letter_address_dff_d = M_matrix3_letter_address_dff_q;
-    M_matrix4_letter_address_dff_d = M_matrix4_letter_address_dff_q;
-    M_matrix2_letter_address_dff_d = M_matrix2_letter_address_dff_q;
-    M_matrix1_letter_address_dff_d = M_matrix1_letter_address_dff_q;
+    M_matrix1_letter_index_dff_d = M_matrix1_letter_index_dff_q;
+    M_matrix4_letter_index_dff_d = M_matrix4_letter_index_dff_q;
+    M_matrix3_letter_index_dff_d = M_matrix3_letter_index_dff_q;
+    M_matrix2_letter_index_dff_d = M_matrix2_letter_index_dff_q;
     
     outmatrix1 = M_matrix1_data_out;
     outmatrix2 = M_matrix2_data_out;
     outmatrix3 = M_matrix3_data_out;
     outmatrix4 = M_matrix4_data_out;
-    M_matrix1_letter_address = M_matrix1_letter_address_dff_q;
-    M_matrix2_letter_address = M_matrix2_letter_address_dff_q;
-    M_matrix3_letter_address = M_matrix3_letter_address_dff_q;
-    M_matrix4_letter_address = M_matrix4_letter_address_dff_q;
+    M_matrix1_letter_index = M_matrix1_letter_index_dff_q;
+    M_matrix2_letter_index = M_matrix2_letter_index_dff_q;
+    M_matrix3_letter_index = M_matrix3_letter_index_dff_q;
+    M_matrix4_letter_index = M_matrix4_letter_index_dff_q;
     
     case (update)
       3'h1: begin
-        M_matrix1_letter_address_dff_d = matrix1_letter_address;
+        M_matrix1_letter_index_dff_d = matrix1_letter_index;
       end
       3'h2: begin
-        M_matrix2_letter_address_dff_d = matrix2_letter_address;
+        M_matrix2_letter_index_dff_d = matrix2_letter_index;
       end
       3'h3: begin
-        M_matrix3_letter_address_dff_d = matrix3_letter_address;
+        M_matrix3_letter_index_dff_d = matrix3_letter_index;
       end
       3'h4: begin
-        M_matrix4_letter_address_dff_d = matrix4_letter_address;
+        M_matrix4_letter_index_dff_d = matrix4_letter_index;
       end
       3'h5: begin
-        M_matrix1_letter_address_dff_d = 5'h00;
-        M_matrix2_letter_address_dff_d = 5'h00;
-        M_matrix3_letter_address_dff_d = 5'h00;
-        M_matrix4_letter_address_dff_d = 5'h00;
+        M_matrix1_letter_index_dff_d = 5'h00;
+        M_matrix2_letter_index_dff_d = 5'h00;
+        M_matrix3_letter_index_dff_d = 5'h00;
+        M_matrix4_letter_index_dff_d = 5'h00;
       end
     endcase
   end
   
   always @(posedge clk) begin
-    M_matrix1_letter_address_dff_q <= M_matrix1_letter_address_dff_d;
-    M_matrix2_letter_address_dff_q <= M_matrix2_letter_address_dff_d;
-    M_matrix3_letter_address_dff_q <= M_matrix3_letter_address_dff_d;
-    M_matrix4_letter_address_dff_q <= M_matrix4_letter_address_dff_d;
+    M_matrix1_letter_index_dff_q <= M_matrix1_letter_index_dff_d;
+    M_matrix2_letter_index_dff_q <= M_matrix2_letter_index_dff_d;
+    M_matrix3_letter_index_dff_q <= M_matrix3_letter_index_dff_d;
+    M_matrix4_letter_index_dff_q <= M_matrix4_letter_index_dff_d;
   end
   
 endmodule

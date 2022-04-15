@@ -1,7 +1,7 @@
 module matrix (
     input clk,  // clock
     input rst,  // reset
-    input letter_address[5],
+    input letter_index[7],
     output data_out
   ) {
   
@@ -12,12 +12,35 @@ module matrix (
   }
   
   white_alphabets white_letters;
+  yellow_alphabets yellow_letters;
+  green_alphabets green_letters;
 
   always {
-    white_letters.selector = letter_address;
+    white_letters.selector = letter_index[4:0];
+    yellow_letters.selector = letter_index[4:0];
+    green_letters.selector = letter_index[4:0];
     
-    matrix_writer.update = 1;
-    matrix_writer.color = white_letters.out[matrix_writer.pixel];
-    data_out = matrix_writer.led;
+    case(letter_index[6:5]){
+      b00:
+         matrix_writer.update = 1;
+         matrix_writer.color = white_letters.out[matrix_writer.pixel];
+         data_out = matrix_writer.led;
+      
+      b10:
+        matrix_writer.update = 1;
+        matrix_writer.color = yellow_letters.out[matrix_writer.pixel];
+        data_out = matrix_writer.led; 
+        
+      b11:
+        matrix_writer.update = 1;
+        matrix_writer.color = green_letters.out[matrix_writer.pixel];
+        data_out = matrix_writer.led; 
+      
+      default:
+        matrix_writer.update = 0;
+        matrix_writer.color = white_letters.out[matrix_writer.pixel];
+        data_out = matrix_writer.led;
+    } 
+   
   }
 }

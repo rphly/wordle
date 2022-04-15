@@ -16,6 +16,10 @@ module beta_2 (
     output reg out_bottom_matrix2,
     output reg out_bottom_matrix3,
     output reg out_bottom_matrix4,
+    output reg out_top_matrix1,
+    output reg out_top_matrix2,
+    output reg out_top_matrix3,
+    output reg out_top_matrix4,
     output reg [6:0] debugger1,
     output reg [6:0] debugger2,
     output reg [6:0] debugger3
@@ -56,11 +60,16 @@ module beta_2 (
   wire [3-1:0] M_control_unit_asel;
   wire [3-1:0] M_control_unit_bsel;
   wire [5-1:0] M_control_unit_words_selector;
-  wire [3-1:0] M_control_unit_matrix_controller_update;
-  wire [5-1:0] M_control_unit_bottom_matrix1_letter_address;
-  wire [5-1:0] M_control_unit_bottom_matrix2_letter_address;
-  wire [5-1:0] M_control_unit_bottom_matrix3_letter_address;
-  wire [5-1:0] M_control_unit_bottom_matrix4_letter_address;
+  wire [3-1:0] M_control_unit_bottom_matrix_controller_update;
+  wire [7-1:0] M_control_unit_bottom_matrix1_letter_address;
+  wire [7-1:0] M_control_unit_bottom_matrix2_letter_address;
+  wire [7-1:0] M_control_unit_bottom_matrix3_letter_address;
+  wire [7-1:0] M_control_unit_bottom_matrix4_letter_address;
+  wire [3-1:0] M_control_unit_top_matrix_controller_update;
+  wire [7-1:0] M_control_unit_top_matrix1_letter_address;
+  wire [7-1:0] M_control_unit_top_matrix2_letter_address;
+  wire [7-1:0] M_control_unit_top_matrix3_letter_address;
+  wire [7-1:0] M_control_unit_top_matrix4_letter_address;
   wire [7-1:0] M_control_unit_debugger1;
   wire [7-1:0] M_control_unit_debugger2;
   wire [7-1:0] M_control_unit_debugger3;
@@ -95,11 +104,16 @@ module beta_2 (
     .asel(M_control_unit_asel),
     .bsel(M_control_unit_bsel),
     .words_selector(M_control_unit_words_selector),
-    .matrix_controller_update(M_control_unit_matrix_controller_update),
+    .bottom_matrix_controller_update(M_control_unit_bottom_matrix_controller_update),
     .bottom_matrix1_letter_address(M_control_unit_bottom_matrix1_letter_address),
     .bottom_matrix2_letter_address(M_control_unit_bottom_matrix2_letter_address),
     .bottom_matrix3_letter_address(M_control_unit_bottom_matrix3_letter_address),
     .bottom_matrix4_letter_address(M_control_unit_bottom_matrix4_letter_address),
+    .top_matrix_controller_update(M_control_unit_top_matrix_controller_update),
+    .top_matrix1_letter_address(M_control_unit_top_matrix1_letter_address),
+    .top_matrix2_letter_address(M_control_unit_top_matrix2_letter_address),
+    .top_matrix3_letter_address(M_control_unit_top_matrix3_letter_address),
+    .top_matrix4_letter_address(M_control_unit_top_matrix4_letter_address),
     .debugger1(M_control_unit_debugger1),
     .debugger2(M_control_unit_debugger2),
     .debugger3(M_control_unit_debugger3)
@@ -127,22 +141,44 @@ module beta_2 (
   wire [1-1:0] M_bottom_matrix_control_outmatrix3;
   wire [1-1:0] M_bottom_matrix_control_outmatrix4;
   reg [3-1:0] M_bottom_matrix_control_update;
-  reg [5-1:0] M_bottom_matrix_control_matrix1_letter_address;
-  reg [5-1:0] M_bottom_matrix_control_matrix2_letter_address;
-  reg [5-1:0] M_bottom_matrix_control_matrix3_letter_address;
-  reg [5-1:0] M_bottom_matrix_control_matrix4_letter_address;
+  reg [7-1:0] M_bottom_matrix_control_matrix1_letter_index;
+  reg [7-1:0] M_bottom_matrix_control_matrix2_letter_index;
+  reg [7-1:0] M_bottom_matrix_control_matrix3_letter_index;
+  reg [7-1:0] M_bottom_matrix_control_matrix4_letter_index;
   matrix_controller_8 bottom_matrix_control (
     .clk(clk),
     .rst(rst),
     .update(M_bottom_matrix_control_update),
-    .matrix1_letter_address(M_bottom_matrix_control_matrix1_letter_address),
-    .matrix2_letter_address(M_bottom_matrix_control_matrix2_letter_address),
-    .matrix3_letter_address(M_bottom_matrix_control_matrix3_letter_address),
-    .matrix4_letter_address(M_bottom_matrix_control_matrix4_letter_address),
+    .matrix1_letter_index(M_bottom_matrix_control_matrix1_letter_index),
+    .matrix2_letter_index(M_bottom_matrix_control_matrix2_letter_index),
+    .matrix3_letter_index(M_bottom_matrix_control_matrix3_letter_index),
+    .matrix4_letter_index(M_bottom_matrix_control_matrix4_letter_index),
     .outmatrix1(M_bottom_matrix_control_outmatrix1),
     .outmatrix2(M_bottom_matrix_control_outmatrix2),
     .outmatrix3(M_bottom_matrix_control_outmatrix3),
     .outmatrix4(M_bottom_matrix_control_outmatrix4)
+  );
+  wire [1-1:0] M_top_matrix_control_outmatrix1;
+  wire [1-1:0] M_top_matrix_control_outmatrix2;
+  wire [1-1:0] M_top_matrix_control_outmatrix3;
+  wire [1-1:0] M_top_matrix_control_outmatrix4;
+  reg [3-1:0] M_top_matrix_control_update;
+  reg [7-1:0] M_top_matrix_control_matrix1_letter_index;
+  reg [7-1:0] M_top_matrix_control_matrix2_letter_index;
+  reg [7-1:0] M_top_matrix_control_matrix3_letter_index;
+  reg [7-1:0] M_top_matrix_control_matrix4_letter_index;
+  matrix_controller_8 top_matrix_control (
+    .clk(clk),
+    .rst(rst),
+    .update(M_top_matrix_control_update),
+    .matrix1_letter_index(M_top_matrix_control_matrix1_letter_index),
+    .matrix2_letter_index(M_top_matrix_control_matrix2_letter_index),
+    .matrix3_letter_index(M_top_matrix_control_matrix3_letter_index),
+    .matrix4_letter_index(M_top_matrix_control_matrix4_letter_index),
+    .outmatrix1(M_top_matrix_control_outmatrix1),
+    .outmatrix2(M_top_matrix_control_outmatrix2),
+    .outmatrix3(M_top_matrix_control_outmatrix3),
+    .outmatrix4(M_top_matrix_control_outmatrix4)
   );
   
   wire [20-1:0] M_words_out;
@@ -219,15 +255,24 @@ module beta_2 (
     M_control_unit_alu_out = M_game_alu_alu;
     M_control_unit_selected_word = M_words_out;
     current_state = M_control_unit_current_state;
-    M_bottom_matrix_control_update = M_control_unit_matrix_controller_update;
-    M_bottom_matrix_control_matrix1_letter_address = M_control_unit_bottom_matrix1_letter_address;
-    M_bottom_matrix_control_matrix2_letter_address = M_control_unit_bottom_matrix2_letter_address;
-    M_bottom_matrix_control_matrix3_letter_address = M_control_unit_bottom_matrix3_letter_address;
-    M_bottom_matrix_control_matrix4_letter_address = M_control_unit_bottom_matrix4_letter_address;
+    M_bottom_matrix_control_update = M_control_unit_bottom_matrix_controller_update;
+    M_bottom_matrix_control_matrix1_letter_index = M_control_unit_bottom_matrix1_letter_address;
+    M_bottom_matrix_control_matrix2_letter_index = M_control_unit_bottom_matrix2_letter_address;
+    M_bottom_matrix_control_matrix3_letter_index = M_control_unit_bottom_matrix3_letter_address;
+    M_bottom_matrix_control_matrix4_letter_index = M_control_unit_bottom_matrix4_letter_address;
     out_bottom_matrix1 = M_bottom_matrix_control_outmatrix1;
     out_bottom_matrix2 = M_bottom_matrix_control_outmatrix2;
     out_bottom_matrix3 = M_bottom_matrix_control_outmatrix3;
     out_bottom_matrix4 = M_bottom_matrix_control_outmatrix4;
+    M_top_matrix_control_update = M_control_unit_top_matrix_controller_update;
+    M_top_matrix_control_matrix1_letter_index = M_control_unit_top_matrix1_letter_address;
+    M_top_matrix_control_matrix2_letter_index = M_control_unit_top_matrix2_letter_address;
+    M_top_matrix_control_matrix3_letter_index = M_control_unit_top_matrix3_letter_address;
+    M_top_matrix_control_matrix4_letter_index = M_control_unit_top_matrix4_letter_address;
+    out_top_matrix1 = M_top_matrix_control_outmatrix1;
+    out_top_matrix2 = M_top_matrix_control_outmatrix2;
+    out_top_matrix3 = M_top_matrix_control_outmatrix3;
+    out_top_matrix4 = M_top_matrix_control_outmatrix4;
     debugger1 = M_control_unit_debugger1;
     debugger2 = M_control_unit_debugger2;
     debugger3 = M_control_unit_debugger3;

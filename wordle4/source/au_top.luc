@@ -5,16 +5,45 @@ module au_top (
     
     // keyboard inputs
     input a_in,
-    input b_in,
-    input r_in,
+    /*input b_in,
+    input c_in,
+    input d_in,*/
     input e_in,
+   /* input f_in,
+    input g_in,
+    input h_in,*/
+    input i_in,
+    /*input j_in,
+    input k_in,*/
+    input l_in,
+    //input m_in,
+    input n_in,
+    input o_in,
+    input p_in,
+    /*input q_in,
+    input r_in,*/
+    input s_in,
+    input t_in,
+    /*input u_in,
+    input v_in,
+    input w_in,
+    input x_in,
+    input y_in,
+    input z_in,*/
    
     input clear_in,
     input check_in,
-    output outmatrix1,
-    output outmatrix2,
-    output outmatrix3,
-    output outmatrix4,
+    
+    output out_bottom_matrix1,
+    output out_bottom_matrix2,
+    output out_bottom_matrix3,
+    output out_bottom_matrix4,
+    
+    output out_top_matrix1,
+    output out_top_matrix2,
+    output out_top_matrix3,
+    output out_top_matrix4,
+    
     output io_led[3][8],
     output usb_tx
   ) {
@@ -27,9 +56,31 @@ module au_top (
       beta betaCPU;
       buttons_controller keyboard_controller(
         .a(a_in),
-        .b(b_in),
+        //.b(b_in),
+        //.c(c_in),
+        //.d(d_in),
         .e(e_in),
-        .r(r_in)
+        //.f(f_in),
+        //.g(g_in),
+        //.h(h_in),
+        .i(i_in),
+        //.j(j_in),
+        //.k(k_in),
+        .l(l_in),
+        //.m(m_in),
+        .n(n_in),
+        .o(o_in),
+        .p(p_in),
+        //.q(q_in),
+        //.r(r_in),
+        .s(s_in),
+        .t(t_in)
+        //.u(u_in),
+        //.v(v_in),
+        //.w(w_in),
+        //.x(x_in),
+        //.y(y_in),
+        //.z(z_in)
       );
       
       panel_controller button_panel_controller(
@@ -45,7 +96,7 @@ module au_top (
   always {
     reset_cond.in = ~rst_n;
     rst = reset_cond.out;
-    io_led = 3x{{8h00}};
+    //io_led = 3x{{8h00}};
     
     betaCPU.keyboard_input = keyboard_controller.out;
     betaCPU.has_keyboard_input = keyboard_controller.is_pressed;
@@ -56,16 +107,23 @@ module au_top (
     panel_debugger.d = button_panel_controller.out;
      }
     
-    io_led[2][5:0] = panel_debugger.q;
+   // io_led[2][5:0] = panel_debugger.q;
     
-    outmatrix1 = betaCPU.out_bottom_matrix1;
-    outmatrix2 = betaCPU.out_bottom_matrix2;
-    outmatrix3 = betaCPU.out_bottom_matrix3;
-    outmatrix4 = betaCPU.out_bottom_matrix4;
+    out_bottom_matrix1 = betaCPU.out_bottom_matrix1;
+    out_bottom_matrix2 = betaCPU.out_bottom_matrix2;
+    out_bottom_matrix3 = betaCPU.out_bottom_matrix3;
+    out_bottom_matrix4 = betaCPU.out_bottom_matrix4;
     
-    io_led[0][7:0] = betaCPU.debugger1;
-    io_led[1][7:0] = betaCPU.debugger2;
-    io_led[2][7:0] = betaCPU.debugger3;
+    out_top_matrix1 = betaCPU.out_top_matrix1;
+    out_top_matrix2 = betaCPU.out_top_matrix2;
+    out_top_matrix3 = betaCPU.out_top_matrix3;
+    out_top_matrix4 = betaCPU.out_top_matrix4;
+    
+    //io_led[0][7:0] = betaCPU.debugger1;
+    //io_led[1][7:0] = betaCPU.debugger2;
+    //io_led[2][7:0] = betaCPU.debugger3;
+    
+    io_led = 3x{{8b11111111}};
     
     usb_tx = usb_rx;        // loop serial port
   }

@@ -27,11 +27,16 @@ module game_6 (
     output reg [2:0] asel,
     output reg [2:0] bsel,
     output reg [4:0] words_selector,
-    output reg [2:0] matrix_controller_update,
-    output reg [4:0] bottom_matrix1_letter_address,
-    output reg [4:0] bottom_matrix2_letter_address,
-    output reg [4:0] bottom_matrix3_letter_address,
-    output reg [4:0] bottom_matrix4_letter_address,
+    output reg [2:0] bottom_matrix_controller_update,
+    output reg [6:0] bottom_matrix1_letter_address,
+    output reg [6:0] bottom_matrix2_letter_address,
+    output reg [6:0] bottom_matrix3_letter_address,
+    output reg [6:0] bottom_matrix4_letter_address,
+    output reg [2:0] top_matrix_controller_update,
+    output reg [6:0] top_matrix1_letter_address,
+    output reg [6:0] top_matrix2_letter_address,
+    output reg [6:0] top_matrix3_letter_address,
+    output reg [6:0] top_matrix4_letter_address,
     output reg [6:0] debugger1,
     output reg [6:0] debugger2,
     output reg [6:0] debugger3
@@ -77,13 +82,16 @@ module game_6 (
   localparam INCREMENT_GUESS_CTR_game_fsm = 6'd35;
   localparam COMPARE_GUESS_CTR_EQUALS_3_game_fsm = 6'd36;
   localparam SHOW_TOP_DISPLAY_game_fsm = 6'd37;
-  localparam SET_CORRECT_WORD_game_fsm = 6'd38;
-  localparam SET_CORRECT_LETTER_1_game_fsm = 6'd39;
-  localparam SET_CORRECT_LETTER_2_game_fsm = 6'd40;
-  localparam SET_CORRECT_LETTER_3_game_fsm = 6'd41;
-  localparam SET_CORRECT_LETTER_4_game_fsm = 6'd42;
-  localparam LOSE_game_fsm = 6'd43;
-  localparam WIN_game_fsm = 6'd44;
+  localparam SHOW_TOP_DISPLAY_2_game_fsm = 6'd38;
+  localparam SHOW_TOP_DISPLAY_3_game_fsm = 6'd39;
+  localparam SHOW_TOP_DISPLAY_4_game_fsm = 6'd40;
+  localparam SET_CORRECT_WORD_game_fsm = 6'd41;
+  localparam SET_CORRECT_LETTER_1_game_fsm = 6'd42;
+  localparam SET_CORRECT_LETTER_2_game_fsm = 6'd43;
+  localparam SET_CORRECT_LETTER_3_game_fsm = 6'd44;
+  localparam SET_CORRECT_LETTER_4_game_fsm = 6'd45;
+  localparam LOSE_game_fsm = 6'd46;
+  localparam WIN_game_fsm = 6'd47;
   
   reg [5:0] M_game_fsm_d, M_game_fsm_q = RESET_TOP_DISPLAY_game_fsm;
   
@@ -139,11 +147,16 @@ module game_6 (
     asel = 1'h0;
     bsel = 1'h0;
     words_selector = 1'h0;
-    matrix_controller_update = 3'h0;
+    bottom_matrix_controller_update = 3'h0;
     bottom_matrix1_letter_address = 5'h00;
     bottom_matrix2_letter_address = 5'h00;
     bottom_matrix3_letter_address = 5'h00;
     bottom_matrix4_letter_address = 5'h00;
+    top_matrix_controller_update = 3'h0;
+    top_matrix1_letter_address = 5'h00;
+    top_matrix2_letter_address = 5'h00;
+    top_matrix3_letter_address = 5'h00;
+    top_matrix4_letter_address = 5'h00;
     if (rst) begin
       M_game_fsm_d = SET_CORRECT_WORD_game_fsm;
     end else begin
@@ -215,7 +228,7 @@ module game_6 (
           M_game_fsm_d = RESET_BOTTOM_DISPLAY_game_fsm;
         end
         RESET_BOTTOM_DISPLAY_game_fsm: begin
-          matrix_controller_update = 3'h5;
+          bottom_matrix_controller_update = 3'h5;
           bottom_matrix1_letter_address = 5'h00;
           bottom_matrix2_letter_address = 5'h00;
           bottom_matrix3_letter_address = 5'h00;
@@ -255,19 +268,19 @@ module game_6 (
           
           case (regfile_out_a)
             16'h0000: begin
-              matrix_controller_update = 3'h1;
+              bottom_matrix_controller_update = 3'h1;
               bottom_matrix1_letter_address = regfile_out_b;
             end
             16'h0001: begin
-              matrix_controller_update = 3'h2;
+              bottom_matrix_controller_update = 3'h2;
               bottom_matrix2_letter_address = regfile_out_b;
             end
             16'h0002: begin
-              matrix_controller_update = 3'h3;
+              bottom_matrix_controller_update = 3'h3;
               bottom_matrix3_letter_address = regfile_out_b;
             end
             16'h0003: begin
-              matrix_controller_update = 3'h4;
+              bottom_matrix_controller_update = 3'h4;
               bottom_matrix4_letter_address = regfile_out_b;
             end
           endcase
@@ -454,11 +467,9 @@ module game_6 (
           bsel = 3'h4;
           alufn = 6'h33;
           if (alu_out == 16'h0000) begin
-            debugger3 = 6'h07;
-            M_game_fsm_d = COMPARE_I_EQUALS_3_AND_INCREMENT_game_fsm;
-          end else begin
-            debugger3 = 6'h2a;
             M_game_fsm_d = COMPARE_NUM_CORRECT_EQUALS_3_game_fsm;
+          end else begin
+            M_game_fsm_d = WIN_game_fsm;
           end
         end
         SET_TEMP_GUESS_G_LETTER_I_ADDR_YELLOW_game_fsm: begin
@@ -536,6 +547,115 @@ module game_6 (
           M_game_fsm_d = SHOW_TOP_DISPLAY_game_fsm;
         end
         SHOW_TOP_DISPLAY_game_fsm: begin
+          regfile_we = 1'h0;
+          regfile_ra = 6'h20;
+          
+          case (regfile_out_a)
+            1'h0: begin
+              regfile_rb = 5'h00;
+              top_matrix_controller_update = 3'h1;
+              top_matrix1_letter_address = regfile_out_b;
+            end
+            1'h1: begin
+              regfile_rb = 5'h04;
+              top_matrix_controller_update = 3'h1;
+              top_matrix1_letter_address = regfile_out_b;
+            end
+            2'h2: begin
+              regfile_rb = 5'h08;
+              top_matrix_controller_update = 3'h1;
+              top_matrix1_letter_address = regfile_out_b;
+            end
+            2'h3: begin
+              regfile_rb = 5'h10;
+              top_matrix_controller_update = 3'h1;
+              top_matrix1_letter_address = regfile_out_b;
+            end
+          endcase
+          M_game_fsm_d = SHOW_TOP_DISPLAY_2_game_fsm;
+        end
+        SHOW_TOP_DISPLAY_2_game_fsm: begin
+          regfile_we = 1'h0;
+          regfile_ra = 6'h20;
+          
+          case (regfile_out_a)
+            1'h0: begin
+              regfile_rb = 6'h01;
+              top_matrix_controller_update = 3'h2;
+              top_matrix2_letter_address = regfile_out_b;
+            end
+            1'h1: begin
+              regfile_rb = 6'h05;
+              top_matrix_controller_update = 3'h2;
+              top_matrix2_letter_address = regfile_out_b;
+            end
+            2'h2: begin
+              regfile_rb = 6'h09;
+              top_matrix_controller_update = 3'h2;
+              top_matrix2_letter_address = regfile_out_b;
+            end
+            2'h3: begin
+              regfile_rb = 6'h11;
+              top_matrix_controller_update = 3'h2;
+              top_matrix2_letter_address = regfile_out_b;
+            end
+          endcase
+          M_game_fsm_d = SHOW_TOP_DISPLAY_3_game_fsm;
+        end
+        SHOW_TOP_DISPLAY_3_game_fsm: begin
+          regfile_we = 1'h0;
+          regfile_ra = 6'h20;
+          
+          case (regfile_out_a)
+            1'h0: begin
+              regfile_rb = 6'h02;
+              top_matrix_controller_update = 3'h3;
+              top_matrix3_letter_address = regfile_out_b;
+            end
+            1'h1: begin
+              regfile_rb = 6'h06;
+              top_matrix_controller_update = 3'h3;
+              top_matrix3_letter_address = regfile_out_b;
+            end
+            2'h2: begin
+              regfile_rb = 6'h0a;
+              top_matrix_controller_update = 3'h3;
+              top_matrix3_letter_address = regfile_out_b;
+            end
+            2'h3: begin
+              regfile_rb = 6'h12;
+              top_matrix_controller_update = 3'h3;
+              top_matrix3_letter_address = regfile_out_b;
+            end
+          endcase
+          M_game_fsm_d = SHOW_TOP_DISPLAY_4_game_fsm;
+        end
+        SHOW_TOP_DISPLAY_4_game_fsm: begin
+          regfile_we = 1'h0;
+          regfile_ra = 6'h20;
+          
+          case (regfile_out_a)
+            1'h0: begin
+              regfile_rb = 6'h03;
+              top_matrix_controller_update = 3'h4;
+              top_matrix4_letter_address = regfile_out_b;
+            end
+            1'h1: begin
+              regfile_rb = 6'h07;
+              top_matrix_controller_update = 3'h4;
+              top_matrix4_letter_address = regfile_out_b;
+            end
+            2'h2: begin
+              regfile_rb = 6'h0b;
+              top_matrix_controller_update = 3'h4;
+              top_matrix4_letter_address = regfile_out_b;
+            end
+            2'h3: begin
+              regfile_rb = 6'h13;
+              top_matrix_controller_update = 3'h4;
+              top_matrix4_letter_address = regfile_out_b;
+            end
+          endcase
           M_game_fsm_d = INCREMENT_GUESS_CTR_game_fsm;
         end
         INCREMENT_GUESS_CTR_game_fsm: begin
@@ -553,16 +673,10 @@ module game_6 (
           asel = 3'h0;
           bsel = 3'h5;
           alufn = 6'h33;
-          if (regfile_out_a == 2'h3) begin
-            debugger3 = 5'h1f;
-            M_game_fsm_d = COMPARE_GUESS_CTR_EQUALS_3_game_fsm;
-          end
           if (alu_out == 16'h0000) begin
-            debugger3 = 6'h07;
             M_game_fsm_d = SET_INPUT_CTR_TO_0_game_fsm;
           end else begin
-            debugger3 = 6'h2b;
-            M_game_fsm_d = COMPARE_GUESS_CTR_EQUALS_3_game_fsm;
+            M_game_fsm_d = LOSE_game_fsm;
           end
         end
         default: begin

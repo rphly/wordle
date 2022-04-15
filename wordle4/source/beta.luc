@@ -17,6 +17,11 @@ module beta (
     output out_bottom_matrix3,
     output out_bottom_matrix4,
     
+    output out_top_matrix1,
+    output out_top_matrix2,
+    output out_top_matrix3,
+    output out_top_matrix4,
+    
     output debugger1[7],
     output debugger2[7],
     output debugger3[7]
@@ -31,6 +36,7 @@ module beta (
       game control_unit;
       regfile r;
       matrix_controller bottom_matrix_control;
+      matrix_controller top_matrix_control;
     }
   }
   
@@ -87,17 +93,29 @@ module beta (
     
     current_state = control_unit.current_state;
     
-    // matrix controller
-    bottom_matrix_control.update = control_unit.matrix_controller_update;
-    bottom_matrix_control.matrix1_letter_address = control_unit.bottom_matrix1_letter_address;
-    bottom_matrix_control.matrix2_letter_address = control_unit.bottom_matrix2_letter_address;
-    bottom_matrix_control.matrix3_letter_address = control_unit.bottom_matrix3_letter_address;
-    bottom_matrix_control.matrix4_letter_address = control_unit.bottom_matrix4_letter_address;
+    // bottom matrix controller
+    bottom_matrix_control.update = control_unit.bottom_matrix_controller_update;
+    bottom_matrix_control.matrix1_letter_index = control_unit.bottom_matrix1_letter_address;
+    bottom_matrix_control.matrix2_letter_index = control_unit.bottom_matrix2_letter_address;
+    bottom_matrix_control.matrix3_letter_index = control_unit.bottom_matrix3_letter_address;
+    bottom_matrix_control.matrix4_letter_index = control_unit.bottom_matrix4_letter_address;
     
     out_bottom_matrix1 = bottom_matrix_control.outmatrix1;
     out_bottom_matrix2 = bottom_matrix_control.outmatrix2;
     out_bottom_matrix3 = bottom_matrix_control.outmatrix3;
     out_bottom_matrix4 = bottom_matrix_control.outmatrix4;
+    
+    // top matrix controller 
+    top_matrix_control.update = control_unit.top_matrix_controller_update;
+    top_matrix_control.matrix1_letter_index = control_unit.top_matrix1_letter_address;
+    top_matrix_control.matrix2_letter_index = control_unit.top_matrix2_letter_address;
+    top_matrix_control.matrix3_letter_index = control_unit.top_matrix3_letter_address;
+    top_matrix_control.matrix4_letter_index = control_unit.top_matrix4_letter_address;
+    
+    out_top_matrix1 = top_matrix_control.outmatrix1;
+    out_top_matrix2 = top_matrix_control.outmatrix2;
+    out_top_matrix3 = top_matrix_control.outmatrix3;
+    out_top_matrix4 = top_matrix_control.outmatrix4;
     
     debugger1 = control_unit.debugger1;//game_alu.alu;//control_unit.debugger1;
     debugger2 = control_unit.debugger2;

@@ -7,7 +7,7 @@
 module matrix_15 (
     input clk,
     input rst,
-    input [4:0] letter_address,
+    input [6:0] letter_index,
     output reg data_out
   );
   
@@ -33,10 +33,46 @@ module matrix_15 (
     .out(M_white_letters_out)
   );
   
+  wire [600-1:0] M_yellow_letters_out;
+  reg [5-1:0] M_yellow_letters_selector;
+  yellow_alphabets_20 yellow_letters (
+    .selector(M_yellow_letters_selector),
+    .out(M_yellow_letters_out)
+  );
+  
+  wire [600-1:0] M_green_letters_out;
+  reg [5-1:0] M_green_letters_selector;
+  green_alphabets_21 green_letters (
+    .selector(M_green_letters_selector),
+    .out(M_green_letters_out)
+  );
+  
   always @* begin
-    M_white_letters_selector = letter_address;
-    M_matrix_writer_update = 1'h1;
-    M_matrix_writer_color = M_white_letters_out[(M_matrix_writer_pixel)*24+23-:24];
-    data_out = M_matrix_writer_led;
+    M_white_letters_selector = letter_index[0+4-:5];
+    M_yellow_letters_selector = letter_index[0+4-:5];
+    M_green_letters_selector = letter_index[0+4-:5];
+    
+    case (letter_index[5+1-:2])
+      2'h0: begin
+        M_matrix_writer_update = 1'h1;
+        M_matrix_writer_color = M_white_letters_out[(M_matrix_writer_pixel)*24+23-:24];
+        data_out = M_matrix_writer_led;
+      end
+      2'h2: begin
+        M_matrix_writer_update = 1'h1;
+        M_matrix_writer_color = M_yellow_letters_out[(M_matrix_writer_pixel)*24+23-:24];
+        data_out = M_matrix_writer_led;
+      end
+      2'h3: begin
+        M_matrix_writer_update = 1'h1;
+        M_matrix_writer_color = M_green_letters_out[(M_matrix_writer_pixel)*24+23-:24];
+        data_out = M_matrix_writer_led;
+      end
+      default: begin
+        M_matrix_writer_update = 1'h0;
+        M_matrix_writer_color = M_white_letters_out[(M_matrix_writer_pixel)*24+23-:24];
+        data_out = M_matrix_writer_led;
+      end
+    endcase
   end
 endmodule

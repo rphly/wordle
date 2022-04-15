@@ -8,9 +8,14 @@ module buttons_controller_3 (
     input clk,
     input rst,
     input a,
-    input b,
     input e,
-    input r,
+    input i,
+    input l,
+    input n,
+    input o,
+    input p,
+    input s,
+    input t,
     output reg is_pressed,
     output reg [15:0] out
   );
@@ -23,44 +28,99 @@ module buttons_controller_3 (
     .button_input(a),
     .out(M_a__out)
   );
-  wire [1-1:0] M_b__out;
-  button_10 b_ (
-    .clk(clk),
-    .button_input(b),
-    .out(M_b__out)
-  );
   wire [1-1:0] M_e__out;
   button_10 e_ (
     .clk(clk),
     .button_input(e),
     .out(M_e__out)
   );
-  wire [1-1:0] M_r__out;
-  button_10 r_ (
+  wire [1-1:0] M_i__out;
+  button_10 i_ (
     .clk(clk),
-    .button_input(r),
-    .out(M_r__out)
+    .button_input(i),
+    .out(M_i__out)
+  );
+  wire [1-1:0] M_l__out;
+  button_10 l_ (
+    .clk(clk),
+    .button_input(l),
+    .out(M_l__out)
+  );
+  wire [1-1:0] M_n__out;
+  button_10 n_ (
+    .clk(clk),
+    .button_input(n),
+    .out(M_n__out)
+  );
+  wire [1-1:0] M_o__out;
+  button_10 o_ (
+    .clk(clk),
+    .button_input(o),
+    .out(M_o__out)
+  );
+  wire [1-1:0] M_p__out;
+  button_10 p_ (
+    .clk(clk),
+    .button_input(p),
+    .out(M_p__out)
+  );
+  wire [1-1:0] M_s__out;
+  button_10 s_ (
+    .clk(clk),
+    .button_input(s),
+    .out(M_s__out)
+  );
+  wire [1-1:0] M_t__out;
+  button_10 t_ (
+    .clk(clk),
+    .button_input(t),
+    .out(M_t__out)
   );
   
   always @* begin
     if (M_a__out) begin
-      out = 5'h01;
+      out = 1'h1;
       is_pressed = 1'h1;
     end else begin
       if (M_e__out) begin
         out = 3'h5;
         is_pressed = 1'h1;
       end else begin
-        if (M_b__out) begin
-          out = 5'h02;
+        if (M_i__out) begin
+          out = 4'h9;
           is_pressed = 1'h1;
         end else begin
-          if (M_r__out) begin
-            out = 5'h12;
+          if (M_l__out) begin
+            out = 4'hc;
             is_pressed = 1'h1;
           end else begin
-            out = 16'h0000;
-            is_pressed = 1'h0;
+            if (M_n__out) begin
+              out = 4'he;
+              is_pressed = 1'h1;
+            end else begin
+              if (M_o__out) begin
+                out = 4'hf;
+                is_pressed = 1'h1;
+              end else begin
+                if (M_p__out) begin
+                  out = 5'h10;
+                  is_pressed = 1'h1;
+                end else begin
+                  if (M_s__out) begin
+                    out = 5'h13;
+                    is_pressed = 1'h1;
+                  end else begin
+                    if (M_t__out) begin
+                      out = 5'h14;
+                      is_pressed = 1'h1;
+                    end else begin
+                      out = 16'h0000;
+                      is_pressed = 1'h0;
+                    end
+                  end
+                end
+              end
+            end
           end
         end
       end

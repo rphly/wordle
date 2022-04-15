@@ -3,10 +3,10 @@ module matrix_controller (
     input rst,  // reset
     input update[3],
     
-    input matrix1_letter_address[5],
-    input matrix2_letter_address[5],
-    input matrix3_letter_address[5],
-    input matrix4_letter_address[5],
+    input matrix1_letter_index[7],
+    input matrix2_letter_index[7],
+    input matrix3_letter_index[7],
+    input matrix4_letter_index[7],
     
     output outmatrix1,
     output outmatrix2,
@@ -15,10 +15,10 @@ module matrix_controller (
   ) {
   
   .clk(clk){
-    dff matrix1_letter_address_dff[5];
-    dff matrix2_letter_address_dff[5];
-    dff matrix3_letter_address_dff[5];
-    dff matrix4_letter_address_dff[5];
+    dff matrix1_letter_index_dff[7];
+    dff matrix2_letter_index_dff[7];
+    dff matrix3_letter_index_dff[7];
+    dff matrix4_letter_index_dff[7];
     .rst(rst){
       matrix matrix1;
       matrix matrix2;
@@ -34,25 +34,25 @@ module matrix_controller (
     outmatrix3 = matrix3.data_out;
     outmatrix4 = matrix4.data_out;
        
-    matrix1.letter_address = matrix1_letter_address_dff.q;
-    matrix2.letter_address = matrix2_letter_address_dff.q;
-    matrix3.letter_address = matrix3_letter_address_dff.q;
-    matrix4.letter_address = matrix4_letter_address_dff.q;
+    matrix1.letter_index = matrix1_letter_index_dff.q;
+    matrix2.letter_index = matrix2_letter_index_dff.q;
+    matrix3.letter_index = matrix3_letter_index_dff.q;
+    matrix4.letter_index = matrix4_letter_index_dff.q;
     
     case(update){
       3b1:
-        matrix1_letter_address_dff.d = matrix1_letter_address;
+        matrix1_letter_index_dff.d = matrix1_letter_index;
       3b10: 
-        matrix2_letter_address_dff.d = matrix2_letter_address;
+        matrix2_letter_index_dff.d = matrix2_letter_index;
       3b11: 
-        matrix3_letter_address_dff.d = matrix3_letter_address;
+        matrix3_letter_index_dff.d = matrix3_letter_index;
       3b100:
-        matrix4_letter_address_dff.d = matrix4_letter_address;
+        matrix4_letter_index_dff.d = matrix4_letter_index;
       3b101:
-        matrix1_letter_address_dff.d = 5b0;
-        matrix2_letter_address_dff.d = 5b0;
-        matrix3_letter_address_dff.d = 5b0;
-        matrix4_letter_address_dff.d = 5b0;
+        matrix1_letter_index_dff.d = 5b0;
+        matrix2_letter_index_dff.d = 5b0;
+        matrix3_letter_index_dff.d = 5b0;
+        matrix4_letter_index_dff.d = 5b0;
     }
   
 }
