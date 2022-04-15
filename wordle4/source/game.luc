@@ -272,8 +272,6 @@ module game (
           words_selector = regfile_out_a;
           regfile_data = selected_word[3]; // 5 bits
           regfile_we = 1;
-          debugger1 = regfile_out_a[7:0];
-          debugger2 = regfile_out_a[14:7];
           game_fsm.d = game_fsm.SET_CORRECT_LETTER_1;
 
         game_fsm.SET_CORRECT_LETTER_2:
