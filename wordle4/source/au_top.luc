@@ -9,8 +9,17 @@ module au_top (
     input r_in,
     input e_in,
    
+    // panel
     input clear_in,
     input check_in,
+    //input reset_btn,
+    //input oka_btn,
+    // panel, guesses
+    //input guess_1_btn,
+    //input guess_2_btn,
+    //input guess_3_btn,
+    //input guess_4_btn,
+    
     output outmatrix1,
     output outmatrix2,
     output outmatrix3,
@@ -33,8 +42,14 @@ module au_top (
       );
       
       panel_controller button_panel_controller(
+        //.guess_1_btn(guess_1_btn),
+        //.guess_2_btn(guess_2_btn),
+        //.guess_3_btn(guess_3_btn),
+        //.guess_4_btn(guess_4_btn),
         .clear(clear_in),
         .check(check_in)
+        //.reset(reset_btn),
+        //.oka(oka_btn)
       );
     }
     

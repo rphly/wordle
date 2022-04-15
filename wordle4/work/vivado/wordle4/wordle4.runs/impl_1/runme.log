@@ -14,8 +14,8 @@ Command: link_design -top au_top_0 -part xc7a35tftg256-1
 Design is defaulting to srcset: sources_1
 Design is defaulting to constrset: constrs_1
 INFO: [Device 21-403] Loading part xc7a35tftg256-1
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1247.223 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 91 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1247.547 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 219 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2021.2
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -24,13 +24,13 @@ Finished Parsing XDC File [C:/Users/CompStruct/Desktop/wordle/wordle4/work/const
 Parsing XDC File [C:/Users/CompStruct/Desktop/wordle/wordle4/constraint/au.xdc]
 Finished Parsing XDC File [C:/Users/CompStruct/Desktop/wordle/wordle4/constraint/au.xdc]
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1247.223 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1247.547 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 7 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 link_design completed successfully
-link_design: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1247.223 ; gain = 0.000
+link_design: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1247.547 ; gain = 0.000
 Command: opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
@@ -41,62 +41,54 @@ INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Project 1-461] DRC finished with 0 Errors
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.793 . Memory (MB): peak = 1247.223 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.797 . Memory (MB): peak = 1247.547 ; gain = 0.000
 
 Starting Cache Timing Information Task
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-Ending Cache Timing Information Task | Checksum: ee6c0fa4
+Ending Cache Timing Information Task | Checksum: d72a842f
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1409.484 ; gain = 162.262
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1410.230 ; gain = 162.684
 
 Starting Logic Optimization Task
 
 Phase 1 Retarget
-INFO: [Opt 31-1287] Pulled Inverter betaCPU/control_unit/M_guess_1_letter_1_q[4]_i_10 into driver instance betaCPU/control_unit/out1_carry_i_17, which resulted in an inversion of 7 pins
-INFO: [Opt 31-1287] Pulled Inverter betaCPU/control_unit/M_guess_1_letter_1_q[4]_i_11 into driver instance betaCPU/control_unit/out1_carry_i_13, which resulted in an inversion of 17 pins
-INFO: [Opt 31-1287] Pulled Inverter betaCPU/control_unit/M_guess_1_letter_1_q[4]_i_12 into driver instance betaCPU/control_unit/out1_carry_i_19, which resulted in an inversion of 12 pins
-INFO: [Opt 31-1287] Pulled Inverter betaCPU/control_unit/M_guess_1_letter_1_q[4]_i_9 into driver instance betaCPU/control_unit/out1_carry__0_i_16, which resulted in an inversion of 6 pins
-INFO: [Opt 31-1287] Pulled Inverter betaCPU/control_unit/i__carry__0_i_3 into driver instance betaCPU/control_unit/i__carry_i_8, which resulted in an inversion of 6 pins
-INFO: [Opt 31-1287] Pulled Inverter betaCPU/control_unit/out1_carry_i_1 into driver instance betaCPU/control_unit/out1_carry_i_10, which resulted in an inversion of 13 pins
-INFO: [Opt 31-1287] Pulled Inverter betaCPU/r/M_guess_1_letter_1_q[5]_i_7 into driver instance betaCPU/r/out1_carry__0_i_15, which resulted in an inversion of 8 pins
-INFO: [Opt 31-1287] Pulled Inverter betaCPU/r/i__carry_i_4__1 into driver instance betaCPU/r/io_led_OBUF[4]_inst_i_2, which resulted in an inversion of 8 pins
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Opt 31-49] Retargeted 0 cell(s).
-Phase 1 Retarget | Checksum: 110cb0c64
+Phase 1 Retarget | Checksum: d72a842f
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.072 . Memory (MB): peak = 1706.176 ; gain = 0.000
-INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 18 cells
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 1707.367 ; gain = 0.000
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
 
 Phase 2 Constant propagation
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Phase 2 Constant propagation | Checksum: b9f5ee76
+Phase 2 Constant propagation | Checksum: b039fa1e
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.081 . Memory (MB): peak = 1706.176 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.074 . Memory (MB): peak = 1707.367 ; gain = 0.000
 INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
 
 Phase 3 Sweep
-Phase 3 Sweep | Checksum: 10a5b636d
+Phase 3 Sweep | Checksum: a5ea4fe3
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.094 . Memory (MB): peak = 1706.176 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.090 . Memory (MB): peak = 1707.367 ; gain = 0.000
 INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
 
 Phase 4 BUFG optimization
-Phase 4 BUFG optimization | Checksum: 10a5b636d
+Phase 4 BUFG optimization | Checksum: a5ea4fe3
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.105 . Memory (MB): peak = 1706.176 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.107 . Memory (MB): peak = 1707.367 ; gain = 0.000
 INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
 
 Phase 5 Shift Register Optimization
 INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
-Phase 5 Shift Register Optimization | Checksum: 10a5b636d
+Phase 5 Shift Register Optimization | Checksum: a5ea4fe3
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.108 . Memory (MB): peak = 1706.176 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.110 . Memory (MB): peak = 1707.367 ; gain = 0.000
 INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
 
 Phase 6 Post Processing Netlist
-Phase 6 Post Processing Netlist | Checksum: 10a5b636d
+Phase 6 Post Processing Netlist | Checksum: a5ea4fe3
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.112 . Memory (MB): peak = 1706.176 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.114 . Memory (MB): peak = 1707.367 ; gain = 0.000
 INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
 Opt_design Change Summary
 =========================
@@ -105,7 +97,7 @@ Opt_design Change Summary
 -------------------------------------------------------------------------------------------------------------------------
 |  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
 -------------------------------------------------------------------------------------------------------------------------
-|  Retarget                     |               0  |              18  |                                              0  |
+|  Retarget                     |               0  |               0  |                                              0  |
 |  Constant propagation         |               0  |               0  |                                              0  |
 |  Sweep                        |               0  |               0  |                                              0  |
 |  BUFG optimization            |               0  |               0  |                                              0  |
@@ -117,37 +109,37 @@ Opt_design Change Summary
 
 Starting Connectivity Check Task
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1706.176 ; gain = 0.000
-Ending Logic Optimization Task | Checksum: 178f3b92f
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1707.367 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 15d1abe1e
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.144 . Memory (MB): peak = 1706.176 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.147 . Memory (MB): peak = 1707.367 ; gain = 0.000
 
 Starting Power Optimization Task
 INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
-Ending Power Optimization Task | Checksum: 178f3b92f
+Ending Power Optimization Task | Checksum: 15d1abe1e
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1706.176 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1707.367 ; gain = 0.000
 
 Starting Final Cleanup Task
-Ending Final Cleanup Task | Checksum: 178f3b92f
+Ending Final Cleanup Task | Checksum: 15d1abe1e
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1706.176 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1707.367 ; gain = 0.000
 
 Starting Netlist Obfuscation Task
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1706.176 ; gain = 0.000
-Ending Netlist Obfuscation Task | Checksum: 178f3b92f
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1707.367 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 15d1abe1e
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1706.176 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1707.367 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
-32 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+24 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 opt_design completed successfully
-opt_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1706.176 ; gain = 458.953
+opt_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1707.367 ; gain = 459.820
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 1706.176 ; gain = 0.000
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.044 . Memory (MB): peak = 1707.367 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/CompStruct/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/au_top_0_opt.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_drc -file au_top_0_drc_opted.rpt -pb au_top_0_drc_opted.pb -rpx au_top_0_drc_opted.rpx
 Command: report_drc -file au_top_0_drc_opted.rpt -pb au_top_0_drc_opted.pb -rpx au_top_0_drc_opted.rpx
@@ -175,53 +167,53 @@ INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 
 Phase 1 Placer Initialization
 
 Phase 1.1 Placer Initialization Netlist Sorting
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1747.297 ; gain = 0.000
-Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 9836d8ef
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1746.520 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: fc2dc48a
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1747.297 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1747.297 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1746.520 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1746.520 ; gain = 0.000
 
 Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
-Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 1366abc84
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 17bc5cb55
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.263 . Memory (MB): peak = 1747.297 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.323 . Memory (MB): peak = 1746.520 ; gain = 0.000
 
 Phase 1.3 Build Placer Netlist Model
-Phase 1.3 Build Placer Netlist Model | Checksum: 1ee5536b0
+Phase 1.3 Build Placer Netlist Model | Checksum: 219b68695
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.577 . Memory (MB): peak = 1747.297 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.661 . Memory (MB): peak = 1746.520 ; gain = 0.000
 
 Phase 1.4 Constrain Clocks/Macros
-Phase 1.4 Constrain Clocks/Macros | Checksum: 1ee5536b0
+Phase 1.4 Constrain Clocks/Macros | Checksum: 219b68695
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.582 . Memory (MB): peak = 1747.297 ; gain = 0.000
-Phase 1 Placer Initialization | Checksum: 1ee5536b0
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.664 . Memory (MB): peak = 1746.520 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 219b68695
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.587 . Memory (MB): peak = 1747.297 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.668 . Memory (MB): peak = 1746.520 ; gain = 0.000
 
 Phase 2 Global Placement
 
 Phase 2.1 Floorplanning
-Phase 2.1 Floorplanning | Checksum: 20cb4689b
+Phase 2.1 Floorplanning | Checksum: 22d08c8df
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.801 . Memory (MB): peak = 1747.297 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.825 . Memory (MB): peak = 1746.520 ; gain = 0.000
 
 Phase 2.2 Update Timing before SLR Path Opt
-Phase 2.2 Update Timing before SLR Path Opt | Checksum: 14e5e6dfe
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 1eecce8cc
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.889 . Memory (MB): peak = 1747.297 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.923 . Memory (MB): peak = 1746.520 ; gain = 0.000
 
 Phase 2.3 Post-Processing in Floorplanning
-Phase 2.3 Post-Processing in Floorplanning | Checksum: 14e5e6dfe
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 1eecce8cc
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.892 . Memory (MB): peak = 1747.297 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.927 . Memory (MB): peak = 1746.520 ; gain = 0.000
 
 Phase 2.4 Global Placement Core
 
 Phase 2.4.1 Physical Synthesis In Placer
-INFO: [Physopt 32-1035] Found 33 LUTNM shape to break, 9 LUT instances to create LUTNM shape
-INFO: [Physopt 32-1044] Break lutnm for timing: one critical 6, two critical 27, total 33, new lutff created 0
-INFO: [Physopt 32-1138] End 1 Pass. Optimized 33 nets or LUTs. Breaked 33 LUTs, combined 0 existing LUT and moved 0 existing LUT
+INFO: [Physopt 32-1035] Found 37 LUTNM shape to break, 7 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 11, two critical 26, total 37, new lutff created 1
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 39 nets or LUTs. Breaked 37 LUTs, combined 2 existing LUTs and moved 0 existing LUT
 INFO: [Physopt 32-65] No nets found for high-fanout optimization.
 INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
@@ -237,7 +229,7 @@ INFO: [Physopt 32-846] No candidate cells for URAM register optimization found i
 INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
 INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1747.297 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1746.520 ; gain = 0.000
 
 Summary of Physical Synthesis Optimizations
 ============================================
@@ -246,7 +238,7 @@ Summary of Physical Synthesis Optimizations
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 |  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
-|  LUT Combining                                    |           33  |              0  |                    33  |           0  |           1  |  00:00:00  |
+|  LUT Combining                                    |           37  |              2  |                    39  |           0  |           1  |  00:00:00  |
 |  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
@@ -255,69 +247,69 @@ Summary of Physical Synthesis Optimizations
 |  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
-|  Total                                            |           33  |              0  |                    33  |           0  |           9  |  00:00:00  |
+|  Total                                            |           37  |              2  |                    39  |           0  |           9  |  00:00:00  |
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-Phase 2.4.1 Physical Synthesis In Placer | Checksum: 188a88c64
+Phase 2.4.1 Physical Synthesis In Placer | Checksum: 21cc95f76
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 1747.297 ; gain = 0.000
-Phase 2.4 Global Placement Core | Checksum: e6ee35f3
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 1746.520 ; gain = 0.000
+Phase 2.4 Global Placement Core | Checksum: 160dc9a73
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 1747.297 ; gain = 0.000
-Phase 2 Global Placement | Checksum: e6ee35f3
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 1746.520 ; gain = 0.000
+Phase 2 Global Placement | Checksum: 160dc9a73
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 1747.297 ; gain = 0.000
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 1746.520 ; gain = 0.000
 
 Phase 3 Detail Placement
 
 Phase 3.1 Commit Multi Column Macros
-Phase 3.1 Commit Multi Column Macros | Checksum: 1432dd959
+Phase 3.1 Commit Multi Column Macros | Checksum: 171297c61
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 1747.297 ; gain = 0.000
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 1746.520 ; gain = 0.000
 
 Phase 3.2 Commit Most Macros & LUTRAMs
-Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 13059b822
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 14772c648
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 1747.297 ; gain = 0.000
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 1746.520 ; gain = 0.000
 
 Phase 3.3 Area Swap Optimization
-Phase 3.3 Area Swap Optimization | Checksum: 132cf04e0
+Phase 3.3 Area Swap Optimization | Checksum: 1c4c12545
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 1747.297 ; gain = 0.000
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 1746.520 ; gain = 0.000
 
 Phase 3.4 Pipeline Register Optimization
-Phase 3.4 Pipeline Register Optimization | Checksum: a6a2aa4e
+Phase 3.4 Pipeline Register Optimization | Checksum: 1b1472d0e
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 1747.297 ; gain = 0.000
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 1746.520 ; gain = 0.000
 
 Phase 3.5 Fast Optimization
-Phase 3.5 Fast Optimization | Checksum: 105a77ef8
+Phase 3.5 Fast Optimization | Checksum: 10eab5038
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1747.297 ; gain = 0.000
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 1746.520 ; gain = 0.000
 
 Phase 3.6 Small Shape Detail Placement
-Phase 3.6 Small Shape Detail Placement | Checksum: 5d23dec9
+Phase 3.6 Small Shape Detail Placement | Checksum: 23c160ca3
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1747.297 ; gain = 0.000
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 1746.520 ; gain = 0.000
 
 Phase 3.7 Re-assign LUT pins
-Phase 3.7 Re-assign LUT pins | Checksum: 4899be14
+Phase 3.7 Re-assign LUT pins | Checksum: 23736790a
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 1747.297 ; gain = 0.000
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 1746.520 ; gain = 0.000
 
 Phase 3.8 Pipeline Register Optimization
-Phase 3.8 Pipeline Register Optimization | Checksum: a362f26b
+Phase 3.8 Pipeline Register Optimization | Checksum: 26296da72
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 1747.297 ; gain = 0.000
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 1746.520 ; gain = 0.000
 
 Phase 3.9 Fast Optimization
-Phase 3.9 Fast Optimization | Checksum: ee9af8a6
+Phase 3.9 Fast Optimization | Checksum: 18d73dd37
 
-Time (s): cpu = 00:00:15 ; elapsed = 00:00:14 . Memory (MB): peak = 1747.297 ; gain = 0.000
-Phase 3 Detail Placement | Checksum: ee9af8a6
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:15 . Memory (MB): peak = 1746.520 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 18d73dd37
 
-Time (s): cpu = 00:00:15 ; elapsed = 00:00:14 . Memory (MB): peak = 1747.297 ; gain = 0.000
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:15 . Memory (MB): peak = 1746.520 ; gain = 0.000
 
 Phase 4 Post Placement Optimization and Clean-Up
 
@@ -325,7 +317,7 @@ Phase 4.1 Post Commit Optimization
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 
 Phase 4.1.1 Post Placement Optimization
-Post Placement Optimization Initialization | Checksum: 822ce1f5
+Post Placement Optimization Initialization | Checksum: 1aa848d18
 
 Phase 4.1.1.1 BUFG Insertion
 
@@ -333,33 +325,33 @@ Starting Physical Synthesis Task
 
 Phase 1 Physical Synthesis Initialization
 INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.707 | TNS=-5316.392 |
-Phase 1 Physical Synthesis Initialization | Checksum: 1051b8404
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-34.526 | TNS=-11705.039 |
+Phase 1 Physical Synthesis Initialization | Checksum: 187071ce5
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 1747.297 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.054 . Memory (MB): peak = 1746.520 ; gain = 0.000
 INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
-Ending Physical Synthesis Task | Checksum: 15c7ee1a0
+Ending Physical Synthesis Task | Checksum: 185c4d2ea
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.050 . Memory (MB): peak = 1747.297 ; gain = 0.000
-Phase 4.1.1.1 BUFG Insertion | Checksum: 822ce1f5
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.057 . Memory (MB): peak = 1746.520 ; gain = 0.000
+Phase 4.1.1.1 BUFG Insertion | Checksum: 1aa848d18
 
-Time (s): cpu = 00:00:15 ; elapsed = 00:00:14 . Memory (MB): peak = 1747.297 ; gain = 0.000
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:16 . Memory (MB): peak = 1746.520 ; gain = 0.000
 
 Phase 4.1.1.2 Post Placement Timing Optimization
-INFO: [Place 30-746] Post Placement Timing Summary WNS=-21.569. For the most accurate timing information please run report_timing.
-Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 1252edabc
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-27.776. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 18bff7310
 
-Time (s): cpu = 00:00:27 ; elapsed = 00:00:26 . Memory (MB): peak = 1747.297 ; gain = 0.000
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:27 . Memory (MB): peak = 1746.520 ; gain = 0.000
 
-Time (s): cpu = 00:00:27 ; elapsed = 00:00:26 . Memory (MB): peak = 1747.297 ; gain = 0.000
-Phase 4.1 Post Commit Optimization | Checksum: 1252edabc
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:27 . Memory (MB): peak = 1746.520 ; gain = 0.000
+Phase 4.1 Post Commit Optimization | Checksum: 18bff7310
 
-Time (s): cpu = 00:00:27 ; elapsed = 00:00:26 . Memory (MB): peak = 1747.297 ; gain = 0.000
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:27 . Memory (MB): peak = 1746.520 ; gain = 0.000
 
 Phase 4.2 Post Placement Cleanup
-Phase 4.2 Post Placement Cleanup | Checksum: 1252edabc
+Phase 4.2 Post Placement Cleanup | Checksum: 18bff7310
 
-Time (s): cpu = 00:00:27 ; elapsed = 00:00:26 . Memory (MB): peak = 1747.297 ; gain = 0.000
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:27 . Memory (MB): peak = 1746.520 ; gain = 0.000
 
 Phase 4.3 Placer Reporting
 
@@ -369,649 +361,664 @@ INFO: [Place 30-612] Post-Placement Estimated Congestion
 |           | Global Congestion | Short Congestion  |
 | Direction | Region Size       | Region Size       |
 |___________|___________________|___________________|
-|      North|                1x1|                2x2|
+|      North|                1x1|                4x4|
 |___________|___________________|___________________|
-|      South|                1x1|                2x2|
+|      South|                1x1|                4x4|
 |___________|___________________|___________________|
 |       East|                1x1|                1x1|
 |___________|___________________|___________________|
 |       West|                1x1|                1x1|
 |___________|___________________|___________________|
 
-Phase 4.3.1 Print Estimated Congestion | Checksum: 1252edabc
+Phase 4.3.1 Print Estimated Congestion | Checksum: 18bff7310
 
-Time (s): cpu = 00:00:27 ; elapsed = 00:00:26 . Memory (MB): peak = 1747.297 ; gain = 0.000
-Phase 4.3 Placer Reporting | Checksum: 1252edabc
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:27 . Memory (MB): peak = 1746.520 ; gain = 0.000
+Phase 4.3 Placer Reporting | Checksum: 18bff7310
 
-Time (s): cpu = 00:00:27 ; elapsed = 00:00:26 . Memory (MB): peak = 1747.297 ; gain = 0.000
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:27 . Memory (MB): peak = 1746.520 ; gain = 0.000
 
 Phase 4.4 Final Placement Cleanup
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1747.297 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1746.520 ; gain = 0.000
 
-Time (s): cpu = 00:00:27 ; elapsed = 00:00:26 . Memory (MB): peak = 1747.297 ; gain = 0.000
-Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1ea7de049
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:27 . Memory (MB): peak = 1746.520 ; gain = 0.000
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 169597639
 
-Time (s): cpu = 00:00:27 ; elapsed = 00:00:26 . Memory (MB): peak = 1747.297 ; gain = 0.000
-Ending Placer Task | Checksum: 195fdb6a2
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:27 . Memory (MB): peak = 1746.520 ; gain = 0.000
+Ending Placer Task | Checksum: 1391ed231
 
-Time (s): cpu = 00:00:27 ; elapsed = 00:00:26 . Memory (MB): peak = 1747.297 ; gain = 0.000
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:27 . Memory (MB): peak = 1746.520 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
-74 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+66 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 place_design completed successfully
-place_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:26 . Memory (MB): peak = 1747.297 ; gain = 0.996
+place_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:28 . Memory (MB): peak = 1746.520 ; gain = 0.992
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.125 . Memory (MB): peak = 1747.297 ; gain = 0.000
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.130 . Memory (MB): peak = 1746.520 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/CompStruct/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/au_top_0_placed.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_io -file au_top_0_io_placed.rpt
-report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.057 . Memory (MB): peak = 1747.297 ; gain = 0.000
+report_io: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.041 . Memory (MB): peak = 1746.520 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_utilization -file au_top_0_utilization_placed.rpt -pb au_top_0_utilization_placed.pb
 INFO: [runtcl-4] Executing : report_control_sets -verbose -file au_top_0_control_sets_placed.rpt
-report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1747.297 ; gain = 0.000
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1746.520 ; gain = 0.000
 Command: phys_opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
-INFO: [Vivado_Tcl 4-1435] PhysOpt_Tcl_Interface Runtime Before Starting Physical Synthesis Task | CPU: 1.00s |  WALL: 0.17s
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1747.297 ; gain = 0.000
+INFO: [Vivado_Tcl 4-1435] PhysOpt_Tcl_Interface Runtime Before Starting Physical Synthesis Task | CPU: 0.00s |  WALL: 0.18s
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1746.520 ; gain = 0.000
 
 Starting Physical Synthesis Task
 
 Phase 1 Physical Synthesis Initialization
 INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.569 | TNS=-4186.653 |
-Phase 1 Physical Synthesis Initialization | Checksum: 18b387e37
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-28.025 | TNS=-9447.513 |
+Phase 1 Physical Synthesis Initialization | Checksum: 160270e8f
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.148 . Memory (MB): peak = 1747.297 ; gain = 0.000
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.569 | TNS=-4186.653 |
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.164 . Memory (MB): peak = 1746.520 ; gain = 0.000
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-28.025 | TNS=-9447.513 |
 
 Phase 2 DSP Register Optimization
 INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
 INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
-Phase 2 DSP Register Optimization | Checksum: 18b387e37
+Phase 2 DSP Register Optimization | Checksum: 160270e8f
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.152 . Memory (MB): peak = 1747.297 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.170 . Memory (MB): peak = 1746.520 ; gain = 0.000
 
 Phase 3 Critical Path Optimization
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.569 | TNS=-4186.653 |
-INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_4_letter_4_q[5].  Re-placed instance betaCPU/r/M_guess_4_letter_4_q_reg[5]
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_4_letter_4_q[5]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.559 | TNS=-4186.550 |
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_3_letter_2_q[5]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net keyboard_controller/r_/button_cond/M_ctr_q_reg[3]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/D[4]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_guess_1_letter_1_q[5]_i_1_comp.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[5]_i_3_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.536 | TNS=-4184.194 |
-INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_2_letter_2_q[3].  Re-placed instance betaCPU/r/M_guess_2_letter_2_q_reg[3]
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_2_letter_2_q[3]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.536 | TNS=-4184.070 |
-INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_2_letter_3_q[3].  Re-placed instance betaCPU/r/M_guess_2_letter_3_q_reg[3]
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_2_letter_3_q[3]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.512 | TNS=-4183.868 |
-INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_letter_4_q[3].  Re-placed instance betaCPU/r/M_input_letter_4_q_reg[3]
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_input_letter_4_q[3]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.493 | TNS=-4183.956 |
-INFO: [Physopt 32-663] Processed net betaCPU/r/M_temp_coloured_letter_q[4].  Re-placed instance betaCPU/r/M_temp_coloured_letter_q_reg[4]
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_temp_coloured_letter_q[4]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.487 | TNS=-4183.972 |
-INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_letter_1_q[4].  Re-placed instance betaCPU/r/M_input_letter_1_q_reg[4]
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_input_letter_1_q[4]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.487 | TNS=-4183.677 |
-INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_2_letter_1_q[6].  Re-placed instance betaCPU/r/M_guess_2_letter_1_q_reg[6]
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_2_letter_1_q[6]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.485 | TNS=-4183.807 |
-INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_3_letter_4_q[3].  Re-placed instance betaCPU/r/M_guess_3_letter_4_q_reg[3]
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_3_letter_4_q[3]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.482 | TNS=-4183.524 |
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_2_letter_1_q[6]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/D[5]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_2_comp.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_9_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.475 | TNS=-4182.767 |
-INFO: [Physopt 32-663] Processed net betaCPU/r/M_word_index_q[4].  Re-placed instance betaCPU/r/M_word_index_q_reg[4]
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_word_index_q[4]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.465 | TNS=-4182.627 |
-INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_1_letter_2_q[4].  Re-placed instance betaCPU/r/M_guess_1_letter_2_q_reg[4]
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_1_letter_2_q[4]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.458 | TNS=-4182.415 |
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_word_index_q_reg[10]_0[1]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[34]_0[0]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_word_index_q[7]_i_1_comp.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_word_index_q[7]_i_2_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.457 | TNS=-4182.283 |
-INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_letter_3_q_reg[4]_0[0].  Re-placed instance betaCPU/r/M_input_letter_3_q_reg[4]
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_input_letter_3_q_reg[4]_0[0]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.456 | TNS=-4182.144 |
-INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_3_letter_1_q[3].  Re-placed instance betaCPU/r/M_guess_3_letter_1_q_reg[3]
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_3_letter_1_q[3]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.440 | TNS=-4181.772 |
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/D[5]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_2_comp_1.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_22_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.439 | TNS=-4179.846 |
-INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_4_letter_3_q[4].  Re-placed instance betaCPU/r/M_guess_4_letter_3_q_reg[4]
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_4_letter_3_q[4]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.437 | TNS=-4179.402 |
-INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_3_letter_1_q[4].  Re-placed instance betaCPU/r/M_guess_3_letter_1_q_reg[4]
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_3_letter_1_q[4]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.435 | TNS=-4179.275 |
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/D[4]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_guess_1_letter_1_q[5]_i_1_comp_1.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[5]_i_4_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.431 | TNS=-4179.108 |
-INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_i_q_reg[4]_0[1].  Re-placed instance betaCPU/r/M_input_i_q_reg[3]
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_input_i_q_reg[4]_0[1]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.428 | TNS=-4178.732 |
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_3_letter_2_q[4]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/D[3]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_guess_1_letter_1_q[4]_i_1_comp.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[4]_i_4_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.426 | TNS=-4175.907 |
-INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[5]_i_4_n_0.  Re-placed instance betaCPU/control_unit/M_guess_1_letter_1_q[5]_i_4_comp_1
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[5]_i_4_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.425 | TNS=-4165.513 |
-INFO: [Physopt 32-663] Processed net betaCPU/r/M_temp_guess_g_letter_i_q[3].  Re-placed instance betaCPU/r/M_temp_guess_g_letter_i_q_reg[3]
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_temp_guess_g_letter_i_q[3]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.421 | TNS=-4165.283 |
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_4_letter_4_q[3]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/D[2]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_guess_1_letter_1_q[3]_i_1_comp.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[3]_i_2_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.403 | TNS=-4155.384 |
-INFO: [Physopt 32-663] Processed net betaCPU/r/M_correct_k_q[2].  Re-placed instance betaCPU/r/M_correct_k_q_reg[2]
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_correct_k_q[2]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.391 | TNS=-4155.489 |
-INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_letter_4_q[1].  Re-placed instance betaCPU/r/M_input_letter_4_q_reg[1]
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_input_letter_4_q[1]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.378 | TNS=-4155.075 |
-INFO: [Physopt 32-663] Processed net betaCPU/r/M_correct_k_q_reg[4]_0[1].  Re-placed instance betaCPU/r/M_correct_k_q_reg[1]
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_correct_k_q_reg[4]_0[1]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.369 | TNS=-4154.404 |
-INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_1_letter_3_q[2].  Re-placed instance betaCPU/r/M_guess_1_letter_3_q_reg[2]
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_1_letter_3_q[2]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.367 | TNS=-4154.027 |
-INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_1_letter_4_q[2].  Re-placed instance betaCPU/r/M_guess_1_letter_4_q_reg[2]
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_1_letter_4_q[2]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.361 | TNS=-4154.018 |
-INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_letter_1_q[2].  Re-placed instance betaCPU/r/M_input_letter_1_q_reg[2]
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_input_letter_1_q[2]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.347 | TNS=-4153.850 |
-INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_2_letter_3_q[2].  Re-placed instance betaCPU/r/M_guess_2_letter_3_q_reg[2]
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_2_letter_3_q[2]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.345 | TNS=-4153.678 |
-INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_letter_4_q[2].  Re-placed instance betaCPU/r/M_input_letter_4_q_reg[2]
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_input_letter_4_q[2]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.342 | TNS=-4153.640 |
-INFO: [Physopt 32-663] Processed net betaCPU/r/M_temp_guess_g_letter_i_q_reg[2]_0[0].  Re-placed instance betaCPU/r/M_temp_guess_g_letter_i_q_reg[2]
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_temp_guess_g_letter_i_q_reg[2]_0[0]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.341 | TNS=-4153.223 |
-INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_2_letter_2_q[2].  Re-placed instance betaCPU/r/M_guess_2_letter_2_q_reg[2]
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_2_letter_2_q[2]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.333 | TNS=-4153.053 |
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/D[5]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_2_comp.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_23_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.330 | TNS=-4152.478 |
-INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_word_index_q[7]_i_2_n_0.  Re-placed instance betaCPU/control_unit/M_word_index_q[7]_i_2_comp
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_word_index_q[7]_i_2_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.324 | TNS=-4152.610 |
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_2_letter_4_q[2]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/D[1]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_guess_1_letter_1_q[2]_i_1_comp.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[2]_i_3_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.316 | TNS=-4143.701 |
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/D[3]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_guess_1_letter_1_q[4]_i_1_comp_1.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[4]_i_5_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.302 | TNS=-4136.701 |
-INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_23_n_0.  Re-placed instance betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_23_comp
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_23_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.250 | TNS=-4133.047 |
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_i_q[1]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_stage_q_reg[3]_6. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-28.025 | TNS=-9447.513 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_2_letter_1_q_reg[6]_0[0].  Re-placed instance betaCPU/r/M_guess_2_letter_1_q_reg[5]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_2_letter_1_q_reg[6]_0[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-27.776 | TNS=-9446.695 |
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_4_letter_4_q_reg[6]_0[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-81] Processed net reset_cond/Q[0]. Replicated 3 times.
+INFO: [Physopt 32-735] Processed net reset_cond/Q[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-27.674 | TNS=-9408.232 |
+INFO: [Physopt 32-81] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg_n_0_[11]. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg_n_0_[11]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-27.672 | TNS=-9407.511 |
+INFO: [Physopt 32-663] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg_n_0_[14].  Re-placed instance betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[14]
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg_n_0_[14]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-27.668 | TNS=-9406.543 |
+INFO: [Physopt 32-81] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg_n_0_[12]. Replicated 2 times.
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg_n_0_[12]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-27.668 | TNS=-9458.306 |
+INFO: [Physopt 32-81] Processed net betaCPU/control_unit/Q[2]. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/Q[2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-27.667 | TNS=-9457.945 |
+INFO: [Physopt 32-81] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg_n_0_[13]. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg_n_0_[13]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-27.650 | TNS=-9451.791 |
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg_n_0_[12]_repN. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-134] Processed net betaCPU/control_unit/M_guess_2_letter_1_q[6]_i_9_n_0. Rewiring did not optimize the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_guess_2_letter_1_q[6]_i_9_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net betaCPU/control_unit/M_guess_2_letter_1_q[6]_i_9_n_0. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_guess_2_letter_1_q[6]_i_9_comp.
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_2_letter_1_q[6]_i_32_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-27.633 | TNS=-9451.553 |
+INFO: [Physopt 32-702] Processed net reset_cond/in14[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_guess_2_letter_1_q_reg[5]_i_6_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_guess_2_letter_1_q[5]_i_13_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net reset_cond/M_guess_2_letter_1_q[5]_i_13_n_0. Critical path length was reduced through logic transformation on cell reset_cond/M_guess_2_letter_1_q[5]_i_13_comp.
+INFO: [Physopt 32-735] Processed net betaCPU/game_alu/DI[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-27.547 | TNS=-9424.561 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_word_index_q[1].  Re-placed instance betaCPU/r/M_word_index_q_reg[1]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_word_index_q[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-27.547 | TNS=-9424.259 |
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_word_index_q_reg[10]_0[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net betaCPU/control_unit/M_stage_q_reg[3]_32[0]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_word_index_q[10]_i_1_comp.
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_temp_guess_g_letter_i_q[5]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-27.472 | TNS=-9416.476 |
+INFO: [Physopt 32-702] Processed net reset_cond/M_guess_2_letter_1_q[5]_i_11_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net reset_cond/M_guess_2_letter_1_q[5]_i_11_n_0. Critical path length was reduced through logic transformation on cell reset_cond/M_guess_2_letter_1_q[5]_i_11_comp.
+INFO: [Physopt 32-735] Processed net betaCPU/game_alu/DI[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-27.440 | TNS=-9415.010 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[6]_0[3].  Re-placed instance betaCPU/r/M_temp_coloured_letter_q_reg[6]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[6]_0[3]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-27.434 | TNS=-9414.985 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_temp_coloured_letter_q[1].  Re-placed instance betaCPU/r/M_temp_coloured_letter_q_reg[1]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_temp_coloured_letter_q[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-27.434 | TNS=-9414.975 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_temp_coloured_letter_q[2].  Re-placed instance betaCPU/r/M_temp_coloured_letter_q_reg[2]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_temp_coloured_letter_q[2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-27.434 | TNS=-9414.802 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[6]_0[0].  Re-placed instance betaCPU/r/M_temp_coloured_letter_q_reg[3]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[6]_0[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-27.434 | TNS=-9414.845 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[6]_0[1].  Re-placed instance betaCPU/r/M_temp_coloured_letter_q_reg[4]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[6]_0[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-27.412 | TNS=-9414.898 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_temp_coloured_letter_q[0].  Re-placed instance betaCPU/r/M_temp_coloured_letter_q_reg[0]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_temp_coloured_letter_q[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-27.412 | TNS=-9415.086 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[6]_0[2].  Re-placed instance betaCPU/r/M_temp_coloured_letter_q_reg[5]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[6]_0[2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-27.412 | TNS=-9415.380 |
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[6]_0[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net betaCPU/control_unit/M_stage_q_reg[3]_33[0]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_temp_coloured_letter_q[6]_i_1_comp.
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_temp_guess_g_letter_i_q[5]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-27.356 | TNS=-9412.584 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_correct_letter_2_q[1].  Re-placed instance betaCPU/r/M_correct_letter_2_q_reg[1]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_correct_letter_2_q[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-27.284 | TNS=-9411.881 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[6]_0[1].  Re-placed instance betaCPU/r/M_temp_coloured_letter_q_reg[4]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[6]_0[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-27.240 | TNS=-9411.727 |
+INFO: [Physopt 32-134] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[10]_i_2_n_0. Rewiring did not optimize the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[10]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 18 pins.
+INFO: [Physopt 32-735] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[10]_i_7_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-27.165 | TNS=-9405.659 |
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[10]_i_7_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q_reg[10]_i_5_n_5. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q_reg[31]_i_6_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[31]_i_13_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net reset_cond/M_control_unit_regfile_out_b[6].  Re-placed instance reset_cond/M_guess_2_letter_1_q[6]_i_33
+INFO: [Physopt 32-735] Processed net reset_cond/M_control_unit_regfile_out_b[6]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-27.131 | TNS=-9402.778 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_correct_letter_2_q[0].  Re-placed instance betaCPU/r/M_correct_letter_2_q_reg[0]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_correct_letter_2_q[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-27.129 | TNS=-9402.394 |
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[31]_i_14_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[31]_i_14_n_0. Critical path length was reduced through logic transformation on cell betaCPU/game_alu/FSM_onehot_M_game_fsm_q[31]_i_14_comp.
+INFO: [Physopt 32-735] Processed net reset_cond/M_control_unit_regfile_out_b[5]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.994 | TNS=-9330.316 |
+INFO: [Physopt 32-710] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[31]_i_13_n_0. Critical path length was reduced through logic transformation on cell betaCPU/game_alu/FSM_onehot_M_game_fsm_q[31]_i_13_comp.
+INFO: [Physopt 32-735] Processed net reset_cond/M_control_unit_regfile_out_b[6]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.832 | TNS=-9298.787 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_2_letter_4_q_reg[5]_0.  Re-placed instance betaCPU/r/M_guess_2_letter_1_q[5]_i_10
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_2_letter_4_q_reg[5]_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.831 | TNS=-9268.416 |
+INFO: [Physopt 32-710] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[10]_i_2_n_0. Critical path length was reduced through logic transformation on cell betaCPU/game_alu/FSM_onehot_M_game_fsm_q[10]_i_2_comp.
+INFO: [Physopt 32-735] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[10]_i_8_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.826 | TNS=-9268.011 |
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[10]_i_9_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q_reg[10]_i_26_n_6. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q_reg[10]_i_5_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[10]_i_23_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net reset_cond/M_control_unit_regfile_out_b[9].  Re-placed instance reset_cond/M_word_index_q[9]_i_4
+INFO: [Physopt 32-735] Processed net reset_cond/M_control_unit_regfile_out_b[9]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.702 | TNS=-9236.758 |
+INFO: [Physopt 32-710] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[10]_i_23_n_0. Critical path length was reduced through logic transformation on cell betaCPU/game_alu/FSM_onehot_M_game_fsm_q[10]_i_23_comp.
+INFO: [Physopt 32-735] Processed net reset_cond/M_control_unit_regfile_out_b[9]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.677 | TNS=-9234.738 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_2_letter_4_q_reg[6]_1.  Re-placed instance betaCPU/r/M_guess_2_letter_1_q[6]_i_55
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_2_letter_4_q_reg[6]_1. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.652 | TNS=-9232.738 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 24 pins.
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_2_letter_4_q_reg[6]_1. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.640 | TNS=-9231.779 |
+INFO: [Physopt 32-710] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[31]_i_14_n_0. Critical path length was reduced through logic transformation on cell betaCPU/game_alu/FSM_onehot_M_game_fsm_q[31]_i_14_comp_1.
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_2_letter_4_q_reg[5]_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.623 | TNS=-9212.979 |
+INFO: [Physopt 32-81] Processed net betaCPU/r/M_guess_2_letter_4_q_reg[6]_1. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_2_letter_4_q_reg[6]_1. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.577 | TNS=-9209.842 |
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_2_letter_4_q_reg[5]_0_repN_1. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 24 pins.
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_2_letter_1_q[5]_i_21_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.509 | TNS=-9186.110 |
+INFO: [Physopt 32-81] Processed net betaCPU/r/M_guess_2_letter_1_q[5]_i_19_n_0. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_2_letter_1_q[5]_i_19_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.501 | TNS=-9173.096 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 24 pins.
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_2_letter_4_q_reg[6]_1. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.484 | TNS=-9171.737 |
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_2_letter_4_q_reg[6]_1. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 21 pins.
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_2_letter_1_q[6]_i_84_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.463 | TNS=-9170.056 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 12 pins.
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_2_letter_1_q[5]_i_19_n_0_repN. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.445 | TNS=-9138.786 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_2_letter_1_q[6]_i_86_n_0.  Re-placed instance betaCPU/r/M_guess_2_letter_1_q[6]_i_86
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_2_letter_1_q[6]_i_86_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.376 | TNS=-9118.240 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 23 pins.
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_2_letter_1_q[6]_i_86_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.373 | TNS=-9115.556 |
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[10]_i_24_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net reset_cond/M_control_unit_regfile_out_b[8].  Re-placed instance reset_cond/M_word_index_q[8]_i_4
+INFO: [Physopt 32-735] Processed net reset_cond/M_control_unit_regfile_out_b[8]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.287 | TNS=-9108.633 |
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_2_letter_4_q_reg[5]_0_repN. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net betaCPU/r/M_guess_2_letter_4_q_reg[5]_0_repN. Critical path length was reduced through logic transformation on cell betaCPU/r/M_guess_2_letter_1_q[5]_i_10_comp_2.
+INFO: [Physopt 32-735] Processed net reset_cond/M_control_unit_regfile_out_b[5]_repN_1. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.285 | TNS=-9107.927 |
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_2_letter_1_q[5]_i_21_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net betaCPU/r/M_guess_2_letter_1_q[5]_i_21_n_0. Critical path length was reduced through logic transformation on cell betaCPU/r/M_guess_2_letter_1_q[5]_i_21_comp.
+INFO: [Physopt 32-735] Processed net reset_cond/M_stage_q_reg[3]_7. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.279 | TNS=-9080.844 |
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_2_letter_1_q[6]_i_84_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net betaCPU/r/M_guess_2_letter_1_q[6]_i_84_n_0. Critical path length was reduced through logic transformation on cell betaCPU/r/M_guess_2_letter_1_q[6]_i_84_comp.
+INFO: [Physopt 32-735] Processed net reset_cond/M_stage_q_reg[3]_7. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.263 | TNS=-9071.335 |
+INFO: [Physopt 32-710] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[10]_i_24_n_0. Critical path length was reduced through logic transformation on cell betaCPU/game_alu/FSM_onehot_M_game_fsm_q[10]_i_24_comp.
+INFO: [Physopt 32-735] Processed net reset_cond/M_control_unit_regfile_out_b[8]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.215 | TNS=-9066.114 |
 INFO: [Physopt 32-608] Optimized 1 net.  Swapped 20 pins.
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_2_letter_1_q[6]_i_85_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.175 | TNS=-9062.834 |
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[10]_i_22_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[10]_i_22_n_0. Critical path length was reduced through logic transformation on cell betaCPU/game_alu/FSM_onehot_M_game_fsm_q[10]_i_22_comp.
+INFO: [Physopt 32-735] Processed net reset_cond/M_control_unit_regfile_out_b[10]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.150 | TNS=-9060.835 |
+INFO: [Physopt 32-710] Processed net betaCPU/r/M_guess_2_letter_4_q_reg[5]_0_repN. Critical path length was reduced through logic transformation on cell betaCPU/r/M_guess_2_letter_1_q[5]_i_10_comp.
+INFO: [Physopt 32-735] Processed net reset_cond/M_matrix1_letter_address_dff_q[4]_i_21_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.140 | TNS=-9057.343 |
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_2_letter_1_q[5]_i_19_n_0_repN. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net betaCPU/r/M_guess_2_letter_1_q[5]_i_19_n_0_repN. Critical path length was reduced through logic transformation on cell betaCPU/r/M_guess_2_letter_1_q[5]_i_19_replica_comp.
+INFO: [Physopt 32-735] Processed net reset_cond/M_stage_q_reg[3]_7. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.139 | TNS=-9049.462 |
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_2_letter_1_q[6]_i_86_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net betaCPU/r/M_guess_2_letter_1_q[6]_i_86_n_0. Critical path length was reduced through logic transformation on cell betaCPU/r/M_guess_2_letter_1_q[6]_i_86_comp.
+INFO: [Physopt 32-735] Processed net reset_cond/M_stage_q_reg[3]_7. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.114 | TNS=-9048.269 |
+INFO: [Physopt 32-663] Processed net reset_cond/M_guess_2_letter_1_q[5]_i_9_n_0.  Re-placed instance reset_cond/M_guess_2_letter_1_q[5]_i_9
+INFO: [Physopt 32-735] Processed net reset_cond/M_guess_2_letter_1_q[5]_i_9_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.022 | TNS=-9016.161 |
+INFO: [Physopt 32-81] Processed net reset_cond/M_guess_2_letter_1_q[5]_i_9_n_0. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net reset_cond/M_guess_2_letter_1_q[5]_i_9_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.017 | TNS=-9013.885 |
+INFO: [Physopt 32-663] Processed net reset_cond/M_word_index_q[9]_i_7_n_0.  Re-placed instance reset_cond/M_word_index_q[9]_i_7
+INFO: [Physopt 32-735] Processed net reset_cond/M_word_index_q[9]_i_7_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.015 | TNS=-9013.725 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 6 pins.
+INFO: [Physopt 32-735] Processed net reset_cond/M_guess_2_letter_1_q[5]_i_9_n_0_repN. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.946 | TNS=-8979.960 |
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[31]_i_12_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[31]_i_12_n_0. Critical path length was reduced through logic transformation on cell betaCPU/game_alu/FSM_onehot_M_game_fsm_q[31]_i_12_comp.
+INFO: [Physopt 32-735] Processed net reset_cond/M_control_unit_regfile_out_b[7]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.932 | TNS=-8979.121 |
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_2_letter_1_q[6]_i_85_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net betaCPU/r/M_guess_2_letter_1_q[6]_i_85_n_0. Critical path length was reduced through logic transformation on cell betaCPU/r/M_guess_2_letter_1_q[6]_i_85_comp.
+INFO: [Physopt 32-735] Processed net reset_cond/M_stage_q_reg[3]_7. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.926 | TNS=-8979.449 |
+INFO: [Physopt 32-81] Processed net reset_cond/M_guess_2_letter_1_q[6]_i_54_n_0. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net reset_cond/M_guess_2_letter_1_q[6]_i_54_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.921 | TNS=-8979.863 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 21 pins.
+INFO: [Physopt 32-735] Processed net reset_cond/M_guess_2_letter_1_q[6]_i_54_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.917 | TNS=-8979.543 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_2_letter_1_q[5]_i_20_n_0.  Re-placed instance betaCPU/r/M_guess_2_letter_1_q[5]_i_20
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_2_letter_1_q[5]_i_20_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.911 | TNS=-8977.449 |
+INFO: [Physopt 32-710] Processed net betaCPU/r/M_guess_2_letter_1_q[5]_i_21_n_0. Critical path length was reduced through logic transformation on cell betaCPU/r/M_guess_2_letter_1_q[5]_i_21_comp_1.
 INFO: [Physopt 32-735] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[22]_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.249 | TNS=-4133.016 |
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 17 pins.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[20]_1. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.186 | TNS=-4122.352 |
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_word_index_q[7]_i_2_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/M_word_index_q[7]_i_2_n_0. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_word_index_q[7]_i_2_comp_1.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_word_index_q[7]_i_5_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.099 | TNS=-4122.587 |
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 17 pins.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_23_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.047 | TNS=-4121.651 |
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_23_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_word_index_q_reg[7][2]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_word_index_q_reg[7][1]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-134] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[5]_1[2]. Rewiring did not optimize the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.871 | TNS=-8944.196 |
+INFO: [Physopt 32-710] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[31]_i_13_n_0. Critical path length was reduced through logic transformation on cell betaCPU/game_alu/FSM_onehot_M_game_fsm_q[31]_i_13_comp_1.
+INFO: [Physopt 32-735] Processed net reset_cond/M_guess_2_letter_1_q[6]_i_54_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.838 | TNS=-8941.217 |
+INFO: [Physopt 32-710] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[10]_i_23_n_0. Critical path length was reduced through logic transformation on cell betaCPU/game_alu/FSM_onehot_M_game_fsm_q[10]_i_23_comp_1.
+INFO: [Physopt 32-735] Processed net reset_cond/M_word_index_q[9]_i_7_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.815 | TNS=-8940.192 |
+INFO: [Physopt 32-710] Processed net betaCPU/r/M_guess_2_letter_1_q[6]_i_84_n_0. Critical path length was reduced through logic transformation on cell betaCPU/r/M_guess_2_letter_1_q[6]_i_84_comp_1.
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[22]_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.804 | TNS=-8940.119 |
+INFO: [Physopt 32-702] Processed net reset_cond/M_guess_2_letter_1_q[5]_i_9_n_0_repN. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net reset_cond/M_guess_2_letter_1_q[5]_i_9_n_0_repN. Critical path length was reduced through logic transformation on cell reset_cond/M_guess_2_letter_1_q[5]_i_9_replica_comp.
+INFO: [Physopt 32-735] Processed net reset_cond/M_stage_q_reg[3]_7. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.778 | TNS=-8904.695 |
+INFO: [Physopt 32-663] Processed net reset_cond/M_word_index_q[10]_i_17_n_0.  Re-placed instance reset_cond/M_word_index_q[10]_i_17
+INFO: [Physopt 32-735] Processed net reset_cond/M_word_index_q[10]_i_17_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.767 | TNS=-8903.804 |
+INFO: [Physopt 32-710] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[10]_i_24_n_0. Critical path length was reduced through logic transformation on cell betaCPU/game_alu/FSM_onehot_M_game_fsm_q[10]_i_24_comp_1.
+INFO: [Physopt 32-735] Processed net reset_cond/M_word_index_q[8]_i_6_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.759 | TNS=-8903.832 |
+INFO: [Physopt 32-663] Processed net reset_cond/M_guess_2_letter_1_q[6]_i_54_n_0_repN_2.  Re-placed instance reset_cond/M_guess_2_letter_1_q[6]_i_54_comp_1
+INFO: [Physopt 32-735] Processed net reset_cond/M_guess_2_letter_1_q[6]_i_54_n_0_repN_2. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.701 | TNS=-8897.460 |
+INFO: [Physopt 32-710] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[10]_i_22_n_0. Critical path length was reduced through logic transformation on cell betaCPU/game_alu/FSM_onehot_M_game_fsm_q[10]_i_22_comp_1.
+INFO: [Physopt 32-735] Processed net reset_cond/M_word_index_q[10]_i_17_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.679 | TNS=-8896.527 |
+INFO: [Physopt 32-702] Processed net reset_cond/M_word_index_q[7]_i_6_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net reset_cond/M_word_index_q[7]_i_6_n_0. Critical path length was reduced through logic transformation on cell reset_cond/M_word_index_q[7]_i_6_comp.
+INFO: [Physopt 32-735] Processed net reset_cond/M_matrix1_letter_address_dff_q[4]_i_21_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.679 | TNS=-8896.527 |
+INFO: [Physopt 32-710] Processed net betaCPU/r/M_guess_2_letter_1_q[5]_i_19_n_0_repN. Critical path length was reduced through logic transformation on cell betaCPU/r/M_guess_2_letter_1_q[5]_i_19_replica_comp_1.
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[22]_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.650 | TNS=-8873.769 |
+INFO: [Physopt 32-710] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[31]_i_13_n_0. Critical path length was reduced through logic transformation on cell betaCPU/game_alu/FSM_onehot_M_game_fsm_q[31]_i_13_comp.
+INFO: [Physopt 32-735] Processed net reset_cond/M_guess_2_letter_1_q[6]_i_54_n_0_repN_2. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.640 | TNS=-8872.964 |
+INFO: [Physopt 32-710] Processed net reset_cond/M_word_index_q[7]_i_6_n_0. Critical path length was reduced through logic transformation on cell reset_cond/M_word_index_q[7]_i_6_comp_1.
+INFO: [Physopt 32-735] Processed net reset_cond/M_stage_q_reg[3]_7. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.607 | TNS=-8871.400 |
 INFO: [Physopt 32-608] Optimized 1 net.  Swapped 23 pins.
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[5]_1[2]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.036 | TNS=-4119.257 |
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[4]_i_5_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/regfile_data01_in[4]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 17 pins.
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_temp_guess_g_letter_i_q_reg[4]_1[0]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.020 | TNS=-4107.146 |
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_word_index_q_reg[10]_0[3]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[34]_0[2]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_word_index_q[9]_i_1_comp.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_word_index_q[9]_i_2_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.991 | TNS=-4107.018 |
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/D[2]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_guess_1_letter_1_q[3]_i_1_comp_1.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[3]_i_3_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.962 | TNS=-4103.493 |
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_word_index_q_reg[10]_0[4]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[34]_0[3]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_word_index_q[10]_i_2_comp.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_word_index_q[10]_i_3_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.921 | TNS=-4103.276 |
-INFO: [Physopt 32-134] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[5]_1[2]. Rewiring did not optimize the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[5]_1[2]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[5]_1[2]. Critical path length was reduced through logic transformation on cell betaCPU/r/out1_carry__0_i_14_comp.
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[5]_2. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.908 | TNS=-4102.850 |
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/D[1]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_guess_1_letter_1_q[2]_i_1_comp_1.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[2]_i_7_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.903 | TNS=-4093.425 |
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/regfile_data0[6]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/DI[0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/r/DI[0]. Critical path length was reduced through logic transformation on cell betaCPU/r/i__carry_i_1__1_comp.
-INFO: [Physopt 32-735] Processed net betaCPU/r/i__carry_i_7__0_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.863 | TNS=-4088.740 |
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_temp_guess_g_letter_i_q_reg[4]_1[0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/i__carry_i_6__1_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/r/i__carry_i_6__1_n_0. Critical path length was reduced through logic transformation on cell betaCPU/r/i__carry_i_6__1_comp.
-INFO: [Physopt 32-735] Processed net betaCPU/r/i__carry_i_11__0_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.823 | TNS=-4073.912 |
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_g_q_reg[2]_0[1]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/M_g_q_reg[2]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_g_q[2]_i_1_comp.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[2]_i_3_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.810 | TNS=-4074.009 |
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_i_q_reg[2]_0[1]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/M_i_q_reg[2]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_i_q[2]_i_1_comp.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[2]_i_3_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.784 | TNS=-4073.700 |
-INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_22_n_0_repN.  Re-placed instance betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_22_comp
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_22_n_0_repN. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.769 | TNS=-4073.430 |
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 24 pins.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/i__carry_i_5_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.769 | TNS=-4069.044 |
-INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_word_index_q[9]_i_2_n_0.  Re-placed instance betaCPU/control_unit/M_word_index_q[9]_i_2_comp_1
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_word_index_q[9]_i_2_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.744 | TNS=-4068.969 |
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_num_correct_q[2]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/M_num_correct_q_reg[2]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_num_correct_q[2]_i_1_comp.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[2]_i_3_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.725 | TNS=-4069.193 |
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 20 pins.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_22_n_0_repN. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.721 | TNS=-4069.085 |
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_j_q_reg[2]_0[1]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/M_j_q_reg[2]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_j_q[2]_i_1_comp.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[2]_i_3_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.720 | TNS=-4068.854 |
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/regfile_data01_in[6]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/regfile_data0_inferred__2/i__carry_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 17 pins.
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_temp_guess_g_letter_i_q_reg[4]_1[1]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.714 | TNS=-4068.632 |
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 17 pins.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/i__carry_i_3__1_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.706 | TNS=-4067.937 |
-INFO: [Physopt 32-710] Processed net betaCPU/r/i__carry_i_6__1_n_0. Critical path length was reduced through logic transformation on cell betaCPU/r/i__carry_i_6__1_comp_1.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[36]_7. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.704 | TNS=-4036.388 |
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_k_q_reg[2]_0[1]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/M_k_q_reg[2]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_k_q[2]_i_1_comp.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[2]_i_3_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.704 | TNS=-4035.689 |
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/regfile_data00_in[6]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[6]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[6]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/i__carry_i_8_comp.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/i__carry_i_25_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.704 | TNS=-4035.689 |
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[6]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/i__carry_i_8_comp_1.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/i__carry_i_22__0_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.617 | TNS=-4032.973 |
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/i__carry_i_5_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/i__carry_i_5_n_0. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/i__carry_i_5_comp.
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_3_letter_3_q_reg[3]_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.568 | TNS=-4023.899 |
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/regfile_data0_inferred__1/i__carry_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 21 pins.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/i__carry_i_5__0_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.562 | TNS=-4019.666 |
-INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_word_index_q[9]_i_2_n_0.  Re-placed instance betaCPU/control_unit/M_word_index_q[9]_i_2_comp_1
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_word_index_q[9]_i_2_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.547 | TNS=-4019.651 |
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 18 pins.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_word_index_q[9]_i_2_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.522 | TNS=-4019.525 |
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 21 pins.
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[5]_0[0]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.497 | TNS=-4018.904 |
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[36]_3. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[36]_3. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/i__carry_i_11__1_comp.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[36]_2. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.461 | TNS=-4016.291 |
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_22_n_0_repN. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_22_n_0_repN. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_22_comp_2.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_9_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.457 | TNS=-4016.058 |
-INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[2]_i_7_n_0_repN.  Re-placed instance betaCPU/control_unit/M_guess_1_letter_1_q[2]_i_7_comp
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[2]_i_7_n_0_repN. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.448 | TNS=-4014.983 |
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_temp_guess_g_letter_i_q_reg[4]_1[1]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/r/M_temp_guess_g_letter_i_q_reg[4]_1[1]. Critical path length was reduced through logic transformation on cell betaCPU/r/i__carry_i_2__1_comp.
-INFO: [Physopt 32-735] Processed net betaCPU/r/i__carry_i_7__0_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.417 | TNS=-4014.669 |
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/i__carry_i_5__0_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_g_q_reg[2]_1. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/r/M_g_q_reg[2]_1. Critical path length was reduced through logic transformation on cell betaCPU/r/i__carry_i_7__1_comp.
-INFO: [Physopt 32-735] Processed net betaCPU/r/i__carry_i_13__1_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.413 | TNS=-4011.327 |
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/i__carry_i_5_n_0. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/i__carry_i_5_comp_1.
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[3]_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.399 | TNS=-4009.751 |
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 18 pins.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/i__carry_i_3__1_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.379 | TNS=-3997.665 |
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 24 pins.
-INFO: [Physopt 32-735] Processed net betaCPU/r/S[1]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.356 | TNS=-3995.326 |
-INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[3].  Re-placed instance betaCPU/control_unit/i__carry_i_1
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[3]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.342 | TNS=-3993.614 |
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 21 pins.
-INFO: [Physopt 32-735] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[5]_0[1]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.312 | TNS=-3993.043 |
-INFO: [Physopt 32-710] Processed net betaCPU/r/M_g_q_reg[2]_1. Critical path length was reduced through logic transformation on cell betaCPU/r/i__carry_i_7__1_comp_1.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[36]_7. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.281 | TNS=-3972.623 |
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_22_n_0_repN. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_22_comp.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_8_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.255 | TNS=-3972.728 |
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[5]_0[1]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[5]_0[1]. Critical path length was reduced through logic transformation on cell betaCPU/r/i__carry_i_3__0_comp.
-INFO: [Physopt 32-735] Processed net betaCPU/r/i__carry_i_7__0_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.241 | TNS=-3972.526 |
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[36]_7. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[36]_7. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/i__carry__0_i_7_comp_2.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[36]_2. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-20.008 | TNS=-3959.262 |
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[36]_2. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_word_index_q_reg[7][0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/game_alu/out1_carry_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[22]_1[3]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[3]_1. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_input_i_q_reg[3].  Re-placed instance betaCPU/control_unit/i__carry_i_15
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_input_i_q_reg[3]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-19.949 | TNS=-3950.058 |
-INFO: [Physopt 32-81] Processed net betaCPU/control_unit/M_input_i_q_reg[3]. Replicated 2 times.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_input_i_q_reg[3]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-19.927 | TNS=-3947.147 |
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_input_i_q_reg[3]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/M_input_i_q_reg[3]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/i__carry_i_15_comp.
-INFO: [Physopt 32-735] Processed net reset_cond/M_stage_q_reg[3]_4. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-19.907 | TNS=-3944.027 |
-INFO: [Physopt 32-702] Processed net betaCPU/r/out1_carry_i_33_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/r/out1_carry_i_33_n_0. Critical path length was reduced through logic transformation on cell betaCPU/r/out1_carry_i_33_comp.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[15]_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-19.895 | TNS=-3942.154 |
-INFO: [Physopt 32-702] Processed net betaCPU/r/io_led_OBUF[3]_inst_i_13_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/r/io_led_OBUF[3]_inst_i_13_n_0. Critical path length was reduced through logic transformation on cell betaCPU/r/io_led_OBUF[3]_inst_i_13_comp.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[15]_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-19.685 | TNS=-3909.395 |
-INFO: [Physopt 32-710] Processed net betaCPU/r/out1_carry_i_33_n_0. Critical path length was reduced through logic transformation on cell betaCPU/r/out1_carry_i_33_comp_1.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/i__carry__0_i_9_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-19.409 | TNS=-3866.339 |
-INFO: [Physopt 32-710] Processed net betaCPU/r/io_led_OBUF[3]_inst_i_13_n_0. Critical path length was reduced through logic transformation on cell betaCPU/r/io_led_OBUF[3]_inst_i_13_comp_1.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/i__carry__0_i_9_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-19.381 | TNS=-3861.971 |
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[15]_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[15]_0. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/i__carry__0_i_5_comp_3.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/i__carry__0_i_9_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-18.771 | TNS=-3766.811 |
-INFO: [Physopt 32-702] Processed net betaCPU/game_alu/O[0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[22]_1[1]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/adder/p_0_out[1]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[5]_1[0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_20. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[20]_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[20]_0. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/i__carry_i_23__0_comp.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/i__carry_i_32_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-17.937 | TNS=-3633.371 |
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_2_letter_1_q[5]_i_20_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.552 | TNS=-8837.154 |
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[22]_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[22]_0. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_68_comp_6.
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_87_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.534 | TNS=-8837.047 |
+INFO: [Physopt 32-710] Processed net betaCPU/r/M_guess_2_letter_1_q[6]_i_84_n_0. Critical path length was reduced through logic transformation on cell betaCPU/r/M_guess_2_letter_1_q[6]_i_84_comp.
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_87_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.501 | TNS=-8834.407 |
+INFO: [Physopt 32-710] Processed net betaCPU/r/M_guess_2_letter_1_q[5]_i_21_n_0. Critical path length was reduced through logic transformation on cell betaCPU/r/M_guess_2_letter_1_q[5]_i_21_comp.
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_87_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.402 | TNS=-8794.205 |
+INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_93_n_0.  Re-placed instance betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_93
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_93_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.374 | TNS=-8784.434 |
+INFO: [Physopt 32-710] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[22]_0. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_68_comp_7.
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_93_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.351 | TNS=-8782.054 |
+INFO: [Physopt 32-710] Processed net betaCPU/r/M_guess_2_letter_1_q[5]_i_19_n_0_repN. Critical path length was reduced through logic transformation on cell betaCPU/r/M_guess_2_letter_1_q[5]_i_19_replica_comp.
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_87_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.174 | TNS=-8720.282 |
+INFO: [Physopt 32-710] Processed net betaCPU/r/M_guess_2_letter_1_q[5]_i_21_n_0. Critical path length was reduced through logic transformation on cell betaCPU/r/M_guess_2_letter_1_q[5]_i_21_comp_2.
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_93_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.066 | TNS=-8675.327 |
+INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_93_n_0.  Re-placed instance betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_93
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_93_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.023 | TNS=-8663.817 |
+INFO: [Physopt 32-710] Processed net betaCPU/r/M_guess_2_letter_1_q[6]_i_84_n_0. Critical path length was reduced through logic transformation on cell betaCPU/r/M_guess_2_letter_1_q[6]_i_84_comp_2.
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_93_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.001 | TNS=-8659.905 |
+INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_93_n_0.  Re-placed instance betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_93
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_93_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.997 | TNS=-8658.511 |
+INFO: [Physopt 32-710] Processed net betaCPU/r/M_guess_2_letter_1_q[5]_i_19_n_0_repN. Critical path length was reduced through logic transformation on cell betaCPU/r/M_guess_2_letter_1_q[5]_i_19_replica_comp_2.
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_93_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.912 | TNS=-8608.678 |
 INFO: [Physopt 32-702] Processed net betaCPU/game_alu/O[1]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 16 pins.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[22]_1[2]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-17.872 | TNS=-3622.971 |
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[22]_1[2]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[22]_1[2]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/out1_carry_i_7_comp.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/out1_carry_i_18_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-17.694 | TNS=-3594.490 |
-INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[2].  Re-placed instance betaCPU/control_unit/i__carry_i_1__0
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[2]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-17.488 | TNS=-3560.706 |
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_27[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_game_alu_b[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net betaCPU/control_unit/M_game_alu_b[1]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/FSM_onehot_M_game_fsm_q[10]_i_43_comp.
+INFO: [Physopt 32-735] Processed net betaCPU/FSM_onehot_M_game_fsm_q[10]_i_47_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.607 | TNS=-8502.234 |
+INFO: [Physopt 32-702] Processed net reset_cond/M_control_unit_regfile_out_b[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_matrix1_letter_address_dff_q[1]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_matrix1_letter_address_dff_q[4]_i_56_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_stage_q_reg[3]_6. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net reset_cond/M_stage_q_reg[3]_6. Critical path length was reduced through logic transformation on cell reset_cond/M_matrix1_letter_address_dff_q[4]_i_54_comp.
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[14]_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.587 | TNS=-8495.173 |
+INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_86_n_0.  Re-placed instance betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_86
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_86_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.447 | TNS=-8445.754 |
+INFO: [Physopt 32-710] Processed net reset_cond/M_stage_q_reg[3]_6. Critical path length was reduced through logic transformation on cell reset_cond/M_matrix1_letter_address_dff_q[4]_i_54_comp_1.
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_86_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-23.573 | TNS=-8137.232 |
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/O[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_27[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_game_alu_b[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_control_unit_regfile_out_b[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net reset_cond/M_matrix1_letter_address_dff_q[2]_i_3_n_0.  Re-placed instance reset_cond/M_matrix1_letter_address_dff_q[2]_i_3
+INFO: [Physopt 32-735] Processed net reset_cond/M_matrix1_letter_address_dff_q[2]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-23.374 | TNS=-8066.190 |
+INFO: [Physopt 32-702] Processed net reset_cond/M_matrix1_letter_address_dff_q[2]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_stage_q_reg[3]_4. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net reset_cond/M_stage_q_reg[3]_4. Critical path length was reduced through logic transformation on cell reset_cond/M_matrix1_letter_address_dff_q[4]_i_23_comp.
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[6]_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-23.343 | TNS=-8055.123 |
+INFO: [Physopt 32-710] Processed net reset_cond/M_stage_q_reg[3]_4. Critical path length was reduced through logic transformation on cell reset_cond/M_matrix1_letter_address_dff_q[4]_i_23_comp_1.
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_72_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-22.692 | TNS=-7822.716 |
+INFO: [Physopt 32-710] Processed net reset_cond/M_stage_q_reg[3]_4. Critical path length was reduced through logic transformation on cell reset_cond/M_matrix1_letter_address_dff_q[4]_i_23_comp.
+INFO: [Physopt 32-735] Processed net betaCPU/game_alu/M_game_alu_alu[2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-22.072 | TNS=-7601.375 |
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_stage_q_reg[3][0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q_reg[10]_i_14_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_27[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-134] Processed net reset_cond/M_stage_q_reg[3]_9[0]. Rewiring did not optimize the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_stage_q_reg[3]_9[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_control_unit_regfile_out_b[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_matrix1_letter_address_dff_q[3]_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_matrix1_letter_address_dff_q_reg[3]_i_5_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_stage_q_reg[3]_5. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net reset_cond/M_stage_q_reg[3]_5. Critical path length was reduced through logic transformation on cell reset_cond/M_matrix1_letter_address_dff_q[4]_i_20_comp.
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[13]_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.811 | TNS=-7507.154 |
+INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_66_n_0.  Re-placed instance betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_66
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_66_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.768 | TNS=-7491.632 |
+INFO: [Physopt 32-710] Processed net reset_cond/M_stage_q_reg[3]_5. Critical path length was reduced through logic transformation on cell reset_cond/M_matrix1_letter_address_dff_q[4]_i_20_comp_1.
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_66_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-21.384 | TNS=-7353.008 |
 INFO: [Common 17-14] Message 'Physopt 32-619' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[2]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 23 pins.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[36]_1. Optimization improves timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[36]_1. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_word_index_q_reg[7][1]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 21 pins.
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_word_index_q_reg[7][0]. Optimization improves timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_word_index_q_reg[7][0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_word_index_q_reg[7]_0[0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/S[0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/i__carry_i_6_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_input_i_q_reg[4]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/i__carry_i_37_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_stage_q_reg[3]_6.  Re-placed instance betaCPU/control_unit/i__carry_i_33
-INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_stage_q_reg[3]_6. Optimization improves timing on the net.
+INFO: [Physopt 32-663] Processed net betaCPU/game_alu/M_game_alu_alu[1].  Re-placed instance betaCPU/game_alu/FSM_onehot_M_game_fsm_q[31]_i_5
+INFO: [Physopt 32-735] Processed net betaCPU/game_alu/M_game_alu_alu[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-710] Processed net reset_cond/M_stage_q_reg[3]_5. Critical path length was reduced through logic transformation on cell reset_cond/M_matrix1_letter_address_dff_q[4]_i_20_comp.
+INFO: [Physopt 32-735] Processed net betaCPU/game_alu/M_game_alu_alu[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/O[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_27[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net betaCPU/control_unit/M_stage_q_reg[3]_27[0]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/FSM_onehot_M_game_fsm_q[10]_i_35_comp.
+INFO: [Physopt 32-735] Processed net betaCPU/FSM_onehot_M_game_fsm_q[10]_i_44_n_0. Optimization improves timing on the net.
 INFO: [Common 17-14] Message 'Physopt 32-735' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_6. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-81] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[36]_4. Replicated 1 times.
-INFO: [Physopt 32-81] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[36]_4_repN. Replicated 1 times.
-INFO: [Physopt 32-81] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[36]_4_repN_1. Replicated 1 times.
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 18 pins.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[36]_4_repN_1. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/game_alu/O[2]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[22]_1[0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-663] Processed net betaCPU/r/M_g_q_reg[0]_0.  Re-placed instance betaCPU/r/io_led_OBUF[0]_inst_i_2
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_g_q_reg[0]_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_correct_k_q_reg[0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[36]_5. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[36]_5. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/i__carry__0_i_6_comp.
-INFO: [Physopt 32-663] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg_n_0_[30].  Re-placed instance betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[30]
-INFO: [Physopt 32-81] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg_n_0_[30]. Replicated 4 times.
-INFO: [Physopt 32-663] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg_n_0_[31].  Re-placed instance betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[31]
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg_n_0_[30]_repN. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_stage_q_reg[3]_2. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/game_alu/io_led_OBUF[21]_inst_i_3_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-663] Processed net betaCPU/game_alu/io_led_OBUF[21]_inst_i_6_n_0.  Re-placed instance betaCPU/game_alu/io_led_OBUF[21]_inst_i_6
-INFO: [Physopt 32-702] Processed net betaCPU/game_alu/io_led_OBUF[21]_inst_i_6_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/game_alu/out1_carry__1_n_4. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_22[1]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 19 pins.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_guess_1_letter_3_q_reg[6][0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-81] Processed net betaCPU/control_unit/out1_carry_i_21_n_0. Replicated 1 times.
-INFO: [Physopt 32-663] Processed net button_panel_controller/check_/button_cond/M_ctr_q_reg[11].  Re-placed instance button_panel_controller/check_/button_cond/M_ctr_q_reg[11]
-INFO: [Physopt 32-663] Processed net button_panel_controller/check_/button_cond/M_ctr_q_reg[5].  Re-placed instance button_panel_controller/check_/button_cond/M_ctr_q_reg[5]
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/out1_carry_i_21_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/out1_carry_i_21_n_0. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/out1_carry_i_21_comp.
-INFO: [Physopt 32-663] Processed net button_panel_controller/clear_/button_cond/M_ctr_q_reg[19].  Re-placed instance button_panel_controller/clear_/button_cond/M_ctr_q_reg[19]
-INFO: [Physopt 32-663] Processed net keyboard_controller/a_/button_cond/M_ctr_q_reg[3].  Re-placed instance keyboard_controller/a_/button_cond/M_ctr_q_reg[3]
-INFO: [Physopt 32-702] Processed net button_panel_controller/clear_/button_cond/M_ctr_q_reg[15]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/out1_carry_i_24_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net keyboard_controller/e_/L_edge/M_stage_q_reg[3]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net button_panel_controller/clear_/button_cond/M_last_q_reg. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-134] Processed net button_panel_controller/clear_/button_cond/M_button_cond_out_0. Rewiring did not optimize the net.
-INFO: [Physopt 32-702] Processed net button_panel_controller/clear_/button_cond/M_button_cond_out_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net button_panel_controller/clear_/button_cond/M_button_cond_out_0. Critical path length was reduced through logic transformation on cell button_panel_controller/clear_/button_cond/M_last_q_i_1__3_comp.
-INFO: [Physopt 32-702] Processed net button_panel_controller/clear_/button_cond/M_ctr_q_reg[11]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net button_panel_controller/clear_/button_cond/M_last_q_i_4__3_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-81] Processed net betaCPU/control_unit/D[3]. Replicated 1 times.
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 18 pins.
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/D[2]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_guess_1_letter_1_q[3]_i_1_comp.
-INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_2_letter_2_q[4].  Re-placed instance betaCPU/r/M_guess_2_letter_2_q_reg[4]
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_3_letter_1_q[4]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_control_unit_regfile_out_b[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_matrix1_letter_address_dff_q[4]_i_24_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net reset_cond/M_matrix1_letter_address_dff_q[4]_i_24_n_0. Critical path length was reduced through logic transformation on cell reset_cond/M_matrix1_letter_address_dff_q[4]_i_24_comp.
+INFO: [Physopt 32-710] Processed net reset_cond/M_matrix1_letter_address_dff_q[4]_i_24_n_0. Critical path length was reduced through logic transformation on cell reset_cond/M_matrix1_letter_address_dff_q[4]_i_24_comp_1.
+INFO: [Physopt 32-81] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg_n_0_[17]. Replicated 1 times.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg_n_0_[17]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net reset_cond/M_matrix1_letter_address_dff_q[4]_i_24_n_0. Critical path length was reduced through logic transformation on cell reset_cond/M_matrix1_letter_address_dff_q[4]_i_24_comp.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/in27[5]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_matrix1_letter_address_dff_q_reg[4]_i_65_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_84_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_control_unit_regfile_out_a[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_correct_k_q_reg[2]_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_control_unit_regfile_ra[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_37_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_guess_2_letter_1_q[6]_i_11_0[6]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net clk_IBUF. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net clk. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_4_letter_4_q_reg[6]_0[1].  Re-placed instance betaCPU/r/M_guess_4_letter_4_q_reg[6]
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[6]_0[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg_n_0_[12]_repN. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_guess_2_letter_1_q[6]_i_9_n_0.  Re-placed instance betaCPU/control_unit/M_guess_2_letter_1_q[6]_i_9_comp
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_correct_letter_3_q[4].  Re-placed instance betaCPU/r/M_correct_letter_3_q_reg[4]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_2_letter_1_q[0].  Re-placed instance betaCPU/r/M_guess_2_letter_1_q_reg[0]
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_input_letter_4_q[4]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_guess_2_letter_1_q[4]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_guess_2_letter_1_q[4]_i_14_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/in14[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 23 pins.
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_temp_guess_g_letter_i_q[0].  Re-placed instance betaCPU/r/M_temp_guess_g_letter_i_q_reg[0]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_temp_guess_g_letter_i_q[2].  Re-placed instance betaCPU/r/M_temp_guess_g_letter_i_q_reg[2]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_temp_guess_g_letter_i_q_reg[5]_0[0].  Re-placed instance betaCPU/r/M_temp_guess_g_letter_i_q_reg[3]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_temp_guess_g_letter_i_q_reg[5]_0[2].  Re-placed instance betaCPU/r/M_temp_guess_g_letter_i_q_reg[5]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_4_letter_4_q_reg[6]_0[1].  Re-placed instance betaCPU/r/M_guess_4_letter_4_q_reg[6]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_letter_2_q[2].  Re-placed instance betaCPU/r/M_input_letter_2_q_reg[2]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_4_letter_1_q[0].  Re-placed instance betaCPU/r/M_guess_4_letter_1_q_reg[0]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_2_letter_4_q_reg[6]_0[0].  Re-placed instance betaCPU/r/M_guess_2_letter_4_q_reg[5]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_i_q[0].  Re-placed instance betaCPU/r/M_input_i_q_reg[0]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_i_q[1].  Re-placed instance betaCPU/r/M_input_i_q_reg[1]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_i_q[2].  Re-placed instance betaCPU/r/M_input_i_q_reg[2]
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_g_q[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_g_q[2]_i_2_n_0.  Re-placed instance betaCPU/control_unit/M_g_q[2]_i_2
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_word_index_q_reg[10]_0[6]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_word_index_q[9]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/in14[6]. Optimizations did not improve timing on the net.
 INFO: [Physopt 32-608] Optimized 1 net.  Swapped 21 pins.
-INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_1_letter_3_q[4].  Re-placed instance betaCPU/r/M_guess_1_letter_3_q_reg[4]
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 17 pins.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/D[5]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net clk_IBUF. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net clk. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_2_letter_1_q[6]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net button_panel_controller/clear_/button_cond/M_ctr_q_reg[11]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/regfile_data01_in[6]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 24 pins.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/i__carry_i_3__1_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[3]_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-663] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[36]_7.  Re-placed instance betaCPU/control_unit/i__carry__0_i_7_comp_2
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_23_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_word_index_q_reg[7][2]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_word_index_q_reg[7][1]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 24 pins.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[36]_7. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_word_index_q_reg[7][0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[22]_1[3]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[3]_1. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/out1_carry_i_33_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/game_alu/O[0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[22]_1[1]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/adder/p_0_out[1]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[5]_1[0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_20. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-663] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[20]_0.  Re-placed instance betaCPU/control_unit/i__carry_i_23__0_comp
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[20]_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/game_alu/O[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_4_letter_2_q[1].  Re-placed instance betaCPU/r/M_guess_4_letter_2_q_reg[1]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[6]_0[1].  Re-placed instance betaCPU/r/M_temp_coloured_letter_q_reg[4]
+INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_guess_2_letter_1_q[6]_i_3_n_0.  Re-placed instance betaCPU/control_unit/M_guess_2_letter_1_q[6]_i_3
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_oka_mode_q. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net betaCPU/control_unit/r/M_oka_mode_d0_out.  Re-placed instance betaCPU/control_unit/M_oka_mode_q[0]_i_2
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_3_letter_3_q[3].  Re-placed instance betaCPU/r/M_guess_3_letter_3_q_reg[3]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[6]_0[1].  Re-placed instance betaCPU/r/M_temp_coloured_letter_q_reg[4]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_correct_letter_4_q[2].  Re-placed instance betaCPU/r/M_correct_letter_4_q_reg[2]
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_3_letter_3_q[4]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_guess_3_letter_1_q[6]_i_2_n_0.  Re-placed instance betaCPU/control_unit/M_guess_3_letter_1_q[6]_i_2
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/r/M_oka_mode_d0_out. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_guess_3_letter_1_q[6]_i_3_n_0.  Re-placed instance betaCPU/control_unit/M_guess_3_letter_1_q[6]_i_3
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_4_letter_1_q[0].  Re-placed instance betaCPU/r/M_guess_4_letter_1_q_reg[0]
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_4_letter_1_q[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_stage_q_reg[3]_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q_reg[33]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[10]_i_3_n_0. Optimizations did not improve timing on the net.
 INFO: [Physopt 32-608] Optimized 1 net.  Swapped 20 pins.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[22]_1[2]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[2]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[36]_1. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_word_index_q_reg[7][1]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_word_index_q_reg[7][0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_word_index_q_reg[7]_0[0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/S[0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/i__carry_i_6_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_input_i_q_reg[4]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/i__carry_i_37_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_6. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[36]_4_repN_1. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 24 pins.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/DI[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_game_alu_alu[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 18 pins.
+INFO: [Physopt 32-663] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[31]_i_3_n_0.  Re-placed instance betaCPU/game_alu/FSM_onehot_M_game_fsm_q[31]_i_3
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 8 pins.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[31]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q_reg[31]_i_6_n_4. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[31]_i_14_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_2_letter_4_q_reg[5]_0_repN. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_stage_q_reg[3]_7. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[22]_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/O[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_27[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_game_alu_b[1].  Re-placed instance betaCPU/control_unit/FSM_onehot_M_game_fsm_q[10]_i_43_comp
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_game_alu_b[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_control_unit_regfile_out_b[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_matrix1_letter_address_dff_q[1]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_matrix1_letter_address_dff_q[4]_i_56_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net reset_cond/M_stage_q_reg[3]_6.  Re-placed instance reset_cond/M_matrix1_letter_address_dff_q[4]_i_54_comp_1
+INFO: [Physopt 32-702] Processed net reset_cond/M_stage_q_reg[3]_6. Optimizations did not improve timing on the net.
 INFO: [Physopt 32-702] Processed net betaCPU/game_alu/O[2]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[22]_1[0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_g_q_reg[0]_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_correct_k_q_reg[0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[36]_5. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_guess_1_letter_3_q_reg[6][0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/out1_carry_i_24_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net keyboard_controller/e_/L_edge/M_stage_q_reg[3]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net button_panel_controller/clear_/button_cond/M_last_q_reg. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net button_panel_controller/clear_/button_cond/M_button_cond_out_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net button_panel_controller/clear_/button_cond/M_last_q_i_4__3_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/D[5]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_27[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_game_alu_b[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_control_unit_regfile_out_b[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_matrix1_letter_address_dff_q[2]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_stage_q_reg[3]_4. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_stage_q_reg[3][0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_27[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_stage_q_reg[3]_9[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_control_unit_regfile_out_b[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_matrix1_letter_address_dff_q[3]_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_matrix1_letter_address_dff_q_reg[3]_i_5_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_stage_q_reg[3]_5. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/O[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 31 pins.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_27[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_control_unit_regfile_out_b[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 19 pins.
+INFO: [Physopt 32-702] Processed net reset_cond/M_matrix1_letter_address_dff_q[4]_i_24_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/in27[5]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 12 pins.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_control_unit_regfile_out_a[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_correct_k_q_reg[2]_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_control_unit_regfile_ra[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_37_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_stage_q_reg[3]_11[0].  Re-placed instance betaCPU/control_unit/M_guess_4_letter_1_q[6]_i_1
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_correct_letter_2_q[0].  Re-placed instance betaCPU/r/M_correct_letter_2_q_reg[0]
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 20 pins.
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_correct_letter_2_q[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net betaCPU/control_unit/E[0].  Re-placed instance betaCPU/control_unit/M_correct_letter_2_q[4]_i_1
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_temp_guess_g_letter_i_q[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_temp_guess_g_letter_i_q[5]_i_2_n_0.  Re-placed instance betaCPU/control_unit/M_temp_guess_g_letter_i_q[5]_i_2
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_i_q[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 17 pins.
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_letter_2_q[0].  Re-placed instance betaCPU/r/M_input_letter_2_q_reg[0]
+INFO: [Physopt 32-663] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[10]_i_11_n_0.  Re-placed instance betaCPU/game_alu/FSM_onehot_M_game_fsm_q[10]_i_11
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_k_q[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 23 pins.
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_correct_k_q[0].  Re-placed instance betaCPU/r/M_correct_k_q_reg[0]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_correct_k_q[1].  Re-placed instance betaCPU/r/M_correct_k_q_reg[1]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_2_letter_1_q[3].  Re-placed instance betaCPU/r/M_guess_2_letter_1_q_reg[3]
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[10]_i_11_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q_reg[34][0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[31]_i_13_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_2_letter_4_q_reg[6]_1. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_2_letter_1_q[6]_i_85_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[34]_1[2]. Optimizations did not improve timing on the net.
 INFO: [Physopt 32-702] Processed net clk_IBUF. Optimizations did not improve timing on the net.
 INFO: [Physopt 32-702] Processed net clk. Optimizations did not improve timing on the net.
-Phase 3 Critical Path Optimization | Checksum: 18b387e37
+Phase 3 Critical Path Optimization | Checksum: 160270e8f
 
-Time (s): cpu = 00:00:35 ; elapsed = 00:00:24 . Memory (MB): peak = 1747.297 ; gain = 0.000
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:25 . Memory (MB): peak = 1746.520 ; gain = 0.000
 
 Phase 4 Critical Path Optimization
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_2_letter_1_q[6]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net button_panel_controller/clear_/button_cond/M_ctr_q_reg[11]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/regfile_data01_in[6]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/regfile_data0_inferred__2/i__carry_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/i__carry_i_3__1_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-710] Processed net betaCPU/control_unit/i__carry_i_3__1_n_0. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/i__carry_i_3__1_comp.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_23_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-608] Optimized 1 net.  Swapped 21 pins.
-INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_word_index_q_reg[7][2]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_word_index_q_reg[7][1]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-81] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[5]_1[2]. Replicated 2 times.
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_temp_guess_g_letter_i_q_reg[4]_1[0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/i__carry_i_6__1_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[36]_2. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_word_index_q_reg[7][0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/game_alu/out1_carry_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[22]_1[3]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[3]_1. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/out1_carry_i_33_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/game_alu/O[0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[22]_1[1]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/adder/p_0_out[1]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[5]_1[0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_20. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[20]_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_word_index_q_reg[10]_0[6]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg_n_0_[12]_repN. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[34]_1[2]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_word_index_q[9]_i_1_comp.
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_2_letter_4_q[2].  Re-placed instance betaCPU/r/M_guess_2_letter_4_q_reg[2]
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_temp_guess_g_letter_i_q[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net betaCPU/control_unit/M_stage_q_reg[3]_34[0]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_temp_guess_g_letter_i_q[5]_i_1_comp.
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_correct_k_q[3].  Re-placed instance betaCPU/r/M_correct_k_q_reg[3]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_correct_k_q_reg[4]_0[0].  Re-placed instance betaCPU/r/M_correct_k_q_reg[4]
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_correct_k_q_reg[4]_0[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_stage_q_reg[3]_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q_reg[33]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q_reg[33]. Critical path length was reduced through logic transformation on cell betaCPU/game_alu/M_guess_2_letter_1_q[6]_i_15_comp.
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_word_index_q_reg[10]_0[5]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[34]_1[1]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_word_index_q[8]_i_1_comp.
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_oka_mode_q. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net betaCPU/control_unit/r/M_oka_mode_d0_out.  Re-placed instance betaCPU/control_unit/M_oka_mode_q[0]_i_2
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_3_letter_3_q[4].  Re-placed instance betaCPU/r/M_guess_3_letter_3_q_reg[4]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_correct_letter_4_q[1].  Re-placed instance betaCPU/r/M_correct_letter_4_q_reg[1]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_3_letter_4_q[0].  Re-placed instance betaCPU/r/M_guess_3_letter_4_q_reg[0]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_3_letter_4_q[1].  Re-placed instance betaCPU/r/M_guess_3_letter_4_q_reg[1]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_3_letter_4_q[2].  Re-placed instance betaCPU/r/M_guess_3_letter_4_q_reg[2]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_3_letter_4_q[3].  Re-placed instance betaCPU/r/M_guess_3_letter_4_q_reg[3]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_3_letter_4_q_reg[6]_0[0].  Re-placed instance betaCPU/r/M_guess_3_letter_4_q_reg[5]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_3_letter_4_q_reg[6]_0[1].  Re-placed instance betaCPU/r/M_guess_3_letter_4_q_reg[6]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_3_letter_3_q[0].  Re-placed instance betaCPU/r/M_guess_3_letter_3_q_reg[0]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_3_letter_3_q_reg[6]_0[0].  Re-placed instance betaCPU/r/M_guess_3_letter_3_q_reg[5]
+INFO: [Physopt 32-710] Processed net betaCPU/control_unit/M_guess_2_letter_1_q[6]_i_11_0[4]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_guess_2_letter_1_q[4]_i_1_comp.
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_3_letter_3_q[1].  Re-placed instance betaCPU/r/M_guess_3_letter_3_q_reg[1]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_3_letter_3_q[2].  Re-placed instance betaCPU/r/M_guess_3_letter_3_q_reg[2]
+INFO: [Physopt 32-710] Processed net betaCPU/control_unit/M_oka_mode_q_reg[0]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_oka_mode_q[0]_i_1_comp.
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_3_letter_4_q_reg[6]_0[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-81] Processed net betaCPU/control_unit/M_guess_3_letter_1_q[6]_i_2_n_0. Replicated 1 times.
+INFO: [Physopt 32-710] Processed net betaCPU/control_unit/M_guess_2_letter_1_q[6]_i_11_0[4]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_guess_2_letter_1_q[4]_i_1_comp_1.
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_letter_4_q[0].  Re-placed instance betaCPU/r/M_input_letter_4_q_reg[0]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_letter_4_q[1].  Re-placed instance betaCPU/r/M_input_letter_4_q_reg[1]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_letter_4_q[2].  Re-placed instance betaCPU/r/M_input_letter_4_q_reg[2]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_letter_4_q[3].  Re-placed instance betaCPU/r/M_input_letter_4_q_reg[3]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_2_letter_2_q[0].  Re-placed instance betaCPU/r/M_guess_2_letter_2_q_reg[0]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_2_letter_2_q[1].  Re-placed instance betaCPU/r/M_guess_2_letter_2_q_reg[1]
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_2_letter_2_q[2].  Re-placed instance betaCPU/r/M_guess_2_letter_2_q_reg[2]
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_g_q[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg_n_0_[12]_repN. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_g_q[2]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_guess_2_letter_1_q[6]_i_6_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 22 pins.
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_word_index_q_reg[10]_0[7]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_word_index_q[10]_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/in14[7]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/DI[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_game_alu_alu[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[10]_i_11_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q_reg[34][0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[31]_i_13_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_2_letter_4_q_reg[6]_1. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_2_letter_1_q[6]_i_85_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[22]_0. Optimizations did not improve timing on the net.
 INFO: [Physopt 32-702] Processed net betaCPU/game_alu/O[1]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[22]_1[2]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[2]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[36]_1. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_word_index_q_reg[7][1]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_word_index_q_reg[7][0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_word_index_q_reg[7]_0[0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/S[0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/i__carry_i_6_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_input_i_q_reg[4]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/i__carry_i_37_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_6. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[36]_4_repN_1. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_27[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_game_alu_b[1].  Re-placed instance betaCPU/control_unit/FSM_onehot_M_game_fsm_q[10]_i_43_comp
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_game_alu_b[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_control_unit_regfile_out_b[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_matrix1_letter_address_dff_q[1]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net reset_cond/M_matrix1_letter_address_dff_q[4]_i_56_n_0.  Re-placed instance reset_cond/M_matrix1_letter_address_dff_q[4]_i_56
+INFO: [Physopt 32-702] Processed net reset_cond/M_matrix1_letter_address_dff_q[4]_i_56_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_stage_q_reg[3]_6. Optimizations did not improve timing on the net.
 INFO: [Physopt 32-702] Processed net betaCPU/game_alu/O[2]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[22]_1[0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_g_q_reg[0]_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_correct_k_q_reg[0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[36]_5. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_guess_1_letter_3_q_reg[6][0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/out1_carry_i_24_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net keyboard_controller/e_/L_edge/M_stage_q_reg[3]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net button_panel_controller/clear_/button_cond/M_last_q_reg. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-134] Processed net button_panel_controller/clear_/button_cond/M_button_cond_out_0. Rewiring did not optimize the net.
-INFO: [Physopt 32-702] Processed net button_panel_controller/clear_/button_cond/M_button_cond_out_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net button_panel_controller/clear_/button_cond/M_last_q_i_4__3_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/D[5]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_27[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_game_alu_b[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_control_unit_regfile_out_b[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_matrix1_letter_address_dff_q[2]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_stage_q_reg[3]_4. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_stage_q_reg[3][0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_27[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_stage_q_reg[3]_9[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_control_unit_regfile_out_b[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_matrix1_letter_address_dff_q[3]_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_matrix1_letter_address_dff_q_reg[3]_i_5_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_stage_q_reg[3]_5. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/O[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_27[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_control_unit_regfile_out_b[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net reset_cond/M_matrix1_letter_address_dff_q[4]_i_24_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/in27[5]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_control_unit_regfile_out_a[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_correct_k_q_reg[2]_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_control_unit_regfile_ra[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_matrix1_letter_address_dff_q[4]_i_37_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[34]_1[3]. Optimizations did not improve timing on the net.
 INFO: [Physopt 32-702] Processed net clk_IBUF. Optimizations did not improve timing on the net.
 INFO: [Physopt 32-702] Processed net clk. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_2_letter_1_q[6]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net button_panel_controller/clear_/button_cond/M_ctr_q_reg[11]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/regfile_data01_in[6]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_temp_guess_g_letter_i_q_reg[4]_1[0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/i__carry_i_6__1_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[36]_2. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_word_index_q_reg[7][0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[22]_1[3]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[3]_1. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/out1_carry_i_33_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/game_alu/O[0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[22]_1[1]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/adder/p_0_out[1]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[5]_1[0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_20. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[20]_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/game_alu/O[1]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[22]_1[2]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[2]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[36]_1. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_word_index_q_reg[7][1]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_word_index_q_reg[7][0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_word_index_q_reg[7]_0[0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/S[0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/i__carry_i_6_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_input_i_q_reg[4]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/i__carry_i_37_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_6. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[36]_4_repN_1. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/game_alu/O[2]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[22]_1[0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/r/M_g_q_reg[0]_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_correct_k_q_reg[0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[36]_5. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_guess_1_letter_3_q_reg[6][0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/out1_carry_i_24_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net keyboard_controller/e_/L_edge/M_stage_q_reg[3]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net button_panel_controller/clear_/button_cond/M_last_q_reg. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net button_panel_controller/clear_/button_cond/M_button_cond_out_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net button_panel_controller/clear_/button_cond/M_last_q_i_4__3_n_0. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net betaCPU/control_unit/D[5]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net clk_IBUF. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net clk. Optimizations did not improve timing on the net.
-Phase 4 Critical Path Optimization | Checksum: 18b387e37
+Phase 4 Critical Path Optimization | Checksum: 160270e8f
 
-Time (s): cpu = 00:00:48 ; elapsed = 00:00:32 . Memory (MB): peak = 1747.297 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1747.297 ; gain = 0.000
-INFO: [Physopt 32-603] Post Physical Optimization Timing Summary | WNS=-15.875 | TNS=-3240.882 |
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:28 . Memory (MB): peak = 1746.520 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1746.520 ; gain = 0.000
+INFO: [Physopt 32-603] Post Physical Optimization Timing Summary | WNS=-18.843 | TNS=-6498.501 |
 
 Summary of Physical Synthesis Optimizations
 ============================================
@@ -1021,25 +1028,25 @@ Summary of Physical Synthesis Optimizations
 |  Optimization   |  WNS Gain (ns)  |  TNS Gain (ns)  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 |  DSP Register   |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
-|  Critical Path  |          5.694  |        945.771  |           13  |              0  |                   133  |           0  |           2  |  00:00:32  |
-|  Total          |          5.694  |        945.771  |           13  |              0  |                   133  |           0  |           3  |  00:00:32  |
+|  Critical Path  |          9.182  |       2949.012  |           14  |              0  |                   188  |           0  |           2  |  00:00:28  |
+|  Total          |          9.182  |       2949.012  |           14  |              0  |                   188  |           0  |           3  |  00:00:28  |
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1747.297 ; gain = 0.000
-Ending Physical Synthesis Task | Checksum: 1c2c8269f
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1746.520 ; gain = 0.000
+Ending Physical Synthesis Task | Checksum: 20c3f3445
 
-Time (s): cpu = 00:00:48 ; elapsed = 00:00:32 . Memory (MB): peak = 1747.297 ; gain = 0.000
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:28 . Memory (MB): peak = 1746.520 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
-655 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+662 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 phys_opt_design completed successfully
-phys_opt_design: Time (s): cpu = 00:00:49 ; elapsed = 00:00:32 . Memory (MB): peak = 1747.297 ; gain = 0.000
+phys_opt_design: Time (s): cpu = 00:00:47 ; elapsed = 00:00:28 . Memory (MB): peak = 1746.520 ; gain = 0.000
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.142 . Memory (MB): peak = 1749.641 ; gain = 2.344
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.185 . Memory (MB): peak = 1749.695 ; gain = 3.176
 INFO: [Common 17-1381] The checkpoint 'C:/Users/CompStruct/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/au_top_0_physopt.dcp' has been generated.
 Command: route_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
@@ -1057,35 +1064,35 @@ Starting Routing Task
 INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
 
 Phase 1 Build RT Design
-Checksum: PlaceDB: fab26f8b ConstDB: 0 ShapeSum: 45438c21 RouteDB: 0
-Post Restoration Checksum: NetGraph: edf2fdb4 NumContArr: 8f08ded5 Constraints: 0 Timing: 0
-Phase 1 Build RT Design | Checksum: 17cfbdc89
+Checksum: PlaceDB: e111fd2f ConstDB: 0 ShapeSum: 5d26b021 RouteDB: 0
+Post Restoration Checksum: NetGraph: d36df9d8 NumContArr: 5101511e Constraints: 0 Timing: 0
+Phase 1 Build RT Design | Checksum: 1246f4af6
 
-Time (s): cpu = 00:00:18 ; elapsed = 00:00:16 . Memory (MB): peak = 1826.324 ; gain = 64.695
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:16 . Memory (MB): peak = 1830.277 ; gain = 71.500
 
 Phase 2 Router Initialization
 
 Phase 2.1 Create Timer
-Phase 2.1 Create Timer | Checksum: 17cfbdc89
+Phase 2.1 Create Timer | Checksum: 1246f4af6
 
-Time (s): cpu = 00:00:18 ; elapsed = 00:00:16 . Memory (MB): peak = 1826.324 ; gain = 64.695
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:16 . Memory (MB): peak = 1830.277 ; gain = 71.500
 
 Phase 2.2 Fix Topology Constraints
-Phase 2.2 Fix Topology Constraints | Checksum: 17cfbdc89
+Phase 2.2 Fix Topology Constraints | Checksum: 1246f4af6
 
-Time (s): cpu = 00:00:18 ; elapsed = 00:00:16 . Memory (MB): peak = 1832.309 ; gain = 70.680
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:16 . Memory (MB): peak = 1836.289 ; gain = 77.512
 
 Phase 2.3 Pre Route Cleanup
-Phase 2.3 Pre Route Cleanup | Checksum: 17cfbdc89
+Phase 2.3 Pre Route Cleanup | Checksum: 1246f4af6
 
-Time (s): cpu = 00:00:18 ; elapsed = 00:00:16 . Memory (MB): peak = 1832.309 ; gain = 70.680
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:16 . Memory (MB): peak = 1836.289 ; gain = 77.512
  Number of Nodes with overlaps = 0
 
 Phase 2.4 Update Timing
-Phase 2.4 Update Timing | Checksum: 20dc225a2
+Phase 2.4 Update Timing | Checksum: 18aa24e0a
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:16 . Memory (MB): peak = 1838.438 ; gain = 76.809
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=-15.189| TNS=-3030.372| WHS=-0.110 | THS=-3.647 |
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:17 . Memory (MB): peak = 1843.926 ; gain = 85.148
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-17.923| TNS=-6137.658| WHS=-0.145 | THS=-9.841 |
 
 
 Router Utilization Summary
@@ -1094,25 +1101,25 @@ Router Utilization Summary
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
-  Number of Failed Nets               = 1249
+  Number of Failed Nets               = 1424
     (Failed Nets is the sum of unrouted and partially routed nets)
-  Number of Unrouted Nets             = 1249
+  Number of Unrouted Nets             = 1424
   Number of Partially Routed Nets     = 0
   Number of Node Overlaps             = 0
 
-Phase 2 Router Initialization | Checksum: 178e6e6db
+Phase 2 Router Initialization | Checksum: 1e1dfe04e
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:17 . Memory (MB): peak = 1841.238 ; gain = 79.609
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:17 . Memory (MB): peak = 1845.070 ; gain = 86.293
 
 Phase 3 Initial Routing
 
 Phase 3.1 Global Routing
-Phase 3.1 Global Routing | Checksum: 178e6e6db
+Phase 3.1 Global Routing | Checksum: 1e1dfe04e
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:17 . Memory (MB): peak = 1841.238 ; gain = 79.609
-Phase 3 Initial Routing | Checksum: 132b37718
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:17 . Memory (MB): peak = 1845.070 ; gain = 86.293
+Phase 3 Initial Routing | Checksum: 19c0911d6
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:17 . Memory (MB): peak = 1841.238 ; gain = 79.609
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:17 . Memory (MB): peak = 1845.070 ; gain = 86.293
 INFO: [Route 35-580] Design has 14 pins with tight setup and hold constraints.
 
 The top 5 pins with tight setup and hold constraints:
@@ -1120,11 +1127,11 @@ The top 5 pins with tight setup and hold constraints:
 +==============+===============+====================================+
 | Launch Clock | Capture Clock | Pin                                |
 +==============+===============+====================================+
-| clk_0        | clk_0         | betaCPU/r/M_i_q_reg[1]/D           |
-| clk_0        | clk_0         | betaCPU/r/M_input_ctr_q_reg[1]/D   |
-| clk_0        | clk_0         | betaCPU/r/M_g_q_reg[1]/D           |
+| clk_0        | clk_0         | betaCPU/r/M_g_q_reg[0]/D           |
+| clk_0        | clk_0         | betaCPU/r/M_num_correct_q_reg[0]/D |
+| clk_0        | clk_0         | betaCPU/r/M_k_q_reg[0]/D           |
 | clk_0        | clk_0         | betaCPU/r/M_num_correct_q_reg[2]/D |
-| clk_0        | clk_0         | betaCPU/r/M_k_q_reg[2]/D           |
+| clk_0        | clk_0         | betaCPU/r/M_input_ctr_q_reg[1]/D   |
 +--------------+---------------+------------------------------------+
 
 File with complete list of pins: tight_setup_hold_pins.txt
@@ -1133,115 +1140,87 @@ File with complete list of pins: tight_setup_hold_pins.txt
 Phase 4 Rip-up And Reroute
 
 Phase 4.1 Global Iteration 0
- Number of Nodes with overlaps = 535
- Number of Nodes with overlaps = 231
- Number of Nodes with overlaps = 133
- Number of Nodes with overlaps = 77
- Number of Nodes with overlaps = 47
- Number of Nodes with overlaps = 34
- Number of Nodes with overlaps = 15
+ Number of Nodes with overlaps = 616
+ Number of Nodes with overlaps = 309
+ Number of Nodes with overlaps = 197
+ Number of Nodes with overlaps = 96
+ Number of Nodes with overlaps = 67
+ Number of Nodes with overlaps = 38
+ Number of Nodes with overlaps = 21
  Number of Nodes with overlaps = 10
- Number of Nodes with overlaps = 8
+ Number of Nodes with overlaps = 10
  Number of Nodes with overlaps = 3
  Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 1
  Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=-17.697| TNS=-4131.701| WHS=N/A    | THS=N/A    |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-20.372| TNS=-6970.388| WHS=N/A    | THS=N/A    |
 
-Phase 4.1 Global Iteration 0 | Checksum: 109fa1727
+Phase 4.1 Global Iteration 0 | Checksum: 1c890c493
 
-Time (s): cpu = 00:00:24 ; elapsed = 00:00:22 . Memory (MB): peak = 1841.238 ; gain = 79.609
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:23 . Memory (MB): peak = 1845.070 ; gain = 86.293
 
 Phase 4.2 Global Iteration 1
- Number of Nodes with overlaps = 20
- Number of Nodes with overlaps = 15
+ Number of Nodes with overlaps = 21
  Number of Nodes with overlaps = 2
  Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=-17.290| TNS=-3985.627| WHS=N/A    | THS=N/A    |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-20.487| TNS=-6983.756| WHS=N/A    | THS=N/A    |
 
-Phase 4.2 Global Iteration 1 | Checksum: 10d0918b6
+Phase 4.2 Global Iteration 1 | Checksum: 24fbc1ee3
 
-Time (s): cpu = 00:00:25 ; elapsed = 00:00:22 . Memory (MB): peak = 1841.238 ; gain = 79.609
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:24 . Memory (MB): peak = 1845.070 ; gain = 86.293
+Phase 4 Rip-up And Reroute | Checksum: 24fbc1ee3
 
-Phase 4.3 Global Iteration 2
- Number of Nodes with overlaps = 18
- Number of Nodes with overlaps = 5
- Number of Nodes with overlaps = 6
- Number of Nodes with overlaps = 2
- Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=-16.976| TNS=-3947.333| WHS=N/A    | THS=N/A    |
-
-Phase 4.3 Global Iteration 2 | Checksum: 1effeb5e2
-
-Time (s): cpu = 00:00:25 ; elapsed = 00:00:22 . Memory (MB): peak = 1841.238 ; gain = 79.609
-
-Phase 4.4 Global Iteration 3
- Number of Nodes with overlaps = 19
- Number of Nodes with overlaps = 31
- Number of Nodes with overlaps = 45
- Number of Nodes with overlaps = 43
- Number of Nodes with overlaps = 38
- Number of Nodes with overlaps = 18
- Number of Nodes with overlaps = 14
- Number of Nodes with overlaps = 10
- Number of Nodes with overlaps = 4
- Number of Nodes with overlaps = 5
- Number of Nodes with overlaps = 1
- Number of Nodes with overlaps = 1
- Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=-17.113| TNS=-4014.956| WHS=N/A    | THS=N/A    |
-
-Phase 4.4 Global Iteration 3 | Checksum: 1bc371b55
-
-Time (s): cpu = 00:00:29 ; elapsed = 00:00:25 . Memory (MB): peak = 1841.980 ; gain = 80.352
-Phase 4 Rip-up And Reroute | Checksum: 1bc371b55
-
-Time (s): cpu = 00:00:29 ; elapsed = 00:00:25 . Memory (MB): peak = 1841.980 ; gain = 80.352
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:24 . Memory (MB): peak = 1845.070 ; gain = 86.293
 
 Phase 5 Delay and Skew Optimization
 
 Phase 5.1 Delay CleanUp
 
 Phase 5.1.1 Update Timing
-Phase 5.1.1 Update Timing | Checksum: 293502118
+Phase 5.1.1 Update Timing | Checksum: 18ed7c01d
 
-Time (s): cpu = 00:00:29 ; elapsed = 00:00:25 . Memory (MB): peak = 1841.980 ; gain = 80.352
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=-16.896| TNS=-3912.277| WHS=N/A    | THS=N/A    |
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:24 . Memory (MB): peak = 1845.070 ; gain = 86.293
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-20.278| TNS=-6936.097| WHS=N/A    | THS=N/A    |
 
  Number of Nodes with overlaps = 0
-Phase 5.1 Delay CleanUp | Checksum: b22c48f1
+Phase 5.1 Delay CleanUp | Checksum: 4a5857a6
 
-Time (s): cpu = 00:00:30 ; elapsed = 00:00:26 . Memory (MB): peak = 1849.836 ; gain = 88.207
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:24 . Memory (MB): peak = 1850.848 ; gain = 92.070
 
 Phase 5.2 Clock Skew Optimization
-Phase 5.2 Clock Skew Optimization | Checksum: b22c48f1
+Phase 5.2 Clock Skew Optimization | Checksum: 4a5857a6
 
-Time (s): cpu = 00:00:30 ; elapsed = 00:00:26 . Memory (MB): peak = 1849.836 ; gain = 88.207
-Phase 5 Delay and Skew Optimization | Checksum: b22c48f1
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:24 . Memory (MB): peak = 1850.848 ; gain = 92.070
+Phase 5 Delay and Skew Optimization | Checksum: 4a5857a6
 
-Time (s): cpu = 00:00:30 ; elapsed = 00:00:26 . Memory (MB): peak = 1849.836 ; gain = 88.207
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:24 . Memory (MB): peak = 1850.848 ; gain = 92.070
 
 Phase 6 Post Hold Fix
 
 Phase 6.1 Hold Fix Iter
 
 Phase 6.1.1 Update Timing
-Phase 6.1.1 Update Timing | Checksum: 35a7e017
+Phase 6.1.1 Update Timing | Checksum: 13fa6a978
 
-Time (s): cpu = 00:00:30 ; elapsed = 00:00:26 . Memory (MB): peak = 1849.836 ; gain = 88.207
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=-16.798| TNS=-3697.927| WHS=0.162  | THS=0.000  |
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:24 . Memory (MB): peak = 1850.848 ; gain = 92.070
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-20.278| TNS=-6933.256| WHS=0.136  | THS=0.000  |
 
-Phase 6.1 Hold Fix Iter | Checksum: 35a7e017
+Phase 6.1 Hold Fix Iter | Checksum: 13fa6a978
 
-Time (s): cpu = 00:00:30 ; elapsed = 00:00:26 . Memory (MB): peak = 1849.836 ; gain = 88.207
-Phase 6 Post Hold Fix | Checksum: 35a7e017
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:24 . Memory (MB): peak = 1850.848 ; gain = 92.070
+Phase 6 Post Hold Fix | Checksum: 13fa6a978
 
-Time (s): cpu = 00:00:30 ; elapsed = 00:00:26 . Memory (MB): peak = 1849.836 ; gain = 88.207
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:24 . Memory (MB): peak = 1850.848 ; gain = 92.070
 
 Phase 7 Route finalize
 
 Router Utilization Summary
-  Global Vertical Routing Utilization    = 0.624253 %
-  Global Horizontal Routing Utilization  = 0.663066 %
+  Global Vertical Routing Utilization    = 0.62489 %
+  Global Horizontal Routing Utilization  = 0.760932 %
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
@@ -1252,10 +1231,10 @@ Router Utilization Summary
   Number of Node Overlaps             = 0
 
 Congestion Report
-North Dir 1x1 Area, Max Cong = 59.4595%, No Congested Regions.
-South Dir 1x1 Area, Max Cong = 62.1622%, No Congested Regions.
-East Dir 1x1 Area, Max Cong = 52.9412%, No Congested Regions.
-West Dir 1x1 Area, Max Cong = 61.7647%, No Congested Regions.
+North Dir 1x1 Area, Max Cong = 63.0631%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 55.8559%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 55.8824%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 66.1765%, No Congested Regions.
 
 ------------------------------
 Reporting congestion hotspots
@@ -1277,45 +1256,45 @@ Direction: West
 Congested clusters found at Level 0
 Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
 
-Phase 7 Route finalize | Checksum: c378e7e5
+Phase 7 Route finalize | Checksum: a51b0f48
 
-Time (s): cpu = 00:00:30 ; elapsed = 00:00:26 . Memory (MB): peak = 1849.836 ; gain = 88.207
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:24 . Memory (MB): peak = 1850.848 ; gain = 92.070
 
 Phase 8 Verifying routed nets
 
  Verification completed successfully
-Phase 8 Verifying routed nets | Checksum: c378e7e5
+Phase 8 Verifying routed nets | Checksum: a51b0f48
 
-Time (s): cpu = 00:00:30 ; elapsed = 00:00:26 . Memory (MB): peak = 1849.836 ; gain = 88.207
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:24 . Memory (MB): peak = 1850.848 ; gain = 92.070
 
 Phase 9 Depositing Routes
-Phase 9 Depositing Routes | Checksum: 1218d61c6
+Phase 9 Depositing Routes | Checksum: f185010a
 
-Time (s): cpu = 00:00:30 ; elapsed = 00:00:26 . Memory (MB): peak = 1849.836 ; gain = 88.207
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:24 . Memory (MB): peak = 1850.848 ; gain = 92.070
 
 Phase 10 Post Router Timing
-INFO: [Route 35-57] Estimated Timing Summary | WNS=-16.798| TNS=-3697.927| WHS=0.162  | THS=0.000  |
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-20.278| TNS=-6933.256| WHS=0.136  | THS=0.000  |
 
 WARNING: [Route 35-328] Router estimated timing not met.
 Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
-Phase 10 Post Router Timing | Checksum: 1218d61c6
+Phase 10 Post Router Timing | Checksum: f185010a
 
-Time (s): cpu = 00:00:30 ; elapsed = 00:00:26 . Memory (MB): peak = 1849.836 ; gain = 88.207
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:25 . Memory (MB): peak = 1850.848 ; gain = 92.070
 INFO: [Route 35-16] Router Completed Successfully
 
-Time (s): cpu = 00:00:30 ; elapsed = 00:00:26 . Memory (MB): peak = 1849.836 ; gain = 88.207
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:25 . Memory (MB): peak = 1850.848 ; gain = 92.070
 
 Routing Is Done.
 INFO: [Common 17-83] Releasing license: Implementation
-676 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+681 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 route_design completed successfully
-route_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:27 . Memory (MB): peak = 1849.836 ; gain = 100.195
+route_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:26 . Memory (MB): peak = 1850.848 ; gain = 101.152
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.219 . Memory (MB): peak = 1854.664 ; gain = 4.828
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.204 . Memory (MB): peak = 1855.594 ; gain = 4.746
 INFO: [Common 17-1381] The checkpoint 'C:/Users/CompStruct/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/au_top_0_routed.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_drc -file au_top_0_drc_routed.rpt -pb au_top_0_drc_routed.pb -rpx au_top_0_drc_routed.rpx
 Command: report_drc -file au_top_0_drc_routed.rpt -pb au_top_0_drc_routed.pb -rpx au_top_0_drc_routed.rpx
@@ -1335,7 +1314,7 @@ INFO: [Timing 38-35] Done setting XDC timing constraints.
 Running Vector-less Activity Propagation...
 
 Finished Running Vector-less Activity Propagation
-688 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+693 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 report_power completed successfully
 INFO: [runtcl-4] Executing : report_route_status -file au_top_0_route_status.rpt -pb au_top_0_route_status.pb
 INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -report_unconstrained -file au_top_0_timing_summary_routed.rpt -pb au_top_0_timing_summary_routed.pb -rpx au_top_0_timing_summary_routed.rpx -warn_on_violation 
@@ -1363,7 +1342,7 @@ Loading route data...
 Processing options...
 Creating bitmap...
 Creating bitstream...
-Bitstream compression saved 14156768 bits.
+Bitstream compression saved 13472288 bits.
 Writing bitstream ./au_top_0.bit...
 Writing bitstream ./au_top_0.bin...
 INFO: [Vivado 12-1842] Bitgen Completed Successfully.
@@ -1371,5 +1350,5 @@ INFO: [Project 1-1876] WebTalk data collection is mandatory when using a ULT dev
 INFO: [Common 17-83] Releasing license: Implementation
 12 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 write_bitstream completed successfully
-write_bitstream: Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 2310.574 ; gain = 426.852
-INFO: [Common 17-206] Exiting Vivado at Fri Apr 15 11:18:10 2022...
+write_bitstream: Time (s): cpu = 00:00:11 ; elapsed = 00:00:10 . Memory (MB): peak = 2316.059 ; gain = 429.418
+INFO: [Common 17-206] Exiting Vivado at Fri Apr 15 18:16:11 2022...

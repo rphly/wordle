@@ -1,7 +1,7 @@
 module regfile (
     input clk,  // clock
     input rst,  // reset
-    input write_address[6], // write address
+    input write_address[7], // write address
     input we, // write enable
     input data[16], // data in
     
@@ -59,7 +59,7 @@ module regfile (
       dff input_i[5];
       dff correct_k[5];
       
-      // 9 bits
+      // 9+2 bits
       dff i[3];
       dff j[3];
       dff k[3];
@@ -82,6 +82,9 @@ module regfile (
       
       // 11 bits
       dff word_index[11];
+      
+      // 1 bit
+      dff oka_mode[1];
     }
   }
 
@@ -90,10 +93,10 @@ module regfile (
     //write port
     if (we){
       case(write_address){
-        b00000 : guess_1_letter_1.d = data;
-        b00001 : guess_1_letter_2.d = data;
-        b00010 : guess_1_letter_3.d = data;
-        b00011 : guess_1_letter_4.d = data;
+        b1000000 : guess_1_letter_1.d = data;
+        b1000001 : guess_1_letter_2.d = data;
+        b1000010 : guess_1_letter_3.d = data;
+        b1000011 : guess_1_letter_4.d = data;
         
         b00100 : guess_2_letter_1.d = data;
         b00101 : guess_2_letter_2.d = data;
@@ -119,11 +122,11 @@ module regfile (
         b10101 : j.d = data;
         b10110 : k.d = data;
         
-        b10111 : correct_letter_1.d = b00010;
-        b11000 : correct_letter_2.d = b00110;
-        b11001 : correct_letter_3.d = b00001;
+        b10111 : correct_letter_1.d = data;
+        b11000 : correct_letter_2.d = data;
+        b11001 : correct_letter_3.d = data;
         //b11010 : correct_letter_4.d = b10011;
-        b11010: correct_letter_4.d = b10010;
+        b11010: correct_letter_4.d = data;
         
         b11011 : num_correct.d = data;
         b11100 : input_ctr.d = data;
@@ -134,16 +137,17 @@ module regfile (
         b100001 : temp_guess_g_letter_i.d = data;
         b100010 : temp_coloured_letter.d = data;
         b100011 : word_index.d = data;
+        b100100 : oka_mode.d = data;
       }
     }
     
       
     //read port a
     case(read_address_a){
-        b00000 : out_a = guess_1_letter_1.q;
-        b00001 : out_a = guess_1_letter_2.q;
-        b00010 : out_a = guess_1_letter_3.q;
-        b00011 : out_a = guess_1_letter_4.q;
+        b1000000 : out_a = guess_1_letter_1.q;
+        b1000001 : out_a = guess_1_letter_2.q;
+        b1000010 : out_a = guess_1_letter_3.q;
+        b1000011 : out_a = guess_1_letter_4.q;
         
         b00100 : out_a = guess_2_letter_1.q;
         b00101 : out_a = guess_2_letter_2.q;
@@ -184,15 +188,16 @@ module regfile (
         b100001 : out_a = temp_guess_g_letter_i.q;
         b100010 : out_a = temp_coloured_letter.q;
         b100011 : out_a = word_index.q;
+        b100100 : out_a = oka_mode.q;
         default : out_a = zero.q;
     }
     
     //read port b
     case(read_address_b){
-        b00000 : out_b = guess_1_letter_1.q;
-        b00001 : out_b = guess_1_letter_2.q;
-        b00010 : out_b = guess_1_letter_3.q;
-        b00011 : out_b = guess_1_letter_4.q;
+        b1000000 : out_b = guess_1_letter_1.q;
+        b1000001 : out_b = guess_1_letter_2.q;
+        b1000010 : out_b = guess_1_letter_3.q;
+        b1000011 : out_b = guess_1_letter_4.q;
     
         b00100 : out_b = guess_2_letter_1.q;
         b00101 : out_b = guess_2_letter_2.q;
@@ -233,6 +238,7 @@ module regfile (
         b100001 : out_b = temp_guess_g_letter_i.q;
         b100010 : out_b = temp_coloured_letter.q;
         b100011 : out_b = word_index.q;
+        b100100 : out_b = oka_mode.q;
         default : out_b = zero.q;
     }
   }

@@ -15,6 +15,7 @@
     <src>adder.luc</src>
     <src>green_alphabets.luc</src>
     <src>white_alphabets.luc</src>
+    <component>pn_gen.luc</component>
     <src>alu.luc</src>
     <src>led_strip_writer.luc</src>
     <src>boolean.luc</src>
