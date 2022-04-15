@@ -33,9 +33,10 @@ module beta (
       matrix_controller bottom_matrix_control;
       pn_gen random_number_generator;
     }
+    
   }
   
-  words words;
+  mini_words words;
 
   always {
   
@@ -47,6 +48,7 @@ module beta (
       b011  : inputAlu_a = 2d2;
       b100  : inputAlu_a = b10000;
       b101  : inputAlu_a = 11d1959;
+      b110  : inputAlu_a = random_number_generator.num[8:0]; // 9 bits for mini words
       default : inputAlu_a = 0;
     }
     
@@ -59,11 +61,13 @@ module beta (
       b100  : inputAlu_b = 3d3;
       b101  : inputAlu_b = 3d4;
       b110  : inputAlu_b = b10000;
+      b111  : inputAlu_b = 306;
       default : inputAlu_b = 0;
     }
     
     // setup random_number_generator
-    random_number_generator.seed = 1307;
+    random_number_generator.seed = 8888;
+    // 01101100 01001001
     random_number_generator.next = control_unit.next_random_number;
     
     // game_alu
@@ -108,6 +112,6 @@ module beta (
     
     debugger1 = control_unit.debugger1; //control_unit.debugger1;//game_alu.alu;//control_unit.debugger1;
     debugger2 = control_unit.debugger2;
-    debugger3 = random_number_generator.num;//control_unit.debugger3;
+    debugger3 = control_unit.debugger3;
   }
 }

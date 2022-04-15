@@ -163,7 +163,7 @@ module beta_2 (
   
   wire [20-1:0] M_words_out;
   reg [11-1:0] M_words_selector;
-  words_10 words (
+  mini_words_10 words (
     .selector(M_words_selector),
     .out(M_words_out)
   );
@@ -188,6 +188,9 @@ module beta_2 (
       end
       3'h5: begin
         inputAlu_a = 11'h7a7;
+      end
+      3'h6: begin
+        inputAlu_a = M_random_number_generator_num[0+8-:9];
       end
       default: begin
         inputAlu_a = 1'h0;
@@ -216,11 +219,14 @@ module beta_2 (
       3'h6: begin
         inputAlu_b = 5'h10;
       end
+      3'h7: begin
+        inputAlu_b = 9'h132;
+      end
       default: begin
         inputAlu_b = 1'h0;
       end
     endcase
-    M_random_number_generator_seed = 11'h51b;
+    M_random_number_generator_seed = 14'h22b8;
     M_random_number_generator_next = M_control_unit_next_random_number;
     M_game_alu_a = inputAlu_a;
     M_game_alu_b = inputAlu_b;
@@ -252,6 +258,6 @@ module beta_2 (
     out_bottom_matrix4 = M_bottom_matrix_control_outmatrix4;
     debugger1 = M_control_unit_debugger1;
     debugger2 = M_control_unit_debugger2;
-    debugger3 = M_random_number_generator_num;
+    debugger3 = M_control_unit_debugger3;
   end
 endmodule
