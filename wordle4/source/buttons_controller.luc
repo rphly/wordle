@@ -3,32 +3,193 @@ module buttons_controller (
     input rst,  // reset
     input a,
     input b,
+    input c,
+    input d,
     input e,
+    input f,
+    input g,
+    input h,
+    input i, 
+    input j,
+    input k,
+    input l,
+    input m,
+    input n,
+    input o,
+    input p,
+    input q,
     input r,
+    input s,
+    input t,
+    input u,
+    input v,
+    input w,
+    input x,
+    input y,
+    input z,
     output is_pressed,
     output out[16]
   ) {
   .clk(clk) {
     button a_(.button_input(a));
     button b_(.button_input(b));
+    button c_(.button_input(c));
+    button d_(.button_input(d));
     button e_(.button_input(e));
+    button f_(.button_input(f));
+    button g_(.button_input(g));
+    button h_(.button_input(h));
+    button i_(.button_input(i));
+    button j_(.button_input(j));
+    button k_(.button_input(k));
+    button l_(.button_input(l));
+    button m_(.button_input(m));
+    button n_(.button_input(n));
+    button o_(.button_input(o));
+    button p_(.button_input(p));
+    button q_(.button_input(q));
     button r_(.button_input(r));
+    button s_(.button_input(s));
+    button t_(.button_input(t));
+    button u_(.button_input(u));
+    button v_(.button_input(v));
+    button w_(.button_input(w));
+    button x_(.button_input(x));
+    button y_(.button_input(y));
+    button z_(.button_input(z));
    }
   
   always {
     if(a_.out){ // bug
       out = b00001;
       is_pressed = 1;
-    } else if(e_.out){ // OK
-      out = b101;
-      is_pressed = 1;
-    } else if(b_.out){ // bug
+      
+    } else if (b_.out){
       out = b00010;
       is_pressed = 1;
-    }  else if(r_.out){ // bug
+    }
+      
+      else if (c_.out){
+      out = b00011;
+      is_pressed = 1;
+    }
+      
+      else if (d_.out){
+      out = b00100;
+      is_pressed = 1;
+    }
+      
+      else if(e_.out){ // OK
+      out = b00101;
+      is_pressed = 1;
+    }
+      
+      else if(f_.out){ // OK
+      out = b00110;
+      is_pressed = 1;
+    }
+      
+      else if(g_.out){ // OK
+      out = b00111;
+      is_pressed = 1;
+    }
+      
+      else if(h_.out){ // OK
+      out = b01000;
+      is_pressed = 1;
+    }
+      
+      else if(i_.out){ // OK
+      out = b01001;
+      is_pressed = 1;
+    }
+      
+      else if(j_.out){ // OK
+      out = b01010;
+      is_pressed = 1;
+    }
+      
+      else if(k_.out){ // OK
+      out = b01011;
+      is_pressed = 1;
+    }
+      
+      else if(l_.out){ // OK
+      out = b01100;
+      is_pressed = 1;
+    }
+      
+      else if(m_.out){ // OK
+      out = b01101;
+      is_pressed = 1;
+    }
+      
+      else if(n_.out){ // OK
+      out = b01110;
+      is_pressed = 1;
+    }
+      
+      else if(o_.out){ // OK
+      out = b01111;
+      is_pressed = 1;
+    }
+      
+      else if(p_.out){ // OK
+      out = b10000;
+      is_pressed = 1;
+    }
+      
+      else if(q_.out){ // OK
+      out = b10001;
+      is_pressed = 1;
+    }
+      
+      else if(r_.out){ // bug
       out = b10010;
       is_pressed = 1;
-    } else {
+    }
+      
+      else if(s_.out){ // OK
+      out = b10011;
+      is_pressed = 1;
+    }
+      
+      else if(t_.out){ // OK
+      out = b10100;
+      is_pressed = 1;
+    }
+      
+      else if(u_.out){ // OK
+      out = b10101;
+      is_pressed = 1;
+    }
+      
+      else if(v_.out){ // OK
+      out = b10110;
+      is_pressed = 1;
+    }
+      
+      else if(w_.out){ // OK
+      out = b10111;
+      is_pressed = 1;
+    }
+      
+      else if(x_.out){ // OK
+      out = b11000;
+      is_pressed = 1;
+    }
+      
+      else if(y_.out){ // OK
+      out = b011001;
+      is_pressed = 1;
+    }
+      
+      else if(z_.out){ // OK
+      out = b11010;
+      is_pressed = 1;
+    }
+      
+     else {
       out = 16b0;
       is_pressed = 0;
     }
