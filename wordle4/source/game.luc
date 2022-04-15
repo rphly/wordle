@@ -241,7 +241,7 @@ module game (
           // if check button press
           if (has_panel_input) {
             if (panel_input == CLEAR_SIGNAL) {
-              game_fsm.d = game_fsm.CLEAR_SET_INPUT_CTR_0;
+              game_fsm.d = game_fsm.SET_INPUT_CTR_TO_0;
             } else if (panel_input == CHECK_SIGNAL) {
               game_fsm.d = game_fsm.CHECK_BUTTON_PRESSED;
             }
@@ -471,7 +471,7 @@ module game (
           alufn = b110011; // cmpeq
                    
           if (alu_out == 16b0) {
-            game_fsm.d = game_fsm.COMPARE_NUM_CORRECT_EQUALS_3;
+            game_fsm.d = game_fsm.COMPARE_I_EQUALS_3_AND_INCREMENT;
           } else {
             // CONGRATS
             game_fsm.d = game_fsm.WIN;

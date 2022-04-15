@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Sat Apr 16 02:43:55 2022
+| Date         : Sat Apr 16 02:57:06 2022
 | Host         : Bryan running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file au_top_0_control_sets_placed.rpt
 | Design       : au_top_0
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    79 |
-|    Minimum number of control sets                        |    79 |
+| Total control sets                                       |    81 |
+|    Minimum number of control sets                        |    81 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |   188 |
+| Unused register locations in slices containing registers |   204 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,8 +39,8 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    79 |
-| >= 0 to < 4        |     0 |
+| Total control sets |    81 |
+| >= 0 to < 4        |     2 |
 | >= 4 to < 6        |    23 |
 | >= 6 to < 8        |    34 |
 | >= 8 to < 10       |     0 |
@@ -58,12 +58,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              33 |           12 |
+| No           | No                    | No                     |              33 |           11 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              73 |           38 |
-| Yes          | No                    | No                     |               0 |            0 |
+| No           | Yes                   | No                     |              73 |           36 |
+| Yes          | No                    | No                     |              12 |            7 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             682 |          277 |
+| Yes          | Yes                   | No                     |             670 |          289 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -73,85 +73,87 @@ Table of Contents
 +----------------+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------------+----------------+--------------+
 |  Clock Signal  |                                  Enable Signal                                  |                                Set/Reset Signal                               | Slice Load Count | Bel Load Count | Bels / Slice |
 +----------------+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[33]_4                          | betaCPU/control_unit/M_stage_q_reg[3]_29                                      |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[33]_3                          | betaCPU/control_unit/M_stage_q_reg[3]_28                                      |                1 |              1 |         1.00 |
 |  clk_IBUF_BUFG |                                                                                 | reset_cond/M_reset_cond_in                                                    |                2 |              4 |         2.00 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[42]_0[0]                       | reset_cond/Q[0]                                                               |                4 |              5 |         1.25 |
-|  clk_IBUF_BUFG | betaCPU/top_matrix_control/matrix3/matrix_writer/M_pixel_ctr_q[4]_i_1__5_n_0    | reset_cond/Q[0]                                                               |                3 |              5 |         1.67 |
-|  clk_IBUF_BUFG | betaCPU/top_matrix_control/matrix3/matrix_writer/M_bit_ctr_q[4]_i_1__5_n_0      | reset_cond/Q[0]                                                               |                2 |              5 |         2.50 |
-|  clk_IBUF_BUFG | betaCPU/top_matrix_control/matrix4/matrix_writer/M_pixel_ctr_q[4]_i_1__6_n_0    | reset_cond/Q[0]                                                               |                3 |              5 |         1.67 |
-|  clk_IBUF_BUFG | betaCPU/top_matrix_control/matrix4/matrix_writer/M_bit_ctr_q[4]_i_1__6_n_0      | reset_cond/Q[0]                                                               |                2 |              5 |         2.50 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_33[0]                                     | reset_cond/Q[0]                                                               |                2 |              5 |         2.50 |
-|  clk_IBUF_BUFG | betaCPU/top_matrix_control/matrix2/matrix_writer/M_pixel_ctr_q[4]_i_1__4_n_0    | reset_cond/Q[0]                                                               |                1 |              5 |         5.00 |
-|  clk_IBUF_BUFG | betaCPU/top_matrix_control/matrix1/matrix_writer/M_pixel_ctr_q[4]_i_1__3_n_0    | reset_cond/Q[0]                                                               |                3 |              5 |         1.67 |
-|  clk_IBUF_BUFG | betaCPU/top_matrix_control/matrix2/matrix_writer/M_bit_ctr_q[4]_i_1__4_n_0      | reset_cond/Q[0]                                                               |                1 |              5 |         5.00 |
-|  clk_IBUF_BUFG | betaCPU/top_matrix_control/matrix1/matrix_writer/M_bit_ctr_q[4]_i_1__3_n_0      | reset_cond/Q[0]                                                               |                1 |              5 |         5.00 |
-|  clk_IBUF_BUFG | betaCPU/bottom_matrix_control/matrix4/matrix_writer/M_bit_ctr_q[4]_i_1__2_n_0   | reset_cond/Q[0]                                                               |                2 |              5 |         2.50 |
-|  clk_IBUF_BUFG | betaCPU/bottom_matrix_control/matrix4/matrix_writer/M_pixel_ctr_q[4]_i_1__2_n_0 | reset_cond/Q[0]                                                               |                3 |              5 |         1.67 |
-|  clk_IBUF_BUFG | betaCPU/bottom_matrix_control/matrix3/matrix_writer/M_pixel_ctr_q[4]_i_1__1_n_0 | reset_cond/Q[0]                                                               |                3 |              5 |         1.67 |
+|  clk_IBUF_BUFG | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[41]_6[0]                       | reset_cond/Q[0]                                                               |                3 |              5 |         1.67 |
 |  clk_IBUF_BUFG | betaCPU/bottom_matrix_control/matrix3/matrix_writer/M_bit_ctr_q[4]_i_1__1_n_0   | reset_cond/Q[0]                                                               |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG | betaCPU/top_matrix_control/matrix4/matrix_writer/M_pixel_ctr_q[4]_i_1__6_n_0    | reset_cond/Q[0]                                                               |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG | betaCPU/top_matrix_control/matrix4/matrix_writer/M_bit_ctr_q[4]_i_1__6_n_0      | reset_cond/Q[0]                                                               |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG | betaCPU/top_matrix_control/matrix3/matrix_writer/M_bit_ctr_q[4]_i_1__5_n_0      | reset_cond/Q[0]                                                               |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG | betaCPU/top_matrix_control/matrix3/matrix_writer/M_pixel_ctr_q[4]_i_1__5_n_0    | reset_cond/Q[0]                                                               |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG | betaCPU/top_matrix_control/matrix2/matrix_writer/M_pixel_ctr_q[4]_i_1__4_n_0    | reset_cond/Q[0]                                                               |                3 |              5 |         1.67 |
+|  clk_IBUF_BUFG | betaCPU/top_matrix_control/matrix2/matrix_writer/M_bit_ctr_q[4]_i_1__4_n_0      | reset_cond/Q[0]                                                               |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG | betaCPU/top_matrix_control/matrix1/matrix_writer/M_pixel_ctr_q[4]_i_1__3_n_0    | reset_cond/Q[0]                                                               |                3 |              5 |         1.67 |
+|  clk_IBUF_BUFG | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[8]_2[0]                        | reset_cond/Q[0]                                                               |                4 |              5 |         1.25 |
+|  clk_IBUF_BUFG | betaCPU/top_matrix_control/matrix1/matrix_writer/M_bit_ctr_q[4]_i_1__3_n_0      | reset_cond/Q[0]                                                               |                2 |              5 |         2.50 |
 |  clk_IBUF_BUFG | betaCPU/bottom_matrix_control/matrix1/matrix_writer/M_bit_ctr_q[4]_i_1_n_0      | reset_cond/Q[0]                                                               |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[41]_5[0]                       | reset_cond/Q[0]                                                               |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG | betaCPU/control_unit/E[0]                                                       | reset_cond/Q[0]                                                               |                4 |              5 |         1.25 |
 |  clk_IBUF_BUFG | betaCPU/bottom_matrix_control/matrix1/matrix_writer/M_pixel_ctr_q[4]_i_1_n_0    | reset_cond/Q[0]                                                               |                3 |              5 |         1.67 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_43[0]                                     | reset_cond/Q[0]                                                               |                4 |              5 |         1.25 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_24[0]                                     | reset_cond/Q[0]                                                               |                4 |              5 |         1.25 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_34[0]                                     | reset_cond/Q[0]                                                               |                4 |              5 |         1.25 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_38[0]                                     | reset_cond/Q[0]                                                               |                3 |              5 |         1.67 |
-|  clk_IBUF_BUFG | betaCPU/bottom_matrix_control/matrix2/matrix_writer/M_pixel_ctr_q[4]_i_1__0_n_0 | reset_cond/Q[0]                                                               |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG | betaCPU/bottom_matrix_control/matrix4/matrix_writer/M_pixel_ctr_q[4]_i_1__2_n_0 | reset_cond/Q[0]                                                               |                2 |              5 |         2.50 |
 |  clk_IBUF_BUFG | betaCPU/bottom_matrix_control/matrix2/matrix_writer/M_bit_ctr_q[4]_i_1__0_n_0   | reset_cond/Q[0]                                                               |                2 |              5 |         2.50 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_45[0]                                     | reset_cond/Q[0]                                                               |                4 |              6 |         1.50 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[37]_4                          | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[37]_7                        |                5 |              7 |         1.40 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[9]_1                           | betaCPU/control_unit/M_stage_q_reg[3]_29                                      |                4 |              7 |         1.75 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[37]_5                          | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[37]_8                        |                3 |              7 |         2.33 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_25                                        | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[37]_2                        |                4 |              7 |         1.75 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_31                                        | betaCPU/control_unit/M_stage_q_reg[3]_28                                      |                3 |              7 |         2.33 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_32                                        | betaCPU/control_unit/M_stage_q_reg[3]_26                                      |                4 |              7 |         1.75 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_30                                        | betaCPU/control_unit/M_stage_q_reg[3]_27                                      |                4 |              7 |         1.75 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[13]_3[0]                       | reset_cond/Q[0]                                                               |                3 |              7 |         2.33 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[42]_2[0]                       | reset_cond/Q[0]                                                               |                4 |              7 |         1.75 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[42]_4[0]                       | reset_cond/Q[0]                                                               |                3 |              7 |         2.33 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[42]_3[0]                       | reset_cond/Q[0]                                                               |                3 |              7 |         2.33 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[13]_1[0]                       | reset_cond/Q[0]                                                               |                3 |              7 |         2.33 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[13]_0[0]                       | reset_cond/Q[0]                                                               |                3 |              7 |         2.33 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[13]_2[0]                       | reset_cond/Q[0]                                                               |                3 |              7 |         2.33 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_35[0]                                     | reset_cond/Q[0]                                                               |                4 |              7 |         1.75 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_36[0]                                     | reset_cond/Q[0]                                                               |                3 |              7 |         2.33 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_37[0]                                     | reset_cond/Q[0]                                                               |                3 |              7 |         2.33 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_47[0]                                     | reset_cond/Q[0]                                                               |                4 |              7 |         1.75 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_42[0]                                     | reset_cond/Q[0]                                                               |                5 |              7 |         1.40 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_48[0]                                     | reset_cond/Q[0]                                                               |                5 |              7 |         1.40 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_41[0]                                     | reset_cond/Q[0]                                                               |                3 |              7 |         2.33 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_46[0]                                     | reset_cond/Q[0]                                                               |                3 |              7 |         2.33 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_49[0]                                     | reset_cond/Q[0]                                                               |                4 |              7 |         1.75 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_44[0]                                     | reset_cond/Q[0]                                                               |                3 |              7 |         2.33 |
+|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_22[0]                                     | reset_cond/Q[0]                                                               |                3 |              5 |         1.67 |
+|  clk_IBUF_BUFG | betaCPU/bottom_matrix_control/matrix2/matrix_writer/M_pixel_ctr_q[4]_i_1__0_n_0 | reset_cond/Q[0]                                                               |                4 |              5 |         1.25 |
+|  clk_IBUF_BUFG | betaCPU/bottom_matrix_control/matrix4/matrix_writer/M_bit_ctr_q[4]_i_1__2_n_0   | reset_cond/Q[0]                                                               |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_25[0]                                     | reset_cond/Q[0]                                                               |                5 |              5 |         1.00 |
+|  clk_IBUF_BUFG | betaCPU/bottom_matrix_control/matrix3/matrix_writer/M_pixel_ctr_q[4]_i_1__1_n_0 | reset_cond/Q[0]                                                               |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[33]_4                          |                                                                               |                2 |              6 |         3.00 |
+|  clk_IBUF_BUFG | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[41]_4[0]                       | reset_cond/Q[0]                                                               |                4 |              6 |         1.50 |
+|  clk_IBUF_BUFG | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[33]_3                          |                                                                               |                5 |              6 |         1.20 |
+|  clk_IBUF_BUFG | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[41]_3[0]                       | reset_cond/Q[0]                                                               |                5 |              7 |         1.40 |
+|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_21[0]                                     | reset_cond/Q[0]                                                               |                6 |              7 |         1.17 |
+|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_20[0]                                     | reset_cond/Q[0]                                                               |                4 |              7 |         1.75 |
+|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_18[0]                                     | reset_cond/Q[0]                                                               |                3 |              7 |         2.33 |
+|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_24[0]                                     | reset_cond/Q[0]                                                               |                3 |              7 |         2.33 |
+|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_17[0]                                     | reset_cond/Q[0]                                                               |                5 |              7 |         1.40 |
+|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_19[0]                                     | reset_cond/Q[0]                                                               |                3 |              7 |         2.33 |
+|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_23[0]                                     | reset_cond/Q[0]                                                               |                3 |              7 |         2.33 |
+|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_16[0]                                     | reset_cond/Q[0]                                                               |                4 |              7 |         1.75 |
 |  clk_IBUF_BUFG | betaCPU/bottom_matrix_control/matrix1/matrix_writer/M_state_d                   | reset_cond/Q[0]                                                               |                3 |              7 |         2.33 |
-|  clk_IBUF_BUFG | betaCPU/bottom_matrix_control/matrix3/matrix_writer/M_state_d                   | reset_cond/Q[0]                                                               |                4 |              7 |         1.75 |
-|  clk_IBUF_BUFG | betaCPU/bottom_matrix_control/matrix4/matrix_writer/M_state_d                   | reset_cond/Q[0]                                                               |                2 |              7 |         3.50 |
+|  clk_IBUF_BUFG | betaCPU/bottom_matrix_control/matrix2/matrix_writer/M_state_d                   | reset_cond/Q[0]                                                               |                3 |              7 |         2.33 |
+|  clk_IBUF_BUFG | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[33]_0                          | betaCPU/control_unit/M_stage_q_reg[3]_26                                      |                5 |              7 |         1.40 |
+|  clk_IBUF_BUFG | reset_cond/M_stage_q_reg[3]_27[0]                                               | reset_cond/Q[0]                                                               |                4 |              7 |         1.75 |
+|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_27                                        | betaCPU/control_unit/M_stage_q_reg[3]_30                                      |                2 |              7 |         3.50 |
+|  clk_IBUF_BUFG | betaCPU/r/M_stage_q_reg[3]_8                                                    | betaCPU/r/M_stage_q_reg[3]_12                                                 |                2 |              7 |         3.50 |
+|  clk_IBUF_BUFG | betaCPU/r/M_stage_q_reg[3]_9                                                    | betaCPU/r/M_stage_q_reg[3]_15                                                 |                3 |              7 |         2.33 |
+|  clk_IBUF_BUFG | betaCPU/r/M_stage_q_reg[3]_10                                                   | betaCPU/r/M_stage_q_reg[3]_13                                                 |                4 |              7 |         1.75 |
+|  clk_IBUF_BUFG | betaCPU/r/M_stage_q_reg[3]_11                                                   | betaCPU/r/M_stage_q_reg[3]_14                                                 |                3 |              7 |         2.33 |
+|  clk_IBUF_BUFG | reset_cond/M_stage_q_reg[3]_28[0]                                               | reset_cond/Q[0]                                                               |                5 |              7 |         1.40 |
+|  clk_IBUF_BUFG | reset_cond/M_stage_q_reg[3]_30[0]                                               | reset_cond/Q[0]                                                               |                5 |              7 |         1.40 |
+|  clk_IBUF_BUFG | reset_cond/M_stage_q_reg[3]_31[0]                                               | reset_cond/Q[0]                                                               |                5 |              7 |         1.40 |
+|  clk_IBUF_BUFG | reset_cond/M_stage_q_reg[3]_32[0]                                               | reset_cond/Q[0]                                                               |                5 |              7 |         1.40 |
+|  clk_IBUF_BUFG | reset_cond/E[0]                                                                 | reset_cond/Q[0]                                                               |                5 |              7 |         1.40 |
+|  clk_IBUF_BUFG | reset_cond/M_stage_q_reg[3]_33[0]                                               | reset_cond/Q[0]                                                               |                4 |              7 |         1.75 |
+|  clk_IBUF_BUFG | betaCPU/bottom_matrix_control/matrix4/matrix_writer/M_state_d                   | reset_cond/Q[0]                                                               |                3 |              7 |         2.33 |
 |  clk_IBUF_BUFG | betaCPU/top_matrix_control/matrix1/matrix_writer/M_state_d                      | reset_cond/Q[0]                                                               |                3 |              7 |         2.33 |
 |  clk_IBUF_BUFG | betaCPU/top_matrix_control/matrix2/matrix_writer/M_state_d                      | reset_cond/Q[0]                                                               |                3 |              7 |         2.33 |
+|  clk_IBUF_BUFG | betaCPU/bottom_matrix_control/matrix3/matrix_writer/M_state_d                   | reset_cond/Q[0]                                                               |                3 |              7 |         2.33 |
 |  clk_IBUF_BUFG | betaCPU/top_matrix_control/matrix3/matrix_writer/M_state_d                      | reset_cond/Q[0]                                                               |                3 |              7 |         2.33 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[37]_3                          | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[37]_6                        |                4 |              7 |         1.75 |
 |  clk_IBUF_BUFG | betaCPU/top_matrix_control/matrix4/matrix_writer/M_state_d                      | reset_cond/Q[0]                                                               |                3 |              7 |         2.33 |
-|  clk_IBUF_BUFG | betaCPU/bottom_matrix_control/matrix2/matrix_writer/M_state_d                   | reset_cond/Q[0]                                                               |                3 |              7 |         2.33 |
-|  clk_IBUF_BUFG | betaCPU/control_unit/E[0]                                                       | reset_cond/Q[0]                                                               |                5 |             11 |         2.20 |
-|  clk_IBUF_BUFG | betaCPU/bottom_matrix_control/matrix3/matrix_writer/M_rst_ctr_q[0]_i_2__1_n_0   | betaCPU/bottom_matrix_control/matrix3/matrix_writer/M_rst_ctr_q[0]_i_1__1_n_0 |                4 |             13 |         3.25 |
+|  clk_IBUF_BUFG | betaCPU/control_unit/M_stage_q_reg[3]_15[0]                                     | reset_cond/Q[0]                                                               |                4 |              7 |         1.75 |
+|  clk_IBUF_BUFG | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[41]_2[0]                       | reset_cond/Q[0]                                                               |                7 |             11 |         1.57 |
 |  clk_IBUF_BUFG | betaCPU/bottom_matrix_control/matrix4/matrix_writer/M_rst_ctr_q[0]_i_2__2_n_0   | betaCPU/bottom_matrix_control/matrix4/matrix_writer/M_rst_ctr_q[0]_i_1__2_n_0 |                4 |             13 |         3.25 |
 |  clk_IBUF_BUFG | betaCPU/top_matrix_control/matrix1/matrix_writer/M_rst_ctr_q[0]_i_2__3_n_0      | betaCPU/top_matrix_control/matrix1/matrix_writer/M_rst_ctr_q[0]_i_1__3_n_0    |                4 |             13 |         3.25 |
 |  clk_IBUF_BUFG | betaCPU/top_matrix_control/matrix2/matrix_writer/M_rst_ctr_q[0]_i_2__4_n_0      | betaCPU/top_matrix_control/matrix2/matrix_writer/M_rst_ctr_q[0]_i_1__4_n_0    |                4 |             13 |         3.25 |
 |  clk_IBUF_BUFG | betaCPU/bottom_matrix_control/matrix1/matrix_writer/M_rst_ctr_q[0]_i_2_n_0      | betaCPU/bottom_matrix_control/matrix1/matrix_writer/M_rst_ctr_q[0]_i_1_n_0    |                4 |             13 |         3.25 |
-|  clk_IBUF_BUFG | betaCPU/top_matrix_control/matrix4/matrix_writer/M_rst_ctr_q[0]_i_2__6_n_0      | betaCPU/top_matrix_control/matrix4/matrix_writer/M_rst_ctr_q[0]_i_1__6_n_0    |                4 |             13 |         3.25 |
-|  clk_IBUF_BUFG | betaCPU/top_matrix_control/matrix3/matrix_writer/M_rst_ctr_q[0]_i_2__5_n_0      | betaCPU/top_matrix_control/matrix3/matrix_writer/M_rst_ctr_q[0]_i_1__5_n_0    |                4 |             13 |         3.25 |
 |  clk_IBUF_BUFG | betaCPU/bottom_matrix_control/matrix2/matrix_writer/M_rst_ctr_q[0]_i_2__0_n_0   | betaCPU/bottom_matrix_control/matrix2/matrix_writer/M_rst_ctr_q[0]_i_1__0_n_0 |                4 |             13 |         3.25 |
-|  clk_IBUF_BUFG | keyboard_controller/n_/button_cond/M_ctr_q_reg[15]_0                            | keyboard_controller/n_/button_cond/sync/M_pipe_q_reg[1]_0                     |                5 |             20 |         4.00 |
-|  clk_IBUF_BUFG | keyboard_controller/l_/button_cond/M_ctr_q_reg[15]_0                            | keyboard_controller/l_/button_cond/sync/M_pipe_q_reg[1]_0                     |                5 |             20 |         4.00 |
-|  clk_IBUF_BUFG | keyboard_controller/i_/button_cond/M_ctr_q_reg[15]_0                            | keyboard_controller/i_/button_cond/sync/M_pipe_q_reg[1]_0                     |                5 |             20 |         4.00 |
+|  clk_IBUF_BUFG | betaCPU/top_matrix_control/matrix4/matrix_writer/M_rst_ctr_q[0]_i_2__6_n_0      | betaCPU/top_matrix_control/matrix4/matrix_writer/M_rst_ctr_q[0]_i_1__6_n_0    |                4 |             13 |         3.25 |
+|  clk_IBUF_BUFG | betaCPU/bottom_matrix_control/matrix3/matrix_writer/M_rst_ctr_q[0]_i_2__1_n_0   | betaCPU/bottom_matrix_control/matrix3/matrix_writer/M_rst_ctr_q[0]_i_1__1_n_0 |                4 |             13 |         3.25 |
+|  clk_IBUF_BUFG | betaCPU/top_matrix_control/matrix3/matrix_writer/M_rst_ctr_q[0]_i_2__5_n_0      | betaCPU/top_matrix_control/matrix3/matrix_writer/M_rst_ctr_q[0]_i_1__5_n_0    |                4 |             13 |         3.25 |
+|  clk_IBUF_BUFG | keyboard_controller/o_/button_cond/M_ctr_q_reg[15]_0                            | keyboard_controller/o_/button_cond/sync/M_pipe_q_reg[1]_0                     |                8 |             20 |         2.50 |
+|  clk_IBUF_BUFG | button_panel_controller/check_/button_cond/M_ctr_q_reg[11]_0                    | button_panel_controller/check_/button_cond/sync/M_pipe_q_reg[1]_0             |                6 |             20 |         3.33 |
+|  clk_IBUF_BUFG | keyboard_controller/p_/button_cond/M_ctr_q[0]_i_2__5_n_0                        | keyboard_controller/p_/button_cond/sync/M_pipe_q_reg[1]_0                     |                6 |             20 |         3.33 |
 |  clk_IBUF_BUFG | button_panel_controller/clear_/button_cond/M_ctr_q_reg[11]_0                    | button_panel_controller/clear_/button_cond/sync/M_pipe_q_reg[1]_0             |                7 |             20 |         2.86 |
+|  clk_IBUF_BUFG | keyboard_controller/n_/button_cond/M_ctr_q_reg[15]_0                            | keyboard_controller/n_/button_cond/sync/M_pipe_q_reg[1]_0                     |                7 |             20 |         2.86 |
+|  clk_IBUF_BUFG | keyboard_controller/l_/button_cond/M_ctr_q_reg[15]_0                            | keyboard_controller/l_/button_cond/sync/M_pipe_q_reg[1]_0                     |                7 |             20 |         2.86 |
+|  clk_IBUF_BUFG | keyboard_controller/i_/button_cond/M_ctr_q_reg[15]_0                            | keyboard_controller/i_/button_cond/sync/M_pipe_q_reg[1]_0                     |                5 |             20 |         4.00 |
+|  clk_IBUF_BUFG | keyboard_controller/s_/button_cond/M_ctr_q_reg[15]_0                            | keyboard_controller/s_/button_cond/sync/M_pipe_q_reg[1]_0                     |                7 |             20 |         2.86 |
 |  clk_IBUF_BUFG | keyboard_controller/e_/button_cond/M_ctr_q_reg[15]_0                            | keyboard_controller/e_/button_cond/sync/M_pipe_q_reg[1]_0                     |                6 |             20 |         3.33 |
-|  clk_IBUF_BUFG | button_panel_controller/check_/button_cond/M_ctr_q_reg[11]_0                    | button_panel_controller/check_/button_cond/sync/M_pipe_q_reg[1]_0             |                5 |             20 |         4.00 |
-|  clk_IBUF_BUFG | keyboard_controller/t_/button_cond/M_ctr_q_reg[15]_0                            | keyboard_controller/t_/button_cond/sync/M_pipe_q_reg[1]_0                     |                5 |             20 |         4.00 |
-|  clk_IBUF_BUFG | keyboard_controller/s_/button_cond/M_ctr_q_reg[15]_0                            | keyboard_controller/s_/button_cond/sync/M_pipe_q_reg[1]_0                     |                6 |             20 |         3.33 |
-|  clk_IBUF_BUFG | keyboard_controller/a_/button_cond/M_ctr_q_reg[15]_0                            | keyboard_controller/a_/button_cond/sync/clear                                 |                7 |             20 |         2.86 |
-|  clk_IBUF_BUFG | keyboard_controller/p_/button_cond/M_ctr_q[0]_i_2__5_n_0                        | keyboard_controller/p_/button_cond/sync/M_pipe_q_reg[1]_0                     |                9 |             20 |         2.22 |
-|  clk_IBUF_BUFG | keyboard_controller/o_/button_cond/M_ctr_q_reg[15]_0                            | keyboard_controller/o_/button_cond/sync/M_pipe_q_reg[1]_0                     |                6 |             20 |         3.33 |
-|  clk_IBUF_BUFG |                                                                                 |                                                                               |               12 |             33 |         2.75 |
-|  clk_IBUF_BUFG |                                                                                 | reset_cond/Q[0]                                                               |               36 |             69 |         1.92 |
+|  clk_IBUF_BUFG | keyboard_controller/a_/button_cond/M_ctr_q_reg[15]_0                            | keyboard_controller/a_/button_cond/sync/clear                                 |                6 |             20 |         3.33 |
+|  clk_IBUF_BUFG | keyboard_controller/t_/button_cond/M_ctr_q_reg[15]_0                            | keyboard_controller/t_/button_cond/sync/M_pipe_q_reg[1]_0                     |                6 |             20 |         3.33 |
+|  clk_IBUF_BUFG |                                                                                 |                                                                               |               11 |             33 |         3.00 |
+|  clk_IBUF_BUFG |                                                                                 | reset_cond/Q[0]                                                               |               34 |             69 |         2.03 |
 +----------------+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------------+----------------+--------------+
 
 

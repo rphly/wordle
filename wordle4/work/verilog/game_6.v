@@ -239,7 +239,7 @@ module game_6 (
           current_state = 1'h0;
           if (has_panel_input) begin
             if (panel_input == 5'h1f) begin
-              M_game_fsm_d = CLEAR_SET_INPUT_CTR_0_game_fsm;
+              M_game_fsm_d = SET_INPUT_CTR_TO_0_game_fsm;
             end else begin
               if (panel_input == 5'h1e) begin
                 M_game_fsm_d = CHECK_BUTTON_PRESSED_game_fsm;
