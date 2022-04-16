@@ -25,7 +25,8 @@ module beta (
     output debugger1[8],
     output debugger2[8],
     output debugger3[8],
-    output correct_word[9]
+    output correct_word[9],
+    output correct_word_index_out[11]
   ) {
   
   alu game_alu;
@@ -135,5 +136,7 @@ module beta (
     debugger2 = control_unit.debugger2;
     correct_word = control_unit.correct_word_index;
     debugger3 = control_unit.debugger3;
+    
+    correct_word_index_out = control_unit.correct_word_index;
   }
 }

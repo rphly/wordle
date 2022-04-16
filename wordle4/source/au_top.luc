@@ -3,33 +3,40 @@ module au_top (
     input rst_n,            // reset button (active low)
     input usb_rx,           // USB->Serial input
     input reset_in,
+    input oka_in,
+    input guess_1_in,
+    input guess_2_in,
+    input guess_3_in,
+    input guess_4_in,
+    input correct_word_index[11],
+    
     // keyboard inputs
     input a_in,
-    /*input b_in,
+    input b_in,
     input c_in,
-    input d_in,*/
+    input d_in,
     input e_in,
-   /* input f_in,
+    input f_in,
     input g_in,
-    input h_in,*/
+    input h_in,
     input i_in,
-    /*input j_in,
-    input k_in,*/
+    input j_in,
+    input k_in,
     input l_in,
-    //input m_in,
+    input m_in,
     input n_in,
     input o_in,
     input p_in,
-    /*input q_in,
-    input r_in,*/
+    input q_in,
+    input r_in,
     input s_in,
     input t_in,
-    /*input u_in,
+    input u_in,
     input v_in,
     input w_in,
     input x_in,
     input y_in,
-    input z_in,*/
+    input z_in,
    
     // panel
     input clear_in,
@@ -45,7 +52,7 @@ module au_top (
     output out_top_matrix3,
     output out_top_matrix4,
     
-    output io_led[3][8],
+    output led_strip,
     output usb_tx
   ) {
   
@@ -54,45 +61,46 @@ module au_top (
   .clk(clk) {
     reset_conditioner reset_cond;
     .rst(rst) {
+      led_strip_writer led_writer(#PIXEL_COUNT(11));
       beta betaCPU;
       buttons_controller keyboard_controller(
         .a(a_in),
-        //.b(b_in),
-        //.c(c_in),
-        //.d(d_in),
+        .b(b_in),
+        .c(c_in),
+        .d(d_in),
         .e(e_in),
-        //.f(f_in),
-        //.g(g_in),
-        //.h(h_in),
+        .f(f_in),
+        .g(g_in),
+        .h(h_in),
         .i(i_in),
-        //.j(j_in),
-        //.k(k_in),
+        .j(j_in),
+        .k(k_in),
         .l(l_in),
-        //.m(m_in),
+        .m(m_in),
         .n(n_in),
         .o(o_in),
         .p(p_in),
-        //.q(q_in),
-        //.r(r_in),
+        .q(q_in),
+        .r(r_in),
         .s(s_in),
-        .t(t_in)
-        //.u(u_in),
-        //.v(v_in),
-        //.w(w_in),
-        //.x(x_in),
-        //.y(y_in),
-        //.z(z_in)
+        .t(t_in),
+        .u(u_in),
+        .v(v_in),
+        .w(w_in),
+        .x(x_in),
+        .y(y_in),
+        .z(z_in)
       );
       
       panel_controller button_panel_controller(
-        //.guess_1_btn(guess_1_btn),
-        //.guess_2_btn(guess_2_btn),
-        //.guess_3_btn(guess_3_btn),
-        //.guess_4_btn(guess_4_btn),
+        .guess_1_btn(guess_1_in),
+        .guess_2_btn(guess_2_in),
+        .guess_3_btn(guess_3_in),
+        .guess_4_btn(guess_4_in),
         .clear(clear_in),
-        .check(check_in)
-        //.reset(reset_btn),
-        //.oka(oka_btn)
+        .check(check_in),
+        .reset(reset_in),
+        .oka(oka_in)
       );
     }
     
@@ -105,7 +113,6 @@ module au_top (
   always {
     reset_cond.in = ~rst_n;
     rst = reset_cond.out;
-    io_led = 3x{{8h00}};
     
     betaCPU.keyboard_input = keyboard_controller.out;
     betaCPU.has_keyboard_input = keyboard_controller.is_pressed;
@@ -116,7 +123,6 @@ module au_top (
     panel_debugger.d = button_panel_controller.out;
      }
     
-   // io_led[2][5:0] = panel_debugger.q;
     
     out_bottom_matrix1 = betaCPU.out_bottom_matrix1;
     out_bottom_matrix2 = betaCPU.out_bottom_matrix2;
@@ -128,16 +134,21 @@ module au_top (
     out_top_matrix3 = betaCPU.out_top_matrix3;
     out_top_matrix4 = betaCPU.out_top_matrix4;
     
-    io_led[0] = betaCPU.debugger1;
-    io_led[1] = betaCPU.debugger2;
-    io_led[2] = betaCPU.debugger3;
-    
+   
     if(betaCPU.correct_word != 9b0){
       correct_word.d = betaCPU.correct_word;
     }
     
-    //io_led[0][5:0] = correct_word.q[5:0];
-    //io_led[1][5:2]= correct_word.q[8:6];
+    // output to led strip
+    led_writer.update = 1;
+    
+    if (betaCPU.correct_word_index_out[led_writer.pixel]) {
+      led_writer.color = h111111;
+    } else {
+      led_writer.color = h000000;
+    }
+    
+    led_strip = led_writer.led; 
     
     usb_tx = usb_rx;        // loop serial port
   }
