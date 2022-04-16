@@ -6,8 +6,8 @@ module regfile (
     input data[16], // data in
     
     
-    input read_address_a[6], //address port a 
-    input read_address_b[6], //address port b
+    input read_address_a[7], //address port a 
+    input read_address_b[7], //address port b
     output out_a[16], //read port a
     output out_b[16] //read port b
 
@@ -75,7 +75,7 @@ module regfile (
       dff g[3];
       
       // address so 6 bit MAX
-      dff temp_guess_g_letter_i[6];
+      dff temp_guess_g_letter_i[7];
       
       // 7 bits
       dff temp_coloured_letter[7];

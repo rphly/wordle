@@ -2,7 +2,7 @@ module au_top (
     input clk,              // 100MHz clock
     input rst_n,            // reset button (active low)
     input usb_rx,           // USB->Serial input
-    
+    input reset_in,
     // keyboard inputs
     input a_in,
     /*input b_in,
@@ -97,13 +97,15 @@ module au_top (
     }
     
     dff panel_debugger[5];
+    
+    dff correct_word[9];
   }
   
   
   always {
     reset_cond.in = ~rst_n;
     rst = reset_cond.out;
-    //io_led = 3x{{8h00}};
+    io_led = 3x{{8h00}};
     
     betaCPU.keyboard_input = keyboard_controller.out;
     betaCPU.has_keyboard_input = keyboard_controller.is_pressed;
@@ -126,11 +128,16 @@ module au_top (
     out_top_matrix3 = betaCPU.out_top_matrix3;
     out_top_matrix4 = betaCPU.out_top_matrix4;
     
-    //io_led[0][7:0] = betaCPU.debugger1;
-    //io_led[1][7:0] = betaCPU.debugger2;
-    //io_led[2][7:0] = betaCPU.debugger3;
+    io_led[0] = betaCPU.debugger1;
+    io_led[1] = betaCPU.debugger2;
+    io_led[2] = betaCPU.debugger3;
     
-    io_led = 3x{{8b11111111}};
+    if(betaCPU.correct_word != 9b0){
+      correct_word.d = betaCPU.correct_word;
+    }
+    
+    //io_led[0][5:0] = correct_word.q[5:0];
+    //io_led[1][5:2]= correct_word.q[8:6];
     
     usb_tx = usb_rx;        // loop serial port
   }

@@ -1,47 +1,37 @@
-Errors in file C:\Users\Bryce\Desktop\wordle\wordle4\source\beta.luc:
-    Line 133, Column 16 : The signal "control_unit.debugger3" is wider than "debugger3" and the most significant bits will be dropped
-    Line 40, Column 6 : The module "pn_gen" could not be found
-    Line 45, Column 2 : The module "mini_words" could not be found
-    Line 57, Column 27 : The name "random_number_generator" could not be resolved
-    Line 75, Column 4 : The name "random_number_generator" could not be resolved
-    Line 77, Column 4 : The name "random_number_generator" could not be resolved
-    Line 86, Column 22 : The signal "control_unit.regfile_write_address" is wider than "r.write_address" and the most significant bits will be dropped
-    Line 87, Column 23 : The signal "control_unit.regfile_ra" is wider than "r.read_address_a" and the most significant bits will be dropped
-    Line 88, Column 23 : The signal "control_unit.regfile_rb" is wider than "r.read_address_b" and the most significant bits will be dropped
-    Line 91, Column 4 : The name "words" could not be resolved
-    Line 101, Column 33 : The name "words" could not be resolved
-    Line 102, Column 37 : The name "random_number_generator" could not be resolved
-    Line 131, Column 16 : The signal "control_unit.debugger1" is wider than "debugger1" and the most significant bits will be dropped
-    Line 132, Column 16 : The signal "control_unit.debugger2" is wider than "debugger2" and the most significant bits will be dropped
+Warnings in file C:\Users\Bryce\Desktop\wordle\wordle4\source\beta.luc:
+    Line 89, Column 23 : The signal "control_unit.regfile_rb" is wider than "r.read_address_b" and the most significant bits will be dropped
+    Line 87, Column 22 : The signal "control_unit.regfile_write_address" is wider than "r.write_address" and the most significant bits will be dropped
+    Line 88, Column 23 : The signal "control_unit.regfile_ra" is wider than "r.read_address_a" and the most significant bits will be dropped
 Warnings in file C:\Users\Bryce\Desktop\wordle\wordle4\source\panel_controller.luc:
     Line 3, Column 4 : "rst" was never used
 Warnings in file C:\Users\Bryce\Desktop\wordle\wordle4\source\buttons_controller.luc:
     Line 3, Column 4 : "rst" was never used
 Warnings in file C:\Users\Bryce\Desktop\wordle\wordle4\source\game.luc:
-    Line 714, Column 43 : The signal "regfile_out_b" is wider than "top_matrix4_letter_address" and the most significant bits will be dropped
-    Line 287, Column 27 : The signal "regfile_out_a" is wider than "words_selector" and the most significant bits will be dropped
-    Line 295, Column 27 : The signal "regfile_out_a" is wider than "words_selector" and the most significant bits will be dropped
-    Line 303, Column 27 : The signal "regfile_out_a" is wider than "words_selector" and the most significant bits will be dropped
-    Line 311, Column 27 : The signal "regfile_out_a" is wider than "words_selector" and the most significant bits will be dropped
-    Line 329, Column 46 : The signal "regfile_out_b" is wider than "bottom_matrix1_letter_address" and the most significant bits will be dropped
-    Line 332, Column 46 : The signal "regfile_out_b" is wider than "bottom_matrix2_letter_address" and the most significant bits will be dropped
-    Line 335, Column 46 : The signal "regfile_out_b" is wider than "bottom_matrix3_letter_address" and the most significant bits will be dropped
-    Line 338, Column 46 : The signal "regfile_out_b" is wider than "bottom_matrix4_letter_address" and the most significant bits will be dropped
-    Line 633, Column 43 : The signal "regfile_out_b" is wider than "top_matrix1_letter_address" and the most significant bits will be dropped
-    Line 637, Column 43 : The signal "regfile_out_b" is wider than "top_matrix1_letter_address" and the most significant bits will be dropped
-    Line 641, Column 43 : The signal "regfile_out_b" is wider than "top_matrix1_letter_address" and the most significant bits will be dropped
-    Line 645, Column 43 : The signal "regfile_out_b" is wider than "top_matrix1_letter_address" and the most significant bits will be dropped
-    Line 656, Column 43 : The signal "regfile_out_b" is wider than "top_matrix2_letter_address" and the most significant bits will be dropped
-    Line 660, Column 43 : The signal "regfile_out_b" is wider than "top_matrix2_letter_address" and the most significant bits will be dropped
-    Line 664, Column 43 : The signal "regfile_out_b" is wider than "top_matrix2_letter_address" and the most significant bits will be dropped
-    Line 668, Column 43 : The signal "regfile_out_b" is wider than "top_matrix2_letter_address" and the most significant bits will be dropped
-    Line 679, Column 43 : The signal "regfile_out_b" is wider than "top_matrix3_letter_address" and the most significant bits will be dropped
-    Line 683, Column 43 : The signal "regfile_out_b" is wider than "top_matrix3_letter_address" and the most significant bits will be dropped
-    Line 687, Column 43 : The signal "regfile_out_b" is wider than "top_matrix3_letter_address" and the most significant bits will be dropped
-    Line 691, Column 43 : The signal "regfile_out_b" is wider than "top_matrix3_letter_address" and the most significant bits will be dropped
-    Line 702, Column 43 : The signal "regfile_out_b" is wider than "top_matrix4_letter_address" and the most significant bits will be dropped
-    Line 706, Column 43 : The signal "regfile_out_b" is wider than "top_matrix4_letter_address" and the most significant bits will be dropped
-    Line 710, Column 43 : The signal "regfile_out_b" is wider than "top_matrix4_letter_address" and the most significant bits will be dropped
+    Line 719, Column 43 : The signal "regfile_out_b" is wider than "top_matrix4_letter_address" and the most significant bits will be dropped
+    Line 280, Column 25 : The signal "regfile_out_a" is wider than "correct_word" and the most significant bits will be dropped
+    Line 288, Column 27 : The signal "regfile_out_a" is wider than "words_selector" and the most significant bits will be dropped
+    Line 296, Column 27 : The signal "regfile_out_a" is wider than "words_selector" and the most significant bits will be dropped
+    Line 304, Column 27 : The signal "regfile_out_a" is wider than "words_selector" and the most significant bits will be dropped
+    Line 312, Column 27 : The signal "regfile_out_a" is wider than "words_selector" and the most significant bits will be dropped
+    Line 330, Column 46 : The signal "regfile_out_b" is wider than "bottom_matrix1_letter_address" and the most significant bits will be dropped
+    Line 333, Column 46 : The signal "regfile_out_b" is wider than "bottom_matrix2_letter_address" and the most significant bits will be dropped
+    Line 336, Column 46 : The signal "regfile_out_b" is wider than "bottom_matrix3_letter_address" and the most significant bits will be dropped
+    Line 339, Column 46 : The signal "regfile_out_b" is wider than "bottom_matrix4_letter_address" and the most significant bits will be dropped
+    Line 638, Column 43 : The signal "regfile_out_b" is wider than "top_matrix1_letter_address" and the most significant bits will be dropped
+    Line 642, Column 43 : The signal "regfile_out_b" is wider than "top_matrix1_letter_address" and the most significant bits will be dropped
+    Line 646, Column 43 : The signal "regfile_out_b" is wider than "top_matrix1_letter_address" and the most significant bits will be dropped
+    Line 650, Column 43 : The signal "regfile_out_b" is wider than "top_matrix1_letter_address" and the most significant bits will be dropped
+    Line 661, Column 43 : The signal "regfile_out_b" is wider than "top_matrix2_letter_address" and the most significant bits will be dropped
+    Line 665, Column 43 : The signal "regfile_out_b" is wider than "top_matrix2_letter_address" and the most significant bits will be dropped
+    Line 669, Column 43 : The signal "regfile_out_b" is wider than "top_matrix2_letter_address" and the most significant bits will be dropped
+    Line 673, Column 43 : The signal "regfile_out_b" is wider than "top_matrix2_letter_address" and the most significant bits will be dropped
+    Line 684, Column 43 : The signal "regfile_out_b" is wider than "top_matrix3_letter_address" and the most significant bits will be dropped
+    Line 688, Column 43 : The signal "regfile_out_b" is wider than "top_matrix3_letter_address" and the most significant bits will be dropped
+    Line 692, Column 43 : The signal "regfile_out_b" is wider than "top_matrix3_letter_address" and the most significant bits will be dropped
+    Line 696, Column 43 : The signal "regfile_out_b" is wider than "top_matrix3_letter_address" and the most significant bits will be dropped
+    Line 707, Column 43 : The signal "regfile_out_b" is wider than "top_matrix4_letter_address" and the most significant bits will be dropped
+    Line 711, Column 43 : The signal "regfile_out_b" is wider than "top_matrix4_letter_address" and the most significant bits will be dropped
+    Line 715, Column 43 : The signal "regfile_out_b" is wider than "top_matrix4_letter_address" and the most significant bits will be dropped
 Warnings in file C:\Users\Bryce\Desktop\wordle\wordle4\source\regfile.luc:
     Line 140, Column 31 : The signal "data" is wider than "oka_mode.d" and the most significant bits will be dropped
     Line 96, Column 40 : The signal "data" is wider than "guess_1_letter_1.d" and the most significant bits will be dropped
@@ -76,5 +66,1977 @@ Warnings in file C:\Users\Bryce\Desktop\wordle\wordle4\source\regfile.luc:
     Line 138, Column 43 : The signal "data" is wider than "temp_coloured_letter.d" and the most significant bits will be dropped
     Line 139, Column 33 : The signal "data" is wider than "word_index.d" and the most significant bits will be dropped
 Warnings in file C:\Users\Bryce\Desktop\wordle\wordle4\source\au_top.luc:
-    Line 108, Column 29 : The signal "keyboard_controller.out" is wider than "betaCPU.keyboard_input" and the most significant bits will be dropped
+    Line 110, Column 29 : The signal "keyboard_controller.out" is wider than "betaCPU.keyboard_input" and the most significant bits will be dropped
+    Line 5, Column 4 : "reset_in" was never used
     Line 99, Column 4 : "panel_debugger" was never used
+    Line 101, Column 4 : "correct_word" was never used
+Starting Vivado...
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source {C:\Users\Bryce\Desktop\wordle\wordle4\work\project.tcl}
+# set projDir "C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado"
+# set projName "wordle4"
+# set topName top
+# set device xc7a35tftg256-1
+# if {[file exists "$projDir/$projName"]} { file delete -force "$projDir/$projName" }
+# create_project $projName "$projDir/$projName" -part $device
+# set_property design_mode RTL [get_filesets sources_1]
+# set verilogSources [list "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/au_top_0.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/reset_conditioner_1.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/beta_2.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/buttons_controller_3.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/panel_controller_4.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/alu_5.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/game_6.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/regfile_7.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/matrix_controller_8.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/pn_gen_9.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/mini_words_10.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/button_11.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/adder_12.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/compare_13.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/boolean_14.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/shifter_15.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/matrix_16.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/button_conditioner_17.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/edge_detector_18.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/led_strip_writer_19.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/white_alphabets_20.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/yellow_alphabets_21.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/green_alphabets_22.v" "C:/Users/Bryce/Desktop/wordle/wordle4/work/verilog/pipeline_23.v" ]
+# import_files -fileset [get_filesets sources_1] -force -norecurse $verilogSources
+# set xdcSources [list "C:/Users/Bryce/Desktop/wordle/wordle4/work/constraint/alchitry.xdc" "C:/Users/Bryce/Desktop/wordle/wordle4/constraint/au.xdc" ]
+# read_xdc $xdcSources
+# set_property STEPS.WRITE_BITSTREAM.ARGS.BIN_FILE true [get_runs impl_1]
+# update_compile_order -fileset sources_1
+# launch_runs -runs synth_1 -jobs 12
+
+[Sat Apr 16 19:56:26 2022] Launched synth_1...
+Run output will be captured here: C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/synth_1/runme.log
+# wait_on_run synth_1
+[Sat Apr 16 19:56:26 2022] Waiting for synth_1 to finish...
+
+*** Running vivado
+    with args -log au_top_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source au_top_0.tcl
+
+
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source au_top_0.tcl -notrace
+Command: synth_design -top au_top_0 -part xc7a35tftg256-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tftg256-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 15692
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 999.340 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'au_top_0' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/au_top_0.v:7]
+INFO: [Synth 8-6157] synthesizing module 'reset_conditioner_1' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/reset_conditioner_1.v:11]
+	Parameter STAGES bound to: 3'b100 
+INFO: [Synth 8-6155] done synthesizing module 'reset_conditioner_1' (1#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/reset_conditioner_1.v:11]
+INFO: [Synth 8-6157] synthesizing module 'beta_2' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/beta_2.v:7]
+INFO: [Synth 8-6157] synthesizing module 'alu_5' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/alu_5.v:7]
+INFO: [Synth 8-6157] synthesizing module 'adder_12' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/adder_12.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'adder_12' (2#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/adder_12.v:7]
+INFO: [Synth 8-6157] synthesizing module 'compare_13' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/compare_13.v:7]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/compare_13.v:20]
+INFO: [Synth 8-6155] done synthesizing module 'compare_13' (3#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/compare_13.v:7]
+INFO: [Synth 8-6157] synthesizing module 'boolean_14' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/boolean_14.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'boolean_14' (4#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/boolean_14.v:7]
+INFO: [Synth 8-6157] synthesizing module 'shifter_15' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/shifter_15.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'shifter_15' (5#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/shifter_15.v:7]
+INFO: [Synth 8-226] default block is never used [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/alu_5.v:89]
+INFO: [Synth 8-6155] done synthesizing module 'alu_5' (6#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/alu_5.v:7]
+INFO: [Synth 8-6157] synthesizing module 'game_6' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_6.v:7]
+	Parameter CHECK_IF_FIRST_INPUT_game_fsm bound to: 6'b000000 
+	Parameter SET_OKA_MODE_TO_ZERO_game_fsm bound to: 6'b000001 
+	Parameter RESET_TOP_DISPLAY_game_fsm bound to: 6'b000010 
+	Parameter RESET_BOTTOM_DISPLAY_game_fsm bound to: 6'b000011 
+	Parameter SET_INPUT_CTR_TO_0_game_fsm bound to: 6'b000100 
+	Parameter SET_GUESS_CTR_TO_0_game_fsm bound to: 6'b000101 
+	Parameter SET_NUM_CORRECT_INPUTS_TO_0_game_fsm bound to: 6'b000110 
+	Parameter IDLE_game_fsm bound to: 6'b000111 
+	Parameter RETRIEVE_INPUT_I_game_fsm bound to: 6'b001000 
+	Parameter RETRIEVE_CORRECT_K_game_fsm bound to: 6'b001001 
+	Parameter COMPARE_INPUT_I_WITH_CORRECT_K_game_fsm bound to: 6'b001010 
+	Parameter COMPARE_K_EQUALS_3_AND_INCREMENT_game_fsm bound to: 6'b001011 
+	Parameter CHECK_BUTTON_PRESSED_game_fsm bound to: 6'b001100 
+	Parameter COMPARE_INPUT_CTR_EQUALS_3_game_fsm bound to: 6'b001101 
+	Parameter COMPARE_INPUT_I_WITH_CORRECT_I_game_fsm bound to: 6'b001110 
+	Parameter CLEAR_RESET_BOTTOM_DISPLAY_game_fsm bound to: 6'b001111 
+	Parameter STORE_INPUT_game_fsm bound to: 6'b010000 
+	Parameter INCREMENT_INPUT_CTR_game_fsm bound to: 6'b010001 
+	Parameter PRINT_LETTER_TO_MATRIX_game_fsm bound to: 6'b010010 
+	Parameter SET_I_TO_ZERO_game_fsm bound to: 6'b010011 
+	Parameter SET_K_TO_ZERO_game_fsm bound to: 6'b010100 
+	Parameter COMPARE_POSITIONS_K_AND_I_game_fsm bound to: 6'b010101 
+	Parameter SET_TEMP_GUESS_G_LETTER_I_ADDR_WHITE_game_fsm bound to: 6'b010110 
+	Parameter SET_TEMP_GUESS_G_LETTER_I_ADDR_GREEN_game_fsm bound to: 6'b010111 
+	Parameter SET_TEMP_GUESS_G_LETTER_I_ADDR_YELLOW_game_fsm bound to: 6'b011000 
+	Parameter SET_WHITE_LETTER_game_fsm bound to: 6'b011001 
+	Parameter SET_GREEN_LETTER_game_fsm bound to: 6'b011010 
+	Parameter SET_YELLOW_LETTER_game_fsm bound to: 6'b011011 
+	Parameter SET_TEMP_COLOURED_LETTER_GREEN_game_fsm bound to: 6'b011100 
+	Parameter SET_TEMP_COLOURED_LETTER_YELLOW_game_fsm bound to: 6'b011101 
+	Parameter SET_TEMP_COLOURED_LETTER_WHITE_game_fsm bound to: 6'b011110 
+	Parameter RESET_NUM_CORRECT_INPUTS_TO_0_game_fsm bound to: 6'b011111 
+	Parameter INCREMENT_K_game_fsm bound to: 6'b100000 
+	Parameter INCREMENT_NUM_CORRECT_game_fsm bound to: 6'b100001 
+	Parameter COMPARE_NUM_CORRECT_EQUALS_3_game_fsm bound to: 6'b100010 
+	Parameter COMPARE_I_EQUALS_3_AND_INCREMENT_game_fsm bound to: 6'b100011 
+	Parameter INCREMENT_GUESS_CTR_game_fsm bound to: 6'b100100 
+	Parameter COMPARE_GUESS_CTR_EQUALS_3_game_fsm bound to: 6'b100101 
+	Parameter SHOW_TOP_DISPLAY_game_fsm bound to: 6'b100110 
+	Parameter SHOW_TOP_DISPLAY_2_game_fsm bound to: 6'b100111 
+	Parameter SHOW_TOP_DISPLAY_3_game_fsm bound to: 6'b101000 
+	Parameter SHOW_TOP_DISPLAY_4_game_fsm bound to: 6'b101001 
+	Parameter SET_CORRECT_WORD_game_fsm bound to: 6'b101010 
+	Parameter SET_CORRECT_WORD_2_game_fsm bound to: 6'b101011 
+	Parameter SET_CORRECT_LETTER_1_game_fsm bound to: 6'b101100 
+	Parameter SET_CORRECT_LETTER_2_game_fsm bound to: 6'b101101 
+	Parameter SET_CORRECT_LETTER_3_game_fsm bound to: 6'b101110 
+	Parameter SET_CORRECT_LETTER_4_game_fsm bound to: 6'b101111 
+	Parameter LOSE_game_fsm bound to: 6'b110000 
+	Parameter WIN_game_fsm bound to: 6'b110001 
+	Parameter INPUT_CTR bound to: 5'b11100 
+	Parameter INPUT_LETTER_1 bound to: 5'b10000 
+	Parameter I bound to: 5'b10100 
+	Parameter K bound to: 5'b10110 
+	Parameter CORRECT_LETTER_1 bound to: 5'b10111 
+	Parameter INPUT_I bound to: 5'b11101 
+	Parameter CORRECT_K bound to: 5'b11110 
+	Parameter G bound to: 6'b100000 
+	Parameter GUESS_1_LETTER_1 bound to: 7'b1000000 
+	Parameter GUESS_2_LETTER_1 bound to: 5'b00100 
+	Parameter GUESS_3_LETTER_1 bound to: 5'b01000 
+	Parameter GUESS_4_LETTER_1 bound to: 5'b01100 
+	Parameter TEMP_GUESS_G_LETTER_I_ADDR bound to: 6'b100001 
+	Parameter TEMP_COLOURED_LETTER bound to: 6'b100010 
+	Parameter NUM_CORRECT bound to: 5'b11011 
+	Parameter CLEAR_SIGNAL bound to: 5'b11111 
+	Parameter CHECK_SIGNAL bound to: 5'b11110 
+	Parameter RESTART_SIGNAL bound to: 5'b10101 
+	Parameter OKA_MODE bound to: 5'b10001 
+	Parameter CORRECT_WORD bound to: 6'b100011 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_6.v:320]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_6.v:417]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_6.v:470]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_6.v:530]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_6.v:604]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_6.v:632]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_6.v:660]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_6.v:688]
+INFO: [Synth 8-6155] done synthesizing module 'game_6' (7#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_6.v:7]
+INFO: [Synth 8-6157] synthesizing module 'regfile_7' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:7]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:100]
+INFO: [Synth 8-6155] done synthesizing module 'regfile_7' (8#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_7.v:7]
+INFO: [Synth 8-6157] synthesizing module 'matrix_controller_8' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/matrix_controller_8.v:7]
+INFO: [Synth 8-6157] synthesizing module 'matrix_16' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/matrix_16.v:7]
+INFO: [Synth 8-6157] synthesizing module 'led_strip_writer_19' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/led_strip_writer_19.v:11]
+	Parameter PIXEL_COUNT bound to: 5'b11001 
+	Parameter SEND_PIXEL_state bound to: 1'b0 
+	Parameter RESET_state bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'led_strip_writer_19' (9#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/led_strip_writer_19.v:11]
+INFO: [Synth 8-6157] synthesizing module 'white_alphabets_20' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/white_alphabets_20.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'white_alphabets_20' (10#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/white_alphabets_20.v:7]
+INFO: [Synth 8-6157] synthesizing module 'yellow_alphabets_21' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/yellow_alphabets_21.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'yellow_alphabets_21' (11#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/yellow_alphabets_21.v:7]
+INFO: [Synth 8-6157] synthesizing module 'green_alphabets_22' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/green_alphabets_22.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'green_alphabets_22' (12#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/green_alphabets_22.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'matrix_16' (13#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/matrix_16.v:7]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/matrix_controller_8.v:75]
+INFO: [Synth 8-6155] done synthesizing module 'matrix_controller_8' (14#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/matrix_controller_8.v:7]
+INFO: [Synth 8-6157] synthesizing module 'pn_gen_9' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/pn_gen_9.v:11]
+	Parameter SEED bound to: 128'b10000100001100100011001101010010001110100110000100111001011001100100001000111011011000100010010101100010010110010010110001100010 
+INFO: [Synth 8-6155] done synthesizing module 'pn_gen_9' (15#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/pn_gen_9.v:11]
+INFO: [Synth 8-6157] synthesizing module 'mini_words_10' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/mini_words_10.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'mini_words_10' (16#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/mini_words_10.v:7]
+INFO: [Synth 8-226] default block is never used [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/beta_2.v:239]
+INFO: [Synth 8-6155] done synthesizing module 'beta_2' (17#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/beta_2.v:7]
+INFO: [Synth 8-6157] synthesizing module 'buttons_controller_3' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/buttons_controller_3.v:7]
+INFO: [Synth 8-6157] synthesizing module 'button_11' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_11.v:7]
+INFO: [Synth 8-6157] synthesizing module 'button_conditioner_17' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_conditioner_17.v:13]
+	Parameter CLK_FREQ bound to: 26'b10111110101111000010000000 
+	Parameter MIN_DELAY bound to: 5'b10100 
+	Parameter NUM_SYNC bound to: 2'b10 
+INFO: [Synth 8-6157] synthesizing module 'pipeline_23' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/pipeline_23.v:11]
+	Parameter DEPTH bound to: 2'b10 
+INFO: [Synth 8-6155] done synthesizing module 'pipeline_23' (18#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/pipeline_23.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'button_conditioner_17' (19#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_conditioner_17.v:13]
+INFO: [Synth 8-6157] synthesizing module 'edge_detector_18' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/edge_detector_18.v:12]
+	Parameter RISE bound to: 1'b1 
+	Parameter FALL bound to: 1'b0 
+INFO: [Synth 8-6155] done synthesizing module 'edge_detector_18' (20#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/edge_detector_18.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'button_11' (21#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_11.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'buttons_controller_3' (22#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/buttons_controller_3.v:7]
+INFO: [Synth 8-6157] synthesizing module 'panel_controller_4' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/panel_controller_4.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'panel_controller_4' (23#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/panel_controller_4.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'au_top_0' (24#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/au_top_0.v:7]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 999.340 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 999.340 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 999.340 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.162 . Memory (MB): peak = 999.340 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Bryce/Desktop/wordle/wordle4/work/constraint/alchitry.xdc]
+Finished Parsing XDC File [C:/Users/Bryce/Desktop/wordle/wordle4/work/constraint/alchitry.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Bryce/Desktop/wordle/wordle4/work/constraint/alchitry.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/au_top_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/au_top_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/Bryce/Desktop/wordle/wordle4/constraint/au.xdc]
+Finished Parsing XDC File [C:/Users/Bryce/Desktop/wordle/wordle4/constraint/au.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1011.355 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1011.355 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1011.355 ; gain = 12.016
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tftg256-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1011.355 ; gain = 12.016
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1011.355 ; gain = 12.016
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'M_game_fsm_q_reg' in module 'game_6'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+SET_OKA_MODE_TO_ZERO_game_fsm | 00000000000000000000000000000000000000000001 |                           000001
+SET_GUESS_CTR_TO_0_game_fsm | 00000000000000000000000000000000000000000010 |                           000101
+RESET_NUM_CORRECT_INPUTS_TO_0_game_fsm | 00000000000000000000000000000000000000000100 |                           011111
+RESET_TOP_DISPLAY_game_fsm | 00000000000000000000000000000000000000001000 |                           000010
+SET_INPUT_CTR_TO_0_game_fsm | 00000000000000000000000000000000000000010000 |                           000100
+RESET_BOTTOM_DISPLAY_game_fsm | 00000000000000000000000000000000000000100000 |                           000011
+           IDLE_game_fsm | 00000000000000000000000000000000000001000000 |                           000111
+CHECK_BUTTON_PRESSED_game_fsm | 00000000000000000000000000000000000010000000 |                           001100
+  SET_I_TO_ZERO_game_fsm | 00000000000000000000000000000000000100000000 |                           010011
+  SET_K_TO_ZERO_game_fsm | 00000000000000000000000000000000001000000000 |                           010100
+RETRIEVE_INPUT_I_game_fsm | 00000000000000000000000000000000010000000000 |                           001000
+RETRIEVE_CORRECT_K_game_fsm | 00000000000000000000000000000000100000000000 |                           001001
+COMPARE_INPUT_I_WITH_CORRECT_K_game_fsm | 00000000000000000000000000000001000000000000 |                           001010
+COMPARE_POSITIONS_K_AND_I_game_fsm | 00000000000000000000000000000010000000000000 |                           010101
+SET_TEMP_GUESS_G_LETTER_I_ADDR_GREEN_game_fsm | 00000000000000000000000000000100000000000000 |                           010111
+SET_TEMP_COLOURED_LETTER_GREEN_game_fsm | 00000000000000000000000000001000000000000000 |                           011100
+SET_GREEN_LETTER_game_fsm | 00000000000000000000000000010000000000000000 |                           011010
+INCREMENT_NUM_CORRECT_game_fsm | 00000000000000000000000000100000000000000000 |                           100001
+COMPARE_NUM_CORRECT_EQUALS_3_game_fsm | 00000000000000000000000001000000000000000000 |                           100010
+                  iSTATE | 00000000000000000000000010000000000000000000 |                           110001
+SET_TEMP_GUESS_G_LETTER_I_ADDR_YELLOW_game_fsm | 00000000000000000000000100000000000000000000 |                           011000
+SET_TEMP_COLOURED_LETTER_YELLOW_game_fsm | 00000000000000000000001000000000000000000000 |                           011101
+SET_YELLOW_LETTER_game_fsm | 00000000000000000000010000000000000000000000 |                           011011
+SET_TEMP_GUESS_G_LETTER_I_ADDR_WHITE_game_fsm | 00000000000000000000100000000000000000000000 |                           010110
+SET_TEMP_COLOURED_LETTER_WHITE_game_fsm | 00000000000000000001000000000000000000000000 |                           011110
+SET_WHITE_LETTER_game_fsm | 00000000000000000010000000000000000000000000 |                           011001
+COMPARE_K_EQUALS_3_AND_INCREMENT_game_fsm | 00000000000000000100000000000000000000000000 |                           001011
+COMPARE_I_EQUALS_3_AND_INCREMENT_game_fsm | 00000000000000001000000000000000000000000000 |                           100011
+SET_NUM_CORRECT_INPUTS_TO_0_game_fsm | 00000000000000010000000000000000000000000000 |                           000110
+SHOW_TOP_DISPLAY_game_fsm | 00000000000000100000000000000000000000000000 |                           100110
+SHOW_TOP_DISPLAY_2_game_fsm | 00000000000001000000000000000000000000000000 |                           100111
+SHOW_TOP_DISPLAY_3_game_fsm | 00000000000010000000000000000000000000000000 |                           101000
+SHOW_TOP_DISPLAY_4_game_fsm | 00000000000100000000000000000000000000000000 |                           101001
+INCREMENT_GUESS_CTR_game_fsm | 00000000001000000000000000000000000000000000 |                           100100
+COMPARE_GUESS_CTR_EQUALS_3_game_fsm | 00000000010000000000000000000000000000000000 |                           100101
+                 iSTATE0 | 00000000100000000000000000000000000000000000 |                           110000
+*
+CHECK_IF_FIRST_INPUT_game_fsm | 00000001000000000000000000000000000000000000 |                           000000
+SET_CORRECT_WORD_game_fsm | 00000010000000000000000000000000000000000000 |                           101010
+SET_CORRECT_LETTER_1_game_fsm | 00000100000000000000000000000000000000000000 |                           101100
+SET_CORRECT_LETTER_2_game_fsm | 00001000000000000000000000000000000000000000 |                           101101
+SET_CORRECT_LETTER_3_game_fsm | 00010000000000000000000000000000000000000000 |                           101110
+SET_CORRECT_LETTER_4_game_fsm | 00100000000000000000000000000000000000000000 |                           101111
+PRINT_LETTER_TO_MATRIX_game_fsm | 01000000000000000000000000000000000000000000 |                           010010
+INCREMENT_INPUT_CTR_game_fsm | 10000000000000000000000000000000000000000000 |                           010001
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'M_game_fsm_q_reg' using encoding 'one-hot' in module 'game_6'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1011.355 ; gain = 12.016
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   16 Bit       Adders := 1     
+	   2 Input   16 Bit       Adders := 7     
+	   2 Input    8 Bit       Adders := 2     
+	   2 Input    7 Bit       Adders := 8     
+	   2 Input    5 Bit       Adders := 16    
++---XORs : 
+	   2 Input     32 Bit         XORs := 2     
+	   4 Input     32 Bit         XORs := 1     
+	   2 Input     16 Bit         XORs := 2     
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 4     
+	               11 Bit    Registers := 1     
+	                7 Bit    Registers := 34    
+	                5 Bit    Registers := 26    
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 5     
+	                2 Bit    Registers := 12    
+	                1 Bit    Registers := 21    
++---Muxes : 
+	  43 Input   44 Bit        Muxes := 1     
+	   2 Input   44 Bit        Muxes := 10    
+	   3 Input   44 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 1     
+	   4 Input   24 Bit        Muxes := 8     
+	   2 Input   20 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 9     
+	   4 Input   16 Bit        Muxes := 4     
+	  43 Input   16 Bit        Muxes := 3     
+	   8 Input   16 Bit        Muxes := 2     
+	  43 Input   11 Bit        Muxes := 1     
+	   2 Input   11 Bit        Muxes := 1     
+	  38 Input   11 Bit        Muxes := 2     
+	  43 Input    9 Bit        Muxes := 1     
+	   2 Input    9 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 25    
+	   6 Input    7 Bit        Muxes := 8     
+	   4 Input    7 Bit        Muxes := 9     
+	  43 Input    7 Bit        Muxes := 8     
+	  43 Input    6 Bit        Muxes := 2     
+	   2 Input    6 Bit        Muxes := 2     
+	   2 Input    5 Bit        Muxes := 22    
+	   3 Input    5 Bit        Muxes := 2     
+	   5 Input    5 Bit        Muxes := 1     
+	  10 Input    5 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 7     
+	   4 Input    3 Bit        Muxes := 2     
+	  43 Input    3 Bit        Muxes := 4     
+	   2 Input    2 Bit        Muxes := 2     
+	   4 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 128   
+	   4 Input    1 Bit        Muxes := 9     
+	   6 Input    1 Bit        Muxes := 8     
+	   5 Input    1 Bit        Muxes := 2     
+	  43 Input    1 Bit        Muxes := 2     
+	  38 Input    1 Bit        Muxes := 37    
+	   9 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+DSP Report: Generating DSP adder/add0, operation Mode is: A*B.
+DSP Report: operator adder/add0 is absorbed into DSP adder/add0.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1011.355 ; gain = 12.016
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping	Report
++--------------+------------+---------------+----------------+
+|Module Name   | RTL Object | Depth x Width | Implemented As | 
++--------------+------------+---------------+----------------+
+|mini_words_10 | out        | 512x20        | LUT            | 
+|mini_words_10 | out        | 512x20        | LUT            | 
++--------------+------------+---------------+----------------+
+
+
+DSP: Preliminary Mapping	Report (see note below)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|adder_12    | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 1011.355 ; gain = 12.016
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+      : betaCPUi_19/game_alu/i_0/b[4]
+      : betaCPUi_19/game_alu/b[4]
+      : betaCPUi_19/inputAlu_b_inferred/M_game_alu_b[4]
+      : betaCPUi_19/inputAlu_b_inferred/out_b[4]
+      : betaCPUi_19/r/out_b[4]
+      : betaCPUi_19/r/i_6/out_b[4]
+      : betaCPUi_19/r/i_6/read_address_b[5]
+      : betaCPUi_19/r/read_address_b[5]
+      : betaCPUi_19/control_unit/regfile_rb[5]
+      : betaCPUi_19/control_unit/i_0/regfile_rb[5]
+      : betaCPUi_19/control_unit/i_0/alu_out[5]
+      : betaCPUi_19/control_unit/alu_out[5]
+      : betaCPUi_19/game_alu/alu[5]
+      : betaCPUi_19/game_alu/i_0/alu[5]
+      : betaCPUi_19/control_unit/i_0/alu_out[4]
+      : betaCPUi_19/control_unit/alu_out[4]
+      : betaCPUi_19/game_alu/alu[4]
+      : betaCPUi_19/game_alu/i_0/alu[4]
+      : betaCPUi_19/control_unit/i_0/alu_out[6]
+      : betaCPUi_19/control_unit/alu_out[6]
+      : betaCPUi_19/game_alu/alu[6]
+      : betaCPUi_19/game_alu/i_0/alu[6]
+      : betaCPUi_19/control_unit/i_0/alu_out[5]
+      : betaCPUi_19/control_unit/alu_out[5]
+      : betaCPUi_19/game_alu/alu[5]
+      : betaCPUi_19/game_alu/i_0/alu[5]
+      : betaCPUi_19/game_alu/i_0/b[0]
+      : betaCPUi_19/game_alu/b[0]
+      : betaCPUi_19/inputAlu_b_inferred/M_game_alu_b[0]
+      : betaCPUi_19/inputAlu_b_inferred/out_b[0]
+      : betaCPUi_19/r/out_b[0]
+      : betaCPUi_19/r/i_6/out_b[0]
+      : betaCPUi_19/r/i_6/read_address_b[3]
+      : betaCPUi_19/r/read_address_b[3]
+      : betaCPUi_19/control_unit/regfile_rb[3]
+      : betaCPUi_19/control_unit/i_0/regfile_rb[3]
+      : betaCPUi_19/control_unit/i_0/alu_out[3]
+      : betaCPUi_19/control_unit/alu_out[3]
+      : betaCPUi_19/game_alu/alu[3]
+      : betaCPUi_19/game_alu/i_0/alu[3]
+      : betaCPUi_19/r/i_6/read_address_b[5]
+      : betaCPUi_19/r/read_address_b[5]
+      : betaCPUi_19/control_unit/regfile_rb[5]
+      : betaCPUi_19/control_unit/i_0/regfile_rb[5]
+      : betaCPUi_19/control_unit/i_0/alu_out[3]
+      : betaCPUi_19/control_unit/alu_out[3]
+      : betaCPUi_19/game_alu/alu[3]
+      : betaCPUi_19/game_alu/i_0/alu[3]
+      : betaCPUi_19/r/i_6/read_address_b[6]
+      : betaCPUi_19/r/read_address_b[6]
+      : betaCPUi_19/control_unit/regfile_rb[6]
+      : betaCPUi_19/control_unit/i_0/regfile_rb[6]
+      : betaCPUi_19/r/i_6/read_address_b[6]
+      : betaCPUi_19/r/read_address_b[6]
+      : betaCPUi_19/control_unit/regfile_rb[6]
+      : betaCPUi_19/control_unit/i_0/regfile_rb[6]
+      : betaCPUi_19/game_alu/i_0/b[1]
+      : betaCPUi_19/game_alu/b[1]
+      : betaCPUi_19/inputAlu_b_inferred/M_game_alu_b[1]
+      : betaCPUi_19/inputAlu_b_inferred/out_b[1]
+      : betaCPUi_19/r/out_b[1]
+      : betaCPUi_19/r/i_6/out_b[1]
+      : betaCPUi_19/r/i_6/read_address_b[2]
+      : betaCPUi_19/r/read_address_b[2]
+      : betaCPUi_19/control_unit/regfile_rb[2]
+      : betaCPUi_19/control_unit/i_0/regfile_rb[2]
+      : betaCPUi_19/control_unit/i_0/alu_out[2]
+      : betaCPUi_19/control_unit/alu_out[2]
+      : betaCPUi_19/game_alu/alu[2]
+      : betaCPUi_19/game_alu/i_0/alu[2]
+      : betaCPUi_19/control_unit/i_0/alu_out[2]
+      : betaCPUi_19/control_unit/alu_out[2]
+      : betaCPUi_19/game_alu/alu[2]
+      : betaCPUi_19/game_alu/i_0/alu[2]
+      : betaCPUi_19/game_alu/i_0/b[5]
+      : betaCPUi_19/game_alu/b[5]
+      : betaCPUi_19/inputAlu_b_inferred/M_game_alu_b[5]
+      : betaCPUi_19/inputAlu_b_inferred/out_b[5]
+      : betaCPUi_19/r/out_b[5]
+      : betaCPUi_19/r/i_6/out_b[5]
+      : betaCPUi_19/r/i_6/read_address_b[4]
+      : betaCPUi_19/r/read_address_b[4]
+      : betaCPUi_19/control_unit/regfile_rb[4]
+      : betaCPUi_19/control_unit/i_0/regfile_rb[4]
+      : betaCPUi_19/control_unit/i_0/alu_out[0]
+      : betaCPUi_19/control_unit/alu_out[0]
+      : betaCPUi_19/game_alu/alu[0]
+      : betaCPUi_19/game_alu/i_0/alu[0]
+      : betaCPUi_19/game_alu/i_0/b[8]
+      : betaCPUi_19/game_alu/b[8]
+      : betaCPUi_19/inputAlu_b_inferred/M_game_alu_b[8]
+      : betaCPUi_19/inputAlu_b_inferred/out_b[8]
+      : betaCPUi_19/r/out_b[8]
+      : betaCPUi_19/r/i_6/out_b[8]
+      : i_0/\betaCPU/game_alu /i_0/b[4]
+      : i_0/\betaCPU/game_alu /b[4]
+      : i_0/\betaCPU/inputAlu_b_inferred /M_game_alu_b[4]
+      : i_0/\betaCPU/inputAlu_b_inferred /out_b[4]
+      : i_0/\betaCPU/r /out_b[4]
+      : i_0/\betaCPU/r /i_6/out_b[4]
+      : i_0/\betaCPU/r /i_6/read_address_b[4]
+      : i_0/\betaCPU/r /read_address_b[4]
+      : i_0/\betaCPU/control_unit /regfile_rb[4]
+      : i_0/\betaCPU/control_unit /i_0/regfile_rb[4]
+      : i_0/\betaCPU/control_unit /i_0/alu_out[4]
+      : i_0/\betaCPU/control_unit /alu_out[4]
+      : i_0/\betaCPU/game_alu /alu[4]
+      : i_0/\betaCPU/game_alu /i_0/alu[4]
+      : i_0/\betaCPU/control_unit /i_0/alu_out[4]
+      : i_0/\betaCPU/control_unit /alu_out[4]
+      : i_0/\betaCPU/game_alu /alu[4]
+      : i_0/\betaCPU/game_alu /i_0/alu[4]
+      : i_0/\betaCPU/game_alu /i_0/b[0]
+      : i_0/\betaCPU/game_alu /b[0]
+      : i_0/\betaCPU/inputAlu_b_inferred /M_game_alu_b[0]
+      : i_0/\betaCPU/inputAlu_b_inferred /out_b[0]
+      : i_0/\betaCPU/r /out_b[0]
+      : i_0/\betaCPU/r /i_6/out_b[0]
+      : i_0/\betaCPU/r /i_6/read_address_b[6]
+      : i_0/\betaCPU/r /read_address_b[6]
+      : i_0/\betaCPU/control_unit /regfile_rb[6]
+      : i_0/\betaCPU/control_unit /i_0/regfile_rb[6]
+      : i_0/\betaCPU/control_unit /i_0/alu_out[6]
+      : i_0/\betaCPU/control_unit /alu_out[6]
+      : i_0/\betaCPU/game_alu /alu[6]
+      : i_0/\betaCPU/game_alu /i_0/alu[6]
+      : i_0/\betaCPU/control_unit /i_0/alu_out[3]
+      : i_0/\betaCPU/control_unit /alu_out[3]
+      : i_0/\betaCPU/game_alu /alu[3]
+      : i_0/\betaCPU/game_alu /i_0/alu[3]
+      : i_0/\betaCPU/control_unit /i_0/alu_out[5]
+      : i_0/\betaCPU/control_unit /alu_out[5]
+      : i_0/\betaCPU/game_alu /alu[5]
+      : i_0/\betaCPU/game_alu /i_0/alu[5]
+      : i_0/\betaCPU/control_unit /i_0/alu_out[6]
+      : i_0/\betaCPU/control_unit /alu_out[6]
+      : i_0/\betaCPU/game_alu /alu[6]
+      : i_0/\betaCPU/game_alu /i_0/alu[6]
+      : i_0/\betaCPU/r /i_6/read_address_b[6]
+      : i_0/\betaCPU/r /read_address_b[6]
+      : i_0/\betaCPU/control_unit /regfile_rb[6]
+      : i_0/\betaCPU/control_unit /i_0/regfile_rb[6]
+      : i_0/\betaCPU/game_alu /i_0/b[1]
+      : i_0/\betaCPU/game_alu /b[1]
+      : i_0/\betaCPU/inputAlu_b_inferred /M_game_alu_b[1]
+      : i_0/\betaCPU/inputAlu_b_inferred /out_b[1]
+      : i_0/\betaCPU/r /out_b[1]
+      : i_0/\betaCPU/r /i_6/out_b[1]
+      : i_0/\betaCPU/r /i_6/read_address_b[2]
+      : i_0/\betaCPU/r /read_address_b[2]
+      : i_0/\betaCPU/control_unit /regfile_rb[2]
+      : i_0/\betaCPU/control_unit /i_0/regfile_rb[2]
+      : i_0/\betaCPU/control_unit /i_0/alu_out[2]
+      : i_0/\betaCPU/control_unit /alu_out[2]
+      : i_0/\betaCPU/game_alu /alu[2]
+      : i_0/\betaCPU/game_alu /i_0/alu[2]
+      : i_0/\betaCPU/control_unit /i_0/alu_out[2]
+      : i_0/\betaCPU/control_unit /alu_out[2]
+      : i_0/\betaCPU/game_alu /alu[2]
+      : i_0/\betaCPU/game_alu /i_0/alu[2]
+      : i_0/\betaCPU/game_alu /i_0/b[5]
+      : i_0/\betaCPU/game_alu /b[5]
+      : i_0/\betaCPU/inputAlu_b_inferred /M_game_alu_b[5]
+      : i_0/\betaCPU/inputAlu_b_inferred /out_b[5]
+      : i_0/\betaCPU/r /out_b[5]
+      : i_0/\betaCPU/r /i_6/out_b[5]
+      : i_0/\betaCPU/r /i_6/read_address_b[3]
+      : i_0/\betaCPU/r /read_address_b[3]
+      : i_0/\betaCPU/control_unit /regfile_rb[3]
+      : i_0/\betaCPU/control_unit /i_0/regfile_rb[3]
+      : i_0/\betaCPU/control_unit /i_0/alu_out[0]
+      : i_0/\betaCPU/control_unit /alu_out[0]
+      : i_0/\betaCPU/game_alu /alu[0]
+      : i_0/\betaCPU/game_alu /i_0/alu[0]
+      : i_0/\betaCPU/game_alu /i_0/b[8]
+      : i_0/\betaCPU/game_alu /b[8]
+      : i_0/\betaCPU/inputAlu_b_inferred /M_game_alu_b[8]
+      : i_0/\betaCPU/inputAlu_b_inferred /out_b[8]
+      : i_0/\betaCPU/r /out_b[8]
+      : i_0/\betaCPU/r /i_6/out_b[8]
+      : i_0/\betaCPU/r /i_6/read_address_b[5]
+      : i_0/\betaCPU/r /read_address_b[5]
+      : i_0/\betaCPU/control_unit /regfile_rb[5]
+      : i_0/\betaCPU/control_unit /i_0/regfile_rb[5]
+      : i_0/\betaCPU/game_alu /i_0/b[8]
+      : i_0/\betaCPU/game_alu /b[8]
+      : i_0/\betaCPU/inputAlu_b_inferred /M_game_alu_b[8]
+      : i_0/\betaCPU/inputAlu_b_inferred /out_b[8]
+      : i_0/\betaCPU/r /out_b[8]
+      : i_0/\betaCPU/r /i_6/out_b[8]
+      : i_0/\betaCPU/r /i_6/read_address_b[5]
+      : i_0/\betaCPU/r /read_address_b[5]
+      : i_0/\betaCPU/control_unit /regfile_rb[5]
+      : i_0/\betaCPU/control_unit /i_0/regfile_rb[5]
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 1036.398 ; gain = 37.059
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1711/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1200/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1199/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1200/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1199/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1706/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1196/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1193/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1190/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1184/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1175/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1167/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1166/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1129/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1125/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1124/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1121/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1120/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1117/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1116/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1198/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1195/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1194/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1192/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1191/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1189/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1188/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1187/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1186/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1183/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1182/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1181/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1177/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1174/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1173/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1169/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1165/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1163/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1128/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1127/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1123/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1119/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1106/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_629 /O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_628 /O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_628 /O[1]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_628 /O[0]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_756/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_629 /O[1]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_628 /O[2]'
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 1044.562 ; gain = 45.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 1055.836 ; gain = 56.496
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 1055.836 ; gain = 56.496
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 1055.836 ; gain = 56.496
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 1055.836 ; gain = 56.496
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 1055.836 ; gain = 56.496
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 1055.836 ; gain = 56.496
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |   108|
+|3     |LUT1   |    68|
+|4     |LUT2   |    88|
+|5     |LUT3   |   104|
+|6     |LUT4   |   143|
+|7     |LUT5   |   319|
+|8     |LUT6   |   744|
+|9     |MUXF7  |   127|
+|10    |MUXF8  |     5|
+|11    |FDRE   |   854|
+|12    |FDSE   |    66|
+|13    |IBUF   |    14|
+|14    |OBUF   |    33|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 1055.836 ; gain = 56.496
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 50 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:45 ; elapsed = 00:00:52 . Memory (MB): peak = 1055.836 ; gain = 44.480
+Synthesis Optimization Complete : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 1055.836 ; gain = 56.496
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1055.836 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 240 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1055.836 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+78 Infos, 50 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:01 ; elapsed = 00:01:02 . Memory (MB): peak = 1055.836 ; gain = 56.496
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/synth_1/au_top_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file au_top_0_utilization_synth.rpt -pb au_top_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Apr 16 19:57:33 2022...
+[Sat Apr 16 19:57:37 2022] synth_1 finished
+wait_on_run: Time (s): cpu = 00:00:00 ; elapsed = 00:01:10 . Memory (MB): peak = 999.543 ; gain = 0.000
+# launch_runs impl_1 -to_step write_bitstream -jobs 12
+[Sat Apr 16 19:57:37 2022] Launched impl_1...
+Run output will be captured here: C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/runme.log
+# wait_on_run impl_1
+[Sat Apr 16 19:57:37 2022] Waiting for impl_1 to finish...
+
+
+*** Running vivado
+    with args -log au_top_0.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source au_top_0.tcl -notrace
+
+
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source au_top_0.tcl -notrace
+Command: link_design -top au_top_0 -part xc7a35tftg256-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7a35tftg256-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 1001.055 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 240 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2020.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/Bryce/Desktop/wordle/wordle4/work/constraint/alchitry.xdc]
+Finished Parsing XDC File [C:/Users/Bryce/Desktop/wordle/wordle4/work/constraint/alchitry.xdc]
+Parsing XDC File [C:/Users/Bryce/Desktop/wordle/wordle4/constraint/au.xdc]
+Finished Parsing XDC File [C:/Users/Bryce/Desktop/wordle/wordle4/constraint/au.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1001.055 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+7 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1001.055 ; gain = 0.000
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.917 . Memory (MB): peak = 1001.055 ; gain = 0.000
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: ad30e28f
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1246.887 ; gain = 245.832
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: cdf42f29
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.095 . Memory (MB): peak = 1454.715 ; gain = 0.000
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 1 cells
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 2 Constant propagation | Checksum: d42e480e
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.114 . Memory (MB): peak = 1454.715 ; gain = 0.000
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: f1571e68
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.139 . Memory (MB): peak = 1454.715 ; gain = 0.000
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
+
+Phase 4 BUFG optimization
+Phase 4 BUFG optimization | Checksum: f1571e68
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.164 . Memory (MB): peak = 1454.715 ; gain = 0.000
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 5 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 5 Shift Register Optimization | Checksum: f1571e68
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.168 . Memory (MB): peak = 1454.715 ; gain = 0.000
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 6 Post Processing Netlist
+Phase 6 Post Processing Netlist | Checksum: f1571e68
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.176 . Memory (MB): peak = 1454.715 ; gain = 0.000
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |               1  |                                              0  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |               0  |               0  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1454.715 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 19b6187fc
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.233 . Memory (MB): peak = 1454.715 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: 19b6187fc
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1454.715 ; gain = 0.000
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 19b6187fc
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1454.715 ; gain = 0.000
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1454.715 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 19b6187fc
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1454.715 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+24 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1454.715 ; gain = 453.660
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 1454.715 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/au_top_0_opt.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file au_top_0_drc_opted.rpt -pb au_top_0_drc_opted.pb -rpx au_top_0_drc_opted.rpx
+Command: report_drc -file au_top_0_drc_opted.rpt -pb au_top_0_drc_opted.pb -rpx au_top_0_drc_opted.rpx
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/au_top_0_drc_opted.rpt.
+report_drc completed successfully
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1502.836 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: edd4775e
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1502.836 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1502.836 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 11599b464
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.311 . Memory (MB): peak = 1502.836 ; gain = 0.000
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 160fe2aa2
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.721 . Memory (MB): peak = 1502.836 ; gain = 0.000
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 160fe2aa2
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.724 . Memory (MB): peak = 1502.836 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 160fe2aa2
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.730 . Memory (MB): peak = 1502.836 ; gain = 0.000
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 13b0ca54f
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.958 . Memory (MB): peak = 1502.836 ; gain = 0.000
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 161bde70d
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1502.836 ; gain = 0.000
+
+Phase 2.3 Global Placement Core
+
+Phase 2.3.1 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 18 LUTNM shape to break, 28 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 4, two critical 14, total 18, new lutff created 0
+INFO: [Physopt 32-775] End 1 Pass. Optimized 26 nets or cells. Created 18 new cells, deleted 8 existing cells and moved 0 existing cell
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1123] No candidate cells found for Shift Register to Pipeline optimization
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1502.836 ; gain = 0.000
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |           18  |              8  |                    26  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |           18  |              8  |                    26  |           0  |           8  |  00:00:00  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.3.1 Physical Synthesis In Placer | Checksum: b98ed8ed
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:04 . Memory (MB): peak = 1502.836 ; gain = 0.000
+Phase 2.3 Global Placement Core | Checksum: 108947938
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:04 . Memory (MB): peak = 1502.836 ; gain = 0.000
+Phase 2 Global Placement | Checksum: 108947938
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:04 . Memory (MB): peak = 1502.836 ; gain = 0.000
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: d46c8103
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 1502.836 ; gain = 0.000
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 107806fd2
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 1502.836 ; gain = 0.000
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: faf50e45
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 1502.836 ; gain = 0.000
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 137f57c53
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 1502.836 ; gain = 0.000
+
+Phase 3.5 Fast Optimization
+Phase 3.5 Fast Optimization | Checksum: bdc26555
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:09 . Memory (MB): peak = 1502.836 ; gain = 0.000
+
+Phase 3.6 Small Shape Detail Placement
+Phase 3.6 Small Shape Detail Placement | Checksum: bab5496c
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:10 . Memory (MB): peak = 1502.836 ; gain = 0.000
+
+Phase 3.7 Re-assign LUT pins
+Phase 3.7 Re-assign LUT pins | Checksum: 13a4bde68
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:10 . Memory (MB): peak = 1502.836 ; gain = 0.000
+
+Phase 3.8 Pipeline Register Optimization
+Phase 3.8 Pipeline Register Optimization | Checksum: d4877e5b
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:10 . Memory (MB): peak = 1502.836 ; gain = 0.000
+
+Phase 3.9 Fast Optimization
+Phase 3.9 Fast Optimization | Checksum: 10d266c7a
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:18 . Memory (MB): peak = 1502.836 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 10d266c7a
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:18 . Memory (MB): peak = 1502.836 ; gain = 0.000
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 13d473860
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-31.602 | TNS=-12123.221 |
+Phase 1 Physical Synthesis Initialization | Checksum: 14b02cc31
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.084 . Memory (MB): peak = 1502.836 ; gain = 0.000
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
+Ending Physical Synthesis Task | Checksum: 1500f7fb3
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.090 . Memory (MB): peak = 1502.836 ; gain = 0.000
+Phase 4.1.1.1 BUFG Insertion | Checksum: 13d473860
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:19 . Memory (MB): peak = 1502.836 ; gain = 0.000
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-26.811. For the most accurate timing information please run report_timing.
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:35 . Memory (MB): peak = 1502.836 ; gain = 0.000
+Phase 4.1 Post Commit Optimization | Checksum: 3deeef44
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:35 . Memory (MB): peak = 1502.836 ; gain = 0.000
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 3deeef44
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:35 . Memory (MB): peak = 1502.836 ; gain = 0.000
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ____________________________________________________
+|           | Global Congestion | Short Congestion  |
+| Direction | Region Size       | Region Size       |
+|___________|___________________|___________________|
+|      North|                1x1|                2x2|
+|___________|___________________|___________________|
+|      South|                1x1|                4x4|
+|___________|___________________|___________________|
+|       East|                1x1|                4x4|
+|___________|___________________|___________________|
+|       West|                1x1|                1x1|
+|___________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 3deeef44
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:35 . Memory (MB): peak = 1502.836 ; gain = 0.000
+Phase 4.3 Placer Reporting | Checksum: 3deeef44
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:35 . Memory (MB): peak = 1502.836 ; gain = 0.000
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1502.836 ; gain = 0.000
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:35 . Memory (MB): peak = 1502.836 ; gain = 0.000
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: b7ae5782
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:35 . Memory (MB): peak = 1502.836 ; gain = 0.000
+Ending Placer Task | Checksum: 8a95a08a
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:35 . Memory (MB): peak = 1502.836 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+66 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:00:41 ; elapsed = 00:00:36 . Memory (MB): peak = 1502.836 ; gain = 1.023
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.233 . Memory (MB): peak = 1502.836 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/au_top_0_placed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_io -file au_top_0_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 1502.836 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_utilization -file au_top_0_utilization_placed.rpt -pb au_top_0_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file au_top_0_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1502.836 ; gain = 0.000
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1502.836 ; gain = 0.000
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-27.007 | TNS=-10364.362 |
+Phase 1 Physical Synthesis Initialization | Checksum: 22fa5b784
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.211 . Memory (MB): peak = 1502.836 ; gain = 0.000
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-27.007 | TNS=-10364.362 |
+
+Phase 2 DSP Register Optimization
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 2 DSP Register Optimization | Checksum: 22fa5b784
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.222 . Memory (MB): peak = 1502.836 ; gain = 0.000
+
+Phase 3 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-27.007 | TNS=-10364.362 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_word_index_q_reg[10]_1[8].  Re-placed instance betaCPU/r/M_word_index_q_reg[10]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_word_index_q_reg[10]_1[8]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-27.002 | TNS=-10364.827 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_word_index_q[4].  Re-placed instance betaCPU/r/M_word_index_q_reg[4]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_word_index_q[4]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-27.002 | TNS=-10364.864 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_word_index_q_reg[10]_1[5].  Re-placed instance betaCPU/r/M_word_index_q_reg[7]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_word_index_q_reg[10]_1[5]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.997 | TNS=-10365.326 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_word_index_q_reg[10]_1[7].  Re-placed instance betaCPU/r/M_word_index_q_reg[9]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_word_index_q_reg[10]_1[7]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.989 | TNS=-10365.933 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[6]_0[2].  Re-placed instance betaCPU/r/M_temp_coloured_letter_q_reg[2]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[6]_0[2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.989 | TNS=-10365.527 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_temp_coloured_letter_q[4].  Re-placed instance betaCPU/r/M_temp_coloured_letter_q_reg[4]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_temp_coloured_letter_q[4]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.989 | TNS=-10365.399 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[6]_0[4].  Re-placed instance betaCPU/r/M_temp_coloured_letter_q_reg[5]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[6]_0[4]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.987 | TNS=-10365.366 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_letter_3_q_reg[3]_0[0].  Re-placed instance betaCPU/r/M_input_letter_3_q_reg[0]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_input_letter_3_q_reg[3]_0[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.987 | TNS=-10365.320 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_letter_3_q_reg[3]_0[1].  Re-placed instance betaCPU/r/M_input_letter_3_q_reg[1]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_input_letter_3_q_reg[3]_0[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.987 | TNS=-10365.286 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_letter_3_q_reg[3]_0[2].  Re-placed instance betaCPU/r/M_input_letter_3_q_reg[2]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_input_letter_3_q_reg[3]_0[2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.987 | TNS=-10365.264 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_letter_3_q_reg[3]_0[3].  Re-placed instance betaCPU/r/M_input_letter_3_q_reg[3]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_input_letter_3_q_reg[3]_0[3]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.987 | TNS=-10365.101 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_letter_3_q[4].  Re-placed instance betaCPU/r/M_input_letter_3_q_reg[4]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_input_letter_3_q[4]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.972 | TNS=-10365.253 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_letter_4_q_reg[2]_0[0].  Re-placed instance betaCPU/r/M_input_letter_4_q_reg[0]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_input_letter_4_q_reg[2]_0[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.971 | TNS=-10364.978 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_letter_4_q_reg[2]_0[1].  Re-placed instance betaCPU/r/M_input_letter_4_q_reg[1]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_input_letter_4_q_reg[2]_0[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.971 | TNS=-10364.815 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_letter_4_q_reg[2]_0[2].  Re-placed instance betaCPU/r/M_input_letter_4_q_reg[2]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_input_letter_4_q_reg[2]_0[2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.971 | TNS=-10364.519 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_letter_4_q[3].  Re-placed instance betaCPU/r/M_input_letter_4_q_reg[3]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_input_letter_4_q[3]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.971 | TNS=-10364.379 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_letter_4_q[4].  Re-placed instance betaCPU/r/M_input_letter_4_q_reg[4]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_input_letter_4_q[4]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.899 | TNS=-10364.112 |
+INFO: [Physopt 32-662] Processed net betaCPU/r/M_word_index_q_reg[10]_1[8].  Did not re-place instance betaCPU/r/M_word_index_q_reg[10]
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_word_index_q_reg[10]_1[8]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net keyboard_controller/l_/button_cond/M_ctr_q_reg[9].  Did not re-place instance keyboard_controller/l_/button_cond/M_ctr_q_reg[9]
+INFO: [Physopt 32-702] Processed net keyboard_controller/l_/button_cond/M_ctr_q_reg[9]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_guess_1_letter_3_q[6]_i_2_n_0.  Did not re-place instance betaCPU/control_unit/M_guess_1_letter_3_q[6]_i_2
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_guess_1_letter_3_q[6]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_13_n_0.  Did not re-place instance betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_13
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_13_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_9_n_0.  Did not re-place instance betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_9
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_9_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/game_alu/M_stage_q_reg[3]_0.  Did not re-place instance betaCPU/game_alu/FSM_onehot_M_game_fsm_q[28]_i_2
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_stage_q_reg[3]_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[28]_i_3_n_0.  Did not re-place instance betaCPU/game_alu/FSM_onehot_M_game_fsm_q[28]_i_3
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[28]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[28]_i_10_n_0.  Did not re-place instance betaCPU/game_alu/FSM_onehot_M_game_fsm_q[28]_i_10
+INFO: [Physopt 32-735] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[28]_i_10_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.835 | TNS=-10340.625 |
+INFO: [Physopt 32-662] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[28]_i_10_n_0.  Did not re-place instance betaCPU/game_alu/FSM_onehot_M_game_fsm_q[28]_i_10
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[28]_i_10_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q_reg[28]_i_9_n_4. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_w_q_reg[5][1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q[28]_i_39_n_0.  Did not re-place instance betaCPU/control_unit/FSM_onehot_M_game_fsm_q[28]_i_39
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q[28]_i_39_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[3].  Re-placed instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[5]_i_1
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[3]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.630 | TNS=-10263.325 |
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[28]_i_16_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_control_unit_regfile_out_b[0].  Re-placed instance betaCPU/r/M_matrix4_letter_index_dff_q[2]_i_1
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_control_unit_regfile_out_b[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.628 | TNS=-10260.526 |
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_word_index_q[10]_i_19_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[7].  Did not re-place instance betaCPU/control_unit/FSM_onehot_M_game_fsm_q[42]_i_5
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[7]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_stage_q_reg[3]_3.  Re-placed instance betaCPU/control_unit/FSM_onehot_M_game_fsm_q[37]_i_3
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_stage_q_reg[3]_3. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.577 | TNS=-10241.308 |
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[3].  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[5]_i_1
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[3]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.376 | TNS=-10165.571 |
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_stage_q_reg[3]_3.  Did not re-place instance betaCPU/control_unit/FSM_onehot_M_game_fsm_q[37]_i_3
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_3. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_control_unit_regfile_rb[0].  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_8
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_control_unit_regfile_rb[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_18_n_0.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_18
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_18_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_33_n_0.  Re-placed instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_33
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_33_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.083 | TNS=-10052.767 |
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_33_n_0.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_33
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_33_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_w_q_reg[0][0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_w_q_reg[1][1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q[28]_i_29_n_0.  Did not re-place instance betaCPU/control_unit/FSM_onehot_M_game_fsm_q[28]_i_29
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q[28]_i_29_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/r/M_guess_1_letter_1_q[3]_i_20_0[0].  Did not re-place instance betaCPU/r/M_matrix4_letter_index_dff_q[1]_i_1
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_1_letter_1_q[3]_i_20_0[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_matrix4_letter_index_dff_q_reg[1]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_matrix4_letter_index_dff_q[1]_i_6_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/r/M_matrix4_letter_index_dff_q[1]_i_14_n_0.  Did not re-place instance betaCPU/r/M_matrix4_letter_index_dff_q[1]_i_14
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_matrix4_letter_index_dff_q[1]_i_14_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.037 | TNS=-10034.689 |
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_matrix4_letter_index_dff_q_reg[1]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_matrix4_letter_index_dff_q[1]_i_8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/r/M_matrix4_letter_index_dff_q[1]_i_15_n_0.  Did not re-place instance betaCPU/r/M_matrix4_letter_index_dff_q[1]_i_15
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_matrix4_letter_index_dff_q[1]_i_15_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.013 | TNS=-10025.258 |
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_58. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[1]_i_12_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/r/M_input_letter_1_q_reg[1]_0.  Did not re-place instance betaCPU/r/M_matrix4_letter_index_dff_q[1]_i_19
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_input_letter_1_q_reg[1]_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-26.002 | TNS=-10020.934 |
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_matrix4_letter_index_dff_q_reg[1]_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_matrix4_letter_index_dff_q[1]_i_10_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/r/M_matrix4_letter_index_dff_q[1]_i_17_n_0.  Did not re-place instance betaCPU/r/M_matrix4_letter_index_dff_q[1]_i_17
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_matrix4_letter_index_dff_q[1]_i_17_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.945 | TNS=-9998.534 |
+INFO: [Physopt 32-662] Processed net betaCPU/r/M_matrix4_letter_index_dff_q[1]_i_14_n_0.  Did not re-place instance betaCPU/r/M_matrix4_letter_index_dff_q[1]_i_14
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_matrix4_letter_index_dff_q[1]_i_14_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_stage_q_reg[3]_12.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_26
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_12. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_41_n_0.  Re-placed instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_41
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_41_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.776 | TNS=-9932.117 |
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_41_n_0.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_41
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_41_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.304 | TNS=-9746.620 |
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_41_n_0.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_41
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_41_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_w_q_reg[7][0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_w_q_reg[5][0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q[28]_i_40_n_0.  Did not re-place instance betaCPU/control_unit/FSM_onehot_M_game_fsm_q[28]_i_40
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q[28]_i_40_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[2].  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[4]_i_1
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_stage_q_reg[3]_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net reset_cond/M_stage_q_reg[3]_2.  Did not re-place instance reset_cond/M_matrix4_letter_index_dff_q[6]_i_10
+INFO: [Physopt 32-702] Processed net reset_cond/M_stage_q_reg[3]_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[13]_0.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_23
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[13]_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_38_n_0.  Re-placed instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_38
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_38_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-25.087 | TNS=-9659.603 |
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_38_n_0.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_38
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_38_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.743 | TNS=-9521.659 |
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_38_n_0.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_38
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_38_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_w_q_reg[0][1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_w_q_reg[1][0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[0].  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[0]_i_1
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[0]_i_4_n_0.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[0]_i_4
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[0]_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[0]_i_15_n_0.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[0]_i_15
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[0]_i_15_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[0]_i_23_n_0.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[0]_i_23
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[0]_i_23_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_stage_q_reg[3]_8.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_28
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_8. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_stage_q_reg[3]_9.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_25
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_9. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_40_n_0.  Re-placed instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_40
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_40_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.634 | TNS=-9477.077 |
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_40_n_0.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_40
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_40_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.464 | TNS=-9407.548 |
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_40_n_0.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_40
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_40_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_w_q_reg[7][2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[28]_i_35_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[4].  Re-placed instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_3
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[4]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.436 | TNS=-9395.872 |
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[4].  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_3
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[4]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[32]_0.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_6
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[32]_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_15_n_0.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_15
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_15_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net betaCPU/game_alu/M_game_alu_alu[0].  Re-placed instance betaCPU/game_alu/FSM_onehot_M_game_fsm_q[28]_i_7
+INFO: [Physopt 32-735] Processed net betaCPU/game_alu/M_game_alu_alu[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.426 | TNS=-9391.701 |
+INFO: [Physopt 32-662] Processed net betaCPU/game_alu/M_game_alu_alu[0].  Did not re-place instance betaCPU/game_alu/FSM_onehot_M_game_fsm_q[28]_i_7
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_game_alu_alu[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_w_q_reg[0][2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/M_game_alu_a[0].  Did not re-place instance betaCPU/FSM_onehot_M_game_fsm_q[28]_i_11
+INFO: [Physopt 32-702] Processed net betaCPU/M_game_alu_a[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_control_unit_regfile_out_a[0].  Did not re-place instance betaCPU/control_unit/M_matrix1_letter_index_dff_q[6]_i_6
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_control_unit_regfile_out_a[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_matrix1_letter_index_dff_q_reg[6]_i_10_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_matrix1_letter_index_dff_q[6]_i_28_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_control_unit_regfile_ra[1].  Did not re-place instance betaCPU/control_unit/M_matrix1_letter_index_dff_q[6]_i_62
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_control_unit_regfile_ra[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_stage_q_reg[3]_2.  Did not re-place instance betaCPU/control_unit/M_matrix1_letter_index_dff_q[6]_i_26
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net keyboard_controller/o_/button_cond/M_last_q_reg_0.  Did not re-place instance keyboard_controller/o_/button_cond/FSM_onehot_M_game_fsm_q[36]_i_4
+INFO: [Physopt 32-702] Processed net keyboard_controller/o_/button_cond/M_last_q_reg_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net keyboard_controller/l_/button_cond/M_ctr_q_reg[15]_0.  Did not re-place instance keyboard_controller/l_/button_cond/M_ctr_q[0]_i_2__2
+INFO: [Physopt 32-702] Processed net keyboard_controller/l_/button_cond/M_ctr_q_reg[15]_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net keyboard_controller/l_/button_cond/M_ctr_q[0]_i_4__2_n_0.  Re-placed instance keyboard_controller/l_/button_cond/M_ctr_q[0]_i_4__2
+INFO: [Physopt 32-735] Processed net keyboard_controller/l_/button_cond/M_ctr_q[0]_i_4__2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.416 | TNS=-9387.203 |
+INFO: [Physopt 32-662] Processed net keyboard_controller/l_/button_cond/M_ctr_q[0]_i_4__2_n_0.  Did not re-place instance keyboard_controller/l_/button_cond/M_ctr_q[0]_i_4__2
+INFO: [Physopt 32-702] Processed net keyboard_controller/l_/button_cond/M_ctr_q[0]_i_4__2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_stage_q_reg[3]_32[0].  Did not re-place instance betaCPU/control_unit/M_word_index_q[10]_i_1
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_32[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net clk_IBUF. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net clk. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.416 | TNS=-9387.203 |
+Phase 3 Critical Path Optimization | Checksum: 22fa5b784
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 1502.836 ; gain = 0.000
+
+Phase 4 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.416 | TNS=-9387.203 |
+INFO: [Physopt 32-662] Processed net betaCPU/r/M_word_index_q_reg[10]_1[8].  Did not re-place instance betaCPU/r/M_word_index_q_reg[10]
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_word_index_q_reg[10]_1[8]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net keyboard_controller/l_/button_cond/M_ctr_q_reg[9].  Re-placed instance keyboard_controller/l_/button_cond/M_ctr_q_reg[9]
+INFO: [Physopt 32-735] Processed net keyboard_controller/l_/button_cond/M_ctr_q_reg[9]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.414 | TNS=-9386.092 |
+INFO: [Physopt 32-663] Processed net keyboard_controller/t_/button_cond/M_ctr_q_reg[1].  Re-placed instance keyboard_controller/t_/button_cond/M_ctr_q_reg[1]
+INFO: [Physopt 32-735] Processed net keyboard_controller/t_/button_cond/M_ctr_q_reg[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.412 | TNS=-9385.161 |
+INFO: [Physopt 32-663] Processed net keyboard_controller/t_/button_cond/M_ctr_q_reg[5].  Re-placed instance keyboard_controller/t_/button_cond/M_ctr_q_reg[5]
+INFO: [Physopt 32-735] Processed net keyboard_controller/t_/button_cond/M_ctr_q_reg[5]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.409 | TNS=-9383.360 |
+INFO: [Physopt 32-662] Processed net keyboard_controller/e_/button_cond/M_ctr_q_reg[12].  Did not re-place instance keyboard_controller/e_/button_cond/M_ctr_q_reg[12]
+INFO: [Physopt 32-572] Net keyboard_controller/e_/button_cond/M_ctr_q_reg[12] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-702] Processed net keyboard_controller/e_/button_cond/M_ctr_q_reg[12]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-572] Net betaCPU/control_unit/M_guess_1_letter_3_q[6]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_guess_1_letter_3_q[6]_i_2_n_0.  Did not re-place instance betaCPU/control_unit/M_guess_1_letter_3_q[6]_i_2
+INFO: [Physopt 32-710] Processed net betaCPU/control_unit/M_stage_q_reg[3]_32[0]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_word_index_q[10]_i_1_comp.
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_1_letter_3_q[6]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.408 | TNS=-9380.740 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_3_letter_4_q_reg[6]_0[3].  Re-placed instance betaCPU/r/M_guess_3_letter_4_q_reg[3]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_3_letter_4_q_reg[6]_0[3]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.408 | TNS=-9380.840 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_3_letter_4_q_reg[6]_0[4].  Re-placed instance betaCPU/r/M_guess_3_letter_4_q_reg[4]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_3_letter_4_q_reg[6]_0[4]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.408 | TNS=-9381.172 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_3_letter_4_q_reg[6]_0[5].  Re-placed instance betaCPU/r/M_guess_3_letter_4_q_reg[5]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_3_letter_4_q_reg[6]_0[5]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.395 | TNS=-9380.889 |
+INFO: [Physopt 32-662] Processed net betaCPU/r/M_guess_3_letter_4_q_reg[6]_0[5].  Did not re-place instance betaCPU/r/M_guess_3_letter_4_q_reg[5]
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_3_letter_4_q_reg[6]_0[5]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_guess_1_letter_3_q[6]_i_2_n_0.  Did not re-place instance betaCPU/control_unit/M_guess_1_letter_3_q[6]_i_2
+INFO: [Physopt 32-710] Processed net betaCPU/control_unit/M_stage_q_reg[3]_42[0]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_guess_3_letter_4_q[6]_i_1_comp.
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_1_letter_3_q[6]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.384 | TNS=-9379.104 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[6]_0[0].  Re-placed instance betaCPU/r/M_temp_coloured_letter_q_reg[0]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[6]_0[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.384 | TNS=-9379.103 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[6]_0[5].  Re-placed instance betaCPU/r/M_temp_coloured_letter_q_reg[6]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[6]_0[5]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.379 | TNS=-9379.281 |
+INFO: [Physopt 32-662] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[6]_0[0].  Did not re-place instance betaCPU/r/M_temp_coloured_letter_q_reg[0]
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_temp_coloured_letter_q_reg[6]_0[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_guess_1_letter_3_q[6]_i_2_n_0.  Did not re-place instance betaCPU/control_unit/M_guess_1_letter_3_q[6]_i_2
+INFO: [Physopt 32-710] Processed net betaCPU/control_unit/M_stage_q_reg[3]_33[0]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_temp_coloured_letter_q[6]_i_1_comp.
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_1_letter_3_q[6]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.371 | TNS=-9377.743 |
+INFO: [Physopt 32-662] Processed net betaCPU/r/M_guess_1_letter_3_q_reg[6]_0[0].  Did not re-place instance betaCPU/r/M_guess_1_letter_3_q_reg[0]
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_1_letter_3_q_reg[6]_0[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_guess_1_letter_3_q[6]_i_2_n_0.  Did not re-place instance betaCPU/control_unit/M_guess_1_letter_3_q[6]_i_2
+INFO: [Physopt 32-710] Processed net betaCPU/control_unit/M_stage_q_reg[3]_31[0]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_guess_1_letter_3_q[6]_i_1_comp.
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_1_letter_3_q[6]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.353 | TNS=-9377.807 |
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_num_correct_q[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net betaCPU/control_unit/M_num_correct_q[2]_i_2_n_0.  Re-placed instance betaCPU/control_unit/M_num_correct_q[2]_i_2
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_num_correct_q[2]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.352 | TNS=-9377.623 |
+INFO: [Physopt 32-662] Processed net betaCPU/r/M_input_letter_3_q_reg[3]_0[0].  Did not re-place instance betaCPU/r/M_input_letter_3_q_reg[0]
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_input_letter_3_q_reg[3]_0[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_guess_1_letter_3_q[6]_i_2_n_0.  Did not re-place instance betaCPU/control_unit/M_guess_1_letter_3_q[6]_i_2
+INFO: [Physopt 32-710] Processed net betaCPU/control_unit/M_stage_q_reg[3]_53[0]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_input_letter_3_q[4]_i_1_comp.
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_1_letter_3_q[6]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.350 | TNS=-9376.966 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_letter_4_q_reg[2]_0[0].  Re-placed instance betaCPU/r/M_input_letter_4_q_reg[0]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_input_letter_4_q_reg[2]_0[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.350 | TNS=-9376.949 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_letter_4_q_reg[2]_0[1].  Re-placed instance betaCPU/r/M_input_letter_4_q_reg[1]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_input_letter_4_q_reg[2]_0[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.350 | TNS=-9376.934 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_letter_4_q_reg[2]_0[2].  Re-placed instance betaCPU/r/M_input_letter_4_q_reg[2]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_input_letter_4_q_reg[2]_0[2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.350 | TNS=-9376.909 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_letter_4_q[3].  Re-placed instance betaCPU/r/M_input_letter_4_q_reg[3]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_input_letter_4_q[3]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.350 | TNS=-9376.899 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_input_letter_4_q[4].  Re-placed instance betaCPU/r/M_input_letter_4_q_reg[4]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_input_letter_4_q[4]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.349 | TNS=-9377.361 |
+INFO: [Physopt 32-662] Processed net betaCPU/r/M_guess_3_letter_3_q_reg[6]_0[0].  Did not re-place instance betaCPU/r/M_guess_3_letter_3_q_reg[0]
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_3_letter_3_q_reg[6]_0[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_guess_1_letter_3_q[6]_i_2_n_0.  Did not re-place instance betaCPU/control_unit/M_guess_1_letter_3_q[6]_i_2
+INFO: [Physopt 32-710] Processed net betaCPU/control_unit/M_stage_q_reg[3]_49[0]. Critical path length was reduced through logic transformation on cell betaCPU/control_unit/M_guess_3_letter_3_q[6]_i_1_comp.
+INFO: [Physopt 32-735] Processed net betaCPU/control_unit/M_guess_1_letter_3_q[6]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.340 | TNS=-9375.240 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_1_letter_1_q[1].  Re-placed instance betaCPU/r/M_guess_1_letter_1_q_reg[1]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_1_letter_1_q[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.340 | TNS=-9375.282 |
+INFO: [Physopt 32-663] Processed net betaCPU/r/M_guess_2_letter_2_q_reg[6]_0[2].  Re-placed instance betaCPU/r/M_guess_2_letter_2_q_reg[4]
+INFO: [Physopt 32-735] Processed net betaCPU/r/M_guess_2_letter_2_q_reg[6]_0[2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.339 | TNS=-9374.840 |
+INFO: [Physopt 32-662] Processed net betaCPU/r/M_input_letter_4_q_reg[2]_0[0].  Did not re-place instance betaCPU/r/M_input_letter_4_q_reg[0]
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_input_letter_4_q_reg[2]_0[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net keyboard_controller/e_/button_cond/M_ctr_q_reg[12].  Did not re-place instance keyboard_controller/e_/button_cond/M_ctr_q_reg[12]
+INFO: [Physopt 32-702] Processed net keyboard_controller/e_/button_cond/M_ctr_q_reg[12]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_guess_1_letter_3_q[6]_i_2_n_0.  Did not re-place instance betaCPU/control_unit/M_guess_1_letter_3_q[6]_i_2
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_guess_1_letter_3_q[6]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_13_n_0.  Did not re-place instance betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_13
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_13_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_9_n_0.  Did not re-place instance betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_9
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_guess_1_letter_1_q[6]_i_9_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/game_alu/M_stage_q_reg[3]_0.  Did not re-place instance betaCPU/game_alu/FSM_onehot_M_game_fsm_q[28]_i_2
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_stage_q_reg[3]_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[28]_i_3_n_0.  Did not re-place instance betaCPU/game_alu/FSM_onehot_M_game_fsm_q[28]_i_3
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[28]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[28]_i_10_n_0.  Did not re-place instance betaCPU/game_alu/FSM_onehot_M_game_fsm_q[28]_i_10
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[28]_i_10_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q_reg[28]_i_9_n_4. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_word_index_q[10]_i_19_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[7].  Did not re-place instance betaCPU/control_unit/FSM_onehot_M_game_fsm_q[42]_i_5
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[7]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_stage_q_reg[3]_3.  Did not re-place instance betaCPU/control_unit/FSM_onehot_M_game_fsm_q[37]_i_3
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_3. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_control_unit_regfile_rb[0].  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_8
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_control_unit_regfile_rb[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_18_n_0.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_18
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_18_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_33_n_0.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_33
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_33_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_w_q_reg[0][0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_w_q_reg[1][1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q[28]_i_29_n_0.  Did not re-place instance betaCPU/control_unit/FSM_onehot_M_game_fsm_q[28]_i_29
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q[28]_i_29_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/r/M_guess_1_letter_1_q[3]_i_20_0[0].  Did not re-place instance betaCPU/r/M_matrix4_letter_index_dff_q[1]_i_1
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_guess_1_letter_1_q[3]_i_20_0[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_matrix4_letter_index_dff_q_reg[1]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_matrix4_letter_index_dff_q[1]_i_6_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/r/M_matrix4_letter_index_dff_q[1]_i_14_n_0.  Did not re-place instance betaCPU/r/M_matrix4_letter_index_dff_q[1]_i_14
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_matrix4_letter_index_dff_q[1]_i_14_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_stage_q_reg[3]_12.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_26
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_12. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_41_n_0.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_41
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_41_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_w_q_reg[7][0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_w_q_reg[5][0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q[28]_i_40_n_0.  Did not re-place instance betaCPU/control_unit/FSM_onehot_M_game_fsm_q[28]_i_40
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q[28]_i_40_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[2].  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[4]_i_1
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/r/M_stage_q_reg[3]_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net reset_cond/M_stage_q_reg[3]_2.  Did not re-place instance reset_cond/M_matrix4_letter_index_dff_q[6]_i_10
+INFO: [Physopt 32-702] Processed net reset_cond/M_stage_q_reg[3]_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[13]_0.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_23
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[13]_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_38_n_0.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_38
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_38_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_w_q_reg[0][1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_w_q_reg[1][0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[0].  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[0]_i_1
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[0]_i_4_n_0.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[0]_i_4
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[0]_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[0]_i_15_n_0.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[0]_i_15
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[0]_i_15_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[0]_i_23_n_0.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[0]_i_23
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[0]_i_23_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_stage_q_reg[3]_8.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_28
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_8. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_stage_q_reg[3]_9.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_25
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_9. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_40_n_0.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_40
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_40_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_w_q_reg[7][2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/FSM_onehot_M_game_fsm_q[28]_i_35_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[4].  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_3
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_control_unit_regfile_out_b[4]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[32]_0.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_6
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[32]_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_15_n_0.  Did not re-place instance betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_15
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_matrix4_letter_index_dff_q[6]_i_15_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/game_alu/M_game_alu_alu[0].  Did not re-place instance betaCPU/game_alu/FSM_onehot_M_game_fsm_q[28]_i_7
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_game_alu_alu[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/game_alu/M_w_q_reg[0][2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/M_game_alu_a[0].  Did not re-place instance betaCPU/FSM_onehot_M_game_fsm_q[28]_i_11
+INFO: [Physopt 32-702] Processed net betaCPU/M_game_alu_a[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_control_unit_regfile_out_a[0].  Did not re-place instance betaCPU/control_unit/M_matrix1_letter_index_dff_q[6]_i_6
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_control_unit_regfile_out_a[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_matrix1_letter_index_dff_q_reg[6]_i_10_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_matrix1_letter_index_dff_q[6]_i_28_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_control_unit_regfile_ra[1].  Did not re-place instance betaCPU/control_unit/M_matrix1_letter_index_dff_q[6]_i_62
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_control_unit_regfile_ra[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_stage_q_reg[3]_2.  Did not re-place instance betaCPU/control_unit/M_matrix1_letter_index_dff_q[6]_i_26
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net keyboard_controller/s_/button_cond/M_last_q_reg.  Did not re-place instance keyboard_controller/s_/button_cond/M_matrix1_letter_index_dff_q[6]_i_58
+INFO: [Physopt 32-702] Processed net keyboard_controller/s_/button_cond/M_last_q_reg. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net keyboard_controller/e_/button_cond/M_last_q_reg.  Did not re-place instance keyboard_controller/e_/button_cond/M_matrix1_letter_index_dff_q[6]_i_97
+INFO: [Physopt 32-702] Processed net keyboard_controller/e_/button_cond/M_last_q_reg. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net keyboard_controller/e_/button_cond/M_ctr_q[0]_i_7__0_n_0.  Did not re-place instance keyboard_controller/e_/button_cond/M_ctr_q[0]_i_7__0
+INFO: [Physopt 32-702] Processed net keyboard_controller/e_/button_cond/M_ctr_q[0]_i_7__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net betaCPU/control_unit/M_stage_q_reg[3]_44[0].  Did not re-place instance betaCPU/control_unit/M_input_letter_4_q[4]_i_1
+INFO: [Physopt 32-702] Processed net betaCPU/control_unit/M_stage_q_reg[3]_44[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net clk_IBUF. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net clk. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-24.339 | TNS=-9374.840 |
+Phase 4 Critical Path Optimization | Checksum: 22fa5b784
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:10 . Memory (MB): peak = 1502.836 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1502.836 ; gain = 0.000
+INFO: [Physopt 32-603] Post Physical Optimization Timing Summary | WNS=-24.339 | TNS=-9374.840 |
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization   |  WNS Gain (ns)  |  TNS Gain (ns)  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  DSP Register   |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Critical Path  |          2.668  |        989.521  |            0  |              0  |                    58  |           0  |           2  |  00:00:09  |
+|  Total          |          2.668  |        989.521  |            0  |              0  |                    58  |           0  |           3  |  00:00:09  |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1502.836 ; gain = 0.000
+Ending Physical Synthesis Task | Checksum: 1b7880b9b
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:10 . Memory (MB): peak = 1502.836 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+494 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:10 . Memory (MB): peak = 1502.836 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.270 . Memory (MB): peak = 1505.891 ; gain = 3.055
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/au_top_0_physopt.dcp' has been generated.
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+Checksum: PlaceDB: 3f8a4c40 ConstDB: 0 ShapeSum: 843ec8d8 RouteDB: 0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: 927e4bae
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:15 . Memory (MB): peak = 1604.410 ; gain = 89.410
+Post Restoration Checksum: NetGraph: 5230dd51 NumContArr: 404d6e5d Constraints: 0 Timing: 0
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 927e4bae
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:15 . Memory (MB): peak = 1604.410 ; gain = 89.410
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: 927e4bae
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:15 . Memory (MB): peak = 1610.438 ; gain = 95.438
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: 927e4bae
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:15 . Memory (MB): peak = 1610.438 ; gain = 95.438
+ Number of Nodes with overlaps = 0
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 10f84c408
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:16 . Memory (MB): peak = 1623.891 ; gain = 108.891
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-23.023| TNS=-8815.402| WHS=-0.144 | THS=-14.439|
+
+Phase 2 Router Initialization | Checksum: aa206f92
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:16 . Memory (MB): peak = 1623.891 ; gain = 108.891
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 2109
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 2109
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+
+Phase 3 Initial Routing
+
+Phase 3.1 Global Routing
+Phase 3.1 Global Routing | Checksum: aa206f92
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:16 . Memory (MB): peak = 1623.891 ; gain = 108.891
+Phase 3 Initial Routing | Checksum: 136eada65
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:17 . Memory (MB): peak = 1623.891 ; gain = 108.891
+INFO: [Route 35-580] Design has 45 pins with tight setup and hold constraints.
+
+The top 5 pins with tight setup and hold constraints:
+
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|       Launch Clock       |      Capture Clock       |                                                 Pin                                                      |
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|                    clk_0 |                    clk_0 |                                                                        betaCPU/r/M_num_correct_q_reg[2]/D|
+|                    clk_0 |                    clk_0 |                                                                                  betaCPU/r/M_k_q_reg[2]/D|
+|                    clk_0 |                    clk_0 |                                                                                  betaCPU/r/M_j_q_reg[0]/D|
+|                    clk_0 |                    clk_0 |                                                                        betaCPU/r/M_num_correct_q_reg[0]/D|
+|                    clk_0 |                    clk_0 |                                                                                  betaCPU/r/M_i_q_reg[2]/D|
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+
+File with complete list of pins: tight_setup_hold_pins.txt
+
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 578
+ Number of Nodes with overlaps = 168
+ Number of Nodes with overlaps = 100
+ Number of Nodes with overlaps = 87
+ Number of Nodes with overlaps = 31
+ Number of Nodes with overlaps = 30
+ Number of Nodes with overlaps = 19
+ Number of Nodes with overlaps = 8
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-26.331| TNS=-10291.776| WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 124dbb981
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:22 . Memory (MB): peak = 1623.891 ; gain = 108.891
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 167
+ Number of Nodes with overlaps = 144
+ Number of Nodes with overlaps = 64
+ Number of Nodes with overlaps = 34
+ Number of Nodes with overlaps = 29
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-25.374| TNS=-9944.151| WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 9a29d01c
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:25 . Memory (MB): peak = 1623.891 ; gain = 108.891
+
+Phase 4.3 Global Iteration 2
+ Number of Nodes with overlaps = 145
+ Number of Nodes with overlaps = 85
+ Number of Nodes with overlaps = 56
+ Number of Nodes with overlaps = 29
+ Number of Nodes with overlaps = 26
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 7
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 6
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-25.318| TNS=-9917.312| WHS=N/A    | THS=N/A    |
+
+Phase 4.3 Global Iteration 2 | Checksum: 14144b0f1
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:29 . Memory (MB): peak = 1623.891 ; gain = 108.891
+Phase 4 Rip-up And Reroute | Checksum: 14144b0f1
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:29 . Memory (MB): peak = 1623.891 ; gain = 108.891
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 159e9ebdd
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:29 . Memory (MB): peak = 1623.891 ; gain = 108.891
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-25.310| TNS=-9912.292| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+Phase 5.1 Delay CleanUp | Checksum: b8757179
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:30 . Memory (MB): peak = 1629.348 ; gain = 114.348
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: b8757179
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:30 . Memory (MB): peak = 1629.348 ; gain = 114.348
+Phase 5 Delay and Skew Optimization | Checksum: b8757179
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:30 . Memory (MB): peak = 1629.348 ; gain = 114.348
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 17ed602c5
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:30 . Memory (MB): peak = 1629.348 ; gain = 114.348
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-25.205| TNS=-9869.439| WHS=0.038  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: fb183767
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:30 . Memory (MB): peak = 1629.348 ; gain = 114.348
+Phase 6 Post Hold Fix | Checksum: fb183767
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:30 . Memory (MB): peak = 1629.348 ; gain = 114.348
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.815834 %
+  Global Horizontal Routing Utilization  = 1.02824 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Congestion Report
+North Dir 1x1 Area, Max Cong = 63.0631%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 66.6667%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 67.6471%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 72.0588%, No Congested Regions.
+
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+
+Phase 7 Route finalize | Checksum: f2cb94ec
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:30 . Memory (MB): peak = 1629.348 ; gain = 114.348
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: f2cb94ec
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:30 . Memory (MB): peak = 1629.348 ; gain = 114.348
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: c0ac31be
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:30 . Memory (MB): peak = 1629.348 ; gain = 114.348
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-25.205| TNS=-9869.439| WHS=0.038  | THS=0.000  |
+
+WARNING: [Route 35-328] Router estimated timing not met.
+Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
+Phase 10 Post Router Timing | Checksum: c0ac31be
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:30 . Memory (MB): peak = 1629.348 ; gain = 114.348
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:30 . Memory (MB): peak = 1629.348 ; gain = 114.348
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+514 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:31 . Memory (MB): peak = 1629.348 ; gain = 123.457
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.264 . Memory (MB): peak = 1634.211 ; gain = 4.863
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/au_top_0_routed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file au_top_0_drc_routed.rpt -pb au_top_0_drc_routed.pb -rpx au_top_0_drc_routed.rpx
+Command: report_drc -file au_top_0_drc_routed.rpt -pb au_top_0_drc_routed.pb -rpx au_top_0_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/au_top_0_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file au_top_0_methodology_drc_routed.rpt -pb au_top_0_methodology_drc_routed.pb -rpx au_top_0_methodology_drc_routed.rpx
+Command: report_methodology -file au_top_0_methodology_drc_routed.rpt -pb au_top_0_methodology_drc_routed.pb -rpx au_top_0_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 2 threads
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/au_top_0_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [runtcl-4] Executing : report_power -file au_top_0_power_routed.rpt -pb au_top_0_power_summary_routed.pb -rpx au_top_0_power_routed.rpx
+Command: report_power -file au_top_0_power_routed.rpt -pb au_top_0_power_summary_routed.pb -rpx au_top_0_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+526 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [runtcl-4] Executing : report_route_status -file au_top_0_route_status.rpt -pb au_top_0_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file au_top_0_timing_summary_routed.rpt -pb au_top_0_timing_summary_routed.pb -rpx au_top_0_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+INFO: [runtcl-4] Executing : report_incremental_reuse -file au_top_0_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file au_top_0_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file au_top_0_bus_skew_routed.rpt -pb au_top_0_bus_skew_routed.pb -rpx au_top_0_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+Command: write_bitstream -force au_top_0.bit -bin_file
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado 12-3199] DRC finished with 0 Errors
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Bitstream compression saved 11204896 bits.
+Writing bitstream ./au_top_0.bit...
+Writing bitstream ./au_top_0.bin...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-120] WebTalk data collection is mandatory when using a WebPACK part without a full Vivado license. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
+INFO: [Common 17-186] 'C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/usage_statistics_webtalk.xml' has been successfully sent to Xilinx on Sat Apr 16 19:59:46 2022. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2020.2/doc/webtalk_introduction.html.
+INFO: [Common 17-83] Releasing license: Implementation
+13 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2107.949 ; gain = 440.398
+INFO: [Common 17-206] Exiting Vivado at Sat Apr 16 19:59:46 2022...
+[Sat Apr 16 19:59:48 2022] impl_1 finished
+wait_on_run: Time (s): cpu = 00:00:00 ; elapsed = 00:02:11 . Memory (MB): peak = 999.543 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat Apr 16 19:59:48 2022...
+Vivado exited.
+
+Finished building project.

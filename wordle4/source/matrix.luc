@@ -31,7 +31,7 @@ module matrix (
         matrix_writer.color = yellow_letters.out[matrix_writer.pixel];
         data_out = matrix_writer.led; 
         
-      b11:
+      b01:
         matrix_writer.update = 1;
         matrix_writer.color = green_letters.out[matrix_writer.pixel];
         data_out = matrix_writer.led; 

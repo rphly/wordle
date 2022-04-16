@@ -22,9 +22,10 @@ module beta (
     output out_top_matrix3,
     output out_top_matrix4,
     
-    output debugger1[7],
-    output debugger2[7],
-    output debugger3[7]
+    output debugger1[8],
+    output debugger2[8],
+    output debugger3[8],
+    output correct_word[9]
   ) {
   
   alu game_alu;
@@ -130,6 +131,7 @@ module beta (
     
     debugger1 = control_unit.debugger1;//game_alu.alu;//control_unit.debugger1;
     debugger2 = control_unit.debugger2;
+    correct_word = control_unit.correct_word;
     debugger3 = control_unit.debugger3;
   }
 }
