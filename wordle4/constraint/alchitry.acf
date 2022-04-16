@@ -3,32 +3,40 @@ clock clk 100MHz;
 
 pin rst_n RESET;
 
-pin q_in A27 pulldown;
-pin w_in A33 pulldown;
-pin e_in A39 pulldown;
-pin r_in A45 pulldown;
-pin v_in B27 pulldown;
-pin i_in B33 pulldown;
-pin o_in B39 pulldown;
-pin p_in B45 pulldown;
-pin s_in A31 pulldown;
-pin d_in A37 pulldown;
-pin f_in A43 pulldown;
-pin g_in A49 pulldown;
-pin t_in B31 pulldown;
-pin y_in B37 pulldown;
-pin k_in B43 pulldown;
-pin l_in B49 pulldown;
-pin a_in A24 pulldown;
-pin x_in A18 pulldown;
-pin c_in A12 pulldown;
-pin u_in A6 pulldown;
-pin h_in B24 pulldown;
-pin j_in B18 pulldown;
-pin z_in A20 pulldown;
-pin b_in A14 pulldown;
-pin n_in A8 pulldown;
-pin m_in A2 pulldown;
+
+pin a_in A27 pulldown;
+pin e_in A33 pulldown;
+pin i_in A39 pulldown;
+pin l_in A24 pulldown;
+pin n_in A18 pulldown;
+pin o_in A12 pulldown;
+pin p_in A23 pulldown;
+pin s_in B27 pulldown;
+pin t_in B39 pulldown;
+
+pin b_in B30 pulldown;
+pin c_in B33 pulldown;
+pin d_in B36 pulldown;
+pin g_in B45 pulldown;
+pin u_in B46 pulldown;
+pin f_in B42 pulldown;
+pin h_in B48 pulldown;
+
+pin j_in B28 pulldown;
+pin k_in B31 pulldown;
+
+pin m_in B37 pulldown;
+pin q_in B40 pulldown;
+
+
+pin r_in B43 pulldown;
+pin v_in B49 pulldown;
+
+pin w_in B18 pulldown;
+pin x_in B15 pulldown;
+pin y_in B12 pulldown;
+pin z_in B9 pulldown;
+
 
 pin guess_1_in B23 pulldown;
 pin guess_2_in B20 pulldown;
@@ -36,12 +44,12 @@ pin guess_3_in B17 pulldown;
 pin guess_4_in B14 pulldown;
 
 
-pin check_in B12 pulldown;
-pin clear_in B6 pulldown;
-pin reset_in B8 pulldown;
-pin oka_in B2 pulldown;
+pin check_in B24 pulldown;
+pin clear_in B8 pulldown;
+pin reset_in B34 pulldown;
+pin oka_in B11 pulldown;
 
-pin out_top_matrix1 C49;
+pin out_top_matrix1 A45;
 pin out_top_matrix2 C45;
 pin out_top_matrix3 C2;
 pin out_top_matrix4 C6;

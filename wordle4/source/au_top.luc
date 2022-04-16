@@ -16,8 +16,8 @@ module au_top (
     input c_in,
     input d_in,
     input e_in,
-    input f_in,
     input g_in,
+    input f_in,
     input h_in,
     input i_in,
     input j_in,
@@ -33,6 +33,7 @@ module au_top (
     input t_in,
     input u_in,
     input v_in,
+    
     input w_in,
     input x_in,
     input y_in,

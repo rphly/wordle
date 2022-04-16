@@ -7,7 +7,7 @@ module buttons_controller (
     input d,
     input e,
     input f,
-    input g,
+     input g,
     input h,
     input i,
     input j,
@@ -64,7 +64,7 @@ module buttons_controller (
       out = d1;
       is_pressed = 1;
     } 
-      else if(b_.out){ 
+    else if(b_.out){ 
       out = d2;
       is_pressed = 1;
     } else if(c_.out){
@@ -78,7 +78,7 @@ module buttons_controller (
       out = d5;
       is_pressed = 1;
     }
-      else if(f_.out){
+    else if(f_.out){
       out = d6;
       is_pressed = 1;
     } else if(g_.out){
@@ -131,13 +131,13 @@ module buttons_controller (
       out = d20;
       is_pressed = 1;
     } 
-      else if(u_.out){
+     else if(u_.out){
       out = d21;
       is_pressed = 1;
     } else if(v_.out){
       out = d22;
       is_pressed = 1;
-    } else if(w_.out){
+    }  else if(w_.out){
       out = d23;
       is_pressed = 1;
     } 

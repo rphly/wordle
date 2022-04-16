@@ -1,0 +1,113 @@
+Warnings in file C:\Users\CompStruct\Desktop\wordle\wordle4\source\au_top.luc:
+    Line 118, Column 29 : The signal "keyboard_controller.out" is wider than "betaCPU.keyboard_input" and the most significant bits will be dropped
+    Line 11, Column 4 : "correct_word_index" was never used
+    Line 108, Column 4 : "panel_debugger" was never used
+    Line 110, Column 4 : "correct_word" was never used
+Warnings in file C:\Users\CompStruct\Desktop\wordle\wordle4\source\panel_controller.luc:
+    Line 3, Column 4 : "rst" was never used
+Warnings in file C:\Users\CompStruct\Desktop\wordle\wordle4\source\regfile.luc:
+    Line 139, Column 31 : The signal "data" is wider than "oka_mode.d" and the most significant bits will be dropped
+    Line 96, Column 40 : The signal "data" is wider than "guess_1_letter_1.d" and the most significant bits will be dropped
+    Line 97, Column 40 : The signal "data" is wider than "guess_1_letter_2.d" and the most significant bits will be dropped
+    Line 98, Column 40 : The signal "data" is wider than "guess_1_letter_3.d" and the most significant bits will be dropped
+    Line 99, Column 40 : The signal "data" is wider than "guess_1_letter_4.d" and the most significant bits will be dropped
+    Line 101, Column 38 : The signal "data" is wider than "guess_2_letter_1.d" and the most significant bits will be dropped
+    Line 102, Column 38 : The signal "data" is wider than "guess_2_letter_2.d" and the most significant bits will be dropped
+    Line 103, Column 38 : The signal "data" is wider than "guess_2_letter_3.d" and the most significant bits will be dropped
+    Line 104, Column 38 : The signal "data" is wider than "guess_2_letter_4.d" and the most significant bits will be dropped
+    Line 106, Column 38 : The signal "data" is wider than "guess_3_letter_1.d" and the most significant bits will be dropped
+    Line 107, Column 38 : The signal "data" is wider than "guess_3_letter_2.d" and the most significant bits will be dropped
+    Line 108, Column 38 : The signal "data" is wider than "guess_3_letter_3.d" and the most significant bits will be dropped
+    Line 109, Column 38 : The signal "data" is wider than "guess_3_letter_4.d" and the most significant bits will be dropped
+    Line 111, Column 38 : The signal "data" is wider than "guess_4_letter_1.d" and the most significant bits will be dropped
+    Line 112, Column 38 : The signal "data" is wider than "guess_4_letter_2.d" and the most significant bits will be dropped
+    Line 113, Column 38 : The signal "data" is wider than "guess_4_letter_3.d" and the most significant bits will be dropped
+    Line 114, Column 38 : The signal "data" is wider than "guess_4_letter_4.d" and the most significant bits will be dropped
+    Line 116, Column 36 : The signal "data" is wider than "input_letter_1.d" and the most significant bits will be dropped
+    Line 117, Column 36 : The signal "data" is wider than "input_letter_2.d" and the most significant bits will be dropped
+    Line 118, Column 36 : The signal "data" is wider than "input_letter_3.d" and the most significant bits will be dropped
+    Line 119, Column 36 : The signal "data" is wider than "input_letter_4.d" and the most significant bits will be dropped
+    Line 121, Column 23 : The signal "data" is wider than "i.d" and the most significant bits will be dropped
+    Line 122, Column 23 : The signal "data" is wider than "j.d" and the most significant bits will be dropped
+    Line 123, Column 23 : The signal "data" is wider than "k.d" and the most significant bits will be dropped
+    Line 125, Column 38 : The signal "data" is wider than "correct_letter_1.d" and the most significant bits will be dropped
+    Line 126, Column 38 : The signal "data" is wider than "correct_letter_2.d" and the most significant bits will be dropped
+    Line 127, Column 38 : The signal "data" is wider than "correct_letter_3.d" and the most significant bits will be dropped
+    Line 128, Column 37 : The signal "data" is wider than "correct_letter_4.d" and the most significant bits will be dropped
+    Line 130, Column 33 : The signal "data" is wider than "num_correct.d" and the most significant bits will be dropped
+    Line 131, Column 31 : The signal "data" is wider than "input_ctr.d" and the most significant bits will be dropped
+    Line 132, Column 29 : The signal "data" is wider than "input_i.d" and the most significant bits will be dropped
+    Line 133, Column 31 : The signal "data" is wider than "correct_k.d" and the most significant bits will be dropped
+    Line 135, Column 24 : The signal "data" is wider than "g.d" and the most significant bits will be dropped
+    Line 136, Column 44 : The signal "data" is wider than "temp_guess_g_letter_i.d" and the most significant bits will be dropped
+    Line 137, Column 43 : The signal "data" is wider than "temp_coloured_letter.d" and the most significant bits will be dropped
+    Line 138, Column 33 : The signal "data" is wider than "word_index.d" and the most significant bits will be dropped
+Warnings in file C:\Users\CompStruct\Desktop\wordle\wordle4\source\beta.luc:
+    Line 90, Column 23 : The signal "control_unit.regfile_rb" is wider than "r.read_address_b" and the most significant bits will be dropped
+    Line 88, Column 22 : The signal "control_unit.regfile_write_address" is wider than "r.write_address" and the most significant bits will be dropped
+    Line 89, Column 23 : The signal "control_unit.regfile_ra" is wider than "r.read_address_a" and the most significant bits will be dropped
+Warnings in file C:\Users\CompStruct\Desktop\wordle\wordle4\source\buttons_controller.luc:
+    Line 3, Column 4 : "rst" was never used
+Warnings in file C:\Users\CompStruct\Desktop\wordle\wordle4\source\game.luc:
+    Line 869, Column 39 : The signal "regfile_out_b" is wider than "top_matrix4_letter_address" and the most significant bits will be dropped
+    Line 316, Column 31 : The signal "regfile_out_a" is wider than "correct_word_index" and the most significant bits will be dropped
+    Line 324, Column 27 : The signal "regfile_out_a" is wider than "words_selector" and the most significant bits will be dropped
+    Line 332, Column 27 : The signal "regfile_out_a" is wider than "words_selector" and the most significant bits will be dropped
+    Line 340, Column 27 : The signal "regfile_out_a" is wider than "words_selector" and the most significant bits will be dropped
+    Line 348, Column 27 : The signal "regfile_out_a" is wider than "words_selector" and the most significant bits will be dropped
+    Line 366, Column 46 : The signal "regfile_out_b" is wider than "bottom_matrix1_letter_address" and the most significant bits will be dropped
+    Line 369, Column 46 : The signal "regfile_out_b" is wider than "bottom_matrix2_letter_address" and the most significant bits will be dropped
+    Line 372, Column 46 : The signal "regfile_out_b" is wider than "bottom_matrix3_letter_address" and the most significant bits will be dropped
+    Line 375, Column 46 : The signal "regfile_out_b" is wider than "bottom_matrix4_letter_address" and the most significant bits will be dropped
+    Line 674, Column 43 : The signal "regfile_out_b" is wider than "top_matrix1_letter_address" and the most significant bits will be dropped
+    Line 678, Column 43 : The signal "regfile_out_b" is wider than "top_matrix1_letter_address" and the most significant bits will be dropped
+    Line 682, Column 43 : The signal "regfile_out_b" is wider than "top_matrix1_letter_address" and the most significant bits will be dropped
+    Line 686, Column 43 : The signal "regfile_out_b" is wider than "top_matrix1_letter_address" and the most significant bits will be dropped
+    Line 697, Column 43 : The signal "regfile_out_b" is wider than "top_matrix2_letter_address" and the most significant bits will be dropped
+    Line 701, Column 43 : The signal "regfile_out_b" is wider than "top_matrix2_letter_address" and the most significant bits will be dropped
+    Line 705, Column 43 : The signal "regfile_out_b" is wider than "top_matrix2_letter_address" and the most significant bits will be dropped
+    Line 709, Column 43 : The signal "regfile_out_b" is wider than "top_matrix2_letter_address" and the most significant bits will be dropped
+    Line 720, Column 43 : The signal "regfile_out_b" is wider than "top_matrix3_letter_address" and the most significant bits will be dropped
+    Line 724, Column 43 : The signal "regfile_out_b" is wider than "top_matrix3_letter_address" and the most significant bits will be dropped
+    Line 728, Column 43 : The signal "regfile_out_b" is wider than "top_matrix3_letter_address" and the most significant bits will be dropped
+    Line 732, Column 43 : The signal "regfile_out_b" is wider than "top_matrix3_letter_address" and the most significant bits will be dropped
+    Line 743, Column 43 : The signal "regfile_out_b" is wider than "top_matrix4_letter_address" and the most significant bits will be dropped
+    Line 747, Column 43 : The signal "regfile_out_b" is wider than "top_matrix4_letter_address" and the most significant bits will be dropped
+    Line 751, Column 43 : The signal "regfile_out_b" is wider than "top_matrix4_letter_address" and the most significant bits will be dropped
+    Line 755, Column 43 : The signal "regfile_out_b" is wider than "top_matrix4_letter_address" and the most significant bits will be dropped
+    Line 790, Column 27 : The signal "regfile_out_a" is wider than "words_selector" and the most significant bits will be dropped
+    Line 800, Column 27 : The signal "regfile_out_a" is wider than "words_selector" and the most significant bits will be dropped
+    Line 812, Column 39 : The signal "regfile_out_a" is wider than "top_matrix1_letter_address" and the most significant bits will be dropped
+    Line 813, Column 39 : The signal "regfile_out_b" is wider than "top_matrix2_letter_address" and the most significant bits will be dropped
+    Line 820, Column 39 : The signal "regfile_out_a" is wider than "top_matrix3_letter_address" and the most significant bits will be dropped
+    Line 821, Column 39 : The signal "regfile_out_b" is wider than "top_matrix4_letter_address" and the most significant bits will be dropped
+    Line 828, Column 39 : The signal "regfile_out_a" is wider than "top_matrix1_letter_address" and the most significant bits will be dropped
+    Line 829, Column 39 : The signal "regfile_out_b" is wider than "top_matrix2_letter_address" and the most significant bits will be dropped
+    Line 836, Column 39 : The signal "regfile_out_a" is wider than "top_matrix3_letter_address" and the most significant bits will be dropped
+    Line 837, Column 39 : The signal "regfile_out_b" is wider than "top_matrix4_letter_address" and the most significant bits will be dropped
+    Line 844, Column 39 : The signal "regfile_out_a" is wider than "top_matrix1_letter_address" and the most significant bits will be dropped
+    Line 845, Column 39 : The signal "regfile_out_b" is wider than "top_matrix2_letter_address" and the most significant bits will be dropped
+    Line 852, Column 39 : The signal "regfile_out_a" is wider than "top_matrix3_letter_address" and the most significant bits will be dropped
+    Line 853, Column 39 : The signal "regfile_out_b" is wider than "top_matrix4_letter_address" and the most significant bits will be dropped
+    Line 860, Column 39 : The signal "regfile_out_a" is wider than "top_matrix1_letter_address" and the most significant bits will be dropped
+    Line 861, Column 39 : The signal "regfile_out_b" is wider than "top_matrix2_letter_address" and the most significant bits will be dropped
+    Line 868, Column 39 : The signal "regfile_out_a" is wider than "top_matrix3_letter_address" and the most significant bits will be dropped
+Starting Vivado...
+
+****** Vivado v2021.2 (64-bit)
+  **** SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+  **** IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source {C:\Users\CompStruct\Desktop\wordle\wordle4\work\project.tcl}
+# set projDir "C:/Users/CompStruct/Desktop/wordle/wordle4/work/vivado"
+# set projName "wordle4"
+# set topName top
+# set device xc7a35tftg256-1
+# if {[file exists "$projDir/$projName"]} { file delete -force "$projDir/$projName" }
+# create_project $projName "$projDir/$projName" -part $device
+
+Build aborted by user.
+Vivado exited.
+
+Bin file (C:\Users\CompStruct\Desktop\wordle\wordle4\work\vivado\wordle4\wordle4.runs\impl_1\au_top_0.bin) could not be found! The build probably failed.

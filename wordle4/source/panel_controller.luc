@@ -30,7 +30,7 @@ module panel_controller (
   
   always {
     if (guess1.out) {
-      out = b1000000;
+      out = b00001;
       is_pressed = 1;
     } else if (guess2.out) {
       out = b00100;
