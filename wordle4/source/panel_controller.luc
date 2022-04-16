@@ -5,8 +5,8 @@ module panel_controller (
     input clear,
     input check,
     
-    /*input reset,
-    input oka,
+    input reset,
+    /*input oka,
     
     input guess_1_btn,
     input guess_2_btn,
@@ -20,7 +20,7 @@ module panel_controller (
     button clear_(.button_input(clear));
     button check_(.button_input(check));
     //button oka_(.button_input(oka));
-    //button reset_(.button_input(reset));
+    button reset_(.button_input(reset));
     
     //button guess1(.button_input(guess_1_btn));
     //button guess2(.button_input(guess_2_btn));
@@ -54,6 +54,9 @@ module panel_controller (
       is_pressed = 1;
     } else if (check_.out) {
       out = b11110;
+      is_pressed = 1;
+    } else if (reset_.out) {
+      out = b10101;
       is_pressed = 1;
     } else {
       out = 5b0;
