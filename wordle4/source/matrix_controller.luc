@@ -1,13 +1,13 @@
 module matrix_controller (
     input clk,  // clock
     input rst,  // reset
-    input update[3],
+    input update[4],
     
     input matrix1_letter_index[7],
     input matrix2_letter_index[7],
     input matrix3_letter_index[7],
     input matrix4_letter_index[7],
-    
+    input correct_word[4][5],
     output outmatrix1,
     output outmatrix2,
     output outmatrix3,
@@ -53,6 +53,24 @@ module matrix_controller (
         matrix2_letter_index_dff.d = 5b0;
         matrix3_letter_index_dff.d = 5b0;
         matrix4_letter_index_dff.d = 5b0;
+
+      3b110: // show correct word
+        matrix1_letter_index_dff.d = correct_word[0];
+        matrix2_letter_index_dff.d = correct_word[1];
+        matrix3_letter_index_dff.d = correct_word[2];
+        matrix4_letter_index_dff.d = correct_word[3];
+
+      3b111: // lose
+        matrix1_letter_index_dff.d = b1001100;
+        matrix2_letter_index_dff.d = b1001111;
+        matrix3_letter_index_dff.d = b1010011;
+        matrix4_letter_index_dff.d = b1000101;
+      
+      4b1000: // win
+        matrix1_letter_index_dff.d = b0110111;
+        matrix2_letter_index_dff.d = b0101001;
+        matrix3_letter_index_dff.d = b0101110;
+        matrix4_letter_index_dff.d = b0100000;
     }
   
 }

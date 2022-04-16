@@ -29,13 +29,13 @@ module game (
     output bsel[3],
     output words_selector[11],
     
-    output bottom_matrix_controller_update[3],
+    output bottom_matrix_controller_update[4],
     output bottom_matrix1_letter_address[7],
     output bottom_matrix2_letter_address[7],
     output bottom_matrix3_letter_address[7],
     output bottom_matrix4_letter_address[7],
     
-    output top_matrix_controller_update[3],
+    output top_matrix_controller_update[4],
     output top_matrix1_letter_address[7],
     output top_matrix2_letter_address[7],
     output top_matrix3_letter_address[7],
@@ -44,11 +44,11 @@ module game (
     output g_out[5],
     
     output next_random_number,
-    
+    output correct_word_out[4][5],
     output debugger1[8],
     output debugger2[8],
     output debugger3[8],
-    output correct_word[9]
+    output correct_word_index[9]
   ) {
   
   .clk(clk) {
@@ -152,7 +152,8 @@ module game (
     words_selector = 0;
     g_out = 0;
     next_random_number = 0;
-    correct_word = 0;
+    correct_word_index = 0;
+    correct_word_out = {5b0, 5b0, 5b0, 5b0};
     
     bottom_matrix_controller_update = 3b0;
     bottom_matrix1_letter_address = 5d0;
@@ -263,21 +264,19 @@ module game (
           regfile_write_address = CORRECT_WORD;
           asel = b110;
           bsel = b111;
-         
+
          if (alu_out == b01) { // regfile_out_a < regfile_out_b 
             // need to translate by -88 / 206
-            regfile_data = random_number_out[8:0] - 206; // mini words is 512-306=206 else if full, 2047-1959 = 88
+            regfile_data = random_number_out[8:0] - d206; // mini words is 512-306=206 else if full, 2047-1959 = 88
           } else {
             regfile_data = random_number_out[8:0];
           }
-          
-          regfile_data = random_number_out[7:0];
           
           regfile_we = 1;
           
           regfile_ra = CORRECT_WORD;
 
-          correct_word = regfile_out_a;
+          correct_word_index = regfile_out_a;
           
           game_fsm.d = game_fsm.SET_CORRECT_LETTER_1;  
           
@@ -748,7 +747,28 @@ module game (
             // oh no            
             game_fsm.d = game_fsm.LOSE;
           }
- 
+
+        game_fsm.LOSE:
+          regfile_ra = CORRECT_WORD;
+          words_selector = regfile_out_a;
+          correct_word_out = selected_word;
+          
+          // show LOSE on top matrix row
+          top_matrix_controller_update = b111;
+          // show CORRECT_WORD on bottom matrix row
+          bottom_matrix_controller_update = b110;
+        
+        game_fsm.WIN:
+          regfile_ra = CORRECT_WORD;
+          words_selector = regfile_out_a;
+          correct_word_out = selected_word;
+          
+          // show LOSE on top matrix row
+          top_matrix_controller_update = b1000;
+          // show CORRECT_WORD on bottom matrix row
+          bottom_matrix_controller_update = b110;
+          
+          
         default: game_fsm.d = game_fsm.IDLE;
       }
     }

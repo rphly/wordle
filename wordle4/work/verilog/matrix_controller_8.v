@@ -7,11 +7,12 @@
 module matrix_controller_8 (
     input clk,
     input rst,
-    input [2:0] update,
+    input [3:0] update,
     input [6:0] matrix1_letter_index,
     input [6:0] matrix2_letter_index,
     input [6:0] matrix3_letter_index,
     input [6:0] matrix4_letter_index,
+    input [19:0] correct_word,
     output reg outmatrix1,
     output reg outmatrix2,
     output reg outmatrix3,
@@ -89,6 +90,24 @@ module matrix_controller_8 (
         M_matrix1_letter_index_dff_d = 5'h00;
         M_matrix2_letter_index_dff_d = 5'h00;
         M_matrix3_letter_index_dff_d = 5'h00;
+        M_matrix4_letter_index_dff_d = 5'h00;
+      end
+      3'h6: begin
+        M_matrix1_letter_index_dff_d = correct_word[0+4-:5];
+        M_matrix2_letter_index_dff_d = correct_word[5+4-:5];
+        M_matrix3_letter_index_dff_d = correct_word[10+4-:5];
+        M_matrix4_letter_index_dff_d = correct_word[15+4-:5];
+      end
+      3'h7: begin
+        M_matrix1_letter_index_dff_d = 5'h0c;
+        M_matrix2_letter_index_dff_d = 5'h0f;
+        M_matrix3_letter_index_dff_d = 5'h13;
+        M_matrix4_letter_index_dff_d = 5'h05;
+      end
+      4'h8: begin
+        M_matrix1_letter_index_dff_d = 5'h17;
+        M_matrix2_letter_index_dff_d = 5'h09;
+        M_matrix3_letter_index_dff_d = 5'h0e;
         M_matrix4_letter_index_dff_d = 5'h00;
       end
     endcase

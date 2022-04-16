@@ -111,7 +111,8 @@ module beta (
     bottom_matrix_control.matrix2_letter_index = control_unit.bottom_matrix2_letter_address;
     bottom_matrix_control.matrix3_letter_index = control_unit.bottom_matrix3_letter_address;
     bottom_matrix_control.matrix4_letter_index = control_unit.bottom_matrix4_letter_address;
-    
+    bottom_matrix_control.correct_word = control_unit.correct_word_out; 
+
     out_bottom_matrix1 = bottom_matrix_control.outmatrix1;
     out_bottom_matrix2 = bottom_matrix_control.outmatrix2;
     out_bottom_matrix3 = bottom_matrix_control.outmatrix3;
@@ -123,6 +124,7 @@ module beta (
     top_matrix_control.matrix2_letter_index = control_unit.top_matrix2_letter_address;
     top_matrix_control.matrix3_letter_index = control_unit.top_matrix3_letter_address;
     top_matrix_control.matrix4_letter_index = control_unit.top_matrix4_letter_address;
+    top_matrix_control.correct_word = control_unit.correct_word_out; 
     
     out_top_matrix1 = top_matrix_control.outmatrix1;
     out_top_matrix2 = top_matrix_control.outmatrix2;
@@ -131,7 +133,7 @@ module beta (
     
     debugger1 = control_unit.debugger1;//game_alu.alu;//control_unit.debugger1;
     debugger2 = control_unit.debugger2;
-    correct_word = control_unit.correct_word;
+    correct_word = control_unit.correct_word_index;
     debugger3 = control_unit.debugger3;
   }
 }

@@ -28,22 +28,23 @@ module game_6 (
     output reg [2:0] asel,
     output reg [2:0] bsel,
     output reg [10:0] words_selector,
-    output reg [2:0] bottom_matrix_controller_update,
+    output reg [3:0] bottom_matrix_controller_update,
     output reg [6:0] bottom_matrix1_letter_address,
     output reg [6:0] bottom_matrix2_letter_address,
     output reg [6:0] bottom_matrix3_letter_address,
     output reg [6:0] bottom_matrix4_letter_address,
-    output reg [2:0] top_matrix_controller_update,
+    output reg [3:0] top_matrix_controller_update,
     output reg [6:0] top_matrix1_letter_address,
     output reg [6:0] top_matrix2_letter_address,
     output reg [6:0] top_matrix3_letter_address,
     output reg [6:0] top_matrix4_letter_address,
     output reg [4:0] g_out,
     output reg next_random_number,
+    output reg [19:0] correct_word_out,
     output reg [7:0] debugger1,
     output reg [7:0] debugger2,
     output reg [7:0] debugger3,
-    output reg [8:0] correct_word
+    output reg [8:0] correct_word_index
   );
   
   
@@ -161,7 +162,8 @@ module game_6 (
     words_selector = 1'h0;
     g_out = 1'h0;
     next_random_number = 1'h0;
-    correct_word = 1'h0;
+    correct_word_index = 1'h0;
+    correct_word_out = 20'h00000;
     bottom_matrix_controller_update = 3'h0;
     bottom_matrix1_letter_address = 5'h00;
     bottom_matrix2_letter_address = 5'h00;
@@ -270,10 +272,9 @@ module game_6 (
           end else begin
             regfile_data = random_number_out[0+8-:9];
           end
-          regfile_data = random_number_out[0+7-:8];
           regfile_we = 1'h1;
           regfile_ra = 6'h23;
-          correct_word = regfile_out_a;
+          correct_word_index = regfile_out_a;
           M_game_fsm_d = SET_CORRECT_LETTER_1_game_fsm;
         end
         SET_CORRECT_LETTER_1_game_fsm: begin
@@ -733,6 +734,20 @@ module game_6 (
           end else begin
             M_game_fsm_d = LOSE_game_fsm;
           end
+        end
+        LOSE_game_fsm: begin
+          regfile_ra = 6'h23;
+          words_selector = regfile_out_a;
+          correct_word_out = selected_word;
+          top_matrix_controller_update = 3'h7;
+          bottom_matrix_controller_update = 3'h6;
+        end
+        WIN_game_fsm: begin
+          regfile_ra = 6'h23;
+          words_selector = regfile_out_a;
+          correct_word_out = selected_word;
+          top_matrix_controller_update = 4'h8;
+          bottom_matrix_controller_update = 3'h6;
         end
         default: begin
           M_game_fsm_d = IDLE_game_fsm;

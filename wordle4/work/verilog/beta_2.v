@@ -61,22 +61,23 @@ module beta_2 (
   wire [3-1:0] M_control_unit_asel;
   wire [3-1:0] M_control_unit_bsel;
   wire [11-1:0] M_control_unit_words_selector;
-  wire [3-1:0] M_control_unit_bottom_matrix_controller_update;
+  wire [4-1:0] M_control_unit_bottom_matrix_controller_update;
   wire [7-1:0] M_control_unit_bottom_matrix1_letter_address;
   wire [7-1:0] M_control_unit_bottom_matrix2_letter_address;
   wire [7-1:0] M_control_unit_bottom_matrix3_letter_address;
   wire [7-1:0] M_control_unit_bottom_matrix4_letter_address;
-  wire [3-1:0] M_control_unit_top_matrix_controller_update;
+  wire [4-1:0] M_control_unit_top_matrix_controller_update;
   wire [7-1:0] M_control_unit_top_matrix1_letter_address;
   wire [7-1:0] M_control_unit_top_matrix2_letter_address;
   wire [7-1:0] M_control_unit_top_matrix3_letter_address;
   wire [7-1:0] M_control_unit_top_matrix4_letter_address;
   wire [5-1:0] M_control_unit_g_out;
   wire [1-1:0] M_control_unit_next_random_number;
+  wire [20-1:0] M_control_unit_correct_word_out;
   wire [8-1:0] M_control_unit_debugger1;
   wire [8-1:0] M_control_unit_debugger2;
   wire [8-1:0] M_control_unit_debugger3;
-  wire [9-1:0] M_control_unit_correct_word;
+  wire [9-1:0] M_control_unit_correct_word_index;
   reg [16-1:0] M_control_unit_regfile_out_a;
   reg [16-1:0] M_control_unit_regfile_out_b;
   reg [5-1:0] M_control_unit_keyboard_input;
@@ -122,10 +123,11 @@ module beta_2 (
     .top_matrix4_letter_address(M_control_unit_top_matrix4_letter_address),
     .g_out(M_control_unit_g_out),
     .next_random_number(M_control_unit_next_random_number),
+    .correct_word_out(M_control_unit_correct_word_out),
     .debugger1(M_control_unit_debugger1),
     .debugger2(M_control_unit_debugger2),
     .debugger3(M_control_unit_debugger3),
-    .correct_word(M_control_unit_correct_word)
+    .correct_word_index(M_control_unit_correct_word_index)
   );
   wire [16-1:0] M_r_out_a;
   wire [16-1:0] M_r_out_b;
@@ -149,11 +151,12 @@ module beta_2 (
   wire [1-1:0] M_bottom_matrix_control_outmatrix2;
   wire [1-1:0] M_bottom_matrix_control_outmatrix3;
   wire [1-1:0] M_bottom_matrix_control_outmatrix4;
-  reg [3-1:0] M_bottom_matrix_control_update;
+  reg [4-1:0] M_bottom_matrix_control_update;
   reg [7-1:0] M_bottom_matrix_control_matrix1_letter_index;
   reg [7-1:0] M_bottom_matrix_control_matrix2_letter_index;
   reg [7-1:0] M_bottom_matrix_control_matrix3_letter_index;
   reg [7-1:0] M_bottom_matrix_control_matrix4_letter_index;
+  reg [20-1:0] M_bottom_matrix_control_correct_word;
   matrix_controller_8 bottom_matrix_control (
     .clk(clk),
     .rst(rst),
@@ -162,6 +165,7 @@ module beta_2 (
     .matrix2_letter_index(M_bottom_matrix_control_matrix2_letter_index),
     .matrix3_letter_index(M_bottom_matrix_control_matrix3_letter_index),
     .matrix4_letter_index(M_bottom_matrix_control_matrix4_letter_index),
+    .correct_word(M_bottom_matrix_control_correct_word),
     .outmatrix1(M_bottom_matrix_control_outmatrix1),
     .outmatrix2(M_bottom_matrix_control_outmatrix2),
     .outmatrix3(M_bottom_matrix_control_outmatrix3),
@@ -171,11 +175,12 @@ module beta_2 (
   wire [1-1:0] M_top_matrix_control_outmatrix2;
   wire [1-1:0] M_top_matrix_control_outmatrix3;
   wire [1-1:0] M_top_matrix_control_outmatrix4;
-  reg [3-1:0] M_top_matrix_control_update;
+  reg [4-1:0] M_top_matrix_control_update;
   reg [7-1:0] M_top_matrix_control_matrix1_letter_index;
   reg [7-1:0] M_top_matrix_control_matrix2_letter_index;
   reg [7-1:0] M_top_matrix_control_matrix3_letter_index;
   reg [7-1:0] M_top_matrix_control_matrix4_letter_index;
+  reg [20-1:0] M_top_matrix_control_correct_word;
   matrix_controller_8 top_matrix_control (
     .clk(clk),
     .rst(rst),
@@ -184,6 +189,7 @@ module beta_2 (
     .matrix2_letter_index(M_top_matrix_control_matrix2_letter_index),
     .matrix3_letter_index(M_top_matrix_control_matrix3_letter_index),
     .matrix4_letter_index(M_top_matrix_control_matrix4_letter_index),
+    .correct_word(M_top_matrix_control_correct_word),
     .outmatrix1(M_top_matrix_control_outmatrix1),
     .outmatrix2(M_top_matrix_control_outmatrix2),
     .outmatrix3(M_top_matrix_control_outmatrix3),
@@ -291,6 +297,7 @@ module beta_2 (
     M_bottom_matrix_control_matrix2_letter_index = M_control_unit_bottom_matrix2_letter_address;
     M_bottom_matrix_control_matrix3_letter_index = M_control_unit_bottom_matrix3_letter_address;
     M_bottom_matrix_control_matrix4_letter_index = M_control_unit_bottom_matrix4_letter_address;
+    M_bottom_matrix_control_correct_word = M_control_unit_correct_word_out;
     out_bottom_matrix1 = M_bottom_matrix_control_outmatrix1;
     out_bottom_matrix2 = M_bottom_matrix_control_outmatrix2;
     out_bottom_matrix3 = M_bottom_matrix_control_outmatrix3;
@@ -300,13 +307,14 @@ module beta_2 (
     M_top_matrix_control_matrix2_letter_index = M_control_unit_top_matrix2_letter_address;
     M_top_matrix_control_matrix3_letter_index = M_control_unit_top_matrix3_letter_address;
     M_top_matrix_control_matrix4_letter_index = M_control_unit_top_matrix4_letter_address;
+    M_top_matrix_control_correct_word = M_control_unit_correct_word_out;
     out_top_matrix1 = M_top_matrix_control_outmatrix1;
     out_top_matrix2 = M_top_matrix_control_outmatrix2;
     out_top_matrix3 = M_top_matrix_control_outmatrix3;
     out_top_matrix4 = M_top_matrix_control_outmatrix4;
     debugger1 = M_control_unit_debugger1;
     debugger2 = M_control_unit_debugger2;
-    correct_word = M_control_unit_correct_word;
+    correct_word = M_control_unit_correct_word_index;
     debugger3 = M_control_unit_debugger3;
   end
 endmodule
