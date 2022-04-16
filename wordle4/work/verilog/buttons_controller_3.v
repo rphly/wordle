@@ -23,17 +23,27 @@ module buttons_controller_3 (
   
   
   wire [1-1:0] M_a__out;
-  button_10 a_ (
+  button_11 a_ (
     .clk(clk),
     .button_input(a),
     .out(M_a__out)
   );
+<<<<<<< HEAD
+=======
+  wire [1-1:0] M_b__out;
+  button_11 b_ (
+    .clk(clk),
+    .button_input(b),
+    .out(M_b__out)
+  );
+>>>>>>> 81d1d9559e6e53b259c73dd88862c923e336802b
   wire [1-1:0] M_e__out;
-  button_10 e_ (
+  button_11 e_ (
     .clk(clk),
     .button_input(e),
     .out(M_e__out)
   );
+<<<<<<< HEAD
   wire [1-1:0] M_i__out;
   button_10 i_ (
     .clk(clk),
@@ -72,6 +82,10 @@ module buttons_controller_3 (
   );
   wire [1-1:0] M_t__out;
   button_10 t_ (
+=======
+  wire [1-1:0] M_r__out;
+  button_11 r_ (
+>>>>>>> 81d1d9559e6e53b259c73dd88862c923e336802b
     .clk(clk),
     .button_input(t),
     .out(M_t__out)

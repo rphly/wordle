@@ -59,6 +59,7 @@ module beta_2 (
   wire [6-1:0] M_control_unit_alufn;
   wire [3-1:0] M_control_unit_asel;
   wire [3-1:0] M_control_unit_bsel;
+<<<<<<< HEAD
   wire [5-1:0] M_control_unit_words_selector;
   wire [3-1:0] M_control_unit_bottom_matrix_controller_update;
   wire [7-1:0] M_control_unit_bottom_matrix1_letter_address;
@@ -73,6 +74,19 @@ module beta_2 (
   wire [7-1:0] M_control_unit_debugger1;
   wire [7-1:0] M_control_unit_debugger2;
   wire [7-1:0] M_control_unit_debugger3;
+=======
+  wire [11-1:0] M_control_unit_words_selector;
+  wire [3-1:0] M_control_unit_matrix_controller_update;
+  wire [5-1:0] M_control_unit_bottom_matrix1_letter_address;
+  wire [5-1:0] M_control_unit_bottom_matrix2_letter_address;
+  wire [5-1:0] M_control_unit_bottom_matrix3_letter_address;
+  wire [5-1:0] M_control_unit_bottom_matrix4_letter_address;
+  wire [5-1:0] M_control_unit_g_out;
+  wire [1-1:0] M_control_unit_next_random_number;
+  wire [8-1:0] M_control_unit_debugger1;
+  wire [8-1:0] M_control_unit_debugger2;
+  wire [8-1:0] M_control_unit_debugger3;
+>>>>>>> 81d1d9559e6e53b259c73dd88862c923e336802b
   reg [16-1:0] M_control_unit_regfile_out_a;
   reg [16-1:0] M_control_unit_regfile_out_b;
   reg [5-1:0] M_control_unit_keyboard_input;
@@ -81,6 +95,7 @@ module beta_2 (
   reg [1-1:0] M_control_unit_has_panel_input;
   reg [16-1:0] M_control_unit_alu_out;
   reg [20-1:0] M_control_unit_selected_word;
+  reg [32-1:0] M_control_unit_random_number_out;
   game_6 control_unit (
     .clk(clk),
     .rst(rst),
@@ -92,6 +107,7 @@ module beta_2 (
     .has_panel_input(M_control_unit_has_panel_input),
     .alu_out(M_control_unit_alu_out),
     .selected_word(M_control_unit_selected_word),
+    .random_number_out(M_control_unit_random_number_out),
     .which_matrix(M_control_unit_which_matrix),
     .which_letter(M_control_unit_which_letter),
     .regfile_we(M_control_unit_regfile_we),
@@ -109,18 +125,23 @@ module beta_2 (
     .bottom_matrix2_letter_address(M_control_unit_bottom_matrix2_letter_address),
     .bottom_matrix3_letter_address(M_control_unit_bottom_matrix3_letter_address),
     .bottom_matrix4_letter_address(M_control_unit_bottom_matrix4_letter_address),
+<<<<<<< HEAD
     .top_matrix_controller_update(M_control_unit_top_matrix_controller_update),
     .top_matrix1_letter_address(M_control_unit_top_matrix1_letter_address),
     .top_matrix2_letter_address(M_control_unit_top_matrix2_letter_address),
     .top_matrix3_letter_address(M_control_unit_top_matrix3_letter_address),
     .top_matrix4_letter_address(M_control_unit_top_matrix4_letter_address),
+=======
+    .g_out(M_control_unit_g_out),
+    .next_random_number(M_control_unit_next_random_number),
+>>>>>>> 81d1d9559e6e53b259c73dd88862c923e336802b
     .debugger1(M_control_unit_debugger1),
     .debugger2(M_control_unit_debugger2),
     .debugger3(M_control_unit_debugger3)
   );
   wire [16-1:0] M_r_out_a;
   wire [16-1:0] M_r_out_b;
-  reg [6-1:0] M_r_write_address;
+  reg [7-1:0] M_r_write_address;
   reg [1-1:0] M_r_we;
   reg [16-1:0] M_r_data;
   reg [6-1:0] M_r_read_address_a;
@@ -158,6 +179,7 @@ module beta_2 (
     .outmatrix3(M_bottom_matrix_control_outmatrix3),
     .outmatrix4(M_bottom_matrix_control_outmatrix4)
   );
+<<<<<<< HEAD
   wire [1-1:0] M_top_matrix_control_outmatrix1;
   wire [1-1:0] M_top_matrix_control_outmatrix2;
   wire [1-1:0] M_top_matrix_control_outmatrix3;
@@ -179,11 +201,22 @@ module beta_2 (
     .outmatrix2(M_top_matrix_control_outmatrix2),
     .outmatrix3(M_top_matrix_control_outmatrix3),
     .outmatrix4(M_top_matrix_control_outmatrix4)
+=======
+  wire [32-1:0] M_random_number_generator_num;
+  reg [1-1:0] M_random_number_generator_next;
+  reg [32-1:0] M_random_number_generator_seed;
+  pn_gen_9 random_number_generator (
+    .clk(clk),
+    .rst(rst),
+    .next(M_random_number_generator_next),
+    .seed(M_random_number_generator_seed),
+    .num(M_random_number_generator_num)
+>>>>>>> 81d1d9559e6e53b259c73dd88862c923e336802b
   );
   
   wire [20-1:0] M_words_out;
   reg [11-1:0] M_words_selector;
-  words_9 words (
+  mini_words_10 words (
     .selector(M_words_selector),
     .out(M_words_out)
   );
@@ -205,6 +238,12 @@ module beta_2 (
       end
       3'h4: begin
         inputAlu_a = 5'h10;
+      end
+      3'h5: begin
+        inputAlu_a = 11'h7a7;
+      end
+      3'h6: begin
+        inputAlu_a = M_random_number_generator_num[0+8-:9];
       end
       default: begin
         inputAlu_a = 1'h0;
@@ -233,10 +272,15 @@ module beta_2 (
       3'h6: begin
         inputAlu_b = 5'h10;
       end
+      3'h7: begin
+        inputAlu_b = 9'h132;
+      end
       default: begin
         inputAlu_b = 1'h0;
       end
     endcase
+    M_random_number_generator_seed = 14'h22b8;
+    M_random_number_generator_next = M_control_unit_next_random_number;
     M_game_alu_a = inputAlu_a;
     M_game_alu_b = inputAlu_b;
     M_game_alu_alufn = M_control_unit_alufn;
@@ -254,6 +298,7 @@ module beta_2 (
     M_control_unit_regfile_out_b = M_r_out_b;
     M_control_unit_alu_out = M_game_alu_alu;
     M_control_unit_selected_word = M_words_out;
+    M_control_unit_random_number_out = M_random_number_generator_num;
     current_state = M_control_unit_current_state;
     M_bottom_matrix_control_update = M_control_unit_bottom_matrix_controller_update;
     M_bottom_matrix_control_matrix1_letter_index = M_control_unit_bottom_matrix1_letter_address;

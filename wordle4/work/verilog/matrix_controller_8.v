@@ -25,32 +25,52 @@ module matrix_controller_8 (
   reg [6:0] M_matrix3_letter_index_dff_d, M_matrix3_letter_index_dff_q = 1'h0;
   reg [6:0] M_matrix4_letter_index_dff_d, M_matrix4_letter_index_dff_q = 1'h0;
   wire [1-1:0] M_matrix1_data_out;
+<<<<<<< HEAD
   reg [7-1:0] M_matrix1_letter_index;
   matrix_15 matrix1 (
+=======
+  reg [5-1:0] M_matrix1_letter_address;
+  matrix_16 matrix1 (
+>>>>>>> 81d1d9559e6e53b259c73dd88862c923e336802b
     .clk(clk),
     .rst(rst),
     .letter_index(M_matrix1_letter_index),
     .data_out(M_matrix1_data_out)
   );
   wire [1-1:0] M_matrix2_data_out;
+<<<<<<< HEAD
   reg [7-1:0] M_matrix2_letter_index;
   matrix_15 matrix2 (
+=======
+  reg [5-1:0] M_matrix2_letter_address;
+  matrix_16 matrix2 (
+>>>>>>> 81d1d9559e6e53b259c73dd88862c923e336802b
     .clk(clk),
     .rst(rst),
     .letter_index(M_matrix2_letter_index),
     .data_out(M_matrix2_data_out)
   );
   wire [1-1:0] M_matrix3_data_out;
+<<<<<<< HEAD
   reg [7-1:0] M_matrix3_letter_index;
   matrix_15 matrix3 (
+=======
+  reg [5-1:0] M_matrix3_letter_address;
+  matrix_16 matrix3 (
+>>>>>>> 81d1d9559e6e53b259c73dd88862c923e336802b
     .clk(clk),
     .rst(rst),
     .letter_index(M_matrix3_letter_index),
     .data_out(M_matrix3_data_out)
   );
   wire [1-1:0] M_matrix4_data_out;
+<<<<<<< HEAD
   reg [7-1:0] M_matrix4_letter_index;
   matrix_15 matrix4 (
+=======
+  reg [5-1:0] M_matrix4_letter_address;
+  matrix_16 matrix4 (
+>>>>>>> 81d1d9559e6e53b259c73dd88862c923e336802b
     .clk(clk),
     .rst(rst),
     .letter_index(M_matrix4_letter_index),

@@ -1,12 +1,22 @@
 #-----------------------------------------------------------
+<<<<<<< HEAD
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
 # Start of session at: Sat Apr 16 02:56:10 2022
 # Process ID: 30648
 # Current directory: C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1
+=======
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Sat Apr 16 01:36:50 2022
+# Process ID: 16588
+# Current directory: C:/Users/CompStruct/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1
+>>>>>>> 81d1d9559e6e53b259c73dd88862c923e336802b
 # Command line: vivado.exe -log au_top_0.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source au_top_0.tcl -notrace
-# Log file: C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/au_top_0.vdi
-# Journal file: C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1\vivado.jou
+# Log file: C:/Users/CompStruct/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1/au_top_0.vdi
+# Journal file: C:/Users/CompStruct/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/impl_1\vivado.jou
+# Running On: LAPTOP-69752C9G, OS: Windows, CPU Frequency: 1992 MHz, CPU Physical cores: 4, Host memory: 16985 MB
 #-----------------------------------------------------------
 source au_top_0.tcl -notrace

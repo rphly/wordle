@@ -37,10 +37,12 @@ module beta (
       regfile r;
       matrix_controller bottom_matrix_control;
       matrix_controller top_matrix_control;
+      pn_gen random_number_generator;
     }
+    
   }
   
-  words words;
+  mini_words words;
 
   always {
   
@@ -51,6 +53,8 @@ module beta (
       b010  : inputAlu_a = 2d1;
       b011  : inputAlu_a = 2d2;
       b100  : inputAlu_a = b10000;
+      b101  : inputAlu_a = 11d1959;
+      b110  : inputAlu_a = random_number_generator.num[8:0]; // 9 bits for mini words
       default : inputAlu_a = 0;
     }
     
@@ -63,8 +67,14 @@ module beta (
       b100  : inputAlu_b = 3d3;
       b101  : inputAlu_b = 3d4;
       b110  : inputAlu_b = b10000;
+      b111  : inputAlu_b = 306;
       default : inputAlu_b = 0;
     }
+    
+    // setup random_number_generator
+    random_number_generator.seed = 8888;
+    // 01101100 01001001
+    random_number_generator.next = control_unit.next_random_number;
     
     // game_alu
     game_alu.a = inputAlu_a;
@@ -89,6 +99,7 @@ module beta (
     control_unit.regfile_out_b = r.out_b;
     control_unit.alu_out = game_alu.alu;
     control_unit.selected_word = words.out;
+    control_unit.random_number_out = random_number_generator.num;
     
     
     current_state = control_unit.current_state;

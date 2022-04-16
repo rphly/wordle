@@ -16,13 +16,13 @@ module panel_controller_4 (
   
   
   wire [1-1:0] M_clear__out;
-  button_10 clear_ (
+  button_11 clear_ (
     .clk(clk),
     .button_input(clear),
     .out(M_clear__out)
   );
   wire [1-1:0] M_check__out;
-  button_10 check_ (
+  button_11 check_ (
     .clk(clk),
     .button_input(check),
     .out(M_check__out)

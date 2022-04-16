@@ -7,7 +7,7 @@
 module regfile_7 (
     input clk,
     input rst,
-    input [5:0] write_address,
+    input [6:0] write_address,
     input we,
     input [15:0] data,
     input [5:0] read_address_a,
@@ -54,6 +54,7 @@ module regfile_7 (
   reg [5:0] M_temp_guess_g_letter_i_d, M_temp_guess_g_letter_i_q = 1'h0;
   reg [6:0] M_temp_coloured_letter_d, M_temp_coloured_letter_q = 1'h0;
   reg [10:0] M_word_index_d, M_word_index_q = 1'h0;
+  reg [0:0] M_oka_mode_d, M_oka_mode_q = 1'h0;
   
   always @* begin
     M_temp_guess_g_letter_i_d = M_temp_guess_g_letter_i_q;
@@ -65,6 +66,7 @@ module regfile_7 (
     M_guess_4_letter_3_d = M_guess_4_letter_3_q;
     M_guess_4_letter_4_d = M_guess_4_letter_4_q;
     M_num_correct_d = M_num_correct_q;
+    M_oka_mode_d = M_oka_mode_q;
     M_guess_3_letter_4_d = M_guess_3_letter_4_q;
     M_zero_d = M_zero_q;
     M_temp_coloured_letter_d = M_temp_coloured_letter_q;
@@ -96,16 +98,16 @@ module regfile_7 (
     if (we) begin
       
       case (write_address)
-        5'h00: begin
+        7'h40: begin
           M_guess_1_letter_1_d = data;
         end
-        5'h01: begin
+        7'h41: begin
           M_guess_1_letter_2_d = data;
         end
-        5'h02: begin
+        7'h42: begin
           M_guess_1_letter_3_d = data;
         end
-        5'h03: begin
+        7'h43: begin
           M_guess_1_letter_4_d = data;
         end
         5'h04: begin
@@ -166,6 +168,7 @@ module regfile_7 (
           M_k_d = data;
         end
         5'h17: begin
+<<<<<<< HEAD
           M_correct_letter_1_d = 5'h0c;
         end
         5'h18: begin
@@ -176,6 +179,18 @@ module regfile_7 (
         end
         5'h1a: begin
           M_correct_letter_4_d = 5'h0e;
+=======
+          M_correct_letter_1_d = data;
+        end
+        5'h18: begin
+          M_correct_letter_2_d = data;
+        end
+        5'h19: begin
+          M_correct_letter_3_d = data;
+        end
+        5'h1a: begin
+          M_correct_letter_4_d = data;
+>>>>>>> 81d1d9559e6e53b259c73dd88862c923e336802b
         end
         5'h1b: begin
           M_num_correct_d = data;
@@ -204,20 +219,23 @@ module regfile_7 (
         6'h23: begin
           M_word_index_d = data;
         end
+        6'h24: begin
+          M_oka_mode_d = data;
+        end
       endcase
     end
     
     case (read_address_a)
-      5'h00: begin
+      7'h40: begin
         out_a = M_guess_1_letter_1_q;
       end
-      5'h01: begin
+      7'h41: begin
         out_a = M_guess_1_letter_2_q;
       end
-      5'h02: begin
+      7'h42: begin
         out_a = M_guess_1_letter_3_q;
       end
-      5'h03: begin
+      7'h43: begin
         out_a = M_guess_1_letter_4_q;
       end
       5'h04: begin
@@ -316,22 +334,25 @@ module regfile_7 (
       6'h23: begin
         out_a = M_word_index_q;
       end
+      6'h24: begin
+        out_a = M_oka_mode_q;
+      end
       default: begin
         out_a = M_zero_q;
       end
     endcase
     
     case (read_address_b)
-      5'h00: begin
+      7'h40: begin
         out_b = M_guess_1_letter_1_q;
       end
-      5'h01: begin
+      7'h41: begin
         out_b = M_guess_1_letter_2_q;
       end
-      5'h02: begin
+      7'h42: begin
         out_b = M_guess_1_letter_3_q;
       end
-      5'h03: begin
+      7'h43: begin
         out_b = M_guess_1_letter_4_q;
       end
       5'h04: begin
@@ -430,6 +451,9 @@ module regfile_7 (
       6'h23: begin
         out_b = M_word_index_q;
       end
+      6'h24: begin
+        out_b = M_oka_mode_q;
+      end
       default: begin
         out_b = M_zero_q;
       end
@@ -474,6 +498,7 @@ module regfile_7 (
       M_temp_guess_g_letter_i_q <= 1'h0;
       M_temp_coloured_letter_q <= 1'h0;
       M_word_index_q <= 1'h0;
+      M_oka_mode_q <= 1'h0;
     end else begin
       M_guess_1_letter_1_q <= M_guess_1_letter_1_d;
       M_guess_1_letter_2_q <= M_guess_1_letter_2_d;
@@ -511,6 +536,7 @@ module regfile_7 (
       M_temp_guess_g_letter_i_q <= M_temp_guess_g_letter_i_d;
       M_temp_coloured_letter_q <= M_temp_coloured_letter_d;
       M_word_index_q <= M_word_index_d;
+      M_oka_mode_q <= M_oka_mode_d;
     end
   end
   

@@ -10,7 +10,7 @@
      MIN_DELAY = 20
      NUM_SYNC = 2
 */
-module button_conditioner_16 (
+module button_conditioner_17 (
     input clk,
     input in,
     output reg out
@@ -23,7 +23,11 @@ module button_conditioner_16 (
   
   wire [1-1:0] M_sync_out;
   reg [1-1:0] M_sync_in;
+<<<<<<< HEAD:wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/button_conditioner_16.v
   pipeline_22 sync (
+=======
+  pipeline_21 sync (
+>>>>>>> 81d1d9559e6e53b259c73dd88862c923e336802b:wordle4/work/verilog/button_conditioner_17.v
     .clk(clk),
     .in(M_sync_in),
     .out(M_sync_out)
