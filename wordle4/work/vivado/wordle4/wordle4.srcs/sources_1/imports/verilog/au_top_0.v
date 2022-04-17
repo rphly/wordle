@@ -94,7 +94,7 @@ module au_top_0 (
   wire [11-1:0] M_betaCPU_correct_word_index_out;
   reg [1-1:0] M_betaCPU_has_keyboard_input;
   reg [5-1:0] M_betaCPU_keyboard_input;
-  reg [5-1:0] M_betaCPU_panel_input;
+  reg [16-1:0] M_betaCPU_panel_input;
   reg [1-1:0] M_betaCPU_has_panel_input;
   beta_3 betaCPU (
     .clk(clk),

@@ -9,7 +9,7 @@ module beta_3 (
     input rst,
     input has_keyboard_input,
     input [4:0] keyboard_input,
-    input [4:0] panel_input,
+    input [15:0] panel_input,
     input has_panel_input,
     output reg [15:0] current_state,
     output reg out_bottom_matrix1,

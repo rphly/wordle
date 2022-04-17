@@ -92,6 +92,12 @@ module matrix_controller (
         matrix3_letter_index_dff.d = matrix3_letter_index; 
         matrix4_letter_index_dff.d = matrix4_letter_index;
       
+      4b1111: // debugger 
+        matrix1_letter_index_dff.d = b00001;
+        matrix2_letter_index_dff.d = b00001;
+        matrix3_letter_index_dff.d = b00001;
+        matrix4_letter_index_dff.d = b00001; 
+      
     }
   
 }

@@ -265,6 +265,7 @@ module game_7 (
                     regfile_write_address = 6'h24;
                     regfile_data = 1'h1;
                     regfile_we = 1'h1;
+                    M_game_fsm_d = IDLE_game_fsm;
                   end else begin
                     if (panel_input == 5'h01) begin
                       regfile_ra = 6'h20;

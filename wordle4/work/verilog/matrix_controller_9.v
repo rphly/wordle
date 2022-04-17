@@ -130,6 +130,12 @@ module matrix_controller_9 (
         M_matrix3_letter_index_dff_d = matrix3_letter_index;
         M_matrix4_letter_index_dff_d = matrix4_letter_index;
       end
+      4'hf: begin
+        M_matrix1_letter_index_dff_d = 5'h01;
+        M_matrix2_letter_index_dff_d = 5'h01;
+        M_matrix3_letter_index_dff_d = 5'h01;
+        M_matrix4_letter_index_dff_d = 5'h01;
+      end
     endcase
   end
   
