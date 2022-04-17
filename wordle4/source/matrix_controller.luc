@@ -72,6 +72,18 @@ module matrix_controller (
         matrix3_letter_index_dff.d = b0101110;
         matrix4_letter_index_dff.d = b0100000;
       
+      4b1001: // TYPE
+        matrix1_letter_index_dff.d = b10100;
+        matrix2_letter_index_dff.d = b11001;
+        matrix3_letter_index_dff.d = b10000;
+        matrix4_letter_index_dff.d = b00101;
+        
+      4b1010: // HERE
+        matrix1_letter_index_dff.d = b01000;
+        matrix2_letter_index_dff.d = b00101;
+        matrix3_letter_index_dff.d = b10010;
+        matrix4_letter_index_dff.d = b00101;
+      
       4b1100: // update first 2 martices
         matrix1_letter_index_dff.d = matrix1_letter_index; 
         matrix2_letter_index_dff.d = matrix2_letter_index;
@@ -79,6 +91,7 @@ module matrix_controller (
       4b1110: // update last 2 matrices 
         matrix3_letter_index_dff.d = matrix3_letter_index; 
         matrix4_letter_index_dff.d = matrix4_letter_index;
+      
     }
   
 }
