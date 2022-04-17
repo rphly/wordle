@@ -3,7 +3,7 @@ module button (
     input button_input,       // declare input as PULLDOWN
     output out    // output signal depending if button got clicked or not
   ) {
-  button_conditioner button_cond(.clk(clk));
+  button_conditioner button_cond(.clk(clk), #MIN_DELAY(50)); // MIN_DELAY = minimum delay in ms
   edge_detector edge(#RISE(1), #FALL(0),.clk(clk)); // used to detect rising edge
   always {
     button_cond.in = button_input; // need to condition button input due to button pressing noise

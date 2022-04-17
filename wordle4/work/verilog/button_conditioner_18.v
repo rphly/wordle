@@ -7,7 +7,7 @@
 /*
    Parameters:
      CLK_FREQ = 50000000
-     MIN_DELAY = 20
+     MIN_DELAY = 50
      NUM_SYNC = 2
 */
 module button_conditioner_18 (
@@ -17,7 +17,7 @@ module button_conditioner_18 (
   );
   
   localparam CLK_FREQ = 26'h2faf080;
-  localparam MIN_DELAY = 5'h14;
+  localparam MIN_DELAY = 6'h32;
   localparam NUM_SYNC = 2'h2;
   
   
@@ -28,7 +28,7 @@ module button_conditioner_18 (
     .in(M_sync_in),
     .out(M_sync_out)
   );
-  reg [19:0] M_ctr_d, M_ctr_q = 1'h0;
+  reg [21:0] M_ctr_d, M_ctr_q = 1'h0;
   
   always @* begin
     M_ctr_d = M_ctr_q;

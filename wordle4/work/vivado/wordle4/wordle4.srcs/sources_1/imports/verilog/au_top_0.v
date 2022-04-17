@@ -153,7 +153,7 @@ module au_top_0 (
     .out(M_keyboard_controller_out)
   );
   wire [1-1:0] M_button_panel_controller_is_pressed;
-  wire [5-1:0] M_button_panel_controller_out;
+  wire [16-1:0] M_button_panel_controller_out;
   panel_controller_5 button_panel_controller (
     .clk(clk),
     .rst(rst),

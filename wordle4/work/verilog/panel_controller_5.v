@@ -16,7 +16,7 @@ module panel_controller_5 (
     input guess_3_btn,
     input guess_4_btn,
     output reg is_pressed,
-    output reg [4:0] out
+    output reg [15:0] out
   );
   
   

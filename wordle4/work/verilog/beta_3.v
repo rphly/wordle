@@ -132,11 +132,11 @@ module beta_3 (
   );
   wire [16-1:0] M_r_out_a;
   wire [16-1:0] M_r_out_b;
-  reg [7-1:0] M_r_write_address;
+  reg [16-1:0] M_r_write_address;
   reg [1-1:0] M_r_we;
   reg [16-1:0] M_r_data;
-  reg [7-1:0] M_r_read_address_a;
-  reg [7-1:0] M_r_read_address_b;
+  reg [16-1:0] M_r_read_address_a;
+  reg [16-1:0] M_r_read_address_b;
   regfile_8 r (
     .clk(clk),
     .rst(rst),

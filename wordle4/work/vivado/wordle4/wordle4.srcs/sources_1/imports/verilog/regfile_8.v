@@ -7,11 +7,11 @@
 module regfile_8 (
     input clk,
     input rst,
-    input [6:0] write_address,
+    input [15:0] write_address,
     input we,
     input [15:0] data,
-    input [6:0] read_address_a,
-    input [6:0] read_address_b,
+    input [15:0] read_address_a,
+    input [15:0] read_address_b,
     output reg [15:0] out_a,
     output reg [15:0] out_b
   );

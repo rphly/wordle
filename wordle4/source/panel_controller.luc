@@ -14,7 +14,7 @@ module panel_controller (
     input guess_4_btn,
     
     output is_pressed,
-    output out[5]
+    output out[16]
   ) {
   .clk(clk) {
     button clear_(.button_input(clear));

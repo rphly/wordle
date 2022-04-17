@@ -636,7 +636,7 @@ module game (
           regfile_write_address = regfile_out_a;
           regfile_data = regfile_out_b;
           regfile_we = 1;
-          game_fsm.d = game_fsm.COMPARE_I_EQUALS_3_AND_INCREMENT;
+          game_fsm.d = game_fsm.COMPARE_K_EQUALS_3_AND_INCREMENT;
 
         game_fsm.COMPARE_K_EQUALS_3_AND_INCREMENT:
           regfile_ra = K;

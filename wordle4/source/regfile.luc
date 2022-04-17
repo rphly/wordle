@@ -1,13 +1,13 @@
 module regfile (
     input clk,  // clock
     input rst,  // reset
-    input write_address[7], // write address
+    input write_address[16], // write address
     input we, // write enable
     input data[16], // data in
     
     
-    input read_address_a[7], //address port a 
-    input read_address_b[7], //address port b
+    input read_address_a[8], //address port a 
+    input read_address_b[8], //address port b
     output out_a[16], //read port a
     output out_b[16] //read port b
 
