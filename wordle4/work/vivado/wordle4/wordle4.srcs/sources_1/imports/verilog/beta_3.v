@@ -135,8 +135,8 @@ module beta_3 (
   reg [16-1:0] M_r_write_address;
   reg [1-1:0] M_r_we;
   reg [16-1:0] M_r_data;
-  reg [16-1:0] M_r_read_address_a;
-  reg [16-1:0] M_r_read_address_b;
+  reg [8-1:0] M_r_read_address_a;
+  reg [8-1:0] M_r_read_address_b;
   regfile_8 r (
     .clk(clk),
     .rst(rst),
@@ -237,6 +237,9 @@ module beta_3 (
       end
       3'h6: begin
         inputAlu_a = M_random_number_generator_num[0+8-:9];
+      end
+      3'h7: begin
+        inputAlu_a = 3'h5;
       end
       default: begin
         inputAlu_a = 1'h0;

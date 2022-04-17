@@ -57,6 +57,7 @@ module beta (
       b100  : inputAlu_a = b10000;
       b101  : inputAlu_a = 11d1959;
       b110  : inputAlu_a = random_number_generator.num[8:0]; // 9 bits for mini words
+      b111  : inputAlu_a = 3d5;
       default : inputAlu_a = 0;
     }
     
@@ -70,6 +71,7 @@ module beta (
       b101  : inputAlu_b = 3d4;
       b110  : inputAlu_b = b10000;
       b111  : inputAlu_b = 306;
+      
       default : inputAlu_b = 0;
     }
     

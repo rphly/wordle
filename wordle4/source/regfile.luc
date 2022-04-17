@@ -43,6 +43,11 @@ module regfile (
       dff guess_4_letter_3[7];
       dff guess_4_letter_4[7];
       
+      dff guess_5_letter_1[7];
+      dff guess_5_letter_2[7];
+      dff guess_5_letter_3[7];
+      dff guess_5_letter_4[7];
+      
       // 20 bits
       dff input_letter_1[5];
       dff input_letter_2[5];
@@ -113,6 +118,11 @@ module regfile (
         b01110 : guess_4_letter_3.d = data;
         b01111 : guess_4_letter_4.d = data;
         
+        b100101 : guess_5_letter_1.d = data;
+        b100110 : guess_5_letter_2.d = data;
+        b100111 : guess_5_letter_3.d = data;
+        b101000 : guess_5_letter_4.d = data;
+        
         b10000 : input_letter_1.d = data;
         b10001 : input_letter_2.d = data;
         b10010 : input_letter_3.d = data;
@@ -162,6 +172,11 @@ module regfile (
         b01101 : out_a = guess_4_letter_2.q;
         b01110 : out_a = guess_4_letter_3.q;
         b01111 : out_a = guess_4_letter_4.q;
+      
+        b100101 : out_a = guess_5_letter_1.q;
+        b100110 : out_a = guess_5_letter_2.q;
+        b100111 : out_a = guess_5_letter_3.q;
+        b101000 : out_a = guess_5_letter_4.q;
         
         b10000 : out_a = input_letter_1.q;
         b10001 : out_a = input_letter_2.q;
@@ -212,6 +227,11 @@ module regfile (
         b01101 : out_b = guess_4_letter_2.q;
         b01110 : out_b = guess_4_letter_3.q;
         b01111 : out_b = guess_4_letter_4.q;
+      
+        b100101 : out_b = guess_5_letter_1.q;
+        b100110 : out_b = guess_5_letter_2.q;
+        b100111 : out_b = guess_5_letter_3.q;
+        b101000 : out_b = guess_5_letter_4.q;
     
         b10000 : out_b = input_letter_1.q;
         b10001 : out_b = input_letter_2.q;

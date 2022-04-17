@@ -134,6 +134,8 @@ module game_7 (
   
   localparam GUESS_4_LETTER_1 = 5'h0c;
   
+  localparam GUESS_5_LETTER_1 = 6'h25;
+  
   localparam TEMP_GUESS_G_LETTER_I_ADDR = 6'h21;
   
   localparam TEMP_COLOURED_LETTER = 6'h22;
@@ -493,6 +495,9 @@ module game_7 (
             2'h3: begin
               regfile_data = 5'h0c + regfile_out_b;
             end
+            3'h4: begin
+              regfile_data = 6'h25 + regfile_out_b;
+            end
           endcase
           regfile_write_address = 6'h21;
           regfile_we = 1'h1;
@@ -545,6 +550,9 @@ module game_7 (
             end
             2'h3: begin
               regfile_data = 5'h0c + regfile_out_b;
+            end
+            3'h4: begin
+              regfile_data = 6'h25 + regfile_out_b;
             end
           endcase
           regfile_write_address = 6'h21;
@@ -606,6 +614,9 @@ module game_7 (
             2'h3: begin
               regfile_data = 5'h0c + regfile_out_b;
             end
+            3'h4: begin
+              regfile_data = 6'h25 + regfile_out_b;
+            end
           endcase
           regfile_write_address = 6'h21;
           regfile_we = 1'h1;
@@ -625,7 +636,7 @@ module game_7 (
           regfile_write_address = regfile_out_a;
           regfile_data = regfile_out_b;
           regfile_we = 1'h1;
-          M_game_fsm_d = COMPARE_I_EQUALS_3_AND_INCREMENT_game_fsm;
+          M_game_fsm_d = COMPARE_K_EQUALS_3_AND_INCREMENT_game_fsm;
         end
         COMPARE_K_EQUALS_3_AND_INCREMENT_game_fsm: begin
           regfile_ra = 5'h16;
@@ -688,6 +699,11 @@ module game_7 (
               top_matrix_controller_update = 3'h1;
               top_matrix1_letter_address = regfile_out_b;
             end
+            3'h4: begin
+              regfile_rb = 6'h25;
+              top_matrix_controller_update = 3'h1;
+              top_matrix1_letter_address = regfile_out_b;
+            end
           endcase
           M_game_fsm_d = SHOW_TOP_DISPLAY_2_game_fsm;
         end
@@ -713,6 +729,11 @@ module game_7 (
             end
             2'h3: begin
               regfile_rb = 6'h0d;
+              top_matrix_controller_update = 3'h2;
+              top_matrix2_letter_address = regfile_out_b;
+            end
+            3'h4: begin
+              regfile_rb = 7'h26;
               top_matrix_controller_update = 3'h2;
               top_matrix2_letter_address = regfile_out_b;
             end
@@ -744,6 +765,11 @@ module game_7 (
               top_matrix_controller_update = 3'h3;
               top_matrix3_letter_address = regfile_out_b;
             end
+            3'h4: begin
+              regfile_rb = 7'h27;
+              top_matrix_controller_update = 3'h3;
+              top_matrix2_letter_address = regfile_out_b;
+            end
           endcase
           M_game_fsm_d = SHOW_TOP_DISPLAY_4_game_fsm;
         end
@@ -772,6 +798,11 @@ module game_7 (
               top_matrix_controller_update = 3'h4;
               top_matrix4_letter_address = regfile_out_b;
             end
+            3'h4: begin
+              regfile_rb = 7'h28;
+              top_matrix_controller_update = 3'h4;
+              top_matrix2_letter_address = regfile_out_b;
+            end
           endcase
           M_game_fsm_d = INCREMENT_GUESS_CTR_game_fsm;
         end
@@ -787,13 +818,10 @@ module game_7 (
         end
         COMPARE_GUESS_CTR_EQUALS_3_game_fsm: begin
           regfile_we = 1'h0;
-          regfile_ra = 6'h20;
-          asel = 3'h0;
-          bsel = 3'h5;
+          regfile_rb = 6'h20;
+          asel = 3'h7;
+          bsel = 3'h0;
           alufn = 6'h33;
-          if (regfile_out_a == 1'h1) begin
-            M_game_fsm_d = COMPARE_GUESS_CTR_EQUALS_3_game_fsm;
-          end
           if (alu_out == 16'h0000) begin
             M_game_fsm_d = SET_INPUT_CTR_TO_0_game_fsm;
           end else begin

@@ -10,8 +10,8 @@ module regfile_8 (
     input [15:0] write_address,
     input we,
     input [15:0] data,
-    input [15:0] read_address_a,
-    input [15:0] read_address_b,
+    input [7:0] read_address_a,
+    input [7:0] read_address_b,
     output reg [15:0] out_a,
     output reg [15:0] out_b
   );
@@ -34,6 +34,10 @@ module regfile_8 (
   reg [6:0] M_guess_4_letter_2_d, M_guess_4_letter_2_q = 1'h0;
   reg [6:0] M_guess_4_letter_3_d, M_guess_4_letter_3_q = 1'h0;
   reg [6:0] M_guess_4_letter_4_d, M_guess_4_letter_4_q = 1'h0;
+  reg [6:0] M_guess_5_letter_1_d, M_guess_5_letter_1_q = 1'h0;
+  reg [6:0] M_guess_5_letter_2_d, M_guess_5_letter_2_q = 1'h0;
+  reg [6:0] M_guess_5_letter_3_d, M_guess_5_letter_3_q = 1'h0;
+  reg [6:0] M_guess_5_letter_4_d, M_guess_5_letter_4_q = 1'h0;
   reg [4:0] M_input_letter_1_d, M_input_letter_1_q = 1'h0;
   reg [4:0] M_input_letter_2_d, M_input_letter_2_q = 1'h0;
   reg [4:0] M_input_letter_3_d, M_input_letter_3_q = 1'h0;
@@ -89,11 +93,15 @@ module regfile_8 (
     M_correct_k_d = M_correct_k_q;
     M_input_letter_4_d = M_input_letter_4_q;
     M_guess_2_letter_1_d = M_guess_2_letter_1_q;
+    M_guess_5_letter_1_d = M_guess_5_letter_1_q;
     M_correct_letter_1_d = M_correct_letter_1_q;
+    M_guess_5_letter_2_d = M_guess_5_letter_2_q;
     M_guess_2_letter_3_d = M_guess_2_letter_3_q;
     M_correct_letter_3_d = M_correct_letter_3_q;
     M_guess_2_letter_2_d = M_guess_2_letter_2_q;
     M_correct_letter_2_d = M_correct_letter_2_q;
+    M_guess_5_letter_3_d = M_guess_5_letter_3_q;
+    M_guess_5_letter_4_d = M_guess_5_letter_4_q;
     
     if (we) begin
       
@@ -145,6 +153,18 @@ module regfile_8 (
         end
         5'h0f: begin
           M_guess_4_letter_4_d = data;
+        end
+        6'h25: begin
+          M_guess_5_letter_1_d = data;
+        end
+        6'h26: begin
+          M_guess_5_letter_2_d = data;
+        end
+        6'h27: begin
+          M_guess_5_letter_3_d = data;
+        end
+        6'h28: begin
+          M_guess_5_letter_4_d = data;
         end
         5'h10: begin
           M_input_letter_1_d = data;
@@ -260,6 +280,18 @@ module regfile_8 (
       end
       5'h0f: begin
         out_a = M_guess_4_letter_4_q;
+      end
+      6'h25: begin
+        out_a = M_guess_5_letter_1_q;
+      end
+      6'h26: begin
+        out_a = M_guess_5_letter_2_q;
+      end
+      6'h27: begin
+        out_a = M_guess_5_letter_3_q;
+      end
+      6'h28: begin
+        out_a = M_guess_5_letter_4_q;
       end
       5'h10: begin
         out_a = M_input_letter_1_q;
@@ -378,6 +410,18 @@ module regfile_8 (
       5'h0f: begin
         out_b = M_guess_4_letter_4_q;
       end
+      6'h25: begin
+        out_b = M_guess_5_letter_1_q;
+      end
+      6'h26: begin
+        out_b = M_guess_5_letter_2_q;
+      end
+      6'h27: begin
+        out_b = M_guess_5_letter_3_q;
+      end
+      6'h28: begin
+        out_b = M_guess_5_letter_4_q;
+      end
       5'h10: begin
         out_b = M_input_letter_1_q;
       end
@@ -465,6 +509,10 @@ module regfile_8 (
       M_guess_4_letter_2_q <= 1'h0;
       M_guess_4_letter_3_q <= 1'h0;
       M_guess_4_letter_4_q <= 1'h0;
+      M_guess_5_letter_1_q <= 1'h0;
+      M_guess_5_letter_2_q <= 1'h0;
+      M_guess_5_letter_3_q <= 1'h0;
+      M_guess_5_letter_4_q <= 1'h0;
       M_input_letter_1_q <= 1'h0;
       M_input_letter_2_q <= 1'h0;
       M_input_letter_3_q <= 1'h0;
@@ -503,6 +551,10 @@ module regfile_8 (
       M_guess_4_letter_2_q <= M_guess_4_letter_2_d;
       M_guess_4_letter_3_q <= M_guess_4_letter_3_d;
       M_guess_4_letter_4_q <= M_guess_4_letter_4_d;
+      M_guess_5_letter_1_q <= M_guess_5_letter_1_d;
+      M_guess_5_letter_2_q <= M_guess_5_letter_2_d;
+      M_guess_5_letter_3_q <= M_guess_5_letter_3_d;
+      M_guess_5_letter_4_q <= M_guess_5_letter_4_d;
       M_input_letter_1_q <= M_input_letter_1_d;
       M_input_letter_2_q <= M_input_letter_2_d;
       M_input_letter_3_q <= M_input_letter_3_d;

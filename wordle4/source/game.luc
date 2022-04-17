@@ -125,10 +125,10 @@ module game (
   const G = b100000;
   
   const GUESS_1_LETTER_1 = b1000000;
-  //const GUESS_1_LETTER_1 = b00000;
   const GUESS_2_LETTER_1 = b00100;
   const GUESS_3_LETTER_1 = b01000;
   const GUESS_4_LETTER_1 = b01100;
+  const GUESS_5_LETTER_1 = b100101;
   const TEMP_GUESS_G_LETTER_I_ADDR = b100001;
   const TEMP_COLOURED_LETTER = b100010;
   
@@ -490,6 +490,8 @@ module game (
               regfile_data = GUESS_3_LETTER_1 + regfile_out_b;
             d3:
               regfile_data = GUESS_4_LETTER_1 + regfile_out_b;
+            d4:
+              regfile_data = GUESS_5_LETTER_1 + regfile_out_b;
           }
           
           regfile_write_address = TEMP_GUESS_G_LETTER_I_ADDR;
@@ -547,6 +549,7 @@ module game (
             d1: regfile_data = GUESS_2_LETTER_1 + regfile_out_b;
             d2: regfile_data = GUESS_3_LETTER_1 + regfile_out_b;
             d3: regfile_data = GUESS_4_LETTER_1 + regfile_out_b;
+            d4: regfile_data = GUESS_5_LETTER_1 + regfile_out_b;
           }
           
           regfile_write_address = TEMP_GUESS_G_LETTER_I_ADDR;
@@ -612,6 +615,8 @@ module game (
               regfile_data = GUESS_3_LETTER_1 + regfile_out_b;
             d3: 
               regfile_data = GUESS_4_LETTER_1 + regfile_out_b;
+            d4:
+              regfile_data = GUESS_5_LETTER_1 + regfile_out_b;
           }
           
           regfile_write_address = TEMP_GUESS_G_LETTER_I_ADDR;
@@ -703,6 +708,10 @@ module game (
               regfile_rb = GUESS_4_LETTER_1;
               top_matrix_controller_update = 3b1;
               top_matrix1_letter_address = regfile_out_b;
+            d4:
+              regfile_rb = GUESS_5_LETTER_1;
+              top_matrix_controller_update = 3b1;
+              top_matrix1_letter_address = regfile_out_b;
           }
           game_fsm.d = game_fsm.SHOW_TOP_DISPLAY_2;
           
@@ -724,6 +733,10 @@ module game (
               top_matrix2_letter_address = regfile_out_b;
             d3:
               regfile_rb = GUESS_4_LETTER_1 + d1;
+              top_matrix_controller_update = 3b10;
+              top_matrix2_letter_address = regfile_out_b;
+            d4:
+              regfile_rb = GUESS_5_LETTER_1 + d1;
               top_matrix_controller_update = 3b10;
               top_matrix2_letter_address = regfile_out_b;
           }
@@ -749,6 +762,10 @@ module game (
               regfile_rb = GUESS_4_LETTER_1 + d2;
               top_matrix_controller_update = 3b11;
               top_matrix3_letter_address = regfile_out_b;
+            d4:
+              regfile_rb = GUESS_5_LETTER_1 + d2;
+              top_matrix_controller_update = 3b11;
+              top_matrix2_letter_address = regfile_out_b;
           }
           game_fsm.d = game_fsm.SHOW_TOP_DISPLAY_4;
        
@@ -772,6 +789,10 @@ module game (
               regfile_rb = GUESS_4_LETTER_1 + d3;
               top_matrix_controller_update = 3b100;
               top_matrix4_letter_address = regfile_out_b;
+            d4:
+              regfile_rb = GUESS_5_LETTER_1 + d3;
+              top_matrix_controller_update = 3b100;
+              top_matrix2_letter_address = regfile_out_b;
           }
           game_fsm.d = game_fsm.INCREMENT_GUESS_CTR;
          
@@ -788,14 +809,14 @@ module game (
         
         game_fsm.COMPARE_GUESS_CTR_EQUALS_3:
           regfile_we = 0;
-          regfile_ra = G;
-          asel = b000; 
-          bsel = b101; // constant 3, since zero-indexed
-          alufn = b110011; // cmpeq
+          regfile_rb = G;
+          /*asel = b000; 
+          bsel = b101; // constant 4, since zero-indexed
+          alufn = b110011; // cmpeq */
           
-          if (regfile_out_a == d1) {
-            game_fsm.d = game_fsm.COMPARE_GUESS_CTR_EQUALS_3;
-          }
+          asel = b111; // constant 5
+          bsel = b000;
+          alufn = b110011; // cmpeq
                    
           if (alu_out == 16b0) {
             game_fsm.d = game_fsm.SET_INPUT_CTR_TO_0;
