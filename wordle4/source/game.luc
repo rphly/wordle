@@ -48,7 +48,7 @@ module game (
     output debugger1[8],
     output debugger2[8],
     output debugger3[8],
-    output correct_word_index[9]
+    output correct_word_index[11]
   ) {
   
   .clk(clk) {
@@ -137,7 +137,7 @@ module game (
   const CLEAR_SIGNAL = b11111;
   const CHECK_SIGNAL = b11110;
   const RESTART_SIGNAL = b10101;
-  const OKA_MODE = b10001;
+  const OKA_MODE = b100100;
   const SHOW_GUESS_ONE = b00001;
   const SHOW_GUESS_TWO = b00100;
   const SHOW_GUESS_THREE = b01000;
@@ -264,22 +264,22 @@ module game (
               regfile_we = 1;
             } else if (panel_input == SHOW_GUESS_ONE){
               regfile_ra = G;
-              if(regfile_out_a > d0 && regfile_out_b != 0){
+              if(regfile_out_a > d0 && regfile_out_b == 0){
                 game_fsm.d = game_fsm.SHOW_GUESS_ONE;
               }
             }else if (panel_input == SHOW_GUESS_TWO){
               regfile_ra = G;
-              if(regfile_out_a > d1 && regfile_out_b != 0){
+              if(regfile_out_a > d1 && regfile_out_b == 0){
                 game_fsm.d = game_fsm.SHOW_GUESS_TWO;
               }
             }else if (panel_input == SHOW_GUESS_THREE){
               regfile_ra = G;
-              if(regfile_out_a > d2 && regfile_out_b != 0){
+              if(regfile_out_a > d2 && regfile_out_b == 0){
                 game_fsm.d = game_fsm.SHOW_GUESS_THREE;
               }
             }else if (panel_input == SHOW_GUESS_FOUR){
               regfile_ra = G;
-              if(regfile_out_a > d3 && regfile_out_b != 0){
+              if(regfile_out_a > d3 && regfile_out_b == 0){
                 game_fsm.d = game_fsm.SHOW_GUESS_FOUR;
               }
             }
@@ -323,9 +323,9 @@ module game (
 
          if (alu_out == b01) { // regfile_out_a < regfile_out_b 
             // need to translate by -88 / 206
-            regfile_data = random_number_out[8:0] - d206; // mini words is 512-306=206 else if full, 2047-1959 = 88
+            regfile_data = random_number_out[10:0] - d89; // mini words is 512-306=206 else if full, 2047-1959 = 88
           } else {
-            regfile_data = random_number_out[8:0];
+            regfile_data = random_number_out[10:0];
           }
           
           regfile_we = 1;
@@ -418,7 +418,7 @@ module game (
           current_state = 3;
           regfile_ra = INPUT_CTR;
           asel = b000; 
-          bsel = b101; // constant 4, since zero-indexed
+          bsel = b100; // constant 3, since zero-indexed
           alufn = b110011; // cmpeq
           if (alu_out == 16b1) {
             // if successful, we branch to check sequence
@@ -585,7 +585,7 @@ module game (
         game_fsm.COMPARE_NUM_CORRECT_EQUALS_3:
           regfile_ra = NUM_CORRECT;
           asel = b000; 
-          bsel = b100; // constant 4, since zero-indexed
+          bsel = b101; // constant 4, since zero-indexed
           alufn = b110011; // cmpeq
                    
           if (alu_out == 16b0) {

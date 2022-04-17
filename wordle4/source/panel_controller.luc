@@ -45,7 +45,7 @@ module panel_controller (
       out = b10101;
       is_pressed = 1;
     } else if (oka_.out) {
-      out = b10001;
+      out = b100100;
       is_pressed = 1;
     } else 
     
