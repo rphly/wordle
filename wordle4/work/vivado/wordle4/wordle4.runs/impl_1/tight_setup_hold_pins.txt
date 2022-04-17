@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 +--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
 |       Launch Clock       |      Capture Clock       |                                                 Pin                                                      |
 +--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
@@ -20,3 +21,25 @@
 |                    clk_0 |                    clk_0 |                                                    betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[27]/D|
 |                    clk_0 |                    clk_0 |                                                     betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[9]/D|
 +--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+=======
++==============+===============+========================================================+
+| Launch Clock | Capture Clock | Pin                                                    |
++==============+===============+========================================================+
+| clk_0        | clk_0         | betaCPU/r/M_k_q_reg[2]/D                               |
+| clk_0        | clk_0         | betaCPU/r/M_num_correct_q_reg[1]/D                     |
+| clk_0        | clk_0         | betaCPU/r/M_j_q_reg[2]/D                               |
+| clk_0        | clk_0         | betaCPU/r/M_num_correct_q_reg[2]/D                     |
+| clk_0        | clk_0         | betaCPU/r/M_input_ctr_q_reg[1]/D                       |
+| clk_0        | clk_0         | betaCPU/r/M_input_ctr_q_reg[0]/D                       |
+| clk_0        | clk_0         | betaCPU/r/M_i_q_reg[0]/D                               |
+| clk_0        | clk_0         | betaCPU/r/M_i_q_reg[2]/D                               |
+| clk_0        | clk_0         | betaCPU/r/M_oka_mode_q_reg[0]/D                        |
+| clk_0        | clk_0         | betaCPU/r/M_j_q_reg[1]/D                               |
+| clk_0        | clk_0         | betaCPU/r/M_g_q_reg[0]/D                               |
+| clk_0        | clk_0         | betaCPU/r/M_num_correct_q_reg[0]/D                     |
+| clk_0        | clk_0         | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[8]/D  |
+| clk_0        | clk_0         | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[4]/D  |
+| clk_0        | clk_0         | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[11]/D |
+| clk_0        | clk_0         | betaCPU/control_unit/FSM_onehot_M_game_fsm_q_reg[9]/D  |
++--------------+---------------+--------------------------------------------------------+
+>>>>>>> 9af57b60f4ad212ac20713b1a189ac463971e80a

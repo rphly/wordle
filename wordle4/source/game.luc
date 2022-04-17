@@ -7,7 +7,7 @@ module game (
     input keyboard_input[5],
     input has_keyboard_input,
     
-    input panel_input[5],
+    input panel_input[16],
     input has_panel_input,
     
     input alu_out[16],

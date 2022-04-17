@@ -11,7 +11,7 @@ module game_7 (
     input [15:0] regfile_out_b,
     input [4:0] keyboard_input,
     input has_keyboard_input,
-    input [4:0] panel_input,
+    input [15:0] panel_input,
     input has_panel_input,
     input [15:0] alu_out,
     input [19:0] selected_word,

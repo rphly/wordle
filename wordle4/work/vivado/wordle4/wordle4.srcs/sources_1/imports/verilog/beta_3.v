@@ -83,7 +83,7 @@ module beta_3 (
   reg [16-1:0] M_control_unit_regfile_out_b;
   reg [5-1:0] M_control_unit_keyboard_input;
   reg [1-1:0] M_control_unit_has_keyboard_input;
-  reg [5-1:0] M_control_unit_panel_input;
+  reg [16-1:0] M_control_unit_panel_input;
   reg [1-1:0] M_control_unit_has_panel_input;
   reg [16-1:0] M_control_unit_alu_out;
   reg [20-1:0] M_control_unit_selected_word;
