@@ -10,8 +10,8 @@ module regfile_8 (
     input [15:0] write_address,
     input we,
     input [15:0] data,
-    input [15:0] read_address_a,
-    input [15:0] read_address_b,
+    input [7:0] read_address_a,
+    input [7:0] read_address_b,
     output reg [15:0] out_a,
     output reg [15:0] out_b
   );

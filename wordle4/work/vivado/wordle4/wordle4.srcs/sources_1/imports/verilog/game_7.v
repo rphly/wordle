@@ -11,7 +11,7 @@ module game_7 (
     input [15:0] regfile_out_b,
     input [4:0] keyboard_input,
     input has_keyboard_input,
-    input [4:0] panel_input,
+    input [15:0] panel_input,
     input has_panel_input,
     input [15:0] alu_out,
     input [19:0] selected_word,
@@ -625,7 +625,7 @@ module game_7 (
           regfile_write_address = regfile_out_a;
           regfile_data = regfile_out_b;
           regfile_we = 1'h1;
-          M_game_fsm_d = COMPARE_I_EQUALS_3_AND_INCREMENT_game_fsm;
+          M_game_fsm_d = COMPARE_K_EQUALS_3_AND_INCREMENT_game_fsm;
         end
         COMPARE_K_EQUALS_3_AND_INCREMENT_game_fsm: begin
           regfile_ra = 5'h16;

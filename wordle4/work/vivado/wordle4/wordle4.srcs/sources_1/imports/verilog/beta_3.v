@@ -83,7 +83,7 @@ module beta_3 (
   reg [16-1:0] M_control_unit_regfile_out_b;
   reg [5-1:0] M_control_unit_keyboard_input;
   reg [1-1:0] M_control_unit_has_keyboard_input;
-  reg [5-1:0] M_control_unit_panel_input;
+  reg [16-1:0] M_control_unit_panel_input;
   reg [1-1:0] M_control_unit_has_panel_input;
   reg [16-1:0] M_control_unit_alu_out;
   reg [20-1:0] M_control_unit_selected_word;
@@ -135,8 +135,8 @@ module beta_3 (
   reg [16-1:0] M_r_write_address;
   reg [1-1:0] M_r_we;
   reg [16-1:0] M_r_data;
-  reg [16-1:0] M_r_read_address_a;
-  reg [16-1:0] M_r_read_address_b;
+  reg [8-1:0] M_r_read_address_a;
+  reg [8-1:0] M_r_read_address_b;
   regfile_8 r (
     .clk(clk),
     .rst(rst),
