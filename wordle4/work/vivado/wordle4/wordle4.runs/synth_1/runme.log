@@ -17,9 +17,9 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tftg256-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 55716
+INFO: [Synth 8-7075] Helper process launched with PID 15168
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 999.625 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1000.566 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'au_top_0' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/au_top_0.v:7]
 INFO: [Synth 8-6157] synthesizing module 'reset_conditioner_1' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/reset_conditioner_1.v:11]
@@ -150,14 +150,14 @@ INFO: [Synth 8-6157] synthesizing module 'game_7' [C:/Users/Bryce/Desktop/wordle
 	Parameter SHOW_GUESS_THREE bound to: 5'b01000 
 	Parameter SHOW_GUESS_FOUR bound to: 5'b01100 
 	Parameter CORRECT_WORD bound to: 6'b100011 
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_7.v:550]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_7.v:659]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_7.v:724]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_7.v:787]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_7.v:864]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_7.v:897]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_7.v:930]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_7.v:963]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_7.v:562]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_7.v:671]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_7.v:736]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_7.v:799]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_7.v:876]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_7.v:909]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_7.v:942]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_7.v:975]
 INFO: [Synth 8-6155] done synthesizing module 'game_7' (8#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/game_7.v:7]
 INFO: [Synth 8-6157] synthesizing module 'regfile_8' [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_8.v:7]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/regfile_8.v:108]
@@ -206,18 +206,18 @@ INFO: [Synth 8-6157] synthesizing module 'panel_controller_5' [C:/Users/Bryce/De
 INFO: [Synth 8-6155] done synthesizing module 'panel_controller_5' (24#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/panel_controller_5.v:7]
 INFO: [Synth 8-6155] done synthesizing module 'au_top_0' (25#1) [C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.srcs/sources_1/imports/verilog/au_top_0.v:7]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 999.625 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1000.566 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 999.625 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1000.566 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 999.625 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1000.566 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.183 . Memory (MB): peak = 999.625 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.284 . Memory (MB): peak = 1000.566 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -230,26 +230,26 @@ Parsing XDC File [C:/Users/Bryce/Desktop/wordle/wordle4/constraint/au.xdc]
 Finished Parsing XDC File [C:/Users/Bryce/Desktop/wordle/wordle4/constraint/au.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1027.914 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1037.621 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1027.914 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1037.621 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1027.914 ; gain = 28.289
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1037.621 ; gain = 37.055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tftg256-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1027.914 ; gain = 28.289
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1037.621 ; gain = 37.055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1027.914 ; gain = 28.289
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1037.621 ; gain = 37.055
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'M_game_fsm_q_reg' in module 'game_7'
 ---------------------------------------------------------------------------------------------------
@@ -333,7 +333,7 @@ INCREMENT_INPUT_CTR_game_fsm | 1000000000000000000000000000000000000000000000000
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'M_game_fsm_q_reg' using encoding 'one-hot' in module 'game_7'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1027.914 ; gain = 28.289
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1037.621 ; gain = 37.055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -381,7 +381,7 @@ Detailed RTL Component Info :
 	   6 Input    7 Bit        Muxes := 7     
 	   4 Input    7 Bit        Muxes := 4     
 	  75 Input    7 Bit        Muxes := 9     
-	  10 Input    6 Bit        Muxes := 1     
+	  10 Input    6 Bit        Muxes := 2     
 	   2 Input    6 Bit        Muxes := 2     
 	   5 Input    6 Bit        Muxes := 1     
 	  75 Input    6 Bit        Muxes := 1     
@@ -390,17 +390,19 @@ Detailed RTL Component Info :
 	  27 Input    5 Bit        Muxes := 1     
 	   2 Input    4 Bit        Muxes := 4     
 	  75 Input    4 Bit        Muxes := 2     
-	   9 Input    3 Bit        Muxes := 1     
 	   2 Input    3 Bit        Muxes := 5     
 	   6 Input    3 Bit        Muxes := 1     
 	   4 Input    3 Bit        Muxes := 1     
+	  10 Input    3 Bit        Muxes := 1     
 	  75 Input    3 Bit        Muxes := 3     
+	   9 Input    2 Bit        Muxes := 1     
 	   2 Input    2 Bit        Muxes := 2     
 	   6 Input    2 Bit        Muxes := 2     
 	   2 Input    1 Bit        Muxes := 185   
 	   4 Input    1 Bit        Muxes := 8     
 	  14 Input    1 Bit        Muxes := 8     
-	   6 Input    1 Bit        Muxes := 2     
+	   3 Input    1 Bit        Muxes := 1     
+	   6 Input    1 Bit        Muxes := 1     
 	   5 Input    1 Bit        Muxes := 1     
 	  75 Input    1 Bit        Muxes := 2     
 	  42 Input    1 Bit        Muxes := 41    
@@ -424,7 +426,7 @@ Start Cross Boundary and Area Optimization
 DSP Report: Generating DSP adder/add0, operation Mode is: A*B.
 DSP Report: operator adder/add0 is absorbed into DSP adder/add0.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1097.520 ; gain = 97.895
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 1131.797 ; gain = 131.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -454,7 +456,7 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:47 ; elapsed = 00:00:47 . Memory (MB): peak = 1097.520 ; gain = 97.895
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:55 ; elapsed = 00:00:56 . Memory (MB): peak = 1131.797 ; gain = 131.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
@@ -487,12 +489,16 @@ Start Timing Optimization
       : betaCPUi_19/control_unit/alu_out[1]
       : betaCPUi_19/game_alu/alu[1]
       : betaCPUi_19/game_alu/i_0/alu[1]
-      : betaCPUi_19/game_alu/i_0/b[0]
-      : betaCPUi_19/game_alu/b[0]
-      : betaCPUi_19/inputAlu_b_inferred/M_game_alu_b[0]
-      : betaCPUi_19/inputAlu_b_inferred/out_b[0]
-      : betaCPUi_19/r/out_b[0]
-      : betaCPUi_19/r/i_2/out_b[0]
+      : betaCPUi_19/control_unit/i_0/alu_out[1]
+      : betaCPUi_19/control_unit/alu_out[1]
+      : betaCPUi_19/game_alu/alu[1]
+      : betaCPUi_19/game_alu/i_0/alu[1]
+      : betaCPUi_19/game_alu/i_0/b[1]
+      : betaCPUi_19/game_alu/b[1]
+      : betaCPUi_19/inputAlu_b_inferred/M_game_alu_b[1]
+      : betaCPUi_19/inputAlu_b_inferred/out_b[1]
+      : betaCPUi_19/r/out_b[1]
+      : betaCPUi_19/r/i_2/out_b[1]
       : betaCPUi_19/r/i_2/read_address_b[2]
       : betaCPUi_19/r/read_address_b[2]
       : betaCPUi_19/control_unit/regfile_rb[2]
@@ -505,12 +511,12 @@ Start Timing Optimization
       : betaCPUi_19/control_unit/alu_out[2]
       : betaCPUi_19/game_alu/alu[2]
       : betaCPUi_19/game_alu/i_0/alu[2]
-      : betaCPUi_19/game_alu/i_0/b[1]
-      : betaCPUi_19/game_alu/b[1]
-      : betaCPUi_19/inputAlu_b_inferred/M_game_alu_b[1]
-      : betaCPUi_19/inputAlu_b_inferred/out_b[1]
-      : betaCPUi_19/r/out_b[1]
-      : betaCPUi_19/r/i_2/out_b[1]
+      : betaCPUi_19/game_alu/i_0/b[2]
+      : betaCPUi_19/game_alu/b[2]
+      : betaCPUi_19/inputAlu_b_inferred/M_game_alu_b[2]
+      : betaCPUi_19/inputAlu_b_inferred/out_b[2]
+      : betaCPUi_19/r/out_b[2]
+      : betaCPUi_19/r/i_2/out_b[2]
       : betaCPUi_19/r/i_2/read_address_b[3]
       : betaCPUi_19/r/read_address_b[3]
       : betaCPUi_19/control_unit/regfile_rb[3]
@@ -591,24 +597,17 @@ Start Timing Optimization
       : betaCPUi_19/r/read_address_b[0]
       : betaCPUi_19/control_unit/regfile_rb[0]
       : betaCPUi_19/control_unit/i_0/regfile_rb[0]
-      : betaCPUi_19/game_alu/i_0/b[2]
-      : betaCPUi_19/game_alu/b[2]
-      : betaCPUi_19/inputAlu_b_inferred/M_game_alu_b[2]
-      : betaCPUi_19/inputAlu_b_inferred/out_b[2]
-      : betaCPUi_19/r/out_b[2]
-      : betaCPUi_19/r/i_2/out_b[2]
+      : betaCPUi_19/game_alu/i_0/b[3]
+      : betaCPUi_19/game_alu/b[3]
+      : betaCPUi_19/inputAlu_b_inferred/M_game_alu_b[3]
+      : betaCPUi_19/inputAlu_b_inferred/out_b[3]
+      : betaCPUi_19/r/out_b[3]
+      : betaCPUi_19/r/i_2/out_b[3]
       : betaCPUi_19/r/i_2/read_address_b[4]
       : betaCPUi_19/r/read_address_b[4]
       : betaCPUi_19/control_unit/regfile_rb[4]
       : betaCPUi_19/control_unit/i_0/regfile_rb[4]
-      : betaCPUi_19/control_unit/i_0/alu_out[7]
-      : betaCPUi_19/control_unit/alu_out[7]
-      : betaCPUi_19/game_alu/alu[7]
-      : betaCPUi_19/game_alu/i_0/alu[7]
-      : i_0/\betaCPU/control_unit /i_0/alu_out[0]
-      : i_0/\betaCPU/control_unit /alu_out[0]
-      : i_0/\betaCPU/game_alu /alu[0]
-      : i_0/\betaCPU/game_alu /i_0/alu[0]
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing betaCPUi_19/game_alu/i_0/i_21 -from I -to O'
       : i_0/\betaCPU/game_alu /i_0/b[0]
       : i_0/\betaCPU/game_alu /b[0]
       : i_0/\betaCPU/inputAlu_b_inferred /M_game_alu_b[0]
@@ -619,6 +618,10 @@ Start Timing Optimization
       : i_0/\betaCPU/r /read_address_b[0]
       : i_0/\betaCPU/control_unit /regfile_rb[0]
       : i_0/\betaCPU/control_unit /i_0/regfile_rb[0]
+      : i_0/\betaCPU/control_unit /i_0/alu_out[0]
+      : i_0/\betaCPU/control_unit /alu_out[0]
+      : i_0/\betaCPU/game_alu /alu[0]
+      : i_0/\betaCPU/game_alu /i_0/alu[0]
       : i_0/\betaCPU/game_alu /i_0/b[0]
       : i_0/\betaCPU/game_alu /b[0]
       : i_0/\betaCPU/inputAlu_b_inferred /M_game_alu_b[0]
@@ -633,12 +636,16 @@ Start Timing Optimization
       : i_0/\betaCPU/control_unit /alu_out[1]
       : i_0/\betaCPU/game_alu /alu[1]
       : i_0/\betaCPU/game_alu /i_0/alu[1]
-      : i_0/\betaCPU/game_alu /i_0/b[0]
-      : i_0/\betaCPU/game_alu /b[0]
-      : i_0/\betaCPU/inputAlu_b_inferred /M_game_alu_b[0]
-      : i_0/\betaCPU/inputAlu_b_inferred /out_b[0]
-      : i_0/\betaCPU/r /out_b[0]
-      : i_0/\betaCPU/r /i_2/out_b[0]
+      : i_0/\betaCPU/control_unit /i_0/alu_out[1]
+      : i_0/\betaCPU/control_unit /alu_out[1]
+      : i_0/\betaCPU/game_alu /alu[1]
+      : i_0/\betaCPU/game_alu /i_0/alu[1]
+      : i_0/\betaCPU/game_alu /i_0/b[1]
+      : i_0/\betaCPU/game_alu /b[1]
+      : i_0/\betaCPU/inputAlu_b_inferred /M_game_alu_b[1]
+      : i_0/\betaCPU/inputAlu_b_inferred /out_b[1]
+      : i_0/\betaCPU/r /out_b[1]
+      : i_0/\betaCPU/r /i_2/out_b[1]
       : i_0/\betaCPU/r /i_2/read_address_b[2]
       : i_0/\betaCPU/r /read_address_b[2]
       : i_0/\betaCPU/control_unit /regfile_rb[2]
@@ -651,12 +658,12 @@ Start Timing Optimization
       : i_0/\betaCPU/control_unit /alu_out[2]
       : i_0/\betaCPU/game_alu /alu[2]
       : i_0/\betaCPU/game_alu /i_0/alu[2]
-      : i_0/\betaCPU/game_alu /i_0/b[1]
-      : i_0/\betaCPU/game_alu /b[1]
-      : i_0/\betaCPU/inputAlu_b_inferred /M_game_alu_b[1]
-      : i_0/\betaCPU/inputAlu_b_inferred /out_b[1]
-      : i_0/\betaCPU/r /out_b[1]
-      : i_0/\betaCPU/r /i_2/out_b[1]
+      : i_0/\betaCPU/game_alu /i_0/b[2]
+      : i_0/\betaCPU/game_alu /b[2]
+      : i_0/\betaCPU/inputAlu_b_inferred /M_game_alu_b[2]
+      : i_0/\betaCPU/inputAlu_b_inferred /out_b[2]
+      : i_0/\betaCPU/r /out_b[2]
+      : i_0/\betaCPU/r /i_2/out_b[2]
       : i_0/\betaCPU/r /i_2/read_address_b[3]
       : i_0/\betaCPU/r /read_address_b[3]
       : i_0/\betaCPU/control_unit /regfile_rb[3]
@@ -697,24 +704,24 @@ Start Timing Optimization
       : i_0/\betaCPU/control_unit /alu_out[5]
       : i_0/\betaCPU/game_alu /alu[5]
       : i_0/\betaCPU/game_alu /i_0/alu[5]
-      : i_0/\betaCPU/r /i_2/read_address_b[0]
-      : i_0/\betaCPU/r /read_address_b[0]
-      : i_0/\betaCPU/control_unit /regfile_rb[0]
-      : i_0/\betaCPU/control_unit /i_0/regfile_rb[0]
-      : i_0/\betaCPU/game_alu /i_0/b[2]
-      : i_0/\betaCPU/game_alu /b[2]
-      : i_0/\betaCPU/inputAlu_b_inferred /M_game_alu_b[2]
-      : i_0/\betaCPU/inputAlu_b_inferred /out_b[2]
-      : i_0/\betaCPU/r /out_b[2]
-      : i_0/\betaCPU/r /i_2/out_b[2]
-      : i_0/\betaCPU/r /i_2/read_address_b[4]
-      : i_0/\betaCPU/r /read_address_b[4]
-      : i_0/\betaCPU/control_unit /regfile_rb[4]
-      : i_0/\betaCPU/control_unit /i_0/regfile_rb[4]
       : i_0/\betaCPU/control_unit /i_0/alu_out[5]
       : i_0/\betaCPU/control_unit /alu_out[5]
       : i_0/\betaCPU/game_alu /alu[5]
       : i_0/\betaCPU/game_alu /i_0/alu[5]
+      : i_0/\betaCPU/game_alu /i_0/b[5]
+      : i_0/\betaCPU/game_alu /b[5]
+      : i_0/\betaCPU/inputAlu_b_inferred /M_game_alu_b[5]
+      : i_0/\betaCPU/inputAlu_b_inferred /out_b[5]
+      : i_0/\betaCPU/r /out_b[5]
+      : i_0/\betaCPU/r /i_2/out_b[5]
+      : i_0/\betaCPU/r /i_2/read_address_b[6]
+      : i_0/\betaCPU/r /read_address_b[6]
+      : i_0/\betaCPU/control_unit /regfile_rb[6]
+      : i_0/\betaCPU/control_unit /i_0/regfile_rb[6]
+      : i_0/\betaCPU/control_unit /i_0/alu_out[6]
+      : i_0/\betaCPU/control_unit /alu_out[6]
+      : i_0/\betaCPU/game_alu /alu[6]
+      : i_0/\betaCPU/game_alu /i_0/alu[6]
       : i_0/\betaCPU/control_unit /i_0/alu_out[6]
       : i_0/\betaCPU/control_unit /alu_out[6]
       : i_0/\betaCPU/game_alu /alu[6]
@@ -737,30 +744,198 @@ Start Timing Optimization
       : i_0/\betaCPU/control_unit /alu_out[7]
       : i_0/\betaCPU/game_alu /alu[7]
       : i_0/\betaCPU/game_alu /i_0/alu[7]
+      : i_0/\betaCPU/game_alu /i_0/b[3]
+      : i_0/\betaCPU/game_alu /b[3]
+      : i_0/\betaCPU/inputAlu_b_inferred /M_game_alu_b[3]
+      : i_0/\betaCPU/inputAlu_b_inferred /out_b[3]
+      : i_0/\betaCPU/r /out_b[3]
+      : i_0/\betaCPU/r /i_2/out_b[3]
+      : i_0/\betaCPU/r /i_2/read_address_b[4]
+      : i_0/\betaCPU/r /read_address_b[4]
+      : i_0/\betaCPU/control_unit /regfile_rb[4]
+      : i_0/\betaCPU/control_unit /i_0/regfile_rb[4]
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\betaCPU/game_alu /i_0/i_17 -from I -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\betaCPU/game_alu /i_0/i_15 -from I -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\betaCPU/game_alu /i_0/i_21 -from I -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\betaCPU/game_alu /i_0/i_19 -from I -to O'
+      : i_0/\betaCPU/game_alu /i_0/b[0]
+      : i_0/\betaCPU/game_alu /b[0]
+      : i_0/\betaCPU/inputAlu_b_inferred /M_game_alu_b[0]
+      : i_0/\betaCPU/inputAlu_b_inferred /out_b[0]
+      : i_0/\betaCPU/r /out_b[0]
+      : i_0/\betaCPU/r /i_2/out_b[0]
+      : i_0/\betaCPU/r /i_2/read_address_b[0]
+      : i_0/\betaCPU/r /read_address_b[0]
+      : i_0/\betaCPU/control_unit /regfile_rb[0]
+      : i_0/\betaCPU/control_unit /i_0/regfile_rb[0]
+      : i_0/\betaCPU/control_unit /i_0/alu_out[0]
+      : i_0/\betaCPU/control_unit /alu_out[0]
+      : i_0/\betaCPU/game_alu /alu[0]
+      : i_0/\betaCPU/game_alu /i_0/alu[0]
+      : i_0/\betaCPU/game_alu /i_0/b[0]
+      : i_0/\betaCPU/game_alu /b[0]
+      : i_0/\betaCPU/inputAlu_b_inferred /M_game_alu_b[0]
+      : i_0/\betaCPU/inputAlu_b_inferred /out_b[0]
+      : i_0/\betaCPU/r /out_b[0]
+      : i_0/\betaCPU/r /i_2/out_b[0]
+      : i_0/\betaCPU/r /i_2/read_address_b[1]
+      : i_0/\betaCPU/r /read_address_b[1]
+      : i_0/\betaCPU/control_unit /regfile_rb[1]
+      : i_0/\betaCPU/control_unit /i_0/regfile_rb[1]
+      : i_0/\betaCPU/control_unit /i_0/alu_out[1]
+      : i_0/\betaCPU/control_unit /alu_out[1]
+      : i_0/\betaCPU/game_alu /alu[1]
+      : i_0/\betaCPU/game_alu /i_0/alu[1]
+      : i_0/\betaCPU/control_unit /i_0/alu_out[1]
+      : i_0/\betaCPU/control_unit /alu_out[1]
+      : i_0/\betaCPU/game_alu /alu[1]
+      : i_0/\betaCPU/game_alu /i_0/alu[1]
+      : i_0/\betaCPU/game_alu /i_0/b[1]
+      : i_0/\betaCPU/game_alu /b[1]
+      : i_0/\betaCPU/inputAlu_b_inferred /M_game_alu_b[1]
+      : i_0/\betaCPU/inputAlu_b_inferred /out_b[1]
+      : i_0/\betaCPU/r /out_b[1]
+      : i_0/\betaCPU/r /i_2/out_b[1]
+      : i_0/\betaCPU/r /i_2/read_address_b[2]
+      : i_0/\betaCPU/r /read_address_b[2]
+      : i_0/\betaCPU/control_unit /regfile_rb[2]
+      : i_0/\betaCPU/control_unit /i_0/regfile_rb[2]
+      : i_0/\betaCPU/control_unit /i_0/alu_out[2]
+      : i_0/\betaCPU/control_unit /alu_out[2]
+      : i_0/\betaCPU/game_alu /alu[2]
+      : i_0/\betaCPU/game_alu /i_0/alu[2]
+      : i_0/\betaCPU/control_unit /i_0/alu_out[2]
+      : i_0/\betaCPU/control_unit /alu_out[2]
+      : i_0/\betaCPU/game_alu /alu[2]
+      : i_0/\betaCPU/game_alu /i_0/alu[2]
+      : i_0/\betaCPU/game_alu /i_0/b[2]
+      : i_0/\betaCPU/game_alu /b[2]
+      : i_0/\betaCPU/inputAlu_b_inferred /M_game_alu_b[2]
+      : i_0/\betaCPU/inputAlu_b_inferred /out_b[2]
+      : i_0/\betaCPU/r /out_b[2]
+      : i_0/\betaCPU/r /i_2/out_b[2]
+      : i_0/\betaCPU/r /i_2/read_address_b[3]
+      : i_0/\betaCPU/r /read_address_b[3]
+      : i_0/\betaCPU/control_unit /regfile_rb[3]
+      : i_0/\betaCPU/control_unit /i_0/regfile_rb[3]
+      : i_0/\betaCPU/control_unit /i_0/alu_out[3]
+      : i_0/\betaCPU/control_unit /alu_out[3]
+      : i_0/\betaCPU/game_alu /alu[3]
+      : i_0/\betaCPU/game_alu /i_0/alu[3]
+      : i_0/\betaCPU/control_unit /i_0/alu_out[3]
+      : i_0/\betaCPU/control_unit /alu_out[3]
+      : i_0/\betaCPU/game_alu /alu[3]
+      : i_0/\betaCPU/game_alu /i_0/alu[3]
+      : i_0/\betaCPU/control_unit /i_0/alu_out[4]
+      : i_0/\betaCPU/control_unit /alu_out[4]
+      : i_0/\betaCPU/game_alu /alu[4]
+      : i_0/\betaCPU/game_alu /i_0/alu[4]
+      : i_0/\betaCPU/game_alu /i_0/b[4]
+      : i_0/\betaCPU/game_alu /b[4]
+      : i_0/\betaCPU/inputAlu_b_inferred /M_game_alu_b[4]
+      : i_0/\betaCPU/inputAlu_b_inferred /out_b[4]
+      : i_0/\betaCPU/r /out_b[4]
+      : i_0/\betaCPU/r /i_2/out_b[4]
+      : i_0/\betaCPU/r /i_2/read_address_b[4]
+      : i_0/\betaCPU/r /read_address_b[4]
+      : i_0/\betaCPU/control_unit /regfile_rb[4]
+      : i_0/\betaCPU/control_unit /i_0/regfile_rb[4]
+      : i_0/\betaCPU/game_alu /i_0/b[4]
+      : i_0/\betaCPU/game_alu /b[4]
+      : i_0/\betaCPU/inputAlu_b_inferred /M_game_alu_b[4]
+      : i_0/\betaCPU/inputAlu_b_inferred /out_b[4]
+      : i_0/\betaCPU/r /out_b[4]
+      : i_0/\betaCPU/r /i_2/out_b[4]
+      : i_0/\betaCPU/r /i_2/read_address_b[5]
+      : i_0/\betaCPU/r /read_address_b[5]
+      : i_0/\betaCPU/control_unit /regfile_rb[5]
+      : i_0/\betaCPU/control_unit /i_0/regfile_rb[5]
+      : i_0/\betaCPU/control_unit /i_0/alu_out[5]
+      : i_0/\betaCPU/control_unit /alu_out[5]
+      : i_0/\betaCPU/game_alu /alu[5]
+      : i_0/\betaCPU/game_alu /i_0/alu[5]
+      : i_0/\betaCPU/control_unit /i_0/alu_out[5]
+      : i_0/\betaCPU/control_unit /alu_out[5]
+      : i_0/\betaCPU/game_alu /alu[5]
+      : i_0/\betaCPU/game_alu /i_0/alu[5]
+      : i_0/\betaCPU/game_alu /i_0/b[5]
+      : i_0/\betaCPU/game_alu /b[5]
+      : i_0/\betaCPU/inputAlu_b_inferred /M_game_alu_b[5]
+      : i_0/\betaCPU/inputAlu_b_inferred /out_b[5]
+      : i_0/\betaCPU/r /out_b[5]
+      : i_0/\betaCPU/r /i_2/out_b[5]
+      : i_0/\betaCPU/r /i_2/read_address_b[6]
+      : i_0/\betaCPU/r /read_address_b[6]
+      : i_0/\betaCPU/control_unit /regfile_rb[6]
+      : i_0/\betaCPU/control_unit /i_0/regfile_rb[6]
+      : i_0/\betaCPU/control_unit /i_0/alu_out[6]
+      : i_0/\betaCPU/control_unit /alu_out[6]
+      : i_0/\betaCPU/game_alu /alu[6]
+      : i_0/\betaCPU/game_alu /i_0/alu[6]
+      : i_0/\betaCPU/control_unit /i_0/alu_out[6]
+      : i_0/\betaCPU/control_unit /alu_out[6]
+      : i_0/\betaCPU/game_alu /alu[6]
+      : i_0/\betaCPU/game_alu /i_0/alu[6]
+      : i_0/\betaCPU/game_alu /i_0/b[6]
+      : i_0/\betaCPU/game_alu /b[6]
+      : i_0/\betaCPU/inputAlu_b_inferred /M_game_alu_b[6]
+      : i_0/\betaCPU/inputAlu_b_inferred /out_b[6]
+      : i_0/\betaCPU/r /out_b[6]
+      : i_0/\betaCPU/r /i_2/out_b[6]
+      : i_0/\betaCPU/r /i_2/read_address_b[7]
+      : i_0/\betaCPU/r /read_address_b[7]
+      : i_0/\betaCPU/control_unit /regfile_rb[7]
+      : i_0/\betaCPU/control_unit /i_0/regfile_rb[7]
+      : i_0/\betaCPU/control_unit /i_0/alu_out[7]
+      : i_0/\betaCPU/control_unit /alu_out[7]
+      : i_0/\betaCPU/game_alu /alu[7]
+      : i_0/\betaCPU/game_alu /i_0/alu[7]
+      : i_0/\betaCPU/control_unit /i_0/alu_out[7]
+      : i_0/\betaCPU/control_unit /alu_out[7]
+      : i_0/\betaCPU/game_alu /alu[7]
+      : i_0/\betaCPU/game_alu /i_0/alu[7]
+      : i_0/\betaCPU/game_alu /i_0/b[3]
+      : i_0/\betaCPU/game_alu /b[3]
+      : i_0/\betaCPU/inputAlu_b_inferred /M_game_alu_b[3]
+      : i_0/\betaCPU/inputAlu_b_inferred /out_b[3]
+      : i_0/\betaCPU/r /out_b[3]
+      : i_0/\betaCPU/r /i_2/out_b[3]
+      : i_0/\betaCPU/r /i_2/read_address_b[4]
+      : i_0/\betaCPU/r /read_address_b[4]
+      : i_0/\betaCPU/control_unit /regfile_rb[4]
+      : i_0/\betaCPU/control_unit /i_0/regfile_rb[4]
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\betaCPU/game_alu /i_0/i_17 -from I -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\betaCPU/game_alu /i_0/i_15 -from I -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\betaCPU/game_alu /i_0/i_21 -from I -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\betaCPU/game_alu /i_0/i_19 -from I -to O'
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:10 ; elapsed = 00:01:11 . Memory (MB): peak = 1106.371 ; gain = 106.746
+Finished Timing Optimization : Time (s): cpu = 00:01:25 ; elapsed = 00:01:26 . Memory (MB): peak = 1131.797 ; gain = 131.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1172/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1168/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_600 /CO[3]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_600 /O[3]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_600 /O[2]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_600 /O[1]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_600 /O[3]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_600 /O[2]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_600 /O[0]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_994/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_995/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_996/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_782/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1165/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1123/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_601 /O[0]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_5808/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_5238 /O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_5238 /O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_5237 /CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_5238 /O[1]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_5238 /O[0]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_5237 /CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_5237 /CO[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_5237 /CO[1]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_5237 /O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_5237 /O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_5237 /O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_5237 /CO[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_5237 /CO[1]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_5237 /CO[0]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_5237 /O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_5237 /O[1]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \betaCPU/game_alu/i_5237 /O[0]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_975/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_974/O'
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:14 ; elapsed = 00:01:15 . Memory (MB): peak = 1106.371 ; gain = 106.746
+Finished Technology Mapping : Time (s): cpu = 00:01:30 ; elapsed = 00:01:31 . Memory (MB): peak = 1131.797 ; gain = 131.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -778,37 +953,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:17 ; elapsed = 00:01:18 . Memory (MB): peak = 1106.371 ; gain = 106.746
+Finished IO Insertion : Time (s): cpu = 00:01:34 ; elapsed = 00:01:35 . Memory (MB): peak = 1131.797 ; gain = 131.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:17 ; elapsed = 00:01:18 . Memory (MB): peak = 1106.371 ; gain = 106.746
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:34 ; elapsed = 00:01:35 . Memory (MB): peak = 1131.797 ; gain = 131.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:18 ; elapsed = 00:01:19 . Memory (MB): peak = 1106.371 ; gain = 106.746
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:34 ; elapsed = 00:01:36 . Memory (MB): peak = 1131.797 ; gain = 131.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:18 ; elapsed = 00:01:19 . Memory (MB): peak = 1106.371 ; gain = 106.746
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:34 ; elapsed = 00:01:36 . Memory (MB): peak = 1131.797 ; gain = 131.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:18 ; elapsed = 00:01:19 . Memory (MB): peak = 1106.371 ; gain = 106.746
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:35 ; elapsed = 00:01:36 . Memory (MB): peak = 1131.797 ; gain = 131.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:18 ; elapsed = 00:01:19 . Memory (MB): peak = 1106.371 ; gain = 106.746
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:35 ; elapsed = 00:01:36 . Memory (MB): peak = 1131.797 ; gain = 131.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -826,39 +1001,39 @@ Report Cell Usage:
 +------+-------+------+
 |1     |BUFG   |     1|
 |2     |CARRY4 |   269|
-|3     |LUT1   |   127|
-|4     |LUT2   |   212|
-|5     |LUT3   |   205|
-|6     |LUT4   |   284|
-|7     |LUT5   |   325|
-|8     |LUT6   |  1448|
-|9     |MUXF7  |   365|
-|10    |MUXF8  |   153|
+|3     |LUT1   |   123|
+|4     |LUT2   |   155|
+|5     |LUT3   |   115|
+|6     |LUT4   |   296|
+|7     |LUT5   |   421|
+|8     |LUT6   |  1419|
+|9     |MUXF7  |   325|
+|10    |MUXF8  |   122|
 |11    |FDRE   |  1557|
 |12    |FDSE   |    67|
 |13    |IBUF   |    37|
 |14    |OBUF   |    10|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:18 ; elapsed = 00:01:19 . Memory (MB): peak = 1106.371 ; gain = 106.746
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:35 ; elapsed = 00:01:36 . Memory (MB): peak = 1131.797 ; gain = 131.230
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 16 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:09 ; elapsed = 00:01:16 . Memory (MB): peak = 1106.371 ; gain = 78.457
-Synthesis Optimization Complete : Time (s): cpu = 00:01:18 ; elapsed = 00:01:19 . Memory (MB): peak = 1106.371 ; gain = 106.746
+Synthesis finished with 0 errors, 0 critical warnings and 29 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:23 ; elapsed = 00:01:31 . Memory (MB): peak = 1131.797 ; gain = 94.176
+Synthesis Optimization Complete : Time (s): cpu = 00:01:35 ; elapsed = 00:01:36 . Memory (MB): peak = 1131.797 ; gain = 131.230
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.051 . Memory (MB): peak = 1115.090 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 787 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.059 . Memory (MB): peak = 1131.797 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 716 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1115.090 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1131.797 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-81 Infos, 16 Warnings, 0 Critical Warnings and 0 Errors encountered.
+81 Infos, 29 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:24 ; elapsed = 00:01:26 . Memory (MB): peak = 1115.090 ; gain = 115.465
+synth_design: Time (s): cpu = 00:01:42 ; elapsed = 00:01:44 . Memory (MB): peak = 1131.797 ; gain = 131.230
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/synth_1/au_top_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file au_top_0_utilization_synth.rpt -pb au_top_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Apr 18 14:45:23 2022...
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 18 16:50:32 2022...

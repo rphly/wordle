@@ -432,25 +432,37 @@ module game_7 (
                   end else begin
                     if (panel_input == 5'h01) begin
                       regfile_ra = 6'h20;
-                      if (regfile_out_a > 1'h0 && regfile_out_b == 1'h0) begin
+                      asel = 1'h0;
+                      bsel = 3'h1;
+                      alufn = 6'h37;
+                      if (alu_out == 1'h0 && regfile_out_b == 1'h0) begin
                         M_game_fsm_d = SHOW_GUESS_ONE_game_fsm;
                       end
                     end else begin
                       if (panel_input == 5'h04) begin
                         regfile_ra = 6'h20;
-                        if (regfile_out_a > 1'h1 && regfile_out_b == 1'h0) begin
+                        asel = 1'h0;
+                        bsel = 3'h2;
+                        alufn = 6'h37;
+                        if (alu_out == 1'h0 && regfile_out_b == 1'h0) begin
                           M_game_fsm_d = SHOW_GUESS_TWO_game_fsm;
                         end
                       end else begin
                         if (panel_input == 5'h08) begin
                           regfile_ra = 6'h20;
-                          if (regfile_out_a > 2'h2 && regfile_out_b == 1'h0) begin
+                          asel = 1'h0;
+                          bsel = 3'h3;
+                          alufn = 6'h37;
+                          if (alu_out == 1'h0 && regfile_out_b == 1'h0) begin
                             M_game_fsm_d = SHOW_GUESS_THREE_game_fsm;
                           end
                         end else begin
                           if (panel_input == 5'h0c) begin
                             regfile_ra = 6'h20;
-                            if (regfile_out_a > 2'h3 && regfile_out_b == 1'h0) begin
+                            asel = 1'h0;
+                            bsel = 3'h4;
+                            alufn = 6'h37;
+                            if (alu_out == 1'h0 && regfile_out_b == 1'h0) begin
                               M_game_fsm_d = SHOW_GUESS_FOUR_game_fsm;
                             end
                           end
