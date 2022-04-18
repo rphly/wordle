@@ -108,28 +108,26 @@ module game_7 (
   localparam SHOW_GUESS_THREE_2_game_fsm = 7'd56;
   localparam SHOW_GUESS_FOUR_game_fsm = 7'd57;
   localparam SHOW_GUESS_FOUR_2_game_fsm = 7'd58;
-  localparam RESET_TEMPS_game_fsm = 7'd59;
-  localparam RESET_TEMPS_2_game_fsm = 7'd60;
-  localparam RESET_ALL_GUESSES_game_fsm = 7'd61;
-  localparam RESET_GUESS_1_LETTER_2_game_fsm = 7'd62;
-  localparam RESET_GUESS_1_LETTER_3_game_fsm = 7'd63;
-  localparam RESET_GUESS_1_LETTER_4_game_fsm = 7'd64;
-  localparam RESET_GUESS_2_LETTER_1_game_fsm = 7'd65;
-  localparam RESET_GUESS_2_LETTER_2_game_fsm = 7'd66;
-  localparam RESET_GUESS_2_LETTER_3_game_fsm = 7'd67;
-  localparam RESET_GUESS_2_LETTER_4_game_fsm = 7'd68;
-  localparam RESET_GUESS_3_LETTER_1_game_fsm = 7'd69;
-  localparam RESET_GUESS_3_LETTER_2_game_fsm = 7'd70;
-  localparam RESET_GUESS_3_LETTER_3_game_fsm = 7'd71;
-  localparam RESET_GUESS_3_LETTER_4_game_fsm = 7'd72;
-  localparam RESET_GUESS_4_LETTER_1_game_fsm = 7'd73;
-  localparam RESET_GUESS_4_LETTER_2_game_fsm = 7'd74;
-  localparam RESET_GUESS_4_LETTER_3_game_fsm = 7'd75;
-  localparam RESET_GUESS_4_LETTER_4_game_fsm = 7'd76;
-  localparam RESET_GUESS_5_LETTER_1_game_fsm = 7'd77;
-  localparam RESET_GUESS_5_LETTER_2_game_fsm = 7'd78;
-  localparam RESET_GUESS_5_LETTER_3_game_fsm = 7'd79;
-  localparam RESET_GUESS_5_LETTER_4_game_fsm = 7'd80;
+  localparam RESET_ALL_GUESSES_game_fsm = 7'd59;
+  localparam RESET_GUESS_1_LETTER_2_game_fsm = 7'd60;
+  localparam RESET_GUESS_1_LETTER_3_game_fsm = 7'd61;
+  localparam RESET_GUESS_1_LETTER_4_game_fsm = 7'd62;
+  localparam RESET_GUESS_2_LETTER_1_game_fsm = 7'd63;
+  localparam RESET_GUESS_2_LETTER_2_game_fsm = 7'd64;
+  localparam RESET_GUESS_2_LETTER_3_game_fsm = 7'd65;
+  localparam RESET_GUESS_2_LETTER_4_game_fsm = 7'd66;
+  localparam RESET_GUESS_3_LETTER_1_game_fsm = 7'd67;
+  localparam RESET_GUESS_3_LETTER_2_game_fsm = 7'd68;
+  localparam RESET_GUESS_3_LETTER_3_game_fsm = 7'd69;
+  localparam RESET_GUESS_3_LETTER_4_game_fsm = 7'd70;
+  localparam RESET_GUESS_4_LETTER_1_game_fsm = 7'd71;
+  localparam RESET_GUESS_4_LETTER_2_game_fsm = 7'd72;
+  localparam RESET_GUESS_4_LETTER_3_game_fsm = 7'd73;
+  localparam RESET_GUESS_4_LETTER_4_game_fsm = 7'd74;
+  localparam RESET_GUESS_5_LETTER_1_game_fsm = 7'd75;
+  localparam RESET_GUESS_5_LETTER_2_game_fsm = 7'd76;
+  localparam RESET_GUESS_5_LETTER_3_game_fsm = 7'd77;
+  localparam RESET_GUESS_5_LETTER_4_game_fsm = 7'd78;
   
   reg [6:0] M_game_fsm_d, M_game_fsm_q = CHECK_IF_FIRST_INPUT_game_fsm;
   
@@ -619,18 +617,6 @@ module game_7 (
           regfile_ra = 1'h0;
           regfile_rb = 1'h0;
           regfile_data = 1'h0;
-          regfile_we = 1'h1;
-          M_game_fsm_d = RESET_TEMPS_game_fsm;
-        end
-        RESET_TEMPS_game_fsm: begin
-          regfile_write_address = 6'h21;
-          regfile_data = 7'h00;
-          regfile_we = 1'h1;
-          M_game_fsm_d = RESET_TEMPS_2_game_fsm;
-        end
-        RESET_TEMPS_2_game_fsm: begin
-          regfile_write_address = 6'h22;
-          regfile_data = 7'h00;
           regfile_we = 1'h1;
           M_game_fsm_d = RETRIEVE_INPUT_I_game_fsm;
         end

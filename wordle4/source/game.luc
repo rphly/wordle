@@ -112,8 +112,6 @@ module game (
       SHOW_GUESS_THREE_2,
       SHOW_GUESS_FOUR,
       SHOW_GUESS_FOUR_2,
-      RESET_TEMPS,
-      RESET_TEMPS_2,
       
       RESET_ALL_GUESSES,
       RESET_GUESS_1_LETTER_2,
@@ -601,20 +599,8 @@ module game (
           regfile_rb = 0;
           regfile_data = 0;
           regfile_we = 1;
-          //game_fsm.d = game_fsm.RETRIEVE_INPUT_I;
-          game_fsm.d = game_fsm.RESET_TEMPS;
-          
-       game_fsm.RESET_TEMPS:
-          regfile_write_address = TEMP_GUESS_G_LETTER_I_ADDR;
-          regfile_data = 7b0;
-          regfile_we = 1;
-          game_fsm.d = game_fsm.RESET_TEMPS_2;
-          
-        game_fsm.RESET_TEMPS_2:
-          regfile_write_address = TEMP_COLOURED_LETTER;
-          regfile_data = 7b0;
-          regfile_we = 1;
           game_fsm.d = game_fsm.RETRIEVE_INPUT_I;
+          
         
         game_fsm.RETRIEVE_INPUT_I:
           regfile_ra = I; // offset
