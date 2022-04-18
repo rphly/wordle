@@ -399,8 +399,9 @@ module game (
               game_fsm.d = game_fsm.SET_OKA_MODE_TO_ZERO;
             } else if (panel_input == OKA_MODE) {
               regfile_write_address = OKA_MODE;
-              regfile_data = 1;
+              regfile_data = b1;
               regfile_we = 1;
+              game_fsm.d = game_fsm.IDLE;
             } else if (panel_input == SHOW_GUESS_ONE){
               regfile_ra = G;
               if(regfile_out_a > d0 && regfile_out_b == 0){

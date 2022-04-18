@@ -6,7 +6,7 @@ module beta (
     input has_keyboard_input,
     input keyboard_input[5],
     
-    input panel_input[5],
+    input panel_input[16],
     input has_panel_input,
     
     // set outputs

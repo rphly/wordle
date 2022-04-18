@@ -6,7 +6,11 @@
 <Project Version="7" Minor="54" Path="C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
+<<<<<<< HEAD
     <Option Name="Id" Val="adcbde1bc11b4bd4860849fec377b27d"/>
+=======
+    <Option Name="Id" Val="a6393f5296784830a0767a07a646bef7"/>
+>>>>>>> 2860f58b5a96563b5b1e4264e33834f21b7b47d9
     <Option Name="Part" Val="xc7a35tftg256-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -76,7 +80,11 @@
       <File Path="$PSRCDIR/sources_1/imports/verilog/adder_13.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/adder_13.v"/>
+<<<<<<< HEAD
           <Attr Name="ImportTime" Val="1650262180"/>
+=======
+          <Attr Name="ImportTime" Val="1650186419"/>
+>>>>>>> 2860f58b5a96563b5b1e4264e33834f21b7b47d9
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -85,7 +93,11 @@
       <File Path="$PSRCDIR/sources_1/imports/verilog/alu_6.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/alu_6.v"/>
+<<<<<<< HEAD
           <Attr Name="ImportTime" Val="1650262180"/>
+=======
+          <Attr Name="ImportTime" Val="1650186419"/>
+>>>>>>> 2860f58b5a96563b5b1e4264e33834f21b7b47d9
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -94,7 +106,11 @@
       <File Path="$PSRCDIR/sources_1/imports/verilog/beta_3.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/beta_3.v"/>
+<<<<<<< HEAD
           <Attr Name="ImportTime" Val="1650262180"/>
+=======
+          <Attr Name="ImportTime" Val="1650186419"/>
+>>>>>>> 2860f58b5a96563b5b1e4264e33834f21b7b47d9
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -103,7 +119,11 @@
       <File Path="$PSRCDIR/sources_1/imports/verilog/boolean_15.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/boolean_15.v"/>
+<<<<<<< HEAD
           <Attr Name="ImportTime" Val="1650262180"/>
+=======
+          <Attr Name="ImportTime" Val="1650186419"/>
+>>>>>>> 2860f58b5a96563b5b1e4264e33834f21b7b47d9
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -112,7 +132,11 @@
       <File Path="$PSRCDIR/sources_1/imports/verilog/button_12.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/button_12.v"/>
+<<<<<<< HEAD
           <Attr Name="ImportTime" Val="1650262180"/>
+=======
+          <Attr Name="ImportTime" Val="1650186419"/>
+>>>>>>> 2860f58b5a96563b5b1e4264e33834f21b7b47d9
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -121,7 +145,11 @@
       <File Path="$PSRCDIR/sources_1/imports/verilog/button_conditioner_18.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/button_conditioner_18.v"/>
+<<<<<<< HEAD
           <Attr Name="ImportTime" Val="1650262180"/>
+=======
+          <Attr Name="ImportTime" Val="1650186419"/>
+>>>>>>> 2860f58b5a96563b5b1e4264e33834f21b7b47d9
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -130,7 +158,11 @@
       <File Path="$PSRCDIR/sources_1/imports/verilog/buttons_controller_4.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/buttons_controller_4.v"/>
+<<<<<<< HEAD
           <Attr Name="ImportTime" Val="1650262180"/>
+=======
+          <Attr Name="ImportTime" Val="1650186419"/>
+>>>>>>> 2860f58b5a96563b5b1e4264e33834f21b7b47d9
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -139,7 +171,11 @@
       <File Path="$PSRCDIR/sources_1/imports/verilog/compare_14.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/compare_14.v"/>
+<<<<<<< HEAD
           <Attr Name="ImportTime" Val="1650262180"/>
+=======
+          <Attr Name="ImportTime" Val="1650186419"/>
+>>>>>>> 2860f58b5a96563b5b1e4264e33834f21b7b47d9
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -148,7 +184,11 @@
       <File Path="$PSRCDIR/sources_1/imports/verilog/edge_detector_19.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/edge_detector_19.v"/>
+<<<<<<< HEAD
           <Attr Name="ImportTime" Val="1650262180"/>
+=======
+          <Attr Name="ImportTime" Val="1650186419"/>
+>>>>>>> 2860f58b5a96563b5b1e4264e33834f21b7b47d9
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -157,7 +197,11 @@
       <File Path="$PSRCDIR/sources_1/imports/verilog/game_7.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/game_7.v"/>
+<<<<<<< HEAD
           <Attr Name="ImportTime" Val="1650262180"/>
+=======
+          <Attr Name="ImportTime" Val="1650186419"/>
+>>>>>>> 2860f58b5a96563b5b1e4264e33834f21b7b47d9
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -166,7 +210,11 @@
       <File Path="$PSRCDIR/sources_1/imports/verilog/green_alphabets_23.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/green_alphabets_23.v"/>
+<<<<<<< HEAD
           <Attr Name="ImportTime" Val="1650262180"/>
+=======
+          <Attr Name="ImportTime" Val="1650186419"/>
+>>>>>>> 2860f58b5a96563b5b1e4264e33834f21b7b47d9
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -175,7 +223,11 @@
       <File Path="$PSRCDIR/sources_1/imports/verilog/led_strip_writer_2.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/led_strip_writer_2.v"/>
+<<<<<<< HEAD
           <Attr Name="ImportTime" Val="1650262180"/>
+=======
+          <Attr Name="ImportTime" Val="1650186419"/>
+>>>>>>> 2860f58b5a96563b5b1e4264e33834f21b7b47d9
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -184,7 +236,11 @@
       <File Path="$PSRCDIR/sources_1/imports/verilog/led_strip_writer_20.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/led_strip_writer_20.v"/>
+<<<<<<< HEAD
           <Attr Name="ImportTime" Val="1650262180"/>
+=======
+          <Attr Name="ImportTime" Val="1650186419"/>
+>>>>>>> 2860f58b5a96563b5b1e4264e33834f21b7b47d9
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -193,7 +249,11 @@
       <File Path="$PSRCDIR/sources_1/imports/verilog/matrix_17.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/matrix_17.v"/>
+<<<<<<< HEAD
           <Attr Name="ImportTime" Val="1650262180"/>
+=======
+          <Attr Name="ImportTime" Val="1650186419"/>
+>>>>>>> 2860f58b5a96563b5b1e4264e33834f21b7b47d9
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -202,7 +262,11 @@
       <File Path="$PSRCDIR/sources_1/imports/verilog/matrix_controller_9.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/matrix_controller_9.v"/>
+<<<<<<< HEAD
           <Attr Name="ImportTime" Val="1650262180"/>
+=======
+          <Attr Name="ImportTime" Val="1650186419"/>
+>>>>>>> 2860f58b5a96563b5b1e4264e33834f21b7b47d9
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -211,7 +275,11 @@
       <File Path="$PSRCDIR/sources_1/imports/verilog/panel_controller_5.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/panel_controller_5.v"/>
+<<<<<<< HEAD
           <Attr Name="ImportTime" Val="1650262180"/>
+=======
+          <Attr Name="ImportTime" Val="1650186419"/>
+>>>>>>> 2860f58b5a96563b5b1e4264e33834f21b7b47d9
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -220,7 +288,11 @@
       <File Path="$PSRCDIR/sources_1/imports/verilog/pipeline_24.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/pipeline_24.v"/>
+<<<<<<< HEAD
           <Attr Name="ImportTime" Val="1650262180"/>
+=======
+          <Attr Name="ImportTime" Val="1650186419"/>
+>>>>>>> 2860f58b5a96563b5b1e4264e33834f21b7b47d9
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -229,7 +301,11 @@
       <File Path="$PSRCDIR/sources_1/imports/verilog/pn_gen_10.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/pn_gen_10.v"/>
+<<<<<<< HEAD
           <Attr Name="ImportTime" Val="1650262180"/>
+=======
+          <Attr Name="ImportTime" Val="1650186419"/>
+>>>>>>> 2860f58b5a96563b5b1e4264e33834f21b7b47d9
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -238,7 +314,11 @@
       <File Path="$PSRCDIR/sources_1/imports/verilog/regfile_8.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/regfile_8.v"/>
+<<<<<<< HEAD
           <Attr Name="ImportTime" Val="1650262180"/>
+=======
+          <Attr Name="ImportTime" Val="1650186419"/>
+>>>>>>> 2860f58b5a96563b5b1e4264e33834f21b7b47d9
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -247,7 +327,11 @@
       <File Path="$PSRCDIR/sources_1/imports/verilog/reset_conditioner_1.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/reset_conditioner_1.v"/>
+<<<<<<< HEAD
           <Attr Name="ImportTime" Val="1650262180"/>
+=======
+          <Attr Name="ImportTime" Val="1650186419"/>
+>>>>>>> 2860f58b5a96563b5b1e4264e33834f21b7b47d9
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -256,7 +340,11 @@
       <File Path="$PSRCDIR/sources_1/imports/verilog/shifter_16.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/shifter_16.v"/>
+<<<<<<< HEAD
           <Attr Name="ImportTime" Val="1650262180"/>
+=======
+          <Attr Name="ImportTime" Val="1650186419"/>
+>>>>>>> 2860f58b5a96563b5b1e4264e33834f21b7b47d9
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -265,7 +353,11 @@
       <File Path="$PSRCDIR/sources_1/imports/verilog/white_alphabets_21.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/white_alphabets_21.v"/>
+<<<<<<< HEAD
           <Attr Name="ImportTime" Val="1650262180"/>
+=======
+          <Attr Name="ImportTime" Val="1650186419"/>
+>>>>>>> 2860f58b5a96563b5b1e4264e33834f21b7b47d9
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -274,7 +366,11 @@
       <File Path="$PSRCDIR/sources_1/imports/verilog/words_11.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/words_11.v"/>
+<<<<<<< HEAD
           <Attr Name="ImportTime" Val="1650262180"/>
+=======
+          <Attr Name="ImportTime" Val="1650186419"/>
+>>>>>>> 2860f58b5a96563b5b1e4264e33834f21b7b47d9
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -283,7 +379,11 @@
       <File Path="$PSRCDIR/sources_1/imports/verilog/yellow_alphabets_22.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/yellow_alphabets_22.v"/>
+<<<<<<< HEAD
           <Attr Name="ImportTime" Val="1650262180"/>
+=======
+          <Attr Name="ImportTime" Val="1650186419"/>
+>>>>>>> 2860f58b5a96563b5b1e4264e33834f21b7b47d9
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -292,7 +392,11 @@
       <File Path="$PSRCDIR/sources_1/imports/verilog/au_top_0.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/au_top_0.v"/>
+<<<<<<< HEAD
           <Attr Name="ImportTime" Val="1650262180"/>
+=======
+          <Attr Name="ImportTime" Val="1650186419"/>
+>>>>>>> 2860f58b5a96563b5b1e4264e33834f21b7b47d9
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>

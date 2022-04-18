@@ -47,7 +47,7 @@ pin guess_4_in B14 pulldown;
 pin check_in B24 pulldown;
 pin clear_in B8 pulldown;
 pin reset_in B34 pulldown;
-pin oka_in B2 pulldown;
+pin oka_in B5 pulldown;
 
 pin out_top_matrix1 A45;
 pin out_top_matrix2 C45;
