@@ -137,6 +137,11 @@ module regfile (
         b11001 : correct_letter_3.d = data;
         b11010: correct_letter_4.d = data;
         
+        //b10111 : correct_letter_1.d = b00001; // a
+        //b11000 : correct_letter_2.d = b01110; // n
+        //b11001 : correct_letter_3.d = b01111; // o
+        //b11010: correct_letter_4.d = b01110; // n
+        
         b11011 : num_correct.d = data;
         b11100 : input_ctr.d = data;
         b11101 : input_i.d = data;

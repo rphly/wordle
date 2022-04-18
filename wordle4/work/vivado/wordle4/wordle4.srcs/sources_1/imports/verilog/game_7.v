@@ -49,66 +49,89 @@ module game_7 (
   
   
   
-  localparam CHECK_IF_FIRST_INPUT_game_fsm = 6'd0;
-  localparam SET_OKA_MODE_TO_ZERO_game_fsm = 6'd1;
-  localparam RESET_TOP_DISPLAY_game_fsm = 6'd2;
-  localparam RESET_BOTTOM_DISPLAY_game_fsm = 6'd3;
-  localparam SET_INPUT_CTR_TO_0_game_fsm = 6'd4;
-  localparam SET_GUESS_CTR_TO_0_game_fsm = 6'd5;
-  localparam SET_NUM_CORRECT_INPUTS_TO_0_game_fsm = 6'd6;
-  localparam IDLE_game_fsm = 6'd7;
-  localparam RETRIEVE_INPUT_I_game_fsm = 6'd8;
-  localparam RETRIEVE_CORRECT_K_game_fsm = 6'd9;
-  localparam COMPARE_INPUT_I_WITH_CORRECT_K_game_fsm = 6'd10;
-  localparam COMPARE_K_EQUALS_3_AND_INCREMENT_game_fsm = 6'd11;
-  localparam CHECK_BUTTON_PRESSED_game_fsm = 6'd12;
-  localparam COMPARE_INPUT_CTR_EQUALS_3_game_fsm = 6'd13;
-  localparam COMPARE_INPUT_I_WITH_CORRECT_I_game_fsm = 6'd14;
-  localparam CLEAR_RESET_BOTTOM_DISPLAY_game_fsm = 6'd15;
-  localparam STORE_INPUT_game_fsm = 6'd16;
-  localparam INCREMENT_INPUT_CTR_game_fsm = 6'd17;
-  localparam PRINT_LETTER_TO_MATRIX_game_fsm = 6'd18;
-  localparam SET_I_TO_ZERO_game_fsm = 6'd19;
-  localparam SET_K_TO_ZERO_game_fsm = 6'd20;
-  localparam COMPARE_POSITIONS_K_AND_I_game_fsm = 6'd21;
-  localparam SET_TEMP_GUESS_G_LETTER_I_ADDR_WHITE_game_fsm = 6'd22;
-  localparam SET_TEMP_GUESS_G_LETTER_I_ADDR_GREEN_game_fsm = 6'd23;
-  localparam SET_TEMP_GUESS_G_LETTER_I_ADDR_YELLOW_game_fsm = 6'd24;
-  localparam SET_WHITE_LETTER_game_fsm = 6'd25;
-  localparam SET_GREEN_LETTER_game_fsm = 6'd26;
-  localparam SET_YELLOW_LETTER_game_fsm = 6'd27;
-  localparam SET_TEMP_COLOURED_LETTER_GREEN_game_fsm = 6'd28;
-  localparam SET_TEMP_COLOURED_LETTER_YELLOW_game_fsm = 6'd29;
-  localparam SET_TEMP_COLOURED_LETTER_WHITE_game_fsm = 6'd30;
-  localparam RESET_NUM_CORRECT_INPUTS_TO_0_game_fsm = 6'd31;
-  localparam INCREMENT_K_game_fsm = 6'd32;
-  localparam INCREMENT_NUM_CORRECT_game_fsm = 6'd33;
-  localparam COMPARE_NUM_CORRECT_EQUALS_3_game_fsm = 6'd34;
-  localparam COMPARE_I_EQUALS_3_AND_INCREMENT_game_fsm = 6'd35;
-  localparam INCREMENT_GUESS_CTR_game_fsm = 6'd36;
-  localparam COMPARE_GUESS_CTR_EQUALS_3_game_fsm = 6'd37;
-  localparam SHOW_TOP_DISPLAY_game_fsm = 6'd38;
-  localparam SHOW_TOP_DISPLAY_2_game_fsm = 6'd39;
-  localparam SHOW_TOP_DISPLAY_3_game_fsm = 6'd40;
-  localparam SHOW_TOP_DISPLAY_4_game_fsm = 6'd41;
-  localparam SET_CORRECT_WORD_game_fsm = 6'd42;
-  localparam SET_CORRECT_WORD_2_game_fsm = 6'd43;
-  localparam SET_CORRECT_LETTER_1_game_fsm = 6'd44;
-  localparam SET_CORRECT_LETTER_2_game_fsm = 6'd45;
-  localparam SET_CORRECT_LETTER_3_game_fsm = 6'd46;
-  localparam SET_CORRECT_LETTER_4_game_fsm = 6'd47;
-  localparam LOSE_game_fsm = 6'd48;
-  localparam WIN_game_fsm = 6'd49;
-  localparam SHOW_GUESS_ONE_game_fsm = 6'd50;
-  localparam SHOW_GUESS_ONE_2_game_fsm = 6'd51;
-  localparam SHOW_GUESS_TWO_game_fsm = 6'd52;
-  localparam SHOW_GUESS_TWO_2_game_fsm = 6'd53;
-  localparam SHOW_GUESS_THREE_game_fsm = 6'd54;
-  localparam SHOW_GUESS_THREE_2_game_fsm = 6'd55;
-  localparam SHOW_GUESS_FOUR_game_fsm = 6'd56;
-  localparam SHOW_GUESS_FOUR_2_game_fsm = 6'd57;
+  localparam CHECK_IF_FIRST_INPUT_game_fsm = 7'd0;
+  localparam SET_OKA_MODE_TO_ZERO_game_fsm = 7'd1;
+  localparam RESET_TOP_DISPLAY_game_fsm = 7'd2;
+  localparam RESET_BOTTOM_DISPLAY_game_fsm = 7'd3;
+  localparam SET_INPUT_CTR_TO_0_game_fsm = 7'd4;
+  localparam SET_GUESS_CTR_TO_0_game_fsm = 7'd5;
+  localparam SET_NUM_CORRECT_INPUTS_TO_0_game_fsm = 7'd6;
+  localparam IDLE_game_fsm = 7'd7;
+  localparam RETRIEVE_INPUT_I_game_fsm = 7'd8;
+  localparam RETRIEVE_CORRECT_K_game_fsm = 7'd9;
+  localparam COMPARE_INPUT_I_WITH_CORRECT_K_game_fsm = 7'd10;
+  localparam COMPARE_K_EQUALS_3_AND_INCREMENT_game_fsm = 7'd11;
+  localparam CHECK_BUTTON_PRESSED_game_fsm = 7'd12;
+  localparam COMPARE_INPUT_CTR_EQUALS_3_game_fsm = 7'd13;
+  localparam COMPARE_INPUT_I_WITH_CORRECT_I_game_fsm = 7'd14;
+  localparam CLEAR_RESET_BOTTOM_DISPLAY_game_fsm = 7'd15;
+  localparam CHECK_FOR_GREEN_AND_YELLOW_LETTERS_game_fsm = 7'd16;
+  localparam STORE_INPUT_game_fsm = 7'd17;
+  localparam INCREMENT_INPUT_CTR_game_fsm = 7'd18;
+  localparam PRINT_LETTER_TO_MATRIX_game_fsm = 7'd19;
+  localparam SET_I_TO_ZERO_game_fsm = 7'd20;
+  localparam SET_K_TO_ZERO_game_fsm = 7'd21;
+  localparam COMPARE_POSITIONS_K_AND_I_game_fsm = 7'd22;
+  localparam SET_TEMP_GUESS_G_LETTER_I_ADDR_WHITE_game_fsm = 7'd23;
+  localparam SET_TEMP_GUESS_G_LETTER_I_ADDR_GREEN_game_fsm = 7'd24;
+  localparam SET_TEMP_GUESS_G_LETTER_I_ADDR_YELLOW_game_fsm = 7'd25;
+  localparam SET_WHITE_LETTER_game_fsm = 7'd26;
+  localparam SET_GREEN_LETTER_game_fsm = 7'd27;
+  localparam SET_YELLOW_LETTER_game_fsm = 7'd28;
+  localparam SET_TEMP_COLOURED_LETTER_GREEN_game_fsm = 7'd29;
+  localparam SET_TEMP_COLOURED_LETTER_YELLOW_game_fsm = 7'd30;
+  localparam SET_TEMP_COLOURED_LETTER_WHITE_game_fsm = 7'd31;
+  localparam RESET_NUM_CORRECT_INPUTS_TO_0_game_fsm = 7'd32;
+  localparam INCREMENT_K_game_fsm = 7'd33;
+  localparam INCREMENT_NUM_CORRECT_game_fsm = 7'd34;
+  localparam COMPARE_NUM_CORRECT_EQUALS_3_game_fsm = 7'd35;
+  localparam COMPARE_I_EQUALS_3_AND_INCREMENT_game_fsm = 7'd36;
+  localparam INCREMENT_GUESS_CTR_game_fsm = 7'd37;
+  localparam COMPARE_GUESS_CTR_EQUALS_3_game_fsm = 7'd38;
+  localparam SHOW_TOP_DISPLAY_game_fsm = 7'd39;
+  localparam SHOW_TOP_DISPLAY_2_game_fsm = 7'd40;
+  localparam SHOW_TOP_DISPLAY_3_game_fsm = 7'd41;
+  localparam SHOW_TOP_DISPLAY_4_game_fsm = 7'd42;
+  localparam SET_CORRECT_WORD_game_fsm = 7'd43;
+  localparam SET_CORRECT_WORD_2_game_fsm = 7'd44;
+  localparam SET_CORRECT_LETTER_1_game_fsm = 7'd45;
+  localparam SET_CORRECT_LETTER_2_game_fsm = 7'd46;
+  localparam SET_CORRECT_LETTER_3_game_fsm = 7'd47;
+  localparam SET_CORRECT_LETTER_4_game_fsm = 7'd48;
+  localparam LOSE_game_fsm = 7'd49;
+  localparam WIN_game_fsm = 7'd50;
+  localparam SHOW_GUESS_ONE_game_fsm = 7'd51;
+  localparam SHOW_GUESS_ONE_2_game_fsm = 7'd52;
+  localparam SHOW_GUESS_TWO_game_fsm = 7'd53;
+  localparam SHOW_GUESS_TWO_2_game_fsm = 7'd54;
+  localparam SHOW_GUESS_THREE_game_fsm = 7'd55;
+  localparam SHOW_GUESS_THREE_2_game_fsm = 7'd56;
+  localparam SHOW_GUESS_FOUR_game_fsm = 7'd57;
+  localparam SHOW_GUESS_FOUR_2_game_fsm = 7'd58;
+  localparam RESET_TEMPS_game_fsm = 7'd59;
+  localparam RESET_TEMPS_2_game_fsm = 7'd60;
+  localparam RESET_ALL_GUESSES_game_fsm = 7'd61;
+  localparam RESET_GUESS_1_LETTER_2_game_fsm = 7'd62;
+  localparam RESET_GUESS_1_LETTER_3_game_fsm = 7'd63;
+  localparam RESET_GUESS_1_LETTER_4_game_fsm = 7'd64;
+  localparam RESET_GUESS_2_LETTER_1_game_fsm = 7'd65;
+  localparam RESET_GUESS_2_LETTER_2_game_fsm = 7'd66;
+  localparam RESET_GUESS_2_LETTER_3_game_fsm = 7'd67;
+  localparam RESET_GUESS_2_LETTER_4_game_fsm = 7'd68;
+  localparam RESET_GUESS_3_LETTER_1_game_fsm = 7'd69;
+  localparam RESET_GUESS_3_LETTER_2_game_fsm = 7'd70;
+  localparam RESET_GUESS_3_LETTER_3_game_fsm = 7'd71;
+  localparam RESET_GUESS_3_LETTER_4_game_fsm = 7'd72;
+  localparam RESET_GUESS_4_LETTER_1_game_fsm = 7'd73;
+  localparam RESET_GUESS_4_LETTER_2_game_fsm = 7'd74;
+  localparam RESET_GUESS_4_LETTER_3_game_fsm = 7'd75;
+  localparam RESET_GUESS_4_LETTER_4_game_fsm = 7'd76;
+  localparam RESET_GUESS_5_LETTER_1_game_fsm = 7'd77;
+  localparam RESET_GUESS_5_LETTER_2_game_fsm = 7'd78;
+  localparam RESET_GUESS_5_LETTER_3_game_fsm = 7'd79;
+  localparam RESET_GUESS_5_LETTER_4_game_fsm = 7'd80;
   
-  reg [5:0] M_game_fsm_d, M_game_fsm_q = CHECK_IF_FIRST_INPUT_game_fsm;
+  reg [6:0] M_game_fsm_d, M_game_fsm_q = CHECK_IF_FIRST_INPUT_game_fsm;
   
   localparam INPUT_CTR = 5'h1c;
   
@@ -201,7 +224,7 @@ module game_7 (
           regfile_write_address = 6'h24;
           regfile_data = 1'h0;
           regfile_we = 1'h1;
-          M_game_fsm_d = SET_GUESS_CTR_TO_0_game_fsm;
+          M_game_fsm_d = RESET_ALL_GUESSES_game_fsm;
         end
         SET_GUESS_CTR_TO_0_game_fsm: begin
           regfile_write_address = 6'h20;
@@ -248,6 +271,126 @@ module game_7 (
             bottom_matrix_controller_update = 4'ha;
           end
           M_game_fsm_d = IDLE_game_fsm;
+        end
+        RESET_ALL_GUESSES_game_fsm: begin
+          regfile_write_address = 7'h40;
+          regfile_data = 1'h0;
+          regfile_we = 1'h1;
+          M_game_fsm_d = RESET_GUESS_1_LETTER_2_game_fsm;
+        end
+        RESET_GUESS_1_LETTER_2_game_fsm: begin
+          regfile_write_address = 8'h41;
+          regfile_data = 1'h0;
+          regfile_we = 1'h1;
+          M_game_fsm_d = RESET_GUESS_1_LETTER_3_game_fsm;
+        end
+        RESET_GUESS_1_LETTER_3_game_fsm: begin
+          regfile_write_address = 8'h42;
+          regfile_data = 1'h0;
+          regfile_we = 1'h1;
+          M_game_fsm_d = RESET_GUESS_1_LETTER_4_game_fsm;
+        end
+        RESET_GUESS_1_LETTER_4_game_fsm: begin
+          regfile_write_address = 8'h43;
+          regfile_data = 1'h0;
+          regfile_we = 1'h1;
+          M_game_fsm_d = RESET_GUESS_2_LETTER_1_game_fsm;
+        end
+        RESET_GUESS_2_LETTER_1_game_fsm: begin
+          regfile_write_address = 5'h04;
+          regfile_data = 1'h0;
+          regfile_we = 1'h1;
+          M_game_fsm_d = RESET_GUESS_2_LETTER_2_game_fsm;
+        end
+        RESET_GUESS_2_LETTER_2_game_fsm: begin
+          regfile_write_address = 6'h05;
+          regfile_data = 1'h0;
+          regfile_we = 1'h1;
+          M_game_fsm_d = RESET_GUESS_2_LETTER_3_game_fsm;
+        end
+        RESET_GUESS_2_LETTER_3_game_fsm: begin
+          regfile_write_address = 6'h06;
+          regfile_data = 1'h0;
+          regfile_we = 1'h1;
+          M_game_fsm_d = RESET_GUESS_2_LETTER_4_game_fsm;
+        end
+        RESET_GUESS_2_LETTER_4_game_fsm: begin
+          regfile_write_address = 6'h07;
+          regfile_data = 1'h0;
+          regfile_we = 1'h1;
+          M_game_fsm_d = RESET_GUESS_3_LETTER_1_game_fsm;
+        end
+        RESET_GUESS_3_LETTER_1_game_fsm: begin
+          regfile_write_address = 5'h08;
+          regfile_data = 1'h0;
+          regfile_we = 1'h1;
+          M_game_fsm_d = RESET_GUESS_3_LETTER_2_game_fsm;
+        end
+        RESET_GUESS_3_LETTER_2_game_fsm: begin
+          regfile_write_address = 6'h09;
+          regfile_data = 1'h0;
+          regfile_we = 1'h1;
+          M_game_fsm_d = RESET_GUESS_3_LETTER_3_game_fsm;
+        end
+        RESET_GUESS_3_LETTER_3_game_fsm: begin
+          regfile_write_address = 6'h0a;
+          regfile_data = 1'h0;
+          regfile_we = 1'h1;
+          M_game_fsm_d = RESET_GUESS_3_LETTER_4_game_fsm;
+        end
+        RESET_GUESS_3_LETTER_4_game_fsm: begin
+          regfile_write_address = 6'h0b;
+          regfile_data = 1'h0;
+          regfile_we = 1'h1;
+          M_game_fsm_d = RESET_GUESS_4_LETTER_1_game_fsm;
+        end
+        RESET_GUESS_4_LETTER_1_game_fsm: begin
+          regfile_write_address = 5'h0c;
+          regfile_data = 1'h0;
+          regfile_we = 1'h1;
+          M_game_fsm_d = RESET_GUESS_4_LETTER_2_game_fsm;
+        end
+        RESET_GUESS_4_LETTER_2_game_fsm: begin
+          regfile_write_address = 6'h0d;
+          regfile_data = 1'h0;
+          regfile_we = 1'h1;
+          M_game_fsm_d = RESET_GUESS_4_LETTER_3_game_fsm;
+        end
+        RESET_GUESS_4_LETTER_3_game_fsm: begin
+          regfile_write_address = 6'h0e;
+          regfile_data = 1'h0;
+          regfile_we = 1'h1;
+          M_game_fsm_d = RESET_GUESS_4_LETTER_4_game_fsm;
+        end
+        RESET_GUESS_4_LETTER_4_game_fsm: begin
+          regfile_write_address = 6'h0f;
+          regfile_data = 1'h0;
+          regfile_we = 1'h1;
+          M_game_fsm_d = RESET_GUESS_5_LETTER_1_game_fsm;
+        end
+        RESET_GUESS_5_LETTER_1_game_fsm: begin
+          regfile_write_address = 6'h25;
+          regfile_data = 1'h0;
+          regfile_we = 1'h1;
+          M_game_fsm_d = RESET_GUESS_5_LETTER_2_game_fsm;
+        end
+        RESET_GUESS_5_LETTER_2_game_fsm: begin
+          regfile_write_address = 7'h26;
+          regfile_data = 1'h0;
+          regfile_we = 1'h1;
+          M_game_fsm_d = RESET_GUESS_5_LETTER_3_game_fsm;
+        end
+        RESET_GUESS_5_LETTER_3_game_fsm: begin
+          regfile_write_address = 7'h27;
+          regfile_data = 1'h0;
+          regfile_we = 1'h1;
+          M_game_fsm_d = RESET_GUESS_5_LETTER_4_game_fsm;
+        end
+        RESET_GUESS_5_LETTER_4_game_fsm: begin
+          regfile_write_address = 7'h28;
+          regfile_data = 1'h0;
+          regfile_we = 1'h1;
+          M_game_fsm_d = SET_GUESS_CTR_TO_0_game_fsm;
         end
         IDLE_game_fsm: begin
           current_state = 1'h0;
@@ -446,6 +589,18 @@ module game_7 (
           regfile_rb = 1'h0;
           regfile_data = 1'h0;
           regfile_we = 1'h1;
+          M_game_fsm_d = RESET_TEMPS_game_fsm;
+        end
+        RESET_TEMPS_game_fsm: begin
+          regfile_write_address = 6'h21;
+          regfile_data = 7'h00;
+          regfile_we = 1'h1;
+          M_game_fsm_d = RESET_TEMPS_2_game_fsm;
+        end
+        RESET_TEMPS_2_game_fsm: begin
+          regfile_write_address = 6'h22;
+          regfile_data = 7'h00;
+          regfile_we = 1'h1;
           M_game_fsm_d = RETRIEVE_INPUT_I_game_fsm;
         end
         RETRIEVE_INPUT_I_game_fsm: begin
@@ -501,7 +656,16 @@ module game_7 (
           endcase
           regfile_write_address = 6'h21;
           regfile_we = 1'h1;
-          M_game_fsm_d = SET_TEMP_COLOURED_LETTER_WHITE_game_fsm;
+          M_game_fsm_d = CHECK_FOR_GREEN_AND_YELLOW_LETTERS_game_fsm;
+        end
+        CHECK_FOR_GREEN_AND_YELLOW_LETTERS_game_fsm: begin
+          regfile_ra = 6'h21;
+          regfile_rb = regfile_out_a;
+          if (regfile_out_b[5+1-:2] != 2'h2 && regfile_out_b[5+1-:2] != 2'h1) begin
+            M_game_fsm_d = SET_TEMP_COLOURED_LETTER_WHITE_game_fsm;
+          end else begin
+            M_game_fsm_d = COMPARE_K_EQUALS_3_AND_INCREMENT_game_fsm;
+          end
         end
         SET_TEMP_COLOURED_LETTER_WHITE_game_fsm: begin
           regfile_ra = 5'h14;

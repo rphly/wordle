@@ -1,19 +1,10 @@
 #-----------------------------------------------------------
-<<<<<<< HEAD
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Sun Apr 17 15:59:10 2022
-# Process ID: 18248
+# Start of session at: Mon Apr 18 14:09:49 2022
+# Process ID: 50632
 # Current directory: C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/synth_1
-=======
-# Vivado v2021.2 (64-bit)
-# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
-# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
-# Start of session at: Sun Apr 17 15:55:43 2022
-# Process ID: 21604
-# Current directory: C:/Users/CompStruct/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/synth_1
->>>>>>> 9af57b60f4ad212ac20713b1a189ac463971e80a
 # Command line: vivado.exe -log au_top_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source au_top_0.tcl
 # Log file: C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/synth_1/au_top_0.vds
 # Journal file: C:/Users/Bryce/Desktop/wordle/wordle4/work/vivado/wordle4/wordle4.runs/synth_1\vivado.jou
