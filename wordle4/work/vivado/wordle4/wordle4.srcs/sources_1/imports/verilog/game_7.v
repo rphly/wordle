@@ -410,7 +410,25 @@ module game_7 (
                     regfile_write_address = 6'h24;
                     regfile_data = 1'h1;
                     regfile_we = 1'h1;
-                    M_game_fsm_d = IDLE_game_fsm;
+                    regfile_ra = 6'h20;
+                    
+                    case (regfile_out_a - 1'h1)
+                      1'h0: begin
+                        M_game_fsm_d = SHOW_GUESS_ONE_game_fsm;
+                      end
+                      1'h1: begin
+                        M_game_fsm_d = SHOW_GUESS_TWO_game_fsm;
+                      end
+                      2'h2: begin
+                        M_game_fsm_d = SHOW_GUESS_THREE_game_fsm;
+                      end
+                      2'h3: begin
+                        M_game_fsm_d = SHOW_GUESS_FOUR_game_fsm;
+                      end
+                      default: begin
+                        M_game_fsm_d = IDLE_game_fsm;
+                      end
+                    endcase
                   end else begin
                     if (panel_input == 5'h01) begin
                       regfile_ra = 6'h20;

@@ -401,7 +401,15 @@ module game (
               regfile_write_address = OKA_MODE;
               regfile_data = b1;
               regfile_we = 1;
-              game_fsm.d = game_fsm.IDLE;
+              
+              regfile_ra = G;
+              case(regfile_out_a - 1){
+                0: game_fsm.d = game_fsm.SHOW_GUESS_ONE;
+                1: game_fsm.d = game_fsm.SHOW_GUESS_TWO;
+                2: game_fsm.d = game_fsm.SHOW_GUESS_THREE;
+                3: game_fsm.d = game_fsm.SHOW_GUESS_FOUR;
+                default: game_fsm.d = game_fsm.IDLE;   
+              }
             } else if (panel_input == SHOW_GUESS_ONE){
               regfile_ra = G;
               if(regfile_out_a > d0 && regfile_out_b == 0){
