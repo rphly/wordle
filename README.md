@@ -9,6 +9,7 @@
  - Pamela Lim @pamz23
  - Huy Nguyen @huy0720
  - Fuo En Lim @Fe-56
+ - Goh Yu Fan
 
 ## Introduction
 
